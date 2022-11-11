@@ -200,7 +200,7 @@ What this does is essentially is `fetch('http://10.10.x.x')` for Charlie to exec
 
 Now, we can use this XSS to send us the information from charlie's repos. This can be done using this payload:
 
-<figure><img src="../../.gitbook/assets/image (90).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (90) (1).png" alt=""><figcaption></figcaption></figure>
 
 What this essentially does is this:
 
@@ -266,7 +266,7 @@ We first need to portforward this MySQL Instance from the machine before moving 
 
 <figure><img src="../../.gitbook/assets/image (101).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (119).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (119) (1).png" alt=""><figcaption></figcaption></figure>
 
 Earlier, we found 4 users, and from there we can update the database such that one of those users becomes a manager. I picked letha, but any is fine. The reason being the cronjob is only changing the password of charlie and jean, so we should use other users.&#x20;
 
@@ -354,12 +354,12 @@ curl -s -X POST --unix-socket /app/docker.sock "http://localhost/containers/test
 
 Getting Shell:
 
-<figure><img src="../../.gitbook/assets/image (87).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (87) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/image (121).png" alt=""><figcaption></figcaption></figure>
 
 We can then grab the flag:
 
-<figure><img src="../../.gitbook/assets/image (110) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (110).png" alt=""><figcaption></figcaption></figure>
 
 Really hard machine.
