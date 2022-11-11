@@ -60,7 +60,7 @@ Then we can proceed to continue fuzzing the parameter with the new string. After
 
 Now, we can dump out all the possible credentials with passwords!
 
-<figure><img src="../../.gitbook/assets/image (92).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (92) (1).png" alt=""><figcaption></figcaption></figure>
 
 There's a lot of information that is dumped, so we can use curl to redirect the output into a file. Afterwards, we can extract the hashes and get cracking.
 
@@ -188,7 +188,7 @@ From here, we can think about how to implement an XSS attack. Looking at inject.
 
 So someone is indeed checking the issues, and we can exploit this fact. So now we need to somehow make charlie request for our page, and observation of Burp reqeusts implies we need to steal the CSRF token to access his hidden repositories.
 
-<figure><img src="../../.gitbook/assets/image (88).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (88) (1).png" alt=""><figcaption></figcaption></figure>
 
 After some more testing, I come across the eval.call XSS method through the page, and was able to include this within the issues to get a hitback on my netcat listener!
 
@@ -360,6 +360,6 @@ Getting Shell:
 
 We can then grab the flag:
 
-<figure><img src="../../.gitbook/assets/image (110).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (110) (1).png" alt=""><figcaption></figcaption></figure>
 
 Really hard machine.

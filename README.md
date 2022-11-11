@@ -1,6 +1,12 @@
 # Security
 
-This is just a little compilation of notes and knowledge I gained from scouring the Internet, practicing, going for courses, interning and learning from school. This book primarily serves as my journal for my security related excursions, and also a resource for people that want to learn more about security should they chance upon it
+This is just a compilation of notes and knowledge I gained from scouring the Internet, practicing, going for courses, interning and learning from school.&#x20;
+
+The point of this book is to document whatever I've done regarding cybersecurity for reference in future or just to look back upon. If you're reading this, I hope that you can learn something from here!&#x20;
+
+There's loads of free stuff on the Internet in general, and security is definitely part of that. I'd like to thank all the authors and experts that share knowledge online for everyone to learn from!
+
+If you're looking into starting your security journey, take note that this book is not a rulebook. There's no right path to break into cybersecurity, find the one that works for you.&#x20;
 
 **This will be updated as frequently as I can while juggling school work.**
 

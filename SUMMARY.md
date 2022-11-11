@@ -50,7 +50,7 @@
 ## 🌏 Networks
 
 * [Introduction](networks/introduction.md)
-* [Addresses, Subnets and Ports](networks/addresses-subnets-and-ports.md)
+* [Addresses](networks/addresses.md)
 * [OSI Model](networks/osi-model.md)
 * [Packets](networks/packets/README.md)
   * [TCP / UDP](networks/packets/tcp-udp.md)
