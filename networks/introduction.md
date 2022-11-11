@@ -11,3 +11,47 @@ I've heard the stuff covered in CCNA is similar to CS2105, Introduction to Compu
 If you want to go for the CCNA course or learn more, I **highly recommend Neil Anderson's Udemy CCNA Course.** He explains the topics really well, and it comes with some hands-on labs to test your concepts!
 
 {% embed url="https://www.udemy.com/course/ccna-complete/" %}
+
+## Terminologies
+
+There are a few terms that are used here.
+
+### Routers
+
+<figure><img src="../.gitbook/assets/image (100).png" alt=""><figcaption><p>Routers</p></figcaption></figure>
+
+I think most of us have seen this and are aware of it.
+
+### NIC
+
+Within each device, there exists something called a Network Interface Card (NIC), which basically Wifi-enables a device. This allows for the reception of network signals and protocols.
+
+### Switches
+
+<figure><img src="../.gitbook/assets/image (101).png" alt=""><figcaption><p>Switches</p></figcaption></figure>
+
+These are devices that basically connect different machines together via a cable, most commonly Ethernet. They have loads of ports for this purpose, and are generally the "middleman" in data transmissions. Here's an example of a network topology for switches:
+
+<figure><img src="../.gitbook/assets/image (94).png" alt=""><figcaption></figcaption></figure>
+
+### Firewalls
+
+These look like switches, but they aren't.
+
+<figure><img src="../.gitbook/assets/image (117).png" alt=""><figcaption><p>Cisco Firewall</p></figcaption></figure>
+
+### Network Topologies
+
+<figure><img src="../.gitbook/assets/image (89).png" alt=""><figcaption></figcaption></figure>
+
+This is how we represent networks in a company, sort of like a graph of nodes that have connections to one another. Take note of the symbols used!
+
+### Ports
+
+Think of them like the destinations for packets to get to. These **are not phyiscal ports on the device**, but rather are logical things. Logical in this case measn that they exist within the computer only.
+
+There are 65535 ports in total, and any of them can be open and listening. There are default ports for certain services, as shown here:
+
+<figure><img src="../.gitbook/assets/image (91).png" alt=""><figcaption></figcaption></figure>
+
+There's no need to memorize all 65535 ports, but knowing a few is good enough.

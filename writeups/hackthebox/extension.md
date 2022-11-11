@@ -12,7 +12,7 @@ As usual, nmap scan to begin.
 
 When visiting port 80, we can see that it gives us a domain.
 
-<figure><img src="../../.gitbook/assets/image (105).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (105) (1).png" alt=""><figcaption></figcaption></figure>
 
 The Get Started button directs us to a login page, where default admin:admin credentials do not work.
 
@@ -56,17 +56,17 @@ Now we have the first parameter, then we can fuzz the next. When checking reques
 
 Then we can proceed to continue fuzzing the parameter with the new string. After a while, we find that "users" is the next valid value.
 
-<figure><img src="../../.gitbook/assets/image (104).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (104) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now, we can dump out all the possible credentials with passwords!
 
-<figure><img src="../../.gitbook/assets/image (92) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (92).png" alt=""><figcaption></figcaption></figure>
 
 There's a lot of information that is dumped, so we can use curl to redirect the output into a file. Afterwards, we can extract the hashes and get cracking.
 
 There's like over 890 hashes here, so cracking all of them is impossible without melting my laptop. In this case, we could use crackstation to test out 20 hashes at a time. Then, I would check for the occurrence of the hash within the main account. After a while, I managed to crack one.
 
-<figure><img src="../../.gitbook/assets/image (100).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (100) (1).png" alt=""><figcaption></figcaption></figure>
 
 Analysis of the main file revealed that the users are&#x20;
 
@@ -77,7 +77,7 @@ Analysis of the main file revealed that the users are&#x20;
 
 So we have 4 users that are using the same password. Using Juliana's account, I was able to login to the website on snippet.htb
 
-<figure><img src="../../.gitbook/assets/image (102).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (102) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Adding Snippets
 
@@ -180,7 +180,7 @@ We probably need to have some form of XSS to access charlie's account to see som
 
 Looking at the repo collaborators, we can see that the user charlie is indeed a collaborator.
 
-<figure><img src="../../.gitbook/assets/image (96).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (96) (1).png" alt=""><figcaption></figcaption></figure>
 
 From here, we can think about how to implement an XSS attack. Looking at inject.js, we can see that it makes a request to a certain url and checks for the issues. When adding to the issues, we can see that a payload `test<test><img SRC="http://10.10.x.x./test.txt">` works, meaning it bypasses the inject.js checks. After a while, the issue is closed, and I assume the user Charlie is the one closing them.
 
@@ -204,7 +204,7 @@ Now, we can use this XSS to send us the information from charlie's repos. This c
 
 What this essentially does is this:
 
-<figure><img src="../../.gitbook/assets/image (95).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (95) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can view the callback:
 
@@ -214,7 +214,7 @@ When decoded from base64, we can see that charlie has a backup of his home direc
 
 <figure><img src="../../.gitbook/assets/image (122).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (94).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (94) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can save this file and proceed to access his private SSH keys.
 
@@ -264,9 +264,9 @@ Let's take a look at this database.
 
 We first need to portforward this MySQL Instance from the machine before moving on. We can do so with SSH using charlie's private key easily. We need to do this because the host does not have mysql...? Perhaps the creator included an extra step on purpose.
 
-<figure><img src="../../.gitbook/assets/image (101).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (101) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (119) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (119).png" alt=""><figcaption></figcaption></figure>
 
 Earlier, we found 4 users, and from there we can update the database such that one of those users becomes a manager. I picked letha, but any is fine. The reason being the cronjob is only changing the password of charlie and jean, so we should use other users.&#x20;
 
@@ -278,7 +278,7 @@ Then we can login as this user.
 
 The managers are able to verify users basically, which ties in to where the RCE lies.
 
-<figure><img src="../../.gitbook/assets/image (91).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (91) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can view the request and see how it verifies the user.
 
@@ -316,7 +316,7 @@ Early enumeration shows that there is a docker.sock in the /app/docker.sock dire
 
 In this machine, there's one critical vulnerability, of which is that the docker.sock is writable.
 
-<figure><img src="../../.gitbook/assets/image (107).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (107) (1).png" alt=""><figcaption></figcaption></figure>
 
 So we can enumerate further to find some docker exploits using curl.
 
@@ -360,6 +360,6 @@ Getting Shell:
 
 We can then grab the flag:
 
-<figure><img src="../../.gitbook/assets/image (110).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (110) (1).png" alt=""><figcaption></figcaption></figure>
 
 Really hard machine.
