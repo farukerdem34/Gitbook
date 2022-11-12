@@ -4,7 +4,7 @@ The Open Systems Interconnection (OSI) Model is a logical model that is used to 
 
 The OSI Model is structured in 7 layers as shown below:
 
-<figure><img src="../.gitbook/assets/image (107).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
 When traffic is routed from our computer to another device, it is first 'packed' from Layer 7 down to Layer 1 from the sender, and then flows from Layer 1 to Layer 7 on the recipient's machine. Each layer of the model would sometimes add headers to the packet about the sender and recipient.
 
@@ -107,7 +107,7 @@ Think about this layer as the actual Application itself, such as a browser, or a
 
 ## Summary
 
-<figure><img src="../.gitbook/assets/image (87).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 The OSI Model is extremely useful in troubleshooting. For example, if we have a malfunctioning router, we can check each layer, starting from the physical device, and then the ARP cache and go up the layers until we have identified and isolated the problem to fix.
 

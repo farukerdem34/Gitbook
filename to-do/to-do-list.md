@@ -18,15 +18,14 @@ So much to write, so little time...
   * [ ] Active Directory (20 machines)
   * [ ] Redo machines that have no writeups
 * Networks
-  * [ ] Introduction to Networks (what are routers)
-  * [ ] Subnet Counting, OSI Model, Addresses, Ports
+  * [x] Introduction to Networks (what are routers)
+  * [x] Subnet Counting, OSI Model, Addresses, Ports
   * [ ] Life cycle of Packet (ARP, DNS, Unicast vs Broadcast, Routing protocols)
   * [ ] OSPF, EIGRP, RIP, IS-IS
   * [ ] PKI + TLS vs SSL (Certificates)
   * [ ] DHCP + DNS
   * [ ] WEP, WPA, WPA2, WPA3, WPS (click button on printer to connect to wifi)
   * [ ] Pentesting each security protocol (IV brute force, Handshake packets etc.)
-  * [ ] SMB introduction
   * [ ] Common Flaws with SMB
   * [ ] Crackmapexec Brute Forcing
 * Buffer Overflow

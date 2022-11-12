@@ -54,6 +54,7 @@
 * [OSI Model](networks/osi-model.md)
 * [Packets](networks/packets/README.md)
   * [TCP / UDP](networks/packets/tcp-udp.md)
+  * [Duplex & Traffic](networks/packets/duplex-and-traffic.md)
   * [ARP](networks/packets/arp.md)
   * [Routing Protocols](networks/packets/routing-protocols.md)
 * [PKI, TLS / SSL](networks/pki-tls-ssl.md)
