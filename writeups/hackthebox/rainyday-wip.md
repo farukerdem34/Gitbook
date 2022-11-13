@@ -124,7 +124,7 @@ We can klook around this thing. Understanding that previously, there was an /api
 
 Now we can fuzz the /api endpoint more to hopefully find something new. After a long while, I did find a new endpoint at /api/healthcheck.
 
-<figure><img src="../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (15) (3).png" alt=""><figcaption></figcaption></figure>
 
 Visiting this page gave me this JSON object:
 
@@ -134,11 +134,11 @@ The last part is the most interesting because it contains some form of regex pat
 
 Was kinda right in this case, but it appears we are not authenticated.
 
-<figure><img src="../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (11) (3).png" alt=""><figcaption></figcaption></figure>
 
 We can try to grab the Cookie from the session earlier on the main website as gary, and it works.
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 So now we know there's an app.py, meaning there's also probably some kind of secret.py because this is a flask application.
 
@@ -202,7 +202,7 @@ Now that we are on jack's container, we can upload some form of pspy process mon
 
 What we see is this command:
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 Weird that the sleep is this long. We can investigate this process in the /proc directory.
 
@@ -210,17 +210,17 @@ Weird that the sleep is this long. We can investigate this process in the /proc 
 
 There's this root directory within the process, and when going into it we are presented with another Linux / directory. This would contain the user flag and also jack's actual home directory.
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (3).png" alt=""><figcaption></figcaption></figure>
 
 Also contains jack's private SSH key.
 
-<figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (9) (3).png" alt=""><figcaption></figcaption></figure>
 
 With this, we can finally SSH into the main machine as jack.
 
-<figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (13) (3).png" alt=""><figcaption></figcaption></figure>
 
-![](<../../.gitbook/assets/image (4).png>)
+<figure><img src="../../.gitbook/assets/image (4) (3).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -266,7 +266,7 @@ I found this page particularly useful:
 
 I utilised their method and managed to get the index for this. This was 144.
 
-<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8) (3).png" alt=""><figcaption></figcaption></figure>
 
 Right, so we need to somehow make use of this to import the os library. I could technically import one character each from each of the classes and then spell out 'import os', but that would be...very very long.
 
@@ -282,7 +282,7 @@ We can then get RCE as jack\_adm.
 
 After getting to jack\_adm, we can check sudo privileges again to see this:
 
-<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (10) (3).png" alt=""><figcaption></figcaption></figure>
 
 Another blind Sudo challenge in Python.  Except, all this does is hash passwords for us into Bcrypt format.
 
@@ -307,19 +307,65 @@ These were good reads:
 Anyways, what I understand is that Bcrypt has a maximum size of 72 bytes. This program that we are running checks for the length of the input, but not the size. Meaning, we can theoretically inputmore than 72 bytes.
 
 The issue with putting more than 72 bytes is that it would cause the password to be truncated. \
-The script should take our input and append it in front of a salt (generally salts come behind) and then encode the whole thing using Bcrypt. If we were to enter say, 70 bytes, leaving 1 byte for the salt and 1 byte null terminator, we may be able to find out one character of this salt and thus be able to sort of brute force out the salt to decrypt all other hashes.
+The script should take our input and append it in front of a salt (generally salts come behind) and then encode the whole thing using Bcrypt. It checks for length but not for the size of the input.
 
-Theoretically, we would know if this works should we always get a consistent hash for our exploit.
-
-I used an online UTF-8 generator to try and find a valid combiantion of characters that would work.
+I used an online UTF-8 generator to try and find a valid combiantion of characters that would suffice for testing.
 
 {% embed url="https://onlineutf8tools.com/generate-random-utf8" %}
 
-We need a total of 72 bytes, so 23 UTF 3-byte characters + 3 more regular ASCII characters might work. so we can generate out valid hashes as a result of this. The assumption here is that the SECRET does not change, and I'm hoping it doesn't.
+We need a total of 72 bytes, so 23 UTF 3-byte characters + 3 more regular ASCII characters might work. so we can generate out valid hashes as a result of this. In this case, we can start to find the salt that is being used.
 
-WIP! Coding out the script for exploitation to find the characters one by one again.
+Here are 2 instances of using UTF characters in hashing this algorithm with the machine's script.
 
+<figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
 
+Theoretically, because both inputs for these have 72 bytes as UTF-8 characters, if the salt is appended at the back, then these hashes are the same. The input of '123456' in the second attempt is truncated during the hashing algorithm. We can test it here. Notice how the 123456 is not present.
 
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
+So we need to somehow, find out the salt from this thing. We could theoretically generate an input of 71 bytes, and then leave the last character to the salt and repeatedly brute force all the possible characters one by one. So with each character we find, we need to edit our input accordingly to have 1 less byte and to fit the flag there.
 
+I tried making a quick script for this.
+
+```python
+#!/usr/bin/python3
+
+import bcrypt
+import string
+passwd = u'痊茼ﶉ呍ᑫ䞫빜逦ᒶ덋䊼鏁耳䢈筮鰽Ἀᒅaa' #randomly generated
+hashed_passwd = u'$2b$05$/vRnmg4ma.8Nkl4FBmWfze.ts9jKrY5tNqqoenp5WN3ZtHxRU8NmC' # taken from sudo as adm user
+allchars = string.printable
+flag = 'H34vyR41n'
+for c in allchars:
+	testpasswd = passwd + flag + c
+	if bcrypt.checkpw(testpasswd.encode('utf-8'),hashed_passwd.encode('utf-8')):
+		print("match at " + c)
+```
+
+This would output this:
+
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+What's interesting is that we are able to sort of drag out one character of the salt, which is H. The first character of this hash seems to not change, indicating that it was a consistent hash. This was really cool, and we are able to slowly pull out the rest of this hash.
+
+I didn't have the prowess (or patience) to code this thing out, so I brute forced it myself using this script.
+
+We are able to drag the next 2 characters out using this method.
+
+<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+
+Afterwards, we need to change our input to something that fits and allows me to drag out the next.  We can begin dragging this out and get the final salt. The script does not output it properly afterwards. So 'H34vyR41n' is the salt, and now we can crack the original hash for root we found earlier.
+
+<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+
+We can generate a wordlist with rockyou.txt with the new salt at the back.
+
+<figure><img src="../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+
+And we can crack this easily.
+
+<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+
+Then we can su to root and grab our flag.
+
+<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
