@@ -2,8 +2,8 @@
 
 ## 👋 Welcome!
 
-* [Security](README.md)
-* [About Me](welcome/about-me.md)
+* [Hello!](README.md)
+* [About me](welcome/about-me.md)
 
 ## ✅ To-Do
 
