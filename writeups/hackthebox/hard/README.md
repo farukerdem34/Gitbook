@@ -1,3 +1,3 @@
 # Hard
 
-Hard-rated machines. Long, and most of the time requires some custom script for automation of exploits. Uses hard to spot vulnerabilities, or simply doing things you would never think of doing. Very fun in general!&#x20;
+Hard-rated machines. Exploit of machine is longer and its a lot harder to spot vulnerabilities. Very fun in general!&#x20;
