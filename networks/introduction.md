@@ -18,7 +18,7 @@ There are a few terms that are used here.
 
 ### Routers
 
-<figure><img src="../.gitbook/assets/image (19).png" alt=""><figcaption><p>Routers</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (19) (2).png" alt=""><figcaption><p>Routers</p></figcaption></figure>
 
 I think most of us have seen this and are aware of it.
 
@@ -28,21 +28,21 @@ Within each device, there exists something called a Network Interface Card (NIC)
 
 ### Switches
 
-<figure><img src="../.gitbook/assets/image (22).png" alt=""><figcaption><p>Switches</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (22) (2).png" alt=""><figcaption><p>Switches</p></figcaption></figure>
 
 These are devices that basically connect different machines together via a cable, most commonly Ethernet. They have loads of ports for this purpose, and are generally the "middleman" in data transmissions. Here's an example of a network topology for switches:
 
-<figure><img src="../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (14) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Firewalls
 
 These look like switches, but they aren't.
 
-<figure><img src="../.gitbook/assets/image (13).png" alt=""><figcaption><p>Cisco Firewall</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (13) (2).png" alt=""><figcaption><p>Cisco Firewall</p></figcaption></figure>
 
 ### Network Topologies
 
-<figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (9) (2).png" alt=""><figcaption></figcaption></figure>
 
 This is how we represent networks in a company, sort of like a graph of nodes that have connections to one another. Take note of the symbols used!
 
@@ -52,6 +52,6 @@ Think of them like the destinations for packets to get to. These **are not phyis
 
 There are 65535 ports in total, and any of them can be open and listening. There are default ports for certain services, as shown here:
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 There's no need to memorize all 65535 ports, but knowing a few is good enough.

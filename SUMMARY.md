@@ -108,6 +108,7 @@
   * [Extension](writeups/hackthebox/extension.md)
   * [Flight](writeups/hackthebox/flight.md)
   * [Vessel](writeups/hackthebox/vessel.md)
+  * [RainyDay (WIP)](writeups/hackthebox/rainyday-wip.md)
   * [Acute](writeups/hackthebox/acute.md)
 * [Proving Grounds Practice](writeups/proving-grounds-practice/README.md)
   * [Page 1](writeups/proving-grounds-practice/page-1.md)

@@ -42,7 +42,7 @@ This endpoint takes a POST request, and some fuzzing of the login request using 
 
 When changing this endpoint to the /management/dump endpoint, we get a 400 response saying that we are missing arguments.
 
-<figure><img src="../../.gitbook/assets/image (109).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (109) (1).png" alt=""><figcaption></figcaption></figure>
 
 Based on my understanding of /dump endpoints and HTB creators, this thing should dump out a bunch of useful credentials should we find the right argumenst to enter. We have no other hints, so fuzzing this thing is the way forward it seems.
 
@@ -52,15 +52,15 @@ We can use wfuzz to fuzz out the two parameters we need, filtering the responses
 
 Now we have the first parameter, then we can fuzz the next. When checking request using Burp, we can see that now we have the string "Unknown tablename".&#x20;
 
-<figure><img src="../../.gitbook/assets/image (120).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (120) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then we can proceed to continue fuzzing the parameter with the new string. After a while, we find that "users" is the next valid value.
 
-<figure><img src="../../.gitbook/assets/image (104).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (104) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now, we can dump out all the possible credentials with passwords!
 
-<figure><img src="../../.gitbook/assets/image (92).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (92) (1).png" alt=""><figcaption></figcaption></figure>
 
 There's a lot of information that is dumped, so we can use curl to redirect the output into a file. Afterwards, we can extract the hashes and get cracking.
 
@@ -91,7 +91,7 @@ Once we post snippets, we can edit them, and we can also make them public for al
 
 I found this interesting because it referenced snippets by ID number. What's interesting is this was my first update, yet it was already the 3rd snippet posted. This tells me there is something hidden elsewhere. Upon changing this to 2, we can see a hidden snippet being posted by jean.
 
-<figure><img src="../../.gitbook/assets/image (106).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (106) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/image (143).png" alt=""><figcaption></figcaption></figure>
 
@@ -172,7 +172,7 @@ function check(str) {
 
 The filter portion seems to be missing the '<' and '>' character, and it blocks src and script, meaning that the next step would be an XSS of some kind. Looking at the users present on the Gitea instance, there is only one we are interested in, which is charlie.
 
-<figure><img src="../../.gitbook/assets/image (93).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (93) (1).png" alt=""><figcaption></figcaption></figure>
 
 We probably need to have some form of XSS to access charlie's account to see some private repos. Since charlie is the only other user, and there has been hints to exploit XSS, I guess Charlie views the page or a repository from time to time. We aren't allowed to use brackets for our XSS payload, so we need to keep that in mind.
 
@@ -180,7 +180,7 @@ We probably need to have some form of XSS to access charlie's account to see som
 
 Looking at the repo collaborators, we can see that the user charlie is indeed a collaborator.
 
-<figure><img src="../../.gitbook/assets/image (96).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (96) (1).png" alt=""><figcaption></figcaption></figure>
 
 From here, we can think about how to implement an XSS attack. Looking at inject.js, we can see that it makes a request to a certain url and checks for the issues. When adding to the issues, we can see that a payload `test<test><img SRC="http://10.10.x.x./test.txt">` works, meaning it bypasses the inject.js checks. After a while, the issue is closed, and I assume the user Charlie is the one closing them.
 
@@ -188,7 +188,7 @@ From here, we can think about how to implement an XSS attack. Looking at inject.
 
 So someone is indeed checking the issues, and we can exploit this fact. So now we need to somehow make charlie request for our page, and observation of Burp reqeusts implies we need to steal the CSRF token to access his hidden repositories.
 
-<figure><img src="../../.gitbook/assets/image (88).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (88) (1).png" alt=""><figcaption></figcaption></figure>
 
 After some more testing, I come across the eval.call XSS method through the page, and was able to include this within the issues to get a hitback on my netcat listener!
 
@@ -200,11 +200,11 @@ What this does is essentially is `fetch('http://10.10.x.x')` for Charlie to exec
 
 Now, we can use this XSS to send us the information from charlie's repos. This can be done using this payload:
 
-<figure><img src="../../.gitbook/assets/image (90).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (90) (1).png" alt=""><figcaption></figcaption></figure>
 
 What this essentially does is this:
 
-<figure><img src="../../.gitbook/assets/image (95).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (95) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can view the callback:
 
@@ -214,7 +214,7 @@ When decoded from base64, we can see that charlie has a backup of his home direc
 
 <figure><img src="../../.gitbook/assets/image (122).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (94).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (94) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can save this file and proceed to access his private SSH keys.
 
@@ -226,7 +226,7 @@ Now we can SSH in as Charlie!
 
 Jean has the user flag, and we can easily su to jean using the earlier credentials. **Important to note is that we could not SSH into jean in the first place was because our public key was denied access**.
 
-<figure><img src="../../.gitbook/assets/image (114).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (114) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -236,7 +236,7 @@ Upon checking ifconfig, we can see that there are loads of other network interfa
 
 I checked the open ports, and found that we had quite a few listening in.
 
-<figure><img src="../../.gitbook/assets/image (141).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (141) (1).png" alt=""><figcaption></figcaption></figure>
 
 Port 9000 has some service running on it. Afterwards, I ran a linpeas just to enumerate everything and see what files we have acceess to. Nothing much came from this, however.
 
@@ -250,7 +250,7 @@ Within Jean's home directory, there is this laravel application running somewher
 
 Within the PHP files, there had to be some form of vulnerability that would allow me to gain RCE, so I did a basic `grep -r <term>` for common PHP shells, like system, and shell_exec._ Shell\_exec worked, as I saw this:
 
-<figure><img src="../../.gitbook/assets/image (128).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (128) (1).png" alt=""><figcaption></figcaption></figure>
 
 Clearly takes user input from $domain and then just pings it. Very exploitable. We just need to find out how to execute this thing.
 
@@ -264,9 +264,9 @@ Let's take a look at this database.
 
 We first need to portforward this MySQL Instance from the machine before moving on. We can do so with SSH using charlie's private key easily. We need to do this because the host does not have mysql...? Perhaps the creator included an extra step on purpose.
 
-<figure><img src="../../.gitbook/assets/image (101).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (101) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (119).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (119) (1).png" alt=""><figcaption></figcaption></figure>
 
 Earlier, we found 4 users, and from there we can update the database such that one of those users becomes a manager. I picked letha, but any is fine. The reason being the cronjob is only changing the password of charlie and jean, so we should use other users.&#x20;
 
@@ -278,15 +278,15 @@ Then we can login as this user.
 
 The managers are able to verify users basically, which ties in to where the RCE lies.
 
-<figure><img src="../../.gitbook/assets/image (91).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (91) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can view the request and see how it verifies the user.
 
-<figure><img src="../../.gitbook/assets/image (113).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (113) (1).png" alt=""><figcaption></figcaption></figure>
 
 So how do we exploit this? We can either manipulate email we enter, or we can edit the database somehow.
 
-<figure><img src="../../.gitbook/assets/image (126).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (126) (1).png" alt=""><figcaption></figcaption></figure>
 
 However, based on this code, it uses some kind of APP\_SECRET, which I'm too lazy to find. So in this case, we can instead opt to add another user into the database with a command appended to the end in order to gain a reverse shell as the www-data.
 
@@ -304,7 +304,7 @@ Then we can find our user on the website.
 
 Once we hit validate, we will get a shell back as the application user.
 
-<figure><img src="../../.gitbook/assets/image (97).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (97) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Docker Escape
 
@@ -316,7 +316,7 @@ Early enumeration shows that there is a docker.sock in the /app/docker.sock dire
 
 In this machine, there's one critical vulnerability, of which is that the docker.sock is writable.
 
-<figure><img src="../../.gitbook/assets/image (107).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (107) (1).png" alt=""><figcaption></figcaption></figure>
 
 So we can enumerate further to find some docker exploits using curl.
 
@@ -354,12 +354,12 @@ curl -s -X POST --unix-socket /app/docker.sock "http://localhost/containers/test
 
 Getting Shell:
 
-<figure><img src="../../.gitbook/assets/image (87).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (87) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/image (121).png" alt=""><figcaption></figcaption></figure>
 
 We can then grab the flag:
 
-<figure><img src="../../.gitbook/assets/image (110).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (110) (1).png" alt=""><figcaption></figcaption></figure>
 
 Really hard machine.

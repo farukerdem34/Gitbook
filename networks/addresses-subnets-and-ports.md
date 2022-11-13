@@ -14,7 +14,7 @@ MAC addresses are sort of like the ID numbers of computers, and there are unique
 
 MAC addresses are structured like so:
 
-<figure><img src="../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (16) (2).png" alt=""><figcaption></figcaption></figure>
 
 The OUI would tell us who made the device, like Apple or Microsoft. The next part is tied to the NIC of the device, kind of like an ID. Each MAC address is unique and different across each device (that does not stop the spoofing of MAC Addresses!).
 
@@ -50,7 +50,7 @@ We can use the table below to see how it's done. Starting from the most signific
 
 Then, we check if 64 can fit within 45, and it cannot because 64 > 45, hence we put a 0. repeat this process until we get finish all the bits and the number is represented. We should get a table like this:
 
-<figure><img src="../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (17) (2).png" alt=""><figcaption></figcaption></figure>
 
 So basically, 173 = 10101101 in binary. This is an 8-bit number, meaning that it can only represent up to 256 or 2^8 numbers, maxing out at 11111111. For larger numbers, like 16 or 32-bit, they can be presented using more columns in the table.&#x20;
 
@@ -121,7 +121,7 @@ This was a temporary fix, and something else was in development to resolve this 
 
 IPv6 addresses are built different from IPv4 addresses. They were developed with the lack of IP addresses in mind, and as such look like this:
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (97).png" alt=""><figcaption></figcaption></figure>
 
 This uses hex numbers instead of octets like IPv4. Because of this, there are 2^128 possible addresses, which is about **340 trillion trillion trillion unique addresses**. Personally, I think that's enough.&#x20;
 
