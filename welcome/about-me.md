@@ -2,7 +2,11 @@
 
 ### Hello!
 
-My name is Rouvin. I like breaking stuff, and am really into cybersecurity.
+My name is Rouvin. I like breaking stuff, and am really into cybersecurity.&#x20;
+
+The point of this book is to document whatever I've done regarding cybersecurity for reference in future or just to look back upon. If you're reading this, I hope that you can learn something from here!&#x20;
+
+There's loads of free stuff on the Internet in general, and security is definitely part of that. I'd like to thank all the authors and experts that share knowledge online for everyone to learn from!
 
 ### Bio
 

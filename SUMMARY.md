@@ -3,7 +3,7 @@
 ## 👋 Welcome!
 
 * [Hello!](README.md)
-* [About me](welcome/about-me.md)
+* [About Me](welcome/about-me.md)
 
 ## ✅ To-Do
 

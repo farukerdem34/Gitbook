@@ -1,14 +1,22 @@
-# Security
+# Hello!
 
 This is just a compilation of notes and knowledge I gained from scouring the Internet, practicing, going for courses, interning and learning from school.&#x20;
 
-The point of this book is to document whatever I've done regarding cybersecurity for reference in future or just to look back upon. If you're reading this, I hope that you can learn something from here!&#x20;
+Here, you can find more information about security-related topics as follows:
 
-There's loads of free stuff on the Internet in general, and security is definitely part of that. I'd like to thank all the authors and experts that share knowledge online for everyone to learn from!
+* [A basic introduction to Cybersecurity and CTFs](broken-reference)
+* [Pentesting Methodologies](broken-reference)
+* [Web Security](broken-reference)
+* [Networking knowledge + Security](broken-reference)
+* [Buffer Overflows](broken-reference)
+* [Active Directory ](broken-reference)
+* Writeups
+  * [HTB](writeups/hackthebox/)
+  * [Proving Grounds Practice](writeups/proving-grounds-practice/)
 
-If you're looking into starting your security journey, take note that this book is not a rulebook. There's no right path to break into cybersecurity, find the one that works for you.&#x20;
+Click on the links to read more!
 
-**This will be updated as frequently as I can while juggling school work.**
+**This book will be updated as frequently as I can while juggling school work.**
 
 ## Disclaimer
 
