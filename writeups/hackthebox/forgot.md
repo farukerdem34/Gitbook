@@ -1,5 +1,7 @@
 ---
-description: Interseting Linux machine with exploitation of Forgot Password Mechanics
+description: >-
+  Interseting Linux machine with exploitation of Forgot Password Mechanics.
+  Also, TensorFlow Exploits.
 ---
 
 # Forgot
