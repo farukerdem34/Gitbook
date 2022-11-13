@@ -1,7 +1,7 @@
 ---
 description: >-
-  Interseting Linux machine with exploitation of Forgot Password Mechanics.
-  Also, TensorFlow Exploits.
+  Interseting Linux machine with basic exploitation of forgot password
+  mechanics. Usage of recent Tensorflow exploit for PE.
 ---
 
 # Forgot
@@ -10,15 +10,15 @@ description: >-
 
 We can start with an nmap scan:
 
-<figure><img src="../../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
 
 Then we can view Port 80:
 
-<figure><img src="../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (27) (2).png" alt=""><figcaption></figcaption></figure>
 
 When viewing the page source, we can find this part here that points towards a potential user to gain access to.
 
-<figure><img src="../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (28) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Forgot Password
 
@@ -26,7 +26,7 @@ I'm guessing here that the name of box has to do with this Forgot The Password m
 
 Probably done through sniffing or stealing cookies. When proxying traffic through Burp, we can see the following bits:
 
-<figure><img src="../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
 
 Interesting. So anyways, password reset machine are quite unique, because generally there would be someone clicking that link that is sent. This initial challenge reminds me of the PortSwigger Password Reset Poisoning Labs, so I'll be starting with that exploit path.
 
@@ -34,13 +34,13 @@ Interesting. So anyways, password reset machine are quite unique, because genera
 
 We probably need to somehow make this service send the email to our machine. So I changed the Host header to my machine's and started a listener port, and it worked.
 
-<figure><img src="../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (2).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 Then we can visit the reset password page and reset his password to whatever we want.
 
-<figure><img src="../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can then login as this robert user.
 
@@ -50,33 +50,33 @@ Take note that this machine is really weird, and the tokens used are always inva
 
 We can see the functionalities of this website, and perhaps get an RCE.
 
-<figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
 
 Looking at the tickets portion, I can see that there are some SSH credentials for a Jenkins machine on the backend. The tickets are sent to the administrator, which I think is a separate user.
 
-<figure><img src="../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (1).png" alt=""><figcaption></figcaption></figure>
 
 Anyways there seems to be an administrator on this website somewhere, and it's not robert. When looking around at the requests to see if we can find some hidden stuff, I managed to see how the website authenticates us, and its via a Authorization Basic cookie.
 
-<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (2).png" alt=""><figcaption></figcaption></figure>
 
 When taking a look around some more, I found this unique endpoint.
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (2).png" alt=""><figcaption></figcaption></figure>
 
 When trying to visit it, I just changed the authorization cookie to have the username as "admin" and it granted me access.
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
 
 Cool, we have credentials. `diego:dCb#1!x0%gjq`. Now we can SSH into the machine as diego.
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
 Running a quick sudo check, we can see that we have some ml\_security.pu script we can run.
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (2).png" alt=""><figcaption></figcaption></figure>
 
 Here's the full script.
 
@@ -247,7 +247,7 @@ All in all, rather interesting. So we wouuld need to input a malicious input int
 
 From here, we can first create a malicious script that would make us root. Make this executable.
 
-<figure><img src="../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
 
 Then we need to figure out how to include an input into the database such that we can get a score of >= .5.&#x20;
 
@@ -257,7 +257,7 @@ In the database, we also need to include the user, issue, link and the actual re
 
 Here's the payload I used:
 
-<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (2).png" alt=""><figcaption></figcaption></figure>
 
 ```sql
 insert into escalate values ("abc","abc","abc",'hello=exec("""\nimport os\nos.system("/tmp/shell.sh")\nprint("&ErrMsg=%3Cimg%20src=%22http://htb.com%22%20/%3E%3CSCRIPT%3Ealert%28%22xss%22%29%3C/SCRIPT%3E")""")');
@@ -265,4 +265,4 @@ insert into escalate values ("abc","abc","abc",'hello=exec("""\nimport os\nos.sy
 
 Then, we can run the security using sudo and receive a root shell.
 
-<figure><img src="../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>

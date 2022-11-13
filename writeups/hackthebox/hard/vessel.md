@@ -10,33 +10,33 @@ description: >-
 
 As usual, an nmap scan to start:
 
-<figure><img src="../../.gitbook/assets/image (178).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (178).png" alt=""><figcaption></figcaption></figure>
 
 ### Webpage
 
 Pretty standard webpage. Has a login page and a few other categories that could be vulnerable.
 
-<figure><img src="../../.gitbook/assets/image (198).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (198).png" alt=""><figcaption></figcaption></figure>
 
 When investigating the login page, we can see that it allows us to create an account.
 
-<figure><img src="../../.gitbook/assets/image (170).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (170).png" alt=""><figcaption></figcaption></figure>
 
 We can create a quick account for testing purposes.
 
-<figure><img src="../../.gitbook/assets/image (217).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (217).png" alt=""><figcaption></figcaption></figure>
 
 However, the function seems to not be made available, and throws an error. When analysing the traffic generated, we can see that there is an /api backend.
 
-<figure><img src="../../.gitbook/assets/image (240).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (240).png" alt=""><figcaption></figcaption></figure>
 
 From here, we should gobust the page to find other endpoints that could reveal some credentials or other vulnerabilities. Using feroxbuster, I was able to find a `/dev` endpoint.
 
-<figure><img src="../../.gitbook/assets/image (223).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (223).png" alt=""><figcaption></figcaption></figure>
 
 However, this was nothing interesting. Other than that, I also found some Git Repository folders within the website through feroxbuster recursive search. This was through finding the .git folder and seeing that it does exist on the page.
 
-<figure><img src="../../.gitbook/assets/image (184).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (184).png" alt=""><figcaption></figcaption></figure>
 
 We can then use `git-dumper` to pull these files.
 
@@ -44,7 +44,7 @@ We can then use `git-dumper` to pull these files.
 
 After retrieving the files, we can proceed with some source code analysis.
 
-<figure><img src="../../.gitbook/assets/image (244).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (244).png" alt=""><figcaption></figcaption></figure>
 
 ### Source Code Analysis
 
@@ -52,13 +52,13 @@ The first thing I was interested in was the login page, and if it could be explo
 
 From the source code in the `/routes` directory, we can see some SQL queries being passed to the backend API.
 
-<figure><img src="../../.gitbook/assets/image (168).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (168).png" alt=""><figcaption></figcaption></figure>
 
 No input sanitising, but its not vulnerable to SQL Injection attacks.&#x20;
 
 From here, we can look at the logs to see if there were previous iterations of this file and if the mechanism was changed.
 
-<figure><img src="../../.gitbook/assets/image (177).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (177).png" alt=""><figcaption></figcaption></figure>
 
 We can see that the login was indeed changed, and perhaps this could be vulnerable to SQL Injection after all. Since this was a node.js website, we can start researching for node.js related SQL Injections.
 
@@ -70,29 +70,29 @@ The exploit for this would involve putting in a string that gets treated as an O
 
 Here's the payload used:
 
-<figure><img src="../../.gitbook/assets/image (234).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (234).png" alt=""><figcaption></figcaption></figure>
 
 With this, we can login to the admin panel!
 
-<figure><img src="../../.gitbook/assets/image (172).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (172).png" alt=""><figcaption></figcaption></figure>
 
 ### Open Web Analytics&#x20;
 
 When looking around the admin panel, I didn't find much. However, in the top right corner of the page there was an analytics button that brings us to a new page.
 
-<figure><img src="../../.gitbook/assets/image (149).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (149).png" alt=""><figcaption></figcaption></figure>
 
 This brought me to a new domain called `openwebanalytics.vessel.htb`.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (221).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (221).png" alt=""><figcaption></figcaption></figure>
 
 A quick check on the page source reveals this is **version 1.7.3**. A bit of digging around newer exploits revealed that there is an RCE exploit available here.
 
 {% embed url="https://github.com/garySec/CVE-2022-24637" %}
 
-<figure><img src="../../.gitbook/assets/image (194).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (194).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (169).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (169).png" alt=""><figcaption></figcaption></figure>
 
 We now have gained access to the machine.
 
@@ -102,15 +102,15 @@ We now have gained access to the machine.
 
 Now that we are www-data, we should check for what users are present. Within the /home directory, there are 2 users named **ethan** and **steven**.
 
-<figure><img src="../../.gitbook/assets/image (175).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (175).png" alt=""><figcaption></figcaption></figure>
 
 We cannot access ethan's directory, but we can access steven's and see that he has a binary within his home directory that generates passwords.
 
-<figure><img src="../../.gitbook/assets/image (181).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (181).png" alt=""><figcaption></figcaption></figure>
 
 Interestingly, there's also a hidden file named .notes that has a .pdf.
 
-<figure><img src="../../.gitbook/assets/image (215).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (215).png" alt=""><figcaption></figcaption></figure>
 
 We can transfer both these files into our machine and begin our analysis.
 
@@ -120,13 +120,13 @@ The PDF seems to be password protected, amd I'm guessing the password is either 
 
 The screenshot reveals to us how many characters are this pdf, of which there are 32.
 
-<figure><img src="../../.gitbook/assets/image (197).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (197).png" alt=""><figcaption></figcaption></figure>
 
 We would first need to decompile this binary to understand how it functions. In order to do this, we can try to find out what compiled it.
 
 When doing strings on it, we can see the last few lines seems to indicate that a Python based compiler was used.
 
-<figure><img src="../../.gitbook/assets/image (228).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (228).png" alt=""><figcaption></figcaption></figure>
 
 We can use this tool to retrieve the bytecode from the binary.
 
@@ -134,7 +134,7 @@ We can use this tool to retrieve the bytecode from the binary.
 
 From this tool, we can get our loads of files from this one binary.
 
-<figure><img src="../../.gitbook/assets/image (211).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (211).png" alt=""><figcaption></figcaption></figure>
 
 We can use another decompiler to extract code from the .pyc file into readable python code. This can be done using uncompyle6.
 
@@ -142,15 +142,15 @@ We can use another decompiler to extract code from the .pyc file into readable p
 
 There was some difficulty in making this work due to incompatible Python versions, but there are a lot of releases that are comptaible with the newer Python versions.
 
-<figure><img src="../../.gitbook/assets/image (187).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (187).png" alt=""><figcaption></figcaption></figure>
 
 Now, we can take a look at how this application generates its random passwords, and if we can possibly create our own wordlist and brute force the password out. Firstly, we can see this thisi binary uses the PySide2.Qt library to generate its passwords.
 
-<figure><img src="../../.gitbook/assets/image (232).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (232).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can take a look at the actual password generation.
 
-<figure><img src="../../.gitbook/assets/image (237).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (237).png" alt=""><figcaption></figcaption></figure>
 
 With this, we can craft a script to generate passwords for us.
 
@@ -208,21 +208,21 @@ I tried this for really, really long and only then managed to find the password.
 
 This is the password: YG7Q7RDzA+q\&ke\~MJ8!yRzoI^VQxSqSS. For some reason pdfcrack appends its own stuff at the end.
 
-<figure><img src="../../.gitbook/assets/image (179).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (179).png" alt=""><figcaption></figcaption></figure>
 
 Anyways, once we have this password, we can view the PDF and see the password for steven.
 
-<figure><img src="../../.gitbook/assets/image (139).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (139).png" alt=""><figcaption></figcaption></figure>
 
 We can then SSH in as Ethan.
 
-<figure><img src="../../.gitbook/assets/image (108).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (108).png" alt=""><figcaption></figcaption></figure>
 
 ## Root Shell
 
 When running linpeas.sh, we can find this SUID binary called `pinns`.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (89) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (89) (1).png" alt=""><figcaption></figcaption></figure>
 
 Again. researching on more recent vulnerabilities led me to this:&#x20;
 
@@ -238,7 +238,7 @@ In a new directory for the machine, we can include a simple script that would ma
 
 Then, we can execute these commands:
 
-<figure><img src="../../.gitbook/assets/image (116).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (116).png" alt=""><figcaption></figcaption></figure>
 
 This would spawn a container for us to use for the core dump, and we would need to append something to the **mount** section of config.json: (basically setting the configuration of the container we generate with runc)
 
@@ -255,7 +255,7 @@ This would spawn a container for us to use for the core dump, and we would need 
 
 Then, we can run our container and spawn in as root for it.
 
-<figure><img src="../../.gitbook/assets/image (136).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (136).png" alt=""><figcaption></figcaption></figure>
 
 We can configure our container to execute our malicious script using pinns, and then configure the container such that we get a core dump.
 
@@ -272,5 +272,5 @@ kill -SIGSEGV <PID_for_tail>
 
 Afterwards, we should see our script be executed and we can get a root shell using `bash -p`.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (125).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (125).png" alt=""><figcaption></figcaption></figure>
 
