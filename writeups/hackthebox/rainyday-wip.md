@@ -114,17 +114,17 @@ We also need to add the correct domain to our hosts file.
 
 Then we can connect to the dev portal.
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Dev Portal
 
 We can klook around this thing. Understanding that previously, there was an /api endpoint being used, I decided to look there again.
 
-<figure><img src="../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (17) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now we can fuzz the /api endpoint more to hopefully find something new. After a long while, I did find a new endpoint at /api/healthcheck.
 
-<figure><img src="../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (15) (1).png" alt=""><figcaption></figcaption></figure>
 
 Visiting this page gave me this JSON object:
 
@@ -134,11 +134,11 @@ The last part is the most interesting because it contains some form of regex pat
 
 Was kinda right in this case, but it appears we are not authenticated.
 
-<figure><img src="../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can try to grab the Cookie from the session earlier on the main website as gary, and it works.
 
-<figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 So now we know there's an app.py, meaning there's also probably some kind of secret.py because this is a flask application.
 
@@ -218,7 +218,7 @@ Also contains jack's private SSH key.
 
 With this, we can finally SSH into the main machine as jack.
 
-<figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -234,13 +234,13 @@ I wasn't sure what safe\_python was, but it looked to be some kind of binary. I 
 
 I think this executes scripts of some kind, because upon creating some fake file, I saw this:
 
-<figure><img src="../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (20) (1).png" alt=""><figcaption></figcaption></figure>
 
 There's an exec( ) function being called, which is always interesting. This binary seems to execute python code within a set environment or something. My guess is that we need to create a python script that would execute to get us a shell as jack\_adm.
 
 The next few tests confirms this:
 
-<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 There seem to be some keywords being filtered out, most notably 'import' because I cannot run anything that has import within it.&#x20;
 
@@ -282,11 +282,11 @@ We can then get RCE as jack\_adm.
 
 After getting to jack\_adm, we can check sudo privileges again to see this:
 
-<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
 
 Another blind Sudo challenge in Python.  Except, all this does is hash passwords for us into Bcrypt format.
 
-<figure><img src="../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (18) (1).png" alt=""><figcaption></figcaption></figure>
 
 This is, without question, similar to the initial hashes we found in the website. My guess is, we need to crack the root hash we found a lot earlier to get get a root shell via SSH.&#x20;
 
@@ -317,11 +317,11 @@ We need a total of 72 bytes, so 23 UTF 3-byte characters + 3 more regular ASCII 
 
 Here are 2 instances of using UTF characters in hashing this algorithm with the machine's script.
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
 
 Theoretically, because both inputs for these have 72 bytes as UTF-8 characters, if the salt is appended at the back, then these hashes are the same. The input of '123456' in the second attempt is truncated during the hashing algorithm. We can test it here. Notice how the 123456 is not present.
 
-<figure><img src="../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
 
 So we need to somehow, find out the salt from this thing. We could theoretically generate an input of 71 bytes, and then leave the last character to the salt and repeatedly brute force all the possible characters one by one. So with each character we find, we need to edit our input accordingly to have 1 less byte and to fit the flag there.
 
@@ -344,7 +344,7 @@ for c in allchars:
 
 This would output this:
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
 
 What's interesting is that we are able to sort of drag out one character of the salt, which is H. The first character of this hash seems to not change, indicating that it was a consistent hash. This was really cool, and we are able to slowly pull out the rest of this hash.
 
@@ -352,20 +352,20 @@ I didn't have the prowess (or patience) to code this thing out, so I brute force
 
 We are able to drag the next 2 characters out using this method.
 
-<figure><img src="../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, we need to change our input to something that fits and allows me to drag out the next.  We can begin dragging this out and get the final salt. The script does not output it properly afterwards. So 'H34vyR41n' is the salt, and now we can crack the original hash for root we found earlier.
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
 
 We can generate a wordlist with rockyou.txt with the new salt at the back.
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
 
 And we can crack this easily.
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
 
 Then we can su to root and grab our flag.
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
