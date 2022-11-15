@@ -20,7 +20,7 @@ So much to write, so little time...
 * Networks
   * [x] Introduction to Networks (what are routers)
   * [x] Subnet Counting, OSI Model, Addresses, Ports
-  * [ ] Life cycle of Packet (ARP, DNS, Unicast vs Broadcast, Routing protocols)
+  * [x] Life cycle of Packet (ARP, DNS, Unicast vs Broadcast, Routing protocols)
   * [ ] OSPF, EIGRP, RIP, IS-IS
   * [ ] PKI + TLS vs SSL (Certificates)
   * [ ] DHCP + DNS
