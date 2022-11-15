@@ -7,7 +7,7 @@
 
 ## ✅ To-Do
 
-* [Stuff Left](to-do/stuff-left.md)
+* [To-Do LIst](to-do/to-do-list.md)
 
 ## 🔐 What is Security?
 
