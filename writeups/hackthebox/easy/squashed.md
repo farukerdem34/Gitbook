@@ -20,7 +20,7 @@ Seeing that there are loads of unknown ports, I want to enumerate what services 
 
 Seeing that port 111 is running the NFS service, I want to see what files are being shared on the machine. We can do so using showmount.
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (344).png" alt=""><figcaption></figcaption></figure>
 
 Interesting directories to make public. We can mount these directories to view what's within them. Remember that mount requires sudo privileges.
 
