@@ -304,28 +304,17 @@ These were good reads:
 
 {% embed url="https://www.mscharhag.com/software-development/bcrypt-maximum-password-length" %}
 
-Anyways, what I understand is that Bcrypt has a maximum size of 72 bytes. This program that we are running checks for the length of the input, but not the size. Meaning, we can theoretically inputmore than 72 bytes.
-
-The issue with putting more than 72 bytes is that it would cause the password to be truncated. \
-The script should take our input and append it in front of a salt (generally salts come behind) and then encode the whole thing using Bcrypt. It checks for length but not for the size of the input.
+Anyways, what I understand is that Bcrypt has a maximum size of 72 bytes. This program that we are running checks for the length of the input, but not the size. Meaning, we can theoretically input more than 72 bytes. When we input more than 72 bytes, the string that gets hashed is truncated at the 72nd byte. This means that the salt, which is normally appended at the back, would get removed.
 
 I used an online UTF-8 generator to try and find a valid combiantion of characters that would suffice for testing.
 
 {% embed url="https://onlineutf8tools.com/generate-random-utf8" %}
 
-We need a total of 72 bytes, so 23 UTF 3-byte characters + 3 more regular ASCII characters might work. so we can generate out valid hashes as a result of this. In this case, we can start to find the salt that is being used.
-
-Here are 2 instances of using UTF characters in hashing this algorithm with the machine's script.
+Here are 2 instances of using UTF characters in hashing this algorithm with the machine's script. If you were to verify these two hashes, they would be identical. The 123456 is not hashed in the end, because we have entered more than 72 bytes of data.&#x20;
 
 <figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
 
-Theoretically, because both inputs for these have 72 bytes as UTF-8 characters, if the salt is appended at the back, then these hashes are the same. The input of '123456' in the second attempt is truncated during the hashing algorithm. We can test it here. Notice how the 123456 is not present.
-
-<figure><img src="../../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
-
-So we need to somehow, find out the salt from this thing. We could theoretically generate an input of 71 bytes, and then leave the last character to the salt and repeatedly brute force all the possible characters one by one. So with each character we find, we need to edit our input accordingly to have 1 less byte and to fit the flag there.
-
-I tried making a quick script for this.
+We could theoretically generate an input of 71 bytes, and then leave the last character to the salt and repeatedly brute force all the possible characters one by one. So with each character we find, we need to edit our input accordingly to have 1 less byte and to fit the flag there. I quickly created a script to test this, and this was the final result:
 
 ```python
 #!/usr/bin/python3
@@ -342,21 +331,19 @@ for c in allchars:
 		print("match at " + c)
 ```
 
-This would output this:
+This would output something like this:
 
 <figure><img src="../../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
 
-What's interesting is that we are able to sort of drag out one character of the salt, which is H. The first character of this hash seems to not change, indicating that it was a consistent hash. This was really cool, and we are able to slowly pull out the rest of this hash.
+H is the first character of the salt. Repeated tests of this script shows that the first character of this hash does not change, indicating the salt is static and not randomly generated. This was really cool, and we are able to slowly pull out the rest of this hash.
 
-I didn't have the prowess (or patience) to code this thing out, so I brute forced it myself using this script.
+I didn't have the prowess (or patience) to automate the whole process, so I brute forced it myself using this script.
 
-We are able to drag the next 2 characters out using this method.
+We can keep dragging out the next few characters by changing the hashed password and the plaintext password, removing 1 byte at a time and adding one to our flag variable.&#x20;
 
 <figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
-Afterwards, we need to change our input to something that fits and allows me to drag out the next.  We can begin dragging this out and get the final salt. The script does not output it properly afterwards. So 'H34vyR41n' is the salt, and now we can crack the original hash for root we found earlier.
-
-<figure><img src="../../../.gitbook/assets/image (20) (2).png" alt=""><figcaption></figcaption></figure>
+'H34vyR41n' is the salt, and now we can crack the original hash for root we found earlier.
 
 We can generate a wordlist with rockyou.txt with the new salt at the back.
 
