@@ -52,7 +52,9 @@ These protocols serve the same purpose as distance vector protocols, but they do
 
 These protocols converge a lot faster (meaning all routers are on same page faster) and send updates using multicast addresses. They also require more CPU and RAM usage and can be significantly harder to configure.
 
-In general, they rely on 3 tables:
+### OSPF
+
+OSPF is a non-proprietary routing protocols (which means any brand router can run it).  In general, OSPF relies on 3 tables:
 
 * Neighbour Table
   * Table of other routers that are running the same routing protocol.&#x20;
@@ -61,6 +63,3 @@ In general, they rely on 3 tables:
 * Routing Table
   * Stores the best routes for each path
 
-### OSPF
-
-OSPF is a non-proprietary routing protocols (which means any brand router can run it). How OSPF functions is through the use of&#x20;
