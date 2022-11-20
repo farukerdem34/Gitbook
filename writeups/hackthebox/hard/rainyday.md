@@ -138,7 +138,7 @@ Was kinda right in this case, but it appears we are not authenticated.
 
 We can try to grab the Cookie from the session earlier on the main website as gary, and it works.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 So now we know there's an app.py, meaning there's also probably some kind of secret.py because this is a flask application.
 
@@ -220,7 +220,7 @@ With this, we can finally SSH into the main machine as jack.
 
 <figure><img src="../../../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -341,7 +341,7 @@ I didn't have the prowess (or patience) to automate the whole process, so I brut
 
 We can keep dragging out the next few characters by changing the hashed password and the plaintext password, removing 1 byte at a time and adding one to our flag variable.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (3).png" alt=""><figcaption></figcaption></figure>
 
 'H34vyR41n' is the salt, and now we can crack the original hash for root we found earlier.
 

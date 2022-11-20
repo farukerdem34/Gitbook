@@ -14,7 +14,7 @@ We begin with another Nmap scan.
 
 Seeing that there are loads of unknown ports, I want to enumerate what services are running on those with an in-depth nmap scan. The rest of the ports are running RPC stuff, which is kind of related to the NFS services.
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### NFS
 
@@ -24,13 +24,13 @@ Seeing that port 111 is running the NFS service, I want to see what files are be
 
 Interesting directories to make public. We can mount these directories to view what's within them. Remember that mount requires sudo privileges.
 
-<figure><img src="../../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (3).png" alt=""><figcaption></figcaption></figure>
 
 ### Ross Directory
 
 Within the user's directory, we can find this Keepass database here.
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (3).png" alt=""><figcaption></figcaption></figure>
 
 This file seems to be encrypted with a password when trying to use keepassx to access its contents.
 
@@ -58,7 +58,7 @@ Right, so NFS here does not have any authorization or password required to acces
 
 So we can do these commands to create a new user with a fake UID.
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then we can SU to this user and view the directory again.
 
@@ -76,7 +76,7 @@ With this, we can easily get a reverse shell as this alex user.&#x20;
 
 <figure><img src="../../../.gitbook/assets/image (97).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (3).png" alt=""><figcaption></figcaption></figure>
 
 We can grab the user flag from this alex user.
 
@@ -88,7 +88,7 @@ We can run a linPEAS to enumerate for us. From the output, we see don't really s
 
 As Ross, we don't have the 'rw' options, meaning we can't do much even if we impersonate him. A quick check on who's logged on reveals ross is logged on.
 
-<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (3).png" alt=""><figcaption></figcaption></figure>
 
 ### Remote Screenshot via x11
 
@@ -102,7 +102,7 @@ So I learnt Xauthority files are used to store credentials to authenticate to a 
 
 Firstly, we can transfer the file to the alex user via Base64.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20) (3).png" alt=""><figcaption></figcaption></figure>
 
 I found the exploit easy thanks to these references:
 
@@ -114,7 +114,7 @@ I found the exploit easy thanks to these references:
 
 Firstly, export the file to env variables.
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (3).png" alt=""><figcaption></figcaption></figure>
 
 Then take a screeshot using xwd.
 
