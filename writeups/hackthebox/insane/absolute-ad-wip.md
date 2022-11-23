@@ -47,7 +47,7 @@ When testing this for AS-REP Roasting, it worked!
 
 Then we can crack this hash.
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (4).png" alt=""><figcaption></figcaption></figure>
 
 ### Retrieving Tickets
 
@@ -63,7 +63,7 @@ I managed to retrieve a ticket using getTGT. We can then export this.
 
 We can attempt kerberoasting the machine to try and get some kind of service ticket using the credentials using GetUserSPNs. The output using the DC Domain is below:
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 We can fix the clock skew issue pretty easily.
 
@@ -83,12 +83,46 @@ Kerberoasting reveals that there are no SPNs to roast. Instead, we can use this 
 
 Really interesting output. We have found another user and credential!
 
-### svc\_smb
+### svc\_smb & Hounding
 
 Running the same process, we can retrieve another ticket.
 
 <figure><img src="../../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
 
-There was no kerberoasting or other things that could be done at this point. One last option was to run Bloodhound on a Windows machine to authenticate via importing this ticket, and then loading it in memory to attack this machine. This was a plausible solution, but too long for now.&#x20;
+Interesting, now that we have a ticket, we can export this. I found that we can access shares from the DC using this ticket to authenticate ourselves.
 
-WIP! Getting the tools ready.
+<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+
+We can check out the 'Shared' share to find some interesting files.
+
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+Interesting!  The program here seems to be some form of script that creates the binary.
+
+```bash
+#!/bin/bash
+
+nim c -d:mingw --app:gui --cc:gcc -d:danger -d:strip $1
+```
+
+Poking around the shares, we don't seem to get much from it. I could decompiled the binary, and perhaps I could find a password there.&#x20;
+
+The next step was to use Bloodhound, since we had credentials and a ticket.
+
+<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+{% embed url="https://github.com/jazzpizazz/BloodHound.py-Kerberos" %}
+
+Now we just need to fire up bloodhound and neo4j to view this data in a neat format. Bloodhound reveals a few users that are significant.&#x20;
+
+<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
+Out of all of these users, m.lovegod has the most privileges. The user owns the Network Audit group. This group has GenericWrite over the WinRM\_User, which I suspect is where the user flag would be. So our exploit path is clear.&#x20;
+
+<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+
+We now need to somehow get a ticket from this m.lovegod user, or find his credentials.&#x20;
+
+### Stuck
+
+I was stuck here for days, trying to find potential credentials and stuff for this user, but I could not find it at all anywhere.&#x20;
