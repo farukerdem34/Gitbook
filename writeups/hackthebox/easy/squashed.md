@@ -66,7 +66,7 @@ Then we can SU to this user and view the directory again.
 
 Notice how the permissions have changed! We can now access the /var/www/html directory on the website. Reading the .htaccess file, it seems that PHP files are executed here.
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (3).png" alt=""><figcaption></figcaption></figure>
 
 From here, we can move a webshell into this directory and confirm we have RCE on this website.&#x20;
 

@@ -114,7 +114,7 @@ We also need to add the correct domain to our hosts file.
 
 Then we can connect to the dev portal.
 
-<figure><img src="../../../.gitbook/assets/image (3) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Dev Portal
 
