@@ -14,5 +14,5 @@ There's loads of free stuff on the Internet in general, and security is definite
 * Certifications: **OSCP, eJPT, CCNA, Security+.**&#x20;
   * Goal for 2023: **OSWE and Bug Bounties (with writeups)**&#x20;
 * I can speak English and Chinese (although the latter isn't the best).
-* I used to take part in a CTFs with the team Social Engineering Experts, but gradually shifted towards pentesting and hacking through rooting machines.
+* I used to take part in a CTFs, but gradually shifted towards pentesting and hacking through rooting machines as I found them more fun and practical.&#x20;
 * I really enjoy learning new techniques regarding cybersecurity and breaking rules.

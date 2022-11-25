@@ -1,6 +1,6 @@
 # Hello!
 
-This is just a compilation of notes and knowledge I gained from scouring the Internet, practicing, going for courses, interning and learning from school.&#x20;
+This is just a compilation of notes and knowledge I gained from scouring the Internet, self-practicing, going for courses, interning and learning from college. Also serves as a small portfolio for my skills.
 
 Here, you can find more information about security-related topics as follows:
 
@@ -13,8 +13,6 @@ Here, you can find more information about security-related topics as follows:
 * Writeups
   * [HTB](writeups/hackthebox/)
   * [Proving Grounds Practice](writeups/proving-grounds-practice/)
-
-Click on the links to read more!
 
 **This book will be updated as frequently as I can while juggling school work.**
 

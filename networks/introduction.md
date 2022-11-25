@@ -8,7 +8,7 @@ The knowledge here is based off on the Cisco Certified Network Associate (CCNA) 
 
 I've heard the stuff covered in CCNA is similar to CS2105, Introduction to Computer Networks minus all the proprietary technlogies.&#x20;
 
-If you want to go for the CCNA course or learn more, I **highly recommend Neil Anderson's Udemy CCNA Course.** He explains the topics really well, and it comes with some hands-on labs to test your concepts!
+If you want to go for the CCNA course or learn more, I **highly recommend Neil Anderson's Udemy CCNA Course.** He explains the topics really well, and it comes with some hands-on labs to test your concepts! Networking can be a bit dry, but he makes it really interesting.
 
 {% embed url="https://www.udemy.com/course/ccna-complete/" %}
 
