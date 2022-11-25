@@ -68,7 +68,7 @@ Unconstrained delegation is a privilege that can be assigned to a user. **When a
 
 This means the ticket can be used to sort of impersonate the authenticated user, and access other services on that user's behalf. An example use case is when a database admin can log in to any computer to retrieve information and manage the database. The ticket would then be automatically cached into the memory of that computer the user uses.
 
-Naturally, this isn't secure, because someone with unauthorized acccess can basically have a TGT to crack immediately, and would be able to decipher user passwords.
+Naturally, this isn't secure, because someone with unauthorized acccess can basically have a TGT to crack immediately, and would be able to decipher user passwords. Either that or they can Pass The Ticket and be able to do other stuff as that user.&#x20;
 
 {% code title="Enumeration" overflow="wrap" %}
 ```powershell
@@ -227,7 +227,16 @@ Make sure that your password is complex enough, so in the case whereby your tick
 
 ### Check Privileges <a href="#check-privileges" id="check-privileges"></a>
 
-Ensure that correct privileges are maintained across all objects, so as to avoid the use case where compromised users are able to request for tickets or whatever
+Ensure that correct privileges are maintained across all objects, so as to avoid the use case where compromised users are able to request for tickets or whatever.&#x20;
+
+To prevent AS-REP Roasting in particular, Kerberos PreAuth must be enabled on the servers to prevent any user from requesting tickets without credentials. This can be done using the following:
+
+```powershell
+Get-ADUser -Filter 'useraccountcontrol -band 4194304' -Properties useraccountcontrol | Format-Table name
+(Get-ACL "AD:\$((Get-ADUser -Filter 'useraccountcontrol -band 4194304').distinguishedname)").access
+```
+
+Apart from enabling these, you would also want to check if **they are disabled at all**. This can be done through monitoring Event **4738 or 5136.** These events check for changes within the Preauth configuration.&#x20;
 
 ### Update Kerberos <a href="#update-kerberos" id="update-kerberos"></a>
 
@@ -236,6 +245,12 @@ Self-explanatory. There are new CVEs being developed for Kerberos every year, so
 ### Inspect Kerberos Traffic <a href="#inspect-kerberos-traffic" id="inspect-kerberos-traffic"></a>
 
 When an attacker is abusing silver or golden tickets, the logs would generally show that they are repeatedly requesting tickets and accessing unusual places. Firewalls with heuristics should be able to flag this out and block access, or lock the account until a sysadmin can verify what's going on.
+
+### Enable Kerberos PreAuth
+
+This would basically block all AS-REP Roasting and prevent the requesting of tickets without a password.&#x20;
+
+###
 
 ## References <a href="#references" id="references"></a>
 

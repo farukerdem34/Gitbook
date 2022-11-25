@@ -114,7 +114,7 @@ We also need to add the correct domain to our hosts file.
 
 Then we can connect to the dev portal.
 
-<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Dev Portal
 
@@ -138,7 +138,7 @@ Was kinda right in this case, but it appears we are not authenticated.
 
 We can try to grab the Cookie from the session earlier on the main website as gary, and it works.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 So now we know there's an app.py, meaning there's also probably some kind of secret.py because this is a flask application.
 

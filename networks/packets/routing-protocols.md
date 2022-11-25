@@ -101,7 +101,7 @@ OSPF uses 'areas' to send information. This idea was used because, not every sin
 
 As such, I like to think that OSPF appoints an 'area in-charge' router that is in charge of linking areas together. This router is normally the newest or fastest router within a specified area, that would be responsible for updataing information between areas as required. This way, older routers don't need to process so much data. We can visualise areas using this:
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 So within Area 0, which is known as the backbone area, we can see that R3 is in charge of ensuring that updates are sent between the Areas. R3 is called the **Area Border Router** (basically the router IC!) as it is present in two areas simultaneously.&#x20;
 
@@ -147,7 +147,7 @@ We will often see these two terms for EIGRP routing
 
 To visualise, we can use this:
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 Take note that EIGRP has been configured on both of these networks. So R1 would see that the RD is 28160 to the host. The FD would be 30720, which is the actual distance between the paths.&#x20;
 
