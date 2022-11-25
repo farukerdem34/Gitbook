@@ -58,7 +58,7 @@ Right, so NFS here does not have any authorization or password required to acces
 
 So we can do these commands to create a new user with a fake UID.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then we can SU to this user and view the directory again.
 

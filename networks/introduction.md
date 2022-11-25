@@ -14,13 +14,13 @@ If you want to go for the CCNA course or learn more, I **highly recommend Neil A
 
 ## Terminologies
 
-There are a few terms that are used here.
+There are a few terms that are used, and I will attempt to explain what they are.&#x20;
 
 ### Routers
 
 <figure><img src="../.gitbook/assets/image (19) (2).png" alt=""><figcaption><p>Routers</p></figcaption></figure>
 
-I think most of us have seen this and are aware of it.
+I think most of us have seen this and are aware of what it is. Routers route traffic between networks.&#x20;
 
 ### NIC
 

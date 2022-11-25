@@ -4,7 +4,7 @@ description: >-
   exploitable vulnerabilities.
 ---
 
-# Acute
+# Acute (AD)
 
 ## Gaining Access
 
@@ -20,7 +20,7 @@ I ran a nikto scan on the website and found the certificate and domain name. We 
 
 The website is as follows:
 
-<figure><img src="../../../.gitbook/assets/image (147).png" alt=""><figcaption><p>![[21_Acute _image002.png]]</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (147) (1).png" alt=""><figcaption><p>![[21_Acute _image002.png]]</p></figcaption></figure>
 
 While looking at the website, I found that we are able to download a Microsoft word document through clicking the **New Starter Forms** button on the website.
 
@@ -36,13 +36,13 @@ This was pretty odd, and I knew this thing had to be important somehow because w
 
 When looking through the document, we can find more information regarding a user named Lois.
 
-<figure><img src="../../../.gitbook/assets/image (160).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (160) (1).png" alt=""><figcaption></figcaption></figure>
 
 Also, we can find a portal that leads to a Windows PowerShell Web Access portal.
 
 <figure><img src="../../../.gitbook/assets/image (202).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (155).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (155) (1).png" alt=""><figcaption></figcaption></figure>
 
 From here, we just need to find some credentials and the computer name. Looking through the document again, we can find a password of `Password1!`.
 
@@ -82,7 +82,7 @@ When enumerating using Winpeas.exe, I found nothing of interest until I decided 
 
 <figure><img src="../../../.gitbook/assets/image (167).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (151).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (151) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Screengrab
 
@@ -98,7 +98,7 @@ Once we get this on the target machine and get a shell, we would need to migrate
 
 <figure><img src="../../../.gitbook/assets/image (238).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (158).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (158) (1).png" alt=""><figcaption></figcaption></figure>
 
 When viewing the screenshot, I was surprised to find I was right!
 
@@ -120,13 +120,13 @@ Afterwards, we can check the directory of his desktop to confirm where the user.
 
 While I did find the user flag, there was this .ps1 file that was also really interesting. With our RCE capabilities, we can read this file.
 
-<figure><img src="../../../.gitbook/assets/image (156).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (156) (1).png" alt=""><figcaption></figcaption></figure>
 
 This script essentially runs the `Get-Volume` command as the jmorgan user, which is cool. Also, we can note that the imonks user has privileges over this script and we can write to it. What this means is, we can get RCE as jmorgan!
 
 Using the same reverse shell .exe file I generated earlier, we can change the command executed in the ScriptBlock to run that binary instead.
 
-<figure><img src="../../../.gitbook/assets/image (161).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (161) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (204).png" alt=""><figcaption></figcaption></figure>
 
@@ -184,10 +184,10 @@ Using the same as earlier to set content of a file, we can change the command th
 
 After about 5 minutes, we can view the wallace user and see that we are now a Site\_Admin.
 
-<figure><img src="../../../.gitbook/assets/image (157).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (157) (1).png" alt=""><figcaption></figcaption></figure>
 
 With this, we can now access the root.txt file on the other machine.
 
-<figure><img src="../../../.gitbook/assets/image (162).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (162) (1).png" alt=""><figcaption></figcaption></figure>
 
 With that, this machine has been pwned!

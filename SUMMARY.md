@@ -7,11 +7,14 @@
 
 ## ✅ To-Do
 
-* [Stuff Left](to-do/stuff-left.md)
+* [Status Updates](to-do/status-updates.md)
 
 ## 🔐 What is Security?
 
 * [Information Security](what-is-security/information-security.md)
+* [Scam?](what-is-security/scam/README.md)
+  * [May Chong?](what-is-security/scam/may-chong.md)
+  * [Liu Hongtian](what-is-security/scam/liu-hongtian.md)
 
 ## 🚩 Getting Started
 
@@ -58,8 +61,7 @@
   * [ARP](networks/packets/arp.md)
   * [Routing Protocols](networks/packets/routing-protocols.md)
 * [PKI, TLS / SSL](networks/pki-tls-ssl.md)
-* [DNS / DHCP](networks/dns-dhcp.md)
-* [SMB](networks/smb.md)
+* [DNS](networks/dns.md)
 * [Wireless Security](networks/wireless-security.md)
 * [Sniffing and MITM](networks/sniffing-and-mitm.md)
 

@@ -10,7 +10,7 @@ description: >-
 
 As usual, we begin with our enumeration process.
 
-<figure><img src="../../../.gitbook/assets/image (148).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (148) (1).png" alt=""><figcaption></figcaption></figure>
 
 Loads of ports open as per a normal AD machine. Nothing about the SMB shares was found.
 
@@ -24,7 +24,7 @@ With this, we could fuzz out some hidden vhosts on the machine with gobuster. Tu
 
 <figure><img src="../../../.gitbook/assets/image (180).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (150).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (150) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Responder Hash
 
@@ -104,7 +104,7 @@ Now, we can upload our file as S.Moon and proceed to retrieve the hash.
 
 Cracking, the hash, we get C.Bum's password.
 
-<figure><img src="../../../.gitbook/assets/image (152).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (152) (1).png" alt=""><figcaption></figcaption></figure>
 
 We still cannot evil-winrm in, so we need to find another way. In the meantime, one can capture the flag using the c.bum credentials to access his desktop.
 
@@ -142,7 +142,7 @@ Now that we are c.bum, we can look around this machine.
 
 Within the C:\inetpub directory, there's an interesting folder called development.
 
-<figure><img src="../../../.gitbook/assets/image (154).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (154) (1).png" alt=""><figcaption></figcaption></figure>
 
 This was interesting as it suggested that perhaps there was another port listening on the localhost.  Sure enough, there was a service listening on port 8000 that was not detected by nmap earlier.
 
@@ -168,7 +168,7 @@ Since this is an IIS server, we can actually generate a aspx reverse shell using
 
 Then, upload this to the website through wget and put it within the C:\inetpub\development directory which can be accessed through the chisel server.
 
-<figure><img src="../../../.gitbook/assets/image (153).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (153) (1).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, we would receive a shell as another service account.
 

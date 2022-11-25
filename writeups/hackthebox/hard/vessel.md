@@ -80,7 +80,7 @@ With this, we can login to the admin panel!
 
 When looking around the admin panel, I didn't find much. However, in the top right corner of the page there was an analytics button that brings us to a new page.
 
-<figure><img src="../../../.gitbook/assets/image (149).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (149) (1).png" alt=""><figcaption></figcaption></figure>
 
 This brought me to a new domain called `openwebanalytics.vessel.htb`.&#x20;
 

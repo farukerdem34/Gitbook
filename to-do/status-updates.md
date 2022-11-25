@@ -1,6 +1,6 @@
-# To-Do LIst
+# Status Updates
 
-## Main To-Dos
+## To-Dos
 
 So much to write, so little time...
 
@@ -13,21 +13,18 @@ So much to write, so little time...
   * [x] ~~Phishing, hacking, red-teaming, blue-teaming,~~
   * [x] ~~Kali Linux + Distros~~
 * Writeups
-  * [ ] Proving Grounds (\~95? machines)
-  * [ ] HackTheBox (130 machines)
-  * [ ] Active Directory (20 machines)
-  * [ ] Redo machines that have no writeups
+  * [ ] Proving Grounds (100 machines)
+  * [ ] HackTheBox (160++ machines)
 * Networks
   * [x] Introduction to Networks (what are routers)
   * [x] Subnet Counting, OSI Model, Addresses, Ports
   * [x] Life cycle of Packet (ARP, DNS, Unicast vs Broadcast, Routing protocols)
-  * [ ] OSPF, EIGRP, RIP, IS-IS
-  * [ ] PKI + TLS vs SSL (Certificates)
+  * [x] OSPF, EIGRP, RIP, IS-IS
+  * [x] PKI + TLS vs SSL (Certificates)
   * [ ] DHCP + DNS
   * [ ] WEP, WPA, WPA2, WPA3, WPS (click button on printer to connect to wifi)
   * [ ] Pentesting each security protocol (IV brute force, Handshake packets etc.)
-  * [ ] Common Flaws with SMB
-  * [ ] Crackmapexec Brute Forcing
+  * [ ] MITM, Sniffing, PCAP Analysis
 * Buffer Overflow
   * [ ] System Architecture (ARM, AMD, x64, x86, 16-bit)
   * [ ] Pointers, Stack and Heap
@@ -85,16 +82,16 @@ So much to write, so little time...
 
 
 
-## Want To-Dos
+## Projects and Want To-Dos
 
-Not in any particular order, but I want to learn more about these and eventually add them here when I have the time away from school.
-
-* [ ] Kernel exploitation walkthroughs (gonna need to learn more)
-* [ ] Windows registry and OS in-depth (when I learn it)
+* [ ] Kernel exploitation walkthroughs (gonna need to learn more about lower level exploitation)
+* [ ] Windows registry and OS in-depth (When I learn in Uni)
 * [ ] Malware analysis and creating malware that bypasses anti-viruses
   * [ ] Code obfuscation
+  * [ ] AMSI Bypass
 * [ ] Advanced Active Directory attacks
 * [ ] Bug Bounty writeups
+  * [ ] Currently working on a few!
 * [ ] Exploit research for new CVEs
-* [ ] Custom exploit development
+  * [ ] Currently doing independent research on low-hanging fruits in plugins for frameworks
 * [ ] Secure software engineering (when I learn about it)

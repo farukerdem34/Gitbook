@@ -5,7 +5,7 @@ description: >-
   for ZKTeco for PE.
 ---
 
-# Access
+# Access (AD)
 
 ## Gaining Access
 
@@ -85,4 +85,4 @@ From here, download a simple reverse shell binary generated from MSFVenom and ru
 
 <figure><img src="../../../.gitbook/assets/image (286).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (163).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (163) (1).png" alt=""><figcaption></figcaption></figure>

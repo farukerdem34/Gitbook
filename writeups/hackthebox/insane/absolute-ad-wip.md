@@ -77,7 +77,7 @@ Kerberoasting reveals that there are no SPNs to roast. Instead, we can use this 
 
 {% embed url="https://wiki.porchetta.industries/getting-started/using-kerberos" %}
 
-<figure><img src="../../../.gitbook/assets/image (5) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
 
@@ -95,7 +95,7 @@ Interesting, now that we have a ticket, we can export this. I found that we can 
 
 We can check out the 'Shared' share to find some interesting files.
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (150).png" alt=""><figcaption></figcaption></figure>
 
 Interesting!  The program here seems to be some form of script that creates the binary.
 
@@ -109,17 +109,17 @@ Poking around the shares, we don't seem to get much from it. I could decompiled 
 
 The next step was to use Bloodhound, since we had credentials and a ticket.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 {% embed url="https://github.com/jazzpizazz/BloodHound.py-Kerberos" %}
 
 Now we just need to fire up bloodhound and neo4j to view this data in a neat format. Bloodhound reveals a few users that are significant.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (4).png" alt=""><figcaption></figcaption></figure>
 
 Out of all of these users, m.lovegod has the most privileges. The user owns the Network Audit group. This group has GenericWrite over the WinRM\_User, which I suspect is where the user flag would be. So our exploit path is clear.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 We now need to somehow get a ticket from this m.lovegod user, or find his credentials.&#x20;
 
