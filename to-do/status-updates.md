@@ -21,10 +21,8 @@ So much to write, so little time...
   * [x] Life cycle of Packet (ARP, DNS, Unicast vs Broadcast, Routing protocols)
   * [x] OSPF, EIGRP, RIP, IS-IS
   * [x] PKI + TLS vs SSL (Certificates)
-  * [ ] DHCP + DNS
   * [ ] WEP, WPA, WPA2, WPA3, WPS (click button on printer to connect to wifi)
-  * [ ] Pentesting each security protocol (IV brute force, Handshake packets etc.)
-  * [ ] MITM, Sniffing, PCAP Analysis
+  * [x] Pentesting each security protocol (IV brute force, Handshake packets etc.)
 * Buffer Overflow
   * [ ] System Architecture (ARM, AMD, x64, x86, 16-bit)
   * [ ] Pointers, Stack and Heap

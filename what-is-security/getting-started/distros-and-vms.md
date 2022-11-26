@@ -31,13 +31,13 @@ Kali Linux is made by Offensive Security, and it is a Debian-derived Linux Distr
 
 Kali comes with a whole slute of tools already pre-installed, so if you're going to start doing security, most of the tools are present already. However, some of the tools are uncessary and there are loads of overlaps, as well as tools that you don't know are installed.&#x20;
 
-<figure><img src="../.gitbook/assets/929075-Kali-Linux-Kali-Linux-NetHunter-Linux-Unix-Lenovo.jpg" alt=""><figcaption><p><em>Kali Linux</em></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/929075-Kali-Linux-Kali-Linux-NetHunter-Linux-Unix-Lenovo.jpg" alt=""><figcaption><p><em>Kali Linux</em></p></figcaption></figure>
 
 ### Parrot OS
 
 Parrot OS is another Debian-derived Linux Distro that focuses on Security. It's a bit different from Kali as it is maintained by the Parrot Team. There is a family of different Parrot OS's, and some are not security focused and more as daily drivers or developing. Parrot Security does come pre-installed with security tools already in it.
 
-<figure><img src="../.gitbook/assets/ParrotOS-4.6-plasma.jpg" alt=""><figcaption><p><em>Parrot OS</em></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/ParrotOS-4.6-plasma.jpg" alt=""><figcaption><p><em>Parrot OS</em></p></figcaption></figure>
 
 ### Ubuntu
 
@@ -45,13 +45,13 @@ Ubuntu is an open source OS for the enterprise server, desktop, cloud and IoT. F
 
 Ubuntu comes with its own disadvantages, of which one is bloatware. There's a ton of pre-installed applications on this system, and also in my experience it uses more power than Windows. If you want to convert your daily Ubuntu driver to a pentesting machine, **I do not recommend this.** I will explain more later.
 
-<figure><img src="../.gitbook/assets/maxresdefault.jpg" alt=""><figcaption><p><em>Ubuntu</em></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/maxresdefault.jpg" alt=""><figcaption><p><em>Ubuntu</em></p></figcaption></figure>
 
 ### Debian&#x20;
 
 Debian is sort of the ancestor of loads of Distros now, and it is a free and open-sourced software that is **community maintained**. If you're looking into building your own custom machine for security operations, you can start with Debian. However, take note that you would need extensive knowledge on the tools and configurations required to make this work.
 
-<figure><img src="../.gitbook/assets/images.png" alt=""><figcaption><p><em>Debian</em></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/images.png" alt=""><figcaption><p><em>Debian</em></p></figcaption></figure>
 
 Whatever OS you want to use, that's up to you. I personally have Ubuntu on Dual boot with Windows on a daily driver, with Kali and Parrot both on Virutal Machines.
 

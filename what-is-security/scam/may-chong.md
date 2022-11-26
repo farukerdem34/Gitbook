@@ -24,7 +24,7 @@ Quite shabby for an 'NUS' website.&#x20;
 
 This is what the website looks like:
 
-<figure><img src="../../.gitbook/assets/image (147).png" alt=""><figcaption><p><em>May Chong's</em></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (147) (2).png" alt=""><figcaption><p><em>May Chong's</em></p></figcaption></figure>
 
 Interesting. We can play spot the difference between the image above, and the login from edurec!
 
@@ -36,7 +36,7 @@ Notice a key few differences. There is a property part missing. Also, on Edurec,
 
 We can test the login as follows:
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (5).png" alt=""><figcaption></figcaption></figure>
 
 After logging in, it looks like this was just a phishing campaign from NUS.&#x20;
 

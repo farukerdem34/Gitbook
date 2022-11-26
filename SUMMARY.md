@@ -12,31 +12,27 @@
 ## 🔐 What is Security?
 
 * [Information Security](what-is-security/information-security.md)
+* [Getting Started](what-is-security/getting-started/README.md)
+  * [CTFs](what-is-security/getting-started/ctfs.md)
+  * [Hacking](what-is-security/getting-started/hacking.md)
+  * [Distros and VMs](what-is-security/getting-started/distros-and-vms.md)
+  * [Terms and Concepts](what-is-security/getting-started/terms-and-concepts/README.md)
+    * [Malware](what-is-security/getting-started/terms-and-concepts/malware.md)
+    * [CLI and Shells](what-is-security/getting-started/terms-and-concepts/cli-and-shells.md)
+    * [Social Engineering](what-is-security/getting-started/terms-and-concepts/social-engineering.md)
+    * [Metasploit Framework](what-is-security/getting-started/terms-and-concepts/metasploit-framework.md)
+    * [Passwords and Encryption](what-is-security/getting-started/terms-and-concepts/passwords-and-encryption.md)
+    * [File Transfers](what-is-security/getting-started/terms-and-concepts/file-transfers.md)
 * [Scam?](what-is-security/scam/README.md)
   * [May Chong](what-is-security/scam/may-chong.md)
   * [Liu Hongtian](what-is-security/scam/liu-hongtian.md)
 
-## 🚩 Getting Started
-
-* [Getting Started](getting-started/getting-started.md)
-* [CTFs](getting-started/ctfs.md)
-* [Hacking](getting-started/hacking.md)
-* [Distros and VMs](getting-started/distros-and-vms.md)
-
 ## 🟥 Pentesting Methodology
 
 * [Methodology](pentesting-methodology/methodology.md)
-* [Terms and Concepts](pentesting-methodology/terms-and-concepts/README.md)
-  * [Malware](pentesting-methodology/terms-and-concepts/malware.md)
-  * [CLI and Shells](pentesting-methodology/terms-and-concepts/cli-and-shells.md)
-  * [Social Engineering](pentesting-methodology/terms-and-concepts/social-engineering.md)
-  * [Metasploit Framework](pentesting-methodology/terms-and-concepts/metasploit-framework.md)
-  * [Passwords and Encryption](pentesting-methodology/terms-and-concepts/passwords-and-encryption.md)
-  * [File Transfers](pentesting-methodology/terms-and-concepts/file-transfers.md)
 * [Recon](pentesting-methodology/recon/README.md)
   * [FTP](pentesting-methodology/recon/ftp.md)
   * [SSH](pentesting-methodology/recon/ssh.md)
-  * [Web Services](pentesting-methodology/recon/web-services.md)
   * [SMB](pentesting-methodology/recon/smb.md)
   * [Mail (IMAP, POP3, SMTP)](pentesting-methodology/recon/mail-imap-pop3-smtp.md)
   * [RPC](pentesting-methodology/recon/rpc.md)
@@ -62,10 +58,12 @@
   * [DNS](networks/packets/dns.md)
   * [PKI, TLS / SSL](networks/packets/pki-tls-ssl.md)
   * [Routing Protocols](networks/packets/routing-protocols.md)
+* [Combined Knowledge](networks/combined-knowledge.md)
 * [WiFi Pentesting](networks/wifi-pentesting.md)
 
 ## 🖱 Website Security
 
+* [Web Services](website-security/web-services.md)
 * [SQL Injection](website-security/sql-injection.md)
 * [Authentication Bypass](website-security/authentication-bypass.md)
 * [Directory Traversal](website-security/directory-traversal.md)
@@ -99,7 +97,6 @@
 * [ACLs and GPOs](active-directory/acls-and-gpos/README.md)
   * [Abusing ACLs and GPOs](active-directory/acls-and-gpos/abusing-acls-and-gpos.md)
 * [LDAP](active-directory/ldap.md)
-* [SMB](active-directory/smb.md)
 * [AD Methodology](active-directory/ad-methodology.md)
 
 ## ✍ Writeups

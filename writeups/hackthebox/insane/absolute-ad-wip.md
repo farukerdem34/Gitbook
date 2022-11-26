@@ -119,7 +119,7 @@ Now we just need to fire up bloodhound and neo4j to view this data in a neat for
 
 Out of all of these users, m.lovegod has the most privileges. The user owns the Network Audit group. This group has GenericWrite over the WinRM\_User, which I suspect is where the user flag would be. So our exploit path is clear.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 We now need to somehow get a ticket from this m.lovegod user, or find his credentials.&#x20;
 
