@@ -21,7 +21,7 @@ So much to write, so little time...
   * [x] Life cycle of Packet (ARP, DNS, Unicast vs Broadcast, Routing protocols)
   * [x] OSPF, EIGRP, RIP, IS-IS
   * [x] PKI + TLS vs SSL (Certificates)
-  * [ ] WEP, WPA, WPA2, WPA3, WPS (click button on printer to connect to wifi)
+  * [x] WEP, WPA, WPA2, WPA3, WPS (click button on printer to connect to wifi)
   * [x] Pentesting each security protocol (IV brute force, Handshake packets etc.)
 * Buffer Overflow
   * [ ] System Architecture (ARM, AMD, x64, x86, 16-bit)
@@ -35,16 +35,13 @@ So much to write, so little time...
   * [x] Authentication Bypass
   * [x] Directory Traversal
   * [x] Command Injection
-  * [ ] Business Logic Vulnerabilities
   * [ ] Information Disclosure
-  * [ ] Access Control
   * [ ] File Upload exploits
-  * [ ] Server-Side Request Forgery
+  * [x] Server-Side Request Forgery
   * [ ] XXE Injection
   * [ ] XSS
   * [ ] CSRF
-  * [ ] CORS
-  * [ ] Clickjacking
+  * [x] CORS
   * [ ] DOM-XSS
   * [ ] Websockets
   * [ ] Deserialization

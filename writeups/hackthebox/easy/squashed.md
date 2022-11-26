@@ -58,7 +58,7 @@ Right, so NFS here does not have any authorization or password required to acces
 
 So we can do these commands to create a new user with a fake UID.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then we can SU to this user and view the directory again.
 
@@ -96,7 +96,7 @@ Generally, when I see a session like this, there should be a way to capture the 
 
 Because this was a remote session, the .Xauthority files were particularly interesting.
 
-<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
 
 So I learnt Xauthority files are used to store credentials to authenticate to a display. Basically, we can use this thing to take a snapshot of the image of ross's screen!
 
@@ -128,4 +128,4 @@ When viewing this image, we just get this password here.
 
 Then we can just su and grab the root flag.
 
-<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (2).png" alt=""><figcaption></figcaption></figure>

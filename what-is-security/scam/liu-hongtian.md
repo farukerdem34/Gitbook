@@ -8,7 +8,7 @@ First thing to ask, who is Liu Hongtian? Doing a search on him doesn't tell me a
 
 When visiting the website, all we see is this.
 
-<figure><img src="../../.gitbook/assets/image (149) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (149).png" alt=""><figcaption></figcaption></figure>
 
 So this is another low-level scam from another credential harvesting website. When we key in some fake credentials, we get this:
 
@@ -18,7 +18,7 @@ Pretty much obvious that this would be receiving some kind of hit on a remote se
 
 We can take this a step further, and instead start to use DNS on it to see where the server's from.
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/image (162).png" alt=""><figcaption></figcaption></figure>
 

@@ -35,7 +35,7 @@ So now we have some possible users. I wanted to try and fuzz along this line, si
 
 So to circumvent this, I took the names.txt file from Seclists (/seclists/usernames/names/names.txt) then appended the front of each entry with a letter and brute forced it. From A - Z. This would produce a list of names with the prefix required.
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (2).png" alt=""><figcaption></figcaption></figure>
 
 Everytime I would find a username, I would then test it for AS-REP roasting and check for null credentials. Eventually, I found this d.klay user.
 
@@ -43,7 +43,7 @@ Everytime I would find a username, I would then test it for AS-REP roasting and 
 
 When testing this for AS-REP Roasting, it worked!
 
-<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (4).png" alt=""><figcaption></figcaption></figure>
 
 Then we can crack this hash.
 
@@ -59,7 +59,7 @@ We can attempt with LDAP as well and get a false result. It seems that **passwor
 
 I managed to retrieve a ticket using getTGT. We can then export this.
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can attempt kerberoasting the machine to try and get some kind of service ticket using the credentials using GetUserSPNs. The output using the DC Domain is below:
 
@@ -119,7 +119,7 @@ Now we just need to fire up bloodhound and neo4j to view this data in a neat for
 
 Out of all of these users, m.lovegod has the most privileges. The user owns the Network Audit group. This group has GenericWrite over the WinRM\_User, which I suspect is where the user flag would be. So our exploit path is clear.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (3) (1) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 We now need to somehow get a ticket from this m.lovegod user, or find his credentials.&#x20;
 

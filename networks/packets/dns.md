@@ -16,7 +16,7 @@ Websites depend on something called the Fully Qualified Domain Name (FQDN). This
 
 We can take a look at a packet capture portion for DNS using Wireshark. I made a request to github.com here:
 
-<figure><img src="../../.gitbook/assets/image (151) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (151).png" alt=""><figcaption></figcaption></figure>
 
 We can see that our device (192.168.52.134) is first making a request to github.com via a 'standard query'. Then, the standard query response would be telling us the IP address of github.com, AKA where it is.&#x20;
 

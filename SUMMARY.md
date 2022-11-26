@@ -12,17 +12,17 @@
 ## 🔐 What is Security?
 
 * [Information Security](what-is-security/information-security.md)
-* [Getting Started](what-is-security/getting-started/README.md)
-  * [CTFs](what-is-security/getting-started/ctfs.md)
-  * [Hacking](what-is-security/getting-started/hacking.md)
-  * [Distros and VMs](what-is-security/getting-started/distros-and-vms.md)
-  * [Terms and Concepts](what-is-security/getting-started/terms-and-concepts/README.md)
-    * [Malware](what-is-security/getting-started/terms-and-concepts/malware.md)
-    * [CLI and Shells](what-is-security/getting-started/terms-and-concepts/cli-and-shells.md)
-    * [Social Engineering](what-is-security/getting-started/terms-and-concepts/social-engineering.md)
-    * [Metasploit Framework](what-is-security/getting-started/terms-and-concepts/metasploit-framework.md)
-    * [Passwords and Encryption](what-is-security/getting-started/terms-and-concepts/passwords-and-encryption.md)
-    * [File Transfers](what-is-security/getting-started/terms-and-concepts/file-transfers.md)
+* [Getting Started](getting-started/getting-started.md)
+  * [CTFs](getting-started/ctfs.md)
+  * [Hacking](getting-started/hacking.md)
+  * [Distros and VMs](getting-started/distros-and-vms.md)
+  * [Terms and Concepts](pentesting-methodology/terms-and-concepts/README.md)
+    * [Malware](pentesting-methodology/terms-and-concepts/malware.md)
+    * [CLI and Shells](pentesting-methodology/terms-and-concepts/cli-and-shells.md)
+    * [Social Engineering](pentesting-methodology/terms-and-concepts/social-engineering.md)
+    * [Metasploit Framework](pentesting-methodology/terms-and-concepts/metasploit-framework.md)
+    * [Passwords and Encryption](pentesting-methodology/terms-and-concepts/passwords-and-encryption.md)
+    * [File Transfers](pentesting-methodology/terms-and-concepts/file-transfers.md)
 * [Scam?](what-is-security/scam/README.md)
   * [May Chong](what-is-security/scam/may-chong.md)
   * [Liu Hongtian](what-is-security/scam/liu-hongtian.md)
@@ -63,7 +63,7 @@
 
 ## 🖱 Website Security
 
-* [Web Services](website-security/web-services.md)
+* [Web Services](pentesting-methodology/recon/web-services.md)
 * [SQL Injection](website-security/sql-injection.md)
 * [Authentication Bypass](website-security/authentication-bypass.md)
 * [Directory Traversal](website-security/directory-traversal.md)

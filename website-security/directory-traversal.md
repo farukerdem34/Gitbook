@@ -66,6 +66,10 @@ If the query passed in is meant to read a file of a specific file type, like `.p
 
 Sometimes, a website would outright block `../` characeters knowing that directory traversal would be attempted. In this case, we can make use of `....//` which would translate back to `../../` when processed. This can sometimes be used to bypass a WAF
 
+### Downloading Files
+
+Sometimes, we can access certain and download files and even binaries via directory traversal. We can check what's by looking into the /proc directory and install the files via curl and the -o flag. Retired from HTB is a machine that uses this, and we can download a binary that is vulnerbale to a ROP chaining vulnerability that would give us an initial shell.&#x20;
+
 ## Common Files and Payloads
 
 To verify that we indeed have directory traversal, here are some common files that we can test it out with. Here are some common payloads that can be used to bypass basic WAFs.

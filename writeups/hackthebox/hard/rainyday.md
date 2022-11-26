@@ -138,7 +138,7 @@ Was kinda right in this case, but it appears we are not authenticated.
 
 We can try to grab the Cookie from the session earlier on the main website as gary, and it works.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 So now we know there's an app.py, meaning there's also probably some kind of secret.py because this is a flask application.
 
@@ -240,7 +240,7 @@ There's an exec( ) function being called, which is always interesting. This bina
 
 The next few tests confirms this:
 
-<figure><img src="../../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 There seem to be some keywords being filtered out, most notably 'import' because I cannot run anything that has import within it.&#x20;
 
@@ -282,7 +282,7 @@ We can then get RCE as jack\_adm.
 
 After getting to jack\_adm, we can check sudo privileges again to see this:
 
-<figure><img src="../../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Another blind Sudo challenge in Python.  Except, all this does is hash passwords for us into Bcrypt format.
 

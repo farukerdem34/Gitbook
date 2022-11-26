@@ -42,7 +42,7 @@ These look like switches, but they aren't.
 
 ### Network Topologies
 
-<figure><img src="../.gitbook/assets/image (9) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (9) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 This is how we represent networks in a company, sort of like a graph of nodes that have connections to one another. Take note of the symbols used!
 
