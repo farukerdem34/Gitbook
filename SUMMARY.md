@@ -13,7 +13,7 @@
 
 * [Information Security](what-is-security/information-security.md)
 * [Scam?](what-is-security/scam/README.md)
-  * [May Chong?](what-is-security/scam/may-chong.md)
+  * [May Chong](what-is-security/scam/may-chong.md)
   * [Liu Hongtian](what-is-security/scam/liu-hongtian.md)
 
 ## 🚩 Getting Started
@@ -59,11 +59,10 @@
   * [TCP / UDP](networks/packets/tcp-udp.md)
   * [Duplex & Traffic](networks/packets/duplex-and-traffic.md)
   * [ARP](networks/packets/arp.md)
+  * [DNS](networks/packets/dns.md)
+  * [PKI, TLS / SSL](networks/packets/pki-tls-ssl.md)
   * [Routing Protocols](networks/packets/routing-protocols.md)
-* [PKI, TLS / SSL](networks/pki-tls-ssl.md)
-* [DNS](networks/dns.md)
-* [Wireless Security](networks/wireless-security.md)
-* [Sniffing and MITM](networks/sniffing-and-mitm.md)
+* [WiFi Pentesting](networks/wifi-pentesting.md)
 
 ## 🖱 Website Security
 

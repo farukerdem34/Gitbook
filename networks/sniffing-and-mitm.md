@@ -1,2 +1,0 @@
-# Sniffing and MITM
-

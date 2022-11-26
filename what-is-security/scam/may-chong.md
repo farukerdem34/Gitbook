@@ -1,4 +1,4 @@
-# May Chong?
+# May Chong
 
 ## Scam or not?
 
@@ -18,9 +18,7 @@ When checking the rest of the HTML returned, we can see loads of JS.
 
 <figure><img src="../../.gitbook/assets/image (156).png" alt=""><figcaption></figcaption></figure>
 
-Looks quite shabby doesn't it?
-
-
+Quite shabby for an 'NUS' website.&#x20;
 
 ## The Website
 
@@ -34,18 +32,14 @@ Interesting. We can play spot the difference between the image above, and the lo
 
 Notice a key few differences. There is a property part missing. Also, on Edurec, it says **Register 2FA** and on the other website, it says **Help On 2FA.** Also, earlier I used curl to analyse the website to see loads of hidden JS being executed. However, the main page only reveals this in their page source.
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can test the login as follows:
 
 <figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
-After logging in, it looks like this was just a phishing campaign!
+After logging in, it looks like this was just a phishing campaign from NUS.&#x20;
 
 <figure><img src="../../.gitbook/assets/image (157).png" alt=""><figcaption></figcaption></figure>
 
-Quite cool that NUS would go to this trouble to actually teach us about phishing. No wonder I didn't get a notif about this!&#x20;
-
-## Conclusion
-
-I think it's safe to say that this website is indeed a scam. The differences in English, subtle changes here and there, the weird index.php page and all that lead me to believe that this is indeed some form of scam.&#x20;
+Quite cool that NUS would do a campaign for this.&#x20;
