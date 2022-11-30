@@ -10,7 +10,7 @@ This is an AD machine, so first we can begin with a port scan, and then go throu
 
 Nmap Scan:
 
-<figure><img src="../../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20) (4).png" alt=""><figcaption></figcaption></figure>
 
 Standard Ports. I added absolute.htb  and its DC into my hosts file for this machine, as it is standard HTB practice. There are few things to enumerate:
 
@@ -53,7 +53,7 @@ Then we can crack this hash.
 
 It would seem that this set of credentials cannot grant us access via evil-winrm. There was a unique reason however.
 
-<figure><img src="../../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can attempt with LDAP as well and get a false result. It seems that **passwords are not accepted here**. So, the next form of authentication is through tickets. Now the goal is to somehow get a ticket to authenticate into the machine. Once we get some form of ticket, we can perhaps continue with Bloodhound, login or something.
 
@@ -79,7 +79,7 @@ Kerberoasting reveals that there are no SPNs to roast. Instead, we can use this 
 
 <figure><img src="../../../.gitbook/assets/image (5) (4).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (2).png" alt=""><figcaption></figcaption></figure>
 
 Really interesting output. We have found another user and credential!
 
@@ -131,7 +131,7 @@ When I ran the binary on my Windows VM, it seems to exit straightaway. I started
 
 I found this interesting tidbit here.
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 Seems like there's a password being transmitted here to the LDAP server. The next step is trivial, we just need to run this thing on a VM connected to the VPN and we should get somewhere.
 
@@ -139,7 +139,7 @@ Doing so let me find these credentials: `absolute.htb\m.lovegod:AbsoluteLDAP2022
 
 Now I was able to retrieve this user's ticket.
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now, perhaps we can perform some kind of actions as the user remotely. Using this ticket, we can leverage a tool called pywhisker to perform actions on the host.&#x20;
 

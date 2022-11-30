@@ -104,6 +104,7 @@
 * [HackTheBox](writeups/hackthebox/README.md)
   * [Easy](writeups/hackthebox/easy/README.md)
     * [Squashed](writeups/hackthebox/easy/squashed.md)
+    * [Precious](writeups/hackthebox/easy/precious.md)
     * [Access (AD)](writeups/hackthebox/easy/access-ad.md)
   * [Medium](writeups/hackthebox/medium/README.md)
     * [Forgot](writeups/hackthebox/medium/forgot.md)

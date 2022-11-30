@@ -27,7 +27,7 @@ However, TCP is a lot slower because of the additional checks for accuracy and n
 
 TCP communicates with hosts using something called the 3-way handshake. This handshake helps to establish a solid connection between the host and recipient.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (18) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (18) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 I generally like to think of the conversation like this:
 
@@ -43,7 +43,7 @@ The establishment of this handshake ensures that the connection is stable and ac
 
 While TCP prioritises accuracy, UDP is like the opposite. UDP is what I like to call 'best-effort'. UDP headers are like so:
 
-<figure><img src="../../.gitbook/assets/image (3) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can see how UDP headers are typically about 8 bytes long, whereas TCP headers are 20-60 bytes long. This is because UDP does not have the retransmission property of TCP, and it just sends the data, hoping it gets there. Packets that are dropped are not cared about at all.
 
@@ -53,4 +53,4 @@ Because of having lesser checks and stuff, UDP is a lot faster than TCP in trans
 
 ## Summary
 
-In short, TCP is sort of like a sniper rifle, a lot slowerb also accurate. UDP is like a machine gun, less accurate but fires a lot faster. TCP also transmits data in order, while UDP just shoots data out and hope that majority gets there.
+In short, TCP is sort of like a sniper rifle, a lot slowerb also accurate. UDP is like a machine gun, less accurate but fires a lot faster. TCP also transmits data in order, while UDP just shoots data out and hope that majority gets there.&#x20;

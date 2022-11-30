@@ -100,7 +100,7 @@ Most likely, the first host is 172.18.0.1 (based on other HTB machines), so I st
 
 We can then curl this address to see what's going on within it.
 
-<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Odd, it refers us back to the original website. Earlier, we found a dev.rainycloud.htb endpoint, which was situated on the original machine. This got me thinking about where this website was hosted, and if 172.18.0.1:80 is open, it could mean that dev.rainycloud.htb is hosted there and we can try to connect to it.
 
@@ -202,7 +202,7 @@ Now that we are on jack's container, we can upload some form of pspy process mon
 
 What we see is this command:
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Weird that the sleep is this long. We can investigate this process in the /proc directory.
 
@@ -226,7 +226,7 @@ With this, we can finally SSH into the main machine as jack.
 
 When checking sudo privileges, we see this:
 
-<figure><img src="../../../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (19) (1).png" alt=""><figcaption></figcaption></figure>
 
 I wasn't sure what safe\_python was, but it looked to be some kind of binary. I was also unable to check it out and see what it does. Really weird. But it did seem to open files and accept something as a parameter to open.
 
@@ -312,7 +312,7 @@ I used an online UTF-8 generator to try and find a valid combiantion of characte
 
 Here are 2 instances of using UTF characters in hashing this algorithm with the machine's script. If you were to verify these two hashes, they would be identical. The 123456 is not hashed in the end, because we have entered more than 72 bytes of data.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (1).png" alt=""><figcaption></figcaption></figure>
 
 We could theoretically generate an input of 71 bytes, and then leave the last character to the salt and repeatedly brute force all the possible characters one by one. So with each character we find, we need to edit our input accordingly to have 1 less byte and to fit the flag there. I quickly created a script to test this, and this was the final result:
 
