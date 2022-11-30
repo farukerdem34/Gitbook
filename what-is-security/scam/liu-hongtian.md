@@ -18,7 +18,7 @@ Pretty much obvious that this would be receiving some kind of hit on a remote se
 
 We can take this a step further, and instead start to use DNS on it to see where the server's from.
 
-<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/image (162).png" alt=""><figcaption></figcaption></figure>
 

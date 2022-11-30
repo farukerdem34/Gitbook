@@ -63,7 +63,7 @@ The server at github.com would then take the request we have sent and process it
 
 A response would look like this:
 
-<figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
 
 Pretty big, but runs on the same concept and uses HTTP headers to specify information that our browser needs to know.
 
@@ -85,6 +85,6 @@ The Content-Type header can be changed to whatever is required, doesn't always h
 
 We would see the page as follows:
 
-<figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 And that's basically what happens when we go to a URL.&#x20;

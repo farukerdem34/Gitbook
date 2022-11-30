@@ -1,16 +1,20 @@
+---
+description: PDFkit and Deserialization.
+---
+
 # Precious
 
 ## Gaining Access
 
 **Nmap Scan:**
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 Seems like a web vulnerability exploit kinda machine.
 
 ### PDFKit
 
-<figure><img src="../../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
 
 Website to PDF ind of functions run on plugins, and depending on the language used to do this conversion (JS, PHP), there are exploits for them.
 
@@ -18,7 +22,7 @@ For instance, we can redirect this website to our own hosted HTTP server and con
 
 For enumeration purposes, I began by generating a PDF and downloading it to my machine from this website. We can enumerate the PDF to see if there is a particular software being used.
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
 
 This version of pdfkit is vulnerable to RCE using CVE-2022-25765. There are public exploit scripts available for this.
 
@@ -26,15 +30,15 @@ This version of pdfkit is vulnerable to RCE using CVE-2022-25765. There are publ
 
 Following the exploit, we can test to see if we indeed have RCE:
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
 Works! Now we just need to gain a reverse shell. I used a simple bash shell to do so.
 
-<figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -42,11 +46,11 @@ Works! Now we just need to gain a reverse shell. I used a simple bash shell to d
 
 When we gain access as the user ruby, the flag is not there. There is another user named henry in this machine.
 
-<figure><img src="../../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
 We don't have permissions to read the flag from henry's directory. However, when poking around ruby's directory and looking into the .bundle directory, we can find henry's password.
 
-<figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
 With this, we can SSH in as henry for a better shell. Then, we can grab the user flag.
 
@@ -54,7 +58,7 @@ With this, we can SSH in as henry for a better shell. Then, we can grab the user
 
 Checking sudo privileges, we find that henry is able to execute the following:
 
-<figure><img src="../../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 Intriguing. The script is as shown below:
 
@@ -129,7 +133,7 @@ We just need to put the malicious YAML file in some writeable place and execute 
 
 I changed the command to `chmod +s /bin/bash` and tried it out. Worked!
 
-<figure><img src="../../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
