@@ -2,8 +2,6 @@
 
 ## To-Dos
 
-So much to write, so little time...
-
 * ~~Introductions~~
   * [x] ~~About Me~~
   * [x] ~~Introduction to CTFs~~
@@ -35,7 +33,6 @@ So much to write, so little time...
   * [x] Authentication Bypass
   * [x] Directory Traversal
   * [x] Command Injection
-  * [ ] Information Disclosure
   * [ ] File Upload exploits
   * [x] Server-Side Request Forgery
   * [ ] XXE Injection
@@ -62,6 +59,10 @@ So much to write, so little time...
     * [ ] Tunneling
     * [x] File Transfers
   * [ ] Explain steps in detail + Tools
+* Cryptography&#x20;
+  * [ ] Math behind Cryptography + Keys to breaking Cryptography
+  * [ ] RSA Exploits
+  *
 * Active Directory
   * [x] ~~Introduction to AD~~
   * [x] ~~AD Tools~~&#x20;
@@ -81,12 +82,12 @@ So much to write, so little time...
 
 * [ ] Kernel exploitation walkthroughs (gonna need to learn more about lower level exploitation)
 * [ ] Windows registry and OS in-depth (When I learn in Uni)
-* [ ] Malware analysis and creating malware that bypasses anti-viruses
+* [ ] Malware analysis and creating malware that bypasses anti-viruses (OSEP and OSED)
   * [ ] Code obfuscation
   * [ ] AMSI Bypass
 * [ ] Advanced Active Directory attacks
 * [ ] Bug Bounty writeups
-  * [ ] Currently working on a few!
+  * [ ] Currently working on a few
 * [ ] Exploit research for new CVEs
   * [ ] Currently doing independent research on low-hanging fruits in plugins for frameworks
 * [ ] Secure software engineering (when I learn about it)

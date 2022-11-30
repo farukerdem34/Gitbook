@@ -68,7 +68,6 @@
 * [Authentication Bypass](website-security/authentication-bypass.md)
 * [Directory Traversal](website-security/directory-traversal.md)
 * [Command Injection](website-security/command-injection.md)
-* [Information Disclosure](website-security/information-disclosure.md)
 * [Server-Side Request Forgery](website-security/server-side-request-forgery.md)
 * [Cross-Origin Resource Sharing](website-security/cross-origin-resource-sharing.md)
 * [Cross-Site Scripting](website-security/cross-site-scripting.md)

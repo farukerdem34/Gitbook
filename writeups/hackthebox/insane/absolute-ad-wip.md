@@ -139,7 +139,7 @@ Doing so let me find these credentials: `absolute.htb\m.lovegod:AbsoluteLDAP2022
 
 Now I was able to retrieve this user's ticket.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 Now, perhaps we can perform some kind of actions as the user remotely. Using this ticket, we can leverage a tool called pywhisker to perform actions on the host.&#x20;
 

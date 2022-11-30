@@ -8,6 +8,8 @@ Command Injection is a critical vulnerability that results in attackers being ab
 
 <figure><img src="../.gitbook/assets/image (280).png" alt=""><figcaption><p><em>Taken from PortSwigger Web Security Academy</em></p></figcaption></figure>
 
+Generally, command injection isn't some standalone exploit on a website (unless it's really badly designed), but rather it's something that can be found through chaining other vulnerabilities together.
+
 ## Exploitation
 
 In order to exploit this properly, we need to understand some special characters and what they do within an application.

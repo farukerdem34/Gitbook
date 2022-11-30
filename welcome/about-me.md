@@ -13,7 +13,7 @@ There's loads of free stuff on the Internet in general, and security is definite
 * I am a university student majoring in Information Security at National University of Singapore (NUS), and will graduate in 2026.
 * I wrote my first line of code in November 2021!&#x20;
 * Current Certifications: **OSCP, eJPT, CCNA, Security+.**&#x20;
-  * Goal for 2023: **OSWE and Bug Bounties (with writeups) + Pentesting Internships**
+  * Goal for 2023: **OSWE and/or Bug Bounties (with writeups) + Pentesting Internships**
 * I can speak English and Chinese (although the latter isn't the best).
 * I used to take part in a CTFs, but gradually shifted towards pentesting and hacking through rooting machines as I found them more fun and practical.&#x20;
 * I really enjoy learning new techniques regarding cybersecurity and breaking rules.

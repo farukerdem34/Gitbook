@@ -44,7 +44,7 @@ Regarding traffic types, the CCNA covered a few in basic-depth
 
 Unicast traffic is used to send traffic to a single destination host. This means that within the packet headers, there is a specific receiver IP address (that is not the broadcast address) and the packet will go there.
 
-<figure><img src="../../.gitbook/assets/image (11) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (11) (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Unicast can also be sent to multiple hosts. However, this is rather inefficient in terms of bandwidth. Let's say we want to send 3 hosts the same packet of 1kb. If we use unicast, we would need to send 3 copies out, amounting to 3kb in total.&#x20;
 
