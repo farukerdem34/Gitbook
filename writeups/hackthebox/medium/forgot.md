@@ -62,7 +62,7 @@ Anyways there seems to be an administrator on this website somewhere, and it's n
 
 When taking a look around some more, I found this unique endpoint.
 
-<figure><img src="../../../.gitbook/assets/image (5) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 When trying to visit it, I just changed the authorization cookie to have the username as "admin" and it granted me access.
 

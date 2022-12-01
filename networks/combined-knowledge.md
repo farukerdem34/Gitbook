@@ -85,6 +85,6 @@ The Content-Type header can be changed to whatever is required, doesn't always h
 
 We would see the page as follows:
 
-<figure><img src="../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 And that's basically what happens when we go to a URL.&#x20;

@@ -4,7 +4,7 @@ description: 127.0.0.1
 
 # Server-Side Request Forgery
 
-Server-Side Request Forgery (SSRF) is an exploit whivh makes the server that the website is hosted on to do internal requests. The exploitation of the vulnerability allows for inducing of server-side requests to the backend, which can be used to read sensitive internal files or make changes.
+Server-Side Request Forgery (SSRF) is an exploit which makes the server that the website is hosted on do internal requests. The exploitation of the vulnerability allows for inducing of server-side requests to the backend, which can be used to read sensitive internal files or make changes.
 
 ## How it Works
 
