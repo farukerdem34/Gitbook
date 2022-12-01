@@ -14,7 +14,7 @@ Seems like a web vulnerability exploit kinda machine.
 
 ### PDFKit
 
-<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (2).png" alt=""><figcaption></figcaption></figure>
 
 Website to PDF ind of functions run on plugins, and depending on the language used to do this conversion (JS, PHP), there are exploits for them.
 
@@ -32,13 +32,13 @@ Following the exploit, we can test to see if we indeed have RCE:
 
 <figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (5) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Works! Now we just need to gain a reverse shell. I used a simple bash shell to do so.
 
 <figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -58,7 +58,7 @@ With this, we can SSH in as henry for a better shell. Then, we can grab the user
 
 Checking sudo privileges, we find that henry is able to execute the following:
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (2).png" alt=""><figcaption></figcaption></figure>
 
 Intriguing. The script is as shown below:
 

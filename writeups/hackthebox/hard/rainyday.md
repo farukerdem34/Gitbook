@@ -62,7 +62,7 @@ Using this method, I was able to make out that there were 3 users, because enter
 
 So his password is rubberducky. With these credentials, we can log in to the website as gary.
 
-### Container Creatio
+### Container Creation
 
 Within the login, we are able to simply register and start a new docker container.
 
@@ -226,7 +226,7 @@ With this, we can finally SSH into the main machine as jack.
 
 When checking sudo privileges, we see this:
 
-<figure><img src="../../../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (19) (3).png" alt=""><figcaption></figcaption></figure>
 
 I wasn't sure what safe\_python was, but it looked to be some kind of binary. I was also unable to check it out and see what it does. Really weird. But it did seem to open files and accept something as a parameter to open.
 
@@ -312,7 +312,7 @@ I used an online UTF-8 generator to try and find a valid combiantion of characte
 
 Here are 2 instances of using UTF characters in hashing this algorithm with the machine's script. If you were to verify these two hashes, they would be identical. The 123456 is not hashed in the end, because we have entered more than 72 bytes of data.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (1).png" alt=""><figcaption></figcaption></figure>
 
 We could theoretically generate an input of 71 bytes, and then leave the last character to the salt and repeatedly brute force all the possible characters one by one. So with each character we find, we need to edit our input accordingly to have 1 less byte and to fit the flag there. I quickly created a script to test this, and this was the final result:
 

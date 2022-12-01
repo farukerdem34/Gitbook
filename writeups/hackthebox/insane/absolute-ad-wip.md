@@ -53,7 +53,7 @@ Then we can crack this hash.
 
 It would seem that this set of credentials cannot grant us access via evil-winrm. There was a unique reason however.
 
-<figure><img src="../../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (4).png" alt=""><figcaption></figcaption></figure>
 
 We can attempt with LDAP as well and get a false result. It seems that **passwords are not accepted here**. So, the next form of authentication is through tickets. Now the goal is to somehow get a ticket to authenticate into the machine. Once we get some form of ticket, we can perhaps continue with Bloodhound, login or something.
 
@@ -63,7 +63,7 @@ I managed to retrieve a ticket using getTGT. We can then export this.
 
 We can attempt kerberoasting the machine to try and get some kind of service ticket using the credentials using GetUserSPNs. The output using the DC Domain is below:
 
-<figure><img src="../../../.gitbook/assets/image (1) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can fix the clock skew issue pretty easily.
 

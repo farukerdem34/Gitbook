@@ -33,18 +33,14 @@
   * [x] Authentication Bypass
   * [x] Directory Traversal
   * [x] Command Injection
-  * [ ] File Upload exploits
   * [x] Server-Side Request Forgery
-  * [ ] XXE Injection
-  * [ ] XSS
-  * [ ] CSRF
+  * [x] XSS
   * [x] CORS
-  * [ ] DOM-XSS
-  * [ ] Websockets
+  * [x] DOM-XSS
+  * [x] Websockets
   * [ ] Deserialization
   * [ ] SSTI
   * [ ] Web Cache Poisoning
-  * [ ] HTTP Host Header
   * [ ] HTTP request smuggling
   * [ ] OAuth Authentication exploits
 * Pentesting

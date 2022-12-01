@@ -10,7 +10,7 @@ description: >-
 
 We begin with another Nmap scan.
 
-<figure><img src="../../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (2).png" alt=""><figcaption></figcaption></figure>
 
 Seeing that there are loads of unknown ports, I want to enumerate what services are running on those with an in-depth nmap scan. The rest of the ports are running RPC stuff, which is kind of related to the NFS services.
 
@@ -88,7 +88,7 @@ We can run a linPEAS to enumerate for us. From the output, we see don't really s
 
 As Ross, we don't have the 'rw' options, meaning we can't do much even if we impersonate him. A quick check on who's logged on reveals ross is logged on.
 
-<figure><img src="../../../.gitbook/assets/image (11) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Remote Screenshot via x11
 

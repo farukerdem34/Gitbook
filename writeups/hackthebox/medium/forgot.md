@@ -34,7 +34,7 @@ Interesting. So anyways, password reset machine are quite unique, because genera
 
 We probably need to somehow make this service send the email to our machine. So I changed the Host header to my machine's and started a listener port, and it worked.
 
-<figure><img src="../../../.gitbook/assets/image (17) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (3) (3).png" alt=""><figcaption></figcaption></figure>
 
@@ -58,11 +58,11 @@ Looking at the tickets portion, I can see that there are some SSH credentials fo
 
 Anyways there seems to be an administrator on this website somewhere, and it's not robert. When looking around at the requests to see if we can find some hidden stuff, I managed to see how the website authenticates us, and its via a Authorization Basic cookie.
 
-<figure><img src="../../../.gitbook/assets/image (10) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 When taking a look around some more, I found this unique endpoint.
 
-<figure><img src="../../../.gitbook/assets/image (5) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (2) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 When trying to visit it, I just changed the authorization cookie to have the username as "admin" and it granted me access.
 
@@ -76,7 +76,7 @@ Cool, we have credentials. `diego:dCb#1!x0%gjq`. Now we can SSH into the machine
 
 Running a quick sudo check, we can see that we have some ml\_security.pu script we can run.
 
-<figure><img src="../../../.gitbook/assets/image (4) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 Here's the full script.
 
@@ -257,7 +257,7 @@ In the database, we also need to include the user, issue, link and the actual re
 
 Here's the payload I used:
 
-<figure><img src="../../../.gitbook/assets/image (7) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 ```sql
 insert into escalate values ("abc","abc","abc",'hello=exec("""\nimport os\nos.system("/tmp/shell.sh")\nprint("&ErrMsg=%3Cimg%20src=%22http://htb.com%22%20/%3E%3CSCRIPT%3Ealert%28%22xss%22%29%3C/SCRIPT%3E")""")');
