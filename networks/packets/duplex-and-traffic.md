@@ -58,7 +58,7 @@ This method is how we sent one copy that goes to multiple different destinations
 
 Multicast traffic is targeted. Hosts have to specifically request for the traffic to get it.
 
-<figure><img src="../../.gitbook/assets/image (12) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (12) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Broadcast
 
@@ -68,4 +68,4 @@ What's important to note here is that **switches flood broadcast traffic, wherea
 
 Logically speaking, if routers flooded broadcast traffic, then the Internet would be really slow and completely swarmed with these packets.
 
-<figure><img src="../../.gitbook/assets/image (15) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (15) (2) (1).png" alt=""><figcaption></figcaption></figure>

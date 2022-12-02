@@ -34,7 +34,7 @@ When analysing the page source for the iniital login page found on snippet.htb, 
 
 The most interesting of it was this **management/dump** end point.
 
-<figure><img src="../../../.gitbook/assets/image (99).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (99) (1).png" alt=""><figcaption></figcaption></figure>
 
 This endpoint takes a POST request, and some fuzzing of the login request using Burp tells us that this takes JSON parameters.
 
@@ -66,7 +66,7 @@ There's a lot of information that is dumped, so we can use curl to redirect the 
 
 There's like over 890 hashes here, so cracking all of them is impossible without melting my laptop. In this case, we could use crackstation to test out 20 hashes at a time. Then, I would check for the occurrence of the hash within the main account. After a while, I managed to crack one.
 
-<figure><img src="../../../.gitbook/assets/image (100).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (100) (1).png" alt=""><figcaption></figcaption></figure>
 
 Analysis of the main file revealed that the users are&#x20;
 
@@ -77,7 +77,7 @@ Analysis of the main file revealed that the users are&#x20;
 
 So we have 4 users that are using the same password. Using Juliana's account, I was able to login to the website on snippet.htb
 
-<figure><img src="../../../.gitbook/assets/image (102).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (102) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Adding Snippets
 

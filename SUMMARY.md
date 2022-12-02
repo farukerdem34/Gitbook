@@ -116,6 +116,7 @@
     * [Acute (AD)](writeups/hackthebox/hard/acute-ad.md)
   * [Insane](writeups/hackthebox/insane/README.md)
     * [Absolute (AD) (WIP!)](writeups/hackthebox/insane/absolute-ad-wip.md)
+    * [Derailed](writeups/hackthebox/insane/derailed.md)
 * [Proving Grounds Practice](writeups/proving-grounds-practice/README.md)
   * [Page 1](writeups/proving-grounds-practice/page-1.md)
 * [To Rewrite](writeups/to-rewrite/README.md)

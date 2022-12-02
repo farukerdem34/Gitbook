@@ -50,7 +50,7 @@ There was a /api endpoint found on the website, and I plan to fuzz that. I used 
 
 This turned out to be a bit fruitless, because I was unable to even find anything of interest. I tried some extensions of my own and found one that works (out of sheer luck).
 
-<figure><img src="../../../.gitbook/assets/image (98).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (98) (2).png" alt=""><figcaption></figcaption></figure>
 
 Using this method, I was able to make out that there were 3 users, because entering /api/4 would return nothing. So we know that the last parameter should be a number of some sort. I tried out loads of numbers but nothing was returned. It wasn't until I decided to try using 1.0 and it worked...
 
@@ -58,7 +58,7 @@ Using this method, I was able to make out that there were 3 users, because enter
 
 &#x20;I was able to get out the remaining hashes, which were for **root and gary.** We can crack these using john. Only one of them was crackable, and it was gary's.
 
-<figure><img src="../../../.gitbook/assets/image (101).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (101) (2).png" alt=""><figcaption></figcaption></figure>
 
 So his password is rubberducky. With these credentials, we can log in to the website as gary.
 
