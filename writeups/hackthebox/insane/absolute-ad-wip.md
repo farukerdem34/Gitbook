@@ -145,4 +145,4 @@ Now, perhaps we can perform some kind of actions as the user remotely. Using thi
 
 {% embed url="https://github.com/ShutdownRepo/pywhisker" %}
 
-This is where I got stuck again...
+This is where I got stuck again...not too sure how to add the user into the group. WIP!
