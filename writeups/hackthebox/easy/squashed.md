@@ -30,7 +30,7 @@ Interesting directories to make public. We can mount these directories to view w
 
 Within the user's directory, we can find this Keepass database here.
 
-<figure><img src="../../../.gitbook/assets/image (5) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 This file seems to be encrypted with a password when trying to use keepassx to access its contents.
 
@@ -76,7 +76,7 @@ With this, we can easily get a reverse shell as this alex user.&#x20;
 
 <figure><img src="../../../.gitbook/assets/image (97).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (2) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can grab the user flag from this alex user.
 

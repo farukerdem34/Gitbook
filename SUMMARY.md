@@ -77,6 +77,7 @@
 * [Web Cache Poisoning](website-security/web-cache-poisoning.md)
 * [HTTP Request Smuggling](website-security/http-request-smuggling.md)
 * [OAuth Authentication](website-security/oauth-authentication.md)
+* [Bug Bounties](website-security/bug-bounties.md)
 
 ## 👀 Buffer Overflows
 

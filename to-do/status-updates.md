@@ -38,11 +38,11 @@
   * [x] CORS
   * [x] DOM-XSS
   * [x] Websockets
-  * [ ] Deserialization
-  * [ ] SSTI
-  * [ ] Web Cache Poisoning
-  * [ ] HTTP request smuggling
-  * [ ] OAuth Authentication exploits
+  * [x] Deserialization
+  * [x] SSTI
+  * [x] Web Cache Poisoning
+  * [x] HTTP request smuggling
+  * [x] OAuth Authentication exploits
 * Pentesting
   * [x] Pentesting Methodology (mirror SAF Battle Procedure)
   * [x] Introduction to shells, brute force, and other common terms
