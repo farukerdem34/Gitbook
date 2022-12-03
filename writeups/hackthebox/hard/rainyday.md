@@ -100,7 +100,7 @@ Most likely, the first host is 172.18.0.1 (based on other HTB machines), so I st
 
 We can then curl this address to see what's going on within it.
 
-<figure><img src="../../../.gitbook/assets/image (5) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Odd, it refers us back to the original website. Earlier, we found a dev.rainycloud.htb endpoint, which was situated on the original machine. This got me thinking about where this website was hosted, and if 172.18.0.1:80 is open, it could mean that dev.rainycloud.htb is hosted there and we can try to connect to it.
 
@@ -110,7 +110,7 @@ Now, we can try to directly pivot to it.
 
 We also need to add the correct domain to our hosts file.
 
-<figure><img src="../../../.gitbook/assets/image (14) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then we can connect to the dev portal.
 
@@ -210,17 +210,17 @@ Weird that the sleep is this long. We can investigate this process in the /proc 
 
 There's this root directory within the process, and when going into it we are presented with another Linux / directory. This would contain the user flag and also jack's actual home directory.
 
-<figure><img src="../../../.gitbook/assets/image (2) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Also contains jack's private SSH key.
 
-<figure><img src="../../../.gitbook/assets/image (9) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 With this, we can finally SSH into the main machine as jack.
 
-<figure><img src="../../../.gitbook/assets/image (13) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -230,17 +230,17 @@ When checking sudo privileges, we see this:
 
 I wasn't sure what safe\_python was, but it looked to be some kind of binary. I was also unable to check it out and see what it does. Really weird. But it did seem to open files and accept something as a parameter to open.
 
-<figure><img src="../../../.gitbook/assets/image (12) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 I think this executes scripts of some kind, because upon creating some fake file, I saw this:
 
-<figure><img src="../../../.gitbook/assets/image (20) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 There's an exec( ) function being called, which is always interesting. This binary seems to execute python code within a set environment or something. My guess is that we need to create a python script that would execute to get us a shell as jack\_adm.
 
 The next few tests confirms this:
 
-<figure><img src="../../../.gitbook/assets/image (7) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (1) (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 There seem to be some keywords being filtered out, most notably 'import' because I cannot run anything that has import within it.&#x20;
 
@@ -266,7 +266,7 @@ I found this page particularly useful:
 
 I utilised their method and managed to get the index for this. This was 144.
 
-<figure><img src="../../../.gitbook/assets/image (8) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Right, so we need to somehow make use of this to import the os library. I could technically import one character each from each of the classes and then spell out 'import os', but that would be...very very long.
 
@@ -282,11 +282,11 @@ We can then get RCE as jack\_adm.
 
 After getting to jack\_adm, we can check sudo privileges again to see this:
 
-<figure><img src="../../../.gitbook/assets/image (10) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Another blind Sudo challenge in Python.  Except, all this does is hash passwords for us into Bcrypt format.
 
-<figure><img src="../../../.gitbook/assets/image (18) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 This is, without question, similar to the initial hashes we found in the website. My guess is, we need to crack the root hash we found a lot earlier to get get a root shell via SSH.&#x20;
 
@@ -312,7 +312,7 @@ I used an online UTF-8 generator to try and find a valid combiantion of characte
 
 Here are 2 instances of using UTF characters in hashing this algorithm with the machine's script. If you were to verify these two hashes, they would be identical. The 123456 is not hashed in the end, because we have entered more than 72 bytes of data.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (16) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 We could theoretically generate an input of 71 bytes, and then leave the last character to the salt and repeatedly brute force all the possible characters one by one. So with each character we find, we need to edit our input accordingly to have 1 less byte and to fit the flag there. I quickly created a script to test this, and this was the final result:
 

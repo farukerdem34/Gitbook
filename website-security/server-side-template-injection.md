@@ -12,7 +12,7 @@ Template injection works because websites fail to take in the data as just text,
 
 To test for this, we can follow this flowchart:
 
-<figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
 
 A successful injection would result in '49' being output, showing that the website does indeed process the template injected and confirming that we have RCE.
 

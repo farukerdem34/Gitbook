@@ -36,7 +36,7 @@ Following the exploit, we can test to see if we indeed have RCE:
 
 Works! Now we just need to gain a reverse shell. I used a simple bash shell to do so.
 
-<figure><img src="../../../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (7) (2).png" alt=""><figcaption></figcaption></figure>
 
@@ -46,7 +46,7 @@ Works! Now we just need to gain a reverse shell. I used a simple bash shell to d
 
 When we gain access as the user ruby, the flag is not there. There is another user named henry in this machine.
 
-<figure><img src="../../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 We don't have permissions to read the flag from henry's directory. However, when poking around ruby's directory and looking into the .bundle directory, we can find henry's password.
 

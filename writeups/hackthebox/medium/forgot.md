@@ -40,7 +40,7 @@ We probably need to somehow make this service send the email to our machine. So 
 
 Then we can visit the reset password page and reset his password to whatever we want.
 
-<figure><img src="../../../.gitbook/assets/image (18) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can then login as this robert user.
 
@@ -50,7 +50,7 @@ Take note that this machine is really weird, and the tokens used are always inva
 
 We can see the functionalities of this website, and perhaps get an RCE.
 
-<figure><img src="../../../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Looking at the tickets portion, I can see that there are some SSH credentials for a Jenkins machine on the backend. The tickets are sent to the administrator, which I think is a separate user.
 
@@ -247,7 +247,7 @@ All in all, rather interesting. So we wouuld need to input a malicious input int
 
 From here, we can first create a malicious script that would make us root. Make this executable.
 
-<figure><img src="../../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (23) (3).png" alt=""><figcaption></figcaption></figure>
 
 Then we need to figure out how to include an input into the database such that we can get a score of >= .5.&#x20;
 

@@ -6,7 +6,7 @@ Deserialization exploits the fact that a website may directly pass user input to
 
 We first need to understand what serialization is.
 
-<figure><img src="../.gitbook/assets/image (16).png" alt=""><figcaption><p><em>Taken from Portswigger Web Security Academy</em></p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (16) (1).png" alt=""><figcaption><p><em>Taken from Portswigger Web Security Academy</em></p></figcaption></figure>
 
 Websites would take in input via some function, and then serialize it into a certain format to be passed back to the server for processing. This format can be in form of a string, base64 encoded, binary, etc. Depends on the language and functions used for the website.&#x20;
 
@@ -20,7 +20,7 @@ This kind of attack mainly leads to RCE or DoS conditions on a website, which ar
 
 The HTB machine, Time, has a deserialization in Java making use of CVE-2021-12384. The machine has a website that basically takes in JSON input and beautifies it.
 
-<figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (11) (4).png" alt=""><figcaption></figcaption></figure>
 
 We can enter some random JSON objects and it would output it as you would expect. If we enter some weird input, an error like this would appear:
 

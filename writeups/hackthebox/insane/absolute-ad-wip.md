@@ -43,7 +43,7 @@ Everytime I would find a username, I would then test it for AS-REP roasting and 
 
 When testing this for AS-REP Roasting, it worked!
 
-<figure><img src="../../../.gitbook/assets/image (11) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then we can crack this hash.
 
@@ -59,7 +59,7 @@ We can attempt with LDAP as well and get a false result. It seems that **passwor
 
 I managed to retrieve a ticket using getTGT. We can then export this.
 
-<figure><img src="../../../.gitbook/assets/image (7) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can attempt kerberoasting the machine to try and get some kind of service ticket using the credentials using GetUserSPNs. The output using the DC Domain is below:
 
@@ -91,7 +91,7 @@ Running the same process, we can retrieve another ticket.
 
 Interesting, now that we have a ticket, we can export this. I found that we can access shares from the DC using this ticket to authenticate ourselves.
 
-<figure><img src="../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can check out the 'Shared' share to find some interesting files.
 
@@ -131,7 +131,7 @@ When I ran the binary on my Windows VM, it seems to exit straightaway. I started
 
 I found this interesting tidbit here.
 
-<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 Seems like there's a password being transmitted here to the LDAP server. The next step is trivial, we just need to run this thing on a VM connected to the VPN and we should get somewhere.
 

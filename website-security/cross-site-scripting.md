@@ -59,7 +59,7 @@ How this payload works is through rendering an **image** tag and having a script
 
 When inputted, the victim would view the Issues and be served this payload. This would result in the victim's browser making a callback to the attacker machine. On the attacker machine, the following callback is received:
 
-<figure><img src="../.gitbook/assets/image (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 This confirms that the XSS is working properly. For this machine, the payload can be modified to include information about a hidden directory that only the victim can access:
 
