@@ -8,7 +8,7 @@ description: Focused a lot on Kubernetes exploits, something I don't see often!
 
 We start with an Nmap scan to see what's running:
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (4).png" alt=""><figcaption></figcaption></figure>
 
 This wasn't very clear, so I opted for an in-depth version scan to enumerate the services better:
 
@@ -113,8 +113,30 @@ RCE should theoretically be possible with this host. Just checking to see which 
 
 Sweet. Now we can grab the user flag.
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (5).png" alt=""><figcaption></figcaption></figure>
 
 ### Gaining Shell
 
 I had a lot of trouble in gaining a shell on this machine. Seems that netcat, curl and wget are all not on the machine.
+
+<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+
+I looked around for tools that could spawn a shell directly. The page above linked to `kubeletctl`, which was a CLI tool to interact with the API. This could spawn me a shell directly.
+
+{% embed url="https://github.com/cyberark/kubeletctl" %}
+
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+## Docker Escape
+
+This was a docker shell that we needed to escape from. We can begin from the 3 directories listed on Hacktricks:
+
+* `/run/secrets/kubernetes.io/serviceaccount`
+* `/var/run/secrets/kubernetes.io/serviceaccount`
+* `/secrets/kubernetes.io/serviceaccount`
+
+Within the first one, we can find these things:
+
+<figure><img src="../../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+
+These were the 3 things that could potentially be used to impersonate something, or create new pods. Transferred the certificate and token via base64 encoding.

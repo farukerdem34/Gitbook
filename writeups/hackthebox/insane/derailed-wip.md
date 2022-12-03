@@ -66,7 +66,7 @@ I messed around a lot with the clipnotes and tried all sorts of stuff, but it wa
 
 So I started a HTTP server, and attempted this:
 
-<figure><img src="../../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (3).png" alt=""><figcaption></figcaption></figure>
 
 The reason I did this was because I am aware that there is a potential limit to the username, and trying to overflow that may cause the end bit to be rendered as JS code. Then I created a clipnote:
 
@@ -126,6 +126,6 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<select<style/><img src='http://
 
 This payload worked! I was able to retrieve two callbacks after creating the clipnote.
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 Now we can use a script from Hacktricks to steal the page content of the administration panel. However, seems like sending GET requests via this method does not work. Had a hard time making it work with the reports feature, but I'll get there. WIP.
