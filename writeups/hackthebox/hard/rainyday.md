@@ -106,7 +106,7 @@ Odd, it refers us back to the original website. Earlier, we found a dev.rainyclo
 
 Now, we can try to directly pivot to it.
 
-<figure><img src="../../../.gitbook/assets/image (22) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (22) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We also need to add the correct domain to our hosts file.
 
@@ -218,7 +218,7 @@ Also contains jack's private SSH key.
 
 With this, we can finally SSH into the main machine as jack.
 
-<figure><img src="../../../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -272,7 +272,7 @@ Right, so we need to somehow make use of this to import the os library. I could 
 
 Ther ehas to be a way to load the module I want. Eventually, after a few hours of tinkering with this (and by hours I mean like literally 2 days), I got it to work!
 
-<figure><img src="../../../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (21) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can then get RCE as jack\_adm.
 
