@@ -10,7 +10,7 @@ description: >-
 
 We can start with an nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (26) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then we can view Port 80:
 
@@ -26,7 +26,7 @@ I'm guessing here that the name of box has to do with this Forgot The Password m
 
 Probably done through sniffing or stealing cookies. When proxying traffic through Burp, we can see the following bits:
 
-<figure><img src="../../../.gitbook/assets/image (29) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (29) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Interesting. So anyways, password reset machine are quite unique, because generally there would be someone clicking that link that is sent. This initial challenge reminds me of the PortSwigger Password Reset Poisoning Labs, so I'll be starting with that exploit path.
 

@@ -23,7 +23,7 @@ Standard Ports. I added absolute.htb  and its DC into my hosts file for this mac
 
 Interestingly, doing all of these revealed nothing useful, **except for my last resort.** Running a kerbrute reveals this:
 
-<figure><img src="../../../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (32) (1).png" alt=""><figcaption></figcaption></figure>
 
 This username wordlist was just within my machine from another machine that required it. Very useful! However, these usernames cannot be used to do anything, leading me to believe that there are other users on this domain.
 
@@ -39,7 +39,7 @@ So to circumvent this, I took the names.txt file from Seclists (/seclists/userna
 
 Everytime I would find a username, I would then test it for AS-REP roasting and check for null credentials. Eventually, I found this d.klay user.
 
-<figure><img src="../../../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (31) (1).png" alt=""><figcaption></figcaption></figure>
 
 When testing this for AS-REP Roasting, it worked!
 
@@ -77,7 +77,7 @@ Kerberoasting reveals that there are no SPNs to roast. Instead, we can use this 
 
 {% embed url="https://wiki.porchetta.industries/getting-started/using-kerberos" %}
 
-<figure><img src="../../../.gitbook/assets/image (5) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (12) (4).png" alt=""><figcaption></figcaption></figure>
 
@@ -87,7 +87,7 @@ Really interesting output. We have found another user and credential!
 
 Running the same process, we can retrieve another ticket.
 
-<figure><img src="../../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (29) (1).png" alt=""><figcaption></figcaption></figure>
 
 Interesting, now that we have a ticket, we can export this. I found that we can access shares from the DC using this ticket to authenticate ourselves.
 

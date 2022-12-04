@@ -34,7 +34,7 @@ Within the user's directory, we can find this Keepass database here.
 
 This file seems to be encrypted with a password when trying to use keepassx to access its contents.
 
-<figure><img src="../../../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (30) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can convert this file to a hash for John to crack easily. However, Keepass2john wasn't working for this file for some reason, so we can move on first.
 
@@ -62,7 +62,7 @@ So we can do these commands to create a new user with a fake UID.
 
 Then we can SU to this user and view the directory again.
 
-<figure><img src="../../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (25) (1).png" alt=""><figcaption></figcaption></figure>
 
 Notice how the permissions have changed! We can now access the /var/www/html directory on the website. Reading the .htaccess file, it seems that PHP files are executed here.
 
@@ -70,7 +70,7 @@ Notice how the permissions have changed! We can now access the /var/www/html dir
 
 From here, we can move a webshell into this directory and confirm we have RCE on this website.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (28) (1).png" alt=""><figcaption></figcaption></figure>
 
 With this, we can easily get a reverse shell as this alex user.&#x20;
 

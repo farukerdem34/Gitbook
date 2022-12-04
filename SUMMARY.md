@@ -81,8 +81,10 @@
 
 ## 👀 Buffer Overflows
 
-* [System Architecture](buffer-overflows/system-architecture.md)
-* [Binary Security](buffer-overflows/binary-security.md)
+* [Prior Knowledge](buffer-overflows/prior-knowledge/README.md)
+  * [System Architecture](buffer-overflows/prior-knowledge/system-architecture.md)
+  * [Compilers, Assemblers, Debuggers and Decompilers](buffer-overflows/prior-knowledge/compilers-assemblers-debuggers-and-decompilers.md)
+  * [Binary Security](buffer-overflows/prior-knowledge/binary-security.md)
 * [Vanilla BOF](buffer-overflows/vanilla-bof.md)
 * [Ret2Libc](buffer-overflows/ret2libc.md)
 * [ROP Chaining](buffer-overflows/rop-chaining.md)

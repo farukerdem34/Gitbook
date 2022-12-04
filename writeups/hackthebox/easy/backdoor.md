@@ -4,7 +4,7 @@
 
 First we start with an Nmap scan as usual.
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (4).png" alt=""><figcaption></figcaption></figure>
 
 We can check out the HTTP server.
 
@@ -28,7 +28,7 @@ Now we can grab the user flag easily.
 
 I ran linpeas as early enumeration to see what was going on. Linpeas flagged out that `screen` was being run by root.
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (6).png" alt=""><figcaption></figcaption></figure>
 
 `screen` is a software that allows for us to run multiple screens on a single terminal. Root running this means that the root user has multiple screens that are running some processes currently. The attack in this case would be to attach ourselves to this process.&#x20;
 

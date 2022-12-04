@@ -94,3 +94,7 @@ Here are a few links to VM software:
 ### Windows
 
 {% embed url="https://developer.microsoft.com/en-us/windows/downloads/virtual-machines/" %}
+
+One that I've been using nowadays is **Commando VM**, which is basically a Windows machine that has all the tools I need, such as Bloodhound or WinDbg. Make sure to have a new Windows VM for it.
+
+{% embed url="https://github.com/mandiant/commando-vm" %}

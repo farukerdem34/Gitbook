@@ -333,7 +333,7 @@ for c in allchars:
 
 This would output something like this:
 
-<figure><img src="../../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (24) (1).png" alt=""><figcaption></figcaption></figure>
 
 H is the first character of the salt. Repeated tests of this script shows that the first character of this hash does not change, indicating the salt is static and not randomly generated. This was really cool, and we are able to slowly pull out the rest of this hash.
 
