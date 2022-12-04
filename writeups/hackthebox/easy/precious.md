@@ -133,7 +133,7 @@ We just need to put the malicious YAML file in some writeable place and execute 
 
 I changed the command to `chmod +s /bin/bash` and tried it out. Worked!
 
-<figure><img src="../../../.gitbook/assets/image (15) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (3) (2) (1).png" alt=""><figcaption></figcaption></figure>
 

@@ -14,7 +14,7 @@ The Central Process Unit (CPU) is in charge of executing machine code of a progr
 
 CPU instructions are represented in hex, and it's impossible for humans to use this in hex format because we can't read hex (obviously). Hence, this code gets translated into **mnenomic** code using tools like `nasm`.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption><p><em>helloword.exe program</em></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption><p><em>helloword.exe program</em></p></figcaption></figure>
 
 Each CPU has their own set of instructions and differ from one another. This set is known as the **instruction set architecture (ISA)**, which a compiler must understand and use to write the program. The ISA is what the programmer sees, which involves the memory, regiusters, instructions and so on. This provides all the necessary instructions for someone that wants to write a program in assembly.
 
@@ -170,7 +170,7 @@ As such, the ESP would be **incremented** as variables are stored in it and it *
 
 Take note of how we declare `int x = 11` first, hence its PUSHed last.&#x20;
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
 
 When we call the `func()` function, this would repeat again. The prologue changes values of the EBP to indicate the creation of another stack frame in memory would occur. This process continues until all variables are stored in their own stack frames.
 

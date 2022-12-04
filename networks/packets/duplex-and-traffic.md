@@ -68,4 +68,4 @@ What's important to note here is that **switches flood broadcast traffic, wherea
 
 Logically speaking, if routers flooded broadcast traffic, then the Internet would be really slow and completely swarmed with these packets.
 
-<figure><img src="../../.gitbook/assets/image (15) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (15) (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
