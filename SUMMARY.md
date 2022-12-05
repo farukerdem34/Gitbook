@@ -89,6 +89,8 @@
 * [OSCP BOF](buffer-overflows/oscp-bof.md)
 * [Ret2Libc](buffer-overflows/ret2libc.md)
 * [ROP Chaining](buffer-overflows/rop-chaining.md)
+* [Canary Bypass](buffer-overflows/canary-bypass.md)
+* [Egg Hunting](buffer-overflows/egg-hunting.md)
 * [ASLR / DEP Bypass](buffer-overflows/aslr-dep-bypass.md)
 
 ## 🖥 Active Directory

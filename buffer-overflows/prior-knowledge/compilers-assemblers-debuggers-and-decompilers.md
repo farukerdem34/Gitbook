@@ -21,7 +21,7 @@ When a source code file is assembled, the resulting file is called an **object f
 
 The process is outlined below:
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (5).png" alt=""><figcaption></figcaption></figure>
 
 Once the assembler creates the .obj file, a **linker** is needed to create the executable file. Linkers take one or more object files and combine them together. An example of an object file is a Dynamic Link Library file (.dll) used to create a .exe file together.
 
@@ -60,7 +60,7 @@ Some popular decompilers I use are `ghidra` and `dnspy`, for Linux and Windows r
 
 Here's an example of `ghidra` output:
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption><p><em>Taken from HTB 0xDiablos</em></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (5).png" alt=""><figcaption><p><em>Taken from HTB 0xDiablos</em></p></figcaption></figure>
 
 Not exactly translated back into C, but very close.&#x20;
 

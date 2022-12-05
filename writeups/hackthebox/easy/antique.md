@@ -12,13 +12,13 @@ An Nmap scan reveals that there is only one port open:
 
 When trying to use this Telnet port, we needed some credentials.
 
-<figure><img src="../../../.gitbook/assets/image (6) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 There's no way that we have to guess credentials, so I started scanning for UDP ports instead.  What I found were some SNMP ports, presumably for the printer.&#x20;
 
 &#x20;
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (3).png" alt=""><figcaption></figcaption></figure>
 
 ### SNMP Printer Exploit
 
@@ -32,7 +32,7 @@ This page suggested that we can leak the password of a printer just by sending a
 
 However, some of these characters aren't readable via ASCII. This led me to believe they were in hex form, and converting it back to text revealed the password.
 
-<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (2).png" alt=""><figcaption></figcaption></figure>
 
 The password is `P@ssw0rd@123!!123`. Now we can access the Telnet port.
 
@@ -40,7 +40,7 @@ The password is `P@ssw0rd@123!!123`. Now we can access the Telnet port.
 
 When accessing the telnet instance, we find out that we have the `exec` command to basically gain RCE over the machine.
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (2).png" alt=""><figcaption></figcaption></figure>
 
 With this, a simple reverse shell would do, and also allow us to become the **lp** user to capture the user flag.
 
@@ -50,7 +50,7 @@ With this, a simple reverse shell would do, and also allow us to become the **lp
 
 I ran linpeas to enumerate for me and found port 631 to be active, while remaining undetected from nmap.
 
-<figure><img src="../../../.gitbook/assets/image (11) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 Using chisel to port forward, we can easily gain access to this instance. We find that this is running CUPS v1.6.1.
 
@@ -58,7 +58,7 @@ Using chisel to port forward, we can easily gain access to this instance. We fin
 
 This version of CUPS was vulnerable to a root file read exploit. Since this was a port forwarding kind of scenario and I was a bit lazy, I took a loot at the Metasploit exploit code to see what was going on.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 Simple enough, we can just read the root flag directly!
 

@@ -34,13 +34,13 @@ Within the user's directory, we can find this Keepass database here.
 
 This file seems to be encrypted with a password when trying to use keepassx to access its contents.
 
-<figure><img src="../../../.gitbook/assets/image (30) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (30) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can convert this file to a hash for John to crack easily. However, Keepass2john wasn't working for this file for some reason, so we can move on first.
 
 While looking at his directory, we can find that Ross's UID is 1001.
 
-<figure><img src="../../../.gitbook/assets/image (90).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (90) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### HTML NFS
 
@@ -50,7 +50,7 @@ When mounting and looking through the files of the other files, we can see the f
 
 Interesting files there. BUt we can't edit or do anything with these files. The website itself is also just a simple template, and not much can be done on it. What's interesting was, there was a user with a uid of 2017 being assigned to the html file.
 
-<figure><img src="../../../.gitbook/assets/image (92).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (92) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### NFS Exploit
 
@@ -62,7 +62,7 @@ So we can do these commands to create a new user with a fake UID.
 
 Then we can SU to this user and view the directory again.
 
-<figure><img src="../../../.gitbook/assets/image (25) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (25) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Notice how the permissions have changed! We can now access the /var/www/html directory on the website. Reading the .htaccess file, it seems that PHP files are executed here.
 
@@ -70,7 +70,7 @@ Notice how the permissions have changed! We can now access the /var/www/html dir
 
 From here, we can move a webshell into this directory and confirm we have RCE on this website.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (28) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (28) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 With this, we can easily get a reverse shell as this alex user.&#x20;
 
@@ -84,7 +84,7 @@ We can grab the user flag from this alex user.
 
 We can run a linPEAS to enumerate for us. From the output, we see don't really see much. So I looked around the NFS share stuff, as we found ross's directory but was unable to do anything.
 
-<figure><img src="../../../.gitbook/assets/image (88).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (88) (2).png" alt=""><figcaption></figcaption></figure>
 
 As Ross, we don't have the 'rw' options, meaning we can't do much even if we impersonate him. A quick check on who's logged on reveals ross is logged on.
 
@@ -96,7 +96,7 @@ Generally, when I see a session like this, there should be a way to capture the 
 
 Because this was a remote session, the .Xauthority files were particularly interesting.
 
-<figure><img src="../../../.gitbook/assets/image (10) (1) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (1) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 So I learnt Xauthority files are used to store credentials to authenticate to a display. Basically, we can use this thing to take a snapshot of the image of ross's screen!
 
@@ -114,7 +114,7 @@ I found the exploit easy thanks to these references:
 
 Firstly, export the file to env variables.
 
-<figure><img src="../../../.gitbook/assets/image (7) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then take a screeshot using xwd.
 

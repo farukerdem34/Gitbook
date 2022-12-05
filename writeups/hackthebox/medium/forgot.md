@@ -36,7 +36,7 @@ We probably need to somehow make this service send the email to our machine. So 
 
 <figure><img src="../../../.gitbook/assets/image (17) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (3) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then we can visit the reset password page and reset his password to whatever we want.
 
@@ -66,7 +66,7 @@ When taking a look around some more, I found this unique endpoint.
 
 When trying to visit it, I just changed the authorization cookie to have the username as "admin" and it granted me access.
 
-<figure><img src="../../../.gitbook/assets/image (13) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (2) (3).png" alt=""><figcaption></figcaption></figure>
 
 Cool, we have credentials. `diego:dCb#1!x0%gjq`. Now we can SSH into the machine as diego.
 

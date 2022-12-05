@@ -14,7 +14,7 @@ The Central Process Unit (CPU) is in charge of executing machine code of a progr
 
 CPU instructions are represented in hex, and it's impossible for humans to use this in hex format because we can't read hex (obviously). Hence, this code gets translated into **mnenomic** code using tools like `nasm`.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption><p><em>helloword.exe program</em></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (3).png" alt=""><figcaption><p><em>helloword.exe program</em></p></figcaption></figure>
 
 Each CPU has their own set of instructions and differ from one another. This set is known as the **instruction set architecture (ISA)**, which a compiler must understand and use to write the program. The ISA is what the programmer sees, which involves the memory, regiusters, instructions and so on. This provides all the necessary instructions for someone that wants to write a program in assembly.
 
@@ -30,7 +30,7 @@ Think of registers like variables used by the CPU to store and get data. Some re
 
 In a 32-bit system, each register is an acryonym that is prefixed with 'E', meaning extended. The E is replaced by 'R' in x64.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (28) (1).png" alt=""><figcaption></figcaption></figure>
 
 **The most important register** is called the **instruction pointer or EIP.** This register controls the flow of program execution through storing a pointer to the address of the next instruction where it will be executed. The entire point of a **buffer overflow to RCE is to control this one register**.
 
@@ -38,7 +38,7 @@ In a 32-bit system, each register is an acryonym that is prefixed with 'E', mean
 
 When a process runs, it is organised in a stack shape, and this is called Process Memory. When we run a binary, the data loaded in memory is shown in this diagram:
 
-<figure><img src="../../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (43) (2).png" alt=""><figcaption></figcaption></figure>
 
 The process is divided into 4 regions:
 
@@ -103,7 +103,7 @@ int main(){ //main function where program starts
 
 The stack frames would look like this for the program above:
 
-<figure><img src="../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (24) (1).png" alt=""><figcaption></figcaption></figure>
 
 As the stack frames are popped out, the EIP would point back to `a()` and then `main()`, changing where the execution flow starts and resumes.&#x20;
 
@@ -170,7 +170,7 @@ As such, the ESP would be **incremented** as variables are stored in it and it *
 
 Take note of how we declare `int x = 11` first, hence its PUSHed last.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
 
 When we call the `func()` function, this would repeat again. The prologue changes values of the EBP to indicate the creation of another stack frame in memory would occur. This process continues until all variables are stored in their own stack frames.
 
@@ -207,7 +207,7 @@ The `ret` instruction POPs the value at the top of the stack to the old EIP. Thi
 
 After `func()` returns, the stack frames look like this:
 
-<figure><img src="../../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (30) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Endianness
 
@@ -219,11 +219,11 @@ Endianness refers to how storing values in memory works. There are 2 types of en
 
 In Big Endian representation, the LSB is stored in the **highest memory address**.
 
-<figure><img src="../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (25) (1).png" alt=""><figcaption></figcaption></figure>
 
 For LSB, it's the opposite:
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (6).png" alt=""><figcaption></figcaption></figure>
 
 This affects the order of which a program reads code, and affects the type of payloads associated with buffer overflows.
 

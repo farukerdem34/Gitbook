@@ -128,7 +128,7 @@ Now we can fuzz the /api endpoint more to hopefully find something new. After a 
 
 Visiting this page gave me this JSON object:
 
-<figure><img src="../../../.gitbook/assets/image (94).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (94) (2).png" alt=""><figcaption></figcaption></figure>
 
 The last part is the most interesting because it contains some form of regex pattern and its a custom type. This page looks to be appears to be telling us parameters for a POST request perhaps.
 
@@ -142,11 +142,11 @@ We can try to grab the Cookie from the session earlier on the main website as ga
 
 So now we know there's an app.py, meaning there's also probably some kind of secret.py because this is a flask application.
 
-<figure><img src="../../../.gitbook/assets/image (90) (1).png" alt=""><figcaption><p>\</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (90) (1) (2).png" alt=""><figcaption><p>\</p></figcaption></figure>
 
 Playing around with this some more, it appears that the 'custom' type would require a pattern, indicating to me this could be searching for regex in files. The reuslt of true / false would tell us whether the character was in it.
 
-<figure><img src="../../../.gitbook/assets/image (91).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (91) (2).png" alt=""><figcaption></figcaption></figure>
 
 So now, we would need to create some form of script to brute force out the characters of the SECRET_KEY, because that's needed to decode the cookie and (maybe)_ get a password.
 
@@ -186,15 +186,15 @@ while True:
 
 This would generate the SECRET\_KEY accordingly.
 
-<figure><img src="../../../.gitbook/assets/image (95).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (95) (2).png" alt=""><figcaption></figcaption></figure>
 
 Now, we can actually generate another cookie to login as jack and gain RCE as jack.
 
-<figure><img src="../../../.gitbook/assets/image (87).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (87) (2).png" alt=""><figcaption></figcaption></figure>
 
 Replace the cookies and now we can have RCE as jack using the container he created.
 
-<figure><img src="../../../.gitbook/assets/image (93).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (93) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Jack's Container
 
@@ -206,7 +206,7 @@ What we see is this command:
 
 Weird that the sleep is this long. We can investigate this process in the /proc directory.
 
-<figure><img src="../../../.gitbook/assets/image (89).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (89) (2).png" alt=""><figcaption></figcaption></figure>
 
 There's this root directory within the process, and when going into it we are presented with another Linux / directory. This would contain the user flag and also jack's actual home directory.
 
@@ -333,7 +333,7 @@ for c in allchars:
 
 This would output something like this:
 
-<figure><img src="../../../.gitbook/assets/image (24) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (24) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 H is the first character of the salt. Repeated tests of this script shows that the first character of this hash does not change, indicating the salt is static and not randomly generated. This was really cool, and we are able to slowly pull out the rest of this hash.
 

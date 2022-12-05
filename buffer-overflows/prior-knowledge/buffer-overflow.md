@@ -27,7 +27,7 @@ The `buffer` variable is an array that can store up to 10 characters, however we
 
 Within the stack, this is what the program would store normally:
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (91).png" alt=""><figcaption></figcaption></figure>
 
 Should we overflow the buffer variable, this would **overwrite the EBP and EIP**. The return address of the function thus changes.
 
@@ -93,3 +93,40 @@ os.system(command)
 ```
 
 When executed, this would overflow the buffer, and print the good password output.&#x20;
+
+## Vulnerable Functions
+
+In C, there are a lot of functions that are vulnerable to buffer overflows. The common occurrence between these functions is that **they do not have input validation or length verification**. Anyone can key in an absurdly long input and force the program to process it, which would allow for BOF to take place.
+
+For example, we can compare the `fgets()` and `gets()` function in C. Both of which take user input and do something with it. Here's some documentation for the functions:
+
+```c
+char *fgets(char *str, int n, FILE *stream)
+char *gets(char *str)
+```
+
+The `fgets()` function takes one `int n` variable, which represents the **length of the input it receives**. `gets()` on the other hand, simply takes a string in without length validation. Because one checks for length, it is **more secure** than the other. `gets()` is rather notorious for buffer overflow exploits, whereas `fgets()` is more secure **but not invulnerable**. It is still exploitable if it is used incorrectly!
+
+Here are a list of functions that I look out for when decompiling binaries to view the code:
+
+```
+strcpy
+strcat
+gets
+fgets
+scanf
+fscanf
+vsprintf
+printf
+memcpy
+```
+
+If the length of an input is not validated properly using these functions, it would indicate that it could be vulnerable to BOF as we are able to overflow something and exploit the program.&#x20;
+
+Apart from these functions, when looking out for BOF, we should take note of any **user-controlled input that is not sanitised and passed to a program**. In general, if we see something that isn't checked for length, it could be vulnerable, and **it is not limited to these few functions**.&#x20;
+
+In general, to avoid BOF:
+
+1. Check user input, make sure that the length is validated. If we accept 50 characters, then make sure the length is 50.
+2. If user input is passed anywhere, ensure that there are checks in the length of input.
+3. Only allow alphanumeric characters. Attackers can sometimes exploit the fact that **only length is being validated and not size**. BOF can (technically) happen using unicode characters, which contain up to 4 bytes per character.&#x20;
