@@ -62,8 +62,14 @@ The goal here is to trigger **all 3 of these functions using basic ROP chaining 
 Our payload would look like this:
 
 ```
-payload = 50 "A" + BBBB  + &fun1 + &fun2 + &fun3 + &exit
+payload = AAAAA... + BBBB  + &fun1 + &fun2 + &fun3 + &exit
 ```
+
+The 'BBBB' characters are present to overflow the EBP, and the address of `fun1()` comes right after. Recall that the stack frame looks like this at the tail end of the function.
+
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+### Basic Exploit
 
 Now, we need to open this up in `gdb` to analyse its contents.
 
@@ -81,8 +87,92 @@ My addresses are static because ASLR is disabled, so no worries for that. Now, w
 
 <figure><img src="../.gitbook/assets/image (90).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
 
-The offset is 62, and now we can start to construct our exploit script.&#x20;
+The offset is 62, and now we can start to construct our exploit script. Since this is a 32-bit binary (as compiled), we would need to account for the endianness of the addresses. Using python, we can create the payload and send it as the input for the function. This is done using the expression syntax `$()` for Linux terminals.
+
+The number of As would be 58, which is offset of 62 - 4 since we need the next 4 bytes need to overwrite the EBP. Then the rest of our addresses would come after. If done correctly, the exploit would look like this:
+
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
+We have successfully called all other functions without the program meaning to do so. In this case, notice how it **does not cause a segmentation fault.** This is mainly because we called `exit()` which is used to exit the program gracefully.&#x20;
+
+In essence, this is how ROP chaining would work on an ASLR-disabled function.
+
+## With Variables
+
+Now suppose that we change our program a bit to have the functions take in some variable. So, after returning to the address of the function, we would need to include some bytes representing the **arguments** for the function.&#x20;
+
+For example, a function `fun1(int a, int b)` would need to have 2 integers be passed in before we can run the function. Else the program would complain that we did not supply enough variables and end. Potentially, **these variables can be manipulated with our own variables**. Suppose a function takes in a command and passes it to a `system()` call, then we can use ROP chaining to return to that function and include the specific command we want.&#x20;
+
+So our payload would look like this:
+
+```
+payload = AAA.... + BBBB + &fun1 + &pop;ret + <variable> + &exit
+```
+
+If we **do not wish to enter this function and want to hop around more**, then we would need to use **ROP Gadgets**.
+
+### ROP Gadgets
+
+ROP gadgets are basically sequences of CPU instructions that are **already present in the program** that is being run. One example of a ROP gadget is the `JMP ESP` instructions that we used in the OSCP BOF example.&#x20;
+
+Most of the time, these gadgets can be exploited to execute **almost any code**, and commonly end with the `ret` instruction. These gadgets bypass DEP because **there is no executable code from the stack,** and instead executable code is **manipulated** to achieve the same effect.
+
+In `gdb-peda`, there is a command `ropgadget` which can find the addresses of these gadgets for us.&#x20;
+
+We can change the vulnerable code above to include variables needed:
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+void fun1(){
+	printf("1\n");
+}
+
+void fun2(int a){
+	printf("%d\n", a);
+}
+
+void fun3(int a, int b){
+	printf("%d %d\n",a ,b);
+}
+
+void rop(char *string){
+	char buffer[50];
+	strcpy(buffer, string);
+}
+
+int main(int argc, char** argv){
+	rop(argv[1]);
+	return 0;
+}
+```
+
+
+
+Now, the objective is still the same, we want to call the functions in order as per normal. But, pur payload would look something like this:
+
+{% code overflow="wrap" %}
+```
+payload = AAA... + BBBB + &fun1() + &fun2 + &pop;ret + <rop2 arg1> + &rop3() + &pop;pop;ret + <rop3 arg1> + <rop3 arg2> + &exit()
+```
+{% endcode %}
+
+The reason we want to include the first `pop; ret` is because we want to first `pop` the `rop2 arg1` variable out of the stack (to remove interference with our jumping) and then hop to `rop3`.&#x20;
+
+Afterwards, because `rop3` takes 2 arguments, we would need to have 2 `pop` instructions to remove the 2 variables passed to `rop3` and then call `exit()` as per normal afterwards.&#x20;
+
+We can take a look at the ROP gadgets that we have on hand for this binary.
+
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+
+The exploit would work as per the regular exploit. When we key in the variables to be printed, it prints, and jumps to the next function.
+
+## Example&#x20;
+
+From HTB Retired, there was an early Local File Inclusion vulnerability used to download a binary that had NX and PIE enabled, however it was still vulnerable to ROP chaining because of the predictability of ASLR.
+

@@ -24,7 +24,7 @@ Interesting. This presented a lot of information for me and also tells me this i
 
 From here, we can try to fuzz out other information and endpoints on this /rail directory. I used feroxbuster for its recursive search function.
 
-<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 This directory basically shows us every single path there was in the website:
 
