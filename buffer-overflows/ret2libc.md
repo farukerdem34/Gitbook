@@ -40,7 +40,7 @@ Firstly, we would find a binary named `rop` that is left behind for us, and it h
 
 First, we need to use `checksec` on the binary to see what we can and cannot do:
 
-<figure><img src="../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (25) (3).png" alt=""><figcaption></figcaption></figure>
 
 Breaking down the output, we notice that ASLR is disabled, RELRO is partial (meaning we have some space for writing code) and most importantly, NX is enabled. The stack is non executable, meaning that shellcode cannot be injected here.
 
@@ -68,17 +68,17 @@ So this binary loads the `libc.so.6` file in virtual memory. The base address is
 
 I first found the `/bin/sh` address using `strings -a -t x /lib/i386-linux-gnu/libc.so.6 | grep "/bin/sh"`
 
-<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 The offset is `0x0015ba0b`, and when added to the base address found earlier, we would get `0xb7f74a0b`. So `/bin/sh` is there.
 
 Then, we need to find the `system()` function. I did so using `objdump` .&#x20;
 
-<figure><img src="../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
 
 Adding the offset, we would get `0xb7e53da0`. Lastly, we need `exit()` , which is found using the same manner.
 
-<figure><img src="../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (28) (1).png" alt=""><figcaption></figcaption></figure>
 
 `0xb7e479d0` is where `exit()` lives.&#x20;
 
@@ -111,4 +111,4 @@ print buffer
 
 Now, we just need to feed the output from this script into `rop`. This would spawn a root shell for us and we can finish the machine.
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>

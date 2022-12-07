@@ -20,7 +20,7 @@ This was a port I had never seen before. A bit of googling revealed that this wa
 
 I was really lazy, so I got the the `exploit/multi/gdb/gdb_server_exec` module from MSF to do the work. In my testing after rooting, I could not make the PoC work for me. Strange.
 
-<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now we can grab the user flag easily.
 
@@ -50,4 +50,4 @@ screen -x root/<PID>
 
 This would drop us in a root shell and we can read the flag.
 
-<figure><img src="../../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (1) (1).png" alt=""><figcaption></figcaption></figure>

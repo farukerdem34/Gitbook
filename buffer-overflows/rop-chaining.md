@@ -67,7 +67,7 @@ payload = AAAAA... + BBBB  + &fun1 + &fun2 + &fun3 + &exit
 
 The 'BBBB' characters are present to overflow the EBP, and the address of `fun1()` comes right after. Recall that the stack frame looks like this at the tail end of the function.
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
 
 ### Basic Exploit
 
@@ -81,21 +81,21 @@ r
 
 Then, we can find the addresses of these functions.
 
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 My addresses are static because ASLR is disabled, so no worries for that. Now, we need to find the offset needed. The offset should be about 50, but I'll generate a pattern of length 70 in case.
 
-<figure><img src="../.gitbook/assets/image (90).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (90) (2).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
 
 The offset is 62, and now we can start to construct our exploit script. Since this is a 32-bit binary (as compiled), we would need to account for the endianness of the addresses. Using python, we can create the payload and send it as the input for the function. This is done using the expression syntax `$()` for Linux terminals.
 
 The number of As would be 58, which is offset of 62 - 4 since we need the next 4 bytes need to overwrite the EBP. Then the rest of our addresses would come after. If done correctly, the exploit would look like this:
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (98).png" alt=""><figcaption></figcaption></figure>
 
 We have successfully called all other functions without the program meaning to do so. In this case, notice how it **does not cause a segmentation fault.** This is mainly because we called `exit()` which is used to exit the program gracefully.&#x20;
 
@@ -168,11 +168,11 @@ Afterwards, because `rop3` takes 2 arguments, we would need to have 2 `pop` inst
 
 We can take a look at the ROP gadgets that we have on hand for this binary.
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (100).png" alt=""><figcaption></figcaption></figure>
 
 The exploit would work as per the regular exploit. When we key in the variables to be printed, it prints, and jumps to the next function.
 
 ## Example&#x20;
 
-From HTB Retired, there was an early Local File Inclusion vulnerability used to download a binary that had NX and PIE enabled, however it was still vulnerable to ROP chaining because of the predictability of ASLR.
+From HTB Retired, there was an early Local File Inclusion vulnerability used to download a binary that had NX and PIE enabled. However, because we had LFI on the binary, we can leak the base address of the `libc` library and be able to do ROP chaining to execute shell code by 'disabling' NX through the `mprotect` function call.
 

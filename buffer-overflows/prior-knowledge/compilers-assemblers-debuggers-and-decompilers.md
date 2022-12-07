@@ -35,7 +35,7 @@ I use Immunity Debugger a lot for Vanilla BOFs (for OSCP) and it's really handy 
 
 Here's how Immunity Debugger would look when a binary is loaded.
 
-<figure><img src="../../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (31) (2).png" alt=""><figcaption></figcaption></figure>
 
 The windows are as follows:
 

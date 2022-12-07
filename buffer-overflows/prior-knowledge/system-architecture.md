@@ -26,11 +26,11 @@ Think of registers like variables used by the CPU to store and get data. Some re
 
 **General Purpose Registers (GPRs)** are a set of registers that can be used for normal assembly. They each have a specific name and purpose.
 
-<figure><img src="../../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (40) (2).png" alt=""><figcaption></figcaption></figure>
 
 In a 32-bit system, each register is an acryonym that is prefixed with 'E', meaning extended. The E is replaced by 'R' in x64.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (28) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (28) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 **The most important register** is called the **instruction pointer or EIP.** This register controls the flow of program execution through storing a pointer to the address of the next instruction where it will be executed. The entire point of a **buffer overflow to RCE is to control this one register**.
 
@@ -65,7 +65,7 @@ The most fundamental operations are the **PUSH** and **POP** instructions, which
 
 This instruction minuses 4 in 32-bit or 8 in 64-bit from the ESP and updaters the ESP. It substracts to a point with **lower memory location** on the stack.
 
-<figure><img src="../../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (34) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### POP
 
@@ -138,7 +138,7 @@ The instruction that executes the `main()` function, also known as the **caller,
 
 A new stack frame is created, and **defined by the ESP and EBP**. Since we cannot lose the old stack frame and its information, the current EBP is saved on the stack.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (29) (2).png" alt=""><figcaption></figcaption></figure>
 
 #### Prologue
 
@@ -174,7 +174,7 @@ Take note of how we declare `int x = 11` first, hence its PUSHed last.&#x20;
 
 When we call the `func()` function, this would repeat again. The prologue changes values of the EBP to indicate the creation of another stack frame in memory would occur. This process continues until all variables are stored in their own stack frames.
 
-<figure><img src="../../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (35) (2).png" alt=""><figcaption></figcaption></figure>
 
 Notice how the ESP keeps pointing to the top of the stack of other frames, and the old values are still stored within the stack.
 

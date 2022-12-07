@@ -8,7 +8,7 @@ description: HP JetDirect SNMP exploits followed by some
 
 An Nmap scan reveals that there is only one port open:
 
-<figure><img src="../../../.gitbook/assets/image (16) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (3).png" alt=""><figcaption></figcaption></figure>
 
 When trying to use this Telnet port, we needed some credentials.
 
@@ -44,7 +44,7 @@ When accessing the telnet instance, we find out that we have the `exec` command 
 
 With this, a simple reverse shell would do, and also allow us to become the **lp** user to capture the user flag.
 
-<figure><img src="../../../.gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (38) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Root Flag&#x20;
 
@@ -54,7 +54,7 @@ I ran linpeas to enumerate for me and found port 631 to be active, while remaini
 
 Using chisel to port forward, we can easily gain access to this instance. We find that this is running CUPS v1.6.1.
 
-<figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (1).png" alt=""><figcaption></figcaption></figure>
 
 This version of CUPS was vulnerable to a root file read exploit. Since this was a port forwarding kind of scenario and I was a bit lazy, I took a loot at the Metasploit exploit code to see what was going on.&#x20;
 

@@ -1,2 +1,2 @@
-# ASLR / DEP Bypass
+# ASLR Bypass
 

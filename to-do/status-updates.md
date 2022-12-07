@@ -22,12 +22,17 @@
   * [x] WEP, WPA, WPA2, WPA3, WPS (click button on printer to connect to wifi)
   * [x] Pentesting each security protocol (IV brute force, Handshake packets etc.)
 * Buffer Overflow
-  * [ ] System Architecture (ARM, AMD, x64, x86, 16-bit)
-  * [ ] Pointers, Stack and Heap
-  * [ ] Introduction to BOF (beginner BOF + RCE)&#x20;
-  * [ ] BOF Exploit Process Walkthrough (Basic, use OSCP examples)
+  * [x] System Architecture (ARM, AMD, x64, x86, 16-bit)
+  * [x] Pointers, Stack and Heap
+  * [x] Introduction to BOF (beginner BOF + RCE)&#x20;
+  * [x] BOF Exploit Process Walkthrough (Basic, use OSCP examples)
   * [ ] Advanced BOF (ROP Chaining, Ret2libc, ASLR/DEP Bypass, etc.)
-  * [ ] Kernel Exploits (rough introduction to Kernel)
+    * [x] ROP Chaining
+    * [x] Ret2Libc
+    * [ ] ASLR / DEP Bypass
+    * [ ] Canary Bypass
+    * [ ] Egg Hunting (because I found it cool)
+    * [x] GOT Overwrite - Used writeup because it explained it well.
 * Web Exploits
   * [x] SQL Injection
   * [x] Authentication Bypass
