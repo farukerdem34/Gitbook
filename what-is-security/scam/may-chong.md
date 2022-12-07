@@ -24,7 +24,7 @@ Quite shabby for an 'NUS' website.&#x20;
 
 This is what the website looks like:
 
-<figure><img src="../../.gitbook/assets/image (147) (2).png" alt=""><figcaption><p><em>May Chong's</em></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (147).png" alt=""><figcaption><p><em>May Chong's</em></p></figcaption></figure>
 
 Interesting. We can play spot the difference between the image above, and the login from edurec!
 
@@ -32,7 +32,7 @@ Interesting. We can play spot the difference between the image above, and the lo
 
 Notice a key few differences. There is a property part missing. Also, on Edurec, it says **Register 2FA** and on the other website, it says **Help On 2FA.** Also, earlier I used curl to analyse the website to see loads of hidden JS being executed. However, the main page only reveals this in their page source.
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 We can test the login as follows:
 

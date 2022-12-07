@@ -20,7 +20,7 @@ This was a port I had never seen before. A bit of googling revealed that this wa
 
 I was really lazy, so I got the the `exploit/multi/gdb/gdb_server_exec` module from MSF to do the work. In my testing after rooting, I could not make the PoC work for me. Strange.
 
-<figure><img src="../../../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (2).png" alt=""><figcaption></figcaption></figure>
 
 Now we can grab the user flag easily.
 
@@ -28,7 +28,7 @@ Now we can grab the user flag easily.
 
 I ran linpeas as early enumeration to see what was going on. Linpeas flagged out that `screen` was being run by root.
 
-<figure><img src="../../../.gitbook/assets/image (2) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 `screen` is a software that allows for us to run multiple screens on a single terminal. Root running this means that the root user has multiple screens that are running some processes currently. The attack in this case would be to attach ourselves to this process.&#x20;
 
@@ -50,4 +50,4 @@ screen -x root/<PID>
 
 This would drop us in a root shell and we can read the flag.
 
-<figure><img src="../../../.gitbook/assets/image (7) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>

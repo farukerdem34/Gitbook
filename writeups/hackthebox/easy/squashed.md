@@ -20,7 +20,7 @@ Seeing that there are loads of unknown ports, I want to enumerate what services 
 
 Seeing that port 111 is running the NFS service, I want to see what files are being shared on the machine. We can do so using showmount.
 
-<figure><img src="../../../.gitbook/assets/image (344).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (344) (1).png" alt=""><figcaption></figcaption></figure>
 
 Interesting directories to make public. We can mount these directories to view what's within them. Remember that mount requires sudo privileges.
 
@@ -46,7 +46,7 @@ While looking at his directory, we can find that Ross's UID is 1001.
 
 When mounting and looking through the files of the other files, we can see the files that are within the website.
 
-<figure><img src="../../../.gitbook/assets/image (96).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (96) (2).png" alt=""><figcaption></figcaption></figure>
 
 Interesting files there. BUt we can't edit or do anything with these files. The website itself is also just a simple template, and not much can be done on it. What's interesting was, there was a user with a uid of 2017 being assigned to the html file.
 
@@ -74,7 +74,7 @@ From here, we can move a webshell into this directory and confirm we have RCE on
 
 With this, we can easily get a reverse shell as this alex user.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (97).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (97) (3).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (2) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -114,18 +114,18 @@ I found the exploit easy thanks to these references:
 
 Firstly, export the file to env variables.
 
-<figure><img src="../../../.gitbook/assets/image (7) (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then take a screeshot using xwd.
 
-<figure><img src="../../../.gitbook/assets/image (15) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 Now we can transfer this file back to our machine and view the image.
 
 When viewing this image, we just get this password here.
 
-<figure><img src="../../../.gitbook/assets/image (14) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then we can just su and grab the root flag.
 
-<figure><img src="../../../.gitbook/assets/image (9) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (2) (2).png" alt=""><figcaption></figcaption></figure>

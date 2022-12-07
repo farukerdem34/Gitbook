@@ -35,7 +35,7 @@ So now we have some possible users. I wanted to try and fuzz along this line, si
 
 So to circumvent this, I took the names.txt file from Seclists (/seclists/usernames/names/names.txt) then appended the front of each entry with a letter and brute forced it. From A - Z. This would produce a list of names with the prefix required.
 
-<figure><img src="../../../.gitbook/assets/image (8) (2) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (2) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Everytime I would find a username, I would then test it for AS-REP roasting and check for null credentials. Eventually, I found this d.klay user.
 
@@ -47,7 +47,7 @@ When testing this for AS-REP Roasting, it worked!
 
 Then we can crack this hash.
 
-<figure><img src="../../../.gitbook/assets/image (3) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Retrieving Tickets
 
@@ -87,11 +87,11 @@ Really interesting output. We have found another user and credential!
 
 Running the same process, we can retrieve another ticket.
 
-<figure><img src="../../../.gitbook/assets/image (29) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (29) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Interesting, now that we have a ticket, we can export this. I found that we can access shares from the DC using this ticket to authenticate ourselves.
 
-<figure><img src="../../../.gitbook/assets/image (4) (1) (1) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can check out the 'Shared' share to find some interesting files.
 
@@ -119,9 +119,9 @@ Now we just need to fire up bloodhound and neo4j to view this data in a neat for
 
 Out of all of these users, m.lovegod has the most privileges. The user owns the Network Audit group. **This group has GenericWrite over the WinRM\_User**, which I suspect is where the user flag would be. So our exploit path is clear.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (3) (1) (2) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (33) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
 
 We now need to somehow get a ticket from this m.lovegod user, or find his credentials.&#x20;
 

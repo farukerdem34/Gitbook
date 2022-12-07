@@ -146,7 +146,7 @@ So now we know there's an app.py, meaning there's also probably some kind of sec
 
 Playing around with this some more, it appears that the 'custom' type would require a pattern, indicating to me this could be searching for regex in files. The reuslt of true / false would tell us whether the character was in it.
 
-<figure><img src="../../../.gitbook/assets/image (91) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (91) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 So now, we would need to create some form of script to brute force out the characters of the SECRET_KEY, because that's needed to decode the cookie and (maybe)_ get a password.
 
@@ -206,7 +206,7 @@ What we see is this command:
 
 Weird that the sleep is this long. We can investigate this process in the /proc directory.
 
-<figure><img src="../../../.gitbook/assets/image (89) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (89) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 There's this root directory within the process, and when going into it we are presented with another Linux / directory. This would contain the user flag and also jack's actual home directory.
 
@@ -276,7 +276,7 @@ Ther ehas to be a way to load the module I want. Eventually, after a few hours o
 
 We can then get RCE as jack\_adm.
 
-<figure><img src="../../../.gitbook/assets/image (92) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (92) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Hash\_password.py
 
@@ -333,7 +333,7 @@ for c in allchars:
 
 This would output something like this:
 
-<figure><img src="../../../.gitbook/assets/image (24) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (24) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 H is the first character of the salt. Repeated tests of this script shows that the first character of this hash does not change, indicating the salt is static and not randomly generated. This was really cool, and we are able to slowly pull out the rest of this hash.
 
@@ -351,7 +351,7 @@ We can generate a wordlist with rockyou.txt with the new salt at the back.
 
 And we can crack this easily.
 
-<figure><img src="../../../.gitbook/assets/image (13) (2) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (2) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then we can su to root and grab our flag.
 

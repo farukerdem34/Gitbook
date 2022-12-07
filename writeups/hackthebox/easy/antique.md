@@ -8,7 +8,7 @@ description: HP JetDirect SNMP exploits followed by some
 
 An Nmap scan reveals that there is only one port open:
 
-<figure><img src="../../../.gitbook/assets/image (16) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
 
 When trying to use this Telnet port, we needed some credentials.
 
@@ -32,7 +32,7 @@ This page suggested that we can leak the password of a printer just by sending a
 
 However, some of these characters aren't readable via ASCII. This led me to believe they were in hex form, and converting it back to text revealed the password.
 
-<figure><img src="../../../.gitbook/assets/image (13) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 The password is `P@ssw0rd@123!!123`. Now we can access the Telnet port.
 
@@ -40,7 +40,7 @@ The password is `P@ssw0rd@123!!123`. Now we can access the Telnet port.
 
 When accessing the telnet instance, we find out that we have the `exec` command to basically gain RCE over the machine.
 
-<figure><img src="../../../.gitbook/assets/image (8) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 With this, a simple reverse shell would do, and also allow us to become the **lp** user to capture the user flag.
 
@@ -54,7 +54,7 @@ I ran linpeas to enumerate for me and found port 631 to be active, while remaini
 
 Using chisel to port forward, we can easily gain access to this instance. We find that this is running CUPS v1.6.1.
 
-<figure><img src="../../../.gitbook/assets/image (12) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (3).png" alt=""><figcaption></figcaption></figure>
 
 This version of CUPS was vulnerable to a root file read exploit. Since this was a port forwarding kind of scenario and I was a bit lazy, I took a loot at the Metasploit exploit code to see what was going on.&#x20;
 
@@ -62,4 +62,4 @@ This version of CUPS was vulnerable to a root file read exploit. Since this was 
 
 Simple enough, we can just read the root flag directly!
 
-<figure><img src="../../../.gitbook/assets/image (1) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (6) (1).png" alt=""><figcaption></figcaption></figure>

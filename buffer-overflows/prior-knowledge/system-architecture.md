@@ -8,7 +8,7 @@ description: Taken from eCPPTv2.
 
 The Central Process Unit (CPU) is in charge of executing machine code of a program. For example, when we compile C code, we would need a **compiler** like `clang` or `gcc` that would convert the code into a binary (.elf or .exe), which is basically machine code that the computer can read.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (37).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (37) (2).png" alt=""><figcaption></figcaption></figure>
 
 **Assembly** is the human interpretable format of machine code, which is written using a set of instructions that the CPU processes. In assembly, each instruction is a primitive command that executes specific operations, such as moving data, changing the execution flow and it performs logical operations.
 
@@ -26,11 +26,11 @@ Think of registers like variables used by the CPU to store and get data. Some re
 
 **General Purpose Registers (GPRs)** are a set of registers that can be used for normal assembly. They each have a specific name and purpose.
 
-<figure><img src="../../.gitbook/assets/image (40) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
 
 In a 32-bit system, each register is an acryonym that is prefixed with 'E', meaning extended. The E is replaced by 'R' in x64.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (28) (1) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (28) (1).png" alt=""><figcaption></figcaption></figure>
 
 **The most important register** is called the **instruction pointer or EIP.** This register controls the flow of program execution through storing a pointer to the address of the next instruction where it will be executed. The entire point of a **buffer overflow to RCE is to control this one register**.
 
@@ -103,7 +103,7 @@ int main(){ //main function where program starts
 
 The stack frames would look like this for the program above:
 
-<figure><img src="../../.gitbook/assets/image (24) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (24) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 As the stack frames are popped out, the EIP would point back to `a()` and then `main()`, changing where the execution flow starts and resumes.&#x20;
 
@@ -138,7 +138,7 @@ The instruction that executes the `main()` function, also known as the **caller,
 
 A new stack frame is created, and **defined by the ESP and EBP**. Since we cannot lose the old stack frame and its information, the current EBP is saved on the stack.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (29) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (29) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### Prologue
 
@@ -162,7 +162,7 @@ Breaking it down:
    * This would substract the value of the ESP by a specific number (in this case, the value of the variable is an integer) to make space for the variables from `main()`.
    * This variable tends to be a multiple of 4.
 
-<figure><img src="../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (42) (2).png" alt=""><figcaption></figcaption></figure>
 
 Once the prologue ends, the stack frame for `main()` is complete and local variables are coped onto the stack. Since the ESP is not pointing to the memory address right after the EBP, we cannot use the PUSH operation since it stores values top of the stack. **We want to store the variables where space has been allocated for it**.&#x20;
 

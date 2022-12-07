@@ -30,7 +30,7 @@ The difference between RIP and RIPv2 is that RIPv2 is capable of advertising sub
 
 We can analyse how RIP works using this topology:
 
-<figure><img src="../../.gitbook/assets/image (343).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (343) (1).png" alt=""><figcaption></figcaption></figure>
 
 R1 connects directly to another subnet, and RIP has been configured. R1 would send routing updates to R2 and R3, and the routing updates list the subnet, subnet mask and hop count (metric) for this route. Each router would receive this update and add to their routing tables. In this case, both routers would have a metric of 1 because they are one hop away.
 

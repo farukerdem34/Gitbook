@@ -115,7 +115,7 @@ Lastly, you would need to have **Immunity Debugger on a Windows VM** for this be
 
 We would first need to set up mona's working directory (where all the files it generates goes) as such:
 
-<figure><img src="../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
 
 You can download `mona.py` from here:
 
@@ -129,7 +129,7 @@ First we need to fuzz the application to test at what character it will crash at
 
 If we take a look at Immunity Debugger, the register window would look like this:
 
-<figure><img src="../.gitbook/assets/image (7) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 The EIP is filled with \x41 (which translates back to "A"). So the program would crash and we need to reload this in Immunity Debugger a lot.
 
@@ -141,7 +141,7 @@ When finding the offset, we need to use `/usr/share/metasploit-framework/tools/e
 
 Once generated, replace the `pattern` parameter in `exploit.py`. Then, run the script and resend the buffer. Since the goal is to control the EIP to go wherever we want, we would need to take note of the value of the EIP when we send the pattern.
 
-<figure><img src="../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (24) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can use `pattern_offset.rb`, which is located in the same folder to find the exact offset that we need.
 
@@ -157,13 +157,13 @@ We can use `mona.py` from Immunity Debugger to first generate a `bytearray.bin` 
 
 Afterwards, fill in the exploit with the offset number and send the bad characters along with it. The program would crash, and we need to view the **values on the stack**.&#x20;
 
-<figure><img src="../.gitbook/assets/image (10) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (10) (3).png" alt=""><figcaption></figcaption></figure>
 
 Notice that the characters for 'A' ends, and then some special characters begin from there. In this case, the address is at `0x00e2fa18`. This is the address we need to start comparing from, because that's where the **bad characters that we sent in begins**.&#x20;
 
 We can use `mona.py` to do so again, through `!mona compare -f C:\path\to\bytearray.bin -a 00e2fa18`. This would compare the characters from the bytearray we generated to the address of the stack at that value.&#x20;
 
-<figure><img src="../.gitbook/assets/image (2) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (6).png" alt=""><figcaption></figcaption></figure>
 
 So the bad characters are highlighted in this case. Before removing all of them, **take note that one bad character can sometimes cause the next byte to be corrupted**. For example, \x23 is a bad character, and causes \x24 to also become corrupted, but \x24 is not a bad character we need to avoid.
 
@@ -181,7 +181,7 @@ Now, we need to find a `JMP ESP` instruction. The reason we need this is because
 
 We can do this with Mona, and this can be done whether the binary is running or crashed. We have to run `!mona jmp -r esp -b "\x00\x23\3c\x83\xba"` to find this instruction.&#x20;
 
-<figure><img src="../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (8) (2).png" alt=""><figcaption></figcaption></figure>
 
 There are quite a few to choose from, and I chose `\x62\x50\x12\x05`, which would work fine with our payload. When putting this address in, **take note to reverse it as we are working with a 32-bit machine**. This would mean that it is a **little-endian** arrangement. So in our exploit, we need to write the new value of the EIP as `\x05\x12\x50\x62`.&#x20;
 
