@@ -6,7 +6,7 @@ Stack canaries are used to detect a stack buffer overflow before execution of an
 
 We can illustrate how it works through analysing the stack contents:
 
-<figure><img src="../.gitbook/assets/image (103).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 When the binary runs, it checks the canary and ensures that it does not change. If altered, the execution would end immediately.&#x20;
 
@@ -26,4 +26,11 @@ There are many types of canaries, but here are the most common ones:
 | 64-bit canary     | <8 bytes>           |                          |
 | Custom canary     |                     |                          |
 
-\
+Each canary has their own set of advantages and security measures introduced:
+
+* Null Canary is the most simple as it's just 4 NULL bytes. However, this is the most vulnerable of canaries because its predictable and **there are functions that can read null canaries**.
+* Terminator Canaries introduces two or more hex values that attempt to terminate string operations. These values are still predictable
+* Random Canaries are better in terms fo protection, and **usually consist of a NULL byte followed by 3 random bytes**. The NULL byte would attempt to terminate string operations, while the 3 random bytes will make the canary less predictable.
+* The random XOR canary is similar to the random canary, but its value is XOR'd against a non-static value in the program, such as the EBP. Since most binaries run with ASLR enabled, this provides a lot more security.&#x20;
+
+## Bypasses

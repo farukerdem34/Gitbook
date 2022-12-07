@@ -8,7 +8,7 @@ description: PDFkit and Deserialization.
 
 **Nmap Scan:**
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Seems like a web vulnerability exploit kinda machine.
 

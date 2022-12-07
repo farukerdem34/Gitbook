@@ -270,7 +270,7 @@ We first need to portforward this MySQL Instance from the machine before moving 
 
 Earlier, we found 4 users, and from there we can update the database such that one of those users becomes a manager. I picked letha, but any is fine. The reason being the cronjob is only changing the password of charlie and jean, so we should use other users.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (103) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (103).png" alt=""><figcaption></figcaption></figure>
 
 Then we can login as this user.
 

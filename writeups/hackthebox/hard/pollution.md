@@ -295,7 +295,7 @@ From here, we can drop our public key into victor's .ssh folder to SSH in easily
 
 Within Victor's directory, there's a `pollution_api` folder. The `index.js` file specifies that there is this service running on port 3000.
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 Since this box was called pollution, I assumed that there was some Javascript pollution related exploit that would give us root. Within the `controllers` directory, there was this `Message_send.js` script.
 
@@ -351,7 +351,7 @@ We can do this with the MySQL instance we accessed earlier.
 
 <figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption><p>\</p></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now we can login as this user using our credentials.
 

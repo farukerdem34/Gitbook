@@ -164,7 +164,7 @@ payload = AAA... + BBBB + &fun1() + &fun2 + &pop;ret + <rop2 arg1> + &rop3() + &
 
 The reason we want to include the first `pop; ret` is because we want to first `pop` the `rop2 arg1` variable out of the stack (to remove interference with our jumping) and then hop to `rop3`.&#x20;
 
-Afterwards, because `rop3` takes 2 arguments, we would need to have 2 `pop` instructions to remove the 2 variables passed to `rop3` and then call `exit()` as per normal afterwards.&#x20;
+Afterwards, because `rop3` takes 2 arguments, we would need to have 2 `pop` instructions to remove the 2 variables passed to `rop3` from the stack and then call `exit()` as per normal afterwards.&#x20;
 
 We can take a look at the ROP gadgets that we have on hand for this binary.
 
