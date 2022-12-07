@@ -171,8 +171,3 @@ We can take a look at the ROP gadgets that we have on hand for this binary.
 <figure><img src="../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
 
 The exploit would work as per the regular exploit. When we key in the variables to be printed, it prints, and jumps to the next function.
-
-## Example&#x20;
-
-From HTB Retired, there was an early Local File Inclusion vulnerability used to download a binary that had NX and PIE enabled. However, because we had LFI on the binary, we can leak the base address of the `libc` library and be able to do ROP chaining to execute shell code by 'disabling' NX through the `mprotect` function call.
-
