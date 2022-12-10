@@ -97,7 +97,7 @@ The number of As would be 58, which is offset of 62 - 4 since we need the next 4
 
 <figure><img src="../.gitbook/assets/image (350).png" alt=""><figcaption></figcaption></figure>
 
-We have successfully called all other functions without the program meaning to do so. In this case, notice how it **does not cause a segmentation fault.** This is mainly because we called `exit()` which is used to exit the program gracefully.&#x20;
+We have successfully called all other functions without the program meaning to do so. In this case, notice how it **does not cause a segmentation fault.** This is mainly because we called `exit(),`which is used to exit the program gracefully.&#x20;
 
 In essence, this is how ROP chaining would work on an ASLR-disabled function.
 
