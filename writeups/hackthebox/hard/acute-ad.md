@@ -20,7 +20,7 @@ I ran a nikto scan on the website and found the certificate and domain name. We 
 
 The website is as follows:
 
-<figure><img src="../../../.gitbook/assets/image (147) (1).png" alt=""><figcaption><p>![[21_Acute _image002.png]]</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (147) (1) (1).png" alt=""><figcaption><p>![[21_Acute _image002.png]]</p></figcaption></figure>
 
 While looking at the website, I found that we are able to download a Microsoft word document through clicking the **New Starter Forms** button on the website.
 

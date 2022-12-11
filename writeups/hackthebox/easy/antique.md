@@ -8,7 +8,7 @@ description: HP JetDirect SNMP exploits followed by some
 
 An Nmap scan reveals that there is only one port open:
 
-<figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (1).png" alt=""><figcaption></figcaption></figure>
 
 When trying to use this Telnet port, we needed some credentials.
 

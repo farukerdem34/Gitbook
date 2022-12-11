@@ -8,11 +8,11 @@ First thing to ask, who is Liu Hongtian? Doing a search on him doesn't tell me a
 
 When visiting the website, all we see is this.
 
-<figure><img src="../../.gitbook/assets/image (149).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (149) (1).png" alt=""><figcaption></figcaption></figure>
 
 So this is another low-level scam from another credential harvesting website. When we key in some fake credentials, we get this:
 
-<figure><img src="../../.gitbook/assets/image (148).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (148) (1).png" alt=""><figcaption></figcaption></figure>
 
 Pretty much obvious that this would be receiving some kind of hit on a remote server and then probably fitting into a text file to be sold online.
 

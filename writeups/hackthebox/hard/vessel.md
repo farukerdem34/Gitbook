@@ -80,7 +80,7 @@ With this, we can login to the admin panel!
 
 When looking around the admin panel, I didn't find much. However, in the top right corner of the page there was an analytics button that brings us to a new page.
 
-<figure><img src="../../../.gitbook/assets/image (149) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (149) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 This brought me to a new domain called `openwebanalytics.vessel.htb`.&#x20;
 
@@ -212,11 +212,11 @@ This is the password: YG7Q7RDzA+q\&ke\~MJ8!yRzoI^VQxSqSS. For some reason pdfcra
 
 Anyways, once we have this password, we can view the PDF and see the password for steven.
 
-<figure><img src="../../../.gitbook/assets/image (139).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (139) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can then SSH in as Ethan.
 
-<figure><img src="../../../.gitbook/assets/image (108).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (108) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Root Shell
 
@@ -238,7 +238,7 @@ In a new directory for the machine, we can include a simple script that would ma
 
 Then, we can execute these commands:
 
-<figure><img src="../../../.gitbook/assets/image (116).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (116) (1).png" alt=""><figcaption></figcaption></figure>
 
 This would spawn a container for us to use for the core dump, and we would need to append something to the **mount** section of config.json: (basically setting the configuration of the container we generate with runc)
 
@@ -251,11 +251,12 @@ This would spawn a container for us to use for the core dump, and we would need 
            "rw",
            "rprivate"
    ]
-}</code></pre>
+}
+</code></pre>
 
 Then, we can run our container and spawn in as root for it.
 
-<figure><img src="../../../.gitbook/assets/image (136).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (136) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can configure our container to execute our malicious script using pinns, and then configure the container such that we get a core dump.
 
@@ -272,5 +273,5 @@ kill -SIGSEGV <PID_for_tail>
 
 Afterwards, we should see our script be executed and we can get a root shell using `bash -p`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (125).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (125) (1).png" alt=""><figcaption></figcaption></figure>
 

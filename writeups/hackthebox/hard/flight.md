@@ -10,7 +10,7 @@ description: >-
 
 As usual, we begin with our enumeration process.
 
-<figure><img src="../../../.gitbook/assets/image (148) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (148) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Loads of ports open as per a normal AD machine. Nothing about the SMB shares was found.
 

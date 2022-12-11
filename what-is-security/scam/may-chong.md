@@ -24,7 +24,7 @@ Quite shabby for an 'NUS' website.&#x20;
 
 This is what the website looks like:
 
-<figure><img src="../../.gitbook/assets/image (147).png" alt=""><figcaption><p><em>May Chong's</em></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (147) (1).png" alt=""><figcaption><p><em>May Chong's</em></p></figcaption></figure>
 
 Interesting. We can play spot the difference between the image above, and the login from edurec!
 
