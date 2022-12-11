@@ -97,11 +97,11 @@ curl -k https://10.129.96.167:10250/metrics
 
 From what I gathered, there are 7 pods that are running on this machine under the kube-system, but there were 8 pods in total. The nginx pod was not running on this system.
 
-<figure><img src="../../../.gitbook/assets/image (21) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
 
 Also worth noting that there were hints toward using this pod.
 
-<figure><img src="../../../.gitbook/assets/image (20) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20) (1).png" alt=""><figcaption></figcaption></figure>
 
 Researching further, turns out RCE is possible within this pod because of the fact that we have access to port 10250. This can be done even without a certificate.
 
@@ -109,7 +109,7 @@ RCE should theoretically be possible with this host. Just checking to see which 
 
 {% embed url="https://www.optiv.com/insights/source-zero/blog/kubernetes-attack-surface" %}
 
-<figure><img src="../../../.gitbook/assets/image (13) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
 
 Sweet. Now we can grab the user flag.
 
@@ -125,7 +125,7 @@ I looked around for tools that could spawn a shell directly. The page above link
 
 {% embed url="https://github.com/cyberark/kubeletctl" %}
 
-<figure><img src="../../../.gitbook/assets/image (20) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
 
 ## Docker Escape
 
@@ -207,11 +207,11 @@ spec:
       path: /
 ```
 
-<figure><img src="../../../.gitbook/assets/image (23) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
 
 After creating this, I was able to mount onto my newly created pod.
 
-<figure><img src="../../../.gitbook/assets/image (18) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
 
 From there, we can head into the /mnt directory and read the root flag.&#x20;
 
