@@ -30,7 +30,7 @@
     * [x] ROP Chaining
     * [x] Ret2Libc
     * [ ] ASLR / DEP Bypass
-    * [x] Canary Bypass
+    * [ ] Canary Bypass
     * [ ] Egg Hunting (because I found it cool)
     * [x] GOT Overwrite - Used writeup because it explained it well.
 * Web Exploits
@@ -63,13 +63,15 @@
 * Cryptography&#x20;
   * [ ] Math behind Cryptography + Keys to breaking Cryptography
   * [ ] RSA Exploits
+  *
 * Active Directory
   * [x] ~~Introduction to AD~~
   * [x] ~~AD Tools~~&#x20;
   * [x] ~~Attacking Kerberos~~
   * [x] ~~Kerberos and Authentication Mechanisms~~
   * [x] ~~ACLs and Abuse~~&#x20;
-  * [x] LDAP
+  * [ ] LDAP
+  * [ ] AD SMB Enumerations
   * [x] ~~Active Directory Methodology (Include markdown file from Obs)~~
 *   Final Edits
 

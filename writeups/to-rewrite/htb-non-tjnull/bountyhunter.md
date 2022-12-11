@@ -16,7 +16,7 @@ From the main webpage, we can see that there was a portal endpoint on it.
 
 Going to this page reveals a Beta Report System that is in use.
 
-<figure><img src="../../../.gitbook/assets/image (176) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (176).png" alt=""><figcaption></figcaption></figure>
 
 Trying out some random input reveals this:
 
@@ -26,7 +26,7 @@ When proxied through Burp, we can view that it sends a `data` parameter with a B
 
 <figure><img src="../../../.gitbook/assets/image (198).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (164) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (164).png" alt=""><figcaption></figcaption></figure>
 
 XXE injection is clearly the next stage here.
 
@@ -56,7 +56,7 @@ After decoding the file, we find a password.
 
 We can then read the `/etc/passwd` file to see which users have a `/bin/bash` shell on the machine.
 
-<figure><img src="../../../.gitbook/assets/image (6) (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
 It seems that the `development` user was the target here. We can combine this and the credentials found to SSH into the machine.
 
@@ -84,4 +84,4 @@ What I did was use the `and` operator to incude a short Python script to spawn a
 
 <figure><img src="../../../.gitbook/assets/image (197).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (7) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>

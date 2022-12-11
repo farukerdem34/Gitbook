@@ -80,7 +80,7 @@ The most interesting ports were these. Seems like Port 8443 provided us with a l
 
 The response from port 8443 included some JSON, so I thought of visiting it to see what was on.
 
-<figure><img src="../../../.gitbook/assets/image (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (2) (3).png" alt=""><figcaption></figcaption></figure>
 
 Seems that we need to get a path of some sort. Used Hacktricks (as usual) to gain more information about this new technology. The main tool to use here is `kubectl`, which seems to provide for easy enumeration of this API.
 
@@ -97,7 +97,7 @@ curl -k https://10.129.96.167:10250/metrics
 
 From what I gathered, there are 7 pods that are running on this machine under the kube-system, but there were 8 pods in total. The nginx pod was not running on this system.
 
-<figure><img src="../../../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (21) (3).png" alt=""><figcaption></figcaption></figure>
 
 Also worth noting that there were hints toward using this pod.
 
@@ -125,7 +125,7 @@ I looked around for tools that could spawn a shell directly. The page above link
 
 {% embed url="https://github.com/cyberark/kubeletctl" %}
 
-<figure><img src="../../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20) (4).png" alt=""><figcaption></figcaption></figure>
 
 ## Docker Escape
 
@@ -211,7 +211,7 @@ spec:
 
 After creating this, I was able to mount onto my newly created pod.
 
-<figure><img src="../../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (1).png" alt=""><figcaption></figcaption></figure>
 
 From there, we can head into the /mnt directory and read the root flag.&#x20;
 
