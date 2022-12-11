@@ -49,7 +49,7 @@ HTTP requests have multiple different 'verbs' which specify what our browser wan
 
 The HTTP request would look something like this when intercepted.&#x20;
 
-<figure><img src="../.gitbook/assets/image (9) (1) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
 
 Important HTTP Headers are specified as follows:
 

@@ -8,7 +8,7 @@ There are few terms used for different types of traffic and messages in networki
 
 In a half-duplex system, hosts can communicate with each other, but not at the same time.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (7) (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 This means that hosts have to wait for each other to finish sending traffic before being able to send traffic over. This is really slow, and half-duplex systems are generally used to conserve **bandwidth**.&#x20;
 
@@ -50,7 +50,7 @@ Unicast can also be sent to multiple hosts. However, this is rather inefficient 
 
 Multicast solves this problem by only requiring one copy to be sent out, using only 1kb of traffic.
 
-<figure><img src="../../.gitbook/assets/image (21) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (21) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Multicast
 

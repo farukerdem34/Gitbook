@@ -6,7 +6,7 @@ Deserialization exploits the fact that a website may directly pass user input to
 
 We first need to understand what serialization is.
 
-<figure><img src="../.gitbook/assets/image (16) (1) (3).png" alt=""><figcaption><p><em>Taken from Portswigger Web Security Academy</em></p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (16) (1).png" alt=""><figcaption><p><em>Taken from Portswigger Web Security Academy</em></p></figcaption></figure>
 
 Websites would take in input via some function, and then serialize it into a certain format to be passed back to the server for processing. This format can be in form of a string, base64 encoded, binary, etc. Depends on the language and functions used for the website.&#x20;
 

@@ -91,7 +91,7 @@ Running the same process, we can retrieve another ticket.
 
 Interesting, now that we have a ticket, we can export this. I found that we can access shares from the DC using this ticket to authenticate ourselves.
 
-<figure><img src="../../../.gitbook/assets/image (4) (1) (1) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can check out the 'Shared' share to find some interesting files.
 
@@ -121,7 +121,7 @@ Out of all of these users, m.lovegod has the most privileges. The user owns the 
 
 <figure><img src="../../../.gitbook/assets/image (3) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (33) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
 
 We now need to somehow get a ticket from this m.lovegod user, or find his credentials.&#x20;
 
