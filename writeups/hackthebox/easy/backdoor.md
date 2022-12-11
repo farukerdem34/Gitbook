@@ -4,7 +4,7 @@
 
 First we start with an Nmap scan as usual.
 
-<figure><img src="../../../.gitbook/assets/image (4) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can check out the HTTP server.
 

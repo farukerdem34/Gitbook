@@ -247,7 +247,7 @@ Couldn't crack the hash though.
 
 For some persistance, I dropped a `cmd.php` shell into the `forum` website, so that I can establish RCE at any given time.
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (3).png" alt=""><figcaption></figcaption></figure>
 
 ### PHP-FPM
 
@@ -287,7 +287,7 @@ done
 
 We can replace the command to get another reverse shell as needed.
 
-<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
 
 From here, we can drop our public key into victor's .ssh folder to SSH in easily, and also grab the user flag.
 
@@ -295,7 +295,7 @@ From here, we can drop our public key into victor's .ssh folder to SSH in easily
 
 Within Victor's directory, there's a `pollution_api` folder. The `index.js` file specifies that there is this service running on port 3000.
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Since this box was called pollution, I assumed that there was some Javascript pollution related exploit that would give us root. Within the `controllers` directory, there was this `Message_send.js` script.
 
@@ -351,7 +351,7 @@ We can do this with the MySQL instance we accessed earlier.
 
 <figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption><p>\</p></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 Now we can login as this user using our credentials.
 
@@ -414,6 +414,6 @@ curl http://127.0.0.1:3000/admin/messages/send -H "X-Access-Token: eyJhbGciOiJIU
 
 This would call a child\_process to execute `chmod +s /usr/bin/bash`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (4).png" alt=""><figcaption></figcaption></figure>
 
 We are now root, and we can capture the root flag.

@@ -36,7 +36,7 @@ We probably need to somehow make this service send the email to our machine. So 
 
 <figure><img src="../../../.gitbook/assets/image (17) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (3) (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then we can visit the reset password page and reset his password to whatever we want.
 

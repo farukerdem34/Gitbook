@@ -125,7 +125,7 @@ You can download `mona.py` from here:
 
 First we need to fuzz the application to test at what character it will crash at. For OVERFLOW 2 of this room, it was after 700 bytes of data were sent.
 
-<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 If we take a look at Immunity Debugger, the register window would look like this:
 

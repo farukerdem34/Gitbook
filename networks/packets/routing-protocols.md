@@ -22,7 +22,7 @@ Distance Vector protocols are generally used on smaller networks where there are
 
 RIP is one of the oldest routing protocols. It is easy to configure and maintain, but lacks a lot of advanced features that the newer protocols have. The main thing that RIP uses hop count as a metric. Hop count is basically the number of devices that the traffic passes by when it travels to its host.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (3) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Take note that for RIP, the defualt maximum hop count is 15, and any route with a higher hop count is considered unreachable.&#x20;
 

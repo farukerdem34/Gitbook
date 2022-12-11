@@ -18,7 +18,7 @@ There's no way that we have to guess credentials, so I started scanning for UDP 
 
 &#x20;
 
-<figure><img src="../../../.gitbook/assets/image (3) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### SNMP Printer Exploit
 
