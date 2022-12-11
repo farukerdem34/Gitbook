@@ -247,17 +247,17 @@ Couldn't crack the hash though.
 
 For some persistance, I dropped a `cmd.php` shell into the `forum` website, so that I can establish RCE at any given time.
 
-<figure><img src="../../../.gitbook/assets/image (3) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### PHP-FPM
 
 I ran `netstat -tulpn` to see what services were running on the machine, and found that port 9000 was listening to something.
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (7).png" alt=""><figcaption></figcaption></figure>
 
 I also ran LinPEAS to find some escalation vectors to victor. This user was also running the `php-fpm` master process or something.
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (8).png" alt=""><figcaption></figcaption></figure>
 
 Further enumeration reveals that port 9000 was FastCGI, and this was vulnerable to RCE. Since Victor is running it, this is our privilege escalation vector. We just need to make a script that would give us another reverse shell.
 
@@ -283,11 +283,11 @@ for FN in $FILENAMES; do
 done
 ```
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (4).png" alt=""><figcaption></figcaption></figure>
 
 We can replace the command to get another reverse shell as needed.
 
-<figure><img src="../../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (1) (5).png" alt=""><figcaption></figcaption></figure>
 
 From here, we can drop our public key into victor's .ssh folder to SSH in easily, and also grab the user flag.
 
@@ -295,7 +295,7 @@ From here, we can drop our public key into victor's .ssh folder to SSH in easily
 
 Within Victor's directory, there's a `pollution_api` folder. The `index.js` file specifies that there is this service running on port 3000.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 Since this box was called pollution, I assumed that there was some Javascript pollution related exploit that would give us root. Within the `controllers` directory, there was this `Message_send.js` script.
 
@@ -351,11 +351,11 @@ We can do this with the MySQL instance we accessed earlier.
 
 <figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption><p>\</p></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now we can login as this user using our credentials.
 
-<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (3).png" alt=""><figcaption></figcaption></figure>
 
 This would give us a token, which is needed for the `X-Access-Token` header. Reading the documentation for the API through accessing `http://127.0.0.1:3000/documentation`, we can see that we need to send a POST request to `/admin/mesages/send` to interact with the vulnerable function.
 
