@@ -67,7 +67,7 @@ payload = AAAAA... + BBBB  + &fun1 + &fun2 + &fun3 + &exit
 
 The 'BBBB' characters are present to overflow the EBP, and the address of `fun1()` comes right after. Recall that the stack frame looks like this at the tail end of the function.
 
-<figure><img src="../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (14) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Basic Exploit
 

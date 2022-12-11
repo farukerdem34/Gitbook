@@ -16,7 +16,7 @@ From here, we can view Port 80.&#x20;
 
 Here, we can view an API that we need to exploit.
 
-<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Starting with a Gobuster, we can find out the different endpoints for this:
 
@@ -100,7 +100,7 @@ However, because we had administrative permissions, we could access the `/admin/
 
 The first thing to check would be the `env` variables, because we don't know where anything is within this machine. We can do so by reading the `/proc/self/environ` file using our LFI.
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 Notice the app home is within the `/home/htb/uhc` directory. Combine with the fact that this is running `uvicorn`, which is a Python server, we can look for an `app.py` or `main.py`. Within the `/home/htb/uhc/app/main.py` file, we can read the first part of the code responsible for this server.
 
@@ -126,7 +126,7 @@ Once we had the Secret, spoofing another token is easy.
 
 We would then have RCE on the machine at this point.
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 Using a Base64 encoded payload with %20 or $IFS as the space character, we can gain a reverse shell.
 

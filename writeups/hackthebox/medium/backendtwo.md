@@ -20,7 +20,7 @@ Port 80 brings us to an API again, with the admin user still being viewable.
 
 We can do the same stuff to create, signin as a user and receive the JWT token for it.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, we can access the `/openapi.json` endpoint to view the functionalities of this API. There was one new functionality, which was to edit the profiles of users.
 
@@ -34,7 +34,7 @@ This endpoint was rather interesting because it allows us to edit profiles. Chec
 
 With this edit profile stuff, I found out that we can change the attributes related to our account. I changed the profile, email and GUID of the current user to be the same as the administrator's.
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 When I found out this worked, I basically also changed the `is_superuser` attribute to `true`.
 
@@ -84,7 +84,7 @@ Then, we can access the custom endpoint to gain a reverse shell easily.
 
 Once we are in, we can try to read the `auth.log` file and we would find the password for the `htb` user we currently are. This allows us to upgrade our shell via SSH-ing in.
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
 
 ### Wordle
 
