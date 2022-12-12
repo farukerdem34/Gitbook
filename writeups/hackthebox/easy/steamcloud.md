@@ -80,7 +80,7 @@ The most interesting ports were these. Seems like Port 8443 provided us with a l
 
 The response from port 8443 included some JSON, so I thought of visiting it to see what was on.
 
-<figure><img src="../../../.gitbook/assets/image (1) (2) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 Seems that we need to get a path of some sort. Used Hacktricks (as usual) to gain more information about this new technology. The main tool to use here is `kubectl`, which seems to provide for easy enumeration of this API.
 
@@ -109,7 +109,7 @@ RCE should theoretically be possible with this host. Just checking to see which 
 
 {% embed url="https://www.optiv.com/insights/source-zero/blog/kubernetes-attack-surface" %}
 
-<figure><img src="../../../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Sweet. Now we can grab the user flag.
 
@@ -119,7 +119,7 @@ Sweet. Now we can grab the user flag.
 
 I had a lot of trouble in gaining a shell on this machine. Seems that netcat, curl and wget are all not on the machine.
 
-<figure><img src="../../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 I looked around for tools that could spawn a shell directly. The page above linked to `kubeletctl`, which was a CLI tool to interact with the API. This could spawn me a shell directly.
 
@@ -207,7 +207,7 @@ spec:
       path: /
 ```
 
-<figure><img src="../../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (23) (1).png" alt=""><figcaption></figcaption></figure>
 
 After creating this, I was able to mount onto my newly created pod.
 

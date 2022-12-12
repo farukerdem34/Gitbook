@@ -14,7 +14,7 @@ Seems like a web vulnerability exploit kinda machine.
 
 ### PDFKit
 
-<figure><img src="../../../.gitbook/assets/image (10) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (2) (3).png" alt=""><figcaption></figcaption></figure>
 
 Website to PDF ind of functions run on plugins, and depending on the language used to do this conversion (JS, PHP), there are exploits for them.
 
@@ -36,9 +36,9 @@ Following the exploit, we can test to see if we indeed have RCE:
 
 Works! Now we just need to gain a reverse shell. I used a simple bash shell to do so.
 
-<figure><img src="../../../.gitbook/assets/image (13) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (7) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (2) (3).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

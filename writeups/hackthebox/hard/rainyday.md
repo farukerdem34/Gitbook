@@ -82,7 +82,7 @@ python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SO
 
 ### Pivoting
 
-Now, we need to thinkg about how to use this container to find out more about the machine. Firstly, I took a look around at the IP addresses and found out that I should be scanning the other containers present on this network using some tunneling. What gave it away for me was the IP address ending in 3, meaning there are probably other hosts on this.
+Now, we need to think about how to use this container to find out more about the machine. Firstly, I took a look around at the IP addresses and found out that I should be scanning the other containers present on this network using some tunneling. What gave it away for me was the IP address ending in 3, meaning there are probably other hosts on this.
 
 <figure><img src="../../../.gitbook/assets/image (113).png" alt=""><figcaption></figcaption></figure>
 
@@ -288,13 +288,9 @@ Another blind Sudo challenge in Python.  Except, all this does is hash passwords
 
 <figure><img src="../../../.gitbook/assets/image (18) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
-This is, without question, similar to the initial hashes we found in the website. My guess is, we need to crack the root hash we found a lot earlier to get get a root shell via SSH.&#x20;
+This is, without question, similar to the initial hashes we found in the website. We probably need to crack the root hash we found a lot earlier to get get a root shell via SSH.&#x20;
 
-Now that we have this, we would need to somehow find out the salt for this password before cracking it. There are word limits as well, with the length of the password needing to be from 0 to 30.
-
-The first thing that comes to mind here is some form of Hash Extension attack, or an attack on the Bcrypt algorithm somehow.
-
-My guess is that what the script does is, add our input and some secret salt, and then generates the hash to print out.&#x20;
+Now that we have this, we would need to somehow find out the salt for this password before cracking it. There is a length limit of 30 for this script.&#x20;
 
 ### Bcrypt Exploit
 
@@ -355,4 +351,4 @@ And we can crack this easily.
 
 Then we can su to root and grab our flag.
 
-<figure><img src="../../../.gitbook/assets/image (30) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (30) (2) (1).png" alt=""><figcaption></figcaption></figure>

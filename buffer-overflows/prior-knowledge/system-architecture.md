@@ -26,11 +26,11 @@ Think of registers like variables used by the CPU to store and get data. Some re
 
 **General Purpose Registers (GPRs)** are a set of registers that can be used for normal assembly. They each have a specific name and purpose.
 
-<figure><img src="../../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (40) (1).png" alt=""><figcaption></figcaption></figure>
 
 In a 32-bit system, each register is an acryonym that is prefixed with 'E', meaning extended. The E is replaced by 'R' in x64.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (28) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (28) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 **The most important register** is called the **instruction pointer or EIP.** This register controls the flow of program execution through storing a pointer to the address of the next instruction where it will be executed. The entire point of a **buffer overflow to RCE is to control this one register**.
 
@@ -130,7 +130,7 @@ int main (int argc, char *argv[]){
 
 When the `main()` function is called, the stack frames would look like so:
 
-<figure><img src="../../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (32) (1).png" alt=""><figcaption></figcaption></figure>
 
 The program first needs to save its location, since if we lose it, we can't run our program anymore as we would lose the `main()` function. Specifically, the processors PUSHes the content of the EIP (which is basically a pointer to the address of memory that the variables are stored in) to the stack. The `main()` function is called via a CALL instruction, and the EIP points to the **first byte** after the CALL instruction.&#x20;
 
@@ -219,7 +219,7 @@ Endianness refers to how storing values in memory works. There are 2 types of en
 
 In Big Endian representation, the LSB is stored in the **highest memory address**.
 
-<figure><img src="../../.gitbook/assets/image (25) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (25) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 For LSB, it's the opposite:
 

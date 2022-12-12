@@ -8,7 +8,7 @@ description: Taken from UHC.
 
 We start with an Nmap scan as usual:
 
-<figure><img src="../../../.gitbook/assets/image (3) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (3) (3).png" alt=""><figcaption></figcaption></figure>
 
 From here, we can view Port 80.&#x20;
 
@@ -16,7 +16,7 @@ From here, we can view Port 80.&#x20;
 
 Here, we can view an API that we need to exploit.
 
-<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (7).png" alt=""><figcaption></figcaption></figure>
 
 Starting with a Gobuster, we can find out the different endpoints for this:
 
@@ -28,7 +28,7 @@ At the `/api/v1` endpoint, we find that that there is a `/user` endpoint that we
 
 <figure><img src="../../../.gitbook/assets/image (175).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (6).png" alt=""><figcaption></figcaption></figure>
 
 From here, we can check the `admin` user with an ID of 1.&#x20;
 
@@ -84,7 +84,7 @@ Using the API a bit more, we can find an `/updatepass` endpoint as well.
 
 This update pass requires the GUID of the user we are trying to reset and a new password. Earlier, we found the GUID of the administrator, so we can easily reset his password and then steal his token.
 
-<figure><img src="../../../.gitbook/assets/image (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (185).png" alt=""><figcaption></figcaption></figure>
 
@@ -100,7 +100,7 @@ However, because we had administrative permissions, we could access the `/admin/
 
 The first thing to check would be the `env` variables, because we don't know where anything is within this machine. We can do so by reading the `/proc/self/environ` file using our LFI.
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (9).png" alt=""><figcaption></figcaption></figure>
 
 Notice the app home is within the `/home/htb/uhc` directory. Combine with the fact that this is running `uvicorn`, which is a Python server, we can look for an `app.py` or `main.py`. Within the `/home/htb/uhc/app/main.py` file, we can read the first part of the code responsible for this server.
 

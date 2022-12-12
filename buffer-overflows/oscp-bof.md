@@ -115,7 +115,7 @@ Lastly, you would need to have **Immunity Debugger on a Windows VM** for this be
 
 We would first need to set up mona's working directory (where all the files it generates goes) as such:
 
-<figure><img src="../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (15) (1).png" alt=""><figcaption></figcaption></figure>
 
 You can download `mona.py` from here:
 
@@ -141,7 +141,7 @@ When finding the offset, we need to use `/usr/share/metasploit-framework/tools/e
 
 Once generated, replace the `pattern` parameter in `exploit.py`. Then, run the script and resend the buffer. Since the goal is to control the EIP to go wherever we want, we would need to take note of the value of the EIP when we send the pattern.
 
-<figure><img src="../.gitbook/assets/image (24) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (24) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can use `pattern_offset.rb`, which is located in the same folder to find the exact offset that we need.
 
@@ -171,7 +171,7 @@ So the bad characters so far are `\x00\x23\x3c\x83\xba`. Update the bad characte
 
 Take note that the address **can change, so look at the values of the stack to know where to start comparing from**. If we have successfully removed all bad characters, the output from the comparison would look like this:
 
-<figure><img src="../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (43) (1).png" alt=""><figcaption></figcaption></figure>
 
 If not, there would still be bad characters present, and we need to **repeat the process until the status is unmodified.**
 

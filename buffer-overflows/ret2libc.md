@@ -40,7 +40,7 @@ Firstly, we would find a binary named `rop` that is left behind for us, and it h
 
 First, we need to use `checksec` on the binary to see what we can and cannot do:
 
-<figure><img src="../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (25) (1).png" alt=""><figcaption></figcaption></figure>
 
 Breaking down the output, we notice that ASLR is disabled, RELRO is partial (meaning we have some space for writing code) and most importantly, NX is enabled. The stack is non executable, meaning that shellcode cannot be injected here.
 
@@ -52,7 +52,7 @@ So first, we notice that the program takes **an unsanitised input from the user.
 
 So we now we know the vulnerable parameter is probably the `main()` function's `argv[1]` call. We can generate an offset using `pattern_create.rb` of length 100 first, and then run the program in `gdb` to see how it responds to our payload.
 
-<figure><img src="../.gitbook/assets/image (27) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (27) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can use `pattern_offset.rb` to find the offset.
 

