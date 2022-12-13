@@ -18,7 +18,7 @@ Port 8080 revealed a Jenkins instance login page:
 
 With Jenkins, I attempted to create a Windows batch command that would execute every minute like so:
 
-<figure><img src="../../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (5).png" alt=""><figcaption></figcaption></figure>
 
 However, this failed because the box was unable to reach my machine. I suppose there is a firewall or something within the machine that is blocking outgoing TCP traffic.
 
@@ -32,7 +32,7 @@ I opeted to view the files in that directory using `dir /s`.&#x20;
 
 We find another `.jenkins` folder. Within that, we would find another `users` folder with some `config.xml` files:
 
-<figure><img src="../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 Naturally, the admin one is more interesting. Taking a look reveals that there is an encoded password within it:
 
@@ -62,7 +62,7 @@ Then, we can `evil-winrm` in as `oliver`.&#x20;
 
 Once in the machine, I ran `Sharphound.ps1` to enumerate for me:
 
-<figure><img src="../../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (24) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### BloodHound
 
@@ -76,7 +76,7 @@ The `smith` user has `GenericWrite` permissions over the `maria` user:
 
 And lastly, the `maria` user has `WriteOwner` permissions over the `Domain Admins` group:
 
-<figure><img src="../../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (27) (1).png" alt=""><figcaption></figcaption></figure>
 
 Interesting path of exploits.
 
@@ -100,11 +100,11 @@ However, this did not work out well as I was not able to make use of the ticket.
 
 As `smith`, we can create a malicious Powershell script and change the logon script for `maria`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 Within the desktop, I found this `Engines.xls` file.
 
-<figure><img src="../../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (28) (1).png" alt=""><figcaption></figcaption></figure>
 
 Copying it to another directory, I was able to move it to my machine using the `download` command from `evil-winrm`. Within it, we can find some credentials:
 
@@ -112,7 +112,7 @@ Copying it to another directory, I was able to move it to my machine using the `
 
 We can use the last credential to `evil-winrm` in as `maria`:
 
-<figure><img src="../../../.gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (36) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Maria to Domain Admin
 

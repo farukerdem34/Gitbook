@@ -12,7 +12,7 @@ Those are just some of the methods that can be used to exploit this system. Here
 
 Kerbrute enumeration would abuse port 88 and attempt to brute force out possible usernames stored within the Kerberos system.​ Tools like Kerbrute can do this:
 
-<figure><img src="../../.gitbook/assets/image (86) (1).png" alt=""><figcaption><p><em>Kerbrute</em></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (86) (1) (1).png" alt=""><figcaption><p><em>Kerbrute</em></p></figcaption></figure>
 
 Above is a snapshot of the machine, and we can see how we are able to find some usernames from this.
 

@@ -53,7 +53,7 @@ Get-NetGroup "domain admins" -FullData
 
 This above above would basically show us all the permissions that the current user has. However, it does not list out the permissions of whatever group a user is in.
 
-<figure><img src="../../.gitbook/assets/image (14) (1) (1).png" alt=""><figcaption><p><em>PowerView ACL Enumeration</em></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (14) (1) (1) (1).png" alt=""><figcaption><p><em>PowerView ACL Enumeration</em></p></figcaption></figure>
 
 There are many other commands and tools that can be used for enumeration of ACLs, most of which are accessed through PowerView.
 

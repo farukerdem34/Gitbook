@@ -115,7 +115,7 @@ Lastly, you would need to have **Immunity Debugger on a Windows VM** for this be
 
 We would first need to set up mona's working directory (where all the files it generates goes) as such:
 
-<figure><img src="../.gitbook/assets/image (15) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (15) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 You can download `mona.py` from here:
 
@@ -163,7 +163,7 @@ Notice that the characters for 'A' ends, and then some special characters begin 
 
 We can use `mona.py` to do so again, through `!mona compare -f C:\path\to\bytearray.bin -a 00e2fa18`. This would compare the characters from the bytearray we generated to the address of the stack at that value.&#x20;
 
-<figure><img src="../.gitbook/assets/image (2) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (6) (2).png" alt=""><figcaption></figcaption></figure>
 
 So the bad characters are highlighted in this case. Before removing all of them, **take note that one bad character can sometimes cause the next byte to be corrupted**. For example, \x23 is a bad character, and causes \x24 to also become corrupted, but \x24 is not a bad character we need to avoid.
 

@@ -40,7 +40,7 @@ Firstly, we would find a binary named `rop` that is left behind for us, and it h
 
 First, we need to use `checksec` on the binary to see what we can and cannot do:
 
-<figure><img src="../.gitbook/assets/image (25) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (25) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Breaking down the output, we notice that ASLR is disabled, RELRO is partial (meaning we have some space for writing code) and most importantly, NX is enabled. The stack is non executable, meaning that shellcode cannot be injected here.
 

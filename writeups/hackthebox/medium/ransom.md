@@ -1,209 +1,121 @@
+---
+description: Mr Robot themed!
+---
+
 # Ransom
 
-Ransom
+aining Access
 
-Tuesday, 29 March 2022
+Nmap scan:
 
-2:15 pm
+<figure><img src="../../../.gitbook/assets/image (427).png" alt=""><figcaption></figcaption></figure>
 
-A Linux machine with these ports:
+Web exploitation time.
 
-&#x20;
+### Auth Bypass
 
-!\[\[12\_Ransom\_image001.png]]
+The website was some type of Incident Response site, from E Corp.
 
-&#x20;
+<figure><img src="../../../.gitbook/assets/image (431).png" alt=""><figcaption></figcaption></figure>
 
-When looking at the HTTP port, we have a login here.
+I tried logging in with some random password, and intercepted the response in Burpsuite to see how the login was handled. Found the `/api` endpoint.&#x20;
 
-!\[\[12\_Ransom\_image002.png]]
+<figure><img src="../../../.gitbook/assets/image (382).png" alt=""><figcaption></figcaption></figure>
 
-&#x20;
+I tried playing around with the website by sending JSON objects, and found that setting the `password` parameter to `true` would let us login.
 
-When looking at the page source, we can see this little snippet.
+<figure><img src="../../../.gitbook/assets/image (418).png" alt=""><figcaption></figcaption></figure>
 
-!\[\[12\_Ransom\_image003.png]]
+### Home Directory Backup
 
-&#x20;
+Once we were in, we could view these files:
 
-Ran a gobuster on the /api directory, but all of it seems to return us back to the login directory.
+<figure><img src="../../../.gitbook/assets/image (83).png" alt=""><figcaption></figcaption></figure>
 
-&#x20;
+We can grab the user flag and also the `homedirectory.zip` file. Upon running an `exiftool` for it, we can see that the file name was `.bash_logout`. All of the files were encrypted with a password, and cracking it was not possible.
 
-Upon looking at the web request, it seems that it has a laravel\_session cookie.
+<figure><img src="../../../.gitbook/assets/image (384).png" alt=""><figcaption></figcaption></figure>
 
-!\[\[12\_Ransom\_image004.png]]
+When attempting to unzip the file, we can find some SSH keys within it.&#x20;
 
-This is clearly base64, and we can deocde it.
+<figure><img src="../../../.gitbook/assets/image (428).png" alt=""><figcaption></figcaption></figure>
 
-&#x20;
+At this point, I began enumerating possible ZIP file exploits that were used. One command we could use was `7z l -slt` which would list out the files and show the technical information for the files:
 
-!\[\[12\_Ransom\_image005.png]]
+```bash
+7z l -slt uploaded-file-3422.zip
 
-&#x20;
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,32 CPUs AMD Ryzen 9 5900HX with Radeon Graphics         (A50F00),ASM,AES-NI)
 
-There seems to be this weird value and also another iv here. This looks like an AES encryption, and they give us the MAC, the IV and the ciphertext.
+Scanning the drive for archives:
+1 file, 7735 bytes (8 KiB)
 
-This does not seem decryptable, so let's move on for now.
+Listing archive: uploaded-file-3422.zip
 
-&#x20;
+--
+Path = uploaded-file-3422.zip
+Type = zip
+Physical Size = 7735
 
-Let's take another look at the request.
+----------
+Path = .bash_logout
+Folder = -
+Size = 220
+Packed Size = 170
+Modified = 2020-02-25 07:03:22
+Created = 
+Accessed = 
+Attributes = _ -rw-r--r--
+Encrypted = +
+Comment = 
+CRC = 6CE3189B
+Method = ZipCrypto Deflate
+Host OS = Unix
+Version = 20
+Volume Index = 0
+```
 
-When submitting the request with no other parameters, it gives us this JSON format.
+This was using ZipCrypto Deflate as the method of zipping.&#x20;
 
-!\[\[12\_Ransom\_image006.png]]
+### Decrypting ZIP
 
-&#x20;
+Googling a little led me to this repository with instructions on how to recover the password:
 
-!\[\[12\_Ransom\_image007.png]]
+{% embed url="https://github.com/kimci86/bkcrack/blob/master/example/tutorial.md" %}
 
-This is in JSON, and if they process in JSON, the request may also be able to process that.
+This attack is made possible due to legacy encryption being used, and this form of encryption was vulnerable to the **known plaintext attack**. We would need to have at least 12 bytes of data, with 8 being contiguous to decrypt the password.&#x20;
 
-&#x20;
+Because this was simply a home directory with common files like `.bash_logout`, we can easily create another zip file with our machine's `.bash_logout` file and then find the keys using `bkcrack`.&#x20;
 
-!\[\[12\_Ransom\_image008.png]]
+<figure><img src="../../../.gitbook/assets/image (367).png" alt=""><figcaption></figcaption></figure>
 
-&#x20;
+We can then retrieve the keys for the ZIP file:
 
-Cool, now we have this.
+<figure><img src="../../../.gitbook/assets/image (404).png" alt=""><figcaption></figcaption></figure>
 
-We could brute force the password, but that isn't the way.
+Afterwards, the ZIP file and its contents can be copied to another ZIP file with a known password that we can decrypt.
 
-&#x20;
+<figure><img src="../../../.gitbook/assets/image (395).png" alt=""><figcaption></figcaption></figure>
 
-Tried to do some SQL injection related stuff, but didn't work. I then tried setting it as true, and I was able to get into the box.
+<figure><img src="../../../.gitbook/assets/image (374).png" alt=""><figcaption></figcaption></figure>
 
-!\[\[12\_Ransom\_image009.png]]
+Then we can SSH in as the `htb` user.
 
-&#x20;
+<figure><img src="../../../.gitbook/assets/image (429).png" alt=""><figcaption></figcaption></figure>
 
-With this, we can logon.
+## Privilege Escalation
 
-&#x20;
+I ran a LinPEAS to find more information, and it enumerated out a potential password for a `mysql` instance:
 
-!\[\[12\_Ransom\_image0010.png]]
+<figure><img src="../../../.gitbook/assets/image (414).png" alt=""><figcaption></figcaption></figure>
 
-We can go ahead and grab the user flag and also the homedirectory.zip.
+However, the machine does not have any database running. However, the presence of the other APP related environment variables highlighted that the `/srv/prod` directory had the files for the website we exploited earlier.
 
-{width="5.78125in" height="1.0in"}
+### Finding Root Password
 
-This has another password to it. Zip2john this.
+We would be looking for some type of config files, or a method as to how the authentication mechanisms for the website works.
 
-&#x20;
+Within the `/srv/prod/app/Http/Controllers/AuthController.php` file, I found the root password:
 
-It seems that within the file, there is the id\_rsa folder.
-
-!\[\[12\_Ransom\_image0012.png]]
-
-We need to get that so we can SSH in as whatever user this is.
-
-&#x20;
-
-Seems that all of these files here have some form of encryption, and it's not possible to break into this.
-
-!\[\[12\_Ransom\_image0013.png]]
-
-&#x20;
-
-From here, it seems that we need to read more about the information in the files, otherwise we would have no chance of getting stuff.
-
-{width="11.197916666666666in" height="4.989583333333333in"}
-
-This one seems to point us towards bash\_logout.
-
-&#x20;
-
-I remember a long time ago, the CRC there was able to be brute forced and decrypt the file should it be small enough for us to brute force out the content.
-
-The Cyclic Redundancy Check is used just to check whether or not the contents of the zip file are correct.
-
-&#x20;
-
-After lots of googling and checking around for zip file decryption, I stumbled across this when looking for zip file encryption flaws:
-
-!\[\[12\_Ransom\_image0015.png]]
-
-&#x20;
-
-This seems to take the a file with the same CRC with that tool. This works using the known plaintext attack, whereby two zip files have the same CRC value and hence text within them. This attack only works on zipCrypto and legacy decryption algorithms.
-
-&#x20;
-
-Interesting.
-
-&#x20;
-
-!\[\[12\_Ransom\_image0016.png]]
-
-Taking a look at this, we can just use our own bash\_logout to create another zip file with the same CRC value.
-
-!\[\[12\_Ransom\_image0017.png]]
-
-From this, we have created another zip file with the exact same CRC value. This is because both the files have the same text within it that does not change often.
-
-{width="8.03125in" height="2.0729166666666665in"}
-
-This works out, and we get some keys.
-
-&#x20;
-
-{width="9.1875in" height="1.3333333333333333in"}
-
-&#x20;
-
-{width="4.770833333333333in" height="2.9375in"}
-
-Decrypted all of it!
-
-&#x20;
-
-Read the public key to gain the username:
-
-!\[\[12\_Ransom\_image0021.png]]
-
-&#x20;
-
-Now SSH in as this user.
-
-!\[\[12\_Ransom\_image0022.png]]
-
-&#x20;
-
-When running ID, it seems we are in both sudo and LXD.
-
-!\[\[12\_Ransom\_image0023.png]]
-
-&#x20;
-
-However, we do not have any passwords to do anything with this.
-
-&#x20;
-
-For now, we will just run a linpeas to enumerate for me. I was particularly interested in the web page stuff. I wanted to see the authentication mechanisms and the correct password for that user.
-
-!\[\[12\_Ransom\_image0024.png]]
-
-But, there's no Mysql installed on this server.
-
-&#x20;
-
-Seems that the webroot is here:
-
-!\[\[12\_Ransom\_image0025.png]]
-
-Within this file I found the AuthController:
-
-!\[\[12\_Ransom\_image0026.png]]
-
-This should contain the password for the Laravel stuff.
-
-&#x20;
-
-{width="7.364583333333333in" height="2.6354166666666665in"}
-
-&#x20;
-
-Well, that was simple.
-
-&#x20;
+<figure><img src="../../../.gitbook/assets/image (426).png" alt=""><figcaption></figcaption></figure>

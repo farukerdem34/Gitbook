@@ -30,7 +30,7 @@ Think of registers like variables used by the CPU to store and get data. Some re
 
 In a 32-bit system, each register is an acryonym that is prefixed with 'E', meaning extended. The E is replaced by 'R' in x64.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (28) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (28) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 **The most important register** is called the **instruction pointer or EIP.** This register controls the flow of program execution through storing a pointer to the address of the next instruction where it will be executed. The entire point of a **buffer overflow to RCE is to control this one register**.
 
@@ -130,7 +130,7 @@ int main (int argc, char *argv[]){
 
 When the `main()` function is called, the stack frames would look like so:
 
-<figure><img src="../../.gitbook/assets/image (32) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (32) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 The program first needs to save its location, since if we lose it, we can't run our program anymore as we would lose the `main()` function. Specifically, the processors PUSHes the content of the EIP (which is basically a pointer to the address of memory that the variables are stored in) to the stack. The `main()` function is called via a CALL instruction, and the EIP points to the **first byte** after the CALL instruction.&#x20;
 
@@ -138,7 +138,7 @@ The instruction that executes the `main()` function, also known as the **caller,
 
 A new stack frame is created, and **defined by the ESP and EBP**. Since we cannot lose the old stack frame and its information, the current EBP is saved on the stack.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (29) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (29) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 #### Prologue
 
@@ -170,7 +170,7 @@ As such, the ESP would be **incremented** as variables are stored in it and it *
 
 Take note of how we declare `int x = 11` first, hence its PUSHed last.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (10) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (10) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 When we call the `func()` function, this would repeat again. The prologue changes values of the EBP to indicate the creation of another stack frame in memory would occur. This process continues until all variables are stored in their own stack frames.
 
@@ -207,7 +207,7 @@ The `ret` instruction POPs the value at the top of the stack to the old EIP. Thi
 
 After `func()` returns, the stack frames look like this:
 
-<figure><img src="../../.gitbook/assets/image (30) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (30) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Endianness
 
@@ -219,7 +219,7 @@ Endianness refers to how storing values in memory works. There are 2 types of en
 
 In Big Endian representation, the LSB is stored in the **highest memory address**.
 
-<figure><img src="../../.gitbook/assets/image (25) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (25) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 For LSB, it's the opposite:
 

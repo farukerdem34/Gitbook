@@ -12,7 +12,7 @@ Port 5000 was a HTTP port that was running some notetaking application.&#x20;
 
 The web application allowed us to register or login:
 
-<figure><img src="../../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (33) (2).png" alt=""><figcaption></figcaption></figure>
 
 I created a user and logged in. When I proxied the traffic through Burp, we can see that there is a JWT Session Cookie present:
 
@@ -24,7 +24,7 @@ When decrypted, we can see that it contains some data:
 
 Generally, from other machine experiences, Flask uses JWT cookies to differentiate sessions. So I tried to brute force the secret of this cookie with `flask-unsign` and `rockyou.txt`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (4).png" alt=""><figcaption></figcaption></figure>
 
 With the secret found, we can create our own cookies and make whatever username we want. However, we still need to find a username that works.
 
@@ -34,7 +34,7 @@ I noticed that the website has different responses when we key in an invalid use
 
 I created the `test` user and tried a wrong password, and got the `Invalid Login` warning:
 
-<figure><img src="../../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 If we did this a user that does not exist, it would tell us `Invalid Credentials`.&#x20;
 
@@ -46,11 +46,11 @@ With this boolean condition, we can brute force all possible users within the ma
 
 Then I filtered the results using the `Invalid Login` string.
 
-<figure><img src="../../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (1).png" alt=""><figcaption></figcaption></figure>
 
 So `blue` is the user on this machine. We can use the secret we found earlier to create a new cokie and sign in by replacing the cookie:
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (5).png" alt=""><figcaption></figcaption></figure>
 
 ### FTP Credentials
 
@@ -60,11 +60,11 @@ With access to this new user, we can view more hidden notes:
 
 The first one was the most interesting as it revealed some FTP Credentials:
 
-<figure><img src="../../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (29) (1).png" alt=""><figcaption></figcaption></figure>
 
 Logging into FTP, we can gain access to a password policy PDF.
 
-<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (5).png" alt=""><figcaption></figcaption></figure>
 
 Reading the Password Policy, we can see that the passwords are all templated:
 
@@ -80,9 +80,9 @@ WIth access to the new FTP account, we can find two website source code backups 
 
 Additionally, because we are the `blue` user, we can view the VIP dashboard which allows us to **import and export notes**.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (25) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20) (5).png" alt=""><figcaption></figcaption></figure>
 
 When checking the Export Notes portion of code, we see that it **runs a command using a shell.**
 
@@ -144,7 +144,7 @@ We can then upload this file and gain a reverse shell as the `svc` user on a lis
 
 Additionally, when checking the two backups, I used `diff` to view the differences between each file. I found that some MySQL Credentials were removed from the more recent backup:
 
-<figure><img src="../../../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (32) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

