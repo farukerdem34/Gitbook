@@ -1,4 +1,4 @@
-# RedPanda (Lazy)
+# RedPanda
 
 RedPanda (Lazy)
 

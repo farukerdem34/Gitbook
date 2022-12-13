@@ -32,7 +32,7 @@ I opeted to view the files in that directory using `dir /s`.&#x20;
 
 We find another `.jenkins` folder. Within that, we would find another `users` folder with some `config.xml` files:
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 Naturally, the admin one is more interesting. Taking a look reveals that there is an encoded password within it:
 
@@ -56,23 +56,23 @@ After extracting both of these files, we can use this tool to decrypt them:
 
 Then, we can `evil-winrm` in as `oliver`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (61).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (61) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
 Once in the machine, I ran `Sharphound.ps1` to enumerate for me:
 
-<figure><img src="../../../.gitbook/assets/image (24) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
 
 ### BloodHound
 
 We find that within Bloodhound, the `oliver` user has the `ForceChangePassword` permission over the `smith` user.
 
-<figure><img src="../../../.gitbook/assets/image (34) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
 
 The `smith` user has `GenericWrite` permissions over the `maria` user:
 
-<figure><img src="../../../.gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (38) (3).png" alt=""><figcaption></figcaption></figure>
 
 And lastly, the `maria` user has `WriteOwner` permissions over the `Domain Admins` group:
 
@@ -100,11 +100,11 @@ However, this did not work out well as I was not able to make use of the ticket.
 
 As `smith`, we can create a malicious Powershell script and change the logon script for `maria`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (5) (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 Within the desktop, I found this `Engines.xls` file.
 
-<figure><img src="../../../.gitbook/assets/image (28) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
 
 Copying it to another directory, I was able to move it to my machine using the `download` command from `evil-winrm`. Within it, we can find some credentials:
 
@@ -112,7 +112,7 @@ Copying it to another directory, I was able to move it to my machine using the `
 
 We can use the last credential to `evil-winrm` in as `maria`:
 
-<figure><img src="../../../.gitbook/assets/image (36) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
 
 ### Maria to Domain Admin
 

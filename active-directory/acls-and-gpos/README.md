@@ -61,7 +61,7 @@ There are many other commands and tools that can be used for enumeration of ACLs
 
 As mentioned earlier, Bloodhound can be used to easily view all of these. However, it must be noted that Bloodhound would generate **significantly more logs and hence is louder.** Furthermore, the collectors of Bloodhound may not be useful because domains are able to block the execution of certain .exe or .ps1 files.
 
-<figure><img src="../../.gitbook/assets/image (57) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (57) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Above is an example of how Bloodhound can map out and show the ACLs for each of the objects. For this case, we can see how the **support** user (which has been compromised) is part of the Shared Support Accounts group, which has GenericAll privileges over the Domain Controller.
 

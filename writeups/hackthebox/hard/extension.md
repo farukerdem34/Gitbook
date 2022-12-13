@@ -34,7 +34,7 @@ When analysing the page source for the iniital login page found on snippet.htb, 
 
 The most interesting of it was this **management/dump** end point.
 
-<figure><img src="../../../.gitbook/assets/image (99) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (99) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 This endpoint takes a POST request, and some fuzzing of the login request using Burp tells us that this takes JSON parameters.
 

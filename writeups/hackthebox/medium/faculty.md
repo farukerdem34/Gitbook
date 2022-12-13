@@ -12,7 +12,7 @@ There's the `faculty.htb` domain running on port 80. We can add this to the `/et
 
 Basic PHP login page for a Faculty Scheduling System is present here:
 
-<figure><img src="../../../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 Checking for common directories such as the `/admin` endpoint reveals another login page.
 
@@ -20,7 +20,7 @@ Checking for common directories such as the `/admin` endpoint reveals another lo
 
 Proxying the traffic in Burp, sending a `'` character as a username triggers an SQL error.
 
-<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 Now that we have confirmed SQL Injection is present, we can dump out all the tables within the database from this using `sqlmap`.
 
@@ -28,7 +28,7 @@ Now that we have confirmed SQL Injection is present, we can dump out all the tab
 
 The `users` table had an `Administrator` user with a hashed password, however the hash cannot be cracked.
 
-<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 In this case, we can dump the `faculty` table and attempt to login via the original login method. There's a PIN number associated with the `Administrator` user and we can use that to login.
 
@@ -42,7 +42,7 @@ WItin the website, there's a PDF Generator that would display certain courses.&#
 
 We can download this PDF and use `exiftool` to find out more information about it.
 
-<figure><img src="../../../.gitbook/assets/image (74).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (74) (2).png" alt=""><figcaption></figcaption></figure>
 
 mPDF 6.0 is vulnerable to an LFI exploit that would allow for us to read the files on the server. With this, we can have to send this payload encoded with Base64:
 

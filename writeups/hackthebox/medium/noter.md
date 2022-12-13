@@ -20,7 +20,7 @@ I created a user and logged in. When I proxied the traffic through Burp, we can 
 
 When decrypted, we can see that it contains some data:
 
-<figure><img src="../../../.gitbook/assets/image (69) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (69).png" alt=""><figcaption></figcaption></figure>
 
 Generally, from other machine experiences, Flask uses JWT cookies to differentiate sessions. So I tried to brute force the secret of this cookie with `flask-unsign` and `rockyou.txt`.&#x20;
 
@@ -34,11 +34,11 @@ I noticed that the website has different responses when we key in an invalid use
 
 I created the `test` user and tried a wrong password, and got the `Invalid Login` warning:
 
-<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
 
 If we did this a user that does not exist, it would tell us `Invalid Credentials`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (57).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (57) (1).png" alt=""><figcaption></figcaption></figure>
 
 With this boolean condition, we can brute force all possible users within the machine. I used Burp Intruder to do so:
 
@@ -46,7 +46,7 @@ With this boolean condition, we can brute force all possible users within the ma
 
 Then I filtered the results using the `Invalid Login` string.
 
-<figure><img src="../../../.gitbook/assets/image (15) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
 
 So `blue` is the user on this machine. We can use the secret we found earlier to create a new cokie and sign in by replacing the cookie:
 
@@ -64,11 +64,11 @@ The first one was the most interesting as it revealed some FTP Credentials:
 
 Logging into FTP, we can gain access to a password policy PDF.
 
-<figure><img src="../../../.gitbook/assets/image (3) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Reading the Password Policy, we can see that the passwords are all templated:
 
-<figure><img src="../../../.gitbook/assets/image (11) (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (2).png" alt=""><figcaption></figcaption></figure>
 
 With this hint, we can login as `ftp_admin` using `ftp_admin@Noter!`.&#x20;
 
@@ -76,11 +76,11 @@ With this hint, we can login as `ftp_admin` using `ftp_admin@Noter!`.&#x20;
 
 WIth access to the new FTP account, we can find two website source code backups made at different times:
 
-<figure><img src="../../../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (40) (2).png" alt=""><figcaption></figcaption></figure>
 
 Additionally, because we are the `blue` user, we can view the VIP dashboard which allows us to **import and export notes**.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (25) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
 
@@ -150,7 +150,7 @@ Additionally, when checking the two backups, I used `diff` to view the differenc
 
 With the MySQL Creds, we can login as root:
 
-<figure><img src="../../../.gitbook/assets/image (60) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (60).png" alt=""><figcaption></figcaption></figure>
 
 Because MySQL was running as root on the machine, we could do the `raptor_udf.so` exploit. This exploit basically uses a shared library that runs commands from the SQL plugins library. We can add a custom command that would allow us to gain RCE as the root user.
 

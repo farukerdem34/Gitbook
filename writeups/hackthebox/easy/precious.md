@@ -22,7 +22,7 @@ For instance, we can redirect this website to our own hosted HTTP server and con
 
 For enumeration purposes, I began by generating a PDF and downloading it to my machine from this website. We can enumerate the PDF to see if there is a particular software being used.
 
-<figure><img src="../../../.gitbook/assets/image (11) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 This version of pdfkit is vulnerable to RCE using CVE-2022-25765. There are public exploit scripts available for this.
 

@@ -6,7 +6,7 @@ description: >-
 
 # GoodGames
 
-Gaining Access
+## Gaining Access
 
 As usual we start with an Nmap scan:
 
@@ -26,7 +26,7 @@ In the corner of the page, there's a login available.
 
 This login is bypassable with the `' OR 1=1 -- -` input for the `email` parameter. When we login, we would be redirected to `internal-administration.goodgames.htb`.  This page has another login where SQL Injection does not work.
 
-<figure><img src="../../../.gitbook/assets/image (1) (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Initially, I assumed that we needed to find credentials elsewhere and looked around the website. Understanding that there was an SQL Injection weakness earlier, we probably could dump out the credentials.
 
@@ -42,7 +42,7 @@ The profile updater takes the user input for full name and outputs it on the scr
 
 I was pleased to see that it worked:
 
-<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (3).png" alt=""><figcaption></figcaption></figure>
 
 With that, I proceeded to dump out the config of this server using `{{config.items()}}`.&#x20;
 
@@ -68,7 +68,7 @@ Now that we are in the container, we can scan around the network for other hosts
 for i in {1..254}; do ping -c 1 172.19.0.$i | grep 'from; done 
 ```
 
-<figure><img src="../../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (1).png" alt=""><figcaption></figcaption></figure>
 
 172.19.0.1, but we have no users and cannot do much with this for now. We can check the `/home` directory to find the `augustus` user. Additionally, I used `mount` to check all the directories mounted into the container from the host.
 

@@ -1,4 +1,4 @@
-# Retired (Fucking hard)
+# Retired (NX + ASLR Bypass with ROP)
 
 Retired (Fucking hard)
 

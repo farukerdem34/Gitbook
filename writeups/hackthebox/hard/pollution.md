@@ -287,7 +287,7 @@ done
 
 We can replace the command to get another reverse shell as needed.
 
-<figure><img src="../../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (1) (5).png" alt=""><figcaption></figcaption></figure>
 
 From here, we can drop our public key into victor's .ssh folder to SSH in easily, and also grab the user flag.
 
@@ -351,7 +351,7 @@ We can do this with the MySQL instance we accessed earlier.
 
 <figure><img src="../../../.gitbook/assets/image (8) (5).png" alt=""><figcaption><p>\</p></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now we can login as this user using our credentials.
 

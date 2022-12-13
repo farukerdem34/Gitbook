@@ -84,7 +84,7 @@ Using the API a bit more, we can find an `/updatepass` endpoint as well.
 
 This update pass requires the GUID of the user we are trying to reset and a new password. Earlier, we found the GUID of the administrator, so we can easily reset his password and then steal his token.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (185).png" alt=""><figcaption></figcaption></figure>
 
@@ -126,7 +126,7 @@ Once we had the Secret, spoofing another token is easy.
 
 We would then have RCE on the machine at this point.
 
-<figure><img src="../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1) (5).png" alt=""><figcaption></figcaption></figure>
 
 Using a Base64 encoded payload with %20 or $IFS as the space character, we can gain a reverse shell.
 
