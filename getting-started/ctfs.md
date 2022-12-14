@@ -8,14 +8,14 @@ The other type of CTF is called attack/defense, which is a real-life competition
 
 ### Challenge Types
 
-1. **Web**
+1. Web
    * Challenge spawns a website, and there is a web attack vector to use to gain the flag.
    * Could be stuff like **SQL Injection, OS Command Injection, Server Side Request Forgery etc.**
-2. **Forensics**
+2. Forensics
    * Analysis of some kind of log file or disk image and the flag is contained within it.
    * Steganography is technically part of this(?), and that involves finding hidden information in images.
    * Such files include **packet captures, images, .git repositories etc.**
-3. **Pwn / Binary Exploitation**
+3. Pwn / Binary Exploitation
    * To exploit a program running on a server to find the flag.
    * Generally, these give you a binary that is running on a port of the server, and source code analysis is needed to find vulnerabilities in the program to be exploited.
    * Buffer Overflow and its variances are typically used here, and this is where Python scripting is so useful (pwntools).&#x20;
