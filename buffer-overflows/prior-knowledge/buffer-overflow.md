@@ -27,7 +27,7 @@ The `buffer` variable is an array that can store up to 10 characters, however we
 
 Within the stack, this is what the program would store normally:
 
-<figure><img src="../../.gitbook/assets/image (91) (2) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (91) (2).png" alt=""><figcaption></figcaption></figure>
 
 Should we overflow the buffer variable, this would **overwrite the EBP and EIP**. The return address of the function thus changes.
 

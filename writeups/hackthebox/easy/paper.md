@@ -4,13 +4,13 @@
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (85) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (85).png" alt=""><figcaption></figcaption></figure>
 
 We can append `paper.htb` to our `/etc/hosts` file, as per standard HTB stuff. The web pages don't reveal much and have the default pages loaded.
 
 When proxying requests through Burp, we can see this custom `X-Backend-Server` header.
 
-<figure><img src="../../../.gitbook/assets/image (79) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (79) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can add the `office.paper` header to our hosts file and enumerate that.
 
@@ -18,7 +18,7 @@ We can add the `office.paper` header to our hosts file and enumerate that.
 
 The new domain was some kind of company website.
 
-<figure><img src="../../../.gitbook/assets/image (78) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (78) (1).png" alt=""><figcaption></figcaption></figure>
 
 At the very bottom, it says this was **Powered By Wordpress**. When looking at some of the recent posts, we can see this one that highlights there are secret posts.
 
@@ -44,7 +44,7 @@ Within the chats tab, we can see that there is a `recyclops` bot that has some d
 
 I tested it out and it seems to execute code on the machine remotely.
 
-<figure><img src="../../../.gitbook/assets/image (77) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (77) (1).png" alt=""><figcaption></figcaption></figure>
 
 Basic directory traversal works on this machine due to a lack of input validation for the directory entered.
 
@@ -72,4 +72,4 @@ CVE-2021-3560 is an authentication bypass on polkit, which allows for users to c
 
 {% embed url="https://github.com/Almorabea/Polkit-exploit" %}
 
-<figure><img src="../../../.gitbook/assets/image (81) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (81) (1).png" alt=""><figcaption></figcaption></figure>

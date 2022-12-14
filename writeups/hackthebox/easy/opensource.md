@@ -4,7 +4,7 @@
 
 Nmap scan results:
 
-<figure><img src="../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 Take note of port 3000, it will be important later!&#x20;
 
@@ -64,13 +64,13 @@ Then, we can attempt to upload this file onto the server. We would need to inter
 
 When we intercept and change the name of the file, we would be able to access our new endpoint. We can confirm RCE through a simple ping command:
 
-<figure><img src="../../../.gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (36) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can gain a reverse shell via the `mkfifo` command into a Docker Container.
 
-<figure><img src="../../../.gitbook/assets/image (61).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (61) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Docker Escape
 
@@ -86,7 +86,7 @@ I couldn't find much from the container, so I went ahead with enumerating the gi
 
 By using `git log`, I was able to find some credentials for anotehr application elsewhere.
 
-<figure><img src="../../../.gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (38) (3).png" alt=""><figcaption></figcaption></figure>
 
 Earlier, we found port 3000 to be inaccessible from our host. From the docker however, it could be accessed. I downloaded `chisel` onto the container and forwarded port 3000.&#x20;
 
@@ -94,11 +94,11 @@ Earlier, we found port 3000 to be inaccessible from our host. From the docker ho
 
 When this port was accessed, it was a Gitea instance:
 
-<figure><img src="../../../.gitbook/assets/image (57).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (57) (2).png" alt=""><figcaption></figcaption></figure>
 
 Signing into Gitea with the credentials we found earlier works.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (8).png" alt=""><figcaption></figcaption></figure>
 
 Notice that there's a home-backup repo, and within it are the user's SSH keys:
 
@@ -110,7 +110,7 @@ We can then the SSH keys to gain access to the `dev01` user.
 
 LinPEAS didn't reveal a lot to me, so I opted for `pspy64` to view the processes.
 
-<figure><img src="../../../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (40) (3).png" alt=""><figcaption></figcaption></figure>
 
 I saw this process run by root:
 

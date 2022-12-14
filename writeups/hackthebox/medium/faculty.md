@@ -16,7 +16,7 @@ Basic PHP login page for a Faculty Scheduling System is present here:
 
 Checking for common directories such as the `/admin` endpoint reveals another login page.
 
-<figure><img src="../../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 Proxying the traffic in Burp, sending a `'` character as a username triggers an SQL error.
 

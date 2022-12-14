@@ -50,7 +50,7 @@ With this user's credentials, I enumerated the shares that were available.
 
 I still don't have access to the **helpdesk** share, so I looked at the rest. Within the RedirectedFolders$ share, I found a ton of usernames.
 
-<figure><img src="../../../.gitbook/assets/image (86) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (86).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can find out if the passwords we have are valid for any other users. I found that `edgar.jacobs` had the same password as the `web_svc` user.
 
@@ -80,7 +80,7 @@ This was a good read:
 
 One cool thing about most .xlsx files is that they are actually ZIP files in disguise. We can bypass this content protection by copying the file as a .zip file, and then unzipping it.
 
-<figure><img src="../../../.gitbook/assets/image (80) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (80).png" alt=""><figcaption></figcaption></figure>
 
 Then from every single .xml file, we can remove the `sheetProtection` tag completely. Afterwards, we just need to compress and zip the files back together into another .xlsx file.
 
@@ -148,4 +148,4 @@ Then, because we have `GenericAll` permissions over `tristan.davies`, we can jus
 
 Lastly, we can use `wmiexec.py` to gain a shell as the domain admin.
 
-<figure><img src="../../../.gitbook/assets/image (15) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (1).png" alt=""><figcaption></figcaption></figure>

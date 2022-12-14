@@ -106,7 +106,7 @@ Odd, it refers us back to the original website. Earlier, we found a dev.rainyclo
 
 Now, we can try to directly pivot to it.
 
-<figure><img src="../../../.gitbook/assets/image (22) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (22) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 We also need to add the correct domain to our hosts file.
 
@@ -234,7 +234,7 @@ I wasn't sure what safe\_python was, but it looked to be some kind of binary. I 
 
 I think this executes scripts of some kind, because upon creating some fake file, I saw this:
 
-<figure><img src="../../../.gitbook/assets/image (20) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 There's an exec( ) function being called, which is always interesting. This binary seems to execute python code within a set environment or something. My guess is that we need to create a python script that would execute to get us a shell as jack\_adm.
 
@@ -308,7 +308,7 @@ I used an online UTF-8 generator to try and find a valid combiantion of characte
 
 Here are 2 instances of using UTF characters in hashing this algorithm with the machine's script. If you were to verify these two hashes, they would be identical. The 123456 is not hashed in the end, because we have entered more than 72 bytes of data.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (16) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (1) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 We could theoretically generate an input of 71 bytes, and then leave the last character to the salt and repeatedly brute force all the possible characters one by one. So with each character we find, we need to edit our input accordingly to have 1 less byte and to fit the flag there. I quickly created a script to test this, and this was the final result:
 

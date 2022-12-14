@@ -40,7 +40,7 @@ We probably need to somehow make this service send the email to our machine. So 
 
 Then we can visit the reset password page and reset his password to whatever we want.
 
-<figure><img src="../../../.gitbook/assets/image (18) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (1) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can then login as this robert user.
 

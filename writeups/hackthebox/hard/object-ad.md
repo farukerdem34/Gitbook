@@ -4,17 +4,17 @@
 
 As usual, we start with an Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (54).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (54) (2).png" alt=""><figcaption></figcaption></figure>
 
 Doing a detailed scan, we can find that port 8080 was running a Jetty instance.
 
-<figure><img src="../../../.gitbook/assets/image (56).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (56) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Jenkins
 
 Port 8080 revealed a Jenkins instance login page:
 
-<figure><img src="../../../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (39) (4).png" alt=""><figcaption></figcaption></figure>
 
 With Jenkins, I attempted to create a Windows batch command that would execute every minute like so:
 
@@ -24,19 +24,19 @@ However, this failed because the box was unable to reach my machine. I suppose t
 
 Instead, we can use this machine to enumerate the box instance. I noticed that the machine was building the workspace in this directory:
 
-<figure><img src="../../../.gitbook/assets/image (73).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (73) (2).png" alt=""><figcaption></figcaption></figure>
 
 I opeted to view the files in that directory using `dir /s`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (70).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (70) (2).png" alt=""><figcaption></figcaption></figure>
 
 We find another `.jenkins` folder. Within that, we would find another `users` folder with some `config.xml` files:
 
-<figure><img src="../../../.gitbook/assets/image (8) (1) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 Naturally, the admin one is more interesting. Taking a look reveals that there is an encoded password within it:
 
-<figure><img src="../../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (42) (3).png" alt=""><figcaption></figcaption></figure>
 
 ### Decrypting Password
 
@@ -52,7 +52,7 @@ After extracting both of these files, we can use this tool to decrypt them:
 
 {% embed url="https://github.com/hoto/jenkins-credentials-decryptor" %}
 
-<figure><img src="../../../.gitbook/assets/image (66).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (66) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can `evil-winrm` in as `oliver`.&#x20;
 
@@ -68,11 +68,11 @@ Once in the machine, I ran `Sharphound.ps1` to enumerate for me:
 
 We find that within Bloodhound, the `oliver` user has the `ForceChangePassword` permission over the `smith` user.
 
-<figure><img src="../../../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (34) (3).png" alt=""><figcaption></figcaption></figure>
 
 The `smith` user has `GenericWrite` permissions over the `maria` user:
 
-<figure><img src="../../../.gitbook/assets/image (38) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (38) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 And lastly, the `maria` user has `WriteOwner` permissions over the `Domain Admins` group:
 
@@ -108,11 +108,11 @@ Within the desktop, I found this `Engines.xls` file.
 
 Copying it to another directory, I was able to move it to my machine using the `download` command from `evil-winrm`. Within it, we can find some credentials:
 
-<figure><img src="../../../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (45) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can use the last credential to `evil-winrm` in as `maria`:
 
-<figure><img src="../../../.gitbook/assets/image (36) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (36) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Maria to Domain Admin
 
@@ -125,10 +125,10 @@ Add-DomainObjectAcl -TargetIdentity "Domain Admins" -PrincipalIdentity maria -Ri
 net group "Domain Admins" maria /add
 ```
 
-<figure><img src="../../../.gitbook/assets/image (46).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (46) (2).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, we can re-logon using `evil-winrm` and see that we have full administrative privileges:
 
-<figure><img src="../../../.gitbook/assets/image (55).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (55) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can then access the administrator desktop and capture the root flag.&#x20;

