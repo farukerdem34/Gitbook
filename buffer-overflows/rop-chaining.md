@@ -47,11 +47,11 @@ echo 1 > /proc/sys/kernel/randomize_va_space
 
 We should end up with a binary with these features:
 
-<figure><img src="../.gitbook/assets/image (30) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (30) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 Most importantly, for now, we will disable ASLR to allow for easier exploitation. So our binary takes in one input and does does a `strcpy()` with it. We can check that it segfaults if given too long of an input:
 
-<figure><img src="../.gitbook/assets/image (92) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (92) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 ### Code Analysis
 
@@ -85,9 +85,9 @@ Then, we can find the addresses of these functions.
 
 My addresses are static because ASLR is disabled, so no worries for that. Now, we need to find the offset needed. The offset should be about 50, but I'll generate a pattern of length 70 in case.
 
-<figure><img src="../.gitbook/assets/image (90).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (90) (2).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (3) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (4) (2).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (11) (6).png" alt=""><figcaption></figcaption></figure>
 

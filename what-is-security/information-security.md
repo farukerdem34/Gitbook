@@ -1,8 +1,8 @@
 # Information Security
 
-Information Security is the practice of protecting information by mitigiation information risk.&#x20;
+Information Security is the practice of protecting information by mitigating risk.&#x20;
 
-> Information Security, otherwise known as InfoSec, protects sensitive information from unauthorized acitivites, including inspection, modofication, recording and any disruption or destruction.
+> Information Security, otherwise known as InfoSec, protects sensitive information from unauthorized acitivites, including inspection, modification, recording and any disruption or destruction.
 >
 > The goal is to ensure the safety and privacy of critical data, such as customer account details, financial data or intellectual property.
 

@@ -129,7 +129,7 @@ First we need to fuzz the application to test at what character it will crash at
 
 If we take a look at Immunity Debugger, the register window would look like this:
 
-<figure><img src="../.gitbook/assets/image (7) (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7) (3) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 The EIP is filled with \x41 (which translates back to "A"). So the program would crash and we need to reload this in Immunity Debugger a lot.
 
@@ -137,7 +137,7 @@ The EIP is filled with \x41 (which translates back to "A"). So the program would
 
 When finding the offset, we need to use `/usr/share/metasploit-framework/tools/exploit/pattern_create.rb`, which is a script that would create a string of text for us to send again.&#x20;
 
-<figure><img src="../.gitbook/assets/image (88).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (88) (3).png" alt=""><figcaption></figcaption></figure>
 
 Once generated, replace the `pattern` parameter in `exploit.py`. Then, run the script and resend the buffer. Since the goal is to control the EIP to go wherever we want, we would need to take note of the value of the EIP when we send the pattern.
 
@@ -145,7 +145,7 @@ Once generated, replace the `pattern` parameter in `exploit.py`. Then, run the s
 
 Then, we can use `pattern_offset.rb`, which is located in the same folder to find the exact offset that we need.
 
-<figure><img src="../.gitbook/assets/image (94).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (94) (3).png" alt=""><figcaption></figcaption></figure>
 
 ## Finding Bad Characters
 
@@ -157,7 +157,7 @@ We can use `mona.py` from Immunity Debugger to first generate a `bytearray.bin` 
 
 Afterwards, fill in the exploit with the offset number and send the bad characters along with it. The program would crash, and we need to view the **values on the stack**.&#x20;
 
-<figure><img src="../.gitbook/assets/image (10) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (10) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Notice that the characters for 'A' ends, and then some special characters begin from there. In this case, the address is at `0x00e2fa18`. This is the address we need to start comparing from, because that's where the **bad characters that we sent in begins**.&#x20;
 
@@ -181,7 +181,7 @@ Now, we need to find a `JMP ESP` instruction. The reason we need this is because
 
 We can do this with Mona, and this can be done whether the binary is running or crashed. We have to run `!mona jmp -r esp -b "\x00\x23\3c\x83\xba"` to find this instruction.&#x20;
 
-<figure><img src="../.gitbook/assets/image (8) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (8) (2) (3).png" alt=""><figcaption></figcaption></figure>
 
 There are quite a few to choose from, and I chose `\x62\x50\x12\x05`, which would work fine with our payload. When putting this address in, **take note to reverse it as we are working with a 32-bit machine**. This would mean that it is a **little-endian** arrangement. So in our exploit, we need to write the new value of the EIP as `\x05\x12\x50\x62`.&#x20;
 

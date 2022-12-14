@@ -23,7 +23,7 @@ Some reasons users don't pick up Linux is because it's harder to use. For exampl
 
 ## Distros
 
-Distros are like Linux systems that have different flavours and come pre-built. There are many types of Distros around, some as daily drivers and some for security. Here are a few of my personal favourites:
+Distros are Linux systems that have different flavours and come pre-built. There are many types of Distros around, some as daily drivers and some for security. Here are a few of my personal favourites:
 
 ### Kali Linux
 

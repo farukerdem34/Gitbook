@@ -30,7 +30,7 @@ I tried playing around with the website by sending JSON objects, and found that 
 
 Once we were in, we could view these files:
 
-<figure><img src="../../../.gitbook/assets/image (83).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (83) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can grab the user flag and also the `homedirectory.zip` file. Upon running an `exiftool` for it, we can see that the file name was `.bash_logout`. All of the files were encrypted with a password, and cracking it was not possible.
 

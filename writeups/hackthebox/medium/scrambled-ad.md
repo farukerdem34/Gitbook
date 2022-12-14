@@ -80,7 +80,7 @@ Then, we can use `impacket-ticketer` to create a ticket, export it and also run 
 
 Then, we can enable `xp_cmdshell` to gain RCE on the machine.
 
-<figure><img src="../../../.gitbook/assets/image (78).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (78) (1).png" alt=""><figcaption></figcaption></figure>
 
 Using this, we can gain a reverse shell using whatever method. I always prefer to download a copy of `nc.exe` onto the machine and run it (not the stealthiest).
 
@@ -96,7 +96,7 @@ I was unable to do much as this user. So instead, I went to enumerate the SQL da
 
 Was able to find this:
 
-<figure><img src="../../../.gitbook/assets/image (81).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (81) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can take a look at the ScrambleHR database.
 
@@ -174,10 +174,10 @@ This program was using `BinaryFormatter()`, which an insecure function that coul
 
 I had to download `ysoserial.exe` on my Windows VM to build my payload. We can then use it to create this payload:
 
-<figure><img src="../../../.gitbook/assets/image (82).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (82) (2).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, we just need to prepend a UPLOAD\_ORDER; string, and send this to port 4411. On our listener port, we would catch a SYSTEM shell.
 
 <figure><img src="../../../.gitbook/assets/image (421).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (77).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (77) (1).png" alt=""><figcaption></figcaption></figure>
