@@ -125,7 +125,7 @@ Out of all of these users, m.lovegod has the most privileges. The user owns the 
 
 We now need to somehow get a ticket from this m.lovegod user, or find his credentials.&#x20;
 
-### Test.exe and Shell
+### Test.exe
 
 When I ran the binary on my Windows VM, it seems to exit straightaway. I started Wireshark to see what I could capture from it, guessing that it was trying to make a connection back to the host somehow.
 
@@ -135,14 +135,4 @@ I found this interesting tidbit here.
 
 Seems like there's a password being transmitted here to the LDAP server. The next step is trivial, we just need to run this thing on a VM connected to the VPN and we should get somewhere.
 
-Doing so let me find these credentials: `absolute.htb\m.lovegod:AbsoluteLDAP2022!`
-
-Now I was able to retrieve this user's ticket.
-
-<figure><img src="../../../.gitbook/assets/image (1) (1) (3).png" alt=""><figcaption></figcaption></figure>
-
-Now, perhaps we can perform some kind of actions as the user remotely. Using this ticket, we can leverage a tool called pywhisker to perform actions on the host.&#x20;
-
-{% embed url="https://github.com/ShutdownRepo/pywhisker" %}
-
-This is where I got stuck again...not too sure how to add the user into the group. WIP!
+WIP!

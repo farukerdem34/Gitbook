@@ -114,7 +114,7 @@ LinPEAS didn't reveal a lot to me, so I opted for `pspy64` to view the processes
 
 I saw this process run by root:
 
-<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (5).png" alt=""><figcaption></figcaption></figure>
 
 Every minute or so, it seems that this git repository is being updated on the Gitea instance. Based on GTFOBins, **git hooks** can be abused here to execute any script we want.
 

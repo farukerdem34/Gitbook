@@ -70,7 +70,7 @@ With this, we can access the MSSQL instance with `sqsh`. Afterwards, getting RCE
 
 <figure><img src="../../../.gitbook/assets/image (55).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (3).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can gain a reverse shell as this user with whatever method.
 

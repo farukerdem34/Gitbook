@@ -64,7 +64,7 @@ The first one was the most interesting as it revealed some FTP Credentials:
 
 Logging into FTP, we can gain access to a password policy PDF.
 
-<figure><img src="../../../.gitbook/assets/image (3) (1) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 Reading the Password Policy, we can see that the passwords are all templated:
 
@@ -82,7 +82,7 @@ Additionally, because we are the `blue` user, we can view the VIP dashboard whic
 
 <figure><img src="../../../.gitbook/assets/image (25) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (20) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20) (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 When checking the Export Notes portion of code, we see that it **runs a command using a shell.**
 

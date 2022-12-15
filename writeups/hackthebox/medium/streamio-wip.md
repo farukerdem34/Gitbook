@@ -50,7 +50,7 @@ After getting all the credentials, we can crack the hashes and then brute force 
 
 Within the admin dashboard, we can see a few functionalities that cause a unique parameter of `?staff=` to be passed.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 I found this rather interesting, and wanted to fuzz this more. I was able to find another `debug` endpoint using `wfuzz`.
 

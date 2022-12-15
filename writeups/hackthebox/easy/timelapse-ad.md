@@ -26,7 +26,7 @@ I tried to import the certificate or extract the keys but this file is also pass
 
 `pfx2john` and `john` again.
 
-<figure><img src="../../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20) (5).png" alt=""><figcaption></figcaption></figure>
 
 With this, we can extract the private key.
 
