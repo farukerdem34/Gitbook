@@ -8,11 +8,11 @@ description: Challenging Windows machine with unique docker escape!
 
 As usual, nmap scan to begin.
 
-<figure><img src="../../../.gitbook/assets/image (118).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (118) (1).png" alt=""><figcaption></figcaption></figure>
 
 When visiting port 80, we can see that it gives us a domain.
 
-<figure><img src="../../../.gitbook/assets/image (105).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (105) (1).png" alt=""><figcaption></figcaption></figure>
 
 The Get Started button directs us to a login page, where default admin:admin credentials do not work.
 
@@ -38,7 +38,7 @@ The most interesting of it was this **management/dump** end point.
 
 This endpoint takes a POST request, and some fuzzing of the login request using Burp tells us that this takes JSON parameters.
 
-<figure><img src="../../../.gitbook/assets/image (111).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (111) (1).png" alt=""><figcaption></figcaption></figure>
 
 When changing this endpoint to the /management/dump endpoint, we get a 400 response saying that we are missing arguments.
 
@@ -208,7 +208,7 @@ What this essentially does is this:
 
 We can view the callback:
 
-<figure><img src="../../../.gitbook/assets/image (115).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (115) (1).png" alt=""><figcaption></figcaption></figure>
 
 When decoded from base64, we can see that charlie has a backup of his home directory present on this Gitea instance, and pehaps there are SSH keys wthin it.
 
@@ -222,11 +222,11 @@ We can save this file and proceed to access his private SSH keys.
 
 Now we can SSH in as Charlie!
 
-<figure><img src="../../../.gitbook/assets/image (112).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (112) (1).png" alt=""><figcaption></figcaption></figure>
 
 Jean has the user flag, and we can easily su to jean using the earlier credentials. **Important to note is that we could not SSH into jean in the first place was because our public key was denied access**.
 
-<figure><img src="../../../.gitbook/assets/image (114) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (114) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -266,11 +266,11 @@ We first need to portforward this MySQL Instance from the machine before moving 
 
 <figure><img src="../../../.gitbook/assets/image (101) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (119) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (119) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Earlier, we found 4 users, and from there we can update the database such that one of those users becomes a manager. I picked letha, but any is fine. The reason being the cronjob is only changing the password of charlie and jean, so we should use other users.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (103).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (103) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then we can login as this user.
 
@@ -316,7 +316,7 @@ Early enumeration shows that there is a docker.sock in the /app/docker.sock dire
 
 In this machine, there's one critical vulnerability, of which is that the docker.sock is writable.
 
-<figure><img src="../../../.gitbook/assets/image (107) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (107) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 So we can enumerate further to find some docker exploits using curl.
 
@@ -360,6 +360,6 @@ Getting Shell:
 
 We can then grab the flag:
 
-<figure><img src="../../../.gitbook/assets/image (110) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (110) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Really hard machine.

