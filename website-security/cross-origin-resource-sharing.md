@@ -26,7 +26,7 @@ In some cases, there are pre-checks done before requests are processed. Under ce
 
 <figure><img src="../.gitbook/assets/image (261).png" alt=""><figcaption><p><em>Pre-Flight Check</em></p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (251).png" alt=""><figcaption><p><em>Check Response</em></p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (251) (1).png" alt=""><figcaption><p><em>Check Response</em></p></figcaption></figure>
 
 This could potentially be useful for enumeration and seeing what's really allowed on websites. The process would look something like this:
 
