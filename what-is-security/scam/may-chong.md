@@ -10,13 +10,13 @@ This looks like a poorly constructed email, one because I don't use OneDrive, an
 
 Let's take a look at the website using Curl.
 
-<figure><img src="../../.gitbook/assets/image (153).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (153) (2).png" alt=""><figcaption></figcaption></figure>
 
 So the link uses an index.php and takes some ?id= as the parameter. Interesting because I don't think I've ever seen such a link from NUS. Normally, NUS links come with a .nus.edu.sg domain or something to verfify it.&#x20;
 
 When checking the rest of the HTML returned, we can see loads of JS.
 
-<figure><img src="../../.gitbook/assets/image (156).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (156) (2).png" alt=""><figcaption></figcaption></figure>
 
 Quite shabby for an 'NUS' website.&#x20;
 
@@ -24,7 +24,7 @@ Quite shabby for an 'NUS' website.&#x20;
 
 This is what the website looks like:
 
-<figure><img src="../../.gitbook/assets/image (147).png" alt=""><figcaption><p><em>May Chong's</em></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (147) (2).png" alt=""><figcaption><p><em>May Chong's</em></p></figcaption></figure>
 
 Interesting. We can play spot the difference between the image above, and the login from edurec!
 
@@ -40,6 +40,6 @@ We can test the login as follows:
 
 After logging in, it looks like this was just a phishing campaign from NUS.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (157).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (157) (2).png" alt=""><figcaption></figcaption></figure>
 
 Quite cool that NUS would do a campaign for this.&#x20;

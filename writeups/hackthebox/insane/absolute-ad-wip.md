@@ -95,7 +95,7 @@ Interesting, now that we have a ticket, we can export this. I found that we can 
 
 We can check out the 'Shared' share to find some interesting files.
 
-<figure><img src="../../../.gitbook/assets/image (150).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (150) (2).png" alt=""><figcaption></figcaption></figure>
 
 Interesting!  The program here seems to be some form of script that creates the binary.
 

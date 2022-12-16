@@ -24,7 +24,7 @@ However, visiting it gives us a 403.
 
 I used `gobuster` on this directory and found a `credentials.txt` file.
 
-<figure><img src="../../../.gitbook/assets/image (77) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (77) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can view this file to find some FTP credentials.
 
@@ -36,11 +36,11 @@ Then, we can login to FTP.
 
 Within FTP, we can find a backup of the website.
 
-<figure><img src="../../../.gitbook/assets/image (76).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (76) (4).png" alt=""><figcaption></figcaption></figure>
 
 When we extract this file and unzip it, we would be able to find a few directories of use.
 
-<figure><img src="../../../.gitbook/assets/image (77).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (77) (3).png" alt=""><figcaption></figcaption></figure>
 
 There are 2 directories, the `utility-scripts` and `w4ld0s` stuff. The secret directory revealed one more credential.
 
@@ -52,7 +52,7 @@ The utility-scripts folder revealed some database credentials.
 
 The `index.php` folder also revealed some credentials.
 
-<figure><img src="../../../.gitbook/assets/image (78).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (78) (5).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, I was stumped here because I did not find any place to work on this. I understood that there was some kind of admirer-sounding application running somewhere, but gobuster was revealing nothing. Then, googling loads led me to the Adminer software, which was accessible on this website at `adminer.php`.
 

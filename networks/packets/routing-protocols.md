@@ -147,7 +147,7 @@ We will often see these two terms for EIGRP routing
 
 To visualise, we can use this:
 
-<figure><img src="../../.gitbook/assets/image (155).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (155) (2).png" alt=""><figcaption></figcaption></figure>
 
 Take note that EIGRP has been configured on both of these networks. So R1 would see that the RD is 28160 to the host. The FD would be 30720, which is the actual distance between the paths.&#x20;
 

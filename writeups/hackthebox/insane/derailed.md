@@ -34,17 +34,17 @@ From here, we can try to fuzz out other information and endpoints on this /rail 
 
 This directory basically shows us every single path there was in the website:
 
-<figure><img src="../../../.gitbook/assets/image (101).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (101) (3).png" alt=""><figcaption></figcaption></figure>
 
 ### /clipnotes
 
 Earlier, we saw some form of clipnote function. Testing it shows us that each time we create a new one, it is stored on the server somewhere. Notice that this one I created was 110.
 
-<figure><img src="../../../.gitbook/assets/image (102).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (102) (2).png" alt=""><figcaption></figcaption></figure>
 
 &#x20;Using the **/clipnotes/raw/:id** format, I was able to view the first clipnote, submitted by a user called Alice. Visiting anything other than 1 was not possible.
 
-<figure><img src="../../../.gitbook/assets/image (100).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (100) (2).png" alt=""><figcaption></figcaption></figure>
 
 I was interested in what other number is present, so I used wfuzz to enumerate out all other numbers. None are present it seems
 
