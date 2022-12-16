@@ -10,7 +10,7 @@ description: >-
 
 As usual, we start with an Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (98) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (98) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Port 3000 was found to be a HTTP port leading us to this Clipnotes page.
 
@@ -20,7 +20,7 @@ Port 3000 was found to be a HTTP port leading us to this Clipnotes page.
 
 Wasn't much to play around with, as we had no credentials yet. Decided to run a directory scan to find if there are any endpoints. Eventually, I found this /rails endpoint, using dirsearch.
 
-<figure><img src="../../../.gitbook/assets/image (99) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (99) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (8) (1) (1).png" alt=""><figcaption></figcaption></figure>
 

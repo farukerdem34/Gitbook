@@ -4,7 +4,7 @@
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (85).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (85) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can append `paper.htb` to our `/etc/hosts` file, as per standard HTB stuff. The web pages don't reveal much and have the default pages loaded.
 
@@ -44,7 +44,7 @@ Within the chats tab, we can see that there is a `recyclops` bot that has some d
 
 I tested it out and it seems to execute code on the machine remotely.
 
-<figure><img src="../../../.gitbook/assets/image (77) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (77) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Basic directory traversal works on this machine due to a lack of input validation for the directory entered.
 
@@ -52,7 +52,7 @@ Basic directory traversal works on this machine due to a lack of input validatio
 
 The user is `dwight`, and we can see that within this directory, there is a `hubot` directory. Hubot is an open source chat robot that could be the one used for this user. I could not read the `.ssh` files, so this was the next best thing.
 
-<figure><img src="../../../.gitbook/assets/image (83) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (83) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can see that within the `hubot/` directory, there's a `.env` file. This could contain some interesting content.
 
@@ -72,4 +72,4 @@ CVE-2021-3560 is an authentication bypass on polkit, which allows for users to c
 
 {% embed url="https://github.com/Almorabea/Polkit-exploit" %}
 
-<figure><img src="../../../.gitbook/assets/image (81) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (81) (1) (1).png" alt=""><figcaption></figcaption></figure>

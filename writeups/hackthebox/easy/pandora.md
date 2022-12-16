@@ -46,7 +46,7 @@ With these credentials, we can SSH in as the `daniel` user.
 
 As Daniel, we didn't have much permissions over the machine. However, we were able to head to the `/var/www/pandora` directory to find another potential website that was up:
 
-<figure><img src="../../../.gitbook/assets/image (84).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (84) (2).png" alt=""><figcaption></figcaption></figure>
 
 Checking the apache2 config files reveals that the user `matt` was running the other web server:
 

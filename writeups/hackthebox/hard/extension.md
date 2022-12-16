@@ -60,7 +60,7 @@ Then we can proceed to continue fuzzing the parameter with the new string. After
 
 Now, we can dump out all the possible credentials with passwords!
 
-<figure><img src="../../../.gitbook/assets/image (92) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (92) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 There's a lot of information that is dumped, so we can use curl to redirect the output into a file. Afterwards, we can extract the hashes and get cracking.
 
@@ -172,7 +172,7 @@ function check(str) {
 
 The filter portion seems to be missing the '<' and '>' character, and it blocks src and script, meaning that the next step would be an XSS of some kind. Looking at the users present on the Gitea instance, there is only one we are interested in, which is charlie.
 
-<figure><img src="../../../.gitbook/assets/image (93) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (93) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We probably need to have some form of XSS to access charlie's account to see some private repos. Since charlie is the only other user, and there has been hints to exploit XSS, I guess Charlie views the page or a repository from time to time. We aren't allowed to use brackets for our XSS payload, so we need to keep that in mind.
 
@@ -204,7 +204,7 @@ Now, we can use this XSS to send us the information from charlie's repos. This c
 
 What this essentially does is this:
 
-<figure><img src="../../../.gitbook/assets/image (95) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (95) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can view the callback:
 
@@ -214,7 +214,7 @@ When decoded from base64, we can see that charlie has a backup of his home direc
 
 <figure><img src="../../../.gitbook/assets/image (122).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (94) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (94) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can save this file and proceed to access his private SSH keys.
 
@@ -278,7 +278,7 @@ Then we can login as this user.
 
 The managers are able to verify users basically, which ties in to where the RCE lies.
 
-<figure><img src="../../../.gitbook/assets/image (91) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (91) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can view the request and see how it verifies the user.
 
@@ -304,7 +304,7 @@ Then we can find our user on the website.
 
 Once we hit validate, we will get a shell back as the application user.
 
-<figure><img src="../../../.gitbook/assets/image (97) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (97) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Docker Escape
 
@@ -354,7 +354,7 @@ curl -s -X POST --unix-socket /app/docker.sock "http://localhost/containers/test
 
 Getting Shell:
 
-<figure><img src="../../../.gitbook/assets/image (87) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (87) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (121).png" alt=""><figcaption></figcaption></figure>
 

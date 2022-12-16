@@ -222,7 +222,7 @@ We can then SSH in as Ethan.
 
 When running linpeas.sh, we can find this SUID binary called `pinns`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (89) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (89) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Again. researching on more recent vulnerabilities led me to this:&#x20;
 

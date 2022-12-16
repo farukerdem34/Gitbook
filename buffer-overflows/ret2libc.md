@@ -46,7 +46,7 @@ Breaking down the output, we notice that ASLR is disabled, RELRO is partial (mea
 
 Then, we can run the binary and see what it does. I used `ltrace` to enumerate what library calls and functions are being used.
 
-<figure><img src="../.gitbook/assets/image (95).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (95) (1).png" alt=""><figcaption></figcaption></figure>
 
 So first, we notice that the program takes **an unsanitised input from the user.** The 'Hello!' portion is user-supplied, and then it uses `strcpy`, which is a dangerous function vulnerable to BOF since it does not check for the length of input, and copes it to another place in memory.
 
@@ -56,7 +56,7 @@ So we now we know the vulnerable parameter is probably the `main()` function's `
 
 Then, we can use `pattern_offset.rb` to find the offset.
 
-<figure><img src="../.gitbook/assets/image (87).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (87) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Finding Addresses
 

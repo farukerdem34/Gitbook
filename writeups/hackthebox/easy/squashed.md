@@ -40,7 +40,7 @@ We can convert this file to a hash for John to crack easily. However, Keepass2jo
 
 While looking at his directory, we can find that Ross's UID is 1001.
 
-<figure><img src="../../../.gitbook/assets/image (90) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (90) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 ### HTML NFS
 

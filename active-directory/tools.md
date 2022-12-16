@@ -56,7 +56,7 @@ A collection of Python classes for working with certain network protocols. The s
 
 In my experience, if you're trying to find a script for an AD attack, impacket probably has it somewhere.
 
-<figure><img src="../.gitbook/assets/image (83) (1) (1).png" alt=""><figcaption><p><em>Kerberoasting using Impacket-GetUserSPN</em></p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (83) (1) (1) (1).png" alt=""><figcaption><p><em>Kerberoasting using Impacket-GetUserSPN</em></p></figcaption></figure>
 
 {% embed url="https://github.com/SecureAuthCorp/impacket" %}
 

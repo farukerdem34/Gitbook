@@ -51,7 +51,7 @@ We should end up with a binary with these features:
 
 Most importantly, for now, we will disable ASLR to allow for easier exploitation. So our binary takes in one input and does does a `strcpy()` with it. We can check that it segfaults if given too long of an input:
 
-<figure><img src="../.gitbook/assets/image (92) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (92) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Code Analysis
 
@@ -85,7 +85,7 @@ Then, we can find the addresses of these functions.
 
 My addresses are static because ASLR is disabled, so no worries for that. Now, we need to find the offset needed. The offset should be about 50, but I'll generate a pattern of length 70 in case.
 
-<figure><img src="../.gitbook/assets/image (90).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (90) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (3) (4).png" alt=""><figcaption></figcaption></figure>
 

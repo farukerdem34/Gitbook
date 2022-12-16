@@ -137,7 +137,7 @@ The EIP is filled with \x41 (which translates back to "A"). So the program would
 
 When finding the offset, we need to use `/usr/share/metasploit-framework/tools/exploit/pattern_create.rb`, which is a script that would create a string of text for us to send again.&#x20;
 
-<figure><img src="../.gitbook/assets/image (88).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (88) (1).png" alt=""><figcaption></figcaption></figure>
 
 Once generated, replace the `pattern` parameter in `exploit.py`. Then, run the script and resend the buffer. Since the goal is to control the EIP to go wherever we want, we would need to take note of the value of the EIP when we send the pattern.
 
@@ -145,7 +145,7 @@ Once generated, replace the `pattern` parameter in `exploit.py`. Then, run the s
 
 Then, we can use `pattern_offset.rb`, which is located in the same folder to find the exact offset that we need.
 
-<figure><img src="../.gitbook/assets/image (94).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (94) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Finding Bad Characters
 

@@ -54,7 +54,7 @@ This turned out to be a bit fruitless, because I was unable to even find anythin
 
 Using this method, I was able to make out that there were 3 users, because entering /api/4 would return nothing. So we know that the last parameter should be a number of some sort. I tried out loads of numbers but nothing was returned. It wasn't until I decided to try using 1.0 and it worked...
 
-<figure><img src="../../../.gitbook/assets/image (96) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (96) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 &#x20;I was able to get out the remaining hashes, which were for **root and gary.** We can crack these using john. Only one of them was crackable, and it was gary's.
 
@@ -96,7 +96,7 @@ Now that we have this, we can begin to enumerate the network inside. We can do a
 
 Most likely, the first host is 172.18.0.1 (based on other HTB machines), so I started there. I tested if port 22 and 80 were open, similar to the original ports open from our first nmap scan. And they were indeed open.
 
-<figure><img src="../../../.gitbook/assets/image (88) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (88) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can then curl this address to see what's going on within it.
 
