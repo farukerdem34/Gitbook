@@ -77,7 +77,7 @@ Kerberoasting reveals that there are no SPNs to roast. Instead, we can use this 
 
 {% embed url="https://wiki.porchetta.industries/getting-started/using-kerberos" %}
 
-<figure><img src="../../../.gitbook/assets/image (5) (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (12) (4).png" alt=""><figcaption></figcaption></figure>
 

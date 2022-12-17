@@ -36,7 +36,7 @@ We find another `.jenkins` folder. Within that, we would find another `users` fo
 
 Naturally, the admin one is more interesting. Taking a look reveals that there is an encoded password within it:
 
-<figure><img src="../../../.gitbook/assets/image (42) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (42) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Decrypting Password
 

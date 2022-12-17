@@ -16,19 +16,19 @@ Website revealed a Wordpress site:
 
 Because this was a HTTPS website, we can take a look at the certificate first to find an email address.
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (3).png" alt=""><figcaption></figcaption></figure>
 
 Looking at the alternate DNS names, we can find another hidden subdomain, which we'll visit later.
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can run `wpscan --enumerate p,t,u` on this website. This returns a plugin that is outdated and exploitable.
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
 
 For this version, there are SQL Injection and Privilege Escalation exploits available.
 
-<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (2).png" alt=""><figcaption></figcaption></figure>
 
 Based on the PoC for the Privilege Escalation one, we have to create some HTML code that would allow us to login as the administrator. Earlier, we found an email address for the user `orestis`. We can use that for our exploit.
 
@@ -59,7 +59,7 @@ When viewing the plugins, we can find another plugin that enables SMTP on the Wo
 
 When viewing the SMTP configuration settings, we can find the username and password for port 110.
 
-<figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (3).png" alt=""><figcaption></figcaption></figure>
 
 The password can be taken by viewing the page source to reveal the hidden value.
 
@@ -91,7 +91,7 @@ We can login to the forum page here using the credentials we found earlier. Then
 
 Some of the forum pages mention sending SSH keys somehow.
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 There was also an encrypted few posts.
 
@@ -99,7 +99,7 @@ There was also an encrypted few posts.
 
 There was clearly a URL within that, and it seems that numbers **are not being scrambled**. This means this is a letter-only cipher. After a bit of research and testing on CyberChef, Vignere cipher is the one used here.
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can head to that website to find the `id_rsa` file for `orestis`.
 
@@ -107,11 +107,11 @@ Then, we can head to that website to find the `id_rsa` file for `orestis`.
 
 The file is password encrypted, so we have to use `ssh2john.py` to convert this to a hash for `john` to crack.
 
-<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then we can use `openssl rsa` to write the key out.
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (4).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, we can simply SSH in using this key.
 

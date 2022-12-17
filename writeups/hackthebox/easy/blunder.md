@@ -12,11 +12,11 @@ Not too sure why FTP was reported. Anyways, we can head to the webpage to enumer
 
 Page was just full of placeholder text that didn't mean much.
 
-<figure><img src="../../../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 I ran a directory brute force search to find an `/admin` panel.
 
-<figure><img src="../../../.gitbook/assets/image (3) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 The `/admin` panel requires credentials to access. Default weak credentials do not work here.
 
@@ -24,7 +24,7 @@ The `/admin` panel requires credentials to access. Default weak credentials do n
 
 We also found some other text files that were also of interest.
 
-<figure><img src="../../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (4).png" alt=""><figcaption></figcaption></figure>
 
 The `todo.txt` file contained this:
 
@@ -32,7 +32,7 @@ The `todo.txt` file contained this:
 
 The `install.php` file also contained some other hidden information about the CMS on the administrator panel.
 
-<figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (4).png" alt=""><figcaption></figcaption></figure>
 
 So `fergus` is the administrator of the website, and Bludit is installed on it. Fergus needs to upload some type of image onto the website. We can check the page source for the version of Bludit that is running.
 
@@ -48,13 +48,13 @@ Now, we need to find some credentials to log in as the administrator.
 
 Initially, I brute forced the login page for the admin panel, but it didn't work out. I tried using `cewl` to create a custom wordlist using the website. Afterwards, using a Auth bruteforce Bypass exploit for Bludit, we can brute force the login and find the correct password.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (24).png" alt=""><figcaption><p><br></p></figcaption></figure>
 
 We would eventually find the right credentials.
 
-<figure><img src="../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can use the exploit we found earlier to gain a reverse shell.
 
@@ -70,7 +70,7 @@ First thing I look for are databases or configuration files within this Bludit i
 
 Within the Bludit-3.10.0a directory, the config files contained credentials for a `hugo` user.
 
-<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (2).png" alt=""><figcaption></figcaption></figure>
 
 This hash can be cracked.
 

@@ -16,7 +16,7 @@ This website was a file sharing application where we could upload files:
 
 Interestingly, we were allowed to download the entire repository here:
 
-<figure><img src="../../../.gitbook/assets/image (9) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (2) (4).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (4) (5).png" alt=""><figcaption></figcaption></figure>
 
@@ -76,7 +76,7 @@ Then, we can gain a reverse shell via the `mkfifo` command into a Docker Contain
 
 Within this container, we can see other foreign addresses that are around:
 
-<figure><img src="../../../.gitbook/assets/image (11) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (1) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 172.17.0.1 was another address that was present on the host.
 

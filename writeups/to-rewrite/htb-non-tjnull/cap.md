@@ -34,6 +34,8 @@ With this, we can SSH as `nathan` into the machine.
 
 ## Privilege Escalation
 
+### Cap\_setuid
+
 I ran LinPEAS to find some Escalation Vectors. Python has the `cap_setuid` bit set, which allows us to call the `os.setuid()` function. We can use this to spawn a root shell accordingly.
 
 <figure><img src="../../../.gitbook/assets/image (2) (1) (6).png" alt=""><figcaption></figcaption></figure>

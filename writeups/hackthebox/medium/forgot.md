@@ -58,7 +58,7 @@ Looking at the tickets portion, I can see that there are some SSH credentials fo
 
 Anyways there seems to be an administrator on this website somewhere, and it's not robert. When looking around at the requests to see if we can find some hidden stuff, I managed to see how the website authenticates us, and its via a Authorization Basic cookie.
 
-<figure><img src="../../../.gitbook/assets/image (10) (2) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (2) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 When taking a look around some more, I found this unique endpoint.
 
@@ -66,7 +66,7 @@ When taking a look around some more, I found this unique endpoint.
 
 When trying to visit it, I just changed the authorization cookie to have the username as "admin" and it granted me access.
 
-<figure><img src="../../../.gitbook/assets/image (13) (2) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (2) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Cool, we have credentials. `diego:dCb#1!x0%gjq`. Now we can SSH into the machine as diego.
 
@@ -265,4 +265,4 @@ insert into escalate values ("abc","abc","abc",'hello=exec("""\nimport os\nos.sy
 
 Then, we can run the security using sudo and receive a root shell.
 
-<figure><img src="../../../.gitbook/assets/image (12) (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (3) (1) (1).png" alt=""><figcaption></figcaption></figure>

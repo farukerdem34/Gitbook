@@ -335,7 +335,7 @@ H is the first character of the salt. Repeated tests of this script shows that t
 
 We can keep dragging out the next few characters by changing the hashed password and the plaintext password, removing 1 byte at a time and adding one to our flag variable.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (8) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 'H34vyR41n' is the final salt, and now we can crack the original hash for root we found earlier.
 

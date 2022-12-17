@@ -14,7 +14,7 @@ Running a scan on port 80 reveals that this is a Drupal 7 instance running.
 
 Checking the CHANGELOG.txt file, we find that this is running Drupal 7.54.
 
-<figure><img src="../../../.gitbook/assets/image (12) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 With this, we can run the Drupalgeddon2 exploit.
 

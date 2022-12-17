@@ -12,7 +12,7 @@ Only one port was available. We had to add `forum.bart.htb` to our `/etc/hosts` 
 
 The website was a standard company page:
 
-<figure><img src="../../../.gitbook/assets/image (5) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 I checked the page source, and found a unique bit here. Seems like there was a user that was not shown for some reason.
 
@@ -28,7 +28,7 @@ We can fuzz subdomains using the `bart.htb` domain to find more places to visit.
 
 We can visit this to see that it's running PHP Server Monitor v3.2.1.
 
-<figure><img src="../../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (42) (3).png" alt=""><figcaption></figcaption></figure>
 
 `harvey:potter` works as credentials to let us log in. There, we would view an internal chat instance.&#x20;
 

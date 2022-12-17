@@ -40,7 +40,7 @@ We can actually open .exe files to find out what is within it.
 
 When viewing the plugins directory, we would find an app.7z file which we can open to reveal the resources.
 
-<figure><img src="../../../.gitbook/assets/image (15) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can take a look at the resources file to view the source code and stuff, and there we find more hints that this is a Electron application.
 

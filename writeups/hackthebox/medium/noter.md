@@ -24,7 +24,7 @@ When decrypted, we can see that it contains some data:
 
 Generally, from other machine experiences, Flask uses JWT cookies to differentiate sessions. So I tried to brute force the secret of this cookie with `flask-unsign` and `rockyou.txt`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (16) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 With the secret found, we can create our own cookies and make whatever username we want. However, we still need to find a username that works.
 

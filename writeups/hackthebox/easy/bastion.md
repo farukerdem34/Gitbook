@@ -10,11 +10,11 @@ Nmap scan revealed a lot of ports:
 
 When checking the SMB shares, we fnd that the Backups share does not require credentials to access.
 
-<figure><img src="../../../.gitbook/assets/image (10) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 When checking the files, we can see that there's a WindowsImageBackup directory within it.
 
-<figure><img src="../../../.gitbook/assets/image (13) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (2) (3).png" alt=""><figcaption></figcaption></figure>
 
 Within it, there was a few .vhd files.
 
@@ -30,7 +30,7 @@ From here, because this is a Windows backup, we can directly go to the `C:\Windo
 
 Then, this hash is easily cracked using hashcat.
 
-<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (2).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, we can SSH in as the L4mpje user.
 
@@ -40,7 +40,7 @@ Afterwards, we can SSH in as the L4mpje user.
 
 In the user's directory, I enumerated all the directories that I could using `dir /all`.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 Within the `AppData\Roaming` folder, we can find some files related to mRemoteNG.
 
