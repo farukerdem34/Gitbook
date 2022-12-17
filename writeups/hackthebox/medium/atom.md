@@ -66,7 +66,7 @@ This is in line with the information on the PDF we found earlier, telling us to 
 
 First, we can generate a quick reverse shell binary with `msfvenom`.
 
-<figure><img src="../../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (33) (4).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, we need to change the name of this binary to have an `'` character within it. I named mine `v'rev.exe`. Then, we need to take the sha512 hash of this file and base64 encode it.
 
@@ -87,7 +87,7 @@ releaseDate: '2022-03-14T11:17:02.627Z'
 
 Upon creation, we would need to put this YAML file within the client directory of the share we accessed earlier.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (29) (3).png" alt=""><figcaption></figcaption></figure>
 
 After a while, our HTTP server would get a hit and our listener port would catch a reverse shell.
 

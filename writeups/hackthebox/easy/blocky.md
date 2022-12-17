@@ -10,7 +10,7 @@ Nmap scan:
 
 Port 80 is a Wordpress Site that has a post referencing a plugin and a wiki system being in development.
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 &#x20;We can use `gobuster` on the website to find some hidden content.
 
@@ -22,7 +22,7 @@ Heading to the plugins directory, we find two .jar files.
 
 We can take a look at these jar files using `jd-gui`, and find some SQL credentials within the machine.
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 So now we have a password but no user to use it with.
 
@@ -34,7 +34,7 @@ Earlier, we found some Wordpress-related directories, hence we can use `wpscan` 
 
 With the password and this username, we can SSH into the machine.
 
-<figure><img src="../../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

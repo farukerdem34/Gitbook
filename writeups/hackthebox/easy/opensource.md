@@ -12,7 +12,7 @@ Take note of port 3000, it will be important later!&#x20;
 
 This website was a file sharing application where we could upload files:
 
-<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 Interestingly, we were allowed to download the entire repository here:
 

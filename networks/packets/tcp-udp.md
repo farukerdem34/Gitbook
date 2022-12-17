@@ -43,7 +43,7 @@ The establishment of this handshake ensures that the connection is stable and ac
 
 While TCP prioritises accuracy, UDP is like the opposite. UDP is what I like to call 'best-effort'. UDP headers are like so:
 
-<figure><img src="../../.gitbook/assets/image (3) (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can see how UDP headers are typically about 8 bytes long, whereas TCP headers are 20-60 bytes long. This is because UDP does not have the retransmission property of TCP, and it just sends the data, hoping it gets there. Packets that are dropped are not cared about at all.
 

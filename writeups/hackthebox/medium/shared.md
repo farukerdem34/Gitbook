@@ -20,7 +20,7 @@ I wanted to view the certificate that was used to view any names or information 
 
 There were wildcards present in the domain, so I knew that we had to check for subdomains that were present.
 
-<figure><img src="../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 ### Custom\_cart SQLI
 

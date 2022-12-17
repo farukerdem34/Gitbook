@@ -4,7 +4,7 @@
 
 As usual, we start with a Nmap scan.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (2) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (2) (3).png" alt=""><figcaption></figcaption></figure>
 
 There's the `faculty.htb` domain running on port 80. We can add this to the `/etc/hosts` file.&#x20;
 
@@ -20,7 +20,7 @@ Checking for common directories such as the `/admin` endpoint reveals another lo
 
 Proxying the traffic in Burp, sending a `'` character as a username triggers an SQL error.
 
-<figure><img src="../../../.gitbook/assets/image (5) (1) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now that we have confirmed SQL Injection is present, we can dump out all the tables within the database from this using `sqlmap`.
 

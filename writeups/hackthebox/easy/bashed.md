@@ -24,7 +24,7 @@ When viewed, we can find this directory listing.
 
 Clicking `phpbash.php` gives us a webshell.
 
-<figure><img src="../../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (28) (4).png" alt=""><figcaption></figcaption></figure>
 
 We can check our sudo privleges to find that we can run everything as the `scriptmanager` user.
 
@@ -54,4 +54,4 @@ We can replace the python script with our own.
 
 Then, we can move this back to the file and change it's name to `test.py`. After a bit, would have a reverse shell on a listener port as root.
 
-<figure><img src="../../../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (30) (4).png" alt=""><figcaption></figcaption></figure>

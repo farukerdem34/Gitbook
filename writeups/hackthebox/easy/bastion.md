@@ -40,7 +40,7 @@ Afterwards, we can SSH in as the L4mpje user.
 
 In the user's directory, I enumerated all the directories that I could using `dir /all`.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Within the `AppData\Roaming` folder, we can find some files related to mRemoteNG.
 
@@ -48,7 +48,7 @@ Within the `AppData\Roaming` folder, we can find some files related to mRemoteNG
 
 Checking the confCons.xml file, we can find an encrypted password for the Administrator.
 
-<figure><img src="../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 mRemoteNG passwords can be decrypted using this repository:
 

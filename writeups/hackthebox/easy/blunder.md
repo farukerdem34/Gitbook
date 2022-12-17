@@ -16,11 +16,11 @@ Page was just full of placeholder text that didn't mean much.
 
 I ran a directory brute force search to find an `/admin` panel.
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 The `/admin` panel requires credentials to access. Default weak credentials do not work here.
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 We also found some other text files that were also of interest.
 
@@ -28,7 +28,7 @@ We also found some other text files that were also of interest.
 
 The `todo.txt` file contained this:
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 The `install.php` file also contained some other hidden information about the CMS on the administrator panel.
 
@@ -48,13 +48,13 @@ Now, we need to find some credentials to log in as the administrator.
 
 Initially, I brute forced the login page for the admin panel, but it didn't work out. I tried using `cewl` to create a custom wordlist using the website. Afterwards, using a Auth bruteforce Bypass exploit for Bludit, we can brute force the login and find the correct password.
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (24).png" alt=""><figcaption><p><br></p></figcaption></figure>
 
 We would eventually find the right credentials.
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can use the exploit we found earlier to gain a reverse shell.
 
@@ -84,7 +84,7 @@ Then we can `su` to Hugo.
 
 When we check `sudo` privileges, we can see that this one is a bit different.
 
-<figure><img src="../../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20) (1).png" alt=""><figcaption></figcaption></figure>
 
 The `!root` bit means that we cannot run `/bin/bash` as root, but we can run it as any other user. Googling for `sudo !root` bypasses led me to this exploit.&#x20;
 

@@ -22,7 +22,7 @@ harvey is the user we probably need to access.&#x20;
 
 We can fuzz subdomains using the `bart.htb` domain to find more places to visit.
 
-<figure><img src="../../../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (32) (3).png" alt=""><figcaption></figcaption></figure>
 
 ### monitor.bart.htb
 
@@ -74,7 +74,7 @@ I played around with this and altered my `User-Agent` field to something else, a
 
 <figure><img src="../../../.gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (34) (5).png" alt=""><figcaption></figcaption></figure>
 
 With this, because it is a PHP page, I attempted to write a webshell within the HTTP header and also change the page to a PHP page by altering the `filename` parameter.
 
@@ -94,7 +94,7 @@ When checking our privileges, we notice we have the SeImpersonatePrivilege enabl
 
 Checking `systeminfo`, we also find that a vulnerable version of Windows was running with no hotfixes.
 
-<figure><img src="../../../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (31) (3).png" alt=""><figcaption></figcaption></figure>
 
 We can run the JuicyPotato exploit to get a reverse shell as root. First, we need to create a .bat file that would be run. I used nc.exe to run my shell:
 

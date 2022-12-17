@@ -31,7 +31,7 @@ Generally, there are 2 different ways for OAuth to grant access. The first being
 
 The second is the **Implicit Flow Type:**
 
-<figure><img src="../.gitbook/assets/image (3) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 The main difference is that **the implicit flow type is much simpler**. it does not need to obtain an authorization code, thus there's no need to have an access token to exchange for. The client token simply receives an access token immediately and the user can log in.&#x20;
 
