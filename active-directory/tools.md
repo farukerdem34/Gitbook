@@ -64,9 +64,9 @@ In my experience, if you're trying to find a script for an AD attack, impacket p
 
 Basically, the SSH thing of Windows with loads of easy to use additional commands. Supports file transfer to and fro, as well as passing the hash for authentication. This tool abuses the service typically listening on port 5985.
 
-<figure><img src="../.gitbook/assets/image (50) (1).png" alt=""><figcaption><p><em>Evil-winrm with Password</em></p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (50) (1) (1).png" alt=""><figcaption><p><em>Evil-winrm with Password</em></p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (47) (1).png" alt=""><figcaption><p><em>Evil-winrm with LM Hash</em></p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (47) (1) (1).png" alt=""><figcaption><p><em>Evil-winrm with LM Hash</em></p></figcaption></figure>
 
 {% embed url="https://github.com/Hackplayers/evil-winrm" %}
 
@@ -86,7 +86,7 @@ This tool is mainly useful for when we are trying to pillage the domain for more
 
 There is also a Powershell implementation of this as well witin Powersploit.
 
-<figure><img src="../.gitbook/assets/image (46) (1).png" alt=""><figcaption><p><em>Taken from</em> <a href="https://pentestlab.blog/2018/04/04/dumping-clear-text-credentials/"><em>https://pentestlab.blog/2018/04/04/dumping-clear-text-credentials/</em></a></p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (46) (1) (1).png" alt=""><figcaption><p><em>Taken from</em> <a href="https://pentestlab.blog/2018/04/04/dumping-clear-text-credentials/"><em>https://pentestlab.blog/2018/04/04/dumping-clear-text-credentials/</em></a></p></figcaption></figure>
 
 ## Bloodhound
 
@@ -152,6 +152,6 @@ For this example, we can see how a group has **WriteDacl** privileges over anoth
 
 We can find out more information from each line and whether it can be abused by right-clicking on it and using more info.
 
-<figure><img src="../.gitbook/assets/image (53) (1).png" alt=""><figcaption><p><em>Abuse Info on GenericAll Privilege</em></p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (53) (1) (1).png" alt=""><figcaption><p><em>Abuse Info on GenericAll Privilege</em></p></figcaption></figure>
 
 Bloodhound is insanely useful and fast for mapping a domain out, and it even gives clear instructions and information about each abusable privilege.&#x20;

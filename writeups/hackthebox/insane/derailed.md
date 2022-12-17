@@ -355,11 +355,11 @@ setTimeout(function() {
 
 When waiting around, I eventually got a callback via the `curl` command I injected.
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 With this, we can easily gain a reverse shell through this method. I used the `mkfifo` shell, and it worked!
 
-<figure><img src="../../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can grab the user flag while we're here.
 
@@ -371,7 +371,7 @@ To establish persistence, we can put our public key within the `~/.ssh/authorize
 
 When checking the available stuff, I found this `openmediavault` folder as well.
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (75).png" alt=""><figcaption></figcaption></figure>
 
 Within the `rails-app` directory, there was a `.git` repository.
 

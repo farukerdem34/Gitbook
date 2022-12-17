@@ -1,3 +1,3 @@
 # HackTheBox
 
-Writeups for HackTheBox are found here. Split into different difficulties and Active Directory with varying levels of explanation.
+Writeups for HackTheBox are found here. Split into box difficulties with all exploits used documented.&#x20;

