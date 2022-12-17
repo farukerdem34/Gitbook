@@ -229,6 +229,6 @@ This affects the order of which a program reads code, and affects the type of pa
 
 ## No Operation Instructions (NOP)
 
-This is an assembly instructio that tells the code to skip to the next instruction. It has a hex value of \x90, and this does have use within assembly.
+This is an assembly instruction that tells the code to skip to the next instruction. It has a hex value of \x90, and this does have use within assembly.
 
 For instance, if we want to skip along the code and fill the stack with NOPs to begin execution elsewhere, we can just pad payloads with these instructions. This is known as an **NOP-sled**.&#x20;
