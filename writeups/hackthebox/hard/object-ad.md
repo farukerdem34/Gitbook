@@ -76,7 +76,7 @@ The `smith` user has `GenericWrite` permissions over the `maria` user:
 
 And lastly, the `maria` user has `WriteOwner` permissions over the `Domain Admins` group:
 
-<figure><img src="../../../.gitbook/assets/image (27) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (27) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Interesting path of exploits.
 

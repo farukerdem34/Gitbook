@@ -23,7 +23,7 @@ Standard Ports. I added absolute.htb  and its DC into my hosts file for this mac
 
 Interestingly, doing all of these revealed nothing useful, **except for my last resort.** Running a kerbrute reveals this:
 
-<figure><img src="../../../.gitbook/assets/image (32) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (32) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 This username wordlist was just within my machine from another machine that required it. Very useful! However, these usernames cannot be used to do anything, leading me to believe that there are other users on this domain.
 
@@ -121,7 +121,7 @@ Out of all of these users, m.lovegod has the most privileges. The user owns the 
 
 <figure><img src="../../../.gitbook/assets/image (3) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (33) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (33) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 We now need to somehow get a ticket from this m.lovegod user, or find his credentials.&#x20;
 

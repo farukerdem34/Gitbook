@@ -20,7 +20,7 @@ The Software\_Updates one is new. We can connect to it and see what are the file
 
 The PDF contained some useful information:
 
-<figure><img src="../../../.gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (36) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can place an update within this share's client folders, and then a user would run it. This is probably the way to gain a reverse shell.
 
@@ -36,7 +36,7 @@ There was a download button on the page, presumably to download the program used
 
 We can actually open .exe files to find out what is within it.
 
-<figure><img src="../../../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (35) (1).png" alt=""><figcaption></figcaption></figure>
 
 When viewing the plugins directory, we would find an app.7z file which we can open to reveal the resources.
 
@@ -70,7 +70,7 @@ First, we can generate a quick reverse shell binary with `msfvenom`.
 
 Afterwards, we need to change the name of this binary to have an `'` character within it. I named mine `v'rev.exe`. Then, we need to take the sha512 hash of this file and base64 encode it.
 
-<figure><img src="../../../.gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (38) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can create the `latest.yaml` file to have a custom HTTP path for the update with the hash value. Afterwards, we can host the binary on a Python HTTP server.
 
@@ -91,7 +91,7 @@ Upon creation, we would need to put this YAML file within the client directory o
 
 After a while, our HTTP server would get a hit and our listener port would catch a reverse shell.
 
-<figure><img src="../../../.gitbook/assets/image (37).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (37) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (67).png" alt=""><figcaption></figcaption></figure>
 
@@ -125,7 +125,7 @@ Logging in:
 
 We can check all the keys present on this machine:
 
-<figure><img src="../../../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (39) (1).png" alt=""><figcaption></figcaption></figure>
 
 The user key with some kind of GUID was the first I checked. We can do so with `get <name>`. This revealed another encrypted password for the Administrator.
 
@@ -137,4 +137,4 @@ We can decrypt this using the same CyberChef configurations.
 
 Then, we can use `evil-winrm` to log in as the administrator.
 
-<figure><img src="../../../.gitbook/assets/image (7) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (2) (2).png" alt=""><figcaption></figcaption></figure>

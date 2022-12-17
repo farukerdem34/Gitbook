@@ -76,7 +76,7 @@ Then, we can gain a reverse shell via the `mkfifo` command into a Docker Contain
 
 Within this container, we can see other foreign addresses that are around:
 
-<figure><img src="../../../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 172.17.0.1 was another address that was present on the host.
 
@@ -102,7 +102,7 @@ Signing into Gitea with the credentials we found earlier works.
 
 Notice that there's a home-backup repo, and within it are the user's SSH keys:
 
-<figure><img src="../../../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can then the SSH keys to gain access to the `dev01` user.
 

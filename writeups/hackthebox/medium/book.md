@@ -4,17 +4,17 @@
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### SQL Truncation in Login
 
 A login page is shown when viewing the website hosted.
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption><p><br></p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (36).png" alt=""><figcaption><p><br></p></figcaption></figure>
 
 Running `gobuster` on the website reveals a few directories, most notably a `/admin` panel.
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 When viewing that endpoint, we see another login page.
 
@@ -30,7 +30,7 @@ For example, if we send a username of `admin     a` (with 5 spaces), the databas
 
 This would allow us to login as the administrator by using our own credentials. Firstly, we can confirm that the `admin` user exists on this website.
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then we can send these these parameters to create a new `admin` user with a known password:
 
@@ -46,11 +46,11 @@ After sending this, we can login as the administrator.
 
 As a user we are allowed to upload collections with custom names.
 
-<figure><img src="../../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (33) (1).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, the administrator is allowed to download and view these files by going to the Collections Tab.
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (2).png" alt=""><figcaption></figcaption></figure>
 
 I noticed that when we were viewing these PDFs, they took quite a while to load. Perhaps they were generated on the machine dynamically before being converted to a PDF.
 
@@ -75,7 +75,7 @@ When I set this as the Book Title and Author when uploading the book, and when w
 
 `reader` was the user in this machine. We can attempt to read his private SSH key at `/home/reader/.ssh/id_rsa`, which he does have. We can then take that key and SSH into the machine.
 
-<figure><img src="../../../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (30) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -101,6 +101,6 @@ We can then use a reverse shell script for the `payloadfile` for the exploit, an
 
 Afterwards, my listener port caught a reverse shell after a little bit.
 
-<figure><img src="../../../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (32) (1).png" alt=""><figcaption></figcaption></figure>
 
 For whatever reason, the shell stops after every 10 seconds, so make sure to grab the flag fast!

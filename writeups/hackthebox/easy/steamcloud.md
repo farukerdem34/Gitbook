@@ -109,7 +109,7 @@ RCE should theoretically be possible with this host. Just checking to see which 
 
 {% embed url="https://www.optiv.com/insights/source-zero/blog/kubernetes-attack-surface" %}
 
-<figure><img src="../../../.gitbook/assets/image (13) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Sweet. Now we can grab the user flag.
 

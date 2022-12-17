@@ -68,7 +68,7 @@ Not exactly translated back into C, but very close.&#x20;
 
 Here's another example of dnSpy decompiling code:
 
-<figure><img src="../../.gitbook/assets/image (36) (2).png" alt=""><figcaption><p><em>Taken from HTB Support</em></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (36) (2) (1).png" alt=""><figcaption><p><em>Taken from HTB Support</em></p></figcaption></figure>
 
 This tool tends to do a better job at decompiling it very close to the actual code written.&#x20;
 

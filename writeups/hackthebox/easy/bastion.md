@@ -22,7 +22,7 @@ Within it, there was a few .vhd files.
 
 These file can actually be mounted and they do not requrie credentials at all!
 
-<figure><img src="../../../.gitbook/assets/image (8) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 From here, because this is a Windows backup, we can directly go to the `C:\Windows\System32\config` file to use the SYSTEM and SAM registry folders and dump the credentials via `samdump2`.
 
@@ -44,7 +44,7 @@ In the user's directory, I enumerated all the directories that I could using `di
 
 Within the `AppData\Roaming` folder, we can find some files related to mRemoteNG.
 
-<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Checking the confCons.xml file, we can find an encrypted password for the Administrator.
 
