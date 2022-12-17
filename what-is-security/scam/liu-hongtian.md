@@ -4,7 +4,7 @@ Here's another email I received.&#x20;
 
 <figure><img src="../../.gitbook/assets/image (161).png" alt=""><figcaption></figcaption></figure>
 
-First thing to ask, who is Liu Hongtian? Doing a search on him doesn't tell me ayn thing regarding NUS mail admin. Also, what's with the weird bar graph and font differences in the email?&#x20;
+First thing to ask, who is Liu Hongtian? Doing a search on him doesn't tell me anything regarding NUS mail admin. Also, what's with the weird bar graph and font differences in the email?&#x20;
 
 When visiting the website, all we see is this.
 
