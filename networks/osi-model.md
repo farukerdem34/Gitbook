@@ -107,7 +107,7 @@ Think about this layer as the actual Application itself, such as a browser, or a
 
 ## Summary
 
-<figure><img src="../.gitbook/assets/image (4) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 The OSI Model is extremely useful in troubleshooting. For example, if we have a malfunctioning router, we can check each layer, starting from the physical device, and then the ARP cache and go up the layers until we have identified and isolated the problem to fix.
 

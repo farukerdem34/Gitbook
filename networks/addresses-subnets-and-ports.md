@@ -14,7 +14,7 @@ MAC addresses are sort of like the ID numbers of computers, and there are unique
 
 MAC addresses are structured like so:
 
-<figure><img src="../.gitbook/assets/image (16) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (16) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 The OUI would tell us who made the device, like Apple or Microsoft. The next part is tied to the NIC of the device, kind of like an ID. Each MAC address is unique and different across each device (that does not stop the spoofing of MAC Addresses!).
 

@@ -22,15 +22,15 @@ Wasn't much to play around with, as we had no credentials yet. Decided to run a 
 
 <figure><img src="../../../.gitbook/assets/image (99) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (8) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Interesting. This presented a lot of information for me and also tells me this is a Ruby on Rails project. Another interesting directory was the **/administration** panel which I could not view at all. This is the information from the info endpoint:
 
-<figure><img src="../../../.gitbook/assets/image (12) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 From here, we can try to fuzz out other information and endpoints on this /rail directory. I used feroxbuster for its recursive search function.
 
-<figure><img src="../../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 This directory basically shows us every single path there was in the website:
 
@@ -48,13 +48,13 @@ Earlier, we saw some form of clipnote function. Testing it shows us that each ti
 
 I was interested in what other number is present, so I used wfuzz to enumerate out all other numbers. None are present it seems
 
-<figure><img src="../../../.gitbook/assets/image (14) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 I checked out the other endpoints, as there may be more interesting ones. The **/report** one looks good.
 
 ### /report
 
-<figure><img src="../../../.gitbook/assets/image (6) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Submitting a report reveals tells us that an admin would look at it. This tells me that perhaps, there is a form of XSS present on the site.
 
@@ -94,7 +94,7 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<select<style/><img src='http://
 
 This worked! I was able to get a callback as well:
 
-<figure><img src="../../../.gitbook/assets/image (1) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now, we just need to find a way to exploit this XSS.
 
@@ -355,7 +355,7 @@ setTimeout(function() {
 
 When waiting around, I eventually got a callback via the `curl` command I injected.
 
-<figure><img src="../../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (6).png" alt=""><figcaption></figcaption></figure>
 
 With this, we can easily gain a reverse shell through this method. I used the `mkfifo` shell, and it worked!
 
@@ -371,7 +371,7 @@ To establish persistence, we can put our public key within the `~/.ssh/authorize
 
 When checking the available stuff, I found this `openmediavault` folder as well.
 
-<figure><img src="../../../.gitbook/assets/image (75).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (62).png" alt=""><figcaption></figcaption></figure>
 
 Within the `rails-app` directory, there was a `.git` repository.
 

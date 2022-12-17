@@ -75,7 +75,7 @@ First we would need to find the number of characters needed to **crash the progr
 
 When we decompile the binary for this program, we get something like this:
 
-<figure><img src="../../.gitbook/assets/image (15) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (15) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 So the `good_password()` function is at `0x00401548`. This means that our payload would be 22 characters and the address of the function appended at the back.
 

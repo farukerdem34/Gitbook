@@ -74,11 +74,11 @@ The offset is `0x0015ba0b`, and when added to the base address found earlier, we
 
 Then, we need to find the `system()` function. I did so using `objdump` .&#x20;
 
-<figure><img src="../.gitbook/assets/image (13) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (13) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Adding the offset, we would get `0xb7e53da0`. Lastly, we need `exit()` , which is found using the same manner.
 
-<figure><img src="../.gitbook/assets/image (28) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (28) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 `0xb7e479d0` is where `exit()` lives.&#x20;
 

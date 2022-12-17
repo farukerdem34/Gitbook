@@ -27,7 +27,7 @@ However, TCP is a lot slower because of the additional checks for accuracy and n
 
 TCP communicates with hosts using something called the 3-way handshake. This handshake helps to establish a solid connection between the host and recipient.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (18) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (18) (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 I generally like to think of the conversation like this:
 

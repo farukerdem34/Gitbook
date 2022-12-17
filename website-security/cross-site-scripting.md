@@ -9,7 +9,7 @@ Cross-Site Scripting, or XSS, is a vulnerability that would allow attackers to e
 The most common way of testing if XSS is present on a website is to call the Javascript alert function. For example, the script tags of HTML can be used :`<script>alert(1)</script>`. \
 The image below shows an example of what would pop out.
 
-<figure><img src="../.gitbook/assets/image (1) (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (3) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## How it Works
 
@@ -25,7 +25,7 @@ There are 3 types of XSS:
 
 Reflected XSS is the simplest form of the exploit. This occurs when a malicious script is reflected off a web application and onto the victim's browser. This script is normally activated through a link or action on the website and would be redirected to the next user.
 
-<figure><img src="../.gitbook/assets/image (11) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (11) (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 An example would be as follows:
 
@@ -63,7 +63,7 @@ When inputted, the victim would view the Issues and be served this payload. This
 
 This confirms that the XSS is working properly. For this machine, the payload can be modified to include information about a hidden directory that only the victim can access:
 
-<figure><img src="../.gitbook/assets/image (5) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 Stored XSS is much more dangerous because it stores the script on the page itself and exploiting every user that visits it. In the above example, XSS was used to steal information about a directory that only the user could visit. In other cases, stuff like authorisation cookies or passwords can be stolen by attackers.
 

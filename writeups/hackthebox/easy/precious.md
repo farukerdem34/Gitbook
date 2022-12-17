@@ -58,7 +58,7 @@ With this, we can SSH in as henry for a better shell. Then, we can grab the user
 
 Checking sudo privileges, we find that henry is able to execute the following:
 
-<figure><img src="../../../.gitbook/assets/image (4) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Intriguing. The script is as shown below:
 

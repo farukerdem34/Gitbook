@@ -8,7 +8,7 @@ Nmap scan reveals the default AD ports that are open.
 
 As usual, I always check the shares that I can access with no credentials, and found one here.
 
-<figure><img src="../../../.gitbook/assets/image (74) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (74).png" alt=""><figcaption></figcaption></figure>
 
 Within this share, we can find a `winrm_backup.zip` file that has a password on its files.
 
@@ -16,13 +16,13 @@ Within this share, we can find a `winrm_backup.zip` file that has a password on 
 
 This is easily crackable with `zip2john` and `john`.
 
-<figure><img src="../../../.gitbook/assets/image (8) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 After unzipping the file, we can get a pfx file out. PFX files contains SSL certificates and private keys that could be useful for this machine.
 
 I tried to import the certificate or extract the keys but this file is also password protected.
 
-<figure><img src="../../../.gitbook/assets/image (67) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (67).png" alt=""><figcaption></figcaption></figure>
 
 `pfx2john` and `john` again.
 
@@ -30,9 +30,9 @@ I tried to import the certificate or extract the keys but this file is also pass
 
 With this, we can extract the private key.
 
-<figure><img src="../../../.gitbook/assets/image (42) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (42) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (70) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (70).png" alt=""><figcaption></figcaption></figure>
 
 We also need to extract the .crt file using `openssl pkcs12 -in legacyy_dev_auth.pfx -clcerts -nokeys -out legacyy_dev_auth.crt`.
 
@@ -56,7 +56,7 @@ Running a WinPEAS, we can find that our current user has a Powershell HIstory pr
 
 The PS History has commands used for remote Powershell-ing as another user called `svc_deploy`.
 
-<figure><img src="../../../.gitbook/assets/image (68) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (68).png" alt=""><figcaption></figcaption></figure>
 
 We can use this to gain a reverse shell as the `svc_deploy` user using whatever method. `nc.exe` is the easiest.&#x20;
 
@@ -87,4 +87,4 @@ UserPrincipalName :
 
 Then, we can just `evil-winrm` in as the administrator using these credentials. Either that or execute scriptblocks with more remote Powershell.
 
-<figure><img src="../../../.gitbook/assets/image (65) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (65).png" alt=""><figcaption></figcaption></figure>
