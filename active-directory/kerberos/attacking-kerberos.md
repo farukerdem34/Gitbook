@@ -250,8 +250,6 @@ When an attacker is abusing silver or golden tickets, the logs would generally s
 
 This would basically block all AS-REP Roasting and prevent the requesting of tickets without a password.&#x20;
 
-###
-
 ## References <a href="#references" id="references"></a>
 
 {% embed url="https://book.hacktricks.xyz/welcome/readme" %}
