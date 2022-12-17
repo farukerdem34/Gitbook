@@ -28,7 +28,7 @@ Now that we have confirmed SQL Injection is present, we can dump out all the tab
 
 The `users` table had an `Administrator` user with a hashed password, however the hash cannot be cracked.
 
-<figure><img src="../../../.gitbook/assets/image (3) (1) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 In this case, we can dump the `faculty` table and attempt to login via the original login method. There's a PIN number associated with the `Administrator` user and we can use that to login.
 
@@ -38,7 +38,7 @@ In this case, we can dump the `faculty` table and attempt to login via the origi
 
 WItin the website, there's a PDF Generator that would display certain courses.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (7) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (2) (4).png" alt=""><figcaption></figcaption></figure>
 
 We can download this PDF and use `exiftool` to find out more information about it.
 

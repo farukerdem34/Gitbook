@@ -68,17 +68,17 @@ So this binary loads the `libc.so.6` file in virtual memory. The base address is
 
 I first found the `/bin/sh` address using `strings -a -t x /lib/i386-linux-gnu/libc.so.6 | grep "/bin/sh"`
 
-<figure><img src="../.gitbook/assets/image (6) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (6) (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 The offset is `0x0015ba0b`, and when added to the base address found earlier, we would get `0xb7f74a0b`. So `/bin/sh` is there.
 
 Then, we need to find the `system()` function. I did so using `objdump` .&#x20;
 
-<figure><img src="../.gitbook/assets/image (13) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (13) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 Adding the offset, we would get `0xb7e53da0`. Lastly, we need `exit()` , which is found using the same manner.
 
-<figure><img src="../.gitbook/assets/image (28) (2) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (28) (2).png" alt=""><figcaption></figcaption></figure>
 
 `0xb7e479d0` is where `exit()` lives.&#x20;
 

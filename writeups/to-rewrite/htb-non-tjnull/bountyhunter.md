@@ -34,7 +34,7 @@ XXE injection is clearly the next stage here.
 
 We can easily exploit this to start reading files on the webserver. I first used gobuster to enumerate possible and interesting folders to exploit.
 
-<figure><img src="../../../.gitbook/assets/image (10) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (2) (4).png" alt=""><figcaption></figcaption></figure>
 
 The `db.php` file was the most interesting. I also took a look at the `/resources` endpoint to find some cool stuff. The README file has some hints towards finding a tracker of some sort.
 

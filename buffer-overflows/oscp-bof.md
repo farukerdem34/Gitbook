@@ -125,7 +125,7 @@ You can download `mona.py` from here:
 
 First we need to fuzz the application to test at what character it will crash at. For OVERFLOW 2 of this room, it was after 700 bytes of data were sent.
 
-<figure><img src="../.gitbook/assets/image (2) (1) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 If we take a look at Immunity Debugger, the register window would look like this:
 
@@ -171,7 +171,7 @@ So the bad characters so far are `\x00\x23\x3c\x83\xba`. Update the bad characte
 
 Take note that the address **can change, so look at the values of the stack to know where to start comparing from**. If we have successfully removed all bad characters, the output from the comparison would look like this:
 
-<figure><img src="../.gitbook/assets/image (43) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (43) (1).png" alt=""><figcaption></figcaption></figure>
 
 If not, there would still be bad characters present, and we need to **repeat the process until the status is unmodified.**
 
@@ -181,7 +181,7 @@ Now, we need to find a `JMP ESP` instruction. The reason we need this is because
 
 We can do this with Mona, and this can be done whether the binary is running or crashed. We have to run `!mona jmp -r esp -b "\x00\x23\3c\x83\xba"` to find this instruction.&#x20;
 
-<figure><img src="../.gitbook/assets/image (8) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (8) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 There are quite a few to choose from, and I chose `\x62\x50\x12\x05`, which would work fine with our payload. When putting this address in, **take note to reverse it as we are working with a 32-bit machine**. This would mean that it is a **little-endian** arrangement. So in our exploit, we need to write the new value of the EIP as `\x05\x12\x50\x62`.&#x20;
 

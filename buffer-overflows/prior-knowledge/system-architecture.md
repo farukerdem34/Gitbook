@@ -26,7 +26,7 @@ Think of registers like variables used by the CPU to store and get data. Some re
 
 **General Purpose Registers (GPRs)** are a set of registers that can be used for normal assembly. They each have a specific name and purpose.
 
-<figure><img src="../../.gitbook/assets/image (40) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (40) (1).png" alt=""><figcaption></figcaption></figure>
 
 In a 32-bit system, each register is an acryonym that is prefixed with 'E', meaning extended. The E is replaced by 'R' in x64.&#x20;
 
@@ -138,7 +138,7 @@ The instruction that executes the `main()` function, also known as the **caller,
 
 A new stack frame is created, and **defined by the ESP and EBP**. Since we cannot lose the old stack frame and its information, the current EBP is saved on the stack.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (29) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (29) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 #### Prologue
 
@@ -207,7 +207,7 @@ The `ret` instruction POPs the value at the top of the stack to the old EIP. Thi
 
 After `func()` returns, the stack frames look like this:
 
-<figure><img src="../../.gitbook/assets/image (30) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (30) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Endianness
 

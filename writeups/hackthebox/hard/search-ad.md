@@ -148,4 +148,4 @@ Then, because we have `GenericAll` permissions over `tristan.davies`, we can jus
 
 Lastly, we can use `wmiexec.py` to gain a shell as the domain admin.
 
-<figure><img src="../../../.gitbook/assets/image (15) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (1) (6).png" alt=""><figcaption></figcaption></figure>

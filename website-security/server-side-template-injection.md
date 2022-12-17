@@ -22,15 +22,15 @@ The HTB machine Doctor has a good SSTI vulnerability within it.
 
 The machine has a secret page that allows for posts by the user to be made with a **title** and **content.** We do not know the template engine being used yet.&#x20;
 
-<figure><img src="../.gitbook/assets/image (17) (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (17) (3).png" alt=""><figcaption></figcaption></figure>
 
 We can straightaway begin testing for SSTI via this. After using `{{7*7}}`, we would see the following:
 
-<figure><img src="../.gitbook/assets/image (2) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 The 49 present indicates that it worked, and that the other payload was not processed. Further testing with `{{7*'7'}}`would dispaly this:
 
-<figure><img src="../.gitbook/assets/image (19) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (19) (1).png" alt=""><figcaption></figcaption></figure>
 
 From here, based on the flowchart, we would know that the website is running on either Jinja2 or Twig. We can then grab a payload for potential RCE using PayloadAllTheThings:
 

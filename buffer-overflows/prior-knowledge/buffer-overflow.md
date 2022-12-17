@@ -31,7 +31,7 @@ Within the stack, this is what the program would store normally:
 
 Should we overflow the buffer variable, this would **overwrite the EBP and EIP**. The return address of the function thus changes.
 
-<figure><img src="../../.gitbook/assets/image (14) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (14) (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 So when the program returns from the function, and the **epilogue** of the function tries to set the return address, it would set it as the string of 'A' instead. Thus, this crashes the program as it cannot return to normal execution flow.&#x20;
 
@@ -75,7 +75,7 @@ First we would need to find the number of characters needed to **crash the progr
 
 When we decompile the binary for this program, we get something like this:
 
-<figure><img src="../../.gitbook/assets/image (15) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (15) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 So the `good_password()` function is at `0x00401548`. This means that our payload would be 22 characters and the address of the function appended at the back.
 
