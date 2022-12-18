@@ -14,7 +14,7 @@ On port 8080, it was a gym-related page:
 
 We can use `gobuster` on the website to find more directories:
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 Checking the `contact.php` file, we see the software used to make this.
 
@@ -30,7 +30,7 @@ We can try the RCE exploit:
 
 By running the exploit, we would gain a webshell:
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (164).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, gaining a reverse shell via nc.exe or Powershell is trivial.
 
@@ -40,7 +40,7 @@ Afterwards, gaining a reverse shell via nc.exe or Powershell is trivial.
 
 When enumerating the user's directory, we find a CloudMe\_1112.exe file:
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (4).png" alt=""><figcaption></figcaption></figure>
 
 When checking for exploits regarding CloudMe, we can find a few Buffer Overflow exploits that can be used for RCE using shellcode.
 

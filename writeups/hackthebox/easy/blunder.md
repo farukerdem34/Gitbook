@@ -20,7 +20,7 @@ I ran a directory brute force search to find an `/admin` panel.
 
 The `/admin` panel requires credentials to access. Default weak credentials do not work here.
 
-<figure><img src="../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1) (5).png" alt=""><figcaption></figcaption></figure>
 
 We also found some other text files that were also of interest.
 
@@ -92,4 +92,4 @@ The `!root` bit means that we cannot run `/bin/bash` as root, but we can run it 
 
 We can run it and gain a root shell.
 
-<figure><img src="../../../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (26) (3).png" alt=""><figcaption></figcaption></figure>

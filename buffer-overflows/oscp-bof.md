@@ -157,7 +157,7 @@ We can use `mona.py` from Immunity Debugger to first generate a `bytearray.bin` 
 
 Afterwards, fill in the exploit with the offset number and send the bad characters along with it. The program would crash, and we need to view the **values on the stack**.&#x20;
 
-<figure><img src="../.gitbook/assets/image (10) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (10) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Notice that the characters for 'A' ends, and then some special characters begin from there. In this case, the address is at `0x00e2fa18`. This is the address we need to start comparing from, because that's where the **bad characters that we sent in begins**.&#x20;
 

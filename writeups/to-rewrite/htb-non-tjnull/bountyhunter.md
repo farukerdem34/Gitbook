@@ -26,7 +26,7 @@ When proxied through Burp, we can view that it sends a `data` parameter with a B
 
 <figure><img src="../../../.gitbook/assets/image (198).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (164) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (164) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 XXE injection is clearly the next stage here.
 
@@ -84,4 +84,4 @@ What I did was use the `and` operator to incude a short Python script to spawn a
 
 <figure><img src="../../../.gitbook/assets/image (197).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (7) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (5) (1).png" alt=""><figcaption></figcaption></figure>

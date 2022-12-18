@@ -253,7 +253,7 @@ For some persistance, I dropped a `cmd.php` shell into the `forum` website, so t
 
 I ran `netstat -tulpn` to see what services were running on the machine, and found that port 9000 was listening to something.
 
-<figure><img src="../../../.gitbook/assets/image (6) (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 I also ran LinPEAS to find some escalation vectors to victor. This user was also running the `php-fpm` master process or something.
 

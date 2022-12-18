@@ -131,6 +131,7 @@
     * [Pandora](writeups/hackthebox/easy/pandora.md)
     * [Precious](writeups/hackthebox/easy/precious.md)
     * [Support (AD)](writeups/hackthebox/easy/support-ad.md)
+    * [Soccer](writeups/hackthebox/easy/soccer.md)
     * [Squashed](writeups/hackthebox/easy/squashed.md)
     * [SteamCloud](writeups/hackthebox/easy/steamcloud.md)
     * [Timelapse (AD)](writeups/hackthebox/easy/timelapse-ad.md)

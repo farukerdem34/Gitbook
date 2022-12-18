@@ -24,7 +24,7 @@ Looking at the alternate DNS names, we can find another hidden subdomain, which 
 
 We can run `wpscan --enumerate p,t,u` on this website. This returns a plugin that is outdated and exploitable.
 
-<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (3).png" alt=""><figcaption></figcaption></figure>
 
 For this version, there are SQL Injection and Privilege Escalation exploits available.
 
@@ -49,7 +49,7 @@ Afterwards, we just need to set this up on a Python server and visit the site. T
 
 Initially, nothing happens when we click the login button, however after refreshing the page, we are notified that we have logged in as the administrator.
 
-<figure><img src="../../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (7).png" alt=""><figcaption></figcaption></figure>
 
 ### SMTP Creds
 
@@ -151,4 +151,4 @@ lxc exec mycontainer /bin/sh
 
 The last command would drop us into a root shell, where the `/root` directory has been mounted and we can grab the root flag.
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (7).png" alt=""><figcaption></figcaption></figure>

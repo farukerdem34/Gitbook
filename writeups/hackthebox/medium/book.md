@@ -71,7 +71,7 @@ However, none of these worked. It wasn't until I googled a bit about Server Side
 
 When I set this as the Book Title and Author when uploading the book, and when we download the Collections PDF, we would be able to retrieve the `/etc/passwd` file.
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 `reader` was the user in this machine. We can attempt to read his private SSH key at `/home/reader/.ssh/id_rsa`, which he does have. We can then take that key and SSH into the machine.
 
@@ -83,7 +83,7 @@ When I set this as the Book Title and Author when uploading the book, and when w
 
 I ran a `pspy64` on the machine to view the processes that were running on the machine. I found that the root user was running `logrotate` consistenly.
 
-<figure><img src="../../../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (31) (4).png" alt=""><figcaption></figcaption></figure>
 
 Also, within the `/home/reader/backups` directory, there were a few `access.log` files that were   being written to every few seconds.&#x20;
 

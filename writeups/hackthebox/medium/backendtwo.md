@@ -34,7 +34,7 @@ This endpoint was rather interesting because it allows us to edit profiles. Chec
 
 With this edit profile stuff, I found out that we can change the attributes related to our account. I changed the profile, email and GUID of the current user to be the same as the administrator's.
 
-<figure><img src="../../../.gitbook/assets/image (3) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 When I found out this worked, I basically also changed the `is_superuser` attribute to `true`.
 
@@ -84,7 +84,7 @@ Then, we can access the custom endpoint to gain a reverse shell easily.
 
 Once we are in, we can try to read the `auth.log` file and we would find the password for the `htb` user we currently are. This allows us to upgrade our shell via SSH-ing in.
 
-<figure><img src="../../../.gitbook/assets/image (164).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (164) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Wordle
 
@@ -94,7 +94,7 @@ When I tried to check sudo privileges, I was left with this.
 
 This was basically wordle, and there are better ways to solve this via checking what directories it uses. I used `strings` to see what libraries it called.
 
-<figure><img src="../../../.gitbook/assets/image (165).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (165) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can then use `find / -name pam_wordle.so 2> /dev/null` to find this library and run strings on it. It would be located in the `/usr/lib/x86_64-linus-gnu/security` directory and is readable by all. We can then use `strings` on it.
 

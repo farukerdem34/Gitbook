@@ -54,6 +54,6 @@ mRemoteNG passwords can be decrypted using this repository:
 
 {% embed url="https://github.com/haseebT/mRemoteNG-Decrypt" %}
 
-<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (6).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can SSH in as the administrator using this password.

