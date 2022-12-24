@@ -1,3 +1,3 @@
 # Bug Bounties
 
-When I find anything worth money I'll post them here!
+When I find anything, I'll write about them within the respective vulnerabilities if I'm allowed to publicly disclose it.

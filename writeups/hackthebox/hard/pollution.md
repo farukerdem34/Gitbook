@@ -51,7 +51,7 @@ PORT     STATE SERVICE VERSION
 
 Heading to the web service, it is a standard company website.
 
-<figure><img src="../../../.gitbook/assets/image (344).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (344) (2).png" alt=""><figcaption></figcaption></figure>
 
 Howeverm clicking on some objects reveals the `[object Object]` tag, which is a string representation of a Javascript object data type. Playing around with the logins didn't reveal much to me. However, registering a test account and logging in revealed that there was an API somewhere, and that my username `test` was printed on screen.
 
@@ -81,11 +81,11 @@ This was a forum page for users to write stuff, and there was some threads and a
 
 Reading some of the posts, I saw that there was indeed a Pollution API somewhere.
 
-<figure><img src="../../../.gitbook/assets/image (346).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (346) (1).png" alt=""><figcaption></figcaption></figure>
 
 I created a test user to download that file. The file contained a load of base64 encoded requests and stuff. Reading the requests, we can see that there was one to the /admin panel on the main website.
 
-<figure><img src="../../../.gitbook/assets/image (345).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (345) (2).png" alt=""><figcaption></figcaption></figure>
 
 Decoding the request, we find that it gives us a token.
 
@@ -161,7 +161,7 @@ From here, I wanted to read the `/var/www/developers/.htpasswd` file since we fo
 
 Using `john`, we could crack the hash to give `r0cket` as the password. We were confronted with another login page.
 
-<figure><img src="../../../.gitbook/assets/image (349).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (349) (1).png" alt=""><figcaption></figcaption></figure>
 
 This time, we need to find credentials elsewhere. That `redis` instance is likely where this password is hidden. We cannot read the `/etc/redis` file without root permissions, so there likely is another file located somewhere.
 
@@ -235,7 +235,7 @@ It appears there was a MySQL Instance on the machine running. We can login to th
 
 Then, we can enumerate this database.
 
-<figure><img src="../../../.gitbook/assets/image (347).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (347) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can find a hash from the `developers` database.
 
