@@ -30,7 +30,7 @@ From here, because this is a Windows backup, we can directly go to the `C:\Windo
 
 Then, this hash is easily cracked using hashcat.
 
-<figure><img src="../../../.gitbook/assets/image (10) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (2) (5).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, we can SSH in as the L4mpje user.
 

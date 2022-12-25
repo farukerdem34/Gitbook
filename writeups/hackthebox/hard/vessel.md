@@ -212,7 +212,7 @@ This is the password: YG7Q7RDzA+q\&ke\~MJ8!yRzoI^VQxSqSS. For some reason pdfcra
 
 Anyways, once we have this password, we can view the PDF and see the password for steven.
 
-<figure><img src="../../../.gitbook/assets/image (139) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (139).png" alt=""><figcaption></figcaption></figure>
 
 We can then SSH in as Ethan.
 
@@ -256,7 +256,7 @@ This would spawn a container for us to use for the core dump, and we would need 
 
 Then, we can run our container and spawn in as root for it.
 
-<figure><img src="../../../.gitbook/assets/image (136) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (136).png" alt=""><figcaption></figcaption></figure>
 
 We can configure our container to execute our malicious script using pinns, and then configure the container such that we get a core dump.
 

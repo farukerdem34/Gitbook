@@ -20,7 +20,7 @@ Going to this page reveals a Beta Report System that is in use.
 
 Trying out some random input reveals this:
 
-<figure><img src="../../../.gitbook/assets/image (169) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (169).png" alt=""><figcaption></figcaption></figure>
 
 When proxied through Burp, we can view that it sends a `data` parameter with a Base64 encoded XML input.
 
@@ -38,7 +38,7 @@ We can easily exploit this to start reading files on the webserver. I first used
 
 The `db.php` file was the most interesting. I also took a look at the `/resources` endpoint to find some cool stuff. The README file has some hints towards finding a tracker of some sort.
 
-<figure><img src="../../../.gitbook/assets/image (167) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (167).png" alt=""><figcaption></figcaption></figure>
 
 Then, the `bountylog.js` file revealed an interesting endpoint.
 
@@ -70,7 +70,7 @@ Initial enumeration for `sudo` privileges revealed this:
 
 We can read this file to that it has a vulnerbale function being used.
 
-<figure><img src="../../../.gitbook/assets/image (179) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (179).png" alt=""><figcaption></figcaption></figure>
 
 ### Eval Exploit
 

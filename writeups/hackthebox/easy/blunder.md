@@ -24,7 +24,7 @@ The `/admin` panel requires credentials to access. Default weak credentials do n
 
 We also found some other text files that were also of interest.
 
-<figure><img src="../../../.gitbook/assets/image (15) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (4) (2).png" alt=""><figcaption></figcaption></figure>
 
 The `todo.txt` file contained this:
 
@@ -32,7 +32,7 @@ The `todo.txt` file contained this:
 
 The `install.php` file also contained some other hidden information about the CMS on the administrator panel.
 
-<figure><img src="../../../.gitbook/assets/image (16) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (4) (2).png" alt=""><figcaption></figcaption></figure>
 
 So `fergus` is the administrator of the website, and Bludit is installed on it. Fergus needs to upload some type of image onto the website. We can check the page source for the version of Bludit that is running.
 
@@ -50,7 +50,7 @@ Initially, I brute forced the login page for the admin panel, but it didn't work
 
 <figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (24).png" alt=""><figcaption><p><br></p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (24) (4).png" alt=""><figcaption><p><br></p></figcaption></figure>
 
 We would eventually find the right credentials.
 
@@ -70,7 +70,7 @@ First thing I look for are databases or configuration files within this Bludit i
 
 Within the Bludit-3.10.0a directory, the config files contained credentials for a `hugo` user.
 
-<figure><img src="../../../.gitbook/assets/image (9) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (2) (5).png" alt=""><figcaption></figcaption></figure>
 
 This hash can be cracked.
 
@@ -84,7 +84,7 @@ Then we can `su` to Hugo.
 
 When we check `sudo` privileges, we can see that this one is a bit different.
 
-<figure><img src="../../../.gitbook/assets/image (20) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 The `!root` bit means that we cannot run `/bin/bash` as root, but we can run it as any other user. Googling for `sudo !root` bypasses led me to this exploit.&#x20;
 

@@ -371,7 +371,7 @@ To establish persistence, we can put our public key within the `~/.ssh/authorize
 
 When checking the available stuff, I found this `openmediavault` folder as well.
 
-<figure><img src="../../../.gitbook/assets/image (75).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (75) (4).png" alt=""><figcaption></figcaption></figure>
 
 Within the `rails-app` directory, there was a `.git` repository.
 

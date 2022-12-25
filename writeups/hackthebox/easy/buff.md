@@ -4,13 +4,13 @@
 
 Nmap Scan:
 
-<figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (4).png" alt=""><figcaption></figcaption></figure>
 
 ### Gym
 
 On port 8080, it was a gym-related page:
 
-<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can use `gobuster` on the website to find more directories:
 
@@ -18,11 +18,11 @@ We can use `gobuster` on the website to find more directories:
 
 Checking the `contact.php` file, we see the software used to make this.
 
-<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can search for exploits for this Gym Management Software 1.0.
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can try the RCE exploit:
 
@@ -30,7 +30,7 @@ We can try the RCE exploit:
 
 By running the exploit, we would gain a webshell:
 
-<figure><img src="../../../.gitbook/assets/image (164).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (164) (3).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, gaining a reverse shell via nc.exe or Powershell is trivial.
 
@@ -44,7 +44,7 @@ When enumerating the user's directory, we find a CloudMe\_1112.exe file:
 
 When checking for exploits regarding CloudMe, we can find a few Buffer Overflow exploits that can be used for RCE using shellcode.
 
-<figure><img src="../../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (4).png" alt=""><figcaption></figcaption></figure>
 
 {% embed url="https://www.exploit-db.com/exploits/48389" %}
 

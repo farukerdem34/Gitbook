@@ -26,23 +26,23 @@ Starting with a Gobuster, we can find out the different endpoints for this:
 
 At the `/api/v1` endpoint, we find that that there is a `/user` endpoint that we can fuzz further using `wfuzz`.
 
-<figure><img src="../../../.gitbook/assets/image (175) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (175).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (1) (1) (6).png" alt=""><figcaption></figcaption></figure>
 
 From here, we can check the `admin` user with an ID of 1.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (173) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (173).png" alt=""><figcaption></figcaption></figure>
 
 All other numbers do not have directories, so this means there's probably only one user available. I ran further scans on the `/user` endpoint, as there had to be a way to signup or login, and it does exist.
 
-<figure><img src="../../../.gitbook/assets/image (183) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (183).png" alt=""><figcaption></figcaption></figure>
 
 ### Creation of User
 
 Within the API, we can try to signup as a user. I wasn't sure what parameters to give, so I just sent a test JSON input with a POST request.
 
-<figure><img src="../../../.gitbook/assets/image (177) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (177).png" alt=""><figcaption></figcaption></figure>
 
 So we need to send them a `body, password and email` parameter within a JSON object to register the user.
 
@@ -60,11 +60,11 @@ We can now access the `/docs` endpoint, which was not allowed earlier due to the
 
 At first, I thought we were able to load the `/docs` endpoint, but I was wrong.
 
-<figure><img src="../../../.gitbook/assets/image (178) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (178).png" alt=""><figcaption></figcaption></figure>
 
 Checking the traffic proxied, we can see that there was actually a GET request to this `/openapi.json` endpoint, which we can directly access.
 
-<figure><img src="../../../.gitbook/assets/image (170) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (170).png" alt=""><figcaption></figcaption></figure>
 
 Within the documentation, there were 2 very significant endpoints, one to read the user flag, and another to have RCE on the machine.
 
@@ -76,17 +76,17 @@ The user flag can be retrieved by sending a PUT request to this endpoint:
 
 Below is the endpont that would allow us to gain a shell on the machine. Notice that we need to have Debug permissions, which is something our user definitely does not have.
 
-<figure><img src="../../../.gitbook/assets/image (168) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (168).png" alt=""><figcaption></figcaption></figure>
 
 Using the API a bit more, we can find an `/updatepass` endpoint as well.
 
-<figure><img src="../../../.gitbook/assets/image (188) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (188).png" alt=""><figcaption></figcaption></figure>
 
 This update pass requires the GUID of the user we are trying to reset and a new password. Earlier, we found the GUID of the administrator, so we can easily reset his password and then steal his token.
 
 <figure><img src="../../../.gitbook/assets/image (1) (1) (4) (2).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (185) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (185).png" alt=""><figcaption></figcaption></figure>
 
 However, this still does not work as we do not have the 'debug' permission enabled on our token.
 
@@ -114,7 +114,7 @@ What I did was to check all of these files. For example, for the `app.api.v1.api
 
 The most interesting one was the `deps.py` file. This file had imported the JWT secret from the `core/config.py` directory.
 
-<figure><img src="../../../.gitbook/assets/image (181) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (181).png" alt=""><figcaption></figcaption></figure>
 
 From there, we can read the secret.
 
@@ -122,7 +122,7 @@ From there, we can read the secret.
 
 Once we had the Secret, spoofing another token is easy.
 
-<figure><img src="../../../.gitbook/assets/image (174) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (174).png" alt=""><figcaption></figcaption></figure>
 
 We would then have RCE on the machine at this point.
 

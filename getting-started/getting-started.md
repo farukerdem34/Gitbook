@@ -8,12 +8,12 @@ There's no need to know everything on this list before even starting in security
 
 Programming should be a fundamental no matter which area of computing you're in. For pentesting, we do need to know code and stuff. I think that these few concepts are key if you want to get into this.&#x20;
 
-* **Javascript** for websites
+* **Javascript** for understanding websites
 * **Python** for scripting exploits
-* **C** for understanding how memory and stack works
-* **Bash** for the Linux and some Linux skills
+* **C/ C++** for understanding how manual memory and stack control works
+* **Bash** for Linux
 * **Powershell** for Windows
-* **Basic SQL** for using databases (real basic)
+* **Basic SQL** for enumerating databases and carrying out basic functions&#x20;
 * **C#** for the .NET framework
 * **Assembly** for reverse engineering and low-level stuff
 

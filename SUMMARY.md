@@ -29,22 +29,10 @@
 
 ## 🟥 Pentesting Methodology
 
-* [Methodology](pentesting-methodology/methodology.md)
-* [Recon](pentesting-methodology/recon/README.md)
-  * [FTP](pentesting-methodology/recon/ftp.md)
-  * [SSH](pentesting-methodology/recon/ssh.md)
-  * [SMB](pentesting-methodology/recon/smb.md)
-  * [Mail (IMAP, POP3, SMTP)](pentesting-methodology/recon/mail-imap-pop3-smtp.md)
-  * [RPC](pentesting-methodology/recon/rpc.md)
-  * [SQL / Mongo](pentesting-methodology/recon/sql-mongo.md)
-  * [Redis](pentesting-methodology/recon/redis.md)
-  * [NFS](pentesting-methodology/recon/nfs.md)
-  * [IRC](pentesting-methodology/recon/irc.md)
-* [Exploitation](pentesting-methodology/exploitation.md)
-* [Privilege Escalation](pentesting-methodology/privilege-escalation.md)
-* [Persistence](pentesting-methodology/persistence.md)
-* [Lateral Movement / Pivoting](pentesting-methodology/lateral-movement-pivoting.md)
-* [Report Writing](pentesting-methodology/report-writing.md)
+* [Methodology](pentesting-methodology/methodology/README.md)
+  * [AD Methodology](pentesting-methodology/methodology/ad-methodology.md)
+  * [Linux PE Methodology](pentesting-methodology/methodology/linux-pe-methodology.md)
+  * [Windows PE Methodology](pentesting-methodology/methodology/windows-pe-methodology.md)
 
 ## 🌏 Networks
 
@@ -102,7 +90,6 @@
 * [ACLs and GPOs](active-directory/acls-and-gpos/README.md)
   * [Abusing ACLs and GPOs](active-directory/acls-and-gpos/abusing-acls-and-gpos.md)
 * [LDAP](active-directory/ldap.md)
-* [AD Methodology](active-directory/ad-methodology.md)
 
 ## ✍ Writeups
 
@@ -125,7 +112,8 @@
     * [Cap](writeups/to-rewrite/htb-non-tjnull/cap.md)
     * [Chatterbox](writeups/hackthebox/easy/chatterbox.md)
     * [Delivery](writeups/to-rewrite/tjnull-htb/delivery.md)
-    * [Devel](writeups/hackthebox/easy/devel.md)
+    * [Devel](writeups/to-rewrite/tjnull-htb/devel.md)
+    * [Doctor](writeups/hackthebox/easy/doctor.md)
     * [GoodGames](writeups/hackthebox/easy/goodgames.md)
     * [Heist](writeups/hackthebox/easy/heist.md)
     * [OpenSource](writeups/hackthebox/easy/opensource.md)
@@ -191,7 +179,6 @@
     * [Bitlab (Rewrite)](writeups/to-rewrite/tjnull-htb/bitlab-rewrite.md)
     * [BreadCrumbs](writeups/to-rewrite/tjnull-htb/breadcrumbs.md)
     * [Devoops](writeups/to-rewrite/tjnull-htb/devoops.md)
-    * [Doctor](writeups/to-rewrite/tjnull-htb/doctor.md)
     * [Falafel](writeups/to-rewrite/tjnull-htb/falafel.md)
     * [Forest](writeups/to-rewrite/tjnull-htb/forest.md)
     * [FriendZone](writeups/to-rewrite/tjnull-htb/friendzone.md)

@@ -4,7 +4,7 @@
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (6).png" alt=""><figcaption></figcaption></figure>
 
 Port 9256 was a rather unusual port to be open.
 
@@ -36,7 +36,7 @@ Then, we can run the script and a shell would pop on our listener port.
 
 When I ran WinPEASx64 on this machine, there was a lot of indication that we had AllAccess to the administrator's desktop.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (42) (5).png" alt=""><figcaption></figcaption></figure>
 
 However, we cannot read the root flag for some reason.
 
@@ -48,6 +48,6 @@ We can check the permissions using `icacls`.&#x20;
 
 So we the user have Full Control over the Desktop (that's what (F) means), but the flag has been configured like so. To cirumvent this, we can grant ourselves the permission to read the files.
 
-<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can read the root flag.

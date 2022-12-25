@@ -40,7 +40,7 @@ There are a lot of different types of SSL Certs out there, and most domains come
 
 In the event that you are accessing a HTTP website that does not have a certificate, browser clients would sometimes alert you like this:
 
-<figure><img src="../../.gitbook/assets/image (163) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (163).png" alt=""><figcaption></figcaption></figure>
 
 This is when the certificate is expired, or not valid. When this happens, we are essentially sending traffic that is not encrypted, making us vulnerable to a **man in the middle attack,** which I'll cover more on in another section.&#x20;
 
