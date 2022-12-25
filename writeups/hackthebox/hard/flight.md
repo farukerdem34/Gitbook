@@ -36,7 +36,7 @@ When clicking the about us page, we can see the URL and find that it might conta
 
 We can set up a quick Python server and check this URL to find that we can receive a hit from the server.
 
-<figure><img src="../../../.gitbook/assets/image (229) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (229).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (188) (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -62,7 +62,7 @@ The ones to investigate are Users, Web and Shared.&#x20;
 
 In users, we can find that there is C.Bum user.
 
-<figure><img src="../../../.gitbook/assets/image (243) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (243).png" alt=""><figcaption></figcaption></figure>
 
 ### Desktop.ini
 
@@ -78,7 +78,7 @@ As such, the next step was to replace this file with our own malicious file to m
 
 Based on that, we can create our own malicious .ini file and replace the one that is in the Shared share.
 
-<figure><img src="../../../.gitbook/assets/image (231) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (231).png" alt=""><figcaption></figcaption></figure>
 
 However, I cannot put this file on the directory using svc\_apache, so we would need to enumerate some other users first.
 
@@ -88,7 +88,7 @@ Crackmapexec can enumerate users using the credentials we found.
 
 <figure><img src="../../../.gitbook/assets/image (210) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (235) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (235).png" alt=""><figcaption></figcaption></figure>
 
 Then we can gather these users into a file and brute force, checking for any password re-use. We can find that the S.Moon user seems to work.
 
@@ -132,7 +132,7 @@ As this user, because we have credentials for another user, we can use the runas
 
 We would receive a shell as c.bum on whatever port we are on.
 
-<figure><img src="../../../.gitbook/assets/image (245) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (245).png" alt=""><figcaption></figcaption></figure>
 
 {% embed url="https://github.com/antonioCoco/RunasCs" %}
 
@@ -154,7 +154,7 @@ When curled, it reveals a webpage tha matches the index.html file in the develop
 
 For this machine, I used chisel to tunnel and we can access the website on 127.0.0.1:8000.
 
-<figure><img src="../../../.gitbook/assets/image (227) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (227).png" alt=""><figcaption></figcaption></figure>
 
 When viewing the web service, we can see that there are errors because there is no default configuration for this IIS server.
 

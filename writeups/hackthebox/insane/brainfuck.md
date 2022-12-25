@@ -91,7 +91,7 @@ We can login to the forum page here using the credentials we found earlier. Then
 
 Some of the forum pages mention sending SSH keys somehow.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 There was also an encrypted few posts.
 

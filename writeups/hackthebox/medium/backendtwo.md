@@ -14,7 +14,7 @@ Port 80 brings us to an API again, with the admin user still being viewable.
 
 <figure><img src="../../../.gitbook/assets/image (223).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (166).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (166) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Creating User
 
@@ -24,7 +24,7 @@ We can do the same stuff to create, signin as a user and receive the JWT token f
 
 Afterwards, we can access the `/openapi.json` endpoint to view the functionalities of this API. There was one new functionality, which was to edit the profiles of users.
 
-<figure><img src="../../../.gitbook/assets/image (171).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (171) (2).png" alt=""><figcaption></figcaption></figure>
 
 This endpoint was rather interesting because it allows us to edit profiles. Checking the JWT token of our current user, we find out that our `id` is 12.
 
@@ -64,7 +64,7 @@ I changed the code to include a one-liner reverse shell everytime a unique ID wa
 
 Then we need to convert the file contents using the escape string function on Cyberchef.
 
-<figure><img src="../../../.gitbook/assets/image (172).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (172) (2).png" alt=""><figcaption></figcaption></figure>
 
 Using this, we can use curl to get the file where we want it. The command would look like this:
 
@@ -76,7 +76,7 @@ curl http://<IP>/api/v1/admin/file/$(echo -n "/home/htb/app/api/v1/endpoints/use
 
 Then, we can access the custom endpoint to gain a reverse shell easily.
 
-<figure><img src="../../../.gitbook/assets/image (180).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (180) (2).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (203).png" alt=""><figcaption></figcaption></figure>
 

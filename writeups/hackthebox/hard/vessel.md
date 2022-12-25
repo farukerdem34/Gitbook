@@ -28,7 +28,7 @@ We can create a quick account for testing purposes.
 
 However, the function seems to not be made available, and throws an error. When analysing the traffic generated, we can see that there is an /api backend.
 
-<figure><img src="../../../.gitbook/assets/image (240) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (240).png" alt=""><figcaption></figcaption></figure>
 
 From here, we should gobust the page to find other endpoints that could reveal some credentials or other vulnerabilities. Using feroxbuster, I was able to find a `/dev` endpoint.
 
@@ -44,7 +44,7 @@ We can then use `git-dumper` to pull these files.
 
 After retrieving the files, we can proceed with some source code analysis.
 
-<figure><img src="../../../.gitbook/assets/image (244) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (244).png" alt=""><figcaption></figcaption></figure>
 
 ### Source Code Analysis
 
@@ -70,7 +70,7 @@ The exploit for this would involve putting in a string that gets treated as an O
 
 Here's the payload used:
 
-<figure><img src="../../../.gitbook/assets/image (234) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (234).png" alt=""><figcaption></figcaption></figure>
 
 With this, we can login to the admin panel!
 
@@ -126,7 +126,7 @@ We would first need to decompile this binary to understand how it functions. In 
 
 When doing strings on it, we can see the last few lines seems to indicate that a Python based compiler was used.
 
-<figure><img src="../../../.gitbook/assets/image (228) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (228).png" alt=""><figcaption></figcaption></figure>
 
 We can use this tool to retrieve the bytecode from the binary.
 
@@ -146,11 +146,11 @@ There was some difficulty in making this work due to incompatible Python version
 
 Now, we can take a look at how this application generates its random passwords, and if we can possibly create our own wordlist and brute force the password out. Firstly, we can see this thisi binary uses the PySide2.Qt library to generate its passwords.
 
-<figure><img src="../../../.gitbook/assets/image (232) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (232).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can take a look at the actual password generation.
 
-<figure><img src="../../../.gitbook/assets/image (237) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (237).png" alt=""><figcaption></figcaption></figure>
 
 With this, we can craft a script to generate passwords for us.
 
@@ -212,7 +212,7 @@ This is the password: YG7Q7RDzA+q\&ke\~MJ8!yRzoI^VQxSqSS. For some reason pdfcra
 
 Anyways, once we have this password, we can view the PDF and see the password for steven.
 
-<figure><img src="../../../.gitbook/assets/image (139).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (139) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can then SSH in as Ethan.
 
@@ -256,7 +256,7 @@ This would spawn a container for us to use for the core dump, and we would need 
 
 Then, we can run our container and spawn in as root for it.
 
-<figure><img src="../../../.gitbook/assets/image (136).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (136) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can configure our container to execute our malicious script using pinns, and then configure the container such that we get a core dump.
 
@@ -273,5 +273,5 @@ kill -SIGSEGV <PID_for_tail>
 
 Afterwards, we should see our script be executed and we can get a root shell using `bash -p`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (125).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (125) (1).png" alt=""><figcaption></figcaption></figure>
 

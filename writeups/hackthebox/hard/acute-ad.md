@@ -16,7 +16,7 @@ description: >-
 
 I ran a nikto scan on the website and found the certificate and domain name. We can add this to the hosts file and try to access it.
 
-<figure><img src="../../../.gitbook/assets/image (239) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (239).png" alt=""><figcaption></figcaption></figure>
 
 The website is as follows:
 
@@ -52,7 +52,7 @@ From here, we just need to find some credentials and the computer name. Looking 
 
 Based on the website, we can find that there are some names listed on it, and these could be the potential usernames that we need.
 
-<figure><img src="../../../.gitbook/assets/image (236) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (236).png" alt=""><figcaption></figcaption></figure>
 
 We can get these names into a file and then use a script to generate out all possible usernames to brute force with the password.
 
@@ -68,7 +68,7 @@ The brute forcing of the password took ages. I tried all permutations of usernam
 
 From here, we can get a shell easily.
 
-<figure><img src="../../../.gitbook/assets/image (242) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (242).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (205) (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -92,11 +92,11 @@ As such, the next thing to do is get a **meterpreter shell** and use the modules
 
 We can easily generate one using MSFVenom.
 
-<figure><img src="../../../.gitbook/assets/image (241) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (241).png" alt=""><figcaption></figcaption></figure>
 
 Once we get this on the target machine and get a shell, we would need to migrate processes for stability, and then use the **espia** module to get a screenshot.
 
-<figure><img src="../../../.gitbook/assets/image (238) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (238).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (158) (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -148,7 +148,7 @@ As such, we would need to find a way to gain access to the Administrator account
 
 I used mimikatz to dump out the hashes easily. This was done through loading the kiwi module using the earlier meterpreter binary I generated for screengrab.
 
-<figure><img src="../../../.gitbook/assets/image (246) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (246).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can find the Administrator credentials.
 
@@ -162,7 +162,7 @@ The hash can be cracked on crackstation.net.
 
 When testing the credentials on the other machine, I found that it only worked with a user called wallace, and no one else.
 
-<figure><img src="../../../.gitbook/assets/image (233) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (233).png" alt=""><figcaption></figcaption></figure>
 
 As such, we would probably need to enumerate the machine as Wallace. When checking out the C:\Program Files directory, I found this interesting file called keepmeon.
 
