@@ -42,7 +42,7 @@ The profile updater takes the user input for full name and outputs it on the scr
 
 I was pleased to see that it worked:
 
-<figure><img src="../../../.gitbook/assets/image (13) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 With that, I proceeded to dump out the config of this server using `{{config.items()}}`.&#x20;
 

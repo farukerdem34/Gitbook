@@ -30,7 +30,7 @@ Within the `admin.php` page, we can find that there is an application that is ab
 
 We can attempt SQL Injection easily and confirm there is an unsanitsed input being passed.
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (9).png" alt=""><figcaption></figcaption></figure>
 
 With this, I attempted UNION Injection to find out how many columns there were. In total, there were 6.
 
@@ -42,7 +42,7 @@ We can write a webshell into the normal working webroot directory:
 
 Then, we can check for RCE:
 
-<figure><img src="../../../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (39) (4).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, gaining a reverse shell is trivial:
 
@@ -54,7 +54,7 @@ Afterwards, gaining a reverse shell is trivial:
 
 Within the machine, we can find the other users that were present:
 
-<figure><img src="../../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (27) (5).png" alt=""><figcaption></figcaption></figure>
 
 So we are looking for credentials for Hector. Understanding that there was a MariaDB instance running on the machine, I checked the files that were related to that first.&#x20;
 
@@ -66,7 +66,7 @@ Alternatively, we could use the SQL Injection vulnerability to dump these creden
 
 Enumerating the privileges that Hector has, we also see that he's part of the Remote Management Group:
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (5).png" alt=""><figcaption></figcaption></figure>
 
 This means that we can remotely access Hector's account over WinRM. Since there was no WinRM port available for me to use `evil-winrm`, I opted for Remote Powershelling.
 
@@ -78,17 +78,17 @@ Invoke-Command -Computing localhost -ScriptBlock { whoami } -Credential $cred
 
 We can use this to execute `nc.exe` to give us another reverse shell as Hector.
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (7).png" alt=""><figcaption></figcaption></figure>
 
 ### Powershell History
 
 This part was a tad tricky. I ran a WinPEAS and it picked up on the Powershell history for Hector.
 
-<figure><img src="../../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (4).png" alt=""><figcaption></figcaption></figure>
 
 When running these commands, I get a load of text that I don't really understand:
 
-<figure><img src="../../../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (19) (4).png" alt=""><figcaption></figcaption></figure>
 
 Perhaps this was a clue to look into the ACLs and permissions Hector has.
 
@@ -96,7 +96,7 @@ Perhaps this was a clue to look into the ACLs and permissions Hector has.
 
 Picking up on the rest of WinPEAS output, we see that Hector has FullControl permissions over loads of services.
 
-<figure><img src="../../../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (26) (5).png" alt=""><figcaption></figcaption></figure>
 
 FullControl permissions can be abused for forms of DLL Hijacking, or changing certain properties to execute scripts or files of our choosing.&#x20;
 
@@ -124,7 +124,7 @@ DT — SERVICE_PAUSE_CONTINUE
 
 In this case, we need the `RP` permission to restart a service. To check whether a service is run by `LocalSystem`, we would have to refer to the `SERVICE_START_NAME` variable when using `sc.exe` to query the service. Lastly, we can refer to this table for the values of the `START_TYPE` variable to find a service that is started manually (3 is the value we are looking for):
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (5).png" alt=""><figcaption></figcaption></figure>
 
 When looking through the services that Hector had FullControl permissions over (via WinPEAS output), we find this one:
 

@@ -22,7 +22,7 @@ Based on the files that are present here, we can see that port 80 is running a I
 
 So, I created a quick `aspx` reverse shell using `msfvenom`.
 
-<figure><img src="../../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (33) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can put this file in the FTP directory.
 
@@ -38,10 +38,10 @@ Afterwards, we can simply run the reverse shell via `curl`.
 
 When in the machine, we can first check our privileges.
 
-<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (2).png" alt=""><figcaption></figcaption></figure>
 
 Seeing that we have the SeImpersonatePrivilege privilege enabled, we can use JuicyPotato.exe to exploit this easily with another `.exe` reverse shell generated using `msfvenom`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>

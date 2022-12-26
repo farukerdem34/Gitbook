@@ -14,11 +14,11 @@ Doing a detailed scan, we can find that port 8080 was running a Jetty instance.
 
 Port 8080 revealed a Jenkins instance login page:
 
-<figure><img src="../../../.gitbook/assets/image (39) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (39) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 With Jenkins, I attempted to create a Windows batch command that would execute every minute like so:
 
-<figure><img src="../../../.gitbook/assets/image (18) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 However, this failed because the box was unable to reach my machine. I suppose there is a firewall or something within the machine that is blocking outgoing TCP traffic.
 

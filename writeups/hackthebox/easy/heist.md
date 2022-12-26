@@ -16,7 +16,7 @@ Within the web page on port 80, there was a login page:
 
 Weak credentials did not work, so I proceeded to login as a guest. In there, we can see some posts on a forum page of some sort.
 
-<figure><img src="../../../.gitbook/assets/image (2) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (6) (3).png" alt=""><figcaption></figcaption></figure>
 
 Within the attachment were some Cisco Router commands for configurations, and hashes:
 
@@ -62,7 +62,7 @@ There are tools online to dump the hashed passwords for this. But first, I wante
 
 Firefox is indeed running, then we can use `procdump.exe` to dump one of them and analyse the contents on Kali. I used `strings` on the .dmp files and found this password here:
 
-<figure><img src="../../../.gitbook/assets/image (19) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (19) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 With this password, we can `evil-winrm` as the admin:
 

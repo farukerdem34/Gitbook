@@ -10,17 +10,17 @@ Nmap scan:
 
 The website itself was rather uninteresting. However, when viewing the Contact Us portion, we can find a domain and mention of a helpdesk and a MatterMost server:
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (11).png" alt=""><figcaption></figcaption></figure>
 
 ### Port 8065
 
 This was the port where the MatterMost instance was hosted, and credentials are needed for this.
 
-<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (4).png" alt=""><figcaption></figcaption></figure>
 
 Based on the hints given in the Contact Us page, I registed an email with the @delivery.htb domain at the back. However, this was not possible because we had to verify the email, and we don't have any email clients on this machine.
 
-<figure><img src="../../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20) (7).png" alt=""><figcaption></figcaption></figure>
 
 ### Helpdesk
 
@@ -60,7 +60,7 @@ When looking at the MatterMost files in the `/opt` directory, we can find some S
 
 <figure><img src="../../../.gitbook/assets/image (125).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (3).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can use `netstat` to find that there is a MySQL instance running on the machine.
 
@@ -72,8 +72,8 @@ We can then access the `mattermost` database via the `mysql` command.
 
 Then, we can read the Users table data to find the hash for the root user.
 
-<figure><img src="../../../.gitbook/assets/image (130).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (130) (2).png" alt=""><figcaption></figcaption></figure>
 
 The hash can be cracked via `hashcat -m 3200` to give `Password!21` as the password. We can then `su` to root.
 
-<figure><img src="../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (6).png" alt=""><figcaption></figcaption></figure>

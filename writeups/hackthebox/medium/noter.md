@@ -12,7 +12,7 @@ Port 5000 was a HTTP port that was running some notetaking application.&#x20;
 
 The web application allowed us to register or login:
 
-<figure><img src="../../../.gitbook/assets/image (33) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (33) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 I created a user and logged in. When I proxied the traffic through Burp, we can see that there is a JWT Session Cookie present:
 
@@ -50,7 +50,7 @@ Then I filtered the results using the `Invalid Login` string.
 
 So `blue` is the user on this machine. We can use the secret we found earlier to create a new cokie and sign in by replacing the cookie:
 
-<figure><img src="../../../.gitbook/assets/image (6) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (5) (3).png" alt=""><figcaption></figcaption></figure>
 
 ### FTP Credentials
 
@@ -68,7 +68,7 @@ Logging into FTP, we can gain access to a password policy PDF.
 
 Reading the Password Policy, we can see that the passwords are all templated:
 
-<figure><img src="../../../.gitbook/assets/image (11) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (2) (3).png" alt=""><figcaption></figcaption></figure>
 
 With this hint, we can login as `ftp_admin` using `ftp_admin@Noter!`.&#x20;
 

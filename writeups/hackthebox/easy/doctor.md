@@ -41,11 +41,11 @@ Initially, I tested other vulnerabilities like SSTI on the username and the mess
 
 When I visited the `/archive` endpoint, we would actually see that it works!
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (6).png" alt=""><figcaption></figcaption></figure>
 
 For SSTI, we can follow this table on HackTricks to determine which framework is being used.
 
-<figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (7).png" alt=""><figcaption></figcaption></figure>
 
 For this specific box, we can determine that it's Jinja2 or Twig. On PayloadAllTheThings, there's a payload that works in spawning a reverse shell.
 
@@ -59,7 +59,7 @@ For this specific box, we can determine that it's Jinja2 or Twig. On PayloadAllT
 
 When we submit this as a message, it would spawn a reverse shell.
 
-<figure><img src="../../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (5).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -75,7 +75,7 @@ When checking for other users, there was only the user `shaun`.
 
 We can try using `su` with this credential, and it works.
 
-<figure><img src="../../../.gitbook/assets/image (124).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (124) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Splunk RCE
 

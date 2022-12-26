@@ -33,7 +33,7 @@ Personally, when I'm testing for authentication vulnerabilities, I would ask mys
 
 Suppose that we have a web application that uses a JWT token to authenticate a session.
 
-<figure><img src="../.gitbook/assets/image (257).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (257) (1).png" alt=""><figcaption></figcaption></figure>
 
 JWT Tokens are basically base64 encoded strings separated into 3 different portions, and they are decryptable or spoofable once we have the private key to encode it properly.
 
