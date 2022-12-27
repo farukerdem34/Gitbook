@@ -1,249 +1,100 @@
 # Hawk
 
-Hawk
+## Gaining Access
 
-Sunday, 6 March 2022
+Nmap scan:
 
-2:00 pm
+<figure><img src="../../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
 
-This is a Linux machine.
+Interesting ports that are open here. Running a detailed scan would provide clearer resolution on what's running on the machine.
 
-The target IP is 10.10.10.102.
+<figure><img src="../../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
 
-My IP is 10.10.16.2.
+### FTP Anonymous Login
 
-&#x20;
+Firstly, I checked the FTP port to see if I could login without credentials, and it worked.
 
-Enumeration times.
+<figure><img src="../../../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
 
-!\[\[69\_Hawk\_image001.png]]
+Within the FTP directories, there was an encrypted message left behind.
 
-Let's do a more detailed scan, in the meantime check out that ftp server too.
+<figure><img src="../../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
 
-&#x20;
+### OpenSSL Brute
 
-Detailed scan:
+First, we have to enumerate the type of encryption used on this file.
 
-!\[\[69\_Hawk\_image002.png]]
+<figure><img src="../../../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
 
-Not too sure what these ports are, and that one port 5435 seems to be blocked by a firewall.
+Since this was encrypted using `openssl`, we can download and use `openssl-brute` to decrypt this message and find some Drupal credentials.
 
-Port 9092 is some kind of XML server or something.
+{% embed url="https://github.com/deltaclock/go-openssl-bruteforce" %}
 
-&#x20;
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
-FTP:
+### Drupal RCE
 
-This allows for anonymous logins.
+We can head to port 80 to find out where to use these credentials:
 
-!\[\[69\_Hawk\_image003.png]]
+<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
-!\[\[69\_Hawk\_image004.png]]
+This seems to work. Using `admin` as a username, we can login. Upon login, we have the permission to edit the contents of pages.
 
-&#x20;
+To gain a reverse shell on Drupal manually, we would need to edit the contents of a PHP page to execute some malicious code.
 
-One directory is present, so let's take a look inside of it.
+<figure><img src="../../../.gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
 
-!\[\[69\_Hawk\_image005.png]]
+<figure><img src="../../../.gitbook/assets/image (54).png" alt=""><figcaption></figcaption></figure>
 
-&#x20;
+Lastly, we need to change the configurations to allow execution of PHP code.
 
-!\[\[69\_Hawk\_image006.png]]
+<figure><img src="../../../.gitbook/assets/image (50).png" alt=""><figcaption></figcaption></figure>
 
-There's an encrypted file, so let's take it for now and prepare to use openssl to decrypt it or something. Let's see what we can get without a passphrase.
+Then we can upload the changes after selecting the PHP Code option.
 
-!\[\[69\_Hawk\_image007.png]]
+<figure><img src="../../../.gitbook/assets/image (48).png" alt=""><figcaption></figcaption></figure>
 
-This gave me a base64 string.
+<figure><img src="../../../.gitbook/assets/image (49).png" alt=""><figcaption></figcaption></figure>
 
-&#x20;
+## Privilege Escalation
 
-!\[\[69\_Hawk\_image008.png]]
+### Daniel Creds + Escape
 
-&#x20;
+Once we are in, we can go view the configuration files for this Drupal instance. Within the `/var/www/html/sites/default/settings.php` file, we can find this:
 
-!\[\[69\_Hawk\_image009.png]]
+<figure><img src="../../../.gitbook/assets/image (53).png" alt=""><figcaption></figcaption></figure>
 
-Intriguing. Salted\_\_kY? Perhaps I need a passphrase or something to decrypt this file further.
+Earlier, there was mention of a `daniel` user. We can use the credentials we found to SSH in as him.
 
-&#x20;
+<figure><img src="../../../.gitbook/assets/image (56).png" alt=""><figcaption></figcaption></figure>
 
-Let's take a look at the web servers.
+The most interesting thing is being dropped into a Python shell, which we can break out easily using `import os;os.system("/bin/bash")`.
 
-&#x20;
+### H2 RCE
 
-!\[\[69\_Hawk\_image0010.png]]
+We can enumerate the ports to see what services are running via `netstat -tulpn`.
 
-This seems to be running on Drupal, and this is all there is.
+<figure><img src="../../../.gitbook/assets/image (47).png" alt=""><figcaption></figcaption></figure>
 
-We seem to be able to create an account. However, when tried, there is an error message. Turns out we need a proper email address in order to bypass this validation.
+Earlier in the Nmap scan, we found port 8082 to be running but we couldn't access it. Also, cheking on the processes running reveals that the root user is running a h2 databsae instance on this machine.
 
-!\[\[69\_Hawk\_image0011.png]]
+```
+root        814  0.0  0.0   4628   868 ?        Ss   Apr01   0:00 /bin/sh -c /usr/bin/java -jar /opt/h2/bin/h2-1.4.196.jar
+root        816  0.0  6.8 2339688 67568 ?       Sl   Apr01   4:05 /usr/bin/java -jar /opt/h2/bin/h2-1.4.196.jar
+```
 
-Ran a directory enumeration on this one, to see what we get.
+This is clearly the next step. As such, we need to use the SSH credentials we have to do port forwarding so we can access this service.
 
-We could run drupalgeddon on this, but it does not work well.
+<figure><img src="../../../.gitbook/assets/image (46).png" alt=""><figcaption></figcaption></figure>
 
-&#x20;
+Afterwards, we can access the service by going to `http://127.0.0.1:8082`.&#x20;
 
-I wanted to look at the encrypted file again and attempt to brute force this one, because everything else is not getting me anywhere.
+<figure><img src="../../../.gitbook/assets/image (55).png" alt=""><figcaption></figcaption></figure>
 
-Downloaded go-openssl-bruteforce to do some brute forcing for me.
+This version of H2 is vulnerable to RCE however, and as such the port forwarding is a bit redundant as we can run the exploit directly as `daniel`.
 
-&#x20;
+{% embed url="https://www.exploit-db.com/exploits/45506" %}
 
-{width="6.59375in" height="4.208333333333333in"}
+We can upload the script to the user's account, and run it to gain a shell as root.
 
-Right, so let's get into that box.
-
-&#x20;
-
-Logged in as admin.
-
-!\[\[69\_Hawk\_image0013.png]]
-
-From here, let's look around and see what we can do on this web engine.
-
-&#x20;
-
-Noticed that we can add content in the form of PHP files.
-
-!\[\[69\_Hawk\_image0014.png]]
-
-Let's try injecting some PHP code to execute bash to give us a shell.
-
-&#x20;
-
-!\[\[69\_Hawk\_image0015.png]]
-
-Didn't work, so let's take a look at the configurations.
-
-&#x20;
-
-There's this one checkbox we can tick.
-
-!\[\[69\_Hawk\_image0016.png]]
-
-Let's allow this and try again.
-
-&#x20;
-
-!\[\[69\_Hawk\_image0017.png]]
-
-Select PHP code.
-
-&#x20;
-
-When uploaded and executed, it will give us a shell.
-
-!\[\[69\_Hawk\_image0018.png]]
-
-We are www-data.
-
-&#x20;
-
-Better the shell:
-
-{width="4.4375in" height="2.3229166666666665in"}
-
-&#x20;
-
-We have access to the user daniel and can grab the user flag while we're in here.
-
-Looked around in the html file and found this:
-
-!\[\[69\_Hawk\_image0020.png]]
-
-This was in the /var/www/html/sites/default/settings.php file.
-
-Tried an SSH and interestingly, this changes us to use a python shell.
-
-&#x20;
-
-!\[\[69\_Hawk\_image0021.png]]
-
-Just do this command to get us a shell:
-
-{width="7.427083333333333in" height="1.40625in"}
-
-Now let's take a look around properly.
-
-&#x20;
-
-Interestingly, there's this one h2 directory.
-
-!\[\[69\_Hawk\_image0023.png]]
-
-&#x20;
-
-When viewing the open ports, we can see the port 8082 is still running and it is a HTTP port.
-
-!\[\[69\_Hawk\_image0024.png]]
-
-Let's try some port relaying to see what we can get from this one web server that initially rejected our connection request.
-
-&#x20;
-
-!\[\[69\_Hawk\_image0025.png]]
-
-Now access the web server.
-
-&#x20;
-
-!\[\[69\_Hawk\_image0026.png]]
-
-Now, from hacktricks (which revealed the box answer...) we can simply change the /test to /\<anything we want> and then we can log in.
-
-&#x20;
-
-A quick google search led me to H2 SQL Command Chaining.
-
-By inputting some commands, we are able to execute arbitrary code.
-
-&#x20;
-
-!\[\[69\_Hawk\_image0027.png]]
-
-&#x20;
-
-Let's try gaining a reverse shell.
-
-Tried for really long, but was unable to gain any reverse shells...So let's try some other methods.
-
-&#x20;
-
-!\[\[69\_Hawk\_image0028.png]]
-
-&#x20;
-
-!\[\[69\_Hawk\_image0029.png]]
-
-For some reason, I was able to get this instead of reverse shells. Something must be blocking reverse shells.
-
-&#x20;
-
-Perhaps I could add daniel as an admin. I kept trying other commands and stuff, bnu
-
-Think I crashed the machine while doing this method. So I had to reset :C.
-
-&#x20;
-
-Anyways I realised I can grab the root flag from this, but that's not why we're here.
-
-&#x20;
-
-!\[\[69\_Hawk\_image0030.png]]
-
-Tried this script from our searchsploit. This was in line with the H2 Database server version as well.
-
-&#x20;
-
-Uploaded it onto daniel's account and ran it.
-
-{width="5.375in" height="2.375in"}
-
-There we go.
-
-&#x20;
-
-&#x20;
+<figure><img src="../../../.gitbook/assets/image (52).png" alt=""><figcaption></figcaption></figure>

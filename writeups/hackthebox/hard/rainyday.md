@@ -114,7 +114,7 @@ We also need to add the correct domain to our hosts file.
 
 Then we can connect to the dev portal.
 
-<figure><img src="../../../.gitbook/assets/image (3) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Dev Portal
 
@@ -124,7 +124,7 @@ We can klook around this thing. Understanding that previously, there was an /api
 
 Now we can fuzz the /api endpoint more to hopefully find something new. After a long while, I did find a new endpoint at /api/healthcheck.
 
-<figure><img src="../../../.gitbook/assets/image (15) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (1) (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Visiting this page gave me this JSON object:
 
@@ -202,7 +202,7 @@ Now that we are on jack's container, we can upload some form of pspy process mon
 
 What we see is this command:
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Weird that the sleep is this long. We can investigate this process in the /proc directory.
 
@@ -234,7 +234,7 @@ I wasn't sure what safe\_python was, but it looked to be some kind of binary. I 
 
 I think this executes scripts of some kind, because upon creating some fake file, I saw this:
 
-<figure><img src="../../../.gitbook/assets/image (20) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20) (1) (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 There's an exec( ) function being called, which is always interesting. This binary seems to execute python code within a set environment or something. My guess is that we need to create a python script that would execute to get us a shell as jack\_adm.
 

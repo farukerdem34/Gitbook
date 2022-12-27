@@ -16,7 +16,7 @@ The website was a standard company page:
 
 I checked the page source, and found a unique bit here. Seems like there was a user that was not shown for some reason.
 
-<figure><img src="../../../.gitbook/assets/image (50).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (50) (2).png" alt=""><figcaption></figcaption></figure>
 
 harvey is the user we probably need to access.&#x20;
 
@@ -32,7 +32,7 @@ We can visit this to see that it's running PHP Server Monitor v3.2.1.
 
 `harvey:potter` works as credentials to let us log in. There, we would view an internal chat instance.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (52).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (52) (2).png" alt=""><figcaption></figcaption></figure>
 
 I looked around and found the settings for this internal chat service, and found another subdomain.
 
@@ -60,7 +60,7 @@ All we need to do is sent a POST request with the `uname` and `passwd` parameter
 
 Afterwards, I logged into the server.
 
-<figure><img src="../../../.gitbook/assets/image (49).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (49) (2).png" alt=""><figcaption></figcaption></figure>
 
 Within this page, there's the ability to view the Log files, and when we do, we would first get a pop-up similar to xss with 1, and have this GET request be sent to the machine.
 
@@ -72,7 +72,7 @@ When viewing this log, I noticed that the User-Agent was copied from my machine.
 
 I played around with this and altered my `User-Agent` field to something else, and it was still copied over.
 
-<figure><img src="../../../.gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (51) (2).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (34) (5).png" alt=""><figcaption></figcaption></figure>
 
@@ -90,7 +90,7 @@ With this, we can easily gain a reverse shell into the machine using Invoke-Powe
 
 When checking our privileges, we notice we have the SeImpersonatePrivilege enabled.
 
-<figure><img src="../../../.gitbook/assets/image (47).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (47) (2).png" alt=""><figcaption></figcaption></figure>
 
 Checking `systeminfo`, we also find that a vulnerable version of Windows was running with no hotfixes.
 

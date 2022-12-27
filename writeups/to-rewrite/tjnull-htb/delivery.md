@@ -4,7 +4,7 @@
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (24) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Port 80
 
@@ -30,7 +30,7 @@ Based on the hints given in the Contact Us page, I registed an email with the @d
 
 I submitted a test ticket and received this:
 
-<figure><img src="../../../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (30) (1).png" alt=""><figcaption></figcaption></figure>
 
 Also, trying to create an account on this was not possible because we had to verify our email address, which was not possible without an internal client.&#x20;
 
@@ -68,7 +68,7 @@ Then, we can use `netstat` to find that there is a MySQL instance running on the
 
 We can then access the `mattermost` database via the `mysql` command.
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can read the Users table data to find the hash for the root user.
 

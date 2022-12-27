@@ -10,7 +10,7 @@ Nmap Scan:
 
 Using `gobuster` we can find the directories:
 
-<figure><img src="../../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (1).png" alt=""><figcaption></figcaption></figure>
 
 When trying to access the `admin.php` page, we get this error:
 
@@ -26,7 +26,7 @@ Appending the `X-Forwarded-For: 192.168.4.28` header, we can access the `admin.p
 
 Within the `admin.php` page, we can find that there is an application that is able to search for products.
 
-<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can attempt SQL Injection easily and confirm there is an unsanitsed input being passed.
 

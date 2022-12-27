@@ -74,7 +74,7 @@ I ran `pspy` to see what processes were running on the server. Found a few inter
 
 The second was that `dan_smith` was running `ipython` consistently.
 
-<figure><img src="../../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### IPython
 
@@ -88,7 +88,7 @@ This version was vulnerable to an RCE exploit.
 
 Following the PoC, we can grab dan's private key:
 
-<figure><img src="../../../.gitbook/assets/image (30) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (30) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can SSH in as dan.&#x20;
 
@@ -102,7 +102,7 @@ We saw earlier that root was running `redis-server`. We first need to search for
 
 &#x20;I ran LinPEAS, and found one within the `/usr/local/bin/redis_connector_dev` file.
 
-<figure><img src="../../../.gitbook/assets/image (12) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can then sign in using `redis-cli` on the machine and load the exploit.
 

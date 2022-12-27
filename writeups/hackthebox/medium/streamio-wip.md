@@ -157,7 +157,7 @@ Found that the `jdgodd` user had some permissions over the Core Staff group.
 
 And members of this Core Staff were able to ReadLAPSPassword for the DC.
 
-<figure><img src="../../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### ReadLAPSPassword
 
@@ -176,7 +176,7 @@ Add-DomainGroupMember -Identity "Core Staff" -Members 'streamio\JDgodd' -Credent
 
 Afterwards, we can use `crackmapexec` modules to read the LAPS password.
 
-<figure><img src="../../../.gitbook/assets/image (14) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can `evil-winrm` in as the administrator.
 

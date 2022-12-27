@@ -12,11 +12,11 @@ There's a `redis` server running on the machine, and also WinRM for whatever rea
 
 Using `smbmap`, there is one share that is readable even without credentials.
 
-<figure><img src="../../../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (45) (2).png" alt=""><figcaption></figcaption></figure>
 
 The Software\_Updates one is new. We can connect to it and see what are the files present.
 
-<figure><img src="../../../.gitbook/assets/image (46).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (46) (2).png" alt=""><figcaption></figcaption></figure>
 
 The PDF contained some useful information:
 
@@ -28,7 +28,7 @@ We can place an update within this share's client folders, and then a user would
 
 When checking the web portal, we see that it's a regular corporate website.
 
-<figure><img src="../../../.gitbook/assets/image (56).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (56) (2).png" alt=""><figcaption></figcaption></figure>
 
 There was a download button on the page, presumably to download the program used for this application. This would make us download a .exe file.
 
@@ -101,7 +101,7 @@ After a while, our HTTP server would get a hit and our listener port would catch
 
 Within the user's Downloads folder, we can find a PortableKanban instance.
 
-<figure><img src="../../../.gitbook/assets/image (55).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (55) (2).png" alt=""><figcaption></figcaption></figure>
 
 Within the folder, we can find an encrypted password for the `redis` instance on the machine.
 
@@ -113,7 +113,7 @@ Quick googling led me to an exploit, which allows for us to decrypt the password
 
 I used CyberChef to decrypt the password using the key and IV extracted from the exploit.
 
-<figure><img src="../../../.gitbook/assets/image (48).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (48) (2).png" alt=""><figcaption></figcaption></figure>
 
 After finding this password, we can use `redis-cli` to login to the redis instance.
 
@@ -121,7 +121,7 @@ After finding this password, we can use `redis-cli` to login to the redis instan
 
 Logging in:
 
-<figure><img src="../../../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (44) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can check all the keys present on this machine:
 
@@ -133,7 +133,7 @@ The user key with some kind of GUID was the first I checked. We can do so with `
 
 We can decrypt this using the same CyberChef configurations.
 
-<figure><img src="../../../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (43) (3).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can use `evil-winrm` to log in as the administrator.
 

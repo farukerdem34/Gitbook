@@ -4,7 +4,7 @@
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (1).png" alt=""><figcaption></figcaption></figure>
 
 There's only one port open on this machine.
 
@@ -34,7 +34,7 @@ With these, we can wrap them in another tag and start getting successful uploads
 
 From this, we identified that we have a user called `roosa`. Then, we can attempt some basic XXE LFI payloads to read the user's private SSH key.
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, we can simply SSH into the machine.
 
@@ -54,7 +54,7 @@ Within the home directory of the user, we also find some Git repository files.
 
 Using `find /home -name .git`, we can find the specific location of the Git repository to read its logs.
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 After heading to that directory, we would find an SSH key after using `git log -p -2`:
 
@@ -64,4 +64,4 @@ After heading to that directory, we would find an SSH key after using `git log -
 
 Surprisingly, this was the root SSH key.
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>

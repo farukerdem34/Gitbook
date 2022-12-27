@@ -44,7 +44,7 @@ We can download this KeePass database back, and then use `keepass2john` to conve
 
 Using this password, we can access the database via `kpcli`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (15) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can use `show -f 0` to view all the passwords available.
 

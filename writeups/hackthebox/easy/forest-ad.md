@@ -6,7 +6,7 @@ Nmap scan:
 
 Lots of ports as per normal DC scanning.
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
 
 ### SMB Null Session
 
@@ -16,7 +16,7 @@ Using `enum4linux` with no credentials, we find that it accepts null credentials
 
 With a user list, we can attempt to do AS-REP Roasting before moving on, and we would find a hash for the `svc-alfresco` user.
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can use `john` to crack the hash easily.
 
@@ -24,7 +24,7 @@ Then, we can use `john` to crack the hash easily.
 
 Afterwards, we can `evil-winrm` in as this user.
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -32,7 +32,7 @@ Afterwards, we can `evil-winrm` in as this user.
 
 I ran SharpHound on the machine to do collection and enumeration of the domain for me. After loading up Bloodhound and uploading the data, this is what we find:
 
-<figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (1).png" alt=""><figcaption></figcaption></figure>
 
 The user we have control over seems to have GenericAll permissions over the Exchange Windows Permissions group, which has WriteDacl permissions over the DC.&#x20;
 
@@ -57,4 +57,4 @@ Afterwards, we would basically have a new user to dump the administrator hash us
 
 Then, we can Pass The Hash easily to gain access as the Administrator.
 
-<figure><img src="../../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20) (1).png" alt=""><figcaption></figcaption></figure>

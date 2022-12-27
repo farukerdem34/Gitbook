@@ -34,7 +34,7 @@ Within the user's directory, we can find this Keepass database here.
 
 This file seems to be encrypted with a password when trying to use keepassx to access its contents.
 
-<figure><img src="../../../.gitbook/assets/image (30) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (30) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can convert this file to a hash for John to crack easily. However, Keepass2john wasn't working for this file for some reason, so we can move on first.
 

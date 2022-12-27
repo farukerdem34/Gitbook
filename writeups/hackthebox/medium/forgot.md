@@ -54,7 +54,7 @@ We can see the functionalities of this website, and perhaps get an RCE.
 
 Looking at the tickets portion, I can see that there are some SSH credentials for a Jenkins machine on the backend. The tickets are sent to the administrator, which I think is a separate user.
 
-<figure><img src="../../../.gitbook/assets/image (15) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Anyways there seems to be an administrator on this website somewhere, and it's not robert. When looking around at the requests to see if we can find some hidden stuff, I managed to see how the website authenticates us, and its via a Authorization Basic cookie.
 

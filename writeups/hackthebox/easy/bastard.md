@@ -8,7 +8,7 @@ Nmap scan:
 
 Running a scan on port 80 reveals that this is a Drupal 7 instance running.
 
-<figure><img src="../../../.gitbook/assets/image (53).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (53) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Drupalgeddon
 
@@ -36,4 +36,4 @@ Here's the working exploit:
 
 We can download this to the machine to execute commands to give us an administrator shell.
 
-<figure><img src="../../../.gitbook/assets/image (54).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (54) (2).png" alt=""><figcaption></figcaption></figure>

@@ -12,7 +12,7 @@ Take note that port 5985 for `winrm` is available, meaning that we can potential
 
 Within the web page on port 80, there was a login page:
 
-<figure><img src="../../../.gitbook/assets/image (50) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (50) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Weak credentials did not work, so I proceeded to login as a guest. In there, we can see some posts on a forum page of some sort.
 
@@ -36,11 +36,11 @@ The Bcrypt password could also be cracked using `john`.&#x20;
 
 With some passwords and potential usernames from the forum, we could begin brute-forcing SMB authentications with different combinations. `hazard` was the user on the forum that also requested for a Windows account for him, so I tried guessing his password first with `crackmapexec`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (14) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Worked, but with checking the shares available with `smbmap`, there was nothing of interest:
 
-<figure><img src="../../../.gitbook/assets/image (48) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (48) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 However, we can use these credentials to enumerate other users that are present on the machine. I used a Metasploit module to do so:
 

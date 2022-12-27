@@ -4,11 +4,11 @@
 
 As usual, we start with an Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (54) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (54) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Doing a detailed scan, we can find that port 8080 was running a Jetty instance.
 
-<figure><img src="../../../.gitbook/assets/image (56) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (56) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Jenkins
 
@@ -62,7 +62,7 @@ Then, we can `evil-winrm` in as `oliver`.&#x20;
 
 Once in the machine, I ran `Sharphound.ps1` to enumerate for me:
 
-<figure><img src="../../../.gitbook/assets/image (24) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (24) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 ### BloodHound
 
@@ -108,7 +108,7 @@ Within the desktop, I found this `Engines.xls` file.
 
 Copying it to another directory, I was able to move it to my machine using the `download` command from `evil-winrm`. Within it, we can find some credentials:
 
-<figure><img src="../../../.gitbook/assets/image (45) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (45) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can use the last credential to `evil-winrm` in as `maria`:
 
@@ -125,10 +125,10 @@ Add-DomainObjectAcl -TargetIdentity "Domain Admins" -PrincipalIdentity maria -Ri
 net group "Domain Admins" maria /add
 ```
 
-<figure><img src="../../../.gitbook/assets/image (46) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (46) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, we can re-logon using `evil-winrm` and see that we have full administrative privileges:
 
-<figure><img src="../../../.gitbook/assets/image (55) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (55) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can then access the administrator desktop and capture the root flag.&#x20;
