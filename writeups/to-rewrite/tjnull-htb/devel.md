@@ -26,7 +26,7 @@ So, I created a quick `aspx` reverse shell using `msfvenom`.
 
 Then, we can put this file in the FTP directory.
 
-<figure><img src="../../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (22) (1).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, we can simply run the reverse shell via `curl`.
 
@@ -38,7 +38,7 @@ Afterwards, we can simply run the reverse shell via `curl`.
 
 When in the machine, we can first check our privileges.
 
-<figure><img src="../../../.gitbook/assets/image (11) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (2) (4).png" alt=""><figcaption></figcaption></figure>
 
 Seeing that we have the SeImpersonatePrivilege privilege enabled, we can use JuicyPotato.exe to exploit this easily with another `.exe` reverse shell generated using `msfvenom`.&#x20;
 

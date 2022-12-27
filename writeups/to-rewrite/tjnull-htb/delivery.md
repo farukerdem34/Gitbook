@@ -26,7 +26,7 @@ Based on the hints given in the Contact Us page, I registed an email with the @d
 
 `helpdesk.delivery.htb` was a subdomain present on port 80. Visiting it reveals an OSTicket instance.
 
-<figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (1).png" alt=""><figcaption></figcaption></figure>
 
 I submitted a test ticket and received this:
 

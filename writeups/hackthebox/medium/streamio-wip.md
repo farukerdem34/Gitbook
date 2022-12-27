@@ -70,7 +70,7 @@ Within the debug page, there isn't much visual difference apart from one line:
 
 Because this page was in PHP, I tested the `debug` parameter with a common `php://filter` LFI exploit, and this worked!
 
-<figure><img src="../../../.gitbook/assets/image (22) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (22) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can then take a look at that `master.php` file we found earlier. The last bit was the most interesting.
 
@@ -89,7 +89,7 @@ The `eval()` function was being used, and this was definitely vulnerable to some
 
 We can send this request here:
 
-<figure><img src="../../../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (1) (6).png" alt=""><figcaption></figcaption></figure>
 
 And we finally have RCE on the machine. Then, we can gain a reverse shell via `nc.exe`.&#x20;
 
@@ -157,7 +157,7 @@ Found that the `jdgodd` user had some permissions over the Core Staff group.
 
 And members of this Core Staff were able to ReadLAPSPassword for the DC.
 
-<figure><img src="../../../.gitbook/assets/image (6) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### ReadLAPSPassword
 
@@ -176,7 +176,7 @@ Add-DomainGroupMember -Identity "Core Staff" -Members 'streamio\JDgodd' -Credent
 
 Afterwards, we can use `crackmapexec` modules to read the LAPS password.
 
-<figure><img src="../../../.gitbook/assets/image (14) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (1) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can `evil-winrm` in as the administrator.
 

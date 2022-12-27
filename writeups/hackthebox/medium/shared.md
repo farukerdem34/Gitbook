@@ -36,7 +36,7 @@ For instance, I was able to enumerate the datbase that was used.
 
 <figure><img src="../../../.gitbook/assets/image (31) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (17) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 The output of the injection was printed on screen for us. We can now enumerate the database, which has a **user** table within it. This payload can be used to enumerate whatever we need:
 
@@ -46,7 +46,7 @@ custom_cart = {"breached' and 0=1 union select 1, username, 3 from heckout.user 
 
 From there, we can find out the username of the user, which is **james\_mason**.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (23) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (23) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 We can also find his hash.
 
@@ -54,7 +54,7 @@ We can also find his hash.
 
 This password can be cracked using crackstation.
 
-<figure><img src="../../../.gitbook/assets/image (4) (1) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1) (5) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can ssh in as `james_mason`.&#x20;
 
@@ -106,7 +106,7 @@ We saw earlier that root was running `redis-server`. We first need to search for
 
 We can then sign in using `redis-cli` on the machine and load the exploit.
 
-<figure><img src="../../../.gitbook/assets/image (2) (1) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (3) (3).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (29) (1) (4).png" alt=""><figcaption></figcaption></figure>
 

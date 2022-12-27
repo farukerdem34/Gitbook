@@ -37,7 +37,7 @@ When visiting it, it returns nothing but the **posts that we have made**.&#x20;
 
 Initially, I tested other vulnerabilities like SSTI on the username and the message posting functions but it didn't return any positives.
 
-<figure><img src="../../../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (21) (1).png" alt=""><figcaption></figcaption></figure>
 
 When I visited the `/archive` endpoint, we would actually see that it works!
 
@@ -71,7 +71,7 @@ I ran LinPEAS to enumerate all files for me, it found a credential for me.
 
 When checking for other users, there was only the user `shaun`.
 
-<figure><img src="../../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (23) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can try using `su` with this credential, and it works.
 

@@ -40,7 +40,7 @@ Within the FTP server, I found a KeePass database within the `/user/tim/files` d
 
 We can download this KeePass database back, and then use `keepass2john` to convert it to a hash and crack it with `john`.
 
-<figure><img src="../../../.gitbook/assets/image (21) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (21) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 Using this password, we can access the database via `kpcli`.&#x20;
 
@@ -52,7 +52,7 @@ Then, we can use `show -f 0` to view all the passwords available.
 
 I tested these credentials with `smbmap`, and we can read one share:
 
-<figure><img src="../../../.gitbook/assets/image (10) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### SMB Shares + RCE
 
@@ -70,7 +70,7 @@ With this, we can access the MSSQL instance with `sqsh`. Afterwards, getting RCE
 
 <figure><img src="../../../.gitbook/assets/image (55) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (7) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (3) (3).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can gain a reverse shell as this user with whatever method.
 
@@ -86,4 +86,4 @@ When enumerating the privileges this user has, we notice that they have the SeIm
 
 We can easily use `printspoofer.exe` to spawn an administrator shell.
 
-<figure><img src="../../../.gitbook/assets/image (12) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (5) (1).png" alt=""><figcaption></figcaption></figure>

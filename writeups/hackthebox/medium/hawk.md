@@ -4,11 +4,11 @@
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (1).png" alt=""><figcaption></figcaption></figure>
 
 Interesting ports that are open here. Running a detailed scan would provide clearer resolution on what's running on the machine.
 
-<figure><img src="../../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20) (5).png" alt=""><figcaption></figcaption></figure>
 
 ### FTP Anonymous Login
 
@@ -30,7 +30,7 @@ Since this was encrypted using `openssl`, we can download and use `openssl-brute
 
 {% embed url="https://github.com/deltaclock/go-openssl-bruteforce" %}
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Drupal RCE
 

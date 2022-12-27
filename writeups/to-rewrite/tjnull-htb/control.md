@@ -88,7 +88,7 @@ This part was a tad tricky. I ran a WinPEAS and it picked up on the Powershell h
 
 When running these commands, I get a load of text that I don't really understand:
 
-<figure><img src="../../../.gitbook/assets/image (19) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (19) (4) (2).png" alt=""><figcaption></figcaption></figure>
 
 Perhaps this was a clue to look into the ACLs and permissions Hector has.
 

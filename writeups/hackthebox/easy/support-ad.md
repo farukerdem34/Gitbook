@@ -4,7 +4,7 @@
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (16) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 ### Null Session
 
@@ -14,7 +14,7 @@ I found that SMB accepts null credentials for this machine:
 
 Viewing the support-tools share, we find that it contains multiple binaries.
 
-<figure><img src="../../../.gitbook/assets/image (22) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (22) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 There's only one that was interesting, and it was the `UserInfo.exe` file. I took it back to my Windows VM and used dnSpy to open it.
 
@@ -26,7 +26,7 @@ When decompiled, it seems that the binary was sending LDAP queries:
 
 Looking around, I also found this `password` function.
 
-<figure><img src="../../../.gitbook/assets/image (18) (1) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (1) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can decode this easily using some Python and following their logic.
 
@@ -61,7 +61,7 @@ On analysing the output, I found a hidden password for the `support` user.
 
 We can then `evil-winrm` in as this `support` user.
 
-<figure><img src="../../../.gitbook/assets/image (13) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
