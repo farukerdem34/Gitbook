@@ -30,13 +30,13 @@ Since this was encrypted using `openssl`, we can download and use `openssl-brute
 
 {% embed url="https://github.com/deltaclock/go-openssl-bruteforce" %}
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
 ### Drupal RCE
 
 We can head to port 80 to find out where to use these credentials:
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 This seems to work. Using `admin` as a username, we can login. Upon login, we have the permission to edit the contents of pages.
 

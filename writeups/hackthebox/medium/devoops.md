@@ -34,7 +34,7 @@ With these, we can wrap them in another tag and start getting successful uploads
 
 From this, we identified that we have a user called `roosa`. Then, we can attempt some basic XXE LFI payloads to read the user's private SSH key.
 
-<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, we can simply SSH into the machine.
 

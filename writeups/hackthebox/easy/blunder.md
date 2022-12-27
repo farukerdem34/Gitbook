@@ -4,7 +4,7 @@
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (6) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (2) (3).png" alt=""><figcaption></figcaption></figure>
 
 Not too sure why FTP was reported. Anyways, we can head to the webpage to enumerate.
 
@@ -16,7 +16,7 @@ Page was just full of placeholder text that didn't mean much.
 
 I ran a directory brute force search to find an `/admin` panel.
 
-<figure><img src="../../../.gitbook/assets/image (3) (2) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (2) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 The `/admin` panel requires credentials to access. Default weak credentials do not work here.
 
@@ -28,7 +28,7 @@ We also found some other text files that were also of interest.
 
 The `todo.txt` file contained this:
 
-<figure><img src="../../../.gitbook/assets/image (2) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (2) (4).png" alt=""><figcaption></figcaption></figure>
 
 The `install.php` file also contained some other hidden information about the CMS on the administrator panel.
 

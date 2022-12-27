@@ -20,7 +20,7 @@ Because this was a HTTPS website, we can take a look at the certificate first to
 
 Looking at the alternate DNS names, we can find another hidden subdomain, which we'll visit later.
 
-<figure><img src="../../../.gitbook/assets/image (3) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can run `wpscan --enumerate p,t,u` on this website. This returns a plugin that is outdated and exploitable.
 
@@ -99,7 +99,7 @@ There was also an encrypted few posts.
 
 There was clearly a URL within that, and it seems that numbers **are not being scrambled**. This means this is a letter-only cipher. After a bit of research and testing on CyberChef, Vignere cipher is the one used here.
 
-<figure><img src="../../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can head to that website to find the `id_rsa` file for `orestis`.
 

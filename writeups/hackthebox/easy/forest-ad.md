@@ -16,7 +16,7 @@ Using `enum4linux` with no credentials, we find that it accepts null credentials
 
 With a user list, we can attempt to do AS-REP Roasting before moving on, and we would find a hash for the `svc-alfresco` user.
 
-<figure><img src="../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can use `john` to crack the hash easily.
 

@@ -22,7 +22,7 @@ Checking the `contact.php` file, we see the software used to make this.
 
 Then, we can search for exploits for this Gym Management Software 1.0.
 
-<figure><img src="../../../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 We can try the RCE exploit:
 
