@@ -4,7 +4,7 @@
 
 Nmap Scan:
 
-<figure><img src="../../../.gitbook/assets/image (164).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (164) (4).png" alt=""><figcaption></figcaption></figure>
 
 ### X-Forwaded-For Bypass
 

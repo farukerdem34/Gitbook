@@ -44,11 +44,11 @@ To gain a reverse shell on Drupal manually, we would need to edit the contents o
 
 <figure><img src="../../../.gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (54).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (54) (3).png" alt=""><figcaption></figcaption></figure>
 
 Lastly, we need to change the configurations to allow execution of PHP code.
 
-<figure><img src="../../../.gitbook/assets/image (50).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (50) (3).png" alt=""><figcaption></figcaption></figure>
 
 Then we can upload the changes after selecting the PHP Code option.
 
@@ -62,7 +62,7 @@ Then we can upload the changes after selecting the PHP Code option.
 
 Once we are in, we can go view the configuration files for this Drupal instance. Within the `/var/www/html/sites/default/settings.php` file, we can find this:
 
-<figure><img src="../../../.gitbook/assets/image (53).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (53) (3).png" alt=""><figcaption></figcaption></figure>
 
 Earlier, there was mention of a `daniel` user. We can use the credentials we found to SSH in as him.
 
@@ -74,7 +74,7 @@ The most interesting thing is being dropped into a Python shell, which we can br
 
 We can enumerate the ports to see what services are running via `netstat -tulpn`.
 
-<figure><img src="../../../.gitbook/assets/image (47).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (47) (3).png" alt=""><figcaption></figcaption></figure>
 
 Earlier in the Nmap scan, we found port 8082 to be running but we couldn't access it. Also, cheking on the processes running reveals that the root user is running a h2 databsae instance on this machine.
 
@@ -85,11 +85,11 @@ root        816  0.0  6.8 2339688 67568 ?       Sl   Apr01   4:05 /usr/bin/java 
 
 This is clearly the next step. As such, we need to use the SSH credentials we have to do port forwarding so we can access this service.
 
-<figure><img src="../../../.gitbook/assets/image (46).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (46) (3).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, we can access the service by going to `http://127.0.0.1:8082`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (55).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (55) (3).png" alt=""><figcaption></figcaption></figure>
 
 This version of H2 is vulnerable to RCE however, and as such the port forwarding is a bit redundant as we can run the exploit directly as `daniel`.
 

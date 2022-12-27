@@ -28,7 +28,7 @@ We can head to the `/tiny` endpoint to find another application running.
 
 On this directory, H3K Tiny File Manager is running and requires credentials to log in:
 
-<figure><img src="../../../.gitbook/assets/image (165).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (165) (3).png" alt=""><figcaption></figcaption></figure>
 
 When googling online for exploits, I found quite a few that lead to RCE using default admin credentials of `admin:admin@123`, which worked when trying to login.
 
