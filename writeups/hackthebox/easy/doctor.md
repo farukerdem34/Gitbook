@@ -10,11 +10,11 @@ Nmap scan:
 
 The website revealed a basic corporate page:
 
-<figure><img src="../../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (25) (6).png" alt=""><figcaption></figcaption></figure>
 
 There was nothing interesting, until I added `doctors.htb` to the `/etc/hosts` file (as per standard HTB practice) and visited that site.
 
-<figure><img src="../../../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (40) (6).png" alt=""><figcaption></figcaption></figure>
 
 Here, we can create an account and test this service. When logged in, we can see a few functions.
 
@@ -71,7 +71,7 @@ I ran LinPEAS to enumerate all files for me, it found a credential for me.
 
 When checking for other users, there was only the user `shaun`.
 
-<figure><img src="../../../.gitbook/assets/image (23) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (23) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 We can try using `su` with this credential, and it works.
 
@@ -89,6 +89,6 @@ Normally, Splunk runs on port 8089, and we did find that port open on the machin
 
 We can easily run the exploit to give us a reverse shell as root.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (37).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (37) (6).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (42) (6).png" alt=""><figcaption></figcaption></figure>

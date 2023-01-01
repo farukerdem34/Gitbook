@@ -63,7 +63,7 @@ The server at github.com would then take the request we have sent and process it
 
 A response would look like this:
 
-<figure><img src="../.gitbook/assets/image (11) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (11) (1) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Pretty big, but runs on the same concept and uses HTTP headers to specify information that our browser needs to know.
 

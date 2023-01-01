@@ -26,7 +26,7 @@ The Documents had one folder which contained FTP credentials:
 
 The Site Pages had another folder which contained the FTP username:
 
-<figure><img src="../../../.gitbook/assets/image (57) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (57) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 With these, we can access the FTP server.
 
@@ -60,7 +60,7 @@ Within the SMB shares, we can find some documents containing MSSQL passwords tha
 
 Looking around it, wecome across a suspicious `tester.exe` that does not fit in with the rest.
 
-<figure><img src="../../../.gitbook/assets/image (59) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (59) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can download this back to our machine for analysing, and I used `strings` as I always do on binaries I get. When looking through the output, we can see a few lines that contains MSSQL credentials:
 

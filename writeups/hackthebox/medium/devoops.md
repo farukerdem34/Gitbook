@@ -20,17 +20,17 @@ We can use `gobuster` on this to find more directories.
 
 `/feed` would bring us here:
 
-<figure><img src="../../../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (31) (6).png" alt=""><figcaption></figcaption></figure>
 
 XML Injection is pretty helpful, and i noticed that when we upload a file using this API, a POST request would be sent to the `/upload` directory with HTTP form data.
 
 However, trying to send any XML files that I created results in a Internal Server Error message being returned. Turns out, there are specific elements that we need to use for this endpoint:
 
-<figure><img src="../../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (27) (6).png" alt=""><figcaption></figcaption></figure>
 
 With these, we can wrap them in another tag and start getting successful uploads through.
 
-<figure><img src="../../../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (39) (7).png" alt=""><figcaption></figcaption></figure>
 
 From this, we identified that we have a user called `roosa`. Then, we can attempt some basic XXE LFI payloads to read the user's private SSH key.
 
@@ -38,7 +38,7 @@ From this, we identified that we have a user called `roosa`. Then, we can attemp
 
 Afterwards, we can simply SSH into the machine.
 
-<figure><img src="../../../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (26) (5).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -50,7 +50,7 @@ When checking the `id` of this user, we see that we are part of the `sudo` group
 
 Within the home directory of the user, we also find some Git repository files.
 
-<figure><img src="../../../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (1) (7).png" alt=""><figcaption></figcaption></figure>
 
 Using `find /home -name .git`, we can find the specific location of the Git repository to read its logs.
 
@@ -64,4 +64,4 @@ After heading to that directory, we would find an SSH key after using `git log -
 
 Surprisingly, this was the root SSH key.
 
-<figure><img src="../../../.gitbook/assets/image (6) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (1) (1) (3).png" alt=""><figcaption></figcaption></figure>

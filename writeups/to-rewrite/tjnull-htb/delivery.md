@@ -26,7 +26,7 @@ Based on the hints given in the Contact Us page, I registed an email with the @d
 
 `helpdesk.delivery.htb` was a subdomain present on port 80. Visiting it reveals an OSTicket instance.
 
-<figure><img src="../../../.gitbook/assets/image (16) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 I submitted a test ticket and received this:
 
@@ -42,15 +42,15 @@ That's when I realised the email given to add more information can be used as a 
 
 This time, there was an email confirmation there.
 
-<figure><img src="../../../.gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (38) (6).png" alt=""><figcaption></figcaption></figure>
 
 Then we can login and view the forums to find an SSH credential:
 
-<figure><img src="../../../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (35) (6).png" alt=""><figcaption></figcaption></figure>
 
 We can then use these credentials to SSH in as the user.
 
-<figure><img src="../../../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (34) (7).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -68,7 +68,7 @@ Then, we can use `netstat` to find that there is a MySQL instance running on the
 
 We can then access the `mattermost` database via the `mysql` command.
 
-<figure><img src="../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1) (6).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can read the Users table data to find the hash for the root user.
 

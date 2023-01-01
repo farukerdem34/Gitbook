@@ -14,23 +14,23 @@ Interesting ports that are open here. Running a detailed scan would provide clea
 
 Firstly, I checked the FTP port to see if I could login without credentials, and it worked.
 
-<figure><img src="../../../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (44) (3).png" alt=""><figcaption></figcaption></figure>
 
 Within the FTP directories, there was an encrypted message left behind.
 
-<figure><img src="../../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (24) (5).png" alt=""><figcaption></figcaption></figure>
 
 ### OpenSSL Brute
 
 First, we have to enumerate the type of encryption used on this file.
 
-<figure><img src="../../../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (43) (5).png" alt=""><figcaption></figcaption></figure>
 
 Since this was encrypted using `openssl`, we can download and use `openssl-brute` to decrypt this message and find some Drupal credentials.
 
 {% embed url="https://github.com/deltaclock/go-openssl-bruteforce" %}
 
-<figure><img src="../../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Drupal RCE
 

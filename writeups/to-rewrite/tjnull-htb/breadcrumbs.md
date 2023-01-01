@@ -1,603 +1,213 @@
 # BreadCrumbs
 
-BreadCrumbs
+## Gaining Access
 
-Saturday, 12 March 2022
+Nmap scan:
 
-6:03 pm
+<figure><img src="../../../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
 
-This is a Windows machine.
+Port 80 is running a kind of library application.
 
-The target IP is 10.10.10.
+### Arbitrary File Read
 
-My IP is 10.10.16.9.
+On the webapp, we can search for books using the title and author.
 
-&#x20;
+<figure><img src="../../../.gitbook/assets/image (60).png" alt=""><figcaption></figcaption></figure>
 
-Interesting box.
+<figure><img src="../../../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
 
-&#x20;
+Doing a quick directory enumeration reveals some interesting directories:
 
-!\[\[80\_BreadCrumbs\_image001.png]]
+<figure><img src="../../../.gitbook/assets/image (37).png" alt=""><figcaption></figcaption></figure>
 
-&#x20;
+Testing for SQL Injection within the parameters above reveals nothing of interest. When viewing the Actions that we can do for each book, we would see that we can attempt to borrow it.
 
-!\[\[80\_BreadCrumbs\_image002.png]]
+<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
-&#x20;
+Clicking yes causes an error to pop up.
 
-Website:
+<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
 
-!\[\[80\_BreadCrumbs\_image003.png]]
+I wanted to view the requests being made through Burpsuite, and saw this stuff.
 
-&#x20;
+<figure><img src="../../../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
 
-This is a library or book website.
+Attempting to change the `book` parameter in any way causes this error to appear:
 
-We can view books through the search.
+<figure><img src="../../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
 
-!\[\[80\_BreadCrumbs\_image004.png]]
+`file_get_contents()` could be used to read some other files. Earlier, we did a `gobuster` directory enumeration and found a `/db` directory.
 
-When viewing the request in burp, we see that it returns in a JSON format.
+<figure><img src="../../../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
 
-&#x20;
+I attempted to read this file through the potential File Read vulnerability we found earlier, and it worked by changing the `book` paramter to `../../../../../../../../../Users/www-data/Desktop/xampp/htdocs/db/db.php`.
 
-!\[\[80\_BreadCrumbs\_image005.png]]
+<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
 
-When no results are found, then it would return an empty array.
+We now have some set of credentials that we can use.
 
-&#x20;
+### Portal Enumeration
 
-Right, so let's take a look at the HTTPS port.
+There was nowhere to use this set of credentials, so I carried on with the enumeration. There was this `/portal` directory that brought us to this login page:
 
-Looks to be the same website though...
+<figure><img src="../../../.gitbook/assets/image (61).png" alt=""><figcaption></figcaption></figure>
 
-The certificate does not tell us anything.
+Creating a fake account to login reveals there are 2 cookies being used, one being a JWT token and the other being a PHPSESSID token with our username appended in front.
 
-&#x20;
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
-Ran a gobuster with a php extension, because this was indeed a PHP server.
+Viewing the page itself reveals several functions we can use.
 
-While that was running, I managed to get some stuff out of the website.
+<figure><img src="../../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
 
-&#x20;
+I was unable to access the File Management function at `/portal/php/files.php`, hence I took a look at the source code for it using the File Read we found earlier.
 
-When viewing a book, this is what would happen:
+<figure><img src="../../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
 
-!\[\[80\_BreadCrumbs\_image006.png]]
+Seems that `paul` is the administrator of this website.
 
-&#x20;
+### Token Spoofing
 
-!\[\[80\_BreadCrumbs\_image007.png]]
+Knowing that we have an Arbitrary File Read exploit to use, we can leverage on that to read the `authController.php` file of this folder, as this file determines the authentication mechanism and it may have credentials within it.
 
-Within Burp, this is what the request looks like:
+<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
-!\[\[80\_BreadCrumbs\_image008.png]]
+The first thing we notice is the dependencies required, which are the `db.php` file we found earlier, and this `cookie.php` file that is new. We can also find the `$secret_key` variable within the code that it used for a JWT token.
 
-&#x20;
+<figure><img src="../../../.gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
 
-When altering the book parameter with a ' at the end, it reveals that this gets the books using file\_get\_contents() function.
+We can take a look at the `cookie.php` file.
 
-!\[\[80\_BreadCrumbs\_image009.png]]
+<figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
 
-&#x20;
+In the last line, we can see that there's a notice to change the second part of the MD5 key every week, meaning that there's something that isn't changed. Also, we notice the `$key` and `$username[$seed]` values here. Then, `$username.md5($key)` is returned as the session cookie.
 
-Perhaps we can try some directory traversal or escaping.
+So first, we can easily spoof the JWT token used because we have found the secret key being used.
 
-!\[\[80\_BreadCrumbs\_image0010.png]]
+<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
 
-&#x20;
+Next, the hint is that the second part of the MD5 key is unchanged, meaning that we can just change the `PHPSESSID` token to have `paul` instead of `hello` in front.
 
-The directory enumeration reveals the db directory.
+Changing these 2 tokens granted access to the file management page we found earlier. We can upload .zip files here.
 
-&#x20;
+<figure><img src="../../../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
 
-!\[\[80\_BreadCrumbs\_image0011.png]]
+### Webshell and RCE
 
-This does not reveal anything, and I suspect there to be some other forms of stuff we can get from this.
+This was obviously a PHP site, so I attempted to upload a basic PHP webshell. Since only .zip files were allowed, we can attempt to alter the request to bypass the file extension check.
 
-&#x20;
+Viewing the requests shows that there's a `task` variable changing our file to a .zip one.&#x20;
 
-I played around with this, and did some directory traversal.
+<figure><img src="../../../.gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
 
-&#x20;
+We can change this to .php and it bypasses the file extension check. However, the PHP webshell above does not work, and there may be a WAF in place. I tried different webshells, and `shell_exec()` works.
 
-!\[\[80\_BreadCrumbs\_image0012.png]]
+<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
-This returned something!
+Then, we can access the webshell via checking the `portal/uploads` folder.
 
-&#x20;
+<figure><img src="../../../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
 
-Now, we know that we can indeed read any file from this. First target was that db.php file to see what contents was inside of it.
+Then, we can get a reverse shell via whatever method.
 
-We can even see the insecure function, and how it does not protect against directory traversal.
+<figure><img src="../../../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
 
-&#x20;
+### SSH as Juliette
 
-From this, I was able to read the db.php file.
+When viewing the users present on the machine, we can find a few others:
 
-&#x20;
+<figure><img src="../../../.gitbook/assets/image (53).png" alt=""><figcaption></figcaption></figure>
 
-!\[\[80\_BreadCrumbs\_image0013.png]]
+I wanted to enumerate the files for the web application hosted, so I headed there. Within the files for the portal directory, we find a `pizzaDeliveryUserData` folder which is rather suspicious.
 
-Right, now we have this SQLI password and host, which is great.
+<figure><img src="../../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
 
-&#x20;
+Within it, we can see one file that stands out.
 
-Now, we need to find somewhere to use this.
+<figure><img src="../../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
 
-Within the gobuster, we can see that there is the portal directory.
+Within it, we can find some credentials for this user.
 
-&#x20;
+<figure><img src="../../../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
 
-!\[\[80\_BreadCrumbs\_image0014.png]]
+Then, we can SSH in as this user.
 
-Visiting it redirects us to this website.
+## Privilege Escalation
 
-!\[\[80\_BreadCrumbs\_image0015.png]]
+### Sticky Notes
 
-The credentials we have does not help us here...
+When checking the user directory, we find a `todo.html` file.
 
-&#x20;
+<figure><img src="../../../.gitbook/assets/image (58).png" alt=""><figcaption></figcaption></figure>
 
-Playing around with the login request in Burp, I saw this:
+Viewing it reveals a hint to check the Sticky Notes application files for passwords.
 
-!\[\[80\_BreadCrumbs\_image0016.png]]
+<figure><img src="../../../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
 
-Right, so we have a new directory to visit.
+The files for this are located within the `C:\users\juliette\Appdata\local\pacakages` directory.
 
-!\[\[80\_BreadCrumbs\_image0017.png]]
+<figure><img src="../../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
 
-&#x20;
+There we can find some SQLite files.
 
-I see that this PHP code is using ===, meaning the owner is aware of magic hashes.
+<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
-Looking at the code, I also saw this little string here.
+We can transfer this over to our machine and use `sqlite3` to view the contents. Within it, we can find credentials for the `development` user.
 
-&#x20;
+<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
-!\[\[80\_BreadCrumbs\_image0018.png]]
+<figure><img src="../../../.gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
 
-There's a JWT token here, and this gives me good ideas.
+### Krypter
 
-&#x20;
+These credentials could be used for checking the SMB shares that were open, revealing that we had access to the `Development` share.
 
-We already have exposed the key, and we just need to find the payload of which is being encrypted.
+<figure><img src="../../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
 
-!\[\[80\_BreadCrumbs\_image0019.png]]
+Within it, we can find a file of interest.
 
-&#x20;
+<figure><img src="../../../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
 
-This could lead to some token stealing, whereby we can spoof the token easily.
+This was a ELF binary, and we can run it to see this:
 
-The next interesting part is that this uses another cookie.php.
+<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
-&#x20;
+So this thing can retrieve a password that is encrypted from somewhere. I opened this file up in IDA to see how it functions.
 
-!\[\[80\_BreadCrumbs\_image0020.png]]
+<figure><img src="../../../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
 
-&#x20;
+Firstly, we can see that this accesses a service on port 1234 of the machine, which we probably need to use port forwarding to access. Next and more notably, we can see another string that looks a lot like a SQL query.
 
-{width="11.729166666666666in" height="1.65625in"}
+To check this, I port forwarded the service via SSH using juliette's credentials, then I tried to access the service using `curl`.
 
-Right, we have more information.
+<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
-&#x20;
+### SQL Injection in Krypter
 
-The part we want is this:
+This query looked a lot like SQL Injection, and it seems that we can retrieve the key but not the encrypted password itself.
 
-!\[\[80\_BreadCrumbs\_image0022.png]]
+I tried some basic UNION SQL injection, and it worked!
 
-&#x20;
+<figure><img src="../../../.gitbook/assets/image (57).png" alt=""><figcaption></figcaption></figure>
 
-This chunk essentially means
+Then, we can enumerate the databases present.
 
-$key **=** "s4lTy\_stR1nG\_".$username\[$seed]."(!528.\\/9890";
+<figure><img src="../../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
 
-&#x20;
+We can check the `bread` database to view some more stuff.
 
-Afterwards this session key used is this:
+<figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
 
-!\[\[80\_BreadCrumbs\_image0023.png]]
+<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
-So it's paul.md5 of whatever key is there.
+Finally, we can just view all of the stuff within this table via `concat()`.
 
-&#x20;
+<figure><img src="../../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
 
-Looking at the code, it seems that the key is dependent on the username length.
+Then, we can decrypt the password using the first key we found.
 
-Additionally, the login page has this helper function, which reveals some usernames to use:
+<figure><img src="../../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
 
-&#x20;
+This password was base64 encoded, and decoding it gives the administrator password, which we can use to SSH in.
 
-!\[\[80\_BreadCrumbs\_image0024.png]]
-
-&#x20;
-
-Okay, we have some users. Looking at the login page, we can see that it uses the authController to verify the user logging in.
-
-I created an account on the signup page.
-
-&#x20;
-
-!\[\[80\_BreadCrumbs\_image0025.png]]
-
-&#x20;
-
-And we could log in:
-
-!\[\[80\_BreadCrumbs\_image0026.png]]
-
-Viewing the user management part there, we can see all the different users.
-
-&#x20;
-
-!\[\[80\_BreadCrumbs\_image0027.png]]
-
-&#x20;
-
-The File management part didn't work, so I looked at burp to get the directory it was using. Turns out it was redirecting us back to the main dashboard.
-
-!\[\[80\_BreadCrumbs\_image0028.png]]
-
-&#x20;
-
-&#x20;
-
-Viewing the source code:
-
-{width="8.854166666666666in" height="0.8125in"}
-
-It was verifying that I do not have the correct content needed to access this.
-
-From here, I could determine that the user had to be paul.
-
-&#x20;
-
-Additionally, there was something interesting with the tokens I was given in the file management request.
-
-&#x20;
-
-!\[\[80\_BreadCrumbs\_image0030.png]]
-
-Seems that there's a very nice PHPSESSID and JWT token there, and the next step would be to spoof these somehow.
-
-&#x20;
-
-We know the user we need to be, which is paul.
-
-&#x20;
-
-Using some online tools, I can change the JWT token to who I need it to be, using the secret key that was given to me.
-
-!\[\[80\_BreadCrumbs\_image0031.png]]
-
-&#x20;
-
-One down, now we need to figure out that PHPSESSID.
-
-&#x20;
-
-Looking at the code, the first thing I tried was to change the front part to my username, assuming that the SESSID cookie does not change for each of them first. This was true because the key was static, in which it always used back the same key which was appended at the end.
-
-&#x20;
-
-Changed the front part of my token to 'paul(hex)' and the token to the JWT token, and I found out we could upload .zip files here.
-
-&#x20;
-
-!\[\[80\_BreadCrumbs\_image0032.png]]
-
-&#x20;
-
-Right, so we need some kind of webshell that allows us to upload zip files.
-
-Let's create a simple webshell and attempt to upload it.
-
-&#x20;
-
-!\[\[80\_BreadCrumbs\_image0033.png]]
-
-This resulted in some kind of error:
-
-&#x20;
-
-!\[\[80\_BreadCrumbs\_image0034.png]]
-
-So we know that there is some WAF or something. Taking a look at the request:
-
-&#x20;
-
-!\[\[80\_BreadCrumbs\_image0035.png]]
-
-There's some task there trying to make it a .zip file. Let's change that .zip to .php.
-
-&#x20;
-
-Still doesn't work.
-
-There's some other WAF in play here...
-
-So, I googled other forms of php web shells, and came across one that does shell\_exec to bypass the checks.
-
-&#x20;
-
-Works!
-
-!\[\[80\_BreadCrumbs\_image0036.png]]
-
-&#x20;
-
-But I'm unable to execute my code there. Perhaps I should use a different code:
-
-!\[\[80\_BreadCrumbs\_image0037.png]]
-
-This worked. Also the last part is the name of the code we are going in.
-
-&#x20;
-
-We already know that the webshell is uploaded to ../uploads/shell.php.
-
-We uploaded it properly, but the code has an error it seems:
-
-&#x20;
-
-!\[\[80\_BreadCrumbs\_image0038.png]]
-
-At least we know we're right.
-
-&#x20;
-
-Eventually I tried the original line and it worked?
-
-&#x20;
-
-!\[\[80\_BreadCrumbs\_image0039.png]]
-
-Right, so now we have RCE.
-
-&#x20;
-
-The next step, which is the simplest is just to take netcat and upload it onto the server.
-
-!\[\[80\_BreadCrumbs\_image0040.png]]
-
-&#x20;
-
-Now, load it!
-
-!\[\[80\_BreadCrumbs\_image0041.png]]
-
-&#x20;
-
-!\[\[80\_BreadCrumbs\_image0042.png]]
-
-Great!
-
-&#x20;
-
-There's one other user on this box:
-
-!\[\[80\_BreadCrumbs\_image0043.png]]
-
-&#x20;
-
-Going out of the directory, we see this:
-
-!\[\[80\_BreadCrumbs\_image0044.png]]
-
-There's this user data, which I'm particularly curious about.
-
-&#x20;
-
-Within it, there's one file that stands out:
-
-!\[\[80\_BreadCrumbs\_image0045.png]]
-
-From this, we get...creds?
-
-&#x20;
-
-!\[\[80\_BreadCrumbs\_image0046.png]]
-
-&#x20;
-
-I was thinking about how to access this user, until I realised SSH was open on this machine.
-
-And we're in!
-
-{width="6.0in" height="7.5in"}
-
-Within her Desktop, there was another todo.html located there.
-
-&#x20;
-
-!\[\[80\_BreadCrumbs\_image0048.png]]
-
-&#x20;
-
-!\[\[80\_BreadCrumbs\_image0049.png]]
-
-This was a straight hint, and there are passwords there.
-
-If you store credentials in plaintext, no wonder you don't get promoted.
-
-&#x20;
-
-A bit of googling reveals that the files are stored here:
-
-!\[\[80\_BreadCrumbs\_image0050.png]]
-
-&#x20;
-
-So, we can head to here:
-
-!\[\[80\_BreadCrumbs\_image0051.png]]
-
-We need these files somehow.
-
-SCP wasn't working to transfer these files, so let's do it using smb.
-
-&#x20;
-
-!\[\[80\_BreadCrumbs\_image0052.png]]
-
-&#x20;
-
-Now we have these files here.
-
-&#x20;
-
-Let's take a look at them one by one.
-
-&#x20;
-
-!\[\[80\_BreadCrumbs\_image0053.png]]
-
-The User table was not useful, while the Note tables was:
-
-&#x20;
-
-!\[\[80\_BreadCrumbs\_image0054.png]]
-
-Great, another password.
-
-&#x20;
-
-Let's use smbmap now.
-
-{width="10.322916666666666in" height="2.5in"}
-
-The difference was, now I have access to the development file.
-
-Naturally, the box moved the admin password elsewhere.
-
-{width="2.8854166666666665in" height="1.03125in"}
-
-&#x20;
-
-There was one file within it.
-
-&#x20;
-
-!\[\[80\_BreadCrumbs\_image0057.png]]
-
-&#x20;
-
-Looking at the code, this was an ELF file, meaning I could execute it somehow.
-
-&#x20;
-
-!\[\[80\_BreadCrumbs\_image0058.png]]
-
-&#x20;
-
-!\[\[80\_BreadCrumbs\_image0059.png]]
-
-We needed some kind of key.
-
-&#x20;
-
-IDA time.
-
-Looking at the code, there seems to be this website there.
-
-&#x20;
-
-!\[\[80\_BreadCrumbs\_image0060.png]]
-
-&#x20;
-
-One check on the ports that were open on the machine, it seems that this passmanager thing could not be accessed by me. I then proceeded to try some SSH tunneling, finding it odd that the website even gave me the port number there.
-
-&#x20;
-
-Verified by the machine itself that the port was indeed running:
-
-!\[\[80\_BreadCrumbs\_image0061.png]]
-
-&#x20;
-
-!\[\[80\_BreadCrumbs\_image0062.png]]
-
-&#x20;
-
-!\[\[80\_BreadCrumbs\_image0063.png]]
-
-Alright, something.
-
-{width="5.3125in" height="0.6666666666666666in"}
-
-This were the things we have to append to the back.
-
-&#x20;
-
-!\[\[80\_BreadCrumbs\_image0065.png]]
-
-Right, so we get this key.
-
-&#x20;
-
-Great...
-
-&#x20;
-
-But from here, I tried some SQL injection, because I can. If the table there is an SQL command, this means I can append more behind.
-
-This was a direct SQL command, and I can see how it works.
-
-&#x20;
-
-Knowing that there are probably lots of tables included within there, I just ran a UNION select command to check what it would return:
-
-!\[\[80\_BreadCrumbs\_image0066.png]]
-
-Right.
-
-&#x20;
-
-!\[\[80\_BreadCrumbs\_image0067.png]]
-
-Found out the databases present.
-
-&#x20;
-
-Now, let's go into that.
-
-&#x20;
-
-!\[\[80\_BreadCrumbs\_image0068.png]]
-
-&#x20;
-
-Now column names.
-
-!\[\[80\_BreadCrumbs\_image0069.png]]
-
-&#x20;
-
-Let's now select everything and display it for all.
-
-&#x20;
-
-!\[\[80\_BreadCrumbs\_image0070.png]]
-
-I know what the key is, so now we have this which is AES?
-
-&#x20;
-
-Got lazy and didn't want to look up a script:
-
-!\[\[80\_BreadCrumbs\_image0071.png]]
-
-&#x20;
-
-!\[\[80\_BreadCrumbs\_image0072.png]]
-
-&#x20;
-
-Finally:
-
-{width="6.15625in" height="2.3854166666666665in"}
-
-&#x20;
+<figure><img src="../../../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>
