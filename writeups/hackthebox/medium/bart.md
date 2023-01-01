@@ -68,7 +68,7 @@ Within this page, there's the ability to view the Log files, and when we do, we 
 
 When viewing this log, I noticed that the User-Agent was copied from my machine.
 
-<figure><img src="../../../.gitbook/assets/image (58) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (58).png" alt=""><figcaption></figcaption></figure>
 
 I played around with this and altered my `User-Agent` field to something else, and it was still copied over.
 

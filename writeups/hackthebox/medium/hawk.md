@@ -14,23 +14,23 @@ Interesting ports that are open here. Running a detailed scan would provide clea
 
 Firstly, I checked the FTP port to see if I could login without credentials, and it worked.
 
-<figure><img src="../../../.gitbook/assets/image (44) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
 
 Within the FTP directories, there was an encrypted message left behind.
 
-<figure><img src="../../../.gitbook/assets/image (24) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
 
 ### OpenSSL Brute
 
 First, we have to enumerate the type of encryption used on this file.
 
-<figure><img src="../../../.gitbook/assets/image (43) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
 
 Since this was encrypted using `openssl`, we can download and use `openssl-brute` to decrypt this message and find some Drupal credentials.
 
 {% embed url="https://github.com/deltaclock/go-openssl-bruteforce" %}
 
-<figure><img src="../../../.gitbook/assets/image (6) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Drupal RCE
 
@@ -42,17 +42,17 @@ This seems to work. Using `admin` as a username, we can login. Upon login, we ha
 
 To gain a reverse shell on Drupal manually, we would need to edit the contents of a PHP page to execute some malicious code.
 
-<figure><img src="../../../.gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (51) (3).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (54) (3).png" alt=""><figcaption></figcaption></figure>
 
 Lastly, we need to change the configurations to allow execution of PHP code.
 
-<figure><img src="../../../.gitbook/assets/image (50) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (50) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then we can upload the changes after selecting the PHP Code option.
 
-<figure><img src="../../../.gitbook/assets/image (48).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (48) (3).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (49).png" alt=""><figcaption></figcaption></figure>
 
@@ -97,4 +97,4 @@ This version of H2 is vulnerable to RCE however, and as such the port forwarding
 
 We can upload the script to the user's account, and run it to gain a shell as root.
 
-<figure><img src="../../../.gitbook/assets/image (52).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (52) (3).png" alt=""><figcaption></figcaption></figure>

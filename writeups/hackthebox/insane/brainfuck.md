@@ -95,7 +95,7 @@ Some of the forum pages mention sending SSH keys somehow.
 
 There was also an encrypted few posts.
 
-<figure><img src="../../../.gitbook/assets/image (19) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (19) (1).png" alt=""><figcaption></figcaption></figure>
 
 There was clearly a URL within that, and it seems that numbers **are not being scrambled**. This means this is a letter-only cipher. After a bit of research and testing on CyberChef, Vignere cipher is the one used here.
 

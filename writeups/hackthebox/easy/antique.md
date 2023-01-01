@@ -62,4 +62,4 @@ This version of CUPS was vulnerable to a root file read exploit. Since this was 
 
 Simple enough, we can just read the root flag directly!
 
-<figure><img src="../../../.gitbook/assets/image (1) (6) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (6) (1) (1).png" alt=""><figcaption></figcaption></figure>

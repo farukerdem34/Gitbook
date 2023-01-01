@@ -129,7 +129,7 @@ We can check all the keys present on this machine:
 
 The user key with some kind of GUID was the first I checked. We can do so with `get <name>`. This revealed another encrypted password for the Administrator.
 
-<figure><img src="../../../.gitbook/assets/image (57) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (57).png" alt=""><figcaption></figcaption></figure>
 
 We can decrypt this using the same CyberChef configurations.
 

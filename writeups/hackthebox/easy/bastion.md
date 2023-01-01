@@ -4,7 +4,7 @@
 
 Nmap scan revealed a lot of ports:
 
-<figure><img src="../../../.gitbook/assets/image (61) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (61).png" alt=""><figcaption></figcaption></figure>
 
 ### Windows Backup
 

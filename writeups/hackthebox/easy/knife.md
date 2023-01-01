@@ -10,7 +10,7 @@ Nmap scan:
 
 I found nothing interesting about the web application hosted on port 80. However, when viewing the traffic proxied through Burpsuite, we see an interesting header:
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (6).png" alt=""><figcaption></figcaption></figure>
 
 PHP/8.1.0-dev is vulnerable to a publicly available RCE exploit.
 
@@ -18,7 +18,7 @@ PHP/8.1.0-dev is vulnerable to a publicly available RCE exploit.
 
 This script can be used to gain a shell as the user.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (6).png" alt=""><figcaption></figcaption></figure>
 
 From this, we can get a shell using the `mkfifo` script. After spawning a TTY shell, we find that we are the user `james`.
 
@@ -28,8 +28,8 @@ From this, we can get a shell using the `mkfifo` script. After spawning a TTY sh
 
 When enumerating sudo privileges, we see that we can run `knife`.
 
-<figure><img src="../../../.gitbook/assets/image (12) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (8).png" alt=""><figcaption></figcaption></figure>
 
 `knife` can be used to spawn a root shell since we can run `sudo` with it.
 
-<figure><img src="../../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>

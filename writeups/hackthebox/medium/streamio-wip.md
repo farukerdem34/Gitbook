@@ -172,7 +172,7 @@ Add-DomainObjectAcl -Credential $Cred -TargetIdentity "Core Staff" -principalide
 Add-DomainGroupMember -Identity "Core Staff" -Members 'streamio\JDgodd' -Credential $Cred
 ```
 
-<figure><img src="../../../.gitbook/assets/image (58) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (58) (1).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, we can use `crackmapexec` modules to read the LAPS password.
 

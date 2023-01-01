@@ -62,7 +62,7 @@ Then, we can use `pattern_offset.rb` to find the offset.
 
 Now, within the **Frolic machine**, we would need to find the libraries it has. It has to be the machine itself because we want the RCE to work there to give us a root shell. We can use `ldd` to find the **address of which the libc.so file is loaded**.
 
-<figure><img src="../.gitbook/assets/image (1) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 So this binary loads the `libc.so.6` file in virtual memory. The base address is at `0xb7e19000`, and all other addresses we find are **offsets**, meaning we have to **add the addresses together** to find the specific address it is loaded at.
 
@@ -111,4 +111,4 @@ print buffer
 
 Now, we just need to feed the output from this script into `rop`. This would spawn a root shell for us and we can finish the machine.
 
-<figure><img src="../.gitbook/assets/image (4) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (6) (1).png" alt=""><figcaption></figcaption></figure>

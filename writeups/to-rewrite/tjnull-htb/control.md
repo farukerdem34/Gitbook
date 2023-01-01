@@ -10,11 +10,11 @@ Nmap Scan:
 
 Using `gobuster` we can find the directories:
 
-<figure><img src="../../../.gitbook/assets/image (15) (1) (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (1).png" alt=""><figcaption></figcaption></figure>
 
 When trying to access the `admin.php` page, we get this error:
 
-<figure><img src="../../../.gitbook/assets/image (41) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
 
 Perhaps we can spoof the `X-Forwarded-For` header using an IP address. When checking the page sources of multiple pages, we can find this:
 
@@ -26,7 +26,7 @@ Appending the `X-Forwarded-For: 192.168.4.28` header, we can access the `admin.p
 
 Within the `admin.php` page, we can find that there is an application that is able to search for products.
 
-<figure><img src="../../../.gitbook/assets/image (10) (1) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can attempt SQL Injection easily and confirm there is an unsanitsed input being passed.
 
@@ -96,7 +96,7 @@ Perhaps this was a clue to look into the ACLs and permissions Hector has.
 
 Picking up on the rest of WinPEAS output, we see that Hector has FullControl permissions over loads of services.
 
-<figure><img src="../../../.gitbook/assets/image (26) (5) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (26) (5).png" alt=""><figcaption></figcaption></figure>
 
 FullControl permissions can be abused for forms of DLL Hijacking, or changing certain properties to execute scripts or files of our choosing.&#x20;
 
@@ -132,7 +132,7 @@ When looking through the services that Hector had FullControl permissions over (
 
 This service certainly fits the conditions needed. We can use `sc.exe config` to modify the `binpath` variable to give us a reverse shell. However, the `sc.exe` method lept failing.
 
-<figure><img src="../../../.gitbook/assets/image (28) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
 
 I tried the Powershell `Set-ItemProperty` method, and it worked better:
 
