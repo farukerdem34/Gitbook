@@ -96,7 +96,7 @@ Now that we have this, we can begin to enumerate the network inside. We can do a
 
 Most likely, the first host is 172.18.0.1 (based on other HTB machines), so I started there. I tested if port 22 and 80 were open, similar to the original ports open from our first nmap scan. And they were indeed open.
 
-<figure><img src="../../../.gitbook/assets/image (88) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (88) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can then curl this address to see what's going on within it.
 
@@ -142,7 +142,7 @@ We can try to grab the Cookie from the session earlier on the main website as ga
 
 So now we know there's an app.py, meaning there's also probably some kind of secret.py because this is a flask application.
 
-<figure><img src="../../../.gitbook/assets/image (90) (1) (2).png" alt=""><figcaption><p>\</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (90) (1) (2) (1).png" alt=""><figcaption><p>\</p></figcaption></figure>
 
 Playing around with this some more, it appears that the 'custom' type would require a pattern, indicating to me this could be searching for regex in files. The reuslt of true / false would tell us whether the character was in it.
 
@@ -276,7 +276,7 @@ Ther ehas to be a way to load the module I want. Eventually, after a few hours o
 
 We can then get RCE as jack\_adm.
 
-<figure><img src="../../../.gitbook/assets/image (92) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (92) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Hash\_password.py
 
