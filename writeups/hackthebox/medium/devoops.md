@@ -20,13 +20,13 @@ We can use `gobuster` on this to find more directories.
 
 `/feed` would bring us here:
 
-<figure><img src="../../../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (31) (6).png" alt=""><figcaption></figcaption></figure>
 
 XML Injection is pretty helpful, and i noticed that when we upload a file using this API, a POST request would be sent to the `/upload` directory with HTTP form data.
 
 However, trying to send any XML files that I created results in a Internal Server Error message being returned. Turns out, there are specific elements that we need to use for this endpoint:
 
-<figure><img src="../../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (27) (6).png" alt=""><figcaption></figcaption></figure>
 
 With these, we can wrap them in another tag and start getting successful uploads through.
 
@@ -38,7 +38,7 @@ From this, we identified that we have a user called `roosa`. Then, we can attemp
 
 Afterwards, we can simply SSH into the machine.
 
-<figure><img src="../../../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (26) (6).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

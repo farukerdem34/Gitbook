@@ -181,7 +181,7 @@ Then, we can list the keys and other information within this database.
 
 Seems that all of these keys are empty arrays, for some reason. I registered another user within the `collect.htb` website to see if we can do any other things.
 
-<figure><img src="../../../.gitbook/assets/image (28) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (28) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 So we have this, and we need a way to authenticate ourselves.  For this, we can set our role to `admin` and also set a `auth|s:1:\"a\"` bit, because this would grant us access to the `developers` endpoint.
 
@@ -207,7 +207,7 @@ This tool linked worked like a charm:
 
 This had some form of length barrier that was crashing the request. As such, we can use **PHP Shorthand Code,** which is basically a short form for PHP code. This involves the usage of the `<?=` tags. Then, since we have RCE, we can host the shell on my web server instead.
 
-<figure><img src="../../../.gitbook/assets/image (29) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (29) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Testing this out, I used this command ``<?= `id` ?>.``
 
@@ -239,7 +239,7 @@ Then, we can enumerate this database.
 
 We can find a hash from the `developers` database.
 
-<figure><img src="../../../.gitbook/assets/image (34) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (34) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Couldn't crack the hash though.
 

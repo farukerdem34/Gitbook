@@ -42,6 +42,6 @@ When in the machine, we can first check our privileges.
 
 Seeing that we have the SeImpersonatePrivilege privilege enabled, we can use JuicyPotato.exe to exploit this easily with another `.exe` reverse shell generated using `msfvenom`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (33) (6).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (29) (2).png" alt=""><figcaption></figcaption></figure>

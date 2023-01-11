@@ -30,7 +30,7 @@ Based on the hints given in the Contact Us page, I registed an email with the @d
 
 I submitted a test ticket and received this:
 
-<figure><img src="../../../.gitbook/assets/image (30) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (30) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Also, trying to create an account on this was not possible because we had to verify our email address, which was not possible without an internal client.&#x20;
 
@@ -50,7 +50,7 @@ Then we can login and view the forums to find an SSH credential:
 
 We can then use these credentials to SSH in as the user.
 
-<figure><img src="../../../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (34) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

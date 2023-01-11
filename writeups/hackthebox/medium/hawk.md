@@ -18,7 +18,7 @@ Firstly, I checked the FTP port to see if I could login without credentials, and
 
 Within the FTP directories, there was an encrypted message left behind.
 
-<figure><img src="../../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (24) (5).png" alt=""><figcaption></figcaption></figure>
 
 ### OpenSSL Brute
 

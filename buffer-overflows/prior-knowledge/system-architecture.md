@@ -207,7 +207,7 @@ The `ret` instruction POPs the value at the top of the stack to the old EIP. Thi
 
 After `func()` returns, the stack frames look like this:
 
-<figure><img src="../../.gitbook/assets/image (30) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (30) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Endianness
 
@@ -219,7 +219,7 @@ Endianness refers to how storing values in memory works. There are 2 types of en
 
 In Big Endian representation, the LSB is stored in the **highest memory address**.
 
-<figure><img src="../../.gitbook/assets/image (25) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (25) (1) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 For LSB, it's the opposite:
 

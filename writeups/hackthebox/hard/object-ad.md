@@ -104,7 +104,7 @@ As `smith`, we can create a malicious Powershell script and change the logon scr
 
 Within the desktop, I found this `Engines.xls` file.
 
-<figure><img src="../../../.gitbook/assets/image (28) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (28) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Copying it to another directory, I was able to move it to my machine using the `download` command from `evil-winrm`. Within it, we can find some credentials:
 

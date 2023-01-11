@@ -142,6 +142,7 @@
     * [BackendTwo](writeups/hackthebox/medium/backendtwo.md)
     * [Bart](writeups/hackthebox/medium/bart.md)
     * [Book](writeups/hackthebox/medium/book.md)
+    * [BroScience](writeups/hackthebox/medium/broscience.md)
     * [Devoops](writeups/hackthebox/medium/devoops.md)
     * [Faculty](writeups/hackthebox/medium/faculty.md)
     * [Forgot](writeups/hackthebox/medium/forgot.md)

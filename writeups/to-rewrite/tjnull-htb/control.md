@@ -132,7 +132,7 @@ When looking through the services that Hector had FullControl permissions over (
 
 This service certainly fits the conditions needed. We can use `sc.exe config` to modify the `binpath` variable to give us a reverse shell. However, the `sc.exe` method lept failing.
 
-<figure><img src="../../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (28) (1).png" alt=""><figcaption></figcaption></figure>
 
 I tried the Powershell `Set-ItemProperty` method, and it worked better:
 
