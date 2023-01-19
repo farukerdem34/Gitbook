@@ -32,7 +32,7 @@ There is obviously an RFI exploit here. I tried to upload a PHP reverse shell fr
 
 I ran LinPEAS and the SUID binaries were rather interesting:
 
-<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1) (6).png" alt=""><figcaption></figcaption></figure>
 
 The last one was `screen-4.5.0`, which was an outdated version vulnerable to a local privilege escalation exploit. We can follow the PoC below to gain a root shell.
 

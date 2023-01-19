@@ -24,7 +24,7 @@ Then, we can use `john` to crack the hash easily.
 
 Afterwards, we can `evil-winrm` in as this user.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (10).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

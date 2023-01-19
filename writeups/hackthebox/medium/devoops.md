@@ -50,7 +50,7 @@ When checking the `id` of this user, we see that we are part of the `sudo` group
 
 Within the home directory of the user, we also find some Git repository files.
 
-<figure><img src="../../../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Using `find /home -name .git`, we can find the specific location of the Git repository to read its logs.
 

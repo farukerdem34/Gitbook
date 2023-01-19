@@ -132,6 +132,7 @@
     * [Soccer](writeups/hackthebox/easy/soccer.md)
     * [Squashed](writeups/hackthebox/easy/squashed.md)
     * [SteamCloud](writeups/hackthebox/easy/steamcloud.md)
+    * [Stocker](writeups/hackthebox/easy/stocker.md)
     * [Timelapse (AD)](writeups/hackthebox/easy/timelapse-ad.md)
     * [Traceback](writeups/hackthebox/easy/traceback.md)
     * [Trick](writeups/hackthebox/easy/trick.md)

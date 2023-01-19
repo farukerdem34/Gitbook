@@ -16,7 +16,7 @@ When checking the FTP server, we can determine that anonymous credentials work.
 
 Through an Nmap scan with the `--script vuln` flag, we can view the directory automatically.
 
-<figure><img src="../../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (1) (7).png" alt=""><figcaption></figcaption></figure>
 
 Based on the files that are present here, we can see that port 80 is running a IIS server, and this directory has an `aspnet_client` folder within it. This FTP server could potentially provide us with  read and write access to the webroot directory.
 

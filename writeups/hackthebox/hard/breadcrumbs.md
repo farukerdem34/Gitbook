@@ -42,7 +42,7 @@ Attempting to change the `book` parameter in any way causes this error to appear
 
 I attempted to read this file through the potential File Read vulnerability we found earlier, and it worked by changing the `book` paramter to `../../../../../../../../../Users/www-data/Desktop/xampp/htdocs/db/db.php`.
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 We now have some set of credentials that we can use.
 
@@ -54,7 +54,7 @@ There was nowhere to use this set of credentials, so I carried on with the enume
 
 Creating a fake account to login reveals there are 2 cookies being used, one being a JWT token and the other being a PHPSESSID token with our username appended in front.
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Viewing the page itself reveals several functions we can use.
 
@@ -74,7 +74,7 @@ Knowing that we have an Arbitrary File Read exploit to use, we can leverage on t
 
 The first thing we notice is the dependencies required, which are the `db.php` file we found earlier, and this `cookie.php` file that is new. We can also find the `$secret_key` variable within the code that it used for a JWT token.
 
-<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can take a look at the `cookie.php` file.
 
@@ -84,7 +84,7 @@ In the last line, we can see that there's a notice to change the second part of 
 
 So first, we can easily spoof the JWT token used because we have found the secret key being used.
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (5).png" alt=""><figcaption></figcaption></figure>
 
 Next, the hint is that the second part of the MD5 key is unchanged, meaning that we can just change the `PHPSESSID` token to have `paul` instead of `hello` in front.
 
@@ -128,7 +128,7 @@ Within it, we can see one file that stands out.
 
 Within it, we can find some credentials for this user.
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can SSH in as this user.
 
@@ -156,7 +156,7 @@ We can transfer this over to our machine and use `sqlite3` to view the contents.
 
 <figure><img src="../../../.gitbook/assets/image (48).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Krypter
 
@@ -188,7 +188,7 @@ This query looked a lot like SQL Injection, and it seems that we can retrieve th
 
 I tried some basic UNION SQL injection, and it worked!
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can enumerate the databases present.
 
@@ -210,4 +210,4 @@ Then, we can decrypt the password using the first key we found.
 
 This password was base64 encoded, and decoding it gives the administrator password, which we can use to SSH in.
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>

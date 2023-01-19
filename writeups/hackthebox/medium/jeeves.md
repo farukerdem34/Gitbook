@@ -40,7 +40,7 @@ The password for this can be cracked rather easily.
 
 Afterwards, we can use `kp-cli` to view the passwords stored within this database.
 
-<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
 
 Reading the Backup stuff entry, we can find an NTLM hash.
 
@@ -58,7 +58,7 @@ Using the first NTLM hash we found, we can Pass The Hash to gain a shell as the 
 
 When trying to capture the root flag, this is what we see:
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 The hint to look deeper indicates that we should look within the Windows Data Stream. In short, Windows Data Stream is an alternate place for us to store bytes of data that aren't otherwise viewable via the conventional methods.&#x20;
 

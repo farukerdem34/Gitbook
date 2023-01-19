@@ -68,7 +68,7 @@ Then, we can use `netstat` to find that there is a MySQL instance running on the
 
 We can then access the `mattermost` database via the `mysql` command.
 
-<figure><img src="../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1) (6).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can read the Users table data to find the hash for the root user.
 

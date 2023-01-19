@@ -26,7 +26,7 @@ Appending the `X-Forwarded-For: 192.168.4.28` header, we can access the `admin.p
 
 Within the `admin.php` page, we can find that there is an application that is able to search for products.
 
-<figure><img src="../../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (1) (6).png" alt=""><figcaption></figcaption></figure>
 
 We can attempt SQL Injection easily and confirm there is an unsanitsed input being passed.
 
@@ -66,7 +66,7 @@ Alternatively, we could use the SQL Injection vulnerability to dump these creden
 
 Enumerating the privileges that Hector has, we also see that he's part of the Remote Management Group:
 
-<figure><img src="../../../.gitbook/assets/image (4) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (5) (3).png" alt=""><figcaption></figcaption></figure>
 
 This means that we can remotely access Hector's account over WinRM. Since there was no WinRM port available for me to use `evil-winrm`, I opted for Remote Powershelling.
 

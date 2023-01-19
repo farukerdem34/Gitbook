@@ -341,7 +341,7 @@ We can keep dragging out the next few characters by changing the hashed password
 
 We can generate a wordlist with rockyou.txt with the new salt at the back.
 
-<figure><img src="../../../.gitbook/assets/image (11) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (2) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 And we can crack that hash easily to find the root password.
 

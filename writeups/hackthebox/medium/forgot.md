@@ -50,7 +50,7 @@ Take note that this machine is really weird, and the tokens used are always inva
 
 We can see the functionalities of this website, and perhaps get an RCE.
 
-<figure><img src="../../../.gitbook/assets/image (9) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (1) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 Looking at the tickets portion, I can see that there are some SSH credentials for a Jenkins machine on the backend. The tickets are sent to the administrator, which I think is a separate user.
 
