@@ -4,7 +4,7 @@
 
 Capture-The-Flags are basically computer security competitions that involve using cybersecurity skills. The most common type of CTF is Jeopardy style, where basically it consists of individual challenges. The goal of each challenge is to find a string of text known as the flag, like **flag{this\_is\_a\_fak3\_flag}.**&#x20;
 
-The other type of CTF is called attack/defense, which is a real-life competition where teams are actively defending and attacking a network. I don't have much experience in this kind of CTF, but I do hear it's a lot of fun!
+The other type of CTF is called attack/defense, which is a real-life competition where teams are actively defending and attacking a network. I don't have much experience in this kind of CTF.
 
 ### Challenge Types
 
@@ -17,17 +17,16 @@ The other type of CTF is called attack/defense, which is a real-life competition
    * Such files include **packet captures, images, .git repositories etc.**
 3. Pwn / Binary Exploitation
    * To exploit a program running on a server to find the flag.
-   * Generally, these give you a binary that is running on a port of the server, and source code analysis is needed to find vulnerabilities in the program to be exploited.
+   * Generally, they give you the program (.exe / .elf) that is running on a port of the server, and fuzzing, decompiling and reverse engineering is needed to find the vulnerability in how the program processes user information is needed.&#x20;
    * Buffer Overflow and its variances are typically used here, and this is where Python scripting is so useful (pwntools).&#x20;
 4. Cryptography
    * Decrypting or encrypting a piece of data that is basically the flag.
-   * Involves math sometimes.
+   * Involves math and exploiting limitations of certain algorithms.&#x20;
 5. Reverse Engineering
-   * Given a file or program, work backwards to find the flag.
-   * Sometimes given in tandem with Pwn type challenges.
+   * Self-explanatory. Given a program or file, find out how it works and RE it to find exploitable vulnerabilities.&#x20;
 6. Misc.
-   * Could be anything! Generally the most wildcard of the challenges.
-   * Open Source Intelligence Gathering (OSINT), which is basically intense Googling is generally here, if not a category on its own. Challenge involve finding Reddit comments of a user based on his favourite sport or food.
+   * Could be anything! The most wildcard of all the challenges.&#x20;
+   * Open Source Intelligence Gathering (OSINT), which is basically intense Googling is sometimes  here, if not a category on its own.&#x20;
 
 CTFs are insanely fun and one can learn a lot from doing them. It's a great way to start cybersecurity.
 
