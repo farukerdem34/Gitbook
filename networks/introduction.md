@@ -32,7 +32,7 @@ Within each device, there exists something called a Network Interface Card (NIC)
 
 These are devices that basically connect different machines together via a cable, most commonly Ethernet. They have loads of ports for this purpose, and are generally the "middleman" in data transmissions. Here's an example of a network topology for switches:
 
-<figure><img src="../.gitbook/assets/image (14) (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (14) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Firewalls
 
@@ -42,7 +42,7 @@ These look like switches, but they aren't.
 
 ### Network Topologies
 
-<figure><img src="../.gitbook/assets/image (9) (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (9) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 This is how we represent networks in a company, sort of like a graph of nodes that have connections to one another. Take note of the symbols used!
 

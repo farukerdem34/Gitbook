@@ -55,7 +55,7 @@ Initially, nothing happens when we click the login button, however after refresh
 
 When viewing the plugins, we can find another plugin that enables SMTP on the Wordpress site.
 
-<figure><img src="../../../.gitbook/assets/image (14) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (2).png" alt=""><figcaption></figcaption></figure>
 
 When viewing the SMTP configuration settings, we can find the username and password for port 110.
 

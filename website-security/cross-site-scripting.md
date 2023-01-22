@@ -47,7 +47,7 @@ The reliance on the user makes the impacts of XSS less severe compared to the ot
 
 Stored XSS means that the malicious script is stored on the website itself. Then, everytime a user visits the page that the script is on, it would execute. Stored XSS has much more severe impacts, as it only requires users to go visit the site. This can be in the form of a blog post comment, editing the website page to have hidden Javascript, etc.
 
-<figure><img src="../.gitbook/assets/image (2) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 Here's an example of XSS from the HTB machine, Extension:
 
@@ -63,7 +63,7 @@ When inputted, the victim would view the Issues and be served this payload. This
 
 This confirms that the XSS is working properly. For this machine, the payload can be modified to include information about a hidden directory that only the victim can access:
 
-<figure><img src="../.gitbook/assets/image (5) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 Stored XSS is much more dangerous because it stores the script on the page itself and exploiting every user that visits it. In the above example, XSS was used to steal information about a directory that only the user could visit. In other cases, stuff like authorisation cookies or passwords can be stolen by attackers.
 

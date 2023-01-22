@@ -24,7 +24,7 @@ The HTB machine, Time, has a deserialization in Java making use of CVE-2021-1238
 
 We can enter some random JSON objects and it would output it as you would expect. If we enter some weird input, an error like this would appear:
 
-<figure><img src="../.gitbook/assets/image (4) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can see that the website uses Jackson to execute the function. Jackson is vulnerable to CVE-2019-12384, which is an RCE exploit involving passing this URL as a JSON object to be serialized:
 

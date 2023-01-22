@@ -10,25 +10,9 @@ Generally, InfoSec has 2 distinct teams, **the red team and the blue team.** The
 
 <figure><img src="../.gitbook/assets/red-team-blue-team.jpg" alt=""><figcaption><p><em>Summary of Teams</em></p></figcaption></figure>
 
-Red Team jobs include but are not limited to:
+Red Team = Adversary, Blue Team = Defenders.
 
-* Ethical Hackers
-* Adversary / Red Teaming Professionals
-
-Blue Team jobs can include:
-
-* Firewall system administrator
-* Network security engineers
-* Security Operations Center (SOC) Analysts
-* R\&D Teams&#x20;
-* Information Security Researcher
-
-Other jobs that don't necessarily fall into one of two categories are:
-
-* Exploit Developer
-* Security Researcher
-
-There is something called a **purple team.** What it is is basically a team of cybersecurity experts that can do both **red and blue team jobs.**
+There is something called a **purple team.** What it is is basically a team of cybersecurity experts that can do both **red and blue team jobs.**&#x20;
 
 For hackers, they can be:
 
@@ -53,14 +37,4 @@ For hackers, they can be:
   * Amateur hackers, but with a clear intention to learn, separating them from script kiddies.
   * Aim is to become full-fledged and experienced hackers.
 
-Here are other responsibilities that InfoSec people may have:
-
-* Ensuring company is compliant with data governance standards and laws.
-* Monitoring services, applications and websites to ensure that they are up and running securely.
-* Ensuring products are compliant with whatever security regulations there are.
-* Security aspect in software engineering, ensure that product pushed out is secure.
-* Testing and fuzzing current applications to discover new vulnerabilities.
-* Training others.
-* Continous learning and development of skills through courses or events.
-
-Information Security is a rich and diverse field with many different specialisations, as with all sectors of IT. It's always scary yet cool to see how hackers&#x20;
+Information Security is a rich and diverse field with many different specialisations, as with all sectors of IT. Take your pick!

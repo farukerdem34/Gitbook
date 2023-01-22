@@ -23,7 +23,7 @@ There was nothing of interest on the website. `gobuster` scans and default enume
 
 I decided to use `wfuzz` to fuzz the possible subdomains present on the website, and actually found one at `dev.stocker.htb`.
 
-<figure><img src="../../../.gitbook/assets/image (8) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
 Interesting.
 
@@ -31,7 +31,7 @@ Interesting.
 
 At the dev site, all we see is one login page:
 
-<figure><img src="../../../.gitbook/assets/image (6) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
 I tested out `sqlmap` or other SQL injections but it didn't work. It seems that we have to bypass this login to carry on with the machine. Proxying the traffic via Burp gave me a clearer picture on the error received when I entered wrong credentials:
 
@@ -59,23 +59,23 @@ There was a `connect.sid` endpoint, indicating that this was some type of Expres
 {"username": {"$ne": "foo"}, "password": {"$ne": "bar"} }
 ```
 
-<figure><img src="../../../.gitbook/assets/image (7) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
 The website was some ordering website where we could place orders for items.
 
-<figure><img src="../../../.gitbook/assets/image (10) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
 
 ### Stock LFI
 
 I added some items and attemted to checkout from the website.
 
-<figure><img src="../../../.gitbook/assets/image (9) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Viewing the purchase order brought us to a PDF page.
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (2).png" alt=""><figcaption></figcaption></figure>
 
 I downloaded the PDF and used `exiftool` on it to find that Skia is used to generate this PDF from Chromium.
 
@@ -131,19 +131,19 @@ I attempted this exploit using the `file:///` wrapper to read the `/etc/passwd` 
 <iframe src='file:///etc/passwd' width=500px height=1000px ></iframe>
 ```
 
-<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (4).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (39) (2).png" alt=""><figcaption></figcaption></figure>
 
 We find that the user is called `angoose`. I attempted to read more files such as the private SSH key of the user, but it seems that I either could not read it or it did not exist.
 
 Remembering that this was an Express website, perhaps there was a Javascript file that I could read to find some credentials, particularly those used to access this server in the first place. WIthin  the `/var/www/dev/index.js` file, I managed to find some credentials.
 
-<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (6).png" alt=""><figcaption></figcaption></figure>
 
 With this password, we can `ssh` in as `angoose`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

@@ -12,7 +12,7 @@ Not too sure why FTP was reported. Anyways, we can head to the webpage to enumer
 
 Page was just full of placeholder text that didn't mean much.
 
-<figure><img src="../../../.gitbook/assets/image (11) (1) (1) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 I ran a directory brute force search to find an `/admin` panel.
 
@@ -48,7 +48,7 @@ Now, we need to find some credentials to log in as the administrator.
 
 Initially, I brute forced the login page for the admin panel, but it didn't work out. I tried using `cewl` to create a custom wordlist using the website. Afterwards, using a Auth bruteforce Bypass exploit for Bludit, we can brute force the login and find the correct password.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (24) (4).png" alt=""><figcaption><p><br></p></figcaption></figure>
 
@@ -58,9 +58,9 @@ We would eventually find the right credentials.
 
 Then, we can use the exploit we found earlier to gain a reverse shell.
 
-<figure><img src="../../../.gitbook/assets/image (12) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (2).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (17) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -74,7 +74,7 @@ Within the Bludit-3.10.0a directory, the config files contained credentials for 
 
 This hash can be cracked.
 
-<figure><img src="../../../.gitbook/assets/image (13) (1) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then we can `su` to Hugo.
 

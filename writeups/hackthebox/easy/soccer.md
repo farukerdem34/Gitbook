@@ -16,7 +16,7 @@ We would need to add `soccer.htb` to our `/etc/hosts` file to browser on port 80
 
 The website is an average soccer related page.
 
-<figure><img src="../../../.gitbook/assets/image (8) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (2).png" alt=""><figcaption></figcaption></figure>
 
 Doing a directory enumeration with feroxbuster reveals a few extra directories:
 
@@ -36,7 +36,7 @@ When googling online for exploits, I found quite a few that lead to RCE using de
 
 Here, we  can confirm the version of the software running in the help page.
 
-<figure><img src="../../../.gitbook/assets/image (4) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (2) (3).png" alt=""><figcaption></figcaption></figure>
 
 There was one exploit for this on Github with a script:
 
@@ -50,7 +50,7 @@ Anyways, I uploaded the script to the `uploads` directory and it seems to work. 
 
 From here, we can get RCE on the machine easily.
 
-<figure><img src="../../../.gitbook/assets/image (10) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can use this to spawn a reverse shell.
 

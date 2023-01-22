@@ -30,7 +30,7 @@ For example, if we send a username of `admin     a` (with 5 spaces), the databas
 
 This would allow us to login as the administrator by using our own credentials. Firstly, we can confirm that the `admin` user exists on this website.
 
-<figure><img src="../../../.gitbook/assets/image (4) (2) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (2) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then we can send these these parameters to create a new `admin` user with a known password:
 
@@ -71,7 +71,7 @@ However, none of these worked. It wasn't until I googled a bit about Server Side
 
 When I set this as the Book Title and Author when uploading the book, and when we download the Collections PDF, we would be able to retrieve the `/etc/passwd` file.
 
-<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 `reader` was the user in this machine. We can attempt to read his private SSH key at `/home/reader/.ssh/id_rsa`, which he does have. We can then take that key and SSH into the machine.
 

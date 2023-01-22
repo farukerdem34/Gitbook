@@ -174,7 +174,7 @@ Take note of how we declare `int x = 11` first, hence its PUSHed last.&#x20;
 
 When we call the `func()` function, this would repeat again. The prologue changes values of the EBP to indicate the creation of another stack frame in memory would occur. This process continues until all variables are stored in their own stack frames.
 
-<figure><img src="../../.gitbook/assets/image (35) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (35) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Notice how the ESP keeps pointing to the top of the stack of other frames, and the old values are still stored within the stack.
 

@@ -50,7 +50,7 @@ When we gain access as the user ruby, the flag is not there. There is another us
 
 We don't have permissions to read the flag from henry's directory. However, when poking around ruby's directory and looking into the .bundle directory, we can find henry's password.
 
-<figure><img src="../../../.gitbook/assets/image (6) (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (3).png" alt=""><figcaption></figcaption></figure>
 
 With this, we can SSH in as henry for a better shell. Then, we can grab the user flag.
 
@@ -133,7 +133,7 @@ We just need to put the malicious YAML file in some writeable place and execute 
 
 I changed the command to `chmod +s /bin/bash` and tried it out. Worked!
 
-<figure><img src="../../../.gitbook/assets/image (15) (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (3) (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 

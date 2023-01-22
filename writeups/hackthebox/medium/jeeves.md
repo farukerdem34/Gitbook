@@ -48,11 +48,11 @@ Reading the Backup stuff entry, we can find an NTLM hash.
 
 There were also other passwords that were found by viewing the DC Recovery PW.
 
-<figure><img src="../../../.gitbook/assets/image (15) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
 
 Using the first NTLM hash we found, we can Pass The Hash to gain a shell as the administrator through `pth-winexe`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Hidden Flag
 
@@ -66,7 +66,7 @@ The hint to look deeper indicates that we should look within the Windows Data St
 
 In short, there are alternate methods of storing data within these alternate data streams which can be used to hide files. We can view the flag by accessing these streams:
 
-<figure><img src="../../../.gitbook/assets/image (16) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
 
 We can see that the alternate stream has 34 bytes of data that are hidden within it. We can redirect the file contents to another folder and read the flag.
 

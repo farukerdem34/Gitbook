@@ -28,7 +28,7 @@ This is what the website looks like:
 
 Interesting. We can play spot the difference between the image above, and the login from edurec!
 
-<figure><img src="../../.gitbook/assets/image (160).png" alt=""><figcaption><p><em>Edurec</em></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (160) (2).png" alt=""><figcaption><p><em>Edurec</em></p></figcaption></figure>
 
 Notice a key few differences. There is a property part missing. Also, on Edurec, it says **Register 2FA** and on the other website, it says **Help On 2FA.** Also, earlier I used curl to analyse the website to see loads of hidden JS being executed. However, the main page only reveals this in their page source.
 

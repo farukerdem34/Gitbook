@@ -171,7 +171,7 @@ So the bad characters so far are `\x00\x23\x3c\x83\xba`. Update the bad characte
 
 Take note that the address **can change, so look at the values of the stack to know where to start comparing from**. If we have successfully removed all bad characters, the output from the comparison would look like this:
 
-<figure><img src="../.gitbook/assets/image (43) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (43) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 If not, there would still be bad characters present, and we need to **repeat the process until the status is unmodified.**
 
