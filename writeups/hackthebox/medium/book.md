@@ -30,7 +30,7 @@ For example, if we send a username of `admin     a` (with 5 spaces), the databas
 
 This would allow us to login as the administrator by using our own credentials. Firstly, we can confirm that the `admin` user exists on this website.
 
-<figure><img src="../../../.gitbook/assets/image (4) (2) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (2) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then we can send these these parameters to create a new `admin` user with a known password:
 

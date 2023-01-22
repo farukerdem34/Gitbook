@@ -4,7 +4,7 @@
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (75).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (75) (5).png" alt=""><figcaption></figcaption></figure>
 
 ### Doctors.htb
 
@@ -14,7 +14,7 @@ The website revealed a basic corporate page:
 
 There was nothing interesting, until I added `doctors.htb` to the `/etc/hosts` file (as per standard HTB practice) and visited that site.
 
-<figure><img src="../../../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (40) (2).png" alt=""><figcaption></figcaption></figure>
 
 Here, we can create an account and test this service. When logged in, we can see a few functions.
 
@@ -41,7 +41,7 @@ Initially, I tested other vulnerabilities like SSTI on the username and the mess
 
 When I visited the `/archive` endpoint, we would actually see that it works!
 
-<figure><img src="../../../.gitbook/assets/image (2) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (6) (3).png" alt=""><figcaption></figcaption></figure>
 
 For SSTI, we can follow this table on HackTricks to determine which framework is being used.
 
@@ -89,6 +89,6 @@ Normally, Splunk runs on port 8089, and we did find that port open on the machin
 
 We can easily run the exploit to give us a reverse shell as root.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (37).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (37) (3).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (42) (6).png" alt=""><figcaption></figcaption></figure>

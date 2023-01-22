@@ -36,7 +36,7 @@ When googling online for exploits, I found quite a few that lead to RCE using de
 
 Here, we  can confirm the version of the software running in the help page.
 
-<figure><img src="../../../.gitbook/assets/image (4) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (2) (3).png" alt=""><figcaption></figcaption></figure>
 
 There was one exploit for this on Github with a script:
 

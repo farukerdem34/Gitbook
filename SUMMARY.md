@@ -152,6 +152,7 @@
     * [Jeeves](writeups/hackthebox/medium/jeeves.md)
     * [Lightweight](writeups/hackthebox/medium/lightweight.md)
     * [Noter](writeups/hackthebox/medium/noter.md)
+    * [Vault](writeups/hackthebox/medium/vault.md)
     * [Scrambled (AD)](writeups/hackthebox/medium/scrambled-ad.md)
     * [Shared](writeups/hackthebox/medium/shared.md)
     * [StreamIO (AD)](writeups/hackthebox/medium/streamio-wip.md)

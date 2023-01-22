@@ -30,7 +30,7 @@ However, trying to send any XML files that I created results in a Internal Serve
 
 With these, we can wrap them in another tag and start getting successful uploads through.
 
-<figure><img src="../../../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (39) (7).png" alt=""><figcaption></figcaption></figure>
 
 From this, we identified that we have a user called `roosa`. Then, we can attempt some basic XXE LFI payloads to read the user's private SSH key.
 
