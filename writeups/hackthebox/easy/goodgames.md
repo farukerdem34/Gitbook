@@ -22,7 +22,7 @@ The website is about some video games stuff:
 
 In the corner of the page, there's a login available.
 
-<figure><img src="../../../.gitbook/assets/image (41) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (41) (2).png" alt=""><figcaption></figcaption></figure>
 
 This login is bypassable with the `' OR 1=1 -- -` input for the `email` parameter. When we login, we would be redirected to `internal-administration.goodgames.htb`.  This page has another login where SQL Injection does not work.
 
@@ -36,7 +36,7 @@ I used `sqlmap` to automatically dump ot out, and got `admin@goodgames.htb:2b223
 
 Once logged in, the page redirected us to a dashboard where we could update our user profile.
 
-<figure><img src="../../../.gitbook/assets/image (35) (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (35) (3).png" alt=""><figcaption></figcaption></figure>
 
 The profile updater takes the user input for full name and outputs it on the screen. I tested this with a `{{7*7}}` payload as this was running on Werkzeug, which was a Python based server (detected in Nmap scan earlier).&#x20;
 

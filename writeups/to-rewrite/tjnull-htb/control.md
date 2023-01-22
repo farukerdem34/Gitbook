@@ -14,7 +14,7 @@ Using `gobuster` we can find the directories:
 
 When trying to access the `admin.php` page, we get this error:
 
-<figure><img src="../../../.gitbook/assets/image (41) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
 
 Perhaps we can spoof the `X-Forwarded-For` header using an IP address. When checking the page sources of multiple pages, we can find this:
 

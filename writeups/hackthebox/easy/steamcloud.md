@@ -137,7 +137,7 @@ This was a docker shell that we needed to escape from. We can begin from the 3 d
 
 Within the first one, we can find these things:
 
-<figure><img src="../../../.gitbook/assets/image (15) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 These were the 3 things that could potentially be used to impersonate something, or create new pods. Transferred the certificate and token via base64 encoding. First we need to enumerate what are the permissions that I have over the Kubernetes instances. Since we have a valid certificate, it means we need to shift back to port 8443, which is the Mnikube API port.&#x20;
 

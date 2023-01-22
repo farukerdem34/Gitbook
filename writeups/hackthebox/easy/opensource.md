@@ -64,7 +64,7 @@ Then, we can attempt to upload this file onto the server. We would need to inter
 
 When we intercept and change the name of the file, we would be able to access our new endpoint. We can confirm RCE through a simple ping command:
 
-<figure><img src="../../../.gitbook/assets/image (36) (1) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (36) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (10) (1) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
@@ -86,7 +86,7 @@ I couldn't find much from the container, so I went ahead with enumerating the gi
 
 By using `git log`, I was able to find some credentials for anotehr application elsewhere.
 
-<figure><img src="../../../.gitbook/assets/image (38) (3) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (38) (3).png" alt=""><figcaption></figcaption></figure>
 
 Earlier, we found port 3000 to be inaccessible from our host. From the docker however, it could be accessed. I downloaded `chisel` onto the container and forwarded port 3000.&#x20;
 

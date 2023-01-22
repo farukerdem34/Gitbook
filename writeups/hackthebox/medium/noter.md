@@ -76,7 +76,7 @@ With this hint, we can login as `ftp_admin` using `ftp_admin@Noter!`.&#x20;
 
 WIth access to the new FTP account, we can find two website source code backups made at different times:
 
-<figure><img src="../../../.gitbook/assets/image (40) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (40) (2).png" alt=""><figcaption></figcaption></figure>
 
 Additionally, because we are the `blue` user, we can view the VIP dashboard which allows us to **import and export notes**.&#x20;
 

@@ -10,7 +10,7 @@ Nmap Scan:
 
 On port 8080, it was a gym-related page:
 
-<figure><img src="../../../.gitbook/assets/image (9) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can use `gobuster` on the website to find more directories:
 

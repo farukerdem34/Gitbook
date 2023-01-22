@@ -30,7 +30,7 @@ Then, we can put this file in the FTP directory.
 
 Afterwards, we can simply run the reverse shell via `curl`.
 
-<figure><img src="../../../.gitbook/assets/image (36) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

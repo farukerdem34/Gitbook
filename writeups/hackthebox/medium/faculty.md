@@ -24,7 +24,7 @@ Proxying the traffic in Burp, sending a `'` character as a username triggers an 
 
 Now that we have confirmed SQL Injection is present, we can dump out all the tables within the database from this using `sqlmap`.
 
-<figure><img src="../../../.gitbook/assets/image (1) (2) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 The `users` table had an `Administrator` user with a hashed password, however the hash cannot be cracked.
 

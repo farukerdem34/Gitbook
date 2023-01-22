@@ -12,13 +12,13 @@ Port 80 is running a kind of library application.
 
 On the webapp, we can search for books using the title and author.
 
-<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (476).png" alt=""><figcaption></figcaption></figure>
 
 Doing a quick directory enumeration reveals some interesting directories:
 
-<figure><img src="../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (2).png" alt=""><figcaption></figcaption></figure>
 
 Testing for SQL Injection within the parameters above reveals nothing of interest. When viewing the Actions that we can do for each book, we would see that we can attempt to borrow it.
 
@@ -54,7 +54,7 @@ There was nowhere to use this set of credentials, so I carried on with the enume
 
 Creating a fake account to login reveals there are 2 cookies being used, one being a JWT token and the other being a PHPSESSID token with our username appended in front.
 
-<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Viewing the page itself reveals several functions we can use.
 
@@ -128,7 +128,7 @@ Within it, we can see one file that stands out.
 
 Within it, we can find some credentials for this user.
 
-<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can SSH in as this user.
 
@@ -188,11 +188,11 @@ This query looked a lot like SQL Injection, and it seems that we can retrieve th
 
 I tried some basic UNION SQL injection, and it worked!
 
-<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can enumerate the databases present.
 
-<figure><img src="../../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can check the `bread` database to view some more stuff.
 
@@ -210,4 +210,4 @@ Then, we can decrypt the password using the first key we found.
 
 This password was base64 encoded, and decoding it gives the administrator password, which we can use to SSH in.
 
-<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>

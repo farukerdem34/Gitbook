@@ -12,7 +12,7 @@ Website running was rather unique.
 
 The website only shows this:
 
-<figure><img src="../../../.gitbook/assets/image (3) (2) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 I ran a directory scan and found an `exposed.php` endpoint. We also find an `/uploads` directory that could potentially be used.
 
@@ -38,4 +38,4 @@ The last one was `screen-4.5.0`, which was an outdated version vulnerable to a l
 
 {% embed url="https://www.exploit-db.com/exploits/41154" %}
 
-<figure><img src="../../../.gitbook/assets/image (45) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>

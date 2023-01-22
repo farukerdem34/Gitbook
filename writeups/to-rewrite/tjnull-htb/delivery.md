@@ -42,11 +42,11 @@ That's when I realised the email given to add more information can be used as a 
 
 This time, there was an email confirmation there.
 
-<figure><img src="../../../.gitbook/assets/image (38) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
 
 Then we can login and view the forums to find an SSH credential:
 
-<figure><img src="../../../.gitbook/assets/image (35) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
 
 We can then use these credentials to SSH in as the user.
 
