@@ -10,7 +10,7 @@ Nmap scan:
 
 Port 80 shows this page here.
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 The hint here is to check the `/sparklays` directory, which returns a 403 error.
 
@@ -271,7 +271,7 @@ I transferred this to the `ubuntu` machine because it (probably) had the keys im
 
 Then, we can use `gpg -d` to decrypt it.
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!
 

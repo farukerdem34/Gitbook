@@ -48,7 +48,7 @@ Earlier, we saw some form of clipnote function. Testing it shows us that each ti
 
 I was interested in what other number is present, so I used wfuzz to enumerate out all other numbers. None are present it seems
 
-<figure><img src="../../../.gitbook/assets/image (14) (2) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (2) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 I checked out the other endpoints, as there may be more interesting ones. The **/report** one looks good.
 

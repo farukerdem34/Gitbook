@@ -10,7 +10,7 @@ This is an AD machine, so first we can begin with a port scan, and then go throu
 
 Nmap Scan:
 
-<figure><img src="../../../.gitbook/assets/image (20) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20) (2) (3).png" alt=""><figcaption></figcaption></figure>
 
 Standard Ports. I added absolute.htb  and its DC into my hosts file for this machine, as it is standard HTB practice. There are few things to enumerate:
 

@@ -14,6 +14,6 @@ The web application is a basic corporate website.
 
 We can run a gobuster on this website to find out other directories that are present:
 
-<figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (2).png" alt=""><figcaption></figcaption></figure>
 
 There are some&#x20;

@@ -97,7 +97,7 @@ curl -k https://10.129.96.167:10250/metrics
 
 From what I gathered, there are 7 pods that are running on this machine under the kube-system, but there were 8 pods in total. The nginx pod was not running on this system.
 
-<figure><img src="../../../.gitbook/assets/image (21) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (21) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Also worth noting that there were hints toward using this pod.
 
@@ -137,7 +137,7 @@ This was a docker shell that we needed to escape from. We can begin from the 3 d
 
 Within the first one, we can find these things:
 
-<figure><img src="../../../.gitbook/assets/image (15) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 These were the 3 things that could potentially be used to impersonate something, or create new pods. Transferred the certificate and token via base64 encoding. First we need to enumerate what are the permissions that I have over the Kubernetes instances. Since we have a valid certificate, it means we need to shift back to port 8443, which is the Mnikube API port.&#x20;
 
