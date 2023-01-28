@@ -10,9 +10,11 @@ Here, you can find more information about security-related topics as follows:
 * [Networking knowledge + Security](broken-reference)
 * [Buffer Overflows](broken-reference)
 * [Active Directory ](broken-reference)
-* Writeups
-  * [HTB](writeups/hackthebox/)
-  * [Proving Grounds Practice](writeups/proving-grounds-practice/)
+
+The main bulk of this notebook is the writeups for HackTheBox and Proving Grounds Practice machines:
+
+* [HTB](writeups/hackthebox/)
+* [Proving Grounds Practice](writeups/proving-grounds-practice/)
 
 **This book will be updated as frequently as I can while juggling school work.**
 

