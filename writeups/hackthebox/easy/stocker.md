@@ -23,7 +23,7 @@ There was nothing of interest on the website. `gobuster` scans and default enume
 
 I decided to use `wfuzz` to fuzz the possible subdomains present on the website, and actually found one at `dev.stocker.htb`.
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (6).png" alt=""><figcaption></figcaption></figure>
 
 Interesting.
 
@@ -31,7 +31,7 @@ Interesting.
 
 At the dev site, all we see is one login page:
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (2).png" alt=""><figcaption></figcaption></figure>
 
 I tested out `sqlmap` or other SQL injections but it didn't work. It seems that we have to bypass this login to carry on with the machine. Proxying the traffic via Burp gave me a clearer picture on the error received when I entered wrong credentials:
 
@@ -59,17 +59,17 @@ There was a `connect.sid` endpoint, indicating that this was some type of Expres
 {"username": {"$ne": "foo"}, "password": {"$ne": "bar"} }
 ```
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (3).png" alt=""><figcaption></figcaption></figure>
 
 The website was some ordering website where we could place orders for items.
 
-<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (5).png" alt=""><figcaption></figcaption></figure>
 
 ### Stock LFI
 
 I added some items and attemted to checkout from the website.
 
-<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (4).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (1) (2).png" alt=""><figcaption></figcaption></figure>
 
@@ -143,7 +143,7 @@ Remembering that this was an Express website, perhaps there was a Javascript fil
 
 With this password, we can `ssh` in as `angoose`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (3) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

@@ -4,7 +4,7 @@
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (7) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (3) (4).png" alt=""><figcaption></figcaption></figure>
 
 ### IIS 6.0
 
@@ -67,6 +67,6 @@ The exploit works through impersonating the SYSTEM user to execute commands by s
 
 The exploit can be used to gain a reverse shell easily via `nc.exe`:
 
-<figure><img src="../../../.gitbook/assets/image (10) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (5) (2).png" alt=""><figcaption></figcaption></figure>
 
 A listener port would have a shell as SYSTEM after execution.

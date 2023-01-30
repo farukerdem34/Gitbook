@@ -146,6 +146,7 @@
     * [BroScience](writeups/hackthebox/medium/broscience.md)
     * [Celestial](writeups/hackthebox/medium/celestial.md)
     * [Devoops](writeups/hackthebox/medium/devoops.md)
+    * [Encoding](writeups/hackthebox/medium/encoding.md)
     * [Faculty](writeups/hackthebox/medium/faculty.md)
     * [Forgot](writeups/hackthebox/medium/forgot.md)
     * [Haircut](writeups/hackthebox/medium/haircut.md)

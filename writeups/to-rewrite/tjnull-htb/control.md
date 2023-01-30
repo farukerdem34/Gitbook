@@ -10,7 +10,7 @@ Nmap Scan:
 
 Using `gobuster` we can find the directories:
 
-<figure><img src="../../../.gitbook/assets/image (15) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (1) (7).png" alt=""><figcaption></figcaption></figure>
 
 When trying to access the `admin.php` page, we get this error:
 

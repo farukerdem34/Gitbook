@@ -26,7 +26,7 @@ So, I created a quick `aspx` reverse shell using `msfvenom`.
 
 Then, we can put this file in the FTP directory.
 
-<figure><img src="../../../.gitbook/assets/image (22) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (22) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, we can simply run the reverse shell via `curl`.
 

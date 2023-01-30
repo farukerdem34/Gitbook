@@ -58,7 +58,7 @@ PORT      STATE SERVICE       VERSION
 
 Visting the web page shows us this:
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
 When any of the links are clicked, we can download a zip file for an application. Not too sure what we can do with this at the moment.
 
@@ -140,7 +140,7 @@ Using `xz -d` and `tar xvf` on the `data.tar.xz` file revealed lots of files per
 
 Amongst all the files mentioned, it appears that the source code was within the `./opt/unobtainium/resources/app.asar` directory of the folder. We can decompile this file using `npx asar`.
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can begin our source code analysis
 
@@ -437,7 +437,7 @@ MAC Address: 6A:95:CB:8C:AB:5F (Unknown)
 
 Port 3000 is the default port where Express applications run on. Earlier, in our source code review, the application was found to be running on Express. I repeated the Prototype Pollution and RCE exploit I used earlier, and was able to receive a shell to the devnode.
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Namespace Enumeration
 

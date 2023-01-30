@@ -188,7 +188,7 @@ This query looked a lot like SQL Injection, and it seems that we can retrieve th
 
 I tried some basic UNION SQL injection, and it worked!
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can enumerate the databases present.
 

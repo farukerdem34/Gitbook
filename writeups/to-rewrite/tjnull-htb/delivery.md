@@ -16,7 +16,7 @@ The website itself was rather uninteresting. However, when viewing the Contact U
 
 This was the port where the MatterMost instance was hosted, and credentials are needed for this.
 
-<figure><img src="../../../.gitbook/assets/image (9) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 Based on the hints given in the Contact Us page, I registed an email with the @delivery.htb domain at the back. However, this was not possible because we had to verify the email, and we don't have any email clients on this machine.
 
@@ -26,7 +26,7 @@ Based on the hints given in the Contact Us page, I registed an email with the @d
 
 `helpdesk.delivery.htb` was a subdomain present on port 80. Visiting it reveals an OSTicket instance.
 
-<figure><img src="../../../.gitbook/assets/image (16) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 I submitted a test ticket and received this:
 

@@ -4,7 +4,7 @@
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (8) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (6) (2).png" alt=""><figcaption></figcaption></figure>
 
 Website running was rather unique.
 
@@ -24,7 +24,7 @@ When visiting the PHP site, this is what we see:
 
 There is obviously an RFI exploit here. I tried to upload a PHP reverse shell from PentestMonkey, and then used `curl http://<IP>/uploads/shell.php`, and it worked in getting me a reverse shell.
 
-<figure><img src="../../../.gitbook/assets/image (6) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (2) (4).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
