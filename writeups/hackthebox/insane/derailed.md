@@ -90,7 +90,7 @@ Seems that the \<select> tag was being used maliciously. I then tried the same o
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<select<style/><img src='http://10.10.14.29/xss.pls'>
 ```
 
-<figure><img src="../../../.gitbook/assets/image (5) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 This worked! I was able to get a callback as well:
 

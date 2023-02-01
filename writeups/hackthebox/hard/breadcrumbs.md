@@ -128,7 +128,7 @@ Within it, we can see one file that stands out.
 
 Within it, we can find some credentials for this user.
 
-<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can SSH in as this user.
 
