@@ -25,3 +25,5 @@ I do not claim to be the most correct, the best, or even remotely good at securi
 I do not condone any illegal activity done using any methods in this notebook. All of the concepts listed here are for **educational purposes** only. What you decide to do with these skills is on you.&#x20;
 
 Please exercise responsibility and keep the law in mind when you are learning and testing on systems. Only test your skills on personal systems, or on systems where you have the permission to do so.
+
+If I wrote anything wrongly (which I probably did at least once) do let me know!
