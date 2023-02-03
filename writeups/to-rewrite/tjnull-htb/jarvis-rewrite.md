@@ -10,7 +10,7 @@ Nmap scan:
 
 The web application is a basic corporate website.
 
-<figure><img src="../../../.gitbook/assets/image (3) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (4) (3).png" alt=""><figcaption></figcaption></figure>
 
 We can run a gobuster on this website to find out other directories that are present:
 

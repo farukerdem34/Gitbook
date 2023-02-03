@@ -12,7 +12,7 @@ Port 80 is running a kind of library application.
 
 On the webapp, we can search for books using the title and author.
 
-<figure><img src="../../../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (476).png" alt=""><figcaption></figcaption></figure>
 
@@ -42,7 +42,7 @@ Attempting to change the `book` parameter in any way causes this error to appear
 
 I attempted to read this file through the potential File Read vulnerability we found earlier, and it worked by changing the `book` paramter to `../../../../../../../../../Users/www-data/Desktop/xampp/htdocs/db/db.php`.
 
-<figure><img src="../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1) (7).png" alt=""><figcaption></figcaption></figure>
 
 We now have some set of credentials that we can use.
 
@@ -50,7 +50,7 @@ We now have some set of credentials that we can use.
 
 There was nowhere to use this set of credentials, so I carried on with the enumeration. There was this `/portal` directory that brought us to this login page:
 
-<figure><img src="../../../.gitbook/assets/image (47).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (47) (5).png" alt=""><figcaption></figcaption></figure>
 
 Creating a fake account to login reveals there are 2 cookies being used, one being a JWT token and the other being a PHPSESSID token with our username appended in front.
 
@@ -120,7 +120,7 @@ When viewing the users present on the machine, we can find a few others:
 
 I wanted to enumerate the files for the web application hosted, so I headed there. Within the files for the portal directory, we find a `pizzaDeliveryUserData` folder which is rather suspicious.
 
-<figure><img src="../../../.gitbook/assets/image (18) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (2) (3).png" alt=""><figcaption></figcaption></figure>
 
 Within it, we can see one file that stands out.
 
@@ -128,7 +128,7 @@ Within it, we can see one file that stands out.
 
 Within it, we can find some credentials for this user.
 
-<figure><img src="../../../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can SSH in as this user.
 
@@ -154,9 +154,9 @@ There we can find some SQLite files.
 
 We can transfer this over to our machine and use `sqlite3` to view the contents. Within it, we can find credentials for the `development` user.
 
-<figure><img src="../../../.gitbook/assets/image (48).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (48) (3).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (1) (7).png" alt=""><figcaption></figcaption></figure>
 
 ### Krypter
 
@@ -174,7 +174,7 @@ This was a ELF binary, and we can run it to see this:
 
 So this thing can retrieve a password that is encrypted from somewhere. I opened this file up in IDA to see how it functions.
 
-<figure><img src="../../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (23) (2).png" alt=""><figcaption></figcaption></figure>
 
 Firstly, we can see that this accesses a service on port 1234 of the machine, which we probably need to use port forwarding to access. Next and more notably, we can see another string that looks a lot like a SQL query.
 
@@ -210,4 +210,4 @@ Then, we can decrypt the password using the first key we found.
 
 This password was base64 encoded, and decoding it gives the administrator password, which we can use to SSH in.
 
-<figure><img src="../../../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (1) (5).png" alt=""><figcaption></figcaption></figure>

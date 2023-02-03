@@ -28,7 +28,7 @@ Here's the web page:
 
 There's some API documentations available for us to read.
 
-<figure><img src="../../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (1).png" alt=""><figcaption></figcaption></figure>
 
 Interesting, and there's definitely some exploit available with this. However, just to be sure, I did a `gobuster` scan of the website with the php extension. Didn't manage to find much on the main website, but on the API domain I found something interesting.
 
@@ -66,7 +66,7 @@ This was the only page that didn't have any API endpoint to use. When checking o
 
 I decided to enumerate for subhosts with `wfuzz` because I had to find something to do with images for this machine. I managed to find another subdomain at `image.haxtables.htb`.
 
-<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
 
 This was the only request that led to a 403, which means it exists on the machine. I proceeded to attempt to scan for files on that domain using `feroxbuster`. Nothing found though.
 
@@ -192,7 +192,7 @@ This functio was taking the JSON data and checking for SSRF (poorly). It only ch
 
 I was stuck here for a while, as I was unable to enumerate any subdomain without getting rejected and I didn't know what other files existed on the server. I began testing random directories using the LFI I had found and just tried `/.git/HEAD` to see if it existed, and it did!
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
 So, now I know that there was a Git repository on this website, but the question was how to get it out. We could use `gitdumper.py`, but it would have to get the files out rather uniquely through the LFI and decode it from hex. Using this one-liner in bash, we could do just that:
 
@@ -250,7 +250,7 @@ We can truncate this using the @ symbol. The @ symbol would make the website thi
 
 Then we can use this to generate a shorthand line cf code to test our RCE ability. Shorthand PHP is used because the command for our shell is really long, so we need to make it as short as possible or the server might not process it due to size.
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, we just send this POST request and our RCE works!
 
@@ -281,7 +281,7 @@ Now, we can use `curl` to get the machine to download and execute a bash script.
 
 Afterwards, I sent the exploit and got a shell.
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (4).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -328,7 +328,7 @@ git config filter.indent.clean /tmp/lol
 sudo -u svc /var/www/image/scripts/git-commit.sh
 ```
 
-<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
 
 The creator left a private SSH key in the directory for this new user, which was really useful.
 
@@ -382,6 +382,6 @@ afterwards run sudo systemctl restart gg
 ```
 {% endcode %}
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

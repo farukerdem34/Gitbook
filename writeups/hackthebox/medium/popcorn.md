@@ -96,7 +96,7 @@ Clicking created a pop-up where I was allowed to upload a screenshot.&#x20;
 
 Take note of the allowed types of images. Attempting to upload a PHP webshell doesn't work (obviously). So I tried to change the `Content-Type` header to `image/jpg`. This worked.
 
-<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now, I need to find a way to access this shell. Running a quick `gobuster` on the `/torrent` directory reveals an `uploads` directory is present.
 

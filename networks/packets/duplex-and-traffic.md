@@ -50,7 +50,7 @@ Unicast can also be sent to multiple hosts. However, this is rather inefficient 
 
 Multicast solves this problem by only requiring one copy to be sent out, using only 1kb of traffic.
 
-<figure><img src="../../.gitbook/assets/image (21) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (21) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Multicast
 

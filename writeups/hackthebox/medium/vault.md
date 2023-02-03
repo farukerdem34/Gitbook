@@ -4,7 +4,7 @@
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (41) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Sparklays Directories
 
@@ -145,7 +145,7 @@ We can take a look at this using a browser with proxychains configured.&#x20;
 
 The page reveals a DNS server:
 
-<figure><img src="../../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (42) (1).png" alt=""><figcaption></figcaption></figure>
 
 The first link doesn't work, but the second brings us to this page where .ovpn files can be uploaded and tested.
 

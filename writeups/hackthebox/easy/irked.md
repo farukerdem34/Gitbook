@@ -44,7 +44,7 @@ Then I realised the website had one image on it as well, and so I tried using ex
 
 With this, we can SSH in as `djmardov`.
 
-<figure><img src="../../../.gitbook/assets/image (46).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (46) (4).png" alt=""><figcaption></figcaption></figure>
 
 ### ViewUser
 

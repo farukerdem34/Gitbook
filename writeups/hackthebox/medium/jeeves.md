@@ -16,7 +16,7 @@ Early enumeration reveals that port 80 has nothing of interest, and SMB does not
 
 Running a `gobuster` on the web application on port 50000 reveals a `/askjeeves` endpoint.
 
-<figure><img src="../../../.gitbook/assets/image (23) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (23) (2) (3).png" alt=""><figcaption></figcaption></figure>
 
 When visiting the endpoint, we see a Jenkins instance running.
 
@@ -24,7 +24,7 @@ When visiting the endpoint, we see a Jenkins instance running.
 
 With Jenkins, we can make use of the script console to run a malicious script. This can be used to give us a reverse shell.
 
-<figure><img src="../../../.gitbook/assets/image (20) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20) (2) (4).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -40,7 +40,7 @@ The password for this can be cracked rather easily.
 
 Afterwards, we can use `kp-cli` to view the passwords stored within this database.
 
-<figure><img src="../../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (1) (7).png" alt=""><figcaption></figcaption></figure>
 
 Reading the Backup stuff entry, we can find an NTLM hash.
 
@@ -52,13 +52,13 @@ There were also other passwords that were found by viewing the DC Recovery PW.
 
 Using the first NTLM hash we found, we can Pass The Hash to gain a shell as the administrator through `pth-winexe`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (9).png" alt=""><figcaption></figcaption></figure>
 
 ### Hidden Flag
 
 When trying to capture the root flag, this is what we see:
 
-<figure><img src="../../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (1) (8).png" alt=""><figcaption></figcaption></figure>
 
 The hint to look deeper indicates that we should look within the Windows Data Stream. In short, Windows Data Stream is an alternate place for us to store bytes of data that aren't otherwise viewable via the conventional methods.&#x20;
 

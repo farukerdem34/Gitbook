@@ -58,13 +58,13 @@ PORT      STATE SERVICE       VERSION
 
 Visting the web page shows us this:
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 When any of the links are clicked, we can download a zip file for an application. Not too sure what we can do with this at the moment.
 
 We can see from the `nmap` scan above that there is some kind of Kubernetes application being run on port 8443. When trying to view it, all we get is a 401 Unauthorized error from the API.
 
-<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Deb File Analysis
 
@@ -353,7 +353,7 @@ I found this page rather useful.
 
 It appears that we can get a token from the `/run/secrets/kubernetes.io/serviceaccount` folder to interact with the API. Within that file, we can find a `ca.crt` and `token` file.
 
-<figure><img src="../../../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (21) (2).png" alt=""><figcaption></figcaption></figure>
 
 Using this in conjunction with `kubectl` reveals that we can indeed talk to the API.
 
@@ -437,7 +437,7 @@ MAC Address: 6A:95:CB:8C:AB:5F (Unknown)
 
 Port 3000 is the default port where Express applications run on. Earlier, in our source code review, the application was found to be running on Express. I repeated the Prototype Pollution and RCE exploit I used earlier, and was able to receive a shell to the devnode.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 ### Namespace Enumeration
 
@@ -529,7 +529,7 @@ As the administrator, one attack path we can do is to create a new pod that has 
 
 Essentially, we need to create a YAML file that has specifications on how our new pod would be like, and it's there that we can include the mount path. First, we need to find the images available on the machine. This c an be done with some basic commands.
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 At the very bottom, we can find and use `localhost:5000/dev-alpine`. Then we can create our YAML file and then a new pod with custom settings.&#x20;
 
@@ -568,6 +568,6 @@ root
 
 Then we can capture the root flag. Afterwards, we can easily upgrade a shell into this machine. We can create an `authorized_keys` file and echo our public key in it.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (40) (1).png" alt=""><figcaption></figcaption></figure>
 
 Rooted! Really good machine for learning source code analysis and Kubernetes enumerations.&#x20;

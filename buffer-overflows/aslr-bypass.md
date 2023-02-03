@@ -8,7 +8,7 @@ In earlier Buffer Overflows, we examined how controlling the EIP can lead to RCE
 
 In order to bypass ASLR, we need to understand how it functions, as well as how functions are called. When we run a binary, the libraries and functions of that binary are loaded into virtual memory.
 
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 With ASLR enabled, the library would be **loaded at different places in memory** each time. With the main library being loaded differently, all functions called in the library are affected and have different locations in memory.
 
@@ -133,7 +133,7 @@ From the script below, we would be able to find the base address of where `libc`
 ```python
 from pwn import *
 p = process('./binary')
-context(os='linux', arch='amd64)
+context(os='linux', arch='amd64')
 
 offset = "A" * 300 # change number
 pop_rdi = p64(<pop_rdi addr>)

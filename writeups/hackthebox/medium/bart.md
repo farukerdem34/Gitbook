@@ -82,7 +82,7 @@ With this, because it is a PHP page, I attempted to write a webshell within the 
 
 With this, we can easily gain a reverse shell into the machine using Invoke-PowerShellTcp, as other shells don't work out well.
 
-<figure><img src="../../../.gitbook/assets/image (40) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (40) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
