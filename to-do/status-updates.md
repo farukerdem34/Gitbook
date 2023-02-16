@@ -12,7 +12,7 @@
   * [x] ~~Kali Linux + Distros~~
 * Writeups
   * [ ] Proving Grounds (100 machines)
-  * [ ] HackTheBox (160++ machines)
+  * [ ] HackTheBox (160+ machines)
 * Networks
   * [x] Introduction to Networks (what are routers)
   * [x] Subnet Counting, OSI Model, Addresses, Ports
@@ -49,7 +49,7 @@
   * [x] HTTP request smuggling
   * [x] OAuth Authentication exploits
 * Pentesting
-  * [x] Pentesting Methodology (mirror SAF Battle Procedure)
+  * [x] Pentesting Methodology&#x20;
   * [x] Introduction to shells, brute force, and other common terms
   * [x] Concepts and Tools
     * [x] Malware
@@ -60,9 +60,13 @@
     * [ ] Tunneling
     * [x] File Transfers
   * [ ] Explain steps in detail + Tools
-* Cryptography&#x20;
+* Cryptography (math :( )
   * [ ] Math behind Cryptography + Keys to breaking Cryptography
   * [ ] RSA Exploits
+    * [ ] Franklin Reiter Related Message Attack
+    * [ ] Common Modulus Attack
+    * [ ] Small E attack
+  * [ ] Padding Oracle (AES-CBC)
 * Active Directory
   * [x] ~~Introduction to AD~~
   * [x] ~~AD Tools~~&#x20;
@@ -71,11 +75,6 @@
   * [x] ~~ACLs and Abuse~~&#x20;
   * [x] LDAP
   * [x] ~~Active Directory Methodology (Include markdown file from Obs)~~
-*   Final Edits
-
-    * [ ] Make it pretty, include GIFs and other images to make it more...pleasing.
-
-
 
 ## Projects and Want To-Dos
 
@@ -86,7 +85,4 @@
   * [ ] AMSI Bypass
 * [ ] Advanced Active Directory attacks
 * [ ] Bug Bounty writeups
-  * [ ] Currently working on a few
-* [ ] Exploit research for new CVEs
-  * [ ] Currently doing independent research on low-hanging fruits in plugins for frameworks
-* [ ] Secure software engineering (when I learn about it)
+  * [ ] Currently working on a few (but im noob ;c)
