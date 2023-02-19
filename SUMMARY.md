@@ -152,6 +152,7 @@
     * [Forgot](writeups/hackthebox/medium/forgot.md)
     * [Haircut](writeups/hackthebox/medium/haircut.md)
     * [Hawk](writeups/hackthebox/medium/hawk.md)
+    * [Interface](writeups/hackthebox/medium/interface.md)
     * [Investigation](writeups/hackthebox/medium/investigation.md)
     * [Jeeves](writeups/hackthebox/medium/jeeves.md)
     * [Lightweight](writeups/hackthebox/medium/lightweight.md)

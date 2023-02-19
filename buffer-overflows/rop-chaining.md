@@ -87,7 +87,7 @@ My addresses are static because ASLR is disabled, so no worries for that. Now, w
 
 <figure><img src="../.gitbook/assets/image (90) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (3) (4) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (4) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (11) (6) (1).png" alt=""><figcaption></figcaption></figure>
 

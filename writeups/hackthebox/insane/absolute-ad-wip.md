@@ -109,7 +109,7 @@ Poking around the shares, we don't seem to get much from it. I could decompiled 
 
 The next step was to use Bloodhound, since we had credentials and a ticket.
 
-<figure><img src="../../../.gitbook/assets/image (1) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% embed url="https://github.com/jazzpizazz/BloodHound.py-Kerberos" %}
 

@@ -24,7 +24,7 @@ PORT   STATE SERVICE
 
 Here's the web page:
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (8).png" alt=""><figcaption></figcaption></figure>
 
 There's some API documentations available for us to read.
 
@@ -60,7 +60,7 @@ There was a `utils.php` file, which could be something. Also there were lots of 
 
 On the main page, there were the type of conversions available, which were **string, integer and images**. The image one was the most suspicious.
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (3).png" alt=""><figcaption></figcaption></figure>
 
 This was the only page that didn't have any API endpoint to use. When checking out `/v2` and `/v1`, it just tells me the page is under construction due to security issues.&#x20;
 
@@ -192,7 +192,7 @@ This functio was taking the JSON data and checking for SSRF (poorly). It only ch
 
 I was stuck here for a while, as I was unable to enumerate any subdomain without getting rejected and I didn't know what other files existed on the server. I began testing random directories using the LFI I had found and just tried `/.git/HEAD` to see if it existed, and it did!
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (6).png" alt=""><figcaption></figcaption></figure>
 
 So, now I know that there was a Git repository on this website, but the question was how to get it out. We could use `gitdumper.py`, but it would have to get the files out rather uniquely through the LFI and decode it from hex. Using this one-liner in bash, we could do just that:
 
@@ -281,7 +281,7 @@ Now, we can use `curl` to get the machine to download and execute a bash script.
 
 Afterwards, I sent the exploit and got a shell.
 
-<figure><img src="../../../.gitbook/assets/image (3) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (4) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

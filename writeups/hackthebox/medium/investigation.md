@@ -113,7 +113,7 @@ So the key here is to watch for logging and file transfers that are occurring. W
 
 After looking around the entire log file (for a while), I chanced upon this string when searching for the Authentication term.
 
-<figure><img src="../../../.gitbook/assets/image (12) (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (9) (1).png" alt=""><figcaption></figcaption></figure>
 
 Turns out that this was the password for `smorton`. We can now `su` and capture the user flag.
 

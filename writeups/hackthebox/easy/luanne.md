@@ -25,7 +25,7 @@ PORT     STATE SERVICE
 
 I wanted to see what Port 9001 had for us, but I didn't get very far because it required credentials to access.
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (4).png" alt=""><figcaption></figcaption></figure>
 
 Default credentials of `admin:admin` worked! Then, we were able to view the Supervisor program running on it.
 
@@ -45,9 +45,9 @@ Most notably, we can see that the `_httpd` user was running some kind of .lua sc
 
 When viewing the page, we get a 401 Unauthorized code because we don't have any credentials. Default and weak credentials don't work here.
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (4).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
 
 I ran a `gobuster` scan on port 80 in the hopes that I would find something else, and I did find a `robots.txt`.
 
@@ -77,7 +77,7 @@ Initially, I thought that there was an LFI within this, and that the city names 
 
 I tried a few of the `os.execute()` payloads, and it worked!
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 We now have RCe, and we can easily use a `mkfifo` shell to gain a reverse shell.
 
@@ -101,13 +101,13 @@ With this, I enumerated the users on the machine, of which there was just `r.mic
 
 Interactions with this instance revealed that it was similar to the weather API we found earlier.
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
 
 However, no command injection seems to work here. Perhaps this was a patched version of the script.&#x20;
 
 In the command, we can see that the creator of the box used `httpd -u`, which makes the root directory of the script accessible. This means that we should be able to read the files of the `r.michaels` user. I attempted to read his SSH keys with our credentials, and it worked!
 
-<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (6).png" alt=""><figcaption></figcaption></figure>
 
 With this, we can SSH inas the `r.michaels` user.
 
@@ -129,6 +129,6 @@ Then, we can decrypt this file and find another `.htpasswd` file.
 
 The hash would crack to give `littlebear`. I wanted to check whether this was the root user's password, but this machine does not have `sudo`. Instead, it has `doas` and this password works in spawning a root shell.
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!
