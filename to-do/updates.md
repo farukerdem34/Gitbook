@@ -1,5 +1,7 @@
 ---
-description: For me to track what I've been doing.
+description: >-
+  For me to track what I've been doing. Not 100% accurate because sometimes I
+  forget to add stuff here.
 ---
 
 # Updates
@@ -114,14 +116,14 @@ HTB Writeups Added:
 
 Pages Added:
 
+* What is Security?
+  * Added scam analysis&#x20;
 * Buffer Overflows
   * Prior Knowledge Pages
   * Ret2Libc
   * ROP-Chaining
 * Networks
-  * Addresses
-  * OSI-Model
-  * Packets
+  * All of it
 * Website Security
   * All of it
 * Networks
@@ -131,3 +133,9 @@ Pages Added:
 ### November (Book started!)
 
 Added everything from OneNote.
+
+Added To-Do List
+
+Added What is Security
+
+Added Methodology
