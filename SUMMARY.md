@@ -8,6 +8,7 @@
 ## ✅ To-Do
 
 * [Status Updates](to-do/status-updates.md)
+* [Updates](to-do/updates.md)
 
 ## 🔐 What is Security?
 

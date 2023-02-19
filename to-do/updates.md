@@ -1,0 +1,133 @@
+---
+description: For me to track what I've been doing.
+---
+
+# Updates
+
+## 2023
+
+### February 2023
+
+HTB Writeups Added:
+
+* Easy
+  * Bashed
+  * Blunder
+  * Luanne
+  * Stocker
+* Medium
+  * Devoops
+  * Investigation
+  * Interface
+  * Jeeves
+  * Popcorn
+  * Vault
+* Hard
+  * Breadcrumbs
+  * Pollution
+  * Unobtanium
+* Insane
+  * Derailed
+  * Falafel
+
+Pages Added:
+
+* This page you're looking at
+
+### January 2023
+
+HTB Writeups Added:
+
+* Easy
+  * Admirer
+  * Antique
+  * Bastard
+  * Bastion
+  * Blocky
+  * Buff
+  * Chatterbox
+  * Doctor
+  * Friendzone
+  * Frolic
+  * Goodgames
+  * Heist
+  * Jerry
+  * OpenSource
+  * Soccer
+  * Steamcloud
+  * Timelapse
+  * Traceback
+  * Trick
+  * Validation
+* Medium
+  * Atom
+  * Book
+  * Broscience
+  * Celestial
+  * Faculty
+  * Forgot
+  * Lightweight
+  * Noter
+  * StreamIO
+* Hard
+  * Kotarak
+  * Object
+  * Rainyday
+* Insane
+  * Brainfuck
+  * Sekhmet
+
+Pages Added:
+
+* Buffer Overflows
+  * ASLR bypass
+  * Stack Canaries
+
+## 2022
+
+### December
+
+HTB Writeups Added:
+
+* Easy
+  * Arctic
+  * Armageddon
+  * Backdoor
+  * Backend
+  * Blue
+  * Grandpa
+  * Granny
+  * Pandora
+  * Paper
+* Medium
+  * BackendTwo
+  * Random
+  * Scrambled
+  * Shared
+* Hard
+  * Acute
+  * Extension
+  * Flight
+  * Vessel
+* Insane
+  * Absolute
+
+Pages Added:
+
+* Buffer Overflows
+  * Prior Knowledge Pages
+  * Ret2Libc
+  * ROP-Chaining
+* Networks
+  * Addresses
+  * OSI-Model
+  * Packets
+* Website Security
+  * All of it
+* Networks
+  * All of it
+* Pentesting Methodology
+
+### November (Book started!)
+
+Added everything from OneNote.
