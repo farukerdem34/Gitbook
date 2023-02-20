@@ -51,7 +51,7 @@ When viewing the page, we get a 401 Unauthorized code because we don't have any 
 
 I ran a `gobuster` scan on port 80 in the hopes that I would find something else, and I did find a `robots.txt`.
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 Viewing `robots.txt` revealed this file:
 
@@ -59,7 +59,7 @@ Viewing `robots.txt` revealed this file:
 
 I ran another `gobuster` on this `/weather` directory and found another hidden endpoint.
 
-<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
 
 When interacting with this endpoint, we get some instructions on parameters to send.
 
@@ -77,7 +77,7 @@ Initially, I thought that there was an LFI within this, and that the city names 
 
 I tried a few of the `os.execute()` payloads, and it worked!
 
-<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1) (7).png" alt=""><figcaption></figcaption></figure>
 
 We now have RCe, and we can easily use a `mkfifo` shell to gain a reverse shell.
 
@@ -107,7 +107,7 @@ However, no command injection seems to work here. Perhaps this was a patched ver
 
 In the command, we can see that the creator of the box used `httpd -u`, which makes the root directory of the script accessible. This means that we should be able to read the files of the `r.michaels` user. I attempted to read his SSH keys with our credentials, and it worked!
 
-<figure><img src="../../../.gitbook/assets/image (9) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 With this, we can SSH inas the `r.michaels` user.
 
@@ -129,6 +129,6 @@ Then, we can decrypt this file and find another `.htpasswd` file.
 
 The hash would crack to give `littlebear`. I wanted to check whether this was the root user's password, but this machine does not have `sudo`. Instead, it has `doas` and this password works in spawning a root shell.
 
-<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

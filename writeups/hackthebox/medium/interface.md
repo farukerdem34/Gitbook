@@ -21,7 +21,7 @@ We can add `interface.htb` to our `/etc/hosts` file.&#x20;
 
 The web application reveals this:
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can start with a simple `gobuster` scan to enumerate the possible endpoints in both directories and subdomains. However, the weird part is that there was nothing to be found from these.&#x20;
 
@@ -98,7 +98,7 @@ html2pdf                [Status: 422, Size: 36, Words: 2, Lines: 1, Duration: 13
 ```
 {% endcode %}
 
-<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (9).png" alt=""><figcaption></figcaption></figure>
 
 I did the same scan on the `/vendor` endpoint and found this:
 
@@ -173,7 +173,7 @@ On the machine, our file is now saved in the fonts directory as `exploitfont_nor
 
 This would give us a reverse shell.
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can capture the user flag from this.
 
@@ -213,13 +213,13 @@ done
 
 This is running Exiftool 12.55, which does not have any glaring RCE exploits. The command run seems to only print out the Producer field from a file.
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 From this, we have to somehow include a reverse shell or something using escape characters. I notice that the Producer variable within the exiftool output is unquoted.
 
 In Bash, a single quote would treat all characters within the quotes as strings and not process it. If it is in double quotes, **variables and expressions will be processed.**
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 So, in this case, we need to find a way to inject commands into the Producer variable in Bash. Here are some resources I've found when researching this:
 
@@ -237,7 +237,7 @@ Linux
 
 The Producer field of this file is the vulnerability here. I tested this out on my machine, and it works.
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now, we can exploit this by creating a simple PE bash script to make `/bin/bash` an SUID binary. Then, we can change the Producer field to make the machine execute our script.
 

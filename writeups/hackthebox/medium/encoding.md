@@ -250,7 +250,7 @@ We can truncate this using the @ symbol. The @ symbol would make the website thi
 
 Then we can use this to generate a shorthand line cf code to test our RCE ability. Shorthand PHP is used because the command for our shell is really long, so we need to make it as short as possible or the server might not process it due to size.
 
-<figure><img src="../../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (1) (9).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, we just send this POST request and our RCE works!
 
@@ -328,7 +328,7 @@ git config filter.indent.clean /tmp/lol
 sudo -u svc /var/www/image/scripts/git-commit.sh
 ```
 
-<figure><img src="../../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (1) (8).png" alt=""><figcaption></figcaption></figure>
 
 The creator left a private SSH key in the directory for this new user, which was really useful.
 
@@ -382,6 +382,6 @@ afterwards run sudo systemctl restart gg
 ```
 {% endcode %}
 
-<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

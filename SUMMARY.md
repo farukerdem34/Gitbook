@@ -143,6 +143,7 @@
     * [Atom](writeups/hackthebox/medium/atom.md)
     * [Backend](writeups/hackthebox/easy/backend-wip.md)
     * [BackendTwo](writeups/hackthebox/medium/backendtwo.md)
+    * [Bagel](writeups/hackthebox/medium/bagel.md)
     * [Bart](writeups/hackthebox/medium/bart.md)
     * [Book](writeups/hackthebox/medium/book.md)
     * [BroScience](writeups/hackthebox/medium/broscience.md)

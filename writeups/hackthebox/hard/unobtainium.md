@@ -58,7 +58,7 @@ PORT      STATE SERVICE       VERSION
 
 Visting the web page shows us this:
 
-<figure><img src="../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1) (8).png" alt=""><figcaption></figcaption></figure>
 
 When any of the links are clicked, we can download a zip file for an application. Not too sure what we can do with this at the moment.
 
@@ -437,7 +437,7 @@ MAC Address: 6A:95:CB:8C:AB:5F (Unknown)
 
 Port 3000 is the default port where Express applications run on. Earlier, in our source code review, the application was found to be running on Express. I repeated the Prototype Pollution and RCE exploit I used earlier, and was able to receive a shell to the devnode.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Namespace Enumeration
 
@@ -529,7 +529,7 @@ As the administrator, one attack path we can do is to create a new pod that has 
 
 Essentially, we need to create a YAML file that has specifications on how our new pod would be like, and it's there that we can include the mount path. First, we need to find the images available on the machine. This c an be done with some basic commands.
 
-<figure><img src="../../../.gitbook/assets/image (2) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (2) (3).png" alt=""><figcaption></figcaption></figure>
 
 At the very bottom, we can find and use `localhost:5000/dev-alpine`. Then we can create our YAML file and then a new pod with custom settings.&#x20;
 

@@ -18,6 +18,7 @@ HTB Writeups Added:
   * Luanne
   * Stocker
 * Medium
+  * Bagel
   * Devoops
   * Investigation
   * Interface
