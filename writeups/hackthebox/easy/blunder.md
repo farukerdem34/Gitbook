@@ -4,7 +4,7 @@
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (6) (2) (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (2) (3).png" alt=""><figcaption></figcaption></figure>
 
 Not too sure why FTP was reported. Anyways, we can head to the webpage to enumerate.
 

@@ -32,6 +32,7 @@ HTB Writeups Added:
 * Insane
   * Derailed
   * Falafel
+  * Absolute
 
 Pages Added:
 

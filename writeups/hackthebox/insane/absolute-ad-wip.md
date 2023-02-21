@@ -129,7 +129,7 @@ We now need to somehow get a ticket from the `m.lovegod` user and gain access as
 
 When I ran the binary on my Windows VM, it seems to exit straightaway. Weird, but maybe it was trying to make external connections. I started Wireshark to see what I could capture from it. I found this interesting bit here when I connected to the HTB VPN.
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 We now have credentials for this user!&#x20;
 
@@ -139,7 +139,7 @@ Now that we know that the `m.lovegod` user owns the Network Audit group, and mem
 
 First, we need to request a ST using `impacket-getTGT` using these credentials. Then we can export to `KRB5CCNAME`.
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (4).png" alt=""><figcaption></figcaption></figure>
 
 The tricky part was figuring out how to use this ticket. The easiest way to do this is to use a Windows VM connected to the VPN and run some Powerview commands on it, such as `Add-DomainObjectAcl` and stuff. We have to do this because it is not possible for us to use this ticket to add group members to the Network Audit group from a Linux machine. (I could not make pywhisker or dacledit) to work.
 
@@ -218,7 +218,7 @@ Then, we need to first add a Shadow Credential using KrbRelay through the `m.lov
 
 This would generate an output like this:
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
 What this command does is use a CLSID in order to first add a new msDS-KeyCredentialLink, which would generate another certificate for us similar to `pywhisker`. Afterwards, we can use this certificate to request a TGT as DC$ and get the NTLM hash.
 
@@ -227,10 +227,12 @@ What this command does is use a CLSID in order to first add a new msDS-KeyCreden
 
 This would generate the NTLM hash for us:
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, we can use `crackmapexec` with this hash to dump the credentials out.
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 Then, pass the hash via `evil-winrm` as the administrator.
+
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>

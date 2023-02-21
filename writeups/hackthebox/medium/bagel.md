@@ -30,7 +30,7 @@ $ sudo nmap -p 22,5000,8000 -sC -sV -O -T4 10.129.150.229
 
 Port 8000 hosted a web application selling bagels.
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 The interesting parameter here was the URL, which was `http://bagel.htb/?page=index.html`. LFI works here and I can view the `/etc/passwd` file.
 
@@ -269,7 +269,7 @@ result = ws.recv()
 print(result)
 ```
 
-<figure><img src="../../../.gitbook/assets/image (5) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
 This works! Now, we can attempt to read the user flag and the private SSH key of the user `phil`.
 
@@ -308,6 +308,6 @@ process.Start();
 
 Then, either in the same shell or another, we can run `/bin/bash -p` to become root.
 
-<figure><img src="../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

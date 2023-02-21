@@ -25,7 +25,7 @@ PORT     STATE SERVICE
 
 I wanted to see what Port 9001 had for us, but I didn't get very far because it required credentials to access.
 
-<figure><img src="../../../.gitbook/assets/image (3) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (4) (2).png" alt=""><figcaption></figcaption></figure>
 
 Default credentials of `admin:admin` worked! Then, we were able to view the Supervisor program running on it.
 
@@ -51,7 +51,7 @@ When viewing the page, we get a 401 Unauthorized code because we don't have any 
 
 I ran a `gobuster` scan on port 80 in the hopes that I would find something else, and I did find a `robots.txt`.
 
-<figure><img src="../../../.gitbook/assets/image (8) (1) (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 Viewing `robots.txt` revealed this file:
 
@@ -129,6 +129,6 @@ Then, we can decrypt this file and find another `.htpasswd` file.
 
 The hash would crack to give `littlebear`. I wanted to check whether this was the root user's password, but this machine does not have `sudo`. Instead, it has `doas` and this password works in spawning a root shell.
 
-<figure><img src="../../../.gitbook/assets/image (2) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

