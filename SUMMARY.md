@@ -180,7 +180,7 @@
     * [Unobtainium](writeups/hackthebox/hard/unobtainium.md)
     * [Vessel](writeups/hackthebox/hard/vessel.md)
   * [Insane](writeups/hackthebox/insane/README.md)
-    * [Absolute (AD) (WIP!)](writeups/hackthebox/insane/absolute-ad-wip.md)
+    * [Absolute (AD)](writeups/hackthebox/insane/absolute-ad.md)
     * [BrainFuck](writeups/hackthebox/insane/brainfuck.md)
     * [Derailed](writeups/hackthebox/insane/derailed.md)
     * [Falafel](writeups/hackthebox/insane/falafel.md)
