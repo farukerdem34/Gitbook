@@ -29,7 +29,7 @@
   * [ ] Advanced BOF (ROP Chaining, Ret2libc, ASLR/DEP Bypass, etc.)
     * [x] ROP Chaining
     * [x] Ret2Libc
-    * [ ] ASLR / DEP Bypass
+    * [x] ASLR / DEP Bypass
     * [x] Canary Bypass
     * [ ] Egg Hunting (because I found it cool)
     * [x] GOT Overwrite - Used writeup because it explained it well.
