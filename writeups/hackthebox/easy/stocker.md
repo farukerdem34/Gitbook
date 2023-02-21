@@ -71,7 +71,7 @@ I added some items and attemted to checkout from the website.
 
 <figure><img src="../../../.gitbook/assets/image (9) (4).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (2) (4).png" alt=""><figcaption></figcaption></figure>
 
 Viewing the purchase order brought us to a PDF page.
 
@@ -143,7 +143,7 @@ Remembering that this was an Express website, perhaps there was a Javascript fil
 
 With this password, we can `ssh` in as `angoose`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (3) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (2) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

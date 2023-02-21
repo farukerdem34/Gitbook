@@ -72,7 +72,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 On the `design.html` page, all we see is this:
 
-<figure><img src="../../../.gitbook/assets/image (2) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (3) (3).png" alt=""><figcaption></figcaption></figure>
 
 This brings us to `changelogo.php`, which allows us to upload a file. Only image file are allowed. Obviously, we have to upload a PHP webshell somehow and bypass the file type check. I tried with multiple PHP extensions, and found that `.php5` works.
 

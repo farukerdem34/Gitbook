@@ -23,9 +23,7 @@ I personally didn't start with a ton of coding knowledge, just the real bare bas
 
 Networking is definitely one of the backbones of any security job. Understanding the basics, like routing, protocols, and the OSI Model may be applicable for you.
 
-**Understanding how these work is key to exploiting them!** I recommend that goes for the **Cisco Certified Network Associate**. It's an entry-level networking certification, and although it does not go as in-depth, it's a good starting point for networking.&#x20;
-
-I have heard that it is kind of similar to **NUS's CS2105 Introduction fo Networking** module, but it covers more Cisco proprietary things.
+**Understanding how these work is key to exploiting them!** I recommend the **Cisco Certified Network Associate**. It's an entry-level networking certification, and although it does not go as in-depth, it's a good starting point for networking.&#x20;
 
 ### Operating Systems
 
