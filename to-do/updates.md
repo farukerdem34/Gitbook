@@ -17,12 +17,16 @@ HTB Writeups Added:
   * Blunder
   * Luanne
   * Stocker
+  * Love
+  * Mirai
+  * Netmon
 * Medium
   * Bagel
   * Devoops
   * Investigation
   * Interface
   * Jeeves
+  * Magic
   * Popcorn
   * Vault
 * Hard

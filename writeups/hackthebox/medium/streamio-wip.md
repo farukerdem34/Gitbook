@@ -22,7 +22,7 @@ We can add this domain to our `/etc/hosts` files. Another notable thing we found
 
 The new domain leads us to a different website.
 
-<figure><img src="../../../.gitbook/assets/image (46) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (46) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 The page was written in PHP (visiting index.php brings us to home page), thus we can fuzz possible endpoints with the `.php` extension using `gobuster -x` flag.
 
@@ -139,7 +139,7 @@ Then, we can `evil-winrm` in as this user:
 
 When I ran WinPEAS on this machine, it picked up on a Firefox credential file. We can use `firepwd.py` to decrypt the passwords.
 
-<figure><img src="../../../.gitbook/assets/image (49) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (49) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 {% embed url="https://github.com/lclevy/firepwd/blob/master/firepwd.py" %}
 
@@ -149,11 +149,11 @@ Upon decrypting the `logins.json` file, we can find some more passwords.
 
 Since we had credentials, I also ran a `bloodhound-python` to enumerate the objects within the host.
 
-<figure><img src="../../../.gitbook/assets/image (44) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (44) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Found that the `jdgodd` user had some permissions over the Core Staff group.
 
-<figure><img src="../../../.gitbook/assets/image (45) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (45) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 And members of this Core Staff were able to ReadLAPSPassword for the DC.
 
@@ -180,4 +180,4 @@ Afterwards, we can use `crackmapexec` modules to read the LAPS password.
 
 Then, we can `evil-winrm` in as the administrator.
 
-<figure><img src="../../../.gitbook/assets/image (48) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (48) (1) (2).png" alt=""><figcaption></figcaption></figure>

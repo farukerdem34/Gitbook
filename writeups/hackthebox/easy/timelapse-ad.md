@@ -60,7 +60,7 @@ The PS History has commands used for remote Powershell-ing as another user calle
 
 We can use this to gain a reverse shell as the `svc_deploy` user using whatever method. `nc.exe` is the easiest.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (51) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (51) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### LAPS\_Readers
 

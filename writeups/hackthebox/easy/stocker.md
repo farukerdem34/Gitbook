@@ -75,7 +75,7 @@ I added some items and attemted to checkout from the website.
 
 Viewing the purchase order brought us to a PDF page.
 
-<figure><img src="../../../.gitbook/assets/image (4) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 I downloaded the PDF and used `exiftool` on it to find that Skia is used to generate this PDF from Chromium.
 

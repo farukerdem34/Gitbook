@@ -68,7 +68,7 @@ Now that we are in the container, we can scan around the network for other hosts
 for i in {1..254}; do ping -c 1 172.19.0.$i | grep 'from; done 
 ```
 
-<figure><img src="../../../.gitbook/assets/image (17) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (1) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 172.19.0.1, but we have no users and cannot do much with this for now. We can check the `/home` directory to find the `augustus` user. Additionally, I used `mount` to check all the directories mounted into the container from the host.
 

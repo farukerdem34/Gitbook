@@ -14,7 +14,7 @@ The website revealed a basic corporate page:
 
 There was nothing interesting, until I added `doctors.htb` to the `/etc/hosts` file (as per standard HTB practice) and visited that site.
 
-<figure><img src="../../../.gitbook/assets/image (40) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (40) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 Here, we can create an account and test this service. When logged in, we can see a few functions.
 
@@ -37,7 +37,7 @@ When visiting it, it returns nothing but the **posts that we have made**.&#x20;
 
 Initially, I tested other vulnerabilities like SSTI on the username and the message posting functions but it didn't return any positives.
 
-<figure><img src="../../../.gitbook/assets/image (21) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (21) (1) (5).png" alt=""><figcaption></figcaption></figure>
 
 When I visited the `/archive` endpoint, we would actually see that it works!
 
@@ -71,7 +71,7 @@ I ran LinPEAS to enumerate all files for me, it found a credential for me.
 
 When checking for other users, there was only the user `shaun`.
 
-<figure><img src="../../../.gitbook/assets/image (23) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (23) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can try using `su` with this credential, and it works.
 

@@ -16,7 +16,7 @@ The website only shows this:
 
 I ran a directory scan and found an `exposed.php` endpoint. We also find an `/uploads` directory that could potentially be used.
 
-<figure><img src="../../../.gitbook/assets/image (14) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 When visiting the PHP site, this is what we see:
 

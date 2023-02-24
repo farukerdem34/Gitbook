@@ -102,7 +102,7 @@ Signing into Gitea with the credentials we found earlier works.
 
 Notice that there's a home-backup repo, and within it are the user's SSH keys:
 
-<figure><img src="../../../.gitbook/assets/image (13) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can then the SSH keys to gain access to the `dev01` user.
 

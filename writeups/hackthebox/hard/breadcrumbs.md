@@ -54,7 +54,7 @@ There was nowhere to use this set of credentials, so I carried on with the enume
 
 Creating a fake account to login reveals there are 2 cookies being used, one being a JWT token and the other being a PHPSESSID token with our username appended in front.
 
-<figure><img src="../../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Viewing the page itself reveals several functions we can use.
 
@@ -124,7 +124,7 @@ I wanted to enumerate the files for the web application hosted, so I headed ther
 
 Within it, we can see one file that stands out.
 
-<figure><img src="../../../.gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (51) (1).png" alt=""><figcaption></figcaption></figure>
 
 Within it, we can find some credentials for this user.
 
@@ -188,11 +188,11 @@ This query looked a lot like SQL Injection, and it seems that we can retrieve th
 
 I tried some basic UNION SQL injection, and it worked!
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can enumerate the databases present.
 
-<figure><img src="../../../.gitbook/assets/image (17) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can check the `bread` database to view some more stuff.
 

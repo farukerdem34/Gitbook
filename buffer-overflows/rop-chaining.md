@@ -168,6 +168,6 @@ Afterwards, because `rop3` takes 2 arguments, we would need to have 2 `pop` inst
 
 We can take a look at the ROP gadgets that we have on hand for this binary.
 
-<figure><img src="../.gitbook/assets/image (39) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (39) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 The exploit would work as per the regular exploit. When we key in the variables to be printed, it prints, and jumps to the next function.

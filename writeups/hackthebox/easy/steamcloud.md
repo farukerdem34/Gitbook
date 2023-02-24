@@ -119,7 +119,7 @@ Sweet. Now we can grab the user flag.
 
 I had a lot of trouble in gaining a shell on this machine. Seems that netcat, curl and wget are all not on the machine.
 
-<figure><img src="../../../.gitbook/assets/image (6) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (1) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 I looked around for tools that could spawn a shell directly. The page above linked to `kubeletctl`, which was a CLI tool to interact with the API. This could spawn me a shell directly.
 
@@ -207,11 +207,11 @@ spec:
       path: /
 ```
 
-<figure><img src="../../../.gitbook/assets/image (23) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (23) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 After creating this, I was able to mount onto my newly created pod.
 
-<figure><img src="../../../.gitbook/assets/image (18) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (1) (2) (3).png" alt=""><figcaption></figcaption></figure>
 
 From there, we can head into the /mnt directory and read the root flag.&#x20;
 

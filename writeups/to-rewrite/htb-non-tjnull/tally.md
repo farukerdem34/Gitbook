@@ -12,7 +12,7 @@ The most interesting was port 1433 with MSSQL and port 21 with FTP, both of whic
 
 Checking port 80 reveals a Microsoft Sharepoint instance.
 
-<figure><img src="../../../.gitbook/assets/image (47) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (47) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 For Microsoft Sharepoint, we can visit the `viewlsts.aspx` file to see all the site contents.
 
@@ -30,7 +30,7 @@ The Site Pages had another folder which contained the FTP username:
 
 With these, we can access the FTP server.
 
-<figure><img src="../../../.gitbook/assets/image (50) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (50) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### FTP Keepass
 
@@ -44,7 +44,7 @@ We can download this KeePass database back, and then use `keepass2john` to conve
 
 Using this password, we can access the database via `kpcli`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (15) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (1) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can use `show -f 0` to view all the passwords available.
 

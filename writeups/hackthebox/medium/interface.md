@@ -21,7 +21,7 @@ We can add `interface.htb` to our `/etc/hosts` file.&#x20;
 
 The web application reveals this:
 
-<figure><img src="../../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can start with a simple `gobuster` scan to enumerate the possible endpoints in both directories and subdomains. However, the weird part is that there was nothing to be found from these.&#x20;
 
@@ -173,7 +173,7 @@ On the machine, our file is now saved in the fonts directory as `exploitfont_nor
 
 This would give us a reverse shell.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can capture the user flag from this.
 
@@ -237,7 +237,7 @@ Linux
 
 The Producer field of this file is the vulnerability here. I tested this out on my machine, and it works.
 
-<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now, we can exploit this by creating a simple PE bash script to make `/bin/bash` an SUID binary. Then, we can change the Producer field to make the machine execute our script.
 

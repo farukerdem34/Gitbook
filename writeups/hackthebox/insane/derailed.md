@@ -22,7 +22,7 @@ Wasn't much to play around with, as we had no credentials yet. Decided to run a 
 
 <figure><img src="../../../.gitbook/assets/image (99) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (8) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Interesting. This presented a lot of information for me and also tells me this is a Ruby on Rails project. Another interesting directory was the **/administration** panel which I could not view at all. This is the information from the info endpoint:
 
@@ -355,7 +355,7 @@ setTimeout(function() {
 
 When waiting around, I eventually got a callback via the `curl` command I injected.
 
-<figure><img src="../../../.gitbook/assets/image (7) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 With this, we can easily gain a reverse shell through this method. I used the `mkfifo` shell, and it worked!
 

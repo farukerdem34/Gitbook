@@ -28,7 +28,7 @@ Here's the web page:
 
 There's some API documentations available for us to read.
 
-<figure><img src="../../../.gitbook/assets/image (15) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Interesting, and there's definitely some exploit available with this. However, just to be sure, I did a `gobuster` scan of the website with the php extension. Didn't manage to find much on the main website, but on the API domain I found something interesting.
 
@@ -66,7 +66,7 @@ This was the only page that didn't have any API endpoint to use. When checking o
 
 I decided to enumerate for subhosts with `wfuzz` because I had to find something to do with images for this machine. I managed to find another subdomain at `image.haxtables.htb`.
 
-<figure><img src="../../../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 This was the only request that led to a 403, which means it exists on the machine. I proceeded to attempt to scan for files on that domain using `feroxbuster`. Nothing found though.
 
@@ -246,7 +246,7 @@ $url = 'http://api.haxtables.htb' . $uri_path . '/index.php';
 
 We can truncate this using the @ symbol. The @ symbol would make the website think that the first part of the URL are credentials, and since the website does not require credentials, it would ignore it completely.
 
-<figure><img src="../../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (22) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then we can use this to generate a shorthand line cf code to test our RCE ability. Shorthand PHP is used because the command for our shell is really long, so we need to make it as short as possible or the server might not process it due to size.
 
@@ -271,7 +271,7 @@ Content-Length: 6715
 "uri_path":"test@image.haxtables.htb/actions/action_handler.php?page=[OUTPUT]
 ```
 
-<figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (2).png" alt=""><figcaption></figcaption></figure>
 
 Now, we can use `curl` to get the machine to download and execute a bash script. I created a script named `g` with the `nc mkfifo` shell. Then, I used this line of code:
 

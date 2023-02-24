@@ -10,7 +10,7 @@ Nmap scan:
 
 Port 80 reveals a kind of social network website.
 
-<figure><img src="../../../.gitbook/assets/image (50).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (50) (1).png" alt=""><figcaption></figcaption></figure>
 
 I ran a `gobuster` scan on the website, and it revealed tons of interesting directories.
 
@@ -18,7 +18,7 @@ I ran a `gobuster` scan on the website, and it revealed tons of interesting dire
 
 On the `cyberlaw.txt` file, we can find some hints on what to do next.
 
-<figure><img src="../../../.gitbook/assets/image (22) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (22) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Interesting. So there's a `chris` user and he hacked the website first.&#x20;
 

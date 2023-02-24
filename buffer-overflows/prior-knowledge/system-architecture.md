@@ -162,7 +162,7 @@ Breaking it down:
    * This would substract the value of the ESP by a specific number (in this case, the value of the variable is an integer) to make space for the variables from `main()`.
    * This variable tends to be a multiple of 4.
 
-<figure><img src="../../.gitbook/assets/image (42) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (42) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Once the prologue ends, the stack frame for `main()` is complete and local variables are coped onto the stack. Since the ESP is not pointing to the memory address right after the EBP, we cannot use the PUSH operation since it stores values top of the stack. **We want to store the variables where space has been allocated for it**.&#x20;
 
@@ -170,7 +170,7 @@ As such, the ESP would be **incremented** as variables are stored in it and it *
 
 Take note of how we declare `int x = 11` first, hence its PUSHed last.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (10) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (10) (1) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 When we call the `func()` function, this would repeat again. The prologue changes values of the EBP to indicate the creation of another stack frame in memory would occur. This process continues until all variables are stored in their own stack frames.
 

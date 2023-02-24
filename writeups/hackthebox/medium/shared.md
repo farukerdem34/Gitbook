@@ -74,7 +74,7 @@ I ran `pspy` to see what processes were running on the server. Found a few inter
 
 The second was that `dan_smith` was running `ipython` consistently.
 
-<figure><img src="../../../.gitbook/assets/image (10) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### IPython
 
