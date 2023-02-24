@@ -10,7 +10,7 @@ Nmap scan:
 
 The web application shows us some random images as a form of portfolio.
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
 I did a `gobuster` scan and found a few directories of interest:
 

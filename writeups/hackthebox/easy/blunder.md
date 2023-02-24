@@ -70,7 +70,7 @@ First thing I look for are databases or configuration files within this Bludit i
 
 Within the Bludit-3.10.0a directory, the config files contained credentials for a `hugo` user.
 
-<figure><img src="../../../.gitbook/assets/image (9) (2) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (2) (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 This hash can be cracked.
 

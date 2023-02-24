@@ -42,6 +42,6 @@ In this version of PRTG, there are demo scripts that come downloaded with the so
 
 Afterwards, we can `evil-winrm` in as this new user.
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (3).png" alt=""><figcaption></figcaption></figure>
 
 This pentest user has administrator privileges over the machine, and thus we can capture all flags present.&#x20;

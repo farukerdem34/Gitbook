@@ -10,7 +10,7 @@ Nmap Scan:
 
 On port 8080, it was a gym-related page:
 
-<figure><img src="../../../.gitbook/assets/image (9) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (2) (5).png" alt=""><figcaption></figcaption></figure>
 
 We can use `gobuster` on the website to find more directories:
 
@@ -40,7 +40,7 @@ Afterwards, gaining a reverse shell via nc.exe or Powershell is trivial.
 
 When enumerating the user's directory, we find a CloudMe\_1112.exe file:
 
-<figure><img src="../../../.gitbook/assets/image (4) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (4) (3).png" alt=""><figcaption></figcaption></figure>
 
 When checking for exploits regarding CloudMe, we can find a few Buffer Overflow exploits that can be used for RCE using shellcode.
 
