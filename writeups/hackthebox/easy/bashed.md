@@ -6,7 +6,7 @@ Nmap scan:
 
 There was only one port available on the machine, and we can scan it to find the title of it.
 
-<figure><img src="../../../.gitbook/assets/image (26) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (26) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### PHPBash
 

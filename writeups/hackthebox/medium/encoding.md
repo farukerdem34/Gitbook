@@ -66,7 +66,7 @@ This was the only page that didn't have any API endpoint to use. When checking o
 
 I decided to enumerate for subhosts with `wfuzz` because I had to find something to do with images for this machine. I managed to find another subdomain at `image.haxtables.htb`.
 
-<figure><img src="../../../.gitbook/assets/image (9) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (1) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 This was the only request that led to a 403, which means it exists on the machine. I proceeded to attempt to scan for files on that domain using `feroxbuster`. Nothing found though.
 

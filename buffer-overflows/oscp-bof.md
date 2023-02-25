@@ -141,7 +141,7 @@ When finding the offset, we need to use `/usr/share/metasploit-framework/tools/e
 
 Once generated, replace the `pattern` parameter in `exploit.py`. Then, run the script and resend the buffer. Since the goal is to control the EIP to go wherever we want, we would need to take note of the value of the EIP when we send the pattern.
 
-<figure><img src="../.gitbook/assets/image (24) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (24) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can use `pattern_offset.rb`, which is located in the same folder to find the exact offset that we need.
 

@@ -8,7 +8,7 @@ TCP and UDP are completely different, and their use cases vary. TCP is a connect
 
 TCP has the following headers:
 
-<figure><img src="../../.gitbook/assets/image (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 The TCP headers contain all the information that the packet being sent out has. Take note that the TCP header is a lot larger than the UDP header.
 

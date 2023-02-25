@@ -227,7 +227,7 @@ What this command does is use a CLSID in order to first add a new msDS-KeyCreden
 
 This would generate the NTLM hash for us:
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, we can use `crackmapexec` with this hash to dump the credentials out.
 
@@ -235,4 +235,4 @@ Afterwards, we can use `crackmapexec` with this hash to dump the credentials out
 
 Then, pass the hash via `evil-winrm` as the administrator.
 
-<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (2).png" alt=""><figcaption></figcaption></figure>

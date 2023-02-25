@@ -10,7 +10,7 @@ Nmap scan:
 
 The web application shows us some random images as a form of portfolio.
 
-<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
 
 I did a `gobuster` scan and found a few directories of interest:
 
@@ -24,7 +24,7 @@ Then, I was brought to this page:
 
 This was a PHP site so I tried uploading PHP webshells, but it didn't work. As such, I tried to **embed a webshell witihin a JPG file**.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (2).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, we just need to change the extension to `.php.jpeg` and send the file (via Burpsuite). Earlier, a `gobuster` scan found a `/images` directory, so I used `gobuster` on that to find more directories:
 
@@ -36,7 +36,7 @@ So the `/uploads` directory is where our files end up. I tried some basic comman
 
 Getting a shell from here is easy.
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -72,4 +72,4 @@ By manipulating the PATH variable and creating a reverse shell script named `fdi
 
 Port 9999 does not work (presumably due to firewall) so I changed to port 443 and ran `sysinfo` again.
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (2).png" alt=""><figcaption></figcaption></figure>

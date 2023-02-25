@@ -50,7 +50,7 @@ Anyways, I uploaded the script to the `uploads` directory and it seems to work. 
 
 From here, we can get RCE on the machine easily.
 
-<figure><img src="../../../.gitbook/assets/image (10) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (2) (5).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can use this to spawn a reverse shell.
 

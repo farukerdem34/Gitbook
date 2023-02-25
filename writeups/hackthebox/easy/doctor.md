@@ -10,7 +10,7 @@ Nmap scan:
 
 The website revealed a basic corporate page:
 
-<figure><img src="../../../.gitbook/assets/image (25) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (25) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 There was nothing interesting, until I added `doctors.htb` to the `/etc/hosts` file (as per standard HTB practice) and visited that site.
 

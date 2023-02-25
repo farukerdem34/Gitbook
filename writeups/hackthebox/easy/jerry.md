@@ -14,7 +14,7 @@ The Tomcat instance here is vulnerable to RCE. To exploit this, we would need ac
 
 For this, we can attempt to access it to see the default credentials.
 
-<figure><img src="../../../.gitbook/assets/image (19) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (19) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Was a bit lazy, hence used `msf` to solve this box and gain a root shell instantly.
 

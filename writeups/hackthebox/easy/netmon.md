@@ -14,7 +14,7 @@ Nmap scan:
 
 Seeing port 21 open, we should always test for anonymous logins (low-hanging fruits).
 
-<figure><img src="../../../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (19) (1).png" alt=""><figcaption></figcaption></figure>
 
 This explains why the user flag was captured in exactly 1 minute from the box going live. Easy first blood! Anyways, I realised that from this FTP, we have access to the entire file directory.
 

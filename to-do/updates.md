@@ -20,6 +20,7 @@ HTB Writeups Added:
   * Love
   * Mirai
   * Netmon
+  * Optimum
 * Medium
   * Bagel
   * Devoops
@@ -29,6 +30,7 @@ HTB Writeups Added:
   * Magic
   * Popcorn
   * Vault
+  * Querier
 * Hard
   * Breadcrumbs
   * Pollution

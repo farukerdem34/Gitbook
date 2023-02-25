@@ -52,6 +52,6 @@ Think of them like the destinations for packets to get to. These **are not phyis
 
 There are 65535 ports in total, and any of them can be open and listening. There are default ports for certain services, as shown here:
 
-<figure><img src="../.gitbook/assets/image (2) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 There's no need to memorize all 65535 ports, but knowing a few is good enough.

@@ -58,7 +58,7 @@ This method is how we sent one copy that goes to multiple different destinations
 
 Multicast traffic is targeted. Hosts have to specifically request for the traffic to get it.
 
-<figure><img src="../../.gitbook/assets/image (12) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (12) (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Broadcast
 

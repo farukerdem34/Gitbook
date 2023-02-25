@@ -130,7 +130,7 @@ From here, we can see that is a `postgres` and `bill` user on the machine. Now, 
 
 I was able to read the `db_connect.php` file by double URL encoding `../includes/db_connect.php` and passing it as the parameter.
 
-<figure><img src="../../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (27) (1).png" alt=""><figcaption></figcaption></figure>
 
 Trying this credential found does not work anywhere though. So I read the other files, and the `utils.php` file contained some useful information about how the activation code was generated.
 
@@ -231,7 +231,7 @@ vmsQdLZ9v5aUqAiUalTmt5CYnIxqrvpF
 
 Afterwards, we use this `token` variable at `activate.php`.
 
-<figure><img src="../../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (24) (1).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, we can just login as the user.&#x20;
 
@@ -357,7 +357,7 @@ TzoxNToiQXZhdGFySW50ZXJmYWNlIjoyOntzOjM6InRtcCI7czoyNToiaHR0cDovLzEwLjEwLjE0LjQv
 
 Then, we can simply send a request with this the output as the cookie. We would get a few hits on our HTTP server.
 
-<figure><img src="../../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (25) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then we can simply curl it to gain a reverse shell.
 

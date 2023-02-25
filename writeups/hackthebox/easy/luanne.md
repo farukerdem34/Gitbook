@@ -29,7 +29,7 @@ I wanted to see what Port 9001 had for us, but I didn't get very far because it 
 
 Default credentials of `admin:admin` worked! Then, we were able to view the Supervisor program running on it.
 
-<figure><img src="../../../.gitbook/assets/image (21) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (21) (1) (6).png" alt=""><figcaption></figcaption></figure>
 
 When clicking on the processes, I was able to find quite a few that were rather interesting:
 
@@ -47,7 +47,7 @@ When viewing the page, we get a 401 Unauthorized code because we don't have any 
 
 <figure><img src="../../../.gitbook/assets/image (1) (4).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (11) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 I ran a `gobuster` scan on port 80 in the hopes that I would find something else, and I did find a `robots.txt`.
 
@@ -125,7 +125,7 @@ Since this was a BSD machine, the commands and binaries are a little different. 
 
 Then, we can decrypt this file and find another `.htpasswd` file.
 
-<figure><img src="../../../.gitbook/assets/image (15) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 The hash would crack to give `littlebear`. I wanted to check whether this was the root user's password, but this machine does not have `sudo`. Instead, it has `doas` and this password works in spawning a root shell.
 

@@ -40,7 +40,7 @@ I was able to get hits on a HTTP server hosted on my machine, but I could not do
 
 With credentials, we now get a shell using an RCE exploit that is publicly available. Just change the settings here:
 
-<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then run the exploit:
 

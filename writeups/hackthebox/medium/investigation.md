@@ -105,7 +105,7 @@ I couldn't decode the base64 to get the file for some reason, so I ported the me
 
 When unzipped, we would get this MS Windows Vista Event Log.
 
-<figure><img src="../../../.gitbook/assets/image (15) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 So the key here is to watch for logging and file transfers that are occurring. We can use this tool to dump the log file into a JSON file for easier reading.&#x20;
 
@@ -140,7 +140,7 @@ Exiting...
 
 So I transferred this binary back to my machine and used `ghidra` to see what it does. Here's the decompiled main function:
 
-<figure><img src="../../../.gitbook/assets/image (19) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (19) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can use this to get these this information:
 

@@ -12,7 +12,7 @@ Not too sure why FTP was reported. Anyways, we can head to the webpage to enumer
 
 Page was just full of placeholder text that didn't mean much.
 
-<figure><img src="../../../.gitbook/assets/image (11) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (1) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 I ran a directory brute force search to find an `/admin` panel.
 
@@ -78,7 +78,7 @@ This hash can be cracked.
 
 Then we can `su` to Hugo.
 
-<figure><img src="../../../.gitbook/assets/image (27) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (27) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 ### Sudo Exploit
 
