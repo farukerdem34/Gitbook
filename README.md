@@ -16,7 +16,7 @@ Here, you can find more information about security-related topics as follows:
 * [HTB](writeups/hackthebox/)
 * [Proving Grounds Practice](writeups/proving-grounds-practice/)
 
-**This book will be updated as frequently as I can while juggling school work. Check the Updates page for things I plan to add.**
+This book will be updated as frequently as I can while juggling school work. Check the Updates page to see what I've added (categorised by month) and the To Add page to see what I plan to add.
 
 ## Disclaimer
 
