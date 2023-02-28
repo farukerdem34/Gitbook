@@ -11,7 +11,7 @@ Here, you can find more information about security-related topics as follows:
 * [Buffer Overflows](broken-reference)
 * [Active Directory ](broken-reference)
 
-The main bulk of content here are the writeups for HackTheBox and Proving Grounds Practice machines:
+**The main bulk of content here are the writeups for HackTheBox and Proving Grounds Practice machines:**
 
 * [HTB](writeups/hackthebox/)
 * [Proving Grounds Practice](writeups/proving-grounds-practice/)
