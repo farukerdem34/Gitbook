@@ -95,4 +95,4 @@
   * [ ] Rubeus attacks + Explanations
 * [ ] Bug Bounty writeups
   * [ ] Currently working on a few (but im noob ;c)
-* [ ] Cryptographic Attacks
+* [ ] Blockchain stuff (Bitcoin, Proof of Work, Proof of Stake, ETH) after I learn more about it

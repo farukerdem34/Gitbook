@@ -35,6 +35,10 @@
   * [Linux PE Methodology](pentesting-methodology/methodology/linux-pe-methodology.md)
   * [Windows PE Methodology](pentesting-methodology/methodology/windows-pe-methodology.md)
 
+## 🔑 Crypto
+
+* [Page 4](crypto/page-4.md)
+
 ## 🌏 Networks
 
 * [Introduction](networks/introduction.md)
