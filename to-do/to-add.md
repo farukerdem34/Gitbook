@@ -1,4 +1,4 @@
-# Status Updates
+# To Add
 
 ## To-Dos
 
@@ -59,14 +59,20 @@
     * [x] Encryptions
     * [ ] Tunneling
     * [x] File Transfers
-  * [ ] Explain steps in detail + Tools
 * Cryptography (math :( )
-  * [ ] Math behind Cryptography + Keys to breaking Cryptography
+  * [ ] Cryptography + Keys to breaking Cryptography + Background Information
+    * [ ] Alice, Bob, Eve, Mallory
+    * [ ] PKCS padding + PRNG Generation (and why it has a P)
+    * [ ] How the world works with PKI&#x20;
+  * [ ] Symmetric Cryptography
+    * [ ] 3DES, AES-CBC, AES-ECB, AES-GCM + Possible exploits
+  * [ ] Asymmetric Cryptography
+    * [ ] ECC, Textbook RSA, RSA (with padding)
+    * [ ] TLS and Certificates
   * [ ] RSA Exploits
-    * [ ] Franklin Reiter Related Message Attack
+    * [ ] Coppersmith Theorems
     * [ ] Common Modulus Attack
-    * [ ] Small E attack
-  * [ ] Padding Oracle (AES-CBC)
+    * [ ] Small E Attack
 * Active Directory
   * [x] ~~Introduction to AD~~
   * [x] ~~AD Tools~~&#x20;
@@ -81,8 +87,12 @@
 * [ ] Kernel exploitation walkthroughs (gonna need to learn more about lower level exploitation)
 * [ ] Windows registry and OS in-depth (When I learn in Uni)
 * [ ] Malware analysis and creating malware that bypasses anti-viruses (OSEP and OSED)
-  * [ ] Code obfuscation
+  * [ ] Code obfuscation --> mainly using Powershell
   * [ ] AMSI Bypass
+  * [ ] AppLocker Bypass
 * [ ] Advanced Active Directory attacks
+  * [ ] Shadow Credential Exploits
+  * [ ] Rubeus attacks + Explanations
 * [ ] Bug Bounty writeups
   * [ ] Currently working on a few (but im noob ;c)
+* [ ] Cryptographic Attacks
