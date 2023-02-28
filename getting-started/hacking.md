@@ -38,7 +38,7 @@ More on Active Directory would be covered in a later section.
 
 ## Practice
 
-### [https://www.hackthebox.eu/](https://www.hackthebox.eu/)
+### [HackTheBox](hacking.md#https-www.hackthebox.eu-hackthebox)
 
 HacktheBox has ton of online machines to hack, and it's the best place by far to practice. It features a ton of paths, and a very cool platform to learn hacking in a more guided method.&#x20;
 
@@ -48,15 +48,15 @@ Suscription to the VIP+ service costs about SG$20-30, if you're considering star
 
 They also host competitions like UHC, which is basically a root box competition.
 
-### [https://tryhackme.com/](https://tryhackme.com/)
+### [TryHackMe](hacking.md#https-tryhackme.com-tryhackme)
 
-A good platform similar to HTB that is more hand-held. The machines here are generally easier compared to that of HTB machines. Definitely a good resource fore beginners to start learning how to break stuff.
+A good platform similar to HTB that holds your hand more. The machines here are generally easier compared to that of HTB machines. Definitely a good resource fore beginners to start learning how to break stuff.
 
-### [https://www.vulnhub.com/](https://www.vulnhub.com/)
+### [VulnHub](hacking.md#https-www.vulnhub.com-vulnhub)
 
 A website where vulnerable virtual machines can be downloaded and then hacked. It's all free too! The machines themselves take a while to download however, so make sure you have space for them.
 
-### [https://portal.offensive-security.com/labs/practice](https://portal.offensive-security.com/labs/practice)
+### [Proving Grounds](hacking.md#https-portal.offensive-security.com-labs-practiceproving-grounds)
 
 Compared to HTB Machines, which are a bit longer and less realistic, Proving Grounds machines have more real-world vulnerabilities and are a lot shorter. Some of the machines are retired exam boxes, and some are just made by Offensive Security themselves.
 

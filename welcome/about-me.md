@@ -15,4 +15,5 @@ There's loads of free stuff on the Internet in general, and security is definite
 * Current Certifications: **OSCP, eJPT, CCNA, Security+.**&#x20;
 * I can speak English and Chinese (although the latter isn't the best).
 * I used to take part in a CTFs, but gradually shifted towards pentesting and hacking through rooting machines as I found them more fun and practical.&#x20;
-* I really enjoy learning new techniques regarding cybersecurity and breaking rules.
+* I really enjoy learning new techniques regarding cybersecurity and breaking rules.&#x20;
+* I am a canoe sprint athlete in NUS.&#x20;

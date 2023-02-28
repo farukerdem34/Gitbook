@@ -32,24 +32,22 @@ CTFs are insanely fun and one can learn a lot from doing them. It's a great way 
 
 ## Where to Start
 
-### [https://ctftime.org/](https://ctftime.org/)
+### [CTF Time](ctfs.md#https-ctftime.org-ctftime)
 
-**CTF event tracker, just sign up and join one!**
+CTF event tracker, just sign up and join one!
 
-### ****[**https://ctfs.github.io/resources/**](http://ctfs.github.io/resources/)****
+### [CTF Learn](ctfs.md#ctf-learn-https-ctflearn.com)
 
-**Learn more about common CTF techniques, but take note this is not complete.**
+A website to practice user created CTF challenges at your own time and pace.
 
-### [https://ctflearn.com](https://ctflearn.com/)&#x20;
+### ****[**PicoCTF**](https://portswigger.net/web-security)****
 
-**A website to practice user created CTF challenges at your own time and pace.**
+CTF platform hosted by Carnegie Mellon University for everyone to learn more about security. You can either take part in the upcoming PicoCTF, or attempt challenges from the past.
 
-### ****[**https://picoctf.com**](https://picoctf.org/)****
+### [PortSwigger Academy](https://portswigger.net/web-security)
 
-**CTF platform hosted by Carnegie Mellon University for everyone to learn more about security. You can either take part in the upcoming PicoCTF, or attempt challenges from the past.**
-
-There are many more websites and stuff that have CTFs happening. &#x20;
+The best possible resource to learn the OWASP 10 and all kinds of website hacking techniques, with interactive labs to test your skills. Best part is that it is absolutely free!
 
 Apart from taking part in CTFs, **do ensure to read lots of writeups as well**. Learning how other people approach challenges and the methodologies they use to solve them is crucial in getting better.&#x20;
 
-I recommend finding a friend, or a team and tackle these challenges together.
+There are many more websites and stuff that have CTFs happening. I recommend finding a friend, or a team and tackle these challenges together.
