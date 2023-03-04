@@ -32,7 +32,7 @@ Afterwards, we just need to change the extension to `.php.jpeg` and send the fil
 
 So the `/uploads` directory is where our files end up. I tried some basic commands, and it worked!
 
-<figure><img src="../../../.gitbook/assets/image (48).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (48) (1).png" alt=""><figcaption></figcaption></figure>
 
 Getting a shell from here is easy.
 
@@ -62,7 +62,7 @@ From reading the `/home` directory, the user on this machine is `theseus`. These
 
 I checked for SUID binaries, and found one at `/bin/sysinfo`. When trying to execute it, I found that it was executing `fdisk` without the full path.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (44) (1).png" alt=""><figcaption></figcaption></figure>
 
 By manipulating the PATH variable and creating a reverse shell script named `fdisk`, I can get a reverse shell as root.
 

@@ -45,9 +45,9 @@ Most notably, we can see that the `_httpd` user was running some kind of .lua sc
 
 When viewing the page, we get a 401 Unauthorized code because we don't have any credentials. Default and weak credentials don't work here.
 
-<figure><img src="../../../.gitbook/assets/image (1) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (4) (2).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (11) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (1) (1) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 I ran a `gobuster` scan on port 80 in the hopes that I would find something else, and I did find a `robots.txt`.
 
@@ -111,7 +111,7 @@ In the command, we can see that the creator of the box used `httpd -u`, which ma
 
 With this, we can SSH inas the `r.michaels` user.
 
-<figure><img src="../../../.gitbook/assets/image (48) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (48) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 ### Tar Backup --> doas
 

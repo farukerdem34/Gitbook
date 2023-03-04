@@ -97,4 +97,4 @@ This version of H2 is vulnerable to RCE however, and as such the port forwarding
 
 We can upload the script to the user's account, and run it to gain a shell as root.
 
-<figure><img src="../../../.gitbook/assets/image (52) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (52) (3) (1).png" alt=""><figcaption></figcaption></figure>

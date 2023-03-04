@@ -20,7 +20,7 @@ A bit of enumeration on the type of service running reveals that it was an outda
 
 Checking the certificate on port 443 reveals a hidden sub-domain.
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can add this to the `/etc/hosts` file and view it.
 
@@ -40,11 +40,11 @@ I was able to get hits on a HTTP server hosted on my machine, but I could not do
 
 With credentials, we now get a shell using an RCE exploit that is publicly available. Just change the settings here:
 
-<figure><img src="../../../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then run the exploit:
 
-<figure><img src="../../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (42) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

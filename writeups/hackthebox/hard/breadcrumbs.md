@@ -84,7 +84,7 @@ In the last line, we can see that there's a notice to change the second part of 
 
 So first, we can easily spoof the JWT token used because we have found the secret key being used.
 
-<figure><img src="../../../.gitbook/assets/image (4) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (5) (4).png" alt=""><figcaption></figcaption></figure>
 
 Next, the hint is that the second part of the MD5 key is unchanged, meaning that we can just change the `PHPSESSID` token to have `paul` instead of `hello` in front.
 
@@ -98,7 +98,7 @@ This was obviously a PHP site, so I attempted to upload a basic PHP webshell. Si
 
 Viewing the requests shows that there's a `task` variable changing our file to a .zip one.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (52).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (52) (3).png" alt=""><figcaption></figcaption></figure>
 
 We can change this to .php and it bypasses the file extension check. However, the PHP webshell above does not work, and there may be a WAF in place. I tried different webshells, and `shell_exec()` works.
 

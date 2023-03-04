@@ -283,7 +283,7 @@ for FN in $FILENAMES; do
 done
 ```
 
-<figure><img src="../../../.gitbook/assets/image (7) (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can replace the command to get another reverse shell as needed.
 

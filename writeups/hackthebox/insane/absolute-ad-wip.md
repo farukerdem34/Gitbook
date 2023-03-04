@@ -47,7 +47,7 @@ When testing this for AS-REP Roasting, it worked!
 
 Then we can crack this hash.
 
-<figure><img src="../../../.gitbook/assets/image (3) (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Retrieving Tickets
 
@@ -139,7 +139,7 @@ Now that we know that the `m.lovegod` user owns the Network Audit group, and mem
 
 First, we need to request a ST using `impacket-getTGT` using these credentials. Then we can export to `KRB5CCNAME`.
 
-<figure><img src="../../../.gitbook/assets/image (3) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 The tricky part was figuring out how to use this ticket. The easiest way to do this is to use a Windows VM connected to the VPN and run some Powerview commands on it, such as `Add-DomainObjectAcl` and stuff. We have to do this because it is not possible for us to use this ticket to add group members to the Network Audit group from a Linux machine. (I could not make pywhisker or dacledit) to work.
 

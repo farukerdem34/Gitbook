@@ -91,4 +91,4 @@ This would spawn in a shell for us.
 
 How it works is that we first create a new user that has the Constrained Delegation privilege. Then, we are able to impersonate the administrator and request a ticket that we can use to gain a shell with `smbexec.py`.
 
-<figure><img src="../../../.gitbook/assets/image (24) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (24) (2) (1).png" alt=""><figcaption></figcaption></figure>

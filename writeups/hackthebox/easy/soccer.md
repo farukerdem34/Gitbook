@@ -16,7 +16,7 @@ We would need to add `soccer.htb` to our `/etc/hosts` file to browser on port 80
 
 The website is an average soccer related page.
 
-<figure><img src="../../../.gitbook/assets/image (8) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Doing a directory enumeration with feroxbuster reveals a few extra directories:
 
@@ -54,7 +54,7 @@ From here, we can get RCE on the machine easily.
 
 Then, we can use this to spawn a reverse shell.
 
-<figure><img src="../../../.gitbook/assets/image (7) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

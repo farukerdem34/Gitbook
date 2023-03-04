@@ -85,7 +85,7 @@ data.tar.xz     unobtainium_1.0.0_amd64.deb  unobtainium_debian.zip
 
 We can first use `gunzip` and `tar` to extract the `control.tar.gz` files. Within it, we can find a few other files.
 
-<figure><img src="../../../.gitbook/assets/image (44) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (44) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 Interesting. We can take a look at the content within these folders.
 
@@ -353,7 +353,7 @@ I found this page rather useful.
 
 It appears that we can get a token from the `/run/secrets/kubernetes.io/serviceaccount` folder to interact with the API. Within that file, we can find a `ca.crt` and `token` file.
 
-<figure><img src="../../../.gitbook/assets/image (21) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (21) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 Using this in conjunction with `kubectl` reveals that we can indeed talk to the API.
 
