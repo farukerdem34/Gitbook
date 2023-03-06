@@ -83,7 +83,7 @@ This is the file contents:
 
 The next page contains a guest login for the SQL server. We also find a user called `brandon.brown`, who is likely some kind of database administrator.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (5).png" alt=""><figcaption></figcaption></figure>
 
 We can use `mssqlclient.py` to connect and interact with this database:
 
@@ -137,7 +137,7 @@ This user did not have the flag or any other local privileges. However, since we
 
 Within the `C:\SQLServer\Logs` file, we can find an ERRORLOG file:
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 Within that file, we can find some credentials:
 
@@ -148,7 +148,7 @@ Within that file, we can find some credentials:
 
 With these credentials, we can login as `ryan.cooper`.
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (9).png" alt=""><figcaption></figcaption></figure>
 
 We can grab the user flag now.
 
@@ -184,8 +184,8 @@ Then, transfer the pfx file and `rubeus.exe` to the machine. We can use `asktgt`
 
 Now that we have confirmed this works, we can append `/getcredentials` to the end of the Rubeus command.
 
-<figure><img src="../../../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (21) (5).png" alt=""><figcaption></figcaption></figure>
 
 Then, just pass the hash!
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>

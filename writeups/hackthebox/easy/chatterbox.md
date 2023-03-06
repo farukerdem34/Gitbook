@@ -40,7 +40,7 @@ When I ran WinPEASx64 on this machine, there was a lot of indication that we had
 
 However, we cannot read the root flag for some reason.
 
-<figure><img src="../../../.gitbook/assets/image (7) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (5) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can check the permissions using `icacls`.&#x20;
 

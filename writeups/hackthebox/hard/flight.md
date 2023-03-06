@@ -154,7 +154,7 @@ When curled, it reveals a webpage tha matches the index.html file in the develop
 
 For this machine, I used chisel to tunnel and we can access the website on 127.0.0.1:8000.
 
-<figure><img src="../../../.gitbook/assets/image (227).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (227) (1).png" alt=""><figcaption></figcaption></figure>
 
 When viewing the web service, we can see that there are errors because there is no default configuration for this IIS server.
 

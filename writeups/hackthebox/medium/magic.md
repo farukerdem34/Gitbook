@@ -66,7 +66,7 @@ I checked for SUID binaries, and found one at `/bin/sysinfo`. When trying to exe
 
 By manipulating the PATH variable and creating a reverse shell script named `fdisk`, I can get a reverse shell as root.
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (3).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
 

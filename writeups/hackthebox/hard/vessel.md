@@ -126,7 +126,7 @@ We would first need to decompile this binary to understand how it functions. In 
 
 When doing strings on it, we can see the last few lines seems to indicate that a Python based compiler was used.
 
-<figure><img src="../../../.gitbook/assets/image (228).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (228) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can use this tool to retrieve the bytecode from the binary.
 

@@ -24,7 +24,7 @@ Looking at the alternate DNS names, we can find another hidden subdomain, which 
 
 We can run `wpscan --enumerate p,t,u` on this website. This returns a plugin that is outdated and exploitable.
 
-<figure><img src="../../../.gitbook/assets/image (10) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 For this version, there are SQL Injection and Privilege Escalation exploits available.
 

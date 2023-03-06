@@ -173,7 +173,7 @@ On the machine, our file is now saved in the fonts directory as `exploitfont_nor
 
 This would give us a reverse shell.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can capture the user flag from this.
 

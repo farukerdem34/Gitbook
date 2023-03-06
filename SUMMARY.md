@@ -37,7 +37,7 @@
 
 ## 🔑 Crypto
 
-* [Page 4](crypto/page-4.md)
+* [Introduction](crypto/introduction.md)
 
 ## 🌏 Networks
 
@@ -98,6 +98,8 @@
 
 ## ✍ Writeups
 
+* [HTB Season 1](writeups/htb-season-1/README.md)
+  * [Agile](writeups/htb-season-1/agile.md)
 * [HackTheBox](writeups/hackthebox/README.md)
   * [Easy](writeups/hackthebox/easy/README.md)
     * [Access (AD)](writeups/hackthebox/easy/access-ad.md)

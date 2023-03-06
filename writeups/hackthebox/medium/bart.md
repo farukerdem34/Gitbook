@@ -44,7 +44,7 @@ We can head to that domain to find another application running.
 
 There's a login page within the new page. Our previous credentials of `harvey:potter` do not work here.
 
-<figure><img src="../../../.gitbook/assets/image (21) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (21) (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 However, what's interesting was the URL of the website, at `http://internal-01.bart.htb/simple_chat/login_form.php`. Googling around, we can find the exact simple\_chat PHP application being used as it is a open-source project.&#x20;
 
