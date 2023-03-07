@@ -4,7 +4,7 @@
 
 Nmap scan revealed a lot of ports:
 
-<figure><img src="../../../.gitbook/assets/image (61).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (61) (4).png" alt=""><figcaption></figcaption></figure>
 
 ### Windows Backup
 
@@ -18,7 +18,7 @@ When checking the files, we can see that there's a WindowsImageBackup directory 
 
 Within it, there was a few .vhd files.
 
-<figure><img src="../../../.gitbook/assets/image (62).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (62) (4).png" alt=""><figcaption></figcaption></figure>
 
 These file can actually be mounted and they do not requrie credentials at all!
 

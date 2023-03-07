@@ -28,7 +28,7 @@ When run, this would spawn a shell for us and we can gain a reverse shell via th
 
 When checking the `systeminfo` output, we see that this is running Windows Server 2008 R2 Datacenter, which was vulnerable to the MS15-051 exploit.
 
-<figure><img src="../../../.gitbook/assets/image (60).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (60) (3).png" alt=""><figcaption></figcaption></figure>
 
 Here's the working exploit:
 

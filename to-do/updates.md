@@ -13,6 +13,9 @@ description: >-
 HTB Writeups added:
 
 * Agile (HTB Season 1)
+* Easy
+* Medium
+  * Epsilon
 
 ### February 2023
 

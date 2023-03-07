@@ -50,7 +50,7 @@ The test.txt file also has a changing timestamp every minute or so, indicating t
 
 We can replace the python script with our own.
 
-<figure><img src="../../../.gitbook/assets/image (59).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (59) (3).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can move this back to the file and change it's name to `test.py`. After a bit, would have a reverse shell on a listener port as root.
 
