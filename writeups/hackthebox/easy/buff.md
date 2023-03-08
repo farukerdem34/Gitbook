@@ -4,7 +4,7 @@
 
 Nmap Scan:
 
-<figure><img src="../../../.gitbook/assets/image (16) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (4) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Gym
 
@@ -18,7 +18,7 @@ We can use `gobuster` on the website to find more directories:
 
 Checking the `contact.php` file, we see the software used to make this.
 
-<figure><img src="../../../.gitbook/assets/image (13) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (2) (4).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can search for exploits for this Gym Management Software 1.0.
 

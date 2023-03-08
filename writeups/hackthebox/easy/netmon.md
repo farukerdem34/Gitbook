@@ -30,7 +30,7 @@ Since we have access to the entire file directory through FTP, we can search for
 
 When we download this file, we can view the content inside, and we are abel to find the `dbpassword` parameter for us.
 
-<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (2).png" alt=""><figcaption></figcaption></figure>
 
 I was able to find a RCE exploit online for this particular version:
 

@@ -120,7 +120,7 @@ The PoC states that by creating a CSS file that redirects the server to a PHP fi
 
 Now, we need to find out how to send HTML data into that API. Based on the PoC, we should be sending some HTML frames into this API. After some testing, it seems that the variable is `html`.
 
-<figure><img src="../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Now we can attempt to gain a shell. First, we need to create a PHP reverse shell one-liner and a malicious CSS file, then host them both on a Python HTTP server (hosting them on a PHP server does not work for some reason).&#x20;
 

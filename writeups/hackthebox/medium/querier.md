@@ -24,11 +24,11 @@ We can download this Excel file back to our machine for analysis. Here, I used `
 
 We can see how there are VBA Macros within this file. Again, we can use `olevba` to extract the code.
 
-<figure><img src="../../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (1).png" alt=""><figcaption></figcaption></figure>
 
 We found find this set of credentials for the database here.
 
-<figure><img src="../../../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 We can then use `mssqlclient.py` to authenticate as this `reporting` user for the database that is publicly facing forward.
 
@@ -38,7 +38,7 @@ We can then use `mssqlclient.py` to authenticate as this `reporting` user for th
 
 With access to the MS-SQL Database, I found that we are able to use `xp_cmdshell` to execute commands on the server.
 
-<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
 
 With this, we can easily gain a reverse shell through whatever means. I executed `nc.exe` over SMB.
 

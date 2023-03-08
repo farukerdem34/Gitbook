@@ -20,7 +20,7 @@ Because this was a HTTPS website, we can take a look at the certificate first to
 
 Looking at the alternate DNS names, we can find another hidden subdomain, which we'll visit later.
 
-<figure><img src="../../../.gitbook/assets/image (3) (2) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (2) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can run `wpscan --enumerate p,t,u` on this website. This returns a plugin that is outdated and exploitable.
 
@@ -28,7 +28,7 @@ We can run `wpscan --enumerate p,t,u` on this website. This returns a plugin tha
 
 For this version, there are SQL Injection and Privilege Escalation exploits available.
 
-<figure><img src="../../../.gitbook/assets/image (13) (2) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (2) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 Based on the PoC for the Privilege Escalation one, we have to create some HTML code that would allow us to login as the administrator. Earlier, we found an email address for the user `orestis`. We can use that for our exploit.
 
@@ -49,7 +49,7 @@ Afterwards, we just need to set this up on a Python server and visit the site. T
 
 Initially, nothing happens when we click the login button, however after refreshing the page, we are notified that we have logged in as the administrator.
 
-<figure><img src="../../../.gitbook/assets/image (17) (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### SMTP Creds
 
@@ -107,7 +107,7 @@ Then, we can head to that website to find the `id_rsa` file for `orestis`.
 
 The file is password encrypted, so we have to use `ssh2john.py` to convert this to a hash for `john` to crack.
 
-<figure><img src="../../../.gitbook/assets/image (11) (1) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (1) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then we can use `openssl rsa` to write the key out.
 

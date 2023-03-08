@@ -277,7 +277,7 @@ This works! Now, we can attempt to read the user flag and the private SSH key of
 
 Then we can SSH in as `phil`.
 
-<figure><img src="../../../.gitbook/assets/image (3) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -285,7 +285,7 @@ Then we can SSH in as `phil`.
 
 With the credentials we found within the DLL file, we can `su` to become the `developer` user.
 
-<figure><img src="../../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (1) (5).png" alt=""><figcaption></figcaption></figure>
 
 ### Sudo Dotnet
 
@@ -308,6 +308,6 @@ process.Start();
 
 Then, either in the same shell or another, we can run `/bin/bash -p` to become root.
 
-<figure><img src="../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

@@ -12,11 +12,11 @@ There's the `faculty.htb` domain running on port 80. We can add this to the `/et
 
 Basic PHP login page for a Faculty Scheduling System is present here:
 
-<figure><img src="../../../.gitbook/assets/image (9) (1) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (1) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Checking for common directories such as the `/admin` endpoint reveals another login page.
 
-<figure><img src="../../../.gitbook/assets/image (6) (1) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (1) (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 Proxying the traffic in Burp, sending a `'` character as a username triggers an SQL error.
 

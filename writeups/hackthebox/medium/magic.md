@@ -4,13 +4,13 @@
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (4).png" alt=""><figcaption></figcaption></figure>
 
 ### Login Bypass --> File Upload RCE
 
 The web application shows us some random images as a form of portfolio.
 
-<figure><img src="../../../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 I did a `gobuster` scan and found a few directories of interest:
 
@@ -24,7 +24,7 @@ Then, I was brought to this page:
 
 This was a PHP site so I tried uploading PHP webshells, but it didn't work. As such, I tried to **embed a webshell witihin a JPG file**.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (12) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, we just need to change the extension to `.php.jpeg` and send the file (via Burpsuite). Earlier, a `gobuster` scan found a `/images` directory, so I used `gobuster` on that to find more directories:
 
@@ -56,7 +56,7 @@ I was able to find a set of credentials for the admin user.
 
 From reading the `/home` directory, the user on this machine is `theseus`. These credentials work with `su`.
 
-<figure><img src="../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (9).png" alt=""><figcaption></figcaption></figure>
 
 ### Fdisk
 

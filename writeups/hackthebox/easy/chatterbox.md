@@ -44,7 +44,7 @@ However, we cannot read the root flag for some reason.
 
 We can check the permissions using `icacls`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 So we the user have Full Control over the Desktop (that's what (F) means), but the flag has been configured like so. To cirumvent this, we can grant ourselves the permission to read the files.
 

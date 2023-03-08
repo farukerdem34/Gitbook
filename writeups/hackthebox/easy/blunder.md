@@ -16,7 +16,7 @@ Page was just full of placeholder text that didn't mean much.
 
 I ran a directory brute force search to find an `/admin` panel.
 
-<figure><img src="../../../.gitbook/assets/image (3) (2) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (2) (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 The `/admin` panel requires credentials to access. Default weak credentials do not work here.
 
@@ -32,7 +32,7 @@ The `todo.txt` file contained this:
 
 The `install.php` file also contained some other hidden information about the CMS on the administrator panel.
 
-<figure><img src="../../../.gitbook/assets/image (16) (4) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (4) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 So `fergus` is the administrator of the website, and Bludit is installed on it. Fergus needs to upload some type of image onto the website. We can check the page source for the version of Bludit that is running.
 
@@ -54,11 +54,11 @@ Initially, I brute forced the login page for the admin panel, but it didn't work
 
 We would eventually find the right credentials.
 
-<figure><img src="../../../.gitbook/assets/image (4) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can use the exploit we found earlier to gain a reverse shell.
 
-<figure><img src="../../../.gitbook/assets/image (12) (2) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (2) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (17) (1) (2).png" alt=""><figcaption></figcaption></figure>
 

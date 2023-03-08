@@ -28,7 +28,7 @@ We can add this to the `/etc/hosts` file and view it.
 
 The sub-domain found reveals this:
 
-<figure><img src="../../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20) (8).png" alt=""><figcaption></figcaption></figure>
 
 Signing up and viewing it would direct us to this page:
 
@@ -36,7 +36,7 @@ Signing up and viewing it would direct us to this page:
 
 I was able to get hits on a HTTP server hosted on my machine, but I could not download or execute anything. Since it was the server sending requests, I tried to enter `http://localhost:5000` and was returned this:
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 With credentials, we now get a shell using an RCE exploit that is publicly available. Just change the settings here:
 
@@ -65,4 +65,4 @@ msiexec /quiet /qn /i C:\directory\to\rev.msi
 
 Afterwards, we would get a shell as the administrator:
 
-<figure><img src="../../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (7).png" alt=""><figcaption></figcaption></figure>

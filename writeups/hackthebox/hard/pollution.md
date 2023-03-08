@@ -257,7 +257,7 @@ I ran `netstat -tulpn` to see what services were running on the machine, and fou
 
 I also ran LinPEAS to find some escalation vectors to victor. This user was also running the `php-fpm` master process or something.
 
-<figure><img src="../../../.gitbook/assets/image (5) (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 Further enumeration reveals that port 9000 was FastCGI, and this was vulnerable to RCE. Since Victor is running it, this is our privilege escalation vector. We just need to make a script that would give us another reverse shell.
 
@@ -287,7 +287,7 @@ done
 
 We can replace the command to get another reverse shell as needed.
 
-<figure><img src="../../../.gitbook/assets/image (10) (1) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (1) (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 From here, we can drop our public key into victor's .ssh folder to SSH in easily, and also grab the user flag.
 

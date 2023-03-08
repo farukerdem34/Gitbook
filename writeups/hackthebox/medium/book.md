@@ -22,7 +22,7 @@ When viewing that endpoint, we see another login page.
 
 When viewing the page source, we can find this small bit of Javascript that dictates how many characters we can input into the login parameters.
 
-<figure><img src="../../../.gitbook/assets/image (18) (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 The query is likely being truncated. What we can do is an SQL Truncation attack. Basically, the idea is to send an input (via Burpsuite) that is padded by spaces until the maximum length when registering for a new user.
 
@@ -71,7 +71,7 @@ However, none of these worked. It wasn't until I googled a bit about Server Side
 
 When I set this as the Book Title and Author when uploading the book, and when we download the Collections PDF, we would be able to retrieve the `/etc/passwd` file.
 
-<figure><img src="../../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 `reader` was the user in this machine. We can attempt to read his private SSH key at `/home/reader/.ssh/id_rsa`, which he does have. We can then take that key and SSH into the machine.
 

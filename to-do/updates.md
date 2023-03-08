@@ -14,8 +14,11 @@ HTB Writeups added:
 
 * Agile (HTB Season 1)
 * Easy
+  * NodeBlog
 * Medium
   * Epsilon
+* Hard
+  * Registry
 
 ### February 2023
 

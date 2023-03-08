@@ -21,7 +21,7 @@ We need to add `superpass.htb` to our `/etc/hosts` file to access port 80.
 
 The website advertised a password manager.
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 I tested by registering a user to see what functionalities this application has. I registed a username and got an error, revealing that this is a Flask application. Not sure if this was supposed to happen
 
@@ -29,7 +29,7 @@ I tested by registering a user to see what functionalities this application has.
 
 Anyways, when I tried again it worked and brought me to a dashboard where I can add a password and Export passwords.
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
 
 The Export function looks rather exploitable. I added some passwords, then tried to download the file and was presented with this HTTP request:
 
@@ -47,7 +47,7 @@ Upgrade-Insecure-Requests: 1
 
 The `fn` paramete was vulnerable to LFI.
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 We find 4 users, `runner`, `corum`, `edwards`, and `dev_admin`. We know that this is a Flask application, so the source code for `app.py` is probably in some `/app/app/main` directory or something along those lines.  Some testing revealed that it was located in `../app/app/superpass/app.py`.
 
@@ -84,7 +84,7 @@ Now, we can change the `_user_id` parameter and hopefully login as other users w
 
 That last one for `corum` is a valid password for SSH.
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (8).png" alt=""><figcaption></figcaption></figure>
 
 Then we can easily grab the user flag.
 
@@ -114,11 +114,11 @@ Afterwards, we can use Burpsuite's Chromium browser (that is in-built) to access
 
 Just add `localhost:41829` to the Discover Network Targets portion, and we will pick up on the target.
 
-<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7) (7).png" alt=""><figcaption></figcaption></figure>
 
 We can inspect this to basically spy on the user.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
 
 I visited the `/vault` directory and found some secret credentials.
 

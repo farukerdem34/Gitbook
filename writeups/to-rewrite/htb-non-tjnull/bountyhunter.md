@@ -12,7 +12,7 @@ From the main webpage, we can see that there was a portal endpoint on it.
 
 <figure><img src="../../../.gitbook/assets/image (202).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (8) (1) (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1) (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Going to this page reveals a Beta Report System that is in use.
 
