@@ -26,7 +26,7 @@ Port 80 is running PRTG Network Monitor 18.1.37.13946 (which is outdated):
 
 Since we have access to the entire file directory through FTP, we can search for the credentials for this. We can find some backup folders for PRNG Network Monitor within the machine.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (22) (8).png" alt=""><figcaption></figcaption></figure>
 
 When we download this file, we can view the content inside, and we are abel to find the `dbpassword` parameter for us.
 

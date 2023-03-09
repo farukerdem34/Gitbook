@@ -188,6 +188,7 @@
     * [Flight](writeups/hackthebox/hard/flight.md)
     * [Kotarak](writeups/hackthebox/hard/kotarak.md)
     * [Object (AD)](writeups/hackthebox/hard/object-ad.md)
+    * [Oouch (WIP)](writeups/hackthebox/hard/oouch-wip.md)
     * [Pollution](writeups/hackthebox/hard/pollution.md)
     * [RainyDay](writeups/hackthebox/hard/rainyday.md)
     * [Registry](writeups/hackthebox/hard/registry.md)

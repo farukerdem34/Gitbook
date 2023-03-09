@@ -38,7 +38,7 @@ We can then use `mssqlclient.py` to authenticate as this `reporting` user for th
 
 With access to the MS-SQL Database, I found that we are able to use `xp_cmdshell` to execute commands on the server.
 
-<figure><img src="../../../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 With this, we can easily gain a reverse shell through whatever means. I executed `nc.exe` over SMB.
 

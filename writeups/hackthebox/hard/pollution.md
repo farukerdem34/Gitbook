@@ -177,7 +177,7 @@ We can login via `redis-cli` wth credentials.
 
 Then, we can list the keys and other information within this database.
 
-<figure><img src="../../../.gitbook/assets/image (13) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Seems that all of these keys are empty arrays, for some reason. I registered another user within the `collect.htb` website to see if we can do any other things.
 

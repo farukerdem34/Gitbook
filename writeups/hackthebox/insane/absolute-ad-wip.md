@@ -186,7 +186,7 @@ evil-winrm -i dc.absolute.htb -r absolute.htb
 
 This would give us an evil\_winrm shell as the user and we can grab the flag.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (5).png" alt=""><figcaption></figcaption></figure>
 
 The GenericWrite permission on the user allows us to write properties. Hence, we used `pywhisker` to add a new KeyCredential as `m.lovegod` to the `winrm_user` msDs-KeyCredentialLink attribute. This was done **because we don't have a shell**.&#x20;
 
@@ -218,7 +218,7 @@ Then, we need to first add a Shadow Credential using KrbRelay through the `m.lov
 
 This would generate an output like this:
 
-<figure><img src="../../../.gitbook/assets/image (6) (1) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (1) (3) (3).png" alt=""><figcaption></figcaption></figure>
 
 What this command does is use a CLSID in order to first add a new msDS-KeyCredentialLink, which would generate another certificate for us similar to `pywhisker`. Afterwards, we can use this certificate to request a TGT as DC$ and get the NTLM hash.
 
@@ -231,7 +231,7 @@ This would generate the NTLM hash for us:
 
 Afterwards, we can use `crackmapexec` with this hash to dump the credentials out.
 
-<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (9).png" alt=""><figcaption></figcaption></figure>
 
 Then, pass the hash via `evil-winrm` as the administrator.
 

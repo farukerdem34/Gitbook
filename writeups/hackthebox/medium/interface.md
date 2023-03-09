@@ -213,7 +213,7 @@ done
 
 This is running Exiftool 12.55, which does not have any glaring RCE exploits. The command run seems to only print out the Producer field from a file.
 
-<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1) (8).png" alt=""><figcaption></figcaption></figure>
 
 From this, we have to somehow include a reverse shell or something using escape characters. I notice that the Producer variable within the exiftool output is unquoted.
 

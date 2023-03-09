@@ -83,7 +83,7 @@ order #3 address: Warsaw. 437 Radomska., client name: A.Kowalska, details: [93 b
 
 Not too sure what to make of the orders, but at least we have an LFI. `gobuster` revealed no other directories of interest. Since we have no other information of the file system in the machine, we can view the `/proc/self/cmdline` file to view the processes that are running.
 
-<figure><img src="../../../.gitbook/assets/image (9) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (1) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 Now we can download the source code and begin enumerating possible vulnerabilities.
 
@@ -285,7 +285,7 @@ Then we can SSH in as `phil`.
 
 With the credentials we found within the DLL file, we can `su` to become the `developer` user.
 
-<figure><img src="../../../.gitbook/assets/image (10) (1) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (1) (5) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Sudo Dotnet
 

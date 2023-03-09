@@ -48,7 +48,7 @@ Upgrade-Insecure-Requests: 1
 }
 ```
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### XXE Injection
 
@@ -82,7 +82,7 @@ Then we can save this into a file and upload it. The output would be printed in 
 
 Earlier while testing my NoSQL injections, I did run across an error like this:
 
-<figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (1).png" alt=""><figcaption></figcaption></figure>
 
 So the source code files are in `/opt/blog`. A bit more testing revealed the main file to be `server.js`.
 
@@ -182,7 +182,7 @@ mongodb      802  0.3  1.8 981772 76124 ?        Ssl  16:38   0:08 /usr/bin/mong
 
 Earlier we used NoSQL injection to access this, and perhaps we can find the actual credentials for the `admin` user (so that I can check `sudo` privleges). Some DBs and collections can be found here.
 
-<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
 
 I could find a password from the users collections.
 

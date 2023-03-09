@@ -30,7 +30,7 @@ There was also a `/bolt` endpoint that shows a basic sample site.
 
 Bolt CMS was a possibility of exploitation here. A `feroxbuster` search reveals this is the case:
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Based on the Bolt CMS Repo, we can check `changelog.md` to see the version and find that this is Bolt 3.6.4.
 
@@ -121,7 +121,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 When trying to access it, it requested for credentials:
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
 Using `admin:admin` worked. I was forwarded to what looked like a web API. I didn't have any commands to use, so doing some basic research for Docker Registry API commands was the next step. As usual, Hacktricks had some commands.
 
@@ -213,7 +213,7 @@ Host registry
 
 With these, we can SSH in as `bolt`.
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -241,7 +241,7 @@ sqlite> SELECT * from bolt_users;
 
 We have a hash here that is cracked to give `strawberry`.
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now, we can login to the `bolt` CMS and continue our enumeration.
 
@@ -249,13 +249,13 @@ Now, we can login to the `bolt` CMS and continue our enumeration.
 
 We can login with `admin:strawberry` to the admin dashboard.
 
-<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
 
 Great! Within the password hash, we saw another hint in the form of `shell.php`. As the administrator for bolt, we can actually create PHP files in the File Management tab. We can drop in a webshell and easily get an RCE as the next user.
 
 Originally, this is not allowed since `.php` files are not included in the allowed types of files. However, as the administrator, we can change the `config.yml` file in Configuration > Main Configuration.
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then we can upload whatever files we want.
 
@@ -272,7 +272,7 @@ The first reverse shell using a simple `bash` one-liner did not work for some re
 
 To circumvent this, we can simply have the reverse shell connect back to a listener port on localhost using the SSH shell we got earlier.
 
-<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Restic
 

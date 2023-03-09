@@ -19,6 +19,7 @@ HTB Writeups added:
   * Epsilon
 * Hard
   * Registry
+  * Oouch
 
 ### February 2023
 

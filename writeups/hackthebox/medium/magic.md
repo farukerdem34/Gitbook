@@ -20,7 +20,7 @@ So there was a `login.php` directory. I didn't have any credentials, so I tried 
 
 Then, I was brought to this page:
 
-<figure><img src="../../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (23) (7).png" alt=""><figcaption></figcaption></figure>
 
 This was a PHP site so I tried uploading PHP webshells, but it didn't work. As such, I tried to **embed a webshell witihin a JPG file**.&#x20;
 

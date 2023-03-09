@@ -25,11 +25,11 @@ The website advertised a password manager.
 
 I tested by registering a user to see what functionalities this application has. I registed a username and got an error, revealing that this is a Flask application. Not sure if this was supposed to happen
 
-<figure><img src="../../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (21) (2).png" alt=""><figcaption></figcaption></figure>
 
 Anyways, when I tried again it worked and brought me to a dashboard where I can add a password and Export passwords.
 
-<figure><img src="../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (20) (8).png" alt=""><figcaption></figcaption></figure>
 
 The Export function looks rather exploitable. I added some passwords, then tried to download the file and was presented with this HTTP request:
 
@@ -118,7 +118,7 @@ Just add `localhost:41829` to the Discover Network Targets portion, and we will 
 
 We can inspect this to basically spy on the user.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (10) (1) (5).png" alt=""><figcaption></figcaption></figure>
 
 I visited the `/vault` directory and found some secret credentials.
 
