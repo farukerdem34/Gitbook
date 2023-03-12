@@ -22,15 +22,15 @@ Both the websites point towards a nginx default page.&#x20;
 
 I ran a `gobuster` scan on both of these, and found an `/install` directory with some random characters.
 
-<figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (1).png" alt=""><figcaption></figcaption></figure>
 
 There was also a `/bolt` endpoint that shows a basic sample site.
 
-<figure><img src="../../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (1).png" alt=""><figcaption></figcaption></figure>
 
 Bolt CMS was a possibility of exploitation here. A `feroxbuster` search reveals this is the case:
 
-<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Based on the Bolt CMS Repo, we can check `changelog.md` to see the version and find that this is Bolt 3.6.4.
 
@@ -121,7 +121,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 When trying to access it, it requested for credentials:
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (2).png" alt=""><figcaption></figcaption></figure>
 
 Using `admin:admin` worked. I was forwarded to what looked like a web API. I didn't have any commands to use, so doing some basic research for Docker Registry API commands was the next step. As usual, Hacktricks had some commands.
 
@@ -213,7 +213,7 @@ Host registry
 
 With these, we can SSH in as `bolt`.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -255,7 +255,7 @@ Great! Within the password hash, we saw another hint in the form of `shell.php`.
 
 Originally, this is not allowed since `.php` files are not included in the allowed types of files. However, as the administrator, we can change the `config.yml` file in Configuration > Main Configuration.
 
-<figure><img src="../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then we can upload whatever files we want.
 

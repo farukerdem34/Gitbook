@@ -269,7 +269,7 @@ result = ws.recv()
 print(result)
 ```
 
-<figure><img src="../../../.gitbook/assets/image (5) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (2) (3).png" alt=""><figcaption></figcaption></figure>
 
 This works! Now, we can attempt to read the user flag and the private SSH key of the user `phil`.
 

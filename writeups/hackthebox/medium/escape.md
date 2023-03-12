@@ -137,7 +137,7 @@ This user did not have the flag or any other local privileges. However, since we
 
 Within the `C:\SQLServer\Logs` file, we can find an ERRORLOG file:
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (5).png" alt=""><figcaption></figcaption></figure>
 
 Within that file, we can find some credentials:
 

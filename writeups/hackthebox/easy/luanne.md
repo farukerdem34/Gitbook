@@ -51,7 +51,7 @@ When viewing the page, we get a 401 Unauthorized code because we don't have any 
 
 I ran a `gobuster` scan on port 80 in the hopes that I would find something else, and I did find a `robots.txt`.
 
-<figure><img src="../../../.gitbook/assets/image (8) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Viewing `robots.txt` revealed this file:
 

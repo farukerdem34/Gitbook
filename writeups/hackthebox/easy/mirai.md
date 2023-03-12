@@ -10,7 +10,7 @@ Nmap scan:
 
 Checking port 80 reveals a Pi-Hole dashboard:
 
-<figure><img src="../../../.gitbook/assets/image (15) (1) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (1) (6) (2).png" alt=""><figcaption></figcaption></figure>
 
 There's a login function, and I managed to login with default credentials of `pi:raspberry`. I also tried to SSH in as `pi` using these credentials, and it worked for some reason:
 

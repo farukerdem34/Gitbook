@@ -246,7 +246,7 @@ $url = 'http://api.haxtables.htb' . $uri_path . '/index.php';
 
 We can truncate this using the @ symbol. The @ symbol would make the website think that the first part of the URL are credentials, and since the website does not require credentials, it would ignore it completely.
 
-<figure><img src="../../../.gitbook/assets/image (22) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (22) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then we can use this to generate a shorthand line cf code to test our RCE ability. Shorthand PHP is used because the command for our shell is really long, so we need to make it as short as possible or the server might not process it due to size.
 

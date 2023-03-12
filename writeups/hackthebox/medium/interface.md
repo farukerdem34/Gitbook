@@ -237,7 +237,7 @@ Linux
 
 The Producer field of this file is the vulnerability here. I tested this out on my machine, and it works.
 
-<figure><img src="../../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 Now, we can exploit this by creating a simple PE bash script to make `/bin/bash` an SUID binary. Then, we can change the Producer field to make the machine execute our script.
 

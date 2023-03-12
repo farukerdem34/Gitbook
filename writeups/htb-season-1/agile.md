@@ -21,7 +21,7 @@ We need to add `superpass.htb` to our `/etc/hosts` file to access port 80.
 
 The website advertised a password manager.
 
-<figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1) (7).png" alt=""><figcaption></figcaption></figure>
 
 I tested by registering a user to see what functionalities this application has. I registed a username and got an error, revealing that this is a Flask application. Not sure if this was supposed to happen
 

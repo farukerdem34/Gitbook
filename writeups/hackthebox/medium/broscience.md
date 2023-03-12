@@ -70,7 +70,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 When heading to the `/includes` directory, we can find some other PHP files that could contain credentials.
 
-<figure><img src="../../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (29) (5).png" alt=""><figcaption></figcaption></figure>
 
 Out of all of them, `img.php` requires a `path` parameter to be passed to it. It also detects LFI
 
@@ -361,7 +361,7 @@ Then, we can simply send a request with this the output as the cookie. We would 
 
 Then we can simply curl it to gain a reverse shell.
 
-<figure><img src="../../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (28) (6).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -400,7 +400,7 @@ sed -i 's|^|NaCl|g' rockyou.txt
 
 Then, we can use `hashcat` to crack the hash.
 
-<figure><img src="../../../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (30) (6).png" alt=""><figcaption></figcaption></figure>
 
 The part without the salt is the password that we can use to SSH in as `bill`.
 

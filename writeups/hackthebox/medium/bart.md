@@ -110,4 +110,4 @@ Then, we can get JuicyPotato on the machine and run it with a CLSID. We can find
 
 Afterwards, we would catch a shell as the administrator.
 
-<figure><img src="../../../.gitbook/assets/image (9) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (3) (3).png" alt=""><figcaption></figcaption></figure>

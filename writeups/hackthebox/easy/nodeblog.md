@@ -157,7 +157,7 @@ Now, we can replace the `ping` command I used above with a reverse shell:
 
 This uses base64 to encode the shell one-liner and connect to port 8888.
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 When trying to read the user flag, I found out that we did not have access to our own home directory. This was because of the permissions set:
 
@@ -195,4 +195,4 @@ I could find a password from the users collections.
 
 We can use this to check `sudo` privileges and find an easy root path:
 
-<figure><img src="../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (1).png" alt=""><figcaption></figcaption></figure>

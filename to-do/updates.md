@@ -13,13 +13,16 @@ description: >-
 HTB Writeups added:
 
 * Agile (HTB Season 1)
+* Inject (HTB Season 1)
 * Easy
   * NodeBlog
 * Medium
   * Epsilon
 * Hard
   * Registry
-  * Oouch
+  * Oouch&#x20;
+
+Added Portswigger Web Academy stuff.&#x20;
 
 ### February 2023
 
