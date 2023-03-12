@@ -386,6 +386,6 @@ MIIEowIBAAKCAQEAmiGiXpswTyHhjgC55jHRWlGX1asEMyDFfkVwhuNohv/4cQKm
 
 Then we can SSH in as `root`.
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Cool machine. Really good despite being like 3 years old.

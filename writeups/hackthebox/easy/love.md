@@ -20,7 +20,7 @@ A bit of enumeration on the type of service running reveals that it was an outda
 
 Checking the certificate on port 443 reveals a hidden sub-domain.
 
-<figure><img src="../../../.gitbook/assets/image (8) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (2) (4).png" alt=""><figcaption></figcaption></figure>
 
 We can add this to the `/etc/hosts` file and view it.
 

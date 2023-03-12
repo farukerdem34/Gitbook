@@ -160,7 +160,7 @@ I ran a winPEAS scan to enumerate for me. This scan found some certificates on t
 
 We can use `certify.exe` to find out if this is vulnerable. Using `certify.exe find /vulnerable`, we can find one certificate:
 
-<figure><img src="../../../.gitbook/assets/image (3) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can then request for this certificate using this command:
 

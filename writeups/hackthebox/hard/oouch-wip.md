@@ -51,7 +51,7 @@ There are 3 main functions, a Password Change, Documents and the Contact one. Th
 
 This looks like an XSS platform to somehow steal the administrator cookie. When trying to submit a basic XSS payload, this is what I got:
 
-<figure><img src="../../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (23) (4).png" alt=""><figcaption></figcaption></figure>
 
 This might not be the way. Instead, I ran a `gobuster` scan on the machine to see what other endpoints are hidden. I found a weird `/oauth` endpoint that could be of use: (this took a lot of wordlists to do)
 
@@ -88,7 +88,7 @@ We can head to that and see what it does.
 
 This gives us instructions on how to connet to the OAuth server running on this machine:
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 When trying to access it, it attempts to access `authorization.oouch.htb:8000`. So the OAuth server is running on port 8000.
 
@@ -126,7 +126,7 @@ And this is the page that gets shown to us:
 
 When visiting `http://authorization.oouch.htb:8000`, we can see how to register to this server:
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (2).png" alt=""><figcaption></figcaption></figure>
 
 In case you're unaware of OAuth 2.0, you can read this:
 
@@ -162,7 +162,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 We can see a new endpont at `/applications`. Trying to access this requires credentials:
 
-<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (2).png" alt=""><figcaption></figcaption></figure>
 
 I did not have any credentials for now. After creating this account and re-testing, using the `/oauth/connect` function earlier now shows a different user profile.
 
@@ -174,11 +174,11 @@ The website recognises my new OAuth account that I created and is considered 'co
 
 Here's an overview of how exactly OAuth works:
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
 
 We can view the HTTP requests throguh Burpsuite to see what exactly is happening.
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 These 4 requests are essentially the OAuth mechanism, and there is the access token in a POST request. Our goal is to authenticate as `qtc`, since he probably is the administrator user of this machine. As such, we can use a CSRF attack because this implementation of OAuth does not seem to send the `state` parameter.&#x20;
 

@@ -72,4 +72,4 @@ By manipulating the PATH variable and creating a reverse shell script named `fdi
 
 Port 9999 does not work (presumably due to firewall) so I changed to port 443 and ran `sysinfo` again.
 
-<figure><img src="../../../.gitbook/assets/image (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (2) (3).png" alt=""><figcaption></figcaption></figure>

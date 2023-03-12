@@ -99,6 +99,7 @@
 ## ✍ Writeups
 
 * [HTB Season 1](writeups/htb-season-1/README.md)
+  * [Inject](writeups/htb-season-1/inject.md)
   * [Agile](writeups/htb-season-1/agile.md)
 * [HackTheBox](writeups/hackthebox/README.md)
   * [Easy](writeups/hackthebox/easy/README.md)

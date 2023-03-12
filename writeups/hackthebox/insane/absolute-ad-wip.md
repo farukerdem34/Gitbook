@@ -129,7 +129,7 @@ We now need to somehow get a ticket from the `m.lovegod` user and gain access as
 
 When I ran the binary on my Windows VM, it seems to exit straightaway. Weird, but maybe it was trying to make external connections. I started Wireshark to see what I could capture from it. I found this interesting bit here when I connected to the HTB VPN.
 
-<figure><img src="../../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 We now have credentials for this user!&#x20;
 
