@@ -90,7 +90,7 @@ With this, we can easily gain a reverse shell into the machine using Invoke-Powe
 
 When checking our privileges, we notice we have the SeImpersonatePrivilege enabled.
 
-<figure><img src="../../../.gitbook/assets/image (47) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (47) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 Checking `systeminfo`, we also find that a vulnerable version of Windows was running with no hotfixes.
 

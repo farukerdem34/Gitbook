@@ -65,7 +65,7 @@ The most fundamental operations are the **PUSH** and **POP** instructions, which
 
 This instruction minuses 4 in 32-bit or 8 in 64-bit from the ESP and updaters the ESP. It substracts to a point with **lower memory location** on the stack.
 
-<figure><img src="../../.gitbook/assets/image (34) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (34) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### POP
 

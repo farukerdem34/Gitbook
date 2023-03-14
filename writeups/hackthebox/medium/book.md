@@ -101,6 +101,6 @@ We can then use a reverse shell script for the `payloadfile` for the exploit, an
 
 Afterwards, my listener port caught a reverse shell after a little bit.
 
-<figure><img src="../../../.gitbook/assets/image (32) (1) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (32) (1) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 For whatever reason, the shell stops after every 10 seconds, so make sure to grab the flag fast!

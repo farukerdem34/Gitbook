@@ -8,7 +8,7 @@ description: Instant Root!
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (47).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (47) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## FTP Anonymous Login
 
@@ -22,7 +22,7 @@ This explains why the user flag was captured in exactly 1 minute from the box go
 
 Port 80 is running PRTG Network Monitor 18.1.37.13946 (which is outdated):
 
-<figure><img src="../../../.gitbook/assets/image (37).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (37) (6).png" alt=""><figcaption></figcaption></figure>
 
 Since we have access to the entire file directory through FTP, we can search for the credentials for this. We can find some backup folders for PRNG Network Monitor within the machine.&#x20;
 
@@ -38,7 +38,7 @@ I was able to find a RCE exploit online for this particular version:
 
 In this version of PRTG, there are demo scripts that come downloaded with the software. The demo scripts are vulnerable to RCE (which no one had checked before) and we are allowed to run commands with 'Local System' privileges. This allows us to create new administrator user in the machine (which is what the script does).&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (51) (4).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, we can `evil-winrm` in as this new user.
 

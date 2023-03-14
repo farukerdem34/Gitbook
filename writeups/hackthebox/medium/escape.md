@@ -170,7 +170,7 @@ We can then request for this certificate using this command:
 
 This would output an RSA key and a certificate:
 
-<figure><img src="../../../.gitbook/assets/image (48).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (48) (4).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, we can simply use `openssl` to convert this output into a .pfx file:
 
@@ -180,7 +180,7 @@ openssl pkcs12 -in cert.pem -keyex -CSP "Microsoft Enhanced Cryptographic Provid
 
 Then, transfer the pfx file and `rubeus.exe` to the machine. We can use `asktgt` with the certificate.
 
-<figure><img src="../../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (42) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now that we have confirmed this works, we can append `/getcredentials` to the end of the Rubeus command.
 
