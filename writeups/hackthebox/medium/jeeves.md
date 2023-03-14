@@ -48,7 +48,7 @@ Reading the Backup stuff entry, we can find an NTLM hash.
 
 There were also other passwords that were found by viewing the DC Recovery PW.
 
-<figure><img src="../../../.gitbook/assets/image (15) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 Using the first NTLM hash we found, we can Pass The Hash to gain a shell as the administrator through `pth-winexe`.&#x20;
 

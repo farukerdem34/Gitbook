@@ -22,7 +22,7 @@ Based on the files that are present here, we can see that port 80 is running a I
 
 So, I created a quick `aspx` reverse shell using `msfvenom`.
 
-<figure><img src="../../../.gitbook/assets/image (33) (2) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (33) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can put this file in the FTP directory.
 

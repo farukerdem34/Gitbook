@@ -12,11 +12,11 @@ Lots of ports open.
 
 Port 80 reveals a voting system that requries credentials. Port 5000 was blocked off for whatever reason.
 
-<figure><img src="../../../.gitbook/assets/image (49) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (49).png" alt=""><figcaption></figcaption></figure>
 
 A bit of enumeration on the type of service running reveals that it was an outdated software with loads of vulnerabilities:
 
-<figure><img src="../../../.gitbook/assets/image (39) (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
 
 Checking the certificate on port 443 reveals a hidden sub-domain.
 
@@ -32,7 +32,7 @@ The sub-domain found reveals this:
 
 Signing up and viewing it would direct us to this page:
 
-<figure><img src="../../../.gitbook/assets/image (36) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
 
 I was able to get hits on a HTTP server hosted on my machine, but I could not download or execute anything. Since it was the server sending requests, I tried to enter `http://localhost:5000` and was returned this:
 
@@ -44,7 +44,7 @@ With credentials, we now get a shell using an RCE exploit that is publicly avail
 
 Then run the exploit:
 
-<figure><img src="../../../.gitbook/assets/image (42) (1) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (42) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

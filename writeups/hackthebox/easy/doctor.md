@@ -45,7 +45,7 @@ When I visited the `/archive` endpoint, we would actually see that it works!
 
 For SSTI, we can follow this table on HackTricks to determine which framework is being used.
 
-<figure><img src="../../../.gitbook/assets/image (12) (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 For this specific box, we can determine that it's Jinja2 or Twig. On PayloadAllTheThings, there's a payload that works in spawning a reverse shell.
 

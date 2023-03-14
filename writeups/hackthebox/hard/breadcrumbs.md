@@ -74,7 +74,7 @@ Knowing that we have an Arbitrary File Read exploit to use, we can leverage on t
 
 The first thing we notice is the dependencies required, which are the `db.php` file we found earlier, and this `cookie.php` file that is new. We can also find the `$secret_key` variable within the code that it used for a JWT token.
 
-<figure><img src="../../../.gitbook/assets/image (11) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (2) (5).png" alt=""><figcaption></figcaption></figure>
 
 We can take a look at the `cookie.php` file.
 
@@ -198,7 +198,7 @@ We can check the `bread` database to view some more stuff.
 
 <figure><img src="../../../.gitbook/assets/image (482).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (21) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (21) (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 Finally, we can just view all of the stuff within this table via `concat()`.
 

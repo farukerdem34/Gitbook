@@ -23,7 +23,7 @@ PORT     STATE SERVICE
 
 This was a UHC qualifier box in 2021.
 
-<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (2).png" alt=""><figcaption></figcaption></figure>
 
 There was a login functionality there. I tested some SQL Injection but to no avail. Because this was a UHC box, this was probably the way in. I tested some NoSQL injection and it worked in bypassing it!
 
@@ -60,7 +60,7 @@ Invalid XML Example: Example DescriptionExample Markdown
 
 This indidates that we have to upload a malicious XML file to achieve XXE injection for our reverse shell. Taking a look at the POST request in Burpsuite reveals that we need this format:
 
-<figure><img src="../../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (1).png" alt=""><figcaption></figcaption></figure>
 
 I headed to PayloadAllTheThings to try some XXE injection payloads, and it worked rather well:
 
@@ -78,7 +78,7 @@ I headed to PayloadAllTheThings to try some XXE injection payloads, and it worke
 
 Then we can save this into a file and upload it. The output would be printed in the `markdown` area:
 
-<figure><img src="../../../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (19) (7).png" alt=""><figcaption></figcaption></figure>
 
 Earlier while testing my NoSQL injections, I did run across an error like this:
 
@@ -157,7 +157,7 @@ Now, we can replace the `ping` command I used above with a reverse shell:
 
 This uses base64 to encode the shell one-liner and connect to port 8888.
 
-<figure><img src="../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 When trying to read the user flag, I found out that we did not have access to our own home directory. This was because of the permissions set:
 
@@ -195,4 +195,4 @@ I could find a password from the users collections.
 
 We can use this to check `sudo` privileges and find an easy root path:
 
-<figure><img src="../../../.gitbook/assets/image (14) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (1) (2).png" alt=""><figcaption></figcaption></figure>

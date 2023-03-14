@@ -33,13 +33,13 @@ Django -> Authorization Server
 
 Might need this information later. Also, we can see that this is the user `qtc` server.
 
-<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Port 5000
 
 This webpage just shows a login page:
 
-<figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (2).png" alt=""><figcaption></figcaption></figure>
 
 I registered a user and logged in to see the dashboard.
 
@@ -47,7 +47,7 @@ I registered a user and logged in to see the dashboard.
 
 There are 3 main functions, a Password Change, Documents and the Contact one. The Password Change is not interesting, Documents are only available for the administrator user. That just leaves  the Contact function.
 
-<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (6).png" alt=""><figcaption></figcaption></figure>
 
 This looks like an XSS platform to somehow steal the administrator cookie. When trying to submit a basic XSS payload, this is what I got:
 
@@ -94,7 +94,7 @@ When trying to access it, it attempts to access `authorization.oouch.htb:8000`. 
 
 Using the connect options shows us this:
 
-<figure><img src="../../../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (21) (3).png" alt=""><figcaption></figcaption></figure>
 
 When we click authorize, we just are logged in as the same user it seems.&#x20;
 
@@ -136,7 +136,7 @@ It basically is the service that allows us to 'Login with Facebook' or other soc
 
 For now, we can register a user and keep enumerating this website. This is the page we get to after logging in:
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (3).png" alt=""><figcaption></figcaption></figure>
 
 Clicking these two options don't seem to do much. I ran a `gobuster` scan once again.
 
@@ -166,7 +166,7 @@ We can see a new endpont at `/applications`. Trying to access this requires cred
 
 I did not have any credentials for now. After creating this account and re-testing, using the `/oauth/connect` function earlier now shows a different user profile.
 
-<figure><img src="../../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20) (1).png" alt=""><figcaption></figcaption></figure>
 
 The website recognises my new OAuth account that I created and is considered 'connected'.&#x20;
 
@@ -178,7 +178,7 @@ Here's an overview of how exactly OAuth works:
 
 We can view the HTTP requests throguh Burpsuite to see what exactly is happening.
 
-<figure><img src="../../../.gitbook/assets/image (3) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 These 4 requests are essentially the OAuth mechanism, and there is the access token in a POST request. Our goal is to authenticate as `qtc`, since he probably is the administrator user of this machine. As such, we can use a CSRF attack because this implementation of OAuth does not seem to send the `state` parameter. Earlier, we found a method to make the administrator `qtc` click links by sending it in the Contact form.&#x20;
 
@@ -230,7 +230,7 @@ http://consumer.oouch.htb:5000/oauth/connect/token?code=IhKT0Gc97DNDoVQp2Urhfun5
 
 &#x20;Send this in the Contact Form and wait for a little bit. Then, we can attempt to use OAuth by accessing `/oauth/login` on the consumer server. If done correctly, this is what we would see in the Documents section:
 
-<figure><img src="../../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (2).png" alt=""><figcaption></figcaption></figure>
 
 Great! Now we have credentials to access some other stuff. There's an SSH key somewhere on this  website as well.
 
@@ -246,7 +246,7 @@ We can create a fake request that redirects the user to our our machine. This wo
 
 As such, we can fill up the registering form as such:
 
-<figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (7).png" alt=""><figcaption></figcaption></figure>
 
 This article was useful in reading about how these requests are constructed.
 
@@ -260,13 +260,13 @@ http://authorization.oouch.htb:8000/oauth/authorize?client_id=g2uRKpKRQBvO7OXm8A
 
 Then we can listen on port 80 to capture the request being sent
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### /oauth/token
 
 After getting this token, I was stuck for a long while. I was back to this page and realised I never really look at the `/oauth/token` function here:
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 Viewing the HTTP request, I realised that the `sessionid` token could be used to login as `qtc`.
 
@@ -274,7 +274,7 @@ Viewing the HTTP request, I realised that the `sessionid` token could be used to
 
 Afterwards, accessing the `/oauth/token` endpoint did nothing for me until I experimented with sending POST requests:
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
 
 We can read more about grant\_types here:
 
@@ -282,7 +282,7 @@ We can read more about grant\_types here:
 
 By controlling the grant type, we can requests for the client\_credentials. This can be done by first going to the Register page and changing the grant type:
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (5).png" alt=""><figcaption></figcaption></figure>
 
 Then we can send a reuqest specifying the client ID, client secret and the grant type and the token for `qtc` will be given to us:
 
@@ -307,11 +307,11 @@ Upgrade-Insecure-Requests: 1
 
 ```
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 Now that we have access to this, we need to find the SSH key. After testing out a few endpoints, I found that `get_ssh` was the right one.
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (5).png" alt=""><figcaption></figcaption></figure>
 
 Then we can just SSH in as `qtc`.&#x20;
 
@@ -503,7 +503,7 @@ qtc@de8d92c274d6:~$ python3 rce.py -m unix -u /tmp/uwsgi.socket -c 'bash -c "bas
 [*]Sending payload.
 ```
 
-<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (4).png" alt=""><figcaption></figcaption></figure>
 
 ### DBus RCE
 
@@ -522,6 +522,6 @@ method return time=1678608399.001859 sender=:1.3 -> destination=:1.436 serial=4 
    string "Carried out :D"
 ```
 
-<figure><img src="../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (1).png" alt=""><figcaption></figcaption></figure>
 
 I wonder why this machine isn't in Insane level...

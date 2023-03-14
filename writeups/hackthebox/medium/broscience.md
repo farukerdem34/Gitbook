@@ -22,13 +22,13 @@ Vhost and directory scans don't reveal much regarding this.
 
 ### BroScience Enumeration
 
-<figure><img src="../../../.gitbook/assets/image (34) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
 
 We can take note that there is an `administrator` user present on the website, as they have made posts. Also, there's a login feature for this website. We are redirected to `login.php` when we click on Log In.
 
 Within each post, there's an Add Comment functionality that requires us to be logged in. I attempted to register an account, but this didn't work because we had to find an activation link.
 
-<figure><img src="../../../.gitbook/assets/image (31) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
 
 So there's an activation link of some sort. I ran a directory scan for .php files on the website, and found quite a few.
 
@@ -389,7 +389,7 @@ We can use `\d` to read the tables present on the machine.
 
 Then, we can read the stuff in the `users` file.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (32) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
 
 We would find lots of hashes. Since the user on the machine is `bill`, let's attempt to crack his hash. The `db_connect.php` file did have a salt for the hashes as "NaCl". Using this, we can generate a wordlist based on rockyou.txt with this salt prepended to all the words.
 
@@ -502,4 +502,4 @@ Email Address []:
 
 After a while, it would execute and allow us to spawn in a root shell.
 
-<figure><img src="../../../.gitbook/assets/image (33) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>

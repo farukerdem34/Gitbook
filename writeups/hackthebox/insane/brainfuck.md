@@ -115,7 +115,7 @@ Then we can use `openssl rsa` to write the key out.
 
 Afterwards, we can simply SSH in using this key.
 
-<figure><img src="../../../.gitbook/assets/image (32) (1) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (32) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

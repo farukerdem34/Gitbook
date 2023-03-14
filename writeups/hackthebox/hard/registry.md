@@ -34,7 +34,7 @@ Bolt CMS was a possibility of exploitation here. A `feroxbuster` search reveals 
 
 Based on the Bolt CMS Repo, we can check `changelog.md` to see the version and find that this is Bolt 3.6.4.
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (3).png" alt=""><figcaption></figcaption></figure>
 
 This was a rather old machine, so there were RCE exploits available if I could find the credentials for the administrator. However, there were no credentials for me to exploit, and I could not do much with this. I was clearly missing something.&#x20;
 
@@ -199,7 +199,7 @@ interact
 
 I downloaded the other files to see if there were any other interesting things. Eventually, I did find a SSH private key
 
-<figure><img src="../../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```bash
 $ curl -H 'Authorization: Basic YWRtaW46YWRtaW4=' http://docker.registry.htb/v2/bolt-image/blobs/sha256:2931a8b44e495489fdbe2bccd7232e99b182034206067a364553841a1f06f791 -L -o blob3.tar
@@ -255,7 +255,7 @@ Great! Within the password hash, we saw another hint in the form of `shell.php`.
 
 Originally, this is not allowed since `.php` files are not included in the allowed types of files. However, as the administrator, we can change the `config.yml` file in Configuration > Main Configuration.
 
-<figure><img src="../../../.gitbook/assets/image (8) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then we can upload whatever files we want.
 
@@ -272,7 +272,7 @@ The first reverse shell using a simple `bash` one-liner did not work for some re
 
 To circumvent this, we can simply have the reverse shell connect back to a listener port on localhost using the SSH shell we got earlier.
 
-<figure><img src="../../../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Restic
 
@@ -386,6 +386,6 @@ MIIEowIBAAKCAQEAmiGiXpswTyHhjgC55jHRWlGX1asEMyDFfkVwhuNohv/4cQKm
 
 Then we can SSH in as `root`.
 
-<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 Cool machine. Really good despite being like 3 years old.

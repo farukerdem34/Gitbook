@@ -32,4 +32,4 @@ When enumerating sudo privileges, we see that we can run `knife`.
 
 `knife` can be used to spawn a root shell since we can run `sudo` with it.
 
-<figure><img src="../../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1) (1) (4).png" alt=""><figcaption></figcaption></figure>

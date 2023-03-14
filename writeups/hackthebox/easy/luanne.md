@@ -51,11 +51,11 @@ When viewing the page, we get a 401 Unauthorized code because we don't have any 
 
 I ran a `gobuster` scan on port 80 in the hopes that I would find something else, and I did find a `robots.txt`.
 
-<figure><img src="../../../.gitbook/assets/image (8) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Viewing `robots.txt` revealed this file:
 
-<figure><img src="../../../.gitbook/assets/image (20) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20) (1) (6).png" alt=""><figcaption></figcaption></figure>
 
 I ran another `gobuster` on this `/weather` directory and found another hidden endpoint.
 
@@ -97,7 +97,7 @@ With this, I was able to crack the hash to give `iamthebest` as the password and
 
 With this, I enumerated the users on the machine, of which there was just `r.michaels`. I enumerated the processes he was running, and found that he was running a similar process to the `_httpd` user, but on port 3001 instead.
 
-<figure><img src="../../../.gitbook/assets/image (18) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 Interactions with this instance revealed that it was similar to the weather API we found earlier.
 

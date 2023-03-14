@@ -19,7 +19,7 @@ PORT     STATE SERVICE
 
 Port 8080 a corporate webpage for some product:
 
-<figure><img src="../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 There's an Upload function in the top right of the page. When we upload a file, we can view it on the server:
 
@@ -355,7 +355,7 @@ frank@inject:~/.m2$ cat settings.xml
 
 With this, we can `su` to `phil`.
 
-<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Playbook PE
 

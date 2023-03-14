@@ -27,7 +27,7 @@ OAuth allows for multiple ways for its authentication process to be implemented,
 
 Generally, there are 2 different ways for OAuth to grant access. The first being **Authorization Code Grant Type:**
 
-<figure><img src="../.gitbook/assets/image (5) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 The second is the **Implicit Flow Type:**
 

@@ -107,7 +107,7 @@ When checking `netstat`, we can find a service listening on port 1433 that was n
 
 Also, we can head to the `inetpub` folder to find credentials, of which we do within the `index.php` file:
 
-<figure><img src="../../../.gitbook/assets/image (18) (1) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (1) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can then port forward via `chisel`.&#x20;
 

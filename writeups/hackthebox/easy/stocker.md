@@ -59,7 +59,7 @@ There was a `connect.sid` endpoint, indicating that this was some type of Expres
 {"username": {"$ne": "foo"}, "password": {"$ne": "bar"} }
 ```
 
-<figure><img src="../../../.gitbook/assets/image (7) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (3) (4).png" alt=""><figcaption></figcaption></figure>
 
 The website was some ordering website where we could place orders for items.
 
@@ -69,7 +69,7 @@ The website was some ordering website where we could place orders for items.
 
 I added some items and attemted to checkout from the website.
 
-<figure><img src="../../../.gitbook/assets/image (9) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (4) (2).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (1) (2) (4).png" alt=""><figcaption></figcaption></figure>
 

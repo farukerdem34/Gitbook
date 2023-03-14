@@ -34,7 +34,7 @@ All the parameters passed in via POST request were fine, but when proxying traff
 
 For instance, I was able to enumerate the datbase that was used.
 
-<figure><img src="../../../.gitbook/assets/image (31) (1) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (31) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (17) (5) (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -106,7 +106,7 @@ We saw earlier that root was running `redis-server`. We first need to search for
 
 We can then sign in using `redis-cli` on the machine and load the exploit.
 
-<figure><img src="../../../.gitbook/assets/image (2) (1) (3) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (3) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (29) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
