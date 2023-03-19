@@ -244,4 +244,4 @@ www-data@icinga:/tmp$ uname -a
 Linux icinga 5.15.0-43-generic #46-Ubuntu SMP Tue Jul 12 10:30:17 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
 ```
 
-T
+Hard machine. Will continue to work on it.&#x20;
