@@ -18,7 +18,7 @@ There are a few terms that are used, and I will attempt to explain what they are
 
 ### Routers
 
-<figure><img src="../.gitbook/assets/image (19) (2).png" alt=""><figcaption><p>Routers</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (19) (2) (1).png" alt=""><figcaption><p>Routers</p></figcaption></figure>
 
 I think most of us have seen this and are aware of what it is. Routers route traffic between networks.&#x20;
 
@@ -38,7 +38,7 @@ These are devices that basically connect different machines together via a cable
 
 These look like switches, but they aren't.
 
-<figure><img src="../.gitbook/assets/image (13) (2) (1).png" alt=""><figcaption><p>Cisco Firewall</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (13) (2) (1) (1).png" alt=""><figcaption><p>Cisco Firewall</p></figcaption></figure>
 
 ### Network Topologies
 

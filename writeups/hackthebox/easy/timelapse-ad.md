@@ -16,7 +16,7 @@ Within this share, we can find a `winrm_backup.zip` file that has a password on 
 
 This is easily crackable with `zip2john` and `john`.
 
-<figure><img src="../../../.gitbook/assets/image (8) (6) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (6) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 After unzipping the file, we can get a pfx file out. PFX files contains SSL certificates and private keys that could be useful for this machine.
 

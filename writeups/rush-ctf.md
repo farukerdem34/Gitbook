@@ -73,11 +73,11 @@ So this is a 64-bit binary. Here's the breakdown of the `checksec` output:
 
 Since the binary is vulnerable to a Buffer Overflow, we first need to check the buffer size to see how many junk characters are needed to control the EIP. We can first generate a large output of 'A' (which is equal to `0x41` in hex) and see if it changes the value of check.
 
-<figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (8) (6).png" alt=""><figcaption></figcaption></figure>
 
 From the above, an input of 60 'A' resulted in the value of `check` being overwritten completely. We can change the last 4 characters of the input to 'B' (which is `0x42` in hex) to easily see if we have overwritten the `check` variable (which is 4 bytes in length).&#x20;
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
 So we have successfully confirmed we have control over the vcalue of check. Now all we need to do is have 56 bytes of junk characters, then replace the last 4 characters (which are Bs) to the desired value. We can use `pwntools` to connect and send our input to the server and get the flag.
 
@@ -101,7 +101,7 @@ r.interactive()
 
 No source code given to me. So, we can use `ghidra` to decompile and view the pseudocode for this binary in C. Viewing the `main` function, we this pseudocode:
 
-<figure><img src="../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (16) (5).png" alt=""><figcaption></figcaption></figure>
 
 This uses `gets`, which is a vulnerable function when getting user input. This, combiend with the small array size of the `local_c` variable means this is definitely vulnerbale to a Buffer Overflow. Unlike the previous challenge, we don't have a `check` variable being used to give us a shell.
 
@@ -160,7 +160,7 @@ But why do we need to call `exit`? This is because if we were to overflow the st
 
 As such, we need to append the address of a `RET` call in front of the address of the function. Here's the output of the script:
 
-<figure><img src="../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (13) (2).png" alt=""><figcaption></figcaption></figure>
 
 ```python
 from pwn import *
@@ -188,23 +188,23 @@ This is a Directory Traversal Exploit:
 
 Blog presents us with a basic blog page:
 
-<figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (9) (7).png" alt=""><figcaption></figcaption></figure>
 
 Using `burpsuite`, which passively scans the website, we can view the files present in the website:
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (3).png" alt=""><figcaption></figcaption></figure>
 
 We can see there's a `post.php` file that accepts a `?page` parameter. It seems to take a file name as the input. We can test this for Local File Inclusion by first trying to trigger some error by changing that parameter. In this case, visited `http://challs.ctf.cafe:5555/post.php?page=?`, and this was error that appeared.&#x20;
 
-<figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (11) (6).png" alt=""><figcaption></figcaption></figure>
 
 This website uses the `include` function from PHP, which is known to be vulnerable to LFI. As such, we can view the `/etc/passwd` file to find the flag.&#x20;
 
-<figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7) (5).png" alt=""><figcaption></figcaption></figure>
 
 Right at the bottom, we can see the flag.
 
-<figure><img src="../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (19) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### SecureVault V2
 
@@ -216,7 +216,7 @@ The website presented to us shows us a login page:
 
 Trying to send any login results in a 403 Forbidden code. We can first test this login page in `Burpsuite`. I first changed the POST data parameters to a JSON object to try and bypass this login.
 
-<figure><img src="../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (14) (3).png" alt=""><figcaption></figcaption></figure>
 
 So why did this work? Well, this is because of what we sent in, which was something processed by the MongoDB backend (which we have now confirmed). How MongoDB works is basically through JSON objects, which rely on key value pairs (like hash maps).&#x20;
 
@@ -238,11 +238,11 @@ Because the database actually processes our input, we can use Regex to brute for
 
 So what happens if we change the character to something else?&#x20;
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (3).png" alt=""><figcaption></figcaption></figure>
 
 It gives us a **false** condition. We can use this flaw in the application to **brute force the password character by character.** We know the second character is U (as all flags start with 'RUSH{' ), so we can test the second character as well:
 
-<figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (10) (3).png" alt=""><figcaption></figcaption></figure>
 
 So we can use blind injection to get the flag. A simple `python` script can run through this easily:
 

@@ -83,7 +83,7 @@ This is the file contents:
 
 The next page contains a guest login for the SQL server. We also find a user called `brandon.brown`, who is likely some kind of database administrator.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (7) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (5) (3).png" alt=""><figcaption></figcaption></figure>
 
 We can use `mssqlclient.py` to connect and interact with this database:
 

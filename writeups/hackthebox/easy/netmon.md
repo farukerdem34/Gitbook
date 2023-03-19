@@ -30,7 +30,7 @@ Since we have access to the entire file directory through FTP, we can search for
 
 When we download this file, we can view the content inside, and we are abel to find the `dbpassword` parameter for us.
 
-<figure><img src="../../../.gitbook/assets/image (13) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 I was able to find a RCE exploit online for this particular version:
 
@@ -42,6 +42,6 @@ In this version of PRTG, there are demo scripts that come downloaded with the so
 
 Afterwards, we can `evil-winrm` in as this new user.
 
-<figure><img src="../../../.gitbook/assets/image (3) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 This pentest user has administrator privileges over the machine, and thus we can capture all flags present.&#x20;

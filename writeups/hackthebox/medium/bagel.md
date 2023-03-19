@@ -273,7 +273,7 @@ print(result)
 
 This works! Now, we can attempt to read the user flag and the private SSH key of the user `phil`.
 
-<figure><img src="../../../.gitbook/assets/image (2) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (3) (4).png" alt=""><figcaption></figcaption></figure>
 
 Then we can SSH in as `phil`.
 

@@ -34,7 +34,7 @@ This endpoint was rather interesting because it allows us to edit profiles. Chec
 
 With this edit profile stuff, I found out that we can change the attributes related to our account. I changed the profile, email and GUID of the current user to be the same as the administrator's.
 
-<figure><img src="../../../.gitbook/assets/image (3) (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (3) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 When I found out this worked, I basically also changed the `is_superuser` attribute to `true`.
 

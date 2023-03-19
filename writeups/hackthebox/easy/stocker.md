@@ -23,7 +23,7 @@ There was nothing of interest on the website. `gobuster` scans and default enume
 
 I decided to use `wfuzz` to fuzz the possible subdomains present on the website, and actually found one at `dev.stocker.htb`.
 
-<figure><img src="../../../.gitbook/assets/image (8) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 Interesting.
 

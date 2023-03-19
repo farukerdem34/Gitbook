@@ -10,7 +10,7 @@ Nmap scan:
 
 I found that SMB accepts null credentials for this machine:
 
-<figure><img src="../../../.gitbook/assets/image (32) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (32) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Viewing the support-tools share, we find that it contains multiple binaries.
 

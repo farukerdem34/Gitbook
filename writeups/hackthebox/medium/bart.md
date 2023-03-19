@@ -64,7 +64,7 @@ Afterwards, I logged into the server.
 
 Within this page, there's the ability to view the Log files, and when we do, we would first get a pop-up similar to xss with 1, and have this GET request be sent to the machine.
 
-<figure><img src="../../../.gitbook/assets/image (14) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (3) (3).png" alt=""><figcaption></figcaption></figure>
 
 When viewing this log, I noticed that the User-Agent was copied from my machine.
 

@@ -8,7 +8,7 @@ Nmap scan:
 
 Running a detailed scan reveals that Jetty is running on port 50000.
 
-<figure><img src="../../../.gitbook/assets/image (11) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (6) (2).png" alt=""><figcaption></figcaption></figure>
 
 Early enumeration reveals that port 80 has nothing of interest, and SMB does not respond to null credentials so we can't do anything. That just leaves port 50000 for possible exploits.
 

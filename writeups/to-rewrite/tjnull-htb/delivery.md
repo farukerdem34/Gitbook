@@ -50,7 +50,7 @@ Then we can login and view the forums to find an SSH credential:
 
 We can then use these credentials to SSH in as the user.
 
-<figure><img src="../../../.gitbook/assets/image (34) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (34) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
