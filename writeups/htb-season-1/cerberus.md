@@ -69,7 +69,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 /search               (Status: 302) [Size: 0] [--> /icingaweb2/authentication/login?redirect=search]
 ```
 
-Found some interesting directories, but nothing was useful because we didbn't have any credentials. Decided to enumerate on possible Icinga2 exploits online, and found some useful directory traversal related exploits.
+Found some interesting directories, but nothing was useful because we didn't have any credentials. Decided to enumerate on possible Icinga2 exploits online, and found some useful directory traversal related exploits.
 
 {% embed url="https://www.sonarsource.com/blog/path-traversal-vulnerabilities-in-icinga-web/" %}
 
