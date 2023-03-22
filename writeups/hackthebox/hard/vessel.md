@@ -146,7 +146,7 @@ There was some difficulty in making this work due to incompatible Python version
 
 Now, we can take a look at how this application generates its random passwords, and if we can possibly create our own wordlist and brute force the password out. Firstly, we can see this thisi binary uses the PySide2.Qt library to generate its passwords.
 
-<figure><img src="../../../.gitbook/assets/image (232).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (230).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can take a look at the actual password generation.
 

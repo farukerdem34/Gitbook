@@ -260,13 +260,13 @@ http://authorization.oouch.htb:8000/oauth/authorize?client_id=g2uRKpKRQBvO7OXm8A
 
 Then we can listen on port 80 to capture the request being sent
 
-<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (10).png" alt=""><figcaption></figcaption></figure>
 
 ### /oauth/token
 
 After getting this token, I was stuck for a long while. I was back to this page and realised I never really look at the `/oauth/token` function here:
 
-<figure><img src="../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 Viewing the HTTP request, I realised that the `sessionid` token could be used to login as `qtc`.
 

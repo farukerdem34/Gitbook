@@ -22,7 +22,7 @@ The HTB machine Doctor has a good SSTI vulnerability within it.
 
 The machine has a secret page that allows for posts by the user to be made with a **title** and **content.** We do not know the template engine being used yet.&#x20;
 
-<figure><img src="../.gitbook/assets/image (17) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (17) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can straightaway begin testing for SSTI via this. After using `{{7*7}}`, we would see the following:
 

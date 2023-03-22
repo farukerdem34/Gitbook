@@ -32,7 +32,7 @@ We can check our sudo privleges to find that we can run everything as the `scrip
 
 So, we can first get a reverse shell using `python u`Then, we can simply run `sudo -u scriptmanager /bin/bash` within the shell on the listener port.
 
-<figure><img src="../../../.gitbook/assets/image (16) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (6).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

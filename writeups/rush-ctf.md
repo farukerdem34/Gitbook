@@ -81,7 +81,7 @@ From the above, an input of 60 'A' resulted in the value of `check` being overwr
 
 So we have successfully confirmed we have control over the vcalue of check. Now all we need to do is have 56 bytes of junk characters, then replace the last 4 characters (which are Bs) to the desired value. We can use `pwntools` to connect and send our input to the server and get the flag.
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```python
 from pwn import *
@@ -107,7 +107,7 @@ This uses `gets`, which is a vulnerable function when getting user input. This, 
 
 The output of the binary hint towards another function called `please_call_me`, and we have to somehow call the function. Viewing the function in Ghidra, all it does is give a shell.
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 So the exploit path is clear: Buffer Overflow --> Control Instruction Pointer --> Call this function --> Get Flag.
 
@@ -135,7 +135,7 @@ We see that the first address is `0x0000000000401146`. Because ASLR is disabled,
 
 We can use `pattern_create` and `pattern_offset` within `gdb-peda` to enumerate this. Since the memory allocated to the `local_c` variable wasn't large (it was only at 4 bytes), we can start with an input of 20 characters.
 
-<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 This is the command line input required when using `gdb-peda`. Now, the program should have crashed due to Segmentation Fault (memory allocation is whack because we messed it up with a huge input). `gdb-peda` would show the values of the stack.
 
@@ -234,7 +234,7 @@ So why not we use this difference in response (either 403 Forbidden or 200 OK) t
 
 Because the database actually processes our input, we can use Regex to brute force the password. This can be done using the `$regex` function. We know that the first character of the flag is R, so let's try that first.&#x20;
 
-<figure><img src="../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 So what happens if we change the character to something else?&#x20;
 

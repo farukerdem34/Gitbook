@@ -40,7 +40,7 @@ Within FTP, we can find a backup of the website.
 
 When we extract this file and unzip it, we would be able to find a few directories of use.
 
-<figure><img src="../../../.gitbook/assets/image (77) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (249).png" alt=""><figcaption></figcaption></figure>
 
 There are 2 directories, the `utility-scripts` and `w4ld0s` stuff. The secret directory revealed one more credential.
 

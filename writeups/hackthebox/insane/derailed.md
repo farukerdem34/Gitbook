@@ -26,7 +26,7 @@ Wasn't much to play around with, as we had no credentials yet. Decided to run a 
 
 Interesting. This presented a lot of information for me and also tells me this is a Ruby on Rails project. Another interesting directory was the **/administration** panel which I could not view at all. This is the information from the info endpoint:
 
-<figure><img src="../../../.gitbook/assets/image (12) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 From here, we can try to fuzz out other information and endpoints on this /rail directory. I used feroxbuster for its recursive search function.
 

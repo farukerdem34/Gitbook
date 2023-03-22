@@ -20,7 +20,7 @@ This was the port where the MatterMost instance was hosted, and credentials are 
 
 Based on the hints given in the Contact Us page, I registed an email with the @delivery.htb domain at the back. However, this was not possible because we had to verify the email, and we don't have any email clients on this machine.
 
-<figure><img src="../../../.gitbook/assets/image (20) (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (32) (4).png" alt=""><figcaption></figcaption></figure>
 
 ### Helpdesk
 

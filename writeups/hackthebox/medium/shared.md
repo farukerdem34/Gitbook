@@ -102,7 +102,7 @@ We saw earlier that root was running `redis-server`. We first need to search for
 
 &#x20;I ran LinPEAS, and found one within the `/usr/local/bin/redis_connector_dev` file.
 
-<figure><img src="../../../.gitbook/assets/image (12) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (4) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can then sign in using `redis-cli` on the machine and load the exploit.
 

@@ -71,7 +71,7 @@ We can then proceed to enumerate the SMTP instance.
 
 We can sign in to the service on port 110.
 
-<figure><img src="../../../.gitbook/assets/image (35) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (4) (3).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can view the messages sent using `list`.
 

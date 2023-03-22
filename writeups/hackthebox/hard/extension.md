@@ -208,7 +208,7 @@ What this essentially does is this:
 
 We can view the callback:
 
-<figure><img src="../../../.gitbook/assets/image (115) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (127) (1).png" alt=""><figcaption></figcaption></figure>
 
 When decoded from base64, we can see that charlie has a backup of his home directory present on this Gitea instance, and pehaps there are SSH keys wthin it.
 

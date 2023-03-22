@@ -96,13 +96,13 @@ We can easily generate one using MSFVenom.
 
 Once we get this on the target machine and get a shell, we would need to migrate processes for stability, and then use the **espia** module to get a screenshot.
 
-<figure><img src="../../../.gitbook/assets/image (238).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (37) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (158) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (33) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 When viewing the screenshot, I was surprised to find I was right!
 
-<figure><img src="../../../.gitbook/assets/image (225) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (272).png" alt=""><figcaption></figcaption></figure>
 
 The powershell instance we found earlier was running this command to remotely control another device, which I suspect might be another machine that is not accessible from my machine and required tunneling.
 
@@ -120,7 +120,7 @@ Afterwards, we can check the directory of his desktop to confirm where the user.
 
 While I did find the user flag, there was this .ps1 file that was also really interesting. With our RCE capabilities, we can read this file.
 
-<figure><img src="../../../.gitbook/assets/image (156) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (159) (1).png" alt=""><figcaption></figcaption></figure>
 
 This script essentially runs the `Get-Volume` command as the jmorgan user, which is cool. Also, we can note that the imonks user has privileges over this script and we can write to it. What this means is, we can get RCE as jmorgan!
 

@@ -48,7 +48,7 @@ Upgrade-Insecure-Requests: 1
 }
 ```
 
-<figure><img src="../../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (1) (6).png" alt=""><figcaption></figcaption></figure>
 
 ### XXE Injection
 
@@ -182,7 +182,7 @@ mongodb      802  0.3  1.8 981772 76124 ?        Ssl  16:38   0:08 /usr/bin/mong
 
 Earlier we used NoSQL injection to access this, and perhaps we can find the actual credentials for the `admin` user (so that I can check `sudo` privleges). Some DBs and collections can be found here.
 
-<figure><img src="../../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 I could find a password from the users collections.
 

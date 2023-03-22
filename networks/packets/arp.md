@@ -4,7 +4,7 @@ Address Resolution Protocol (ARP) is a protocol that is used to resolve MAC addr
 
 As mentioned, every single device has a unique MAC address and without it, the device cannot really function. How ARP makes use of that is through a table.
 
-<figure><img src="../../.gitbook/assets/image (10) (2) (1).png" alt=""><figcaption><p>ARP Table</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (10) (2) (1) (1).png" alt=""><figcaption><p>ARP Table</p></figcaption></figure>
 
 We can see from my device, that there are a few IP addresses tied to MAC addresses, also known as physical addresses.&#x20;
 

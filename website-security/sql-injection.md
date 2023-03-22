@@ -10,7 +10,7 @@ SQL Injection on the other hand, is the injection of SQL queries to manipulate t
 
 SQL Injection is an old vulnerability, but it's gold and still very applicable, even today (unfortunately).
 
-<figure><img src="../.gitbook/assets/image (310).png" alt=""><figcaption><p><em>Taken from PortSwigger Web Security Academy</em></p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (26) (1) (1) (1).png" alt=""><figcaption><p><em>Taken from PortSwigger Web Security Academy</em></p></figcaption></figure>
 
 ## How it Works
 
@@ -174,7 +174,7 @@ sqlmap -r req.txt --os-shell
 # tries to write web shell onto server and execute it for RCE on server
 ```
 
-<figure><img src="../.gitbook/assets/image (268).png" alt=""><figcaption><p><em>Example of Valid SQL Injection Found</em></p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (250) (1).png" alt=""><figcaption><p><em>Example of Valid SQL Injection Found</em></p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (288).png" alt=""><figcaption><p><em>Example of Valid Entry Exfiltrated</em></p></figcaption></figure>
 
