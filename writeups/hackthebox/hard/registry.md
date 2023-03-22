@@ -30,7 +30,7 @@ There was also a `/bolt` endpoint that shows a basic sample site.
 
 Bolt CMS was a possibility of exploitation here. A `feroxbuster` search reveals this is the case:
 
-<figure><img src="../../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 Based on the Bolt CMS Repo, we can check `changelog.md` to see the version and find that this is Bolt 3.6.4.
 
@@ -241,7 +241,7 @@ sqlite> SELECT * from bolt_users;
 
 We have a hash here that is cracked to give `strawberry`.
 
-<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1) (9).png" alt=""><figcaption></figcaption></figure>
 
 Now, we can login to the `bolt` CMS and continue our enumeration.
 

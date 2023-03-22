@@ -56,7 +56,7 @@ After decoding the file, we find a password.
 
 We can then read the `/etc/passwd` file to see which users have a `/bin/bash` shell on the machine.
 
-<figure><img src="../../../.gitbook/assets/image (6) (8) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (8).png" alt=""><figcaption></figcaption></figure>
 
 It seems that the `development` user was the target here. We can combine this and the credentials found to SSH into the machine.
 

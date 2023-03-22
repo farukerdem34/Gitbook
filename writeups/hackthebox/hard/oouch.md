@@ -94,7 +94,7 @@ When trying to access it, it attempts to access `authorization.oouch.htb:8000`. 
 
 Using the connect options shows us this:
 
-<figure><img src="../../../.gitbook/assets/image (21) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (21) (3) (3).png" alt=""><figcaption></figcaption></figure>
 
 When we click authorize, we just are logged in as the same user it seems.&#x20;
 
@@ -260,13 +260,13 @@ http://authorization.oouch.htb:8000/oauth/authorize?client_id=g2uRKpKRQBvO7OXm8A
 
 Then we can listen on port 80 to capture the request being sent
 
-<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (10).png" alt=""><figcaption></figcaption></figure>
 
 ### /oauth/token
 
 After getting this token, I was stuck for a long while. I was back to this page and realised I never really look at the `/oauth/token` function here:
 
-<figure><img src="../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1) (8).png" alt=""><figcaption></figcaption></figure>
 
 Viewing the HTTP request, I realised that the `sessionid` token could be used to login as `qtc`.
 
@@ -274,7 +274,7 @@ Viewing the HTTP request, I realised that the `sessionid` token could be used to
 
 Afterwards, accessing the `/oauth/token` endpoint did nothing for me until I experimented with sending POST requests:
 
-<figure><img src="../../../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (21) (3).png" alt=""><figcaption></figcaption></figure>
 
 We can read more about grant\_types here:
 

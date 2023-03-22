@@ -23,7 +23,7 @@ Port 8080 a corporate webpage for some product:
 
 There's an Upload function in the top right of the page. When we upload a file, we can view it on the server:
 
-<figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 There's an LFI vulnerability here.
 
@@ -317,7 +317,7 @@ The PoC is pretty simple:
 We find that this works!\
 
 
-<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (12).png" alt=""><figcaption></figcaption></figure>
 
 Now we have RCE, we can easily get a reverse shell. I got this via 2 commands, one that downloads a small reverse shell script via `curl` and then executes it with `bash`.
 
