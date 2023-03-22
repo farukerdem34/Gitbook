@@ -12,6 +12,7 @@ HTB Writeups added:
 
 * Agile (HTB Season 1)
 * Inject (HTB Season 1)
+* Cerberus (HTB Season 1)
 * Easy
   * NodeBlog
 * Medium
@@ -20,9 +21,9 @@ HTB Writeups added:
   * Registry
   * Oouch&#x20;
 
-Added Portswigger Web Academy stuff.&#x20;
+Added Portswigger Web Academy stuff.
 
-Added Rush CTF writeups (Temporarily, will archive in one week).
+Debating on whether to add Google Foobar challenge explanations (it's not security but CS ;c)
 
 ### February 2023
 
