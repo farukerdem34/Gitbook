@@ -158,7 +158,7 @@ With these credentials, we can login to the Icinga Web instance!
 
 I looked around, and determined that this was running **Icinga Web 2 Version 2.9.2**, which could be useful later. On the original page that gave us the directory traversal exploit, there was another RCE exploit, but I'm not sure how to exploit it yet.
 
-<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (10).png" alt=""><figcaption></figcaption></figure>
 
 I also found that as `matthew`, we could create new users. Reading the code from the Sonar website, we can see that there's a `/$configDir/ssh/matthew` directory that can store a private key.
 
@@ -178,7 +178,7 @@ This, combined with the RCE exploit above is a clear attack vector. We need to g
 
 First we need to change the `global_module_path` to `/dev` as per the PoC. This can be done in `/config/general`.
 
-<figure><img src="../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can quickly enable the `shm` module in `/config/moduleenable`.
 
@@ -231,7 +231,7 @@ The MySQL database has nothing of interest. Port 80 was hosting nothing as well.
 
 For SUID binaries, there were two that I didn't usually see:
 
-<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7) (8).png" alt=""><figcaption></figcaption></figure>
 
 We can check its version:
 
@@ -254,7 +254,7 @@ You can now run 'firejail --join=1407' in another terminal to obtain a shell whe
 
 We have to repeat the RCE exploit that we did previously to make this work. Then, we can run the command and be able to become root. **Take note we can just run `su -` for this to work.**
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 Great! Now we have access as root on the Linux docker.&#x20;
 
@@ -300,7 +300,7 @@ We must remember that this machine is joined via to a domain somehow. I googled 
 
 So `sssd` is a method of which Linux machines can store credentials. This is in-line with a certain `createdump` file I found in `/opt/microsoft/powershell/7`, which was a binary with some Red Hat data.
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 We can enumerate the `/var/lib/sss` directory to see if we can find anything useful. There's a `db` folder:
 
@@ -318,7 +318,7 @@ drwxr-xr-x 10 root root    4096 Jan 22 18:12 ..
 
 When `strings` is used to view the `cache_cerberus.local.ldb` file, we can find a hashed password for `matthew`.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 This hash can be cracked instantly:
 
@@ -371,7 +371,7 @@ chisel server -p 9001 --reverse
 
 Then we can `evil-winrm` in.
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 We can now capture the user flag!
 
@@ -457,7 +457,7 @@ https://dc:9251/samlLogin/67a8d101690402dc6a6744b8fc8a7ca1acf88b2f
 
 Not sure what to do with this though.
 
-### CVE Finding --> Lucky!
+### CVE-2022-47966
 
 One thing I've learnt with the newer HTB machines is that **they always use newer exploits available**. As such, we can try to find a new exploit and try it:
 
