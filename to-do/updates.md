@@ -1,7 +1,3 @@
----
-description: See what I've added each month!
----
-
 # Updates
 
 ## 2023
@@ -14,16 +10,24 @@ HTB Writeups added:
 * Inject (HTB Season 1)
 * Cerberus (HTB Season 1)
 * Easy
+  * Friendzone
   * NodeBlog
+  * Nest
+  * Networked
 * Medium
   * Epsilon
 * Hard
   * Registry
+  * Monitors
   * Oouch&#x20;
 
-Added Portswigger Web Academy stuff.
+Added Portswigger Web Academy links.
 
 Debating on whether to add Google Foobar challenge explanations (it's not security but CS ;c)
+
+Removed Cryptography portion, too theoretical and better guides can be found online / at university courses.&#x20;
+
+OSCP BOF --> OSCP BOF (OUTDATED)
 
 ### February 2023
 
@@ -74,7 +78,6 @@ HTB Writeups Added:
   * Buff
   * Chatterbox
   * Doctor
-  * Friendzone
   * Frolic
   * Goodgames
   * Heist
@@ -157,10 +160,4 @@ Pages Added:
 
 ### November (Book started!)
 
-Added everything from OneNote.
-
-Added To-Do List
-
-Added What is Security
-
-Added Methodology
+Added all sections and imported all writeups from OneNote.&#x20;

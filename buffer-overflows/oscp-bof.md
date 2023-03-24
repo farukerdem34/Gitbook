@@ -1,8 +1,10 @@
 ---
-description: Walkthrough of OSCP Buffer Overflow
+description: >-
+  Walkthrough of OSCP Buffer Overflow. OSCP 2023 has removed Buffer Overflows,
+  but this guide will remain here.
 ---
 
-# OSCP BOF
+# OSCP BOF (OUTDATED)
 
 For this section I will be using the buffer overflow room from TryHackMe. Good room for practicing the OSCP BOF.&#x20;
 
@@ -115,7 +117,7 @@ Lastly, you would need to have **Immunity Debugger on a Windows VM** for this be
 
 We would first need to set up mona's working directory (where all the files it generates goes) as such:
 
-<figure><img src="../.gitbook/assets/image (15) (1) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (15) (1) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 You can download `mona.py` from here:
 
@@ -129,7 +131,7 @@ First we need to fuzz the application to test at what character it will crash at
 
 If we take a look at Immunity Debugger, the register window would look like this:
 
-<figure><img src="../.gitbook/assets/image (7) (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7) (3) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 The EIP is filled with \x41 (which translates back to "A"). So the program would crash and we need to reload this in Immunity Debugger a lot.
 

@@ -26,7 +26,7 @@ The new domain leads us to a different website.
 
 The page was written in PHP (visiting index.php brings us to home page), thus we can fuzz possible endpoints with the `.php` extension using `gobuster -x` flag.
 
-<figure><img src="../../../.gitbook/assets/image (72) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (72) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Within `search.php`, we can find a query function.
 
@@ -34,7 +34,7 @@ Within `search.php`, we can find a query function.
 
 This was vulnerable to SQL Injection, and the payload `a' union select 1,2,3,4,5,6;-- -` works. From here, we can enumerate out the users and tables present in the website.
 
-<figure><img src="../../../.gitbook/assets/image (56) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (56) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Using the STREAMIO database, we can dump out the tables present:
 
@@ -58,7 +58,7 @@ I found this rather interesting, and wanted to fuzz this more. I was able to fin
 
 I also used `gobuster` to see what other files were present on this directory.
 
-<figure><img src="../../../.gitbook/assets/image (29) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (29) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 `master.php` was the most unique.
 
@@ -172,7 +172,7 @@ Add-DomainObjectAcl -Credential $Cred -TargetIdentity "Core Staff" -principalide
 Add-DomainGroupMember -Identity "Core Staff" -Members 'streamio\JDgodd' -Credential $Cred
 ```
 
-<figure><img src="../../../.gitbook/assets/image (58) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (58) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, we can use `crackmapexec` modules to read the LAPS password.
 

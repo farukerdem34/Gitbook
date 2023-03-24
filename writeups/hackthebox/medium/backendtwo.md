@@ -14,7 +14,7 @@ Port 80 brings us to an API again, with the admin user still being viewable.
 
 <figure><img src="../../../.gitbook/assets/image (223).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (166).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (166) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Creating User
 
@@ -84,7 +84,7 @@ Then, we can access the custom endpoint to gain a reverse shell easily.
 
 Once we are in, we can try to read the `auth.log` file and we would find the password for the `htb` user we currently are. This allows us to upgrade our shell via SSH-ing in.
 
-<figure><img src="../../../.gitbook/assets/image (164) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (164) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Wordle
 

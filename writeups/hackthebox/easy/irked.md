@@ -20,7 +20,7 @@ The hint is to check for IRC for this machine. As such, I diverted my attention 
 
 When searching for exploits regarding UnrealIRC, I found a few RCE exploits:
 
-<figure><img src="../../../.gitbook/assets/image (55).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (55) (1).png" alt=""><figcaption></figcaption></figure>
 
 When trying the RCE exploit, we find that it works.
 
@@ -50,7 +50,7 @@ With this, we can SSH in as `djmardov`.
 
 I ran a LinEnum for this machine, and found `/usr/bin/viewuser` to be an unusual SUID binary.
 
-<figure><img src="../../../.gitbook/assets/image (53).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (53) (1).png" alt=""><figcaption></figcaption></figure>
 
 When it was run, it tries to find a `/tmp/listusers` file.
 

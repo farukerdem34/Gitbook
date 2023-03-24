@@ -18,7 +18,7 @@ When trying to access the `admin.php` page, we get this error:
 
 Perhaps we can spoof the `X-Forwarded-For` header using an IP address. When checking the page sources of multiple pages, we can find this:
 
-<figure><img src="../../../.gitbook/assets/image (120).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (120) (2).png" alt=""><figcaption></figcaption></figure>
 
 Appending the `X-Forwarded-For: 192.168.4.28` header, we can access the `admin.php` page.
 
@@ -128,7 +128,7 @@ In this case, we need the `RP` permission to restart a service. To check whether
 
 When looking through the services that Hector had FullControl permissions over (via WinPEAS output), we find this one:
 
-<figure><img src="../../../.gitbook/assets/image (127).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (127) (2).png" alt=""><figcaption></figcaption></figure>
 
 This service certainly fits the conditions needed. We can use `sc.exe config` to modify the `binpath` variable to give us a reverse shell. However, the `sc.exe` method lept failing.
 

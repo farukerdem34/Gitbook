@@ -4,7 +4,7 @@
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (5) (1) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1) (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### SQL Truncation in Login
 
@@ -46,7 +46,7 @@ After sending this, we can login as the administrator.
 
 As a user we are allowed to upload collections with custom names.
 
-<figure><img src="../../../.gitbook/assets/image (33) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (33) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, the administrator is allowed to download and view these files by going to the Collections Tab.
 

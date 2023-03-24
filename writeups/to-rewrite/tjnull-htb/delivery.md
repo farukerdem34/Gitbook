@@ -58,13 +58,13 @@ We can then use these credentials to SSH in as the user.
 
 When looking at the MatterMost files in the `/opt` directory, we can find some SQL credentials:
 
-<figure><img src="../../../.gitbook/assets/image (125).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (125) (2).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (13) (3).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can use `netstat` to find that there is a MySQL instance running on the machine.
 
-<figure><img src="../../../.gitbook/assets/image (122).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (122) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can then access the `mattermost` database via the `mysql` command.
 

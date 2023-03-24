@@ -1,4 +1,4 @@
-# Support (AD)
+# Support
 
 ## Gaining Access
 
@@ -53,11 +53,11 @@ This would output the password.
 
 Then, since the binary does LDAP queries, I wanted to use the username and password given by the binary to query LDAP.
 
-<figure><img src="../../../.gitbook/assets/image (25) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (25) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 On analysing the output, I found a hidden password for the `support` user.
 
-<figure><img src="../../../.gitbook/assets/image (6) (1) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (1) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can then `evil-winrm` in as this `support` user.
 
@@ -67,7 +67,7 @@ We can then `evil-winrm` in as this `support` user.
 
 Once in, I started Bloodhound to enumerate for me. Upon reviewing the contents, I saw this interesting set of permissions over the DC.
 
-<figure><img src="../../../.gitbook/assets/image (9) (1) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (1) (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can use PowerMad and PowerView to abuse the `GenericAll` privileges.
 

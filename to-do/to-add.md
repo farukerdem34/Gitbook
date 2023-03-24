@@ -26,12 +26,11 @@
   * [x] Pointers, Stack and Heap
   * [x] Introduction to BOF (beginner BOF + RCE)&#x20;
   * [x] BOF Exploit Process Walkthrough (Basic, use OSCP examples)
-  * [ ] Advanced BOF (ROP Chaining, Ret2libc, ASLR/DEP Bypass, etc.)
+  * [x] Advanced BOF (ROP Chaining, Ret2libc, ASLR/DEP Bypass, etc.)
     * [x] ROP Chaining
     * [x] Ret2Libc
     * [x] ASLR / DEP Bypass
     * [x] Canary Bypass
-    * [ ] Egg Hunting (because I found it cool)
     * [x] GOT Overwrite - Used writeup because it explained it well.
 * Web Exploits
   * [x] SQL Injection
@@ -59,20 +58,6 @@
     * [x] Encryptions
     * [ ] Tunneling
     * [x] File Transfers
-* Cryptography (math :( )
-  * [ ] Cryptography + Keys to breaking Cryptography + Background Information
-    * [ ] Alice, Bob, Eve, Mallory
-    * [ ] PKCS padding + PRNG Generation (and why it has a P)
-    * [ ] How the world works with PKI&#x20;
-  * [ ] Symmetric Cryptography
-    * [ ] 3DES, AES-CBC, AES-ECB, AES-GCM + Possible exploits
-  * [ ] Asymmetric Cryptography
-    * [ ] ECC, Textbook RSA, RSA (with padding)
-    * [ ] TLS and Certificates
-  * [ ] RSA Exploits
-    * [ ] Coppersmith Theorems
-    * [ ] Common Modulus Attack
-    * [ ] Small E Attack
 * Active Directory
   * [x] ~~Introduction to AD~~
   * [x] ~~AD Tools~~&#x20;
@@ -95,4 +80,7 @@
   * [ ] Rubeus attacks + Explanations
 * [ ] Bug Bounty writeups
   * [ ] Currently working on a few (but im noob ;c)
-* [ ] Blockchain stuff (Bitcoin, Proof of Work, Proof of Stake, ETH) after I learn more about it
+* [ ] Cloud Security Topics
+  * [ ] Kubernetes
+  * [ ] AWS
+  * [ ] Azure&#x20;

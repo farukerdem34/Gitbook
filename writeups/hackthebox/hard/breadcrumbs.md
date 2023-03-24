@@ -12,7 +12,7 @@ Port 80 is running a kind of library application.
 
 On the webapp, we can search for books using the title and author.
 
-<figure><img src="../../../.gitbook/assets/image (13) (1) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (1) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (476).png" alt=""><figcaption></figcaption></figure>
 
@@ -70,7 +70,7 @@ Seems that `paul` is the administrator of this website.
 
 Knowing that we have an Arbitrary File Read exploit to use, we can leverage on that to read the `authController.php` file of this folder, as this file determines the authentication mechanism and it may have credentials within it.
 
-<figure><img src="../../../.gitbook/assets/image (54).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (54) (5).png" alt=""><figcaption></figcaption></figure>
 
 The first thing we notice is the dependencies required, which are the `db.php` file we found earlier, and this `cookie.php` file that is new. We can also find the `$secret_key` variable within the code that it used for a JWT token.
 
@@ -142,7 +142,7 @@ When checking the user directory, we find a `todo.html` file.
 
 Viewing it reveals a hint to check the Sticky Notes application files for passwords.
 
-<figure><img src="../../../.gitbook/assets/image (164).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (164) (2).png" alt=""><figcaption></figcaption></figure>
 
 The files for this are located within the `C:\users\juliette\Appdata\local\pacakages` directory.
 
@@ -174,7 +174,7 @@ This was a ELF binary, and we can run it to see this:
 
 So this thing can retrieve a password that is encrypted from somewhere. I opened this file up in IDA to see how it functions.
 
-<figure><img src="../../../.gitbook/assets/image (23) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (23) (2) (3).png" alt=""><figcaption></figcaption></figure>
 
 Firstly, we can see that this accesses a service on port 1234 of the machine, which we probably need to use port forwarding to access. Next and more notably, we can see another string that looks a lot like a SQL query.
 

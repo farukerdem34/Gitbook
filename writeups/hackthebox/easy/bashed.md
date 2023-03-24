@@ -12,7 +12,7 @@ There was only one port available on the machine, and we can scan it to find the
 
 The page is about something called PHP Bash.
 
-<figure><img src="../../../.gitbook/assets/image (70).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (70) (1).png" alt=""><figcaption></figcaption></figure>
 
 I gobusted the website, and found a `/dev` directory.
 

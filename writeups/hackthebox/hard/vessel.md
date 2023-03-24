@@ -52,7 +52,7 @@ The first thing I was interested in was the login page, and if it could be explo
 
 From the source code in the `/routes` directory, we can see some SQL queries being passed to the backend API.
 
-<figure><img src="../../../.gitbook/assets/image (168) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (168) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 No input sanitising, but its not vulnerable to SQL Injection attacks.&#x20;
 
@@ -92,7 +92,7 @@ A quick check on the page source reveals this is **version 1.7.3**. A bit of dig
 
 <figure><img src="../../../.gitbook/assets/image (194) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (169) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (169) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We now have gained access to the machine.
 

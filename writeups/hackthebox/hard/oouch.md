@@ -33,7 +33,7 @@ Django -> Authorization Server
 
 Might need this information later. Also, we can see that this is the user `qtc` server.
 
-<figure><img src="../../../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 ### Port 5000
 
@@ -43,7 +43,7 @@ This webpage just shows a login page:
 
 I registered a user and logged in to see the dashboard.
 
-<figure><img src="../../../.gitbook/assets/image (22) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (22) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 There are 3 main functions, a Password Change, Documents and the Contact one. The Password Change is not interesting, Documents are only available for the administrator user. That just leaves  the Contact function.
 
@@ -102,7 +102,7 @@ When we click authorize, we just are logged in as the same user it seems.&#x20;
 
 On Port 8000, all we see is this:
 
-<figure><img src="../../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (25) (3).png" alt=""><figcaption></figcaption></figure>
 
 When are visiting this port from port 5000 via OAuth, this is the request that gets sent:
 
@@ -122,7 +122,7 @@ Upgrade-Insecure-Requests: 1
 
 And this is the page that gets shown to us:
 
-<figure><img src="../../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (24) (7).png" alt=""><figcaption></figcaption></figure>
 
 When visiting `http://authorization.oouch.htb:8000`, we can see how to register to this server:
 
@@ -166,7 +166,7 @@ We can see a new endpont at `/applications`. Trying to access this requires cred
 
 I did not have any credentials for now. After creating this account and re-testing, using the `/oauth/connect` function earlier now shows a different user profile.
 
-<figure><img src="../../../.gitbook/assets/image (20) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 The website recognises my new OAuth account that I created and is considered 'connected'.&#x20;
 
@@ -174,7 +174,7 @@ The website recognises my new OAuth account that I created and is considered 'co
 
 Here's an overview of how exactly OAuth works:
 
-<figure><img src="../../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (23) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can view the HTTP requests throguh Burpsuite to see what exactly is happening.
 
@@ -238,7 +238,7 @@ Great! Now we have credentials to access some other stuff. There's an SSH key so
 
 Now that we have credentials, we can register somewhere. I used `gobuster` to scan the authorization server, and found another endpoint at `/oauth/applications/register`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (28) (2).png" alt=""><figcaption></figcaption></figure>
 
 Based on the documents, it seems that the `/api/get_user` endpoint supports a GET method, meaning the authorization parameter is probably a token. Problem is, we don't have any credentials or tokens from `qtc`, we only forced a link. The next step is to steal a token or password, and I'm guessing we need him to click another link.
 
@@ -270,11 +270,11 @@ After getting this token, I was stuck for a long while. I was back to this page 
 
 Viewing the HTTP request, I realised that the `sessionid` token could be used to login as `qtc`.
 
-<figure><img src="../../../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (30) (7).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, accessing the `/oauth/token` endpoint did nothing for me until I experimented with sending POST requests:
 
-<figure><img src="../../../.gitbook/assets/image (21) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (21) (3) (4).png" alt=""><figcaption></figcaption></figure>
 
 We can read more about grant\_types here:
 
@@ -286,7 +286,7 @@ By controlling the grant type, we can requests for the client\_credentials. This
 
 Then we can send a reuqest specifying the client ID, client secret and the grant type and the token for `qtc` will be given to us:
 
-<figure><img src="../../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (27) (3).png" alt=""><figcaption></figcaption></figure>
 
 This `access_token` parameter is the API token we need!
 
@@ -315,7 +315,7 @@ Now that we have access to this, we need to find the SSH key. After testing out 
 
 Then we can just SSH in as `qtc`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (29) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -354,7 +354,7 @@ There was some kind of cronjob going on, and there are docker containers present
 
 We can probably SSH into some of them. Rough guesing let me SSH into `172.18.0.4`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (22) (1).png" alt=""><figcaption></figcaption></figure>
 
 Checking the processes, we see a lot of `uswgi` processes running:
 
@@ -522,6 +522,6 @@ method return time=1678608399.001859 sender=:1.3 -> destination=:1.436 serial=4 
    string "Carried out :D"
 ```
 
-<figure><img src="../../../.gitbook/assets/image (14) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 I wonder why this machine isn't in Insane level...

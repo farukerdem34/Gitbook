@@ -16,7 +16,7 @@ Early enumeration reveals that port 80 has nothing of interest, and SMB does not
 
 Running a `gobuster` on the web application on port 50000 reveals a `/askjeeves` endpoint.
 
-<figure><img src="../../../.gitbook/assets/image (23) (2) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (23) (2) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 When visiting the endpoint, we see a Jenkins instance running.
 

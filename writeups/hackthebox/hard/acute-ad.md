@@ -4,7 +4,7 @@ description: >-
   exploitable vulnerabilities.
 ---
 
-# Acute (AD)
+# Acute
 
 ## Gaining Access
 
@@ -130,7 +130,7 @@ Using the same reverse shell .exe file I generated earlier, we can change the co
 
 <figure><img src="../../../.gitbook/assets/image (204) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (166) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (166) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation 2
 

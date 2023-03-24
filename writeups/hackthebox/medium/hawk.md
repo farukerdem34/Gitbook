@@ -66,7 +66,7 @@ Once we are in, we can go view the configuration files for this Drupal instance.
 
 Earlier, there was mention of a `daniel` user. We can use the credentials we found to SSH in as him.
 
-<figure><img src="../../../.gitbook/assets/image (56).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (56) (1).png" alt=""><figcaption></figcaption></figure>
 
 The most interesting thing is being dropped into a Python shell, which we can break out easily using `import os;os.system("/bin/bash")`.
 

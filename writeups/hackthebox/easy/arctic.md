@@ -14,7 +14,7 @@ When we visit port 8500, we see this:
 
 Adobe ColdFusion 8 is vulnerable to a lot of exploits.
 
-<figure><img src="../../../.gitbook/assets/image (151).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (151) (3).png" alt=""><figcaption></figcaption></figure>
 
 We can use the Adobe ColdFusion 8 RCE exploit. When running the exploit, we would catch a shell on a listener port we set.
 
@@ -28,7 +28,7 @@ Checking the privileges we have, we can see that we have SeImpersonatePrivilege 
 
 &#x20;
 
-<figure><img src="../../../.gitbook/assets/image (154).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (154) (3).png" alt=""><figcaption></figcaption></figure>
 
 We can also use `wesng.py` to find possible vulnerabilities for this machine. This would reveal that the machine is vulnerable to MS10-059. We can use the Chimicurri exploit for this.
 

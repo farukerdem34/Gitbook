@@ -22,11 +22,11 @@ Both the websites point towards a nginx default page.&#x20;
 
 I ran a `gobuster` scan on both of these, and found an `/install` directory with some random characters.
 
-<figure><img src="../../../.gitbook/assets/image (12) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 There was also a `/bolt` endpoint that shows a basic sample site.
 
-<figure><img src="../../../.gitbook/assets/image (15) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 Bolt CMS was a possibility of exploitation here. A `feroxbuster` search reveals this is the case:
 
@@ -34,7 +34,7 @@ Bolt CMS was a possibility of exploitation here. A `feroxbuster` search reveals 
 
 Based on the Bolt CMS Repo, we can check `changelog.md` to see the version and find that this is Bolt 3.6.4.
 
-<figure><img src="../../../.gitbook/assets/image (7) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 This was a rather old machine, so there were RCE exploits available if I could find the credentials for the administrator. However, there were no credentials for me to exploit, and I could not do much with this. I was clearly missing something.&#x20;
 
@@ -199,7 +199,7 @@ interact
 
 I downloaded the other files to see if there were any other interesting things. Eventually, I did find a SSH private key
 
-<figure><img src="../../../.gitbook/assets/image (18) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (1) (5).png" alt=""><figcaption></figcaption></figure>
 
 ```bash
 $ curl -H 'Authorization: Basic YWRtaW46YWRtaW4=' http://docker.registry.htb/v2/bolt-image/blobs/sha256:2931a8b44e495489fdbe2bccd7232e99b182034206067a364553841a1f06f791 -L -o blob3.tar
@@ -213,7 +213,7 @@ Host registry
 
 With these, we can SSH in as `bolt`.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -249,7 +249,7 @@ Now, we can login to the `bolt` CMS and continue our enumeration.
 
 We can login with `admin:strawberry` to the admin dashboard.
 
-<figure><img src="../../../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (1) (5).png" alt=""><figcaption></figcaption></figure>
 
 Great! Within the password hash, we saw another hint in the form of `shell.php`. As the administrator for bolt, we can actually create PHP files in the File Management tab. We can drop in a webshell and easily get an RCE as the next user.
 
@@ -386,6 +386,6 @@ MIIEowIBAAKCAQEAmiGiXpswTyHhjgC55jHRWlGX1asEMyDFfkVwhuNohv/4cQKm
 
 Then we can SSH in as `root`.
 
-<figure><img src="../../../.gitbook/assets/image (2) (1) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Cool machine. Really good despite being like 3 years old.

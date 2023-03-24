@@ -76,7 +76,7 @@ The user flag can be retrieved by sending a PUT request to this endpoint:
 
 Below is the endpont that would allow us to gain a shell on the machine. Notice that we need to have Debug permissions, which is something our user definitely does not have.
 
-<figure><img src="../../../.gitbook/assets/image (168).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (168) (1).png" alt=""><figcaption></figcaption></figure>
 
 Using the API a bit more, we can find an `/updatepass` endpoint as well.
 

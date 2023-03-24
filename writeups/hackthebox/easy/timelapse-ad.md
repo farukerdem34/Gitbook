@@ -1,4 +1,4 @@
-# Timelapse (AD)
+# Timelapse
 
 ## Gaining Access
 
@@ -12,7 +12,7 @@ As usual, I always check the shares that I can access with no credentials, and f
 
 Within this share, we can find a `winrm_backup.zip` file that has a password on its files.
 
-<figure><img src="../../../.gitbook/assets/image (60) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (60) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 This is easily crackable with `zip2john` and `john`.
 
@@ -32,7 +32,7 @@ With this, we can extract the private key.
 
 <figure><img src="../../../.gitbook/assets/image (42) (4).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (70) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (70) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 We also need to extract the .crt file using `openssl pkcs12 -in legacyy_dev_auth.pfx -clcerts -nokeys -out legacyy_dev_auth.crt`.
 
@@ -52,11 +52,11 @@ We are then the `legacyy` user on the machine.
 
 Running a WinPEAS, we can find that our current user has a Powershell HIstory present:
 
-<figure><img src="../../../.gitbook/assets/image (53) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (53) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 The PS History has commands used for remote Powershell-ing as another user called `svc_deploy`.
 
-<figure><img src="../../../.gitbook/assets/image (68) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (68) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can use this to gain a reverse shell as the `svc_deploy` user using whatever method. `nc.exe` is the easiest.&#x20;
 
@@ -66,7 +66,7 @@ We can use this to gain a reverse shell as the `svc_deploy` user using whatever 
 
 When checking this user's privileges, we can see that we are part of the LAPS\_Readers group within the domain:
 
-<figure><img src="../../../.gitbook/assets/image (61) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (61) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 This means we can dump out the credentials for the DC:
 

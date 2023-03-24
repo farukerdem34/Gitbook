@@ -12,7 +12,7 @@ I took note of the HTTPS site, and wanted to check it out. Also, added `shared.h
 
 The website was a standard shopping page.
 
-<figure><img src="../../../.gitbook/assets/image (20) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 I wanted to view the certificate that was used to view any names or information that I could use.
 
@@ -26,7 +26,7 @@ There were wildcards present in the domain, so I knew that we had to check for s
 
 The checkout page looked vulnerable to me.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (27) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (27) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 All the parameters passed in via POST request were fine, but when proxying traffic, I noticed the weird `custom_cart` cookie that was used when we were adding products and viewing stuff. I tested some SQL injection payloads and found it to be vulnerable.
 
@@ -64,7 +64,7 @@ Then, we can ssh in as `james_mason`.&#x20;
 
 We find that there's another user called `dan_smith`, and we cannot access the user flag he has:
 
-<figure><img src="../../../.gitbook/assets/image (62) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (62) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Pspy64
 
