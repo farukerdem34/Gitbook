@@ -568,6 +568,6 @@ root
 
 Then we can capture the root flag. Afterwards, we can easily upgrade a shell into this machine. We can create an `authorized_keys` file and echo our public key in it.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (40) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (40) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Rooted! Really good machine for learning source code analysis and Kubernetes enumerations.&#x20;

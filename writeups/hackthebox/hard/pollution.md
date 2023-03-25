@@ -173,7 +173,7 @@ I tried checking for `config.php` files but was unable to find any. I knew that 
 
 We can login via `redis-cli` wth credentials.
 
-<figure><img src="../../../.gitbook/assets/image (36) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (36) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can list the keys and other information within this database.
 

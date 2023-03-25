@@ -4,7 +4,7 @@
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (94).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (94) (1).png" alt=""><figcaption></figcaption></figure>
 
 Interesting stuff.&#x20;
 
@@ -16,27 +16,27 @@ Port 9999 was running a typical `nginx` web application. I used `gobuster` to fi
 
 Going to `/backup` reveals some credentials and another hidden directory.
 
-<figure><img src="../../../.gitbook/assets/image (90).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (90) (2).png" alt=""><figcaption></figcaption></figure>
 
 There was nothing interesting in these files, but I found it rather odd that the `/backup` folder had the `loop/` directory within it.&#x20;
 
 I proceeded to run `feroxbuster` on the website to recursively enumerate all directories present. This allowed me to find the `/dev/backup` folder which contained another directory.
 
-<figure><img src="../../../.gitbook/assets/image (92).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (92) (3).png" alt=""><figcaption></figcaption></figure>
 
 ### PlaySMS
 
 Going to the directory that we just found, we can see another login page.
 
-<figure><img src="../../../.gitbook/assets/image (112).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (112) (1).png" alt=""><figcaption></figcaption></figure>
 
 I viewed the page source, and found the password in the JS code within the page.
 
-<figure><img src="../../../.gitbook/assets/image (113).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (113) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then, when logged in, we find this cipher.
 
-<figure><img src="../../../.gitbook/assets/image (114).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (114) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Crypto Puzzles
 
@@ -50,7 +50,7 @@ Nothing here check /asdiSIAJJ0QWE9JAS
 
 Afterwards, we would get another cipher.
 
-<figure><img src="../../../.gitbook/assets/image (88).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (88) (3).png" alt=""><figcaption></figcaption></figure>
 
 I recognised this as base64 and attempted to decode it, but it returned non-readable characters.
 
@@ -98,11 +98,11 @@ playSMS had a few RCE exploits, so I grabbed one from Github and tried it.
 
 {% embed url="https://github.com/jasperla/CVE-2017-9101/blob/master/playsmshell.py" %}
 
-<figure><img src="../../../.gitbook/assets/image (106).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (106) (1).png" alt=""><figcaption></figcaption></figure>
 
 Worked! Now, we can get a reverse shell easily using a bash one-liner.
 
-<figure><img src="../../../.gitbook/assets/image (109).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (109) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then we would gain a reverse shell as `www-data`.
 
@@ -116,7 +116,7 @@ The user on this machine had an interesting `.binary` directory within their hom
 
 In the `/home/ayush/.binary` directory, we can find this `rop` SUID binary.
 
-<figure><img src="../../../.gitbook/assets/image (104).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (104) (1).png" alt=""><figcaption></figcaption></figure>
 
 I ran an `ltrace` on the binary and tested it with some random input. I found that this uses the `strcpy` function, which is vulnerable to a BOF exploit.
 
@@ -173,7 +173,7 @@ system() --> 0xb7e53da0
 
 Afterwards, we need to fuzz the binary to find the number of junk characters required via `pattern_offset.rb`.
 
-<figure><img src="../../../.gitbook/assets/image (119).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (119) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (91).png" alt=""><figcaption></figcaption></figure>
 

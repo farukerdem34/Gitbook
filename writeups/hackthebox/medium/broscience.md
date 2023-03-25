@@ -28,7 +28,7 @@ We can take note that there is an `administrator` user present on the website, a
 
 Within each post, there's an Add Comment functionality that requires us to be logged in. I attempted to register an account, but this didn't work because we had to find an activation link.
 
-<figure><img src="../../../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (31) (1).png" alt=""><figcaption></figcaption></figure>
 
 So there's an activation link of some sort. I ran a directory scan for .php files on the website, and found quite a few.
 
@@ -130,7 +130,7 @@ From here, we can see that is a `postgres` and `bill` user on the machine. Now, 
 
 I was able to read the `db_connect.php` file by double URL encoding `../includes/db_connect.php` and passing it as the parameter.
 
-<figure><img src="../../../.gitbook/assets/image (27) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (27) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 Trying this credential found does not work anywhere though. So I read the other files, and the `utils.php` file contained some useful information about how the activation code was generated.
 

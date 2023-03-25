@@ -121,7 +121,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 When trying to access it, it requested for credentials:
 
-<figure><img src="../../../.gitbook/assets/image (5) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Using `admin:admin` worked. I was forwarded to what looked like a web API. I didn't have any commands to use, so doing some basic research for Docker Registry API commands was the next step. As usual, Hacktricks had some commands.
 

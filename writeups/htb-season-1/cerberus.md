@@ -152,7 +152,7 @@ use_ssl = "0
 
 With these credentials, we can login to the Icinga Web instance!
 
-<figure><img src="../../.gitbook/assets/image (16) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (16) (1) (6).png" alt=""><figcaption></figcaption></figure>
 
 ### Icinga as Matthew --> RCE
 
@@ -178,7 +178,7 @@ This, combined with the RCE exploit above is a clear attack vector. We need to g
 
 First we need to change the `global_module_path` to `/dev` as per the PoC. This can be done in `/config/general`.
 
-<figure><img src="../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (10) (1) (9).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can quickly enable the `shm` module in `/config/moduleenable`.
 
@@ -211,7 +211,7 @@ type=ssh&name=notakey&user=.../../../../../../../dev/shm/shell.php&private_key=f
 
 Visting the URL below would give us RCE!
 
-<figure><img src="../../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (13) (1) (5).png" alt=""><figcaption></figcaption></figure>
 
 With this, we can get a reverse shell.
 
@@ -221,7 +221,7 @@ With this, we can get a reverse shell.
 
 I ran LinPEAS on the machine to enumerate for me. We can find some ports that are open:
 
-<figure><img src="../../.gitbook/assets/image (14) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (14) (1) (6).png" alt=""><figcaption></figcaption></figure>
 
 The MySQL database has nothing of interest. Port 80 was hosting nothing as well.&#x20;
 
@@ -298,7 +298,7 @@ We must remember that this machine is joined via to a domain somehow. I googled 
 
 So `sssd` is a method of which Linux machines can store credentials. This is in-line with a certain `createdump` file I found in `/opt/microsoft/powershell/7`, which was a binary with some Red Hat data.
 
-<figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can enumerate the `/var/lib/sss` directory to see if we can find anything useful. There's a `db` folder:
 
@@ -316,11 +316,11 @@ drwxr-xr-x 10 root root    4096 Jan 22 18:12 ..
 
 When `strings` is used to view the `cache_cerberus.local.ldb` file, we can find a hashed password for `matthew`.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 This hash can be cracked instantly:
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Pivoting
 
@@ -486,7 +486,7 @@ set ISSUER_URL http://dc.cerberus.local/adfs/services/trust
 
 When executed, we would get a meterpreter shell as the SYSTEM user.
 
-<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 Using hints from the forum were really helpful, because I dislike using Metasploit and would have naturally avoided it.
 

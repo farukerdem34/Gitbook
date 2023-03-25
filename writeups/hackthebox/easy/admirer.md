@@ -16,7 +16,7 @@ We can head to that directly.
 
 The robots.txt file gave us the `/admin-dir` directory.
 
-<figure><img src="../../../.gitbook/assets/image (94) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (94) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 However, visiting it gives us a 403.
 

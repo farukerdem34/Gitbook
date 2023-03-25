@@ -8,19 +8,19 @@ Nmap scan:
 
 Doing a detailed Nmap scan reveals a bit more about the services running on the machine.
 
-<figure><img src="../../../.gitbook/assets/image (115).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (115) (1).png" alt=""><figcaption></figcaption></figure>
 
 Port 8080 was running a Tomcat instance, and this might be the method used for a reverse shell via a malicious .war file. Port 60000 was also running some form of custom application.&#x20;
 
 Credentials were required for port 8080:
 
-<figure><img src="../../../.gitbook/assets/image (83).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (83) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Private Browser
 
 This port was hosting a private browser that takes a URL as a parameter.
 
-<figure><img src="../../../.gitbook/assets/image (80).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (80) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can use this to get hits on our own HTTP server, but it does not seem to download files or anything. As such, there isn't much point on trying to host something on our machine. Instead, we can do SSRF and let this application **send requests to itself**. This would allow us to enumerate all ports that were open within the machine but not reachable from my Kali machine.
 
@@ -39,11 +39,11 @@ Eventually, we would start getting hits on the ports that are open.
 
 Using this bash loop, we can find that there's a Simple File Viewer application open on port 888, that was unaccessible to us earlier.
 
-<figure><img src="../../../.gitbook/assets/image (116).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (116) (1).png" alt=""><figcaption></figcaption></figure>
 
 When viewing this page, we can see a few folders, but the most interesting would be the `backup` folder.
 
-<figure><img src="../../../.gitbook/assets/image (118).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (118) (1).png" alt=""><figcaption></figcaption></figure>
 
 Clicking on the links does not work at all as we don't actually have access to this service from our machine. However, we can attempt to read the files using SSRF through the private browser.
 
@@ -71,7 +71,7 @@ We would be the `tomcat` user on the machine.
 
 When viewing the `/home` directory, we can find another user present.
 
-<figure><img src="../../../.gitbook/assets/image (89).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (89) (1).png" alt=""><figcaption></figcaption></figure>
 
 The `tomcat` user also had some interesting files within their directory.
 
@@ -79,7 +79,7 @@ The `tomcat` user also had some interesting files within their directory.
 
 The name of the file was a giveaway that this contained NTLM hashes from a memory dump of a Windows machine. As such, we can transfer this back to our machine and dump the credentials using `secretsdump.py`.
 
-<figure><img src="../../../.gitbook/assets/image (110).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (110) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then we can crack the Administrator's hash to get `f16tomcat!`. Afterwards, we can `su` to the `atanas` user with these credentials.
 
@@ -112,21 +112,21 @@ output_document = /etc/cron.d/malicious-cron
 
 Then, we can replace the command used in the script to a cronjob reverse shell by root.
 
-<figure><img src="../../../.gitbook/assets/image (105).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (105) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then, we would need to set up a FTP server on our machine with these files using `python3`.
 
-<figure><img src="../../../.gitbook/assets/image (99).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (99) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can attempt to test run the exploit and see that it returns a `socket.error`.
 
-<figure><img src="../../../.gitbook/assets/image (103).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (103) (1).png" alt=""><figcaption></figcaption></figure>
 
 Permission denied was an interesting error to get, as the script doesn't do anything out of the ordinary. Perhaps I was being blocked as I needed to access port 21, which typically requires superuser permissions.
 
 We can use `authbind` to bypass this.
 
-<figure><img src="../../../.gitbook/assets/image (96).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (96) (3).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, the exploit should work by first extracting the `/etc/shadow` file (as specified in the `.wgetrc` file we made earlier, although this can be any file).
 

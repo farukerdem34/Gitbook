@@ -8,11 +8,11 @@ description: Challenging Windows machine with unique docker escape!
 
 As usual, nmap scan to begin.
 
-<figure><img src="../../../.gitbook/assets/image (118) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (118) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 When visiting port 80, we can see that it gives us a domain.
 
-<figure><img src="../../../.gitbook/assets/image (105) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (105) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 The Get Started button directs us to a login page, where default admin:admin credentials do not work.
 
@@ -24,7 +24,7 @@ For this particular domain, there are tons of vhosts when using gobuster to scan
 
 The most interesting of all was the first one, which hosted a Gitea instance.
 
-<figure><img src="../../../.gitbook/assets/image (123) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (123) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Gitea has had some form of RCE exploits in the past, but this is running an updated version of the software, so no easy RCE for us.
 
@@ -42,7 +42,7 @@ This endpoint takes a POST request, and some fuzzing of the login request using 
 
 When changing this endpoint to the /management/dump endpoint, we get a 400 response saying that we are missing arguments.
 
-<figure><img src="../../../.gitbook/assets/image (109) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (109) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Based on my understanding of /dump endpoints and HTB creators, this thing should dump out a bunch of useful credentials should we find the right argumenst to enter. We have no other hints, so fuzzing this thing is the way forward it seems.
 
@@ -56,7 +56,7 @@ Now we have the first parameter, then we can fuzz the next. When checking reques
 
 Then we can proceed to continue fuzzing the parameter with the new string. After a while, we find that "users" is the next valid value.
 
-<figure><img src="../../../.gitbook/assets/image (104) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (104) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now, we can dump out all the possible credentials with passwords!
 
@@ -83,7 +83,7 @@ So we have 4 users that are using the same password. Using Juliana's account, I 
 
 This website allows us to add snippets of code for others to view, or something like that. I tested this out by adding some simple snippet and viewing the request in Burpsuite.
 
-<figure><img src="../../../.gitbook/assets/image (133).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (133) (1).png" alt=""><figcaption></figcaption></figure>
 
 Once we post snippets, we can edit them, and we can also make them public for all to see.
 
@@ -91,7 +91,7 @@ Once we post snippets, we can edit them, and we can also make them public for al
 
 I found this interesting because it referenced snippets by ID number. What's interesting is this was my first update, yet it was already the 3rd snippet posted. This tells me there is something hidden elsewhere. Upon changing this to 2, we can see a hidden snippet being posted by jean.
 
-<figure><img src="../../../.gitbook/assets/image (106) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (106) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (143).png" alt=""><figcaption></figcaption></figure>
 
@@ -101,7 +101,7 @@ This gives us credentials for jean! We can easily decode from base64 and find th
 
 Within Gitea, we can find a few push requests made by jean.
 
-<figure><img src="../../../.gitbook/assets/image (131) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (131) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Upon viewing the repository, there appears to be some form of JS script here that has a bad character filter being used:
 
@@ -218,21 +218,21 @@ When decoded from base64, we can see that charlie has a backup of his home direc
 
 We can save this file and proceed to access his private SSH keys.
 
-<figure><img src="../../../.gitbook/assets/image (134).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (134) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now we can SSH in as Charlie!
 
-<figure><img src="../../../.gitbook/assets/image (112) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (112) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Jean has the user flag, and we can easily su to jean using the earlier credentials. **Important to note is that we could not SSH into jean in the first place was because our public key was denied access**.
 
-<figure><img src="../../../.gitbook/assets/image (114) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (114) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
 Upon checking ifconfig, we can see that there are loads of other network interfaces within this machine, indicating that we could be in a Docker container of some sort.
 
-<figure><img src="../../../.gitbook/assets/image (129) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (129) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 I checked the open ports, and found that we had quite a few listening in.
 
@@ -256,7 +256,7 @@ Clearly takes user input from $domain and then just pings it. Very exploitable. 
 
 Using pspy64, we can find some mysql credentials:
 
-<figure><img src="../../../.gitbook/assets/image (135).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (135) (1).png" alt=""><figcaption></figcaption></figure>
 
 Let's take a look at this database.
 
@@ -270,7 +270,7 @@ We first need to portforward this MySQL Instance from the machine before moving 
 
 Earlier, we found 4 users, and from there we can update the database such that one of those users becomes a manager. I picked letha, but any is fine. The reason being the cronjob is only changing the password of charlie and jean, so we should use other users.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (103) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (103) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then we can login as this user.
 
@@ -282,7 +282,7 @@ The managers are able to verify users basically, which ties in to where the RCE 
 
 We can view the request and see how it verifies the user.
 
-<figure><img src="../../../.gitbook/assets/image (113) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (113) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 So how do we exploit this? We can either manipulate email we enter, or we can edit the database somehow.
 
@@ -300,7 +300,7 @@ insert into users(name,email,email_verified_at,password,remember_token,created_a
 
 Then we can find our user on the website.
 
-<figure><img src="../../../.gitbook/assets/image (124) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (124) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Once we hit validate, we will get a shell back as the application user.
 
@@ -328,7 +328,7 @@ After reading quite a bit on docker sockets, how they're not supposed to be writ
 
 We can edit this script a bit to fit our machine and then run it. Firstly, we need to change the image name based on this machine's config.
 
-<figure><img src="../../../.gitbook/assets/image (130) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (130) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can then proceed to use the exploit. Finalized code:
 
@@ -356,7 +356,7 @@ Getting Shell:
 
 <figure><img src="../../../.gitbook/assets/image (87) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (121) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (121) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can then grab the flag:
 

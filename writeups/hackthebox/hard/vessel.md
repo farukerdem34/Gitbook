@@ -238,7 +238,7 @@ In a new directory for the machine, we can include a simple script that would ma
 
 Then, we can execute these commands:
 
-<figure><img src="../../../.gitbook/assets/image (116) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (116) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 This would spawn a container for us to use for the core dump, and we would need to append something to the **mount** section of config.json: (basically setting the configuration of the container we generate with runc)
 

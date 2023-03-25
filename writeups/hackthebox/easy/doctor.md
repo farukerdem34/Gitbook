@@ -18,7 +18,7 @@ There was nothing interesting, until I added `doctors.htb` to the `/etc/hosts` f
 
 Here, we can create an account and test this service. When logged in, we can see a few functions.
 
-<figure><img src="../../../.gitbook/assets/image (123).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (123) (1).png" alt=""><figcaption></figcaption></figure>
 
 When examining the page source, we can find an `/archive` endpoint.&#x20;
 
@@ -67,7 +67,7 @@ When we submit this as a message, it would spawn a reverse shell.
 
 I ran LinPEAS to enumerate all files for me, it found a credential for me.
 
-<figure><img src="../../../.gitbook/assets/image (128).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (128) (1).png" alt=""><figcaption></figcaption></figure>
 
 When checking for other users, there was only the user `shaun`.
 

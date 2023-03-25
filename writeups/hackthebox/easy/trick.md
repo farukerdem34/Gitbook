@@ -52,7 +52,7 @@ With this, I attempted to read the private SSH keys of the user `michael`.
 
 Afterwards, we can simply SSH in as michael using this key.
 
-<figure><img src="../../../.gitbook/assets/image (89) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (89) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

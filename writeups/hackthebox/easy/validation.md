@@ -4,7 +4,7 @@
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (87) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (87) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 ### SQL Injection for RCE
 

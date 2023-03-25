@@ -156,7 +156,7 @@ We can grab the user flag now.
 
 I ran a winPEAS scan to enumerate for me. This scan found some certificates on the machine that could potentially be the PE vector.
 
-<figure><img src="../../../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can use `certify.exe` to find out if this is vulnerable. Using `certify.exe find /vulnerable`, we can find one certificate:
 
@@ -180,7 +180,7 @@ openssl pkcs12 -in cert.pem -keyex -CSP "Microsoft Enhanced Cryptographic Provid
 
 Then, transfer the pfx file and `rubeus.exe` to the machine. We can use `asktgt` with the certificate.
 
-<figure><img src="../../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (42) (4).png" alt=""><figcaption></figcaption></figure>
 
 Now that we have confirmed this works, we can append `/getcredentials` to the end of the Rubeus command.
 

@@ -321,7 +321,7 @@ We find that this works!\
 
 Now we have RCE, we can easily get a reverse shell. I got this via 2 commands, one that downloads a small reverse shell script via `curl` and then executes it with `bash`.
 
-<figure><img src="../../.gitbook/assets/image (2) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can upgrade the shell by dropping our public key in a `authorized_keys` folder in `frank` home directory.
 

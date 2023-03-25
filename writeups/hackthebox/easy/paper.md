@@ -36,7 +36,7 @@ We now have a new URL to head to.
 
 Within this new URL, we can register as a new user and login to find a Rocket.Chat instance.
 
-<figure><img src="../../../.gitbook/assets/image (80) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (80) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Within the chats tab, we can see that there is a `recyclops` bot that has some documentation.
 

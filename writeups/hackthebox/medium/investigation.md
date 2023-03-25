@@ -140,7 +140,7 @@ Exiting...
 
 So I transferred this binary back to my machine and used `ghidra` to see what it does. Here's the decompiled main function:
 
-<figure><img src="../../../.gitbook/assets/image (19) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (19) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can use this to get these this information:
 

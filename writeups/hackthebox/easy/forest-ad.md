@@ -1,4 +1,4 @@
-# Forest (AD)
+# Forest
 
 ## Gaining Access
 
@@ -12,7 +12,7 @@ Lots of ports as per normal DC scanning.
 
 Using `enum4linux` with no credentials, we find that it accepts null credentials and we can enumerate some users.
 
-<figure><img src="../../../.gitbook/assets/image (130).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (130) (1).png" alt=""><figcaption></figcaption></figure>
 
 With a user list, we can attempt to do AS-REP Roasting before moving on, and we would find a hash for the `svc-alfresco` user.
 
@@ -53,7 +53,7 @@ Add-DomainObjectAcl -Credential $cred -TargetIdentity "DC=htb,DC=local" -Princip
 
 Afterwards, we would basically have a new user to dump the administrator hash using `secretsdump.py` thanks to DCSync permissions.
 
-<figure><img src="../../../.gitbook/assets/image (124).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (124) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can Pass The Hash easily to gain access as the Administrator.
 

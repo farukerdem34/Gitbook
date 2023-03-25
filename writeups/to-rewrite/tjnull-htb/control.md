@@ -46,7 +46,7 @@ Then, we can check for RCE:
 
 Afterwards, gaining a reverse shell is trivial:
 
-<figure><img src="../../../.gitbook/assets/image (131).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (131) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -60,7 +60,7 @@ So we are looking for credentials for Hector. Understanding that there was a Mar
 
 Within the `C:\MariaDB\mysql` folder, we can find hashes for a user:
 
-<figure><img src="../../../.gitbook/assets/image (121).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (121) (1).png" alt=""><figcaption></figcaption></figure>
 
 Alternatively, we could use the SQL Injection vulnerability to dump these credentials out. Anyways, we would find a hash for the Hector user. His hash can be cracked on CrackStation to give `l33th4x0rhector`.
 

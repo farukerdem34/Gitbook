@@ -14,8 +14,13 @@ HTB Writeups added:
   * NodeBlog
   * Nest
   * Networked
+  * OpenAdmin
+  * Poison
 * Medium
   * Epsilon
+  * Nineveh
+  * October
+  * Passage
 * Hard
   * Registry
   * Monitors

@@ -174,7 +174,7 @@ The website recognises my new OAuth account that I created and is considered 'co
 
 Here's an overview of how exactly OAuth works:
 
-<figure><img src="../../../.gitbook/assets/image (23) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (23) (2) (4).png" alt=""><figcaption></figcaption></figure>
 
 We can view the HTTP requests throguh Burpsuite to see what exactly is happening.
 

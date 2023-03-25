@@ -153,7 +153,7 @@ Since we had credentials, I also ran a `bloodhound-python` to enumerate the obje
 
 Found that the `jdgodd` user had some permissions over the Core Staff group.
 
-<figure><img src="../../../.gitbook/assets/image (45) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (45) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 And members of this Core Staff were able to ReadLAPSPassword for the DC.
 

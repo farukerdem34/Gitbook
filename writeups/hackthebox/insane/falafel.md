@@ -14,7 +14,7 @@ Port 80 reveals a kind of social network website.
 
 I ran a `gobuster` scan on the website, and it revealed tons of interesting directories.
 
-<figure><img src="../../../.gitbook/assets/image (2) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 On the `cyberlaw.txt` file, we can find some hints on what to do next.
 

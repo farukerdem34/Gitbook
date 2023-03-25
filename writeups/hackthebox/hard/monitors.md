@@ -24,11 +24,11 @@ This version is vulnerable to RFI.
 
 We can confirm this by viewing the `/etc/passwd` file.
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (2).png" alt=""><figcaption></figcaption></figure>
 
 After further enumeration, there's nothing else that I could find. So we probably need to read more files within this machine. I could not read any user files, so I tried to check some configuration files for the server at `/etc/apache2/sites-enabled/000-default.conf`.
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
 
 We can find a new domain at `cacti-admin.monitors.htb`. Afterwards, I also read the Wordpress configuration files at `/var/www/wordpress/wp-config.php` to find a password.
 
@@ -44,7 +44,7 @@ This version of Cacti is old and vulnerable to loads of exploits. We can login w
 
 <figure><img src="../../../.gitbook/assets/image (125).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (1).png" alt=""><figcaption></figcaption></figure>
 
 We now have remote access as the user `marcus` and can capture the user flag.
 
@@ -74,7 +74,7 @@ I used `ssh -L 8443:localhost:8443 marcus@monitors.htb` to port forward after dr
 
 Visting any of these would redirect us to `/content/control/main`, where there is a login page present.
 
-<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
 
 The bottom of the page shows that this is running Apache OFBiz Release 17.12.01, which is vulnerable to loads of exploits, including an RCE one.
 

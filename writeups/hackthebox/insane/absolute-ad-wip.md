@@ -2,7 +2,7 @@
 description: Tough enumeration...
 ---
 
-# Absolute (AD)
+# Absolute
 
 This is an AD machine, so first we can begin with a port scan, and then go through the usual AD methodology for finding a weakpoint for this system.
 
@@ -59,7 +59,7 @@ We can attempt with LDAP as well and get a false result. It seems that **passwor
 
 I managed to retrieve a ticket using getTGT. We can then export this.
 
-<figure><img src="../../../.gitbook/assets/image (7) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (1) (2) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can attempt kerberoasting the machine to try and get some kind of service ticket using the credentials using GetUserSPNs. The output using the DC Domain is below:
 

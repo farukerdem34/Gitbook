@@ -16,7 +16,7 @@ Lots of ports open.
 
 We can enumerate the SMB shares to find that we have write permissions over one of them.
 
-<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
 
 This folder contains nothing, but the fact that we have write access indicates that we should probably be adding something to it. We can also find some credentials in the other share.&#x20;
 
@@ -28,7 +28,7 @@ This folder contains nothing, but the fact that we have write access indicates t
 
 We can login using the credentials we found earlier in the SMB share. The page then tells us to visit `dashboard.php`, which is a Smart Photo Script.
 
-<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
 
 The `pagename` parameter is vulnerable to LFI, and since this is a PHP application, we can place a PHP reverse shell file somewhere and execute it using this page. That's where the share that we can write to comes in.
 
@@ -46,7 +46,7 @@ This works because the `pagename` paramter automatically truncates the `.php` ex
 
 This points towards to some script being used in the backend, and thus we can replace that with our own malicious PHP script to gain a shell.
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

@@ -2,7 +2,7 @@
 description: Took me a few weeks...really long and really convuluted.
 ---
 
-# Sekhmet (AD)
+# Sekhmet
 
 ## Gaining Access
 
@@ -245,11 +245,11 @@ I wasn't sure what to do with this, but we can keep it for now I guess.
 
 SMB revealed nothing of interest, so I moved onto LDAP enumeration. I dumped information using `ldapsearch`. This was done on the container using the ticket we cached for ray.duncan earlier with `kinit`.
 
-<figure><img src="../../../.gitbook/assets/image (92) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (92) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Analysing the information, we notice that the numbers and users and numbers we found earlier on the shares are present in the `mobile` field for users.
 
-<figure><img src="../../../.gitbook/assets/image (88) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (88) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 I was wondering what this parameter was used for, and why was it hinted at. The first thing that comes to mind is testing for RCE or other injection payloads. To modify LDAP entries, we would need to use `ldapmodify`. This also involves the creation of LDIF files.
 

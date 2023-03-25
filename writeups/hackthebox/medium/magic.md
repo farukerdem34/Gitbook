@@ -28,7 +28,7 @@ This was a PHP site so I tried uploading PHP webshells, but it didn't work. As s
 
 Afterwards, we just need to change the extension to `.php.jpeg` and send the file (via Burpsuite). Earlier, a `gobuster` scan found a `/images` directory, so I used `gobuster` on that to find more directories:
 
-<figure><img src="../../../.gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (41) (1).png" alt=""><figcaption></figcaption></figure>
 
 So the `/uploads` directory is where our files end up. I tried some basic commands, and it worked!
 
@@ -44,15 +44,15 @@ Getting a shell from here is easy.
 
 In the `/var/www/magic` file, I found a set of database credentials.
 
-<figure><img src="../../../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (45) (1).png" alt=""><figcaption></figcaption></figure>
 
 I used `mysqldump` (which was present on the machine somehow) and dumped out all of the SQL stuff.
 
-<figure><img src="../../../.gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (38) (1).png" alt=""><figcaption></figcaption></figure>
 
 I was able to find a set of credentials for the admin user.
 
-<figure><img src="../../../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (40) (1).png" alt=""><figcaption></figcaption></figure>
 
 From reading the `/home` directory, the user on this machine is `theseus`. These credentials work with `su`.
 
@@ -68,7 +68,7 @@ By manipulating the PATH variable and creating a reverse shell script named `fdi
 
 <figure><img src="../../../.gitbook/assets/image (5) (3).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (43) (1).png" alt=""><figcaption></figcaption></figure>
 
 Port 9999 does not work (presumably due to firewall) so I changed to port 443 and ran `sysinfo` again.
 

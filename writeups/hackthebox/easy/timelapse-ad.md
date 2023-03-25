@@ -30,7 +30,7 @@ I tried to import the certificate or extract the keys but this file is also pass
 
 With this, we can extract the private key.
 
-<figure><img src="../../../.gitbook/assets/image (42) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (42) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (70) (1) (2).png" alt=""><figcaption></figcaption></figure>
 

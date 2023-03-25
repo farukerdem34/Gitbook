@@ -16,7 +16,7 @@ Only SMB is open it appears. Port 4386 is for a service called HQK, which I coul
 
 The `Users` one had the most information and was the only one accessible, so I connected and recursively downloaded all possible files:
 
-<figure><img src="../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (1).png" alt=""><figcaption></figcaption></figure>
 
 Within the files downloaded, we can find a `Welcome Email.txt` file.
 
@@ -32,7 +32,7 @@ Now we could read the `Data` share, so I went in and recursively downloaded all 
 
 Within the files downloaded, the `RU_config.xml` file contained this encrypted password for a user on the machine:
 
-<figure><img src="../../../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (19) (1).png" alt=""><figcaption></figcaption></figure>
 
 Also, within the contents of that file, was a .NET VB project files.&#x20;
 
@@ -64,7 +64,7 @@ Cool, now we have the HQK password.
 
 Now that we have credentials, we can connect to the HQK port via `telnet` and enter DEBUG mode.
 
-<figure><img src="../../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (1).png" alt=""><figcaption></figcaption></figure>
 
 With this, I was able to extract the administrator hash.
 
@@ -72,12 +72,12 @@ With this, I was able to extract the administrator hash.
 
 Within this, we also can find another binary being used:
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (2).png" alt=""><figcaption></figcaption></figure>
 
 Similar to the previous time, we can load the binary in dnSpy and set a breakpoint to view the password. We would need to use all 3 files, and create an `ldap.conf` file that is passed in as a parameter to the main function. Then, we can view the contents of variables to see the password.
 
-<figure><img src="../../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (27) (1).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, we would have full access to the C Drive:
 
-<figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (1).png" alt=""><figcaption></figcaption></figure>

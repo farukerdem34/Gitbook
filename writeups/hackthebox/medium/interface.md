@@ -249,6 +249,6 @@ Now, we can exploit this by creating a simple PE bash script to make `/bin/bash`
 
 Then, we wait till it executes our script.
 
-<figure><img src="../../../.gitbook/assets/image (6) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Interesting foothold, weird enumeration and really interesting PE through the unquoted variables.&#x20;

@@ -21,7 +21,7 @@ Web exploit based again.
 
 Visiting port 80 reveals a default html page.
 
-<figure><img src="../../../.gitbook/assets/image (39) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (39) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 I ran a `gobuster` scan and found a few directories.
 
@@ -66,7 +66,7 @@ PHP version 5.2.10 is insecure by today's standards, however without access to t
 
 Lastly, on the `/rename` file, we see this API in play:
 
-<figure><img src="../../../.gitbook/assets/image (45) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (45) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Perhaps this could be used to rename a file we have uploaded somehow...
 
@@ -92,7 +92,7 @@ I then tried to download a torrent file from the Kali Linux official website (be
 
 Clicking created a pop-up where I was allowed to upload a screenshot.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (35) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (35) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Take note of the allowed types of images. Attempting to upload a PHP webshell doesn't work (obviously). So I tried to change the `Content-Type` header to `image/jpg`. This worked.
 
@@ -157,7 +157,7 @@ This was interesting because **there are exploits related to this**. I found one
 
 When the script was downloaded and run, I was able to spawn in a root shell.
 
-<figure><img src="../../../.gitbook/assets/image (36) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (36) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Beyond Root
 

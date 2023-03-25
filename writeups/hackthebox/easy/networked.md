@@ -78,7 +78,7 @@ In short, we can see that this file checks for the file extensions before accept
 
 Then, we can upload it to `upload.php`. We can visit `photos.php` to trigger the shell:
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (168).png" alt=""><figcaption></figcaption></figure>
 
@@ -110,10 +110,10 @@ Here's the script's contents:
 
 This takes user input and executes does not sanitise it at all. When we run the script, we can actually execute commands:
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 To get a `root` shell, we just need to run `/bin/bash`:
 
-<figure><img src="../../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (23) (2).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

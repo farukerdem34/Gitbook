@@ -1,4 +1,4 @@
-# Search (AD)
+# Search
 
 ## Gaining Access
 
@@ -114,7 +114,7 @@ We can easily crack this with `pfx2john` and `john`.&#x20;
 
 Then we can load this in to our browsers.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (99) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (99) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 Now, we can access the /staff page we were rejected from earlier. This would reveal a Powershell Web Access page.
 
