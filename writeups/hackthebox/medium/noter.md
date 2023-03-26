@@ -46,7 +46,7 @@ With this boolean condition, we can brute force all possible users within the ma
 
 Then I filtered the results using the `Invalid Login` string.
 
-<figure><img src="../../../.gitbook/assets/image (15) (1) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (1) (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 So `blue` is the user on this machine. We can use the secret we found earlier to create a new cokie and sign in by replacing the cookie:
 
@@ -80,7 +80,7 @@ WIth access to the new FTP account, we can find two website source code backups 
 
 Additionally, because we are the `blue` user, we can view the VIP dashboard which allows us to **import and export notes**.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (25) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (25) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (20) (5) (1).png" alt=""><figcaption></figcaption></figure>
 

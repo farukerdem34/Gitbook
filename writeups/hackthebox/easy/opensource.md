@@ -4,7 +4,7 @@
 
 Nmap scan results:
 
-<figure><img src="../../../.gitbook/assets/image (8) (1) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1) (4) (2).png" alt=""><figcaption></figcaption></figure>
 
 Take note of port 3000, it will be important later!&#x20;
 
@@ -110,7 +110,7 @@ We can then the SSH keys to gain access to the `dev01` user.
 
 LinPEAS didn't reveal a lot to me, so I opted for `pspy64` to view the processes.
 
-<figure><img src="../../../.gitbook/assets/image (40) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (40) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 I saw this process run by root:
 

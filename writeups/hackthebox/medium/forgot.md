@@ -76,7 +76,7 @@ Cool, we have credentials. `diego:dCb#1!x0%gjq`. Now we can SSH into the machine
 
 Running a quick sudo check, we can see that we have some ml\_security.pu script we can run.
 
-<figure><img src="../../../.gitbook/assets/image (4) (2) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (2) (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Here's the full script.
 

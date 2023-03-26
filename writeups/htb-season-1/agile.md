@@ -25,7 +25,7 @@ The website advertised a password manager.
 
 I tested by registering a user to see what functionalities this application has. I registed a username and got an error, revealing that this is a Flask application. Not sure if this was supposed to happen
 
-<figure><img src="../../.gitbook/assets/image (21) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (21) (2) (4).png" alt=""><figcaption></figcaption></figure>
 
 Anyways, when I tried again it worked and brought me to a dashboard where I can add a password and Export passwords.
 

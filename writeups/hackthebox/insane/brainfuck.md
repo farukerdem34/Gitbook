@@ -103,7 +103,7 @@ There was clearly a URL within that, and it seems that numbers **are not being s
 
 Then, we can head to that website to find the `id_rsa` file for `orestis`.
 
-<figure><img src="../../../.gitbook/assets/image (30) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (30) (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 The file is password encrypted, so we have to use `ssh2john.py` to convert this to a hash for `john` to crack.
 

@@ -182,7 +182,7 @@ First we need to change the `global_module_path` to `/dev` as per the PoC. This 
 
 Then, we can quickly enable the `shm` module in `/config/moduleenable`.
 
-<figure><img src="../../.gitbook/assets/image (32) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (32) (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, we need to create a new resource with a private SSH key and upload it. Thsi can be done through `/config/resource` and adding resources for SSH Identities. Afterwards, we can simply send another request with our exploit:
 
@@ -215,7 +215,7 @@ Visting the URL below would give us RCE!
 
 With this, we can get a reverse shell.
 
-<figure><img src="../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -316,7 +316,7 @@ drwxr-xr-x 10 root root    4096 Jan 22 18:12 ..
 
 When `strings` is used to view the `cache_cerberus.local.ldb` file, we can find a hashed password for `matthew`.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 This hash can be cracked instantly:
 
@@ -369,7 +369,7 @@ chisel server -p 9001 --reverse
 
 Then we can `evil-winrm` in.
 
-<figure><img src="../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can now capture the user flag!
 
@@ -486,7 +486,7 @@ set ISSUER_URL http://dc.cerberus.local/adfs/services/trust
 
 When executed, we would get a meterpreter shell as the SYSTEM user.
 
-<figure><img src="../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Using hints from the forum were really helpful, because I dislike using Metasploit and would have naturally avoided it.
 

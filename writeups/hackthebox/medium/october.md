@@ -4,7 +4,7 @@
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 We don't need to add anything into the hosts file.
 
@@ -12,17 +12,17 @@ We don't need to add anything into the hosts file.
 
 The website was running OctoberCMS and appears to have a default look:
 
-<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
 
 Registering an account and trying to do stuff with it was useless and had no functionalities. So instead, we can abuse the fact that OctoberCMS is an open-source project. A quick Google search reveals that the backend of this is at `/backend`:
 
 {% embed url="https://octobercms.com/forum/post/how-do-i-access-the-backend" %}
 
-<figure><img src="../../../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (40) (3).png" alt=""><figcaption></figcaption></figure>
 
 We can use the default credentials of `admin:admin`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 OctoberCMS has quite a few exploits:
 
@@ -30,11 +30,11 @@ OctoberCMS has quite a few exploits:
 
 We can use one of them to upload a `cmd.php5` file to execute on the server, as `php5` is not blocked on the server:
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can confirm we have RCE via `curl`.
 
-<figure><img src="../../../.gitbook/assets/image (37).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (37) (1).png" alt=""><figcaption></figcaption></figure>
 
 Getting a reverse shell is then trivial.
 
@@ -44,11 +44,11 @@ Getting a reverse shell is then trivial.
 
 I ran a LinPEAS scan on the machine, and found this weird SUID binary called `overflw`:
 
-<figure><img src="../../../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (35) (4).png" alt=""><figcaption></figcaption></figure>
 
 I opened it up in Ghidra to view what it does:
 
-<figure><img src="../../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (27) (1).png" alt=""><figcaption></figcaption></figure>
 
 It appears we have a classic BOF expliot to do here. The `strcpy` function is vulnerable, and the buffer is pretty short. Doing a `checksec` reveals that NX is enabled but PIE is disabled:
 
@@ -63,11 +63,11 @@ RELRO     : Partial
 
 In this case, we can go for a Ret2Libc attack. First, we find the buffer size:
 
-<figure><img src="../../../.gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (38) (1).png" alt=""><figcaption></figcaption></figure>
 
 Fixed at 112 it appears (same as length of `local_74`). Now, we can use `ldd` to find the address where `libc` is loaded on the machine:
 
-<figure><img src="../../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (42) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then we can simply execute the following commands to get the addresses we need
 
@@ -115,6 +115,6 @@ while true; do /usr/local/bin/ovrflw $(python -c 'print "\x90"*112 + "\x10\x83\x
 ```
 {% endcode %}
 
-<figure><img src="../../../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (39) (1).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

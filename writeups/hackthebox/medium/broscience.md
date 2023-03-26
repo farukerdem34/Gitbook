@@ -28,7 +28,7 @@ We can take note that there is an `administrator` user present on the website, a
 
 Within each post, there's an Add Comment functionality that requires us to be logged in. I attempted to register an account, but this didn't work because we had to find an activation link.
 
-<figure><img src="../../../.gitbook/assets/image (31) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (31) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 So there's an activation link of some sort. I ran a directory scan for .php files on the website, and found quite a few.
 
@@ -357,7 +357,7 @@ TzoxNToiQXZhdGFySW50ZXJmYWNlIjoyOntzOjM6InRtcCI7czoyNToiaHR0cDovLzEwLjEwLjE0LjQv
 
 Then, we can simply send a request with this the output as the cookie. We would get a few hits on our HTTP server.
 
-<figure><img src="../../../.gitbook/assets/image (25) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (25) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then we can simply curl it to gain a reverse shell.
 

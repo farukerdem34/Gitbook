@@ -199,7 +199,7 @@ interact
 
 I downloaded the other files to see if there were any other interesting things. Eventually, I did find a SSH private key
 
-<figure><img src="../../../.gitbook/assets/image (18) (1) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (1) (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```bash
 $ curl -H 'Authorization: Basic YWRtaW46YWRtaW4=' http://docker.registry.htb/v2/bolt-image/blobs/sha256:2931a8b44e495489fdbe2bccd7232e99b182034206067a364553841a1f06f791 -L -o blob3.tar

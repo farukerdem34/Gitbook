@@ -12,11 +12,11 @@ Interesting that there was a MS-SQL instance publicly open.
 
 SMB allowed for null credentials to be accessed here:
 
-<figure><img src="../../../.gitbook/assets/image (24) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (24) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 Within the Reports directory, I found a .xlsm file.
 
-<figure><img src="../../../.gitbook/assets/image (26) (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (26) (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can download this Excel file back to our machine for analysis. Here, I used `oletools` to find out more about the file:
 

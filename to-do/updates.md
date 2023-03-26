@@ -16,11 +16,14 @@ HTB Writeups added:
   * Networked
   * OpenAdmin
   * Poison
+  * ScriptKiddie
+  * Tabby
 * Medium
   * Epsilon
   * Nineveh
   * October
   * Passage
+  * SolidState
 * Hard
   * Registry
   * Monitors

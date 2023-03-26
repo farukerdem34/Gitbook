@@ -28,7 +28,7 @@ This was a PHP site so I tried uploading PHP webshells, but it didn't work. As s
 
 Afterwards, we just need to change the extension to `.php.jpeg` and send the file (via Burpsuite). Earlier, a `gobuster` scan found a `/images` directory, so I used `gobuster` on that to find more directories:
 
-<figure><img src="../../../.gitbook/assets/image (41) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (41) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 So the `/uploads` directory is where our files end up. I tried some basic commands, and it worked!
 
@@ -48,7 +48,7 @@ In the `/var/www/magic` file, I found a set of database credentials.
 
 I used `mysqldump` (which was present on the machine somehow) and dumped out all of the SQL stuff.
 
-<figure><img src="../../../.gitbook/assets/image (38) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (38) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 I was able to find a set of credentials for the admin user.
 
@@ -66,7 +66,7 @@ I checked for SUID binaries, and found one at `/bin/sysinfo`. When trying to exe
 
 By manipulating the PATH variable and creating a reverse shell script named `fdisk`, I can get a reverse shell as root.
 
-<figure><img src="../../../.gitbook/assets/image (5) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (43) (1).png" alt=""><figcaption></figcaption></figure>
 

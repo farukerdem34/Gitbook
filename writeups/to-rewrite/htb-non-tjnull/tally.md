@@ -20,7 +20,7 @@ For Microsoft Sharepoint, we can visit the `viewlsts.aspx` file to see all the s
 
 The Documents had one folder which contained FTP credentials:
 
-<figure><img src="../../../.gitbook/assets/image (43) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (43) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (4) (7).png" alt=""><figcaption></figcaption></figure>
 

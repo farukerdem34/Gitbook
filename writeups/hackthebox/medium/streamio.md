@@ -66,7 +66,7 @@ I also used `gobuster` to see what other files were present on this directory.
 
 Within the debug page, there isn't much visual difference apart from one line:
 
-<figure><img src="../../../.gitbook/assets/image (35) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (35) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 Because this page was in PHP, I tested the `debug` parameter with a common `php://filter` LFI exploit, and this worked!
 

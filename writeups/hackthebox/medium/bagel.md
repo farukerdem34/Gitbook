@@ -30,7 +30,7 @@ $ sudo nmap -p 22,5000,8000 -sC -sV -O -T4 10.129.150.229
 
 Port 8000 hosted a web application selling bagels.
 
-<figure><img src="../../../.gitbook/assets/image (4) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 The interesting parameter here was the URL, which was `http://bagel.htb/?page=index.html`. LFI works here and I can view the `/etc/passwd` file.
 
@@ -233,7 +233,7 @@ TypeNameHandling = 4 means this:
 
 I also found some credentials here:
 
-<figure><img src="../../../.gitbook/assets/image (7) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 From the 3 main functions, it seems that ReadOrder does check for LFI, so that's not exploitable. WriteOrder does not seem to do much, but RemoveOrder is suspiciously short and does nothing. For our JSON deserialisation exploit, perhaps we should use this as the main function for exploitataion. We know from the main function of the DLL that the code **always deserializes the input we give it no matter what**.
 

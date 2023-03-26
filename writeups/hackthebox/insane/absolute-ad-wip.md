@@ -87,7 +87,7 @@ Really interesting output. We have found another user and credential!
 
 Running the same process, we can retrieve another ticket.
 
-<figure><img src="../../../.gitbook/assets/image (29) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (29) (1) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 Interesting, now that we have a ticket, we can export this. I found that we can access shares from the DC using this ticket to authenticate ourselves.
 

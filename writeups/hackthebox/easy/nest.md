@@ -24,15 +24,15 @@ Within the files downloaded, we can find a `Welcome Email.txt` file.
 
 We can then check the permission of shares again with these credentials using `smbmap`.
 
-<figure><img src="../../../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (30) (5).png" alt=""><figcaption></figcaption></figure>
 
 Now we could read the `Data` share, so I went in and recursively downloaded all files:
 
-<figure><img src="../../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (22) (1).png" alt=""><figcaption></figcaption></figure>
 
 Within the files downloaded, the `RU_config.xml` file contained this encrypted password for a user on the machine:
 
-<figure><img src="../../../.gitbook/assets/image (19) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (19) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Also, within the contents of that file, was a .NET VB project files.&#x20;
 
@@ -40,7 +40,7 @@ Also, within the contents of that file, was a .NET VB project files.&#x20;
 
 What I did was port all the files over to a Windows VM and then compiled it. Afterwards, I opened it up in DnSpy to see how the binary works:
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 So the binary uses the `RU_config.xml` file and decrypts the password. We can set a breakpoint at that line highlighted and then view the variable contents to see the password after clicking 'Step Over' once. This reveals the password of `xRxRxPANCAK3SxRxRx`.&#x20;
 
@@ -64,7 +64,7 @@ Cool, now we have the HQK password.
 
 Now that we have credentials, we can connect to the HQK port via `telnet` and enter DEBUG mode.
 
-<figure><img src="../../../.gitbook/assets/image (18) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (1) (5).png" alt=""><figcaption></figcaption></figure>
 
 With this, I was able to extract the administrator hash.
 
@@ -76,7 +76,7 @@ Within this, we also can find another binary being used:
 
 Similar to the previous time, we can load the binary in dnSpy and set a breakpoint to view the password. We would need to use all 3 files, and create an `ldap.conf` file that is passed in as a parameter to the main function. Then, we can view the contents of variables to see the password.
 
-<figure><img src="../../../.gitbook/assets/image (27) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (27) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, we would have full access to the C Drive:
 

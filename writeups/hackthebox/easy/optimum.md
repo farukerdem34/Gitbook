@@ -8,7 +8,7 @@ Nmap scan:
 
 The version of HttpFileServer running here is vulnerable to RCE exploits.
 
-<figure><img src="../../../.gitbook/assets/image (12) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (2) (3).png" alt=""><figcaption></figcaption></figure>
 
 Pick any that you'd like, and we can get a reverse shell as the user.
 

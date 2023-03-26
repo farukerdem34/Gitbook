@@ -12,7 +12,7 @@ We can add `monitors.htb` to our `/etc/hosts` file.
 
 Port 80 hosts a Wordpress site.
 
-<figure><img src="../../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (25) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can run `wpscan` to enumerate the plugins and version, and this finds that **wp-with-spritz** is being used.
 
@@ -28,11 +28,11 @@ We can confirm this by viewing the `/etc/passwd` file.
 
 After further enumeration, there's nothing else that I could find. So we probably need to read more files within this machine. I could not read any user files, so I tried to check some configuration files for the server at `/etc/apache2/sites-enabled/000-default.conf`.
 
-<figure><img src="../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can find a new domain at `cacti-admin.monitors.htb`. Afterwards, I also read the Wordpress configuration files at `/var/www/wordpress/wp-config.php` to find a password.
 
-<figure><img src="../../../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (34) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Cacti&#x20;
 
@@ -54,15 +54,15 @@ We now have remote access as the user `marcus` and can capture the user flag.
 
 In the user's directory, we find a `note.txt` file that points towards a docker image being present.
 
-<figure><img src="../../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (1).png" alt=""><figcaption></figcaption></figure>
 
 I read the configuration files at `/etc/containerd`, and found that the `root` user was running the image.
 
-<figure><img src="../../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can check the open ports of this machine via `netstat -tulpn` to see other open ports.
 
-<figure><img src="../../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (1).png" alt=""><figcaption></figcaption></figure>
 
 Port 8443 was open and we could access it. The next step is port forwarding.
 
@@ -74,7 +74,7 @@ I used `ssh -L 8443:localhost:8443 marcus@monitors.htb` to port forward after dr
 
 Visting any of these would redirect us to `/content/control/main`, where there is a login page present.
 
-<figure><img src="../../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 The bottom of the page shows that this is running Apache OFBiz Release 17.12.01, which is vulnerable to loads of exploits, including an RCE one.
 
@@ -132,4 +132,4 @@ clean:
 
 Get them both into the root directory and start listening on a port. Afterwards, we can run `make` and `insmod reverse-shell.ko`. This would trigger the reverse shell, and give us a shell as `root`.
 
-<figure><img src="../../../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (32) (5).png" alt=""><figcaption></figcaption></figure>

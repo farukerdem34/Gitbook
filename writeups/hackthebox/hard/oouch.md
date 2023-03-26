@@ -39,11 +39,11 @@ Might need this information later. Also, we can see that this is the user `qtc` 
 
 This webpage just shows a login page:
 
-<figure><img src="../../../.gitbook/assets/image (16) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (2) (3).png" alt=""><figcaption></figcaption></figure>
 
 I registered a user and logged in to see the dashboard.
 
-<figure><img src="../../../.gitbook/assets/image (22) (1) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (22) (1) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 There are 3 main functions, a Password Change, Documents and the Contact one. The Password Change is not interesting, Documents are only available for the administrator user. That just leaves  the Contact function.
 
@@ -174,7 +174,7 @@ The website recognises my new OAuth account that I created and is considered 'co
 
 Here's an overview of how exactly OAuth works:
 
-<figure><img src="../../../.gitbook/assets/image (23) (2) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (23) (2) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can view the HTTP requests throguh Burpsuite to see what exactly is happening.
 
@@ -238,7 +238,7 @@ Great! Now we have credentials to access some other stuff. There's an SSH key so
 
 Now that we have credentials, we can register somewhere. I used `gobuster` to scan the authorization server, and found another endpoint at `/oauth/applications/register`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (28) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (28) (2) (3).png" alt=""><figcaption></figcaption></figure>
 
 Based on the documents, it seems that the `/api/get_user` endpoint supports a GET method, meaning the authorization parameter is probably a token. Problem is, we don't have any credentials or tokens from `qtc`, we only forced a link. The next step is to steal a token or password, and I'm guessing we need him to click another link.
 
@@ -307,7 +307,7 @@ Upgrade-Insecure-Requests: 1
 
 ```
 
-<figure><img src="../../../.gitbook/assets/image (3) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (2) (4).png" alt=""><figcaption></figcaption></figure>
 
 Now that we have access to this, we need to find the SSH key. After testing out a few endpoints, I found that `get_ssh` was the right one.
 
@@ -315,7 +315,7 @@ Now that we have access to this, we need to find the SSH key. After testing out 
 
 Then we can just SSH in as `qtc`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (29) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (29) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -354,7 +354,7 @@ There was some kind of cronjob going on, and there are docker containers present
 
 We can probably SSH into some of them. Rough guesing let me SSH into `172.18.0.4`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (22) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (22) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 Checking the processes, we see a lot of `uswgi` processes running:
 

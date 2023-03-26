@@ -156,7 +156,7 @@ We can grab the user flag now.
 
 I ran a winPEAS scan to enumerate for me. This scan found some certificates on the machine that could potentially be the PE vector.
 
-<figure><img src="../../../.gitbook/assets/image (11) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (1) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 We can use `certify.exe` to find out if this is vulnerable. Using `certify.exe find /vulnerable`, we can find one certificate:
 

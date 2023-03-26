@@ -1,4 +1,4 @@
-# Object (AD)
+# Object
 
 ## Gaining Access
 
@@ -112,7 +112,7 @@ Copying it to another directory, I was able to move it to my machine using the `
 
 We can use the last credential to `evil-winrm` in as `maria`:
 
-<figure><img src="../../../.gitbook/assets/image (36) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (36) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Maria to Domain Admin
 
