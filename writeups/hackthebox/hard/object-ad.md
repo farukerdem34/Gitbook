@@ -100,7 +100,7 @@ However, this did not work out well as I was not able to make use of the ticket.
 
 As `smith`, we can create a malicious Powershell script and change the logon script for `maria`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (5) (1) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 Within the desktop, I found this `Engines.xls` file.
 

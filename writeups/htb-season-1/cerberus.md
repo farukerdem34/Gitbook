@@ -320,7 +320,7 @@ When `strings` is used to view the `cache_cerberus.local.ldb` file, we can find 
 
 This hash can be cracked instantly:
 
-<figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1) (5).png" alt=""><figcaption></figcaption></figure>
 
 ### Pivoting
 
@@ -445,7 +445,7 @@ Let's try port forwarding to view the services running on these ports. We would 
 
 We need to add `DC.cerberus.local` with the IP of `172.16.22.1` to our `/etc/hosts` file before we can visit this in Firefox with proxychains. When visiting port 8888, we get redirected to the AD login page. Very similar to NUS's, interestingly.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 We can login with `matthew@cerberus.local` and the password we found earlier. This does nothing for us, however. All it does is provide a URL with a token appended at the back:&#x20;
 

@@ -45,7 +45,7 @@ This waws password protected, so let's transfer this back to our machine via `nc
 
 The backup file had nothing on it...which was weird. Since we have a password, might as well try `su`, and it worked to getting to `ash`:
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 ### LXC Group
 

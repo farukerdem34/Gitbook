@@ -10,7 +10,7 @@ Nmap scan:
 
 We can do a `gobuster` scan on the machine to find all possible files present:
 
-<figure><img src="../../../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 On the website itself, it was a simple application to read files:
 

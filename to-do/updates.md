@@ -18,6 +18,7 @@ HTB Writeups added:
   * Poison
   * ScriptKiddie
   * Tabby
+  * Swagshop
 * Medium
   * Epsilon
   * Nineveh

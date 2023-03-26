@@ -10,7 +10,7 @@ Nmap scan:
 
 Port 5000 presented a website where we could use tools like `nmap` and `msfvenom`:
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can try it out and it works:
 
@@ -54,13 +54,13 @@ Now, we can see how the `${ip}` variable is not being sanitised and is run with 
 
 After echoing it in, we would gain anoter reverse shell:
 
-<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Sudo MSFConsole
 
 When checking `sudo` privileges, we see that we can run `msfconsole` as root.
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 The thing about `msfconsole` is that we can run shell commands in it. In short, we have root privileges just by doing `sudo msfconsole`:
 

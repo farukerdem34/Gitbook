@@ -126,7 +126,7 @@ Once we had the Secret, spoofing another token is easy.
 
 We would then have RCE on the machine at this point.
 
-<figure><img src="../../../.gitbook/assets/image (4) (1) (5) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1) (5) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Using a Base64 encoded payload with %20 or $IFS as the space character, we can gain a reverse shell.
 

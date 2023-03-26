@@ -63,7 +63,7 @@ With this, we can login to both of the services. Port 80 revealed an image:
 
 We can instantly tell that this is vulnerable to LFI because of the `notes` parameter in the URL. Next, we can view the phpLiteAdmin admin dashboard:
 
-<figure><img src="../../../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (44) (6).png" alt=""><figcaption></figcaption></figure>
 
 This version of phpLiteAdmin is vulnerable to RCE, and we can follow the PoC here:
 

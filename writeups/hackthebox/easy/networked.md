@@ -78,7 +78,7 @@ In short, we can see that this file checks for the file extensions before accept
 
 Then, we can upload it to `upload.php`. We can visit `photos.php` to trigger the shell:
 
-<figure><img src="../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1) (5).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (168).png" alt=""><figcaption></figcaption></figure>
 

@@ -16,7 +16,7 @@ Using this, we can gain a reverse shell easily:
 
 <figure><img src="../../../.gitbook/assets/image (30) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (4) (1) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1) (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

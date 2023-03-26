@@ -10,7 +10,7 @@ Nmap scan:
 
 SMTP is open, which is rather suspicious. I connected via `nc` and tested some default credentials, and found that `root:root` worked.
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now that we are logged in, we can read some emails:
 
