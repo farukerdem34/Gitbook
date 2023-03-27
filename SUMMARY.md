@@ -98,6 +98,7 @@
   * [Inject](writeups/htb-season-1/inject.md)
   * [Agile](writeups/htb-season-1/agile.md)
   * [Cerberus](writeups/htb-season-1/cerberus.md)
+  * [Socket](writeups/htb-season-1/socket.md)
 * [HackTheBox](writeups/hackthebox/README.md)
   * [Easy](writeups/hackthebox/easy/README.md)
     * [Access](writeups/hackthebox/easy/access-ad.md)
