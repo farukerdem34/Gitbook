@@ -99,6 +99,7 @@
   * [Agile](writeups/htb-season-1/agile.md)
   * [Cerberus](writeups/htb-season-1/cerberus.md)
   * [Socket](writeups/htb-season-1/socket.md)
+  * [Coder](writeups/htb-season-1/coder.md)
 * [HackTheBox](writeups/hackthebox/README.md)
   * [Easy](writeups/hackthebox/easy/README.md)
     * [Access](writeups/hackthebox/easy/access-ad.md)

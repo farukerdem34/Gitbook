@@ -2,6 +2,12 @@
 
 ## 2023
 
+### April 2023
+
+HTB Writeups added:
+
+* Socket (HTB Season 1)
+
 ### March 2023
 
 HTB Writeups added:
