@@ -12,13 +12,13 @@ We have to add `swagshop.htb` to our `/etc/hosts` file to access port 80.
 
 This is whatwe see when we view port 80:
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 This is running an outdated version of Magento shop, and we can easily find exploits for it. The exploit here would change admin password of the site via SQL Injection:
 
 {% embed url="https://github.com/joren485/Magento-Shoplift-SQLI/blob/master/poc.py" %}
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then we can grab a publicly available RCE exploit from ExploitDB:
 

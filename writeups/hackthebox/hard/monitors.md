@@ -62,7 +62,7 @@ I read the configuration files at `/etc/containerd`, and found that the `root` u
 
 We can check the open ports of this machine via `netstat -tulpn` to see other open ports.
 
-<figure><img src="../../../.gitbook/assets/image (15) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (1) (5).png" alt=""><figcaption></figcaption></figure>
 
 Port 8443 was open and we could access it. The next step is port forwarding.
 

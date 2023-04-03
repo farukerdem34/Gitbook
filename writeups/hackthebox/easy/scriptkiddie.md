@@ -10,11 +10,11 @@ Nmap scan:
 
 Port 5000 presented a website where we could use tools like `nmap` and `msfvenom`:
 
-<figure><img src="../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can try it out and it works:
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 I tested all forms of command injection, but nothing worked. So, I started checking whether the tools themselves had exploits, and I was surprised to see that `msfvenom` was exploitable:
 

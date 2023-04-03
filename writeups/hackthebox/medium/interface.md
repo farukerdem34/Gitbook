@@ -21,7 +21,7 @@ We can add `interface.htb` to our `/etc/hosts` file.&#x20;
 
 The web application reveals this:
 
-<figure><img src="../../../.gitbook/assets/image (7) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (1) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 We can start with a simple `gobuster` scan to enumerate the possible endpoints in both directories and subdomains. However, the weird part is that there was nothing to be found from these.&#x20;
 

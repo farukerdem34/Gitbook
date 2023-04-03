@@ -47,7 +47,7 @@ Upgrade-Insecure-Requests: 1
 
 The `fn` paramete was vulnerable to LFI.
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 We find 4 users, `runner`, `corum`, `edwards`, and `dev_admin`. We know that this is a Flask application, so the source code for `app.py` is probably in some `/app/app/main` directory or something along those lines.  Some testing revealed that it was located in `../app/app/superpass/app.py`.
 

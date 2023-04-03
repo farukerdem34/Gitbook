@@ -4,7 +4,7 @@
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We don't need to add anything into the hosts file.
 
@@ -22,7 +22,7 @@ Registering an account and trying to do stuff with it was useless and had no fun
 
 We can use the default credentials of `admin:admin`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (3) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 OctoberCMS has quite a few exploits:
 
@@ -30,7 +30,7 @@ OctoberCMS has quite a few exploits:
 
 We can use one of them to upload a `cmd.php5` file to execute on the server, as `php5` is not blocked on the server:
 
-<figure><img src="../../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 We can confirm we have RCE via `curl`.
 
