@@ -4,7 +4,7 @@
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (46).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (46) (5).png" alt=""><figcaption></figcaption></figure>
 
 ### SSH Default Credentials
 
@@ -22,7 +22,7 @@ There's a login function, and I managed to login with default credentials of `pi
 
 I was able to run `sudo su` on this machine and search for `root.txt`:
 
-<figure><img src="../../../.gitbook/assets/image (21) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (21) (1) (7).png" alt=""><figcaption></figcaption></figure>
 
 Interesting, because the root flag is where on a USB stick. Now, the backup would probably be some file in a different format and compressed. We know that the flag is a string, so we can use `strings` to get it out. It is stored at `/dev/sdb`.&#x20;
 

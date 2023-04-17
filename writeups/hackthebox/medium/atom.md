@@ -28,7 +28,7 @@ We can place an update within this share's client folders, and then a user would
 
 When checking the web portal, we see that it's a regular corporate website.
 
-<figure><img src="../../../.gitbook/assets/image (56) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (56) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 There was a download button on the page, presumably to download the program used for this application. This would make us download a .exe file.
 
@@ -44,7 +44,7 @@ When viewing the plugins directory, we would find an app.7z file which we can op
 
 We can take a look at the resources file to view the source code and stuff, and there we find more hints that this is a Electron application.
 
-<figure><img src="../../../.gitbook/assets/image (64).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (64) (3).png" alt=""><figcaption></figcaption></figure>
 
 We can dive further into the .asar file using `asar`.
 
@@ -93,7 +93,7 @@ After a while, our HTTP server would get a hit and our listener port would catch
 
 <figure><img src="../../../.gitbook/assets/image (37) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (67).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (67) (3).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -101,11 +101,11 @@ After a while, our HTTP server would get a hit and our listener port would catch
 
 Within the user's Downloads folder, we can find a PortableKanban instance.
 
-<figure><img src="../../../.gitbook/assets/image (55) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (55) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 Within the folder, we can find an encrypted password for the `redis` instance on the machine.
 
-<figure><img src="../../../.gitbook/assets/image (66).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (66) (3).png" alt=""><figcaption></figcaption></figure>
 
 Quick googling led me to an exploit, which allows for us to decrypt the passwords using DES.
 

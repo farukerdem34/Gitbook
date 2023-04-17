@@ -102,15 +102,15 @@ One dangerous part of this script is the usage of `exec` to run stuff. The `$val
 
 We can check the `sudo` privileges of this user and find that there's one script we can run as `root`.
 
-<figure><img src="../../../.gitbook/assets/image (58).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (58) (4).png" alt=""><figcaption></figcaption></figure>
 
 Here's the script's contents:
 
-<figure><img src="../../../.gitbook/assets/image (56).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (56) (2).png" alt=""><figcaption></figcaption></figure>
 
 This takes user input and executes does not sanitise it at all. When we run the script, we can actually execute commands:
 
-<figure><img src="../../../.gitbook/assets/image (2) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 To get a `root` shell, we just need to run `/bin/bash`:
 

@@ -16,7 +16,7 @@ We would need to add `soccer.htb` to our `/etc/hosts` file to browser on port 80
 
 The website is an average soccer related page.
 
-<figure><img src="../../../.gitbook/assets/image (8) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (2) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Doing a directory enumeration with feroxbuster reveals a few extra directories:
 

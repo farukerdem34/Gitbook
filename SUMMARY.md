@@ -100,6 +100,8 @@
   * [Cerberus](writeups/htb-season-1/cerberus.md)
   * [Socket](writeups/htb-season-1/socket.md)
   * [Coder](writeups/htb-season-1/coder.md)
+  * [Busqueda](writeups/htb-season-1/busqueda.md)
+  * [Mailroom](writeups/htb-season-1/mailroom.md)
 * [HackTheBox](writeups/hackthebox/README.md)
   * [Easy](writeups/hackthebox/easy/README.md)
     * [Access](writeups/hackthebox/easy/access-ad.md)

@@ -12,15 +12,15 @@ Only SMB is open it appears. Port 4386 is for a service called HQK, which I coul
 
 `enum4linux` reveals quite a few shares that are open:
 
-<figure><img src="../../../.gitbook/assets/image (62).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (62) (4).png" alt=""><figcaption></figcaption></figure>
 
 The `Users` one had the most information and was the only one accessible, so I connected and recursively downloaded all possible files:
 
-<figure><img src="../../../.gitbook/assets/image (14) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (1) (7).png" alt=""><figcaption></figcaption></figure>
 
 Within the files downloaded, we can find a `Welcome Email.txt` file.
 
-<figure><img src="../../../.gitbook/assets/image (59).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (59) (3).png" alt=""><figcaption></figcaption></figure>
 
 We can then check the permission of shares again with these credentials using `smbmap`.
 
@@ -52,7 +52,7 @@ With these credentials, I can access the directory of the user through SMB, but 
 
 The `Debug Mode Password.txt` was empty for some reason, and I found that weird. As such, I used `allinfo` on SMB to view whether there were alternate data streams present for the file:
 
-<figure><img src="../../../.gitbook/assets/image (54).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (54) (2).png" alt=""><figcaption></figcaption></figure>
 
 This confirms the presence of the alternate data stream, and we can use `cat` to extract the information:
 

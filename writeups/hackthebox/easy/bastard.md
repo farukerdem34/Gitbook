@@ -8,7 +8,7 @@ Nmap scan:
 
 Running a scan on port 80 reveals that this is a Drupal 7 instance running.
 
-<figure><img src="../../../.gitbook/assets/image (53) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (53) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Drupalgeddon
 
@@ -28,7 +28,7 @@ When run, this would spawn a shell for us and we can gain a reverse shell via th
 
 When checking the `systeminfo` output, we see that this is running Windows Server 2008 R2 Datacenter, which was vulnerable to the MS15-051 exploit.
 
-<figure><img src="../../../.gitbook/assets/image (60) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (60) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Here's the working exploit:
 
@@ -36,4 +36,4 @@ Here's the working exploit:
 
 We can download this to the machine to execute commands to give us an administrator shell.
 
-<figure><img src="../../../.gitbook/assets/image (54) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (54) (2) (2).png" alt=""><figcaption></figcaption></figure>

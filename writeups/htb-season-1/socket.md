@@ -29,17 +29,17 @@ We have to add `qreader.htb` to our `/etc/hosts` file. I ran a detailed scan on 
 
 Website presents some kind of QR Code maker / reader application:
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can actually download the application below and view the source code:
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
 
 
 Additionally, we can submit a report when something goes wrong:
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 Interesting. When we download the file, we will get a binary and a test image:
 
@@ -148,7 +148,7 @@ payload used: 0.0.2"UNION SELECT username,password,3,4 from users;-- -
 
 Great! The hash can be cracked on crackstation:
 
-<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now, we need to find a username. I looked through the other tables of `reports` and `answers`.&#x20;
 

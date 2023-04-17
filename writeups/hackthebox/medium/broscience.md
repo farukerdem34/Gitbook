@@ -130,7 +130,7 @@ From here, we can see that is a `postgres` and `bill` user on the machine. Now, 
 
 I was able to read the `db_connect.php` file by double URL encoding `../includes/db_connect.php` and passing it as the parameter.
 
-<figure><img src="../../../.gitbook/assets/image (27) (1) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (27) (1) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 Trying this credential found does not work anywhere though. So I read the other files, and the `utils.php` file contained some useful information about how the activation code was generated.
 

@@ -59,7 +59,7 @@ Normally, I don't brute force passwords unless it's my last lead, and at this ju
 
 With this, we can login to both of the services. Port 80 revealed an image:
 
-<figure><img src="../../../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (45) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can instantly tell that this is vulnerable to LFI because of the `notes` parameter in the URL. Next, we can view the phpLiteAdmin admin dashboard:
 

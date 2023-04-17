@@ -56,7 +56,7 @@ Within the source code, we can view the register.php to see how to register a ne
 
 All we need to do is sent a POST request with the `uname` and `passwd` parameters to register.
 
-<figure><img src="../../../.gitbook/assets/image (65).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (65) (3).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, I logged into the server.
 
@@ -90,7 +90,7 @@ With this, we can easily gain a reverse shell into the machine using Invoke-Powe
 
 When checking our privileges, we notice we have the SeImpersonatePrivilege enabled.
 
-<figure><img src="../../../.gitbook/assets/image (47) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (47) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 Checking `systeminfo`, we also find that a vulnerable version of Windows was running with no hotfixes.
 

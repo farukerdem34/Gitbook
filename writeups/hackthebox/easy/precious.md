@@ -38,7 +38,7 @@ Works! Now we just need to gain a reverse shell. I used a simple bash shell to d
 
 <figure><img src="../../../.gitbook/assets/image (13) (1) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (2) (2) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (2) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

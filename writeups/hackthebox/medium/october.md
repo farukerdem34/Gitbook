@@ -4,7 +4,7 @@
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (7) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (1) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 We don't need to add anything into the hosts file.
 
@@ -48,7 +48,7 @@ I ran a LinPEAS scan on the machine, and found this weird SUID binary called `ov
 
 I opened it up in Ghidra to view what it does:
 
-<figure><img src="../../../.gitbook/assets/image (27) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (27) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 It appears we have a classic BOF expliot to do here. The `strcpy` function is vulnerable, and the buffer is pretty short. Doing a `checksec` reveals that NX is enabled but PIE is disabled:
 

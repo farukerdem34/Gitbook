@@ -14,7 +14,7 @@ The web application shows us some random images as a form of portfolio.
 
 I did a `gobuster` scan and found a few directories of interest:
 
-<figure><img src="../../../.gitbook/assets/image (50).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (50) (4).png" alt=""><figcaption></figcaption></figure>
 
 So there was a `login.php` directory. I didn't have any credentials, so I tried a few low hanging fruits such as `admin:admin` and basic SQL injection. The payload of `' OR 1 --` worked.
 
@@ -44,7 +44,7 @@ Getting a shell from here is easy.
 
 In the `/var/www/magic` file, I found a set of database credentials.
 
-<figure><img src="../../../.gitbook/assets/image (45) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (45) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 I used `mysqldump` (which was present on the machine somehow) and dumped out all of the SQL stuff.
 

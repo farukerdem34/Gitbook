@@ -51,7 +51,7 @@ The backup file had nothing on it...which was weird. Since we have a password, m
 
 When we check the `id` of `ash`, we see that they are part of the `lxc` group.
 
-<figure><img src="../../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 This exploitable because we can create a container and mount it with root access to the main machine.
 

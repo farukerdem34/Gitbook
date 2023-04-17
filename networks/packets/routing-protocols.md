@@ -4,7 +4,7 @@ Routing Protocols are used for packets to find their way around a network, and t
 
 There are loads of protocols, and the ones covered in the CCNA are RIP, RIPv2, IGRP, EIGRP, IS-IS and BGP. We only need to know how to configure RIP, RIPv2, EIGRP and OSPF. I won't be going in-depth for IS-IS and BGP.
 
-There are 2 types of routing protocols, namely **distance vector** (RIP, IGRP) **** and **link state (**OSPF, IS-IS). EIGRP is considered an advanced distance vector protocol, and is a Cisco Proprietary protocol, meaning that only Cisco devices can use this.&#x20;
+There are 2 types of routing protocols, namely **distance vector** (RIP, IGRP) and **link state (**OSPF, IS-IS). EIGRP is considered an advanced distance vector protocol, and is a Cisco Proprietary protocol, meaning that only Cisco devices can use this.&#x20;
 
 The routing protocols mentioned above are all interior routing protocols, meaning they are used to exchange information and send packets within one system, such as a LAN. External routing protocols are used to exchange information between multiple systems, and are used to route information across the Internet.
 

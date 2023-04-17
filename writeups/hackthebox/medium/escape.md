@@ -79,7 +79,7 @@ We can download this file and view it.&#x20;
 
 This is the file contents:
 
-<figure><img src="../../../.gitbook/assets/image (52).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (52) (4).png" alt=""><figcaption></figcaption></figure>
 
 The next page contains a guest login for the SQL server. We also find a user called `brandon.brown`, who is likely some kind of database administrator.&#x20;
 
@@ -170,7 +170,7 @@ We can then request for this certificate using this command:
 
 This would output an RSA key and a certificate:
 
-<figure><img src="../../../.gitbook/assets/image (48).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (48) (4).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, we can simply use `openssl` to convert this output into a .pfx file:
 

@@ -126,7 +126,7 @@ And this is the page that gets shown to us:
 
 When visiting `http://authorization.oouch.htb:8000`, we can see how to register to this server:
 
-<figure><img src="../../../.gitbook/assets/image (8) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 In case you're unaware of OAuth 2.0, you can read this:
 

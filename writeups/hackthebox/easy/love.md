@@ -12,7 +12,7 @@ Lots of ports open.
 
 Port 80 reveals a voting system that requries credentials. Port 5000 was blocked off for whatever reason.
 
-<figure><img src="../../../.gitbook/assets/image (49).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (49) (4).png" alt=""><figcaption></figcaption></figure>
 
 A bit of enumeration on the type of service running reveals that it was an outdated software with loads of vulnerabilities:
 

@@ -20,7 +20,7 @@ We can enumerate the SMB shares to find that we have write permissions over one 
 
 This folder contains nothing, but the fact that we have write access indicates that we should probably be adding something to it. We can also find some credentials in the other share.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (53).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (53) (2).png" alt=""><figcaption></figcaption></figure>
 
 &#x20;Now, DNS is open, so we can expect to have loads of sub-domains. This machine has so many and it's rather painful to exploit. So I'll cut to the chase, we have to visit `administrator1.friendzone.red` that has a login page for us:
 
@@ -32,7 +32,7 @@ We can login using the credentials we found earlier in the SMB share. The page t
 
 The `pagename` parameter is vulnerable to LFI, and since this is a PHP application, we can place a PHP reverse shell file somewhere and execute it using this page. That's where the share that we can write to comes in.
 
-<figure><img src="../../../.gitbook/assets/image (57).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (57) (5).png" alt=""><figcaption></figcaption></figure>
 
 Then we can just simply access it by visiting this:
 
@@ -58,7 +58,7 @@ As `www-data`, we have limited access over everything. The first place to look i
 
 We can use this to `su friend`.
 
-<figure><img src="../../../.gitbook/assets/image (55).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (55) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Python OS Tampering
 

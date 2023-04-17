@@ -15,7 +15,7 @@ With ASLR enabled, the library would be **loaded at different places in memory**
 Functions are called based on **offsets**. For example, if the libc library is loaded at `0x10000000`, and the offset for the `printf()` function is `0x00001000`, then when a program is run and `printf()` is called, it is mapped at `0x10001000`. \
 Generally, base address (where library is called) + offset = memory location of function.
 
-The vulnerability arises because when ASLR is enabled, **the offset does not change and is constant**. So, if we are able to find the base address where the library is called, we can use the constant offsets to load certain functions. ****&#x20;
+The vulnerability arises because when ASLR is enabled, **the offset does not change and is constant**. So, if we are able to find the base address where the library is called, we can use the constant offsets to load certain functions.&#x20;
 
 ### **Methods**
 
