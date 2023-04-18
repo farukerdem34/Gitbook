@@ -18,12 +18,15 @@ The other type of CTF is called attack/defense, which is a real-life competition
 3. Pwn / Binary Exploitation
    * To exploit a program running on a server to find the flag.
    * Generally, they give you the program (.exe / .elf) that is running on a port of the server, and fuzzing, decompiling and reverse engineering is needed to find the vulnerability in how the program processes user information is needed.&#x20;
-   * Buffer Overflow and its variances are typically used here, and this is where Python scripting is so useful (pwntools).&#x20;
+   * Buffer Overflow and its variants are typically used here, and this is where Python scripting is so useful (pwntools).&#x20;
 4. Cryptography
    * Decrypting or encrypting a piece of data that is basically the flag.
    * Involves math and exploiting limitations of certain algorithms.&#x20;
+   * Most commonly, stuff like **insecure PRNG, RSA with tweaks (such as having a small exponent)** are tested here.
 5. Reverse Engineering
    * Self-explanatory. Given a program or file, find out how it works and RE it to find exploitable vulnerabilities.&#x20;
+   * Sometimes, it incorporates other fields like reverse engineering to find a binary exploitation, or reverse engineering a cryptographic algorithm.
+   * `ghidra` and `dnspy` are commonly used.&#x20;
 6. Misc.
    * Could be anything! The most wildcard of all the challenges.&#x20;
    * Open Source Intelligence Gathering (OSINT), which is basically intense Googling is sometimes  here, if not a category on its own.&#x20;
@@ -40,7 +43,7 @@ CTF event tracker, just sign up and join one!
 
 A website to practice user created CTF challenges at your own time and pace.
 
-### ****[**PicoCTF**](https://portswigger.net/web-security)****
+### [**PicoCTF**](https://portswigger.net/web-security)
 
 CTF platform hosted by Carnegie Mellon University for everyone to learn more about security. You can either take part in the upcoming PicoCTF, or attempt challenges from the past.
 
