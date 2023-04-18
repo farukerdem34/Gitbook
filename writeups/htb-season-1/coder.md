@@ -118,7 +118,7 @@ public static void Main(string[] args)
 }
 ```
 
-Right, so this uses the **time**. On paper, this is secure, **if they didn't reveal the time it was encrypted**. Refer to the SMB directory listing and we can see the time the file was uploaded was `Fri Nov 11 17:17:08 2022`. This becomes `1668187028` when we convert it to the UnixTimeSeconds. With this, we can actually decrypt the file rather easily because we have the variables required.&#x20;
+Right, so this uses the **time**. On paper, this is secure, **if they didn't reveal the time it was encrypted**. Refer to the SMB directory listing and we can see the time the file was uploaded was `Fri Nov 11 17:17:08 2022`. This becomes `1668187028` when we convert it to the UnixTimeSeconds.&#x20;
 
 This uses an insecure PRNG generator. With the timestamp as the seed, we can quickly find the correct key and IV needed by just printing it out using some online C# compiler:
 
@@ -427,7 +427,7 @@ Unfortunately, there won't be any vulnerable templates that we can exploit becau
 
 <figure><img src="../../.gitbook/assets/image (48).png" alt=""><figcaption></figcaption></figure>
 
-So `e.black` can manage templates for the ADCS instance. Since we could not find any templates to abuse, perhaps we can **add one ourself**. We just need to find a template for a certificate, add it and give PKI Admins enrollment rights to abuse this and request an administrator TGT.
+So `e.black` can manage templates for the ADCS instance. Since we could not find any templates to abuse, perhaps we can **add one.** We just need to find a template for a certificate, add it and give PKI Admins enrollment rights to abuse this and request an administrator TGT.
 
 We can use this tool to do so:
 
