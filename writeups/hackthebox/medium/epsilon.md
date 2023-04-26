@@ -220,7 +220,7 @@ With this secret, we can forge a cookie easily. I used jwt.io to create a token 
 
 Afterwards, when trying to visit the webpage, we are granted access.
 
-<figure><img src="../../../.gitbook/assets/image (59) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (59) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### SSTI
 

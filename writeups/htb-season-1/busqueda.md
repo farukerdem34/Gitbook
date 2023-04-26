@@ -22,7 +22,7 @@ We would have to add `searcher.htb` to our `/etc/hosts` file to view the website
 
 This website seems to be a type of search engine using Flask:
 
-<figure><img src="../../.gitbook/assets/image (50).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (50) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can submit queries at the bottom using a custom machine and stuff:
 
@@ -171,7 +171,7 @@ Then we can access http://localhost:3000 to view Gitea:
 
 Using the same MySQL password of `yuiu1hoiu4i5ho1uh`, we can login as `administrator`. We can see some repos:
 
-<figure><img src="../../.gitbook/assets/image (59).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (59) (1).png" alt=""><figcaption></figcaption></figure>
 
 And within administrator / scripts repo, we can read the system checkup script:
 

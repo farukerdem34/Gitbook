@@ -122,7 +122,7 @@ We can inspect this to basically spy on the user.&#x20;
 
 I visited the `/vault` directory and found some secret credentials.
 
-<figure><img src="../../.gitbook/assets/image (227).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (227) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can `su` to `edwards`.
 
@@ -180,4 +180,4 @@ sudo -u dev_admin sudoedit /app/config_test.json
 
 This opens up the `activate` file and we are free to edit it. We can add `chmod u+s /bin/bash` into it. Then we can easily become `root`.
 
-<figure><img src="../../.gitbook/assets/image (228).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (228) (2).png" alt=""><figcaption></figcaption></figure>

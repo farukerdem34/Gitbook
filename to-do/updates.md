@@ -9,6 +9,7 @@ HTB Writeups added: (Busy month with finals :C)
 * Socket (HTB Season 1)
 * Coder (HTB Season 1)
 * Busqueda (HTB Season 1)
+* Mailroom (HTB Season 1)
 
 ### March 2023
 

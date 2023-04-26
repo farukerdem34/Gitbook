@@ -54,7 +54,7 @@ Then we can upload the changes after selecting the PHP Code option.
 
 <figure><img src="../../../.gitbook/assets/image (48) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (49) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (49) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

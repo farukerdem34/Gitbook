@@ -36,7 +36,7 @@ When clicking the about us page, we can see the URL and find that it might conta
 
 We can set up a quick Python server and check this URL to find that we can receive a hit from the server.
 
-<figure><img src="../../../.gitbook/assets/image (229).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (229) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (188) (1).png" alt=""><figcaption></figcaption></figure>
 

@@ -64,7 +64,7 @@ Looking around it, wecome across a suspicious `tester.exe` that does not fit in 
 
 We can download this back to our machine for analysing, and I used `strings` as I always do on binaries I get. When looking through the output, we can see a few lines that contains MSSQL credentials:
 
-<figure><img src="../../../.gitbook/assets/image (52) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (52) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 With this, we can access the MSSQL instance with `sqsh`. Afterwards, getting RCE via `xp_cmdshell` was trivial.
 

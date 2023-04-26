@@ -10,7 +10,7 @@ Nmap scan:
 
 Port 80 reveals a kind of social network website.
 
-<figure><img src="../../../.gitbook/assets/image (50) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (50) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 I ran a `gobuster` scan on the website, and it revealed tons of interesting directories.
 

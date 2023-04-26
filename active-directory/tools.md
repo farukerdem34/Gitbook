@@ -64,7 +64,7 @@ In my experience, if you're trying to find a script for an AD attack, impacket p
 
 Basically, the SSH thing of Windows with loads of easy to use additional commands. Supports file transfer to and fro, as well as passing the hash for authentication. This tool abuses the service typically listening on port 5985.
 
-<figure><img src="../.gitbook/assets/image (50) (1) (1).png" alt=""><figcaption><p><em>Evil-winrm with Password</em></p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (50) (1) (1) (1).png" alt=""><figcaption><p><em>Evil-winrm with Password</em></p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (47) (1) (1).png" alt=""><figcaption><p><em>Evil-winrm with LM Hash</em></p></figcaption></figure>
 

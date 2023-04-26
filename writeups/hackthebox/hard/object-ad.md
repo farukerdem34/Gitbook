@@ -56,7 +56,7 @@ After extracting both of these files, we can use this tool to decrypt them:
 
 Then, we can `evil-winrm` in as `oliver`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (61) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (61) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
