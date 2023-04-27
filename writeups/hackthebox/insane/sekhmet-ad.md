@@ -189,8 +189,6 @@ With these commands, we can become root on this container and capture the user f
 
 <figure><img src="../../../.gitbook/assets/image (444).png" alt=""><figcaption></figcaption></figure>
 
-Rest of this is WIP! Really long machine.
-
 ## Active Directory
 
 ### Domain Enum
