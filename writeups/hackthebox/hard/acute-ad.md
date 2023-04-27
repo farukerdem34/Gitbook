@@ -162,7 +162,7 @@ The hash can be cracked on crackstation.net.
 
 When testing the credentials on the other machine, I found that it only worked with a user called wallace, and no one else.
 
-<figure><img src="../../../.gitbook/assets/image (233).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (233) (1).png" alt=""><figcaption></figcaption></figure>
 
 As such, we would probably need to enumerate the machine as Wallace. When checking out the C:\Program Files directory, I found this interesting file called keepmeon.
 

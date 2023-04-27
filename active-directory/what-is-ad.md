@@ -1,6 +1,6 @@
 # What is AD?
 
-Active Directory is a system that allows administrators to create and manage domains, users and objects within a network. For example, an admin can create a group of users, such as local administrators, and give them control over specific directories and areas on the server.AD is used for organizing large groups of users into logical groups and smaller groups, providing different levels of access control at each level.
+Active Directory is a system that allows administrators to create and manage domains, users and objects within a network. For example, an admin can create a group of users, such as local administrators, and give them control over specific directories and areas on the server. AD is used for organizing large groups of users into logical groups and smaller groups, providing different levels of access control at each level.
 
 Active Directory is becoming more common in engagements nowadays and the focus has shifted. Microsoft's domain services are extremely convenient for managing an entire domain, whether it be for school or work. However, with convenience, comes great security risks.
 
@@ -25,7 +25,9 @@ The trunk of the tree can see everything, and basically controls everything with
 
 Within each branch, small and big, there would be administrators there to make sure everything is running smoothly. This could be your boss, or the IT guy who administers the entire section of the company.
 
-This is just a rough analogy to picture what AD is like, but it's not entirely accurate.&#x20;
+<figure><img src="../.gitbook/assets/image (233).png" alt=""><figcaption></figcaption></figure>
+
+I like to think of AD as a company having multiple computers and users all under a domain like `company.com`.&#x20;
 
 ## AD Terms
 
