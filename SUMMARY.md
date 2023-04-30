@@ -37,7 +37,7 @@
 
 ## 🌏 Networks
 
-* [Introduction](networks/introduction.md)
+* [Networking](networks/introduction.md)
 * [Addresses](networks/addresses-subnets-and-ports.md)
 * [OSI Model](networks/osi-model.md)
 * [Packets](networks/packets/README.md)
@@ -83,7 +83,7 @@
 
 ## 🖥 Active Directory
 
-* [What is AD?](active-directory/what-is-ad.md)
+* [Active Directory](active-directory/what-is-ad.md)
 * [Tools](active-directory/tools.md)
 * [Kerberos](active-directory/kerberos/README.md)
   * [Attacking Kerberos](active-directory/kerberos/attacking-kerberos.md)

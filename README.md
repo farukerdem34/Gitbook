@@ -16,11 +16,11 @@ There are a few sections here:
 
 {% embed url="https://rouvin.gitbook.io/ibreakstuff/website-security/web-services" %}
 
-{% embed url="https://rouvin.gitbook.io/ibreakstuff/networks/introduction" %}
+{% embed url="https://rouvin.gitbook.io/ibreakstuff/networks" %}
 
+{% embed url="https://rouvin.gitbook.io/ibreakstuff/buffer-overflows" %}
 
-
-{% embed url="https://rouvin.gitbook.io/ibreakstuff/active-directory/what-is-ad" %}
+{% embed url="https://rouvin.gitbook.io/ibreakstuff/active-directory" %}
 
 **The main content I post are  writeups for HackTheBox and Proving Grounds Practice machines:**
 
