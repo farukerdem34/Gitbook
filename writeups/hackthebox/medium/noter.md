@@ -4,7 +4,7 @@ Gaining Access
 
 As usual, we start with an Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (58) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (58) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Port 5000 was a HTTP port that was running some notetaking application.&#x20;
 

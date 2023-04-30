@@ -135,7 +135,7 @@ Then grab the user flag.
 
 Earlier, I mentioned that port 8443 was running a HTTPS site and we have not enumerated it yet. This port had NSClient++ running on it:
 
-<figure><img src="../../../.gitbook/assets/image (54).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (54) (3).png" alt=""><figcaption></figcaption></figure>
 
 None of the functions work. Searching for public exploits works however:
 

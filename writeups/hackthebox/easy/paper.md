@@ -28,7 +28,7 @@ Because there were hints to view a private post of some sort, we can try appendi
 
 {% embed url="https://www.exploit-db.com/exploits/47690" %}
 
-<figure><img src="../../../.gitbook/assets/image (84) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (84) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 We now have a new URL to head to.
 
@@ -56,7 +56,7 @@ The user is `dwight`, and we can see that within this directory, there is a `hub
 
 We can see that within the `hubot/` directory, there's a `.env` file. This could contain some interesting content.
 
-<figure><img src="../../../.gitbook/assets/image (82) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (82) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can test this password with the user `dwight` and attempt to SSH in, which works!
 

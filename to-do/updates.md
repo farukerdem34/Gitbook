@@ -23,6 +23,8 @@ HTB Writeups added: (Busy month with finals :C)
 * Medium
   * Bastard
   * Catch
+  * Fuse
+  * Tenet
 
 ### March 2023
 

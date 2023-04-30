@@ -6,7 +6,7 @@ coverY: 139
 
 # Hello!
 
-## What's this?
+What's this?
 
 This is just a compilation of notes and knowledge I gained from scouring the Internet, self-practicing, going for courses, interning and learning from college. Also serves as a small portfolio for my skills.&#x20;
 
@@ -20,7 +20,7 @@ There are a few sections here:
 
 {% embed url="https://rouvin.gitbook.io/ibreakstuff/buffer-overflows/buffer-overflows" %}
 
-{% embed url="https://rouvin.gitbook.io/ibreakstuff/active-directory/ad" %}
+{% embed url="https://rouvin.gitbook.io/active-directory/ad" %}
 
 **The main content I post are  writeups for HackTheBox and Proving Grounds Practice machines:**
 

@@ -54,7 +54,7 @@ Afterwards, we would get another cipher.
 
 I recognised this as base64 and attempted to decode it, but it returned non-readable characters.
 
-<figure><img src="../../../.gitbook/assets/image (84).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (84) (1).png" alt=""><figcaption></figcaption></figure>
 
 This was some type of zip folder, because it contained an `index.php` file within it, and also it had the PK file signature (which indicates ZIP folders). So I decoded this to find a password protected zip file, which could be cracked using `zip2john`.
 
@@ -112,7 +112,7 @@ Then we would gain a reverse shell as `www-data`.
 
 The user on this machine had an interesting `.binary` directory within their home directory.
 
-<figure><img src="../../../.gitbook/assets/image (86).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (86) (4).png" alt=""><figcaption></figcaption></figure>
 
 In the `/home/ayush/.binary` directory, we can find this `rop` SUID binary.
 
@@ -120,7 +120,7 @@ In the `/home/ayush/.binary` directory, we can find this `rop` SUID binary.
 
 I ran an `ltrace` on the binary and tested it with some random input. I found that this uses the `strcpy` function, which is vulnerable to a BOF exploit.
 
-<figure><img src="../../../.gitbook/assets/image (81).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (81) (4).png" alt=""><figcaption></figcaption></figure>
 
 Ran a `checksec` on it too:
 
@@ -175,7 +175,7 @@ Afterwards, we need to fuzz the binary to find the number of junk characters req
 
 <figure><img src="../../../.gitbook/assets/image (119) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (91).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (91) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can then create a quick script using Python.
 

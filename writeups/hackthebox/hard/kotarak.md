@@ -57,11 +57,11 @@ We can see that the `?doc` parameter was being used to access these links. We ca
 
 This reveals to us a folder with the Tomcat credentials.
 
-<figure><img src="../../../.gitbook/assets/image (82).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (82) (1).png" alt=""><figcaption></figcaption></figure>
 
 With this, we can acess port 8080 and login. Then, using `msfvenom`, we can generate a quick reverse shell to upload to gain a reverse shell easily.
 
-<figure><img src="../../../.gitbook/assets/image (85).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (85) (3).png" alt=""><figcaption></figcaption></figure>
 
 We would be the `tomcat` user on the machine.
 
@@ -130,7 +130,7 @@ We can use `authbind` to bypass this.
 
 Afterwards, the exploit should work by first extracting the `/etc/shadow` file (as specified in the `.wgetrc` file we made earlier, although this can be any file).
 
-<figure><img src="../../../.gitbook/assets/image (79).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (79) (5).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, we would get a reverse shell on a listener port.
 
