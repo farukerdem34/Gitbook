@@ -1,6 +1,6 @@
 # Table of contents
 
-## 👋 Welcome!
+## 👋 Welcome
 
 * [Hello!](README.md)
 * [About Me](welcome/about-me.md)
@@ -10,7 +10,7 @@
 * [To Add](to-do/to-add.md)
 * [Updates](to-do/updates.md)
 
-## 🔐 What is Security?
+## 🔐 What is Security
 
 * [Information Security](what-is-security/information-security.md)
 * [Getting Started](getting-started/getting-started.md)

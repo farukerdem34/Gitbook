@@ -1,20 +1,32 @@
+---
+cover: >-
+  https://images.unsplash.com/photo-1541728472741-03e45a58cf88?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxOTcwMjR8MHwxfHNlYXJjaHwzfHxoYWNraW5nfGVufDB8fHx8MTY4Mjg0NjkwMA&ixlib=rb-4.0.3&q=85
+coverY: 139
+---
+
 # Hello!
+
+## What's this?
 
 This is just a compilation of notes and knowledge I gained from scouring the Internet, self-practicing, going for courses, interning and learning from college. Also serves as a small portfolio for my skills.&#x20;
 
-Here, you can find more information about security-related topics as follows:
+There are a few sections here:
 
-* [A basic introduction to Cybersecurity and CTFs](getting-started/ctfs.md)
-* [Pentesting Methodologies](broken-reference)
-* [Web Security](broken-reference)
-* [Networking knowledge + Security](broken-reference)
-* [Buffer Overflows](broken-reference)
-* [Active Directory ](broken-reference)
+{% embed url="https://rouvin.gitbook.io/ibreakstuff/what-is-security/getting-started/ctfs" %}
 
-**The main bulk of content here are the writeups for HackTheBox and Proving Grounds Practice machines:**
+{% embed url="https://rouvin.gitbook.io/ibreakstuff/website-security/web-services" %}
 
-* [HTB](writeups/hackthebox/)
-* [Proving Grounds Practice](writeups/proving-grounds-practice/)
+{% embed url="https://rouvin.gitbook.io/ibreakstuff/networks/introduction" %}
+
+{% embed url="https://rouvin.gitbook.io/ibreakstuff/buffer-overflows/prior-knowledge" %}
+
+{% embed url="https://rouvin.gitbook.io/ibreakstuff/active-directory/what-is-ad" %}
+
+**The main content I post are  writeups for HackTheBox and Proving Grounds Practice machines:**
+
+{% embed url="https://rouvin.gitbook.io/ibreakstuff/writeups/hackthebox" %}
+
+{% embed url="https://rouvin.gitbook.io/ibreakstuff/writeups/proving-grounds-practice" %}
 
 This book will be updated as frequently as I can while juggling school work. Check the Updates page to see what I've added (categorised by month) and the To Add page to see what I plan to add.
 
@@ -26,4 +38,18 @@ I do not condone any illegal activity done using any methods in this notebook. A
 
 Please exercise responsibility and keep the law in mind when you are learning and testing on systems. Only test your skills on personal systems, or on systems / platforms where you have the permission to do so.
 
-If I wrote anything wrongly (which I probably did) do submit a PR.&#x20;
+If I wrote anything wrongly or inaccurately, please do let me know or submit a PR!&#x20;
+
+## Contact
+
+### Linkedin
+
+{% embed url="https://www.linkedin.com/in/rouvinerh/" %}
+
+### Github&#x20;
+
+{% embed url="https://github.com/rouvinerh" %}
+
+### Email
+
+{% embed url="https://mailhide.io/e/ZytRSwou" %}
