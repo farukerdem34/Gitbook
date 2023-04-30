@@ -70,11 +70,11 @@
 
 ## 👀 Buffer Overflows
 
-* [Prior Knowledge](buffer-overflows/prior-knowledge/README.md)
+* [Buffer Overflows](buffer-overflows/prior-knowledge/README.md)
   * [System Architecture](buffer-overflows/prior-knowledge/system-architecture.md)
   * [Compilers, Assemblers, Debuggers and Decompilers](buffer-overflows/prior-knowledge/compilers-assemblers-debuggers-and-decompilers.md)
   * [Binary Security](buffer-overflows/prior-knowledge/binary-security.md)
-  * [Buffer Overflow](buffer-overflows/prior-knowledge/buffer-overflow.md)
+  * [Address Manipulation](buffer-overflows/prior-knowledge/buffer-overflow.md)
 * [OSCP BOF (OUTDATED)](buffer-overflows/oscp-bof.md)
 * [Ret2Libc](buffer-overflows/ret2libc.md)
 * [ROP Chaining](buffer-overflows/rop-chaining.md)

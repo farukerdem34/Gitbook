@@ -18,7 +18,7 @@ There are a few sections here:
 
 {% embed url="https://rouvin.gitbook.io/ibreakstuff/networks/introduction" %}
 
-{% embed url="https://rouvin.gitbook.io/ibreakstuff/buffer-overflows/prior-knowledge" %}
+
 
 {% embed url="https://rouvin.gitbook.io/ibreakstuff/active-directory/what-is-ad" %}
 
@@ -39,17 +39,3 @@ I do not condone any illegal activity done using any methods in this notebook. A
 Please exercise responsibility and keep the law in mind when you are learning and testing on systems. Only test your skills on personal systems, or on systems / platforms where you have the permission to do so.
 
 If I wrote anything wrongly or inaccurately, please do let me know or submit a PR!&#x20;
-
-## Contact
-
-### Linkedin
-
-{% embed url="https://www.linkedin.com/in/rouvinerh/" %}
-
-### Github&#x20;
-
-{% embed url="https://github.com/rouvinerh" %}
-
-### Email
-
-{% embed url="https://mailhide.io/e/ZytRSwou" %}

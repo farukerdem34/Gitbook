@@ -15,3 +15,17 @@ There's loads of free stuff on the Internet in general, and security is definite
 * I can speak English and Chinese (although the latter isn't the best).
 * I really enjoy reading about how stuff is exploited and exploiting things myself (legally).&#x20;
 * Apart from security, I enjoy water sports. Currently, I'm a canoe sprint athlete representing NUS and am a canoe coach for my alma mater.&#x20;
+
+## Contact
+
+### LinkedIn
+
+{% embed url="https://www.linkedin.com/in/rouvinerh" %}
+
+### Github
+
+{% embed url="https://github.com/rouvinerh" %}
+
+### Email
+
+{% embed url="https://mailhide.io/en/e/ZytRSwou" %}
