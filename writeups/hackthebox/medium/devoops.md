@@ -46,7 +46,7 @@ Afterwards, we can simply SSH into the machine.
 
 When checking the `id` of this user, we see that we are part of the `sudo` group.
 
-<figure><img src="../../../.gitbook/assets/image (255).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (255) (2).png" alt=""><figcaption></figcaption></figure>
 
 Within the home directory of the user, we also find some Git repository files.
 
@@ -58,7 +58,7 @@ Using `find /home -name .git`, we can find the specific location of the Git repo
 
 After heading to that directory, we would find an SSH key after using `git log -p -2`:
 
-<figure><img src="../../../.gitbook/assets/image (256).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (256) (2).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (17) (5).png" alt=""><figcaption></figcaption></figure>
 

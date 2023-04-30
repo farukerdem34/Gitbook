@@ -52,7 +52,7 @@ From here, we just need to find some credentials and the computer name. Looking 
 
 Based on the website, we can find that there are some names listed on it, and these could be the potential usernames that we need.
 
-<figure><img src="../../../.gitbook/assets/image (236).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (236) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can get these names into a file and then use a script to generate out all possible usernames to brute force with the password.
 
@@ -120,7 +120,7 @@ Afterwards, we can check the directory of his desktop to confirm where the user.
 
 While I did find the user flag, there was this .ps1 file that was also really interesting. With our RCE capabilities, we can read this file.
 
-<figure><img src="../../../.gitbook/assets/image (159) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (159) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 This script essentially runs the `Get-Volume` command as the jmorgan user, which is cool. Also, we can note that the imonks user has privileges over this script and we can write to it. What this means is, we can get RCE as jmorgan!
 
@@ -148,7 +148,7 @@ As such, we would need to find a way to gain access to the Administrator account
 
 I used mimikatz to dump out the hashes easily. This was done through loading the kiwi module using the earlier meterpreter binary I generated for screengrab.
 
-<figure><img src="../../../.gitbook/assets/image (246).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (246) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can find the Administrator credentials.
 
@@ -162,7 +162,7 @@ The hash can be cracked on crackstation.net.
 
 When testing the credentials on the other machine, I found that it only worked with a user called wallace, and no one else.
 
-<figure><img src="../../../.gitbook/assets/image (233) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (233) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 As such, we would probably need to enumerate the machine as Wallace. When checking out the C:\Program Files directory, I found this interesting file called keepmeon.
 

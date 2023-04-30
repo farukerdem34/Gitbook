@@ -14,7 +14,7 @@ On port 80, we can find some interesting information.
 
 The user page tells us how to use SSH to get into the machine.
 
-<figure><img src="../../../.gitbook/assets/image (494).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (494) (1).png" alt=""><figcaption></figcaption></figure>
 
 So our IP address is our username and password for this machine. Interesting.
 
@@ -38,7 +38,7 @@ I found it really odd that LDAP was listening on the machine and I did not know 
 
 We can `su` as `ldapuser2` using this plaintext credential (it's the hash).
 
-<figure><img src="../../../.gitbook/assets/image (499).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (499) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -46,7 +46,7 @@ We can `su` as `ldapuser2` using this plaintext credential (it's the hash).
 
 Within the new user's directory, we can find a backup file.
 
-<figure><img src="../../../.gitbook/assets/image (486).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (486) (1).png" alt=""><figcaption></figcaption></figure>
 
 It was password encrypted, but that's no issue for `john`.
 
@@ -78,7 +78,7 @@ openssl =ep
 
 We can use this to capture the root flag:
 
-<figure><img src="../../../.gitbook/assets/image (487).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (487) (1).png" alt=""><figcaption></figcaption></figure>
 
 But that's not good enough for OSCP. So, I decided to overwrite the `root` user's hash in `/etc/shadow`. This allows me to `su` as `root` using a password of my choosing.
 
@@ -92,8 +92,8 @@ Then, we can get a copy the `/etc/shadow` file into the `ldapuser1` user directo
 
 Then we can replace the root hash with our own.
 
-<figure><img src="../../../.gitbook/assets/image (498).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (498) (1).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, we can overwrite the `/etc/shadow` file with the edited version, then `su` to get a root shell.
 
-<figure><img src="../../../.gitbook/assets/image (490).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (490) (1).png" alt=""><figcaption></figcaption></figure>

@@ -10,7 +10,7 @@ Nmap scan:
 
 Port 80 reveals a kind of social network website.
 
-<figure><img src="../../../.gitbook/assets/image (50) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (50) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 I ran a `gobuster` scan on the website, and it revealed tons of interesting directories.
 
@@ -94,7 +94,7 @@ This would mean having a file name of 236 characters (which was the max when cou
 
 We can then test our RCE.
 
-<figure><img src="../../../.gitbook/assets/image (484).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (484) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then we can get a reverse shell easily.
 
@@ -192,4 +192,4 @@ Using `debugfs` on the `/dev/sda1` filesystem (which just looked off), we find o
 
 Then, we can SSH in as `root`.
 
-<figure><img src="../../../.gitbook/assets/image (485).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (485) (1).png" alt=""><figcaption></figcaption></figure>

@@ -20,7 +20,7 @@ With a user list, we can attempt to do AS-REP Roasting before moving on, and we 
 
 Then, we can use `john` to crack the hash easily.
 
-<figure><img src="../../../.gitbook/assets/image (257).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (257) (2).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, we can `evil-winrm` in as this user.
 

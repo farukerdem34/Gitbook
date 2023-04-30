@@ -36,7 +36,7 @@ When clicking the about us page, we can see the URL and find that it might conta
 
 We can set up a quick Python server and check this URL to find that we can receive a hit from the server.
 
-<figure><img src="../../../.gitbook/assets/image (229) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (229) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (188) (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -132,7 +132,7 @@ As this user, because we have credentials for another user, we can use the runas
 
 We would receive a shell as c.bum on whatever port we are on.
 
-<figure><img src="../../../.gitbook/assets/image (245).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (245) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% embed url="https://github.com/antonioCoco/RunasCs" %}
 

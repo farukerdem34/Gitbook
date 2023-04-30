@@ -256,7 +256,7 @@ I read more here:
 
 In short, a unified diff file would allow us to append more stuff to the end of the current build, which is obviously not good. Some further enumeration revealed that this uses Powershell.
 
-<figure><img src="../../.gitbook/assets/image (54).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (54) (6).png" alt=""><figcaption></figcaption></figure>
 
 The answer is simple. Include some small Powershell code that would execute some commands to download a reverse shell. So I created a quick diff file like this to test:
 
@@ -312,11 +312,11 @@ Based on this, we just need to head to `C:\TeamCity\logs` and run `type * | Sele
 
 Following the instructions, we would gain access as the administrator of TeamCity rather easily.
 
-<figure><img src="../../.gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (51) (5).png" alt=""><figcaption></figcaption></figure>
 
 As the administrator, we see some additional stuff like this thing:
 
-<figure><img src="../../.gitbook/assets/image (52) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (52) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 ADCS? Might need this for later. Anyways as this user, we can add new build steps on the builds. I simply added a new step whereby it would execute the same powershell as above.
 
@@ -400,7 +400,7 @@ Decrypting this would give us the user's credentials as remote Powershell was be
 
 This would decrypt to give `ypOSJXPqlDOxxbQSfEERy300`, which we can easily use to `evil-winrm` in as the user and capture the user flag.
 
-<figure><img src="../../.gitbook/assets/image (58).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (58) (5).png" alt=""><figcaption></figcaption></figure>
 
 ## AD Privilege Escalation
 
@@ -425,7 +425,7 @@ The first thing we need to do is to enumerate all possible certificates to find 
 
 Unfortunately, there won't be any vulnerable templates that we can exploit because none of the templates present give us any enrollment permissions. Since the user is part of PKI Admins, we can take a closer look at the role and infer what permissions we have. I used Bloodhound to map the permissions, and didn't find much apart from this:
 
-<figure><img src="../../.gitbook/assets/image (48) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (48) (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 So `e.black` can manage templates for the ADCS instance. Since we could not find any templates to abuse, perhaps we can **add one.** We just need to find a template for a certificate, add it and give PKI Admins enrollment rights to abuse this and request an administrator TGT.
 
@@ -461,7 +461,7 @@ certipy req -username e.black@coder.htb -password <pass> -ca coder-DC01-CA -targ
 ```
 {% endcode %}
 
-<figure><img src="../../.gitbook/assets/image (53).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (53) (4).png" alt=""><figcaption></figcaption></figure>
 
 This would retrieve the administrator PFX for us to use. We can then use this to retrieve the NT Hash for the administrator and login using `evil-winrm`:
 

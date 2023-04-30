@@ -4,7 +4,7 @@
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (351).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (351) (2).png" alt=""><figcaption></figcaption></figure>
 
 Port 80 is running a kind of library application.
 
@@ -26,7 +26,7 @@ Testing for SQL Injection within the parameters above reveals nothing of interes
 
 Clicking yes causes an error to pop up.
 
-<figure><img src="../../../.gitbook/assets/image (356).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (356) (2).png" alt=""><figcaption></figcaption></figure>
 
 I wanted to view the requests being made through Burpsuite, and saw this stuff.
 
@@ -34,7 +34,7 @@ I wanted to view the requests being made through Burpsuite, and saw this stuff.
 
 Attempting to change the `book` parameter in any way causes this error to appear:
 
-<figure><img src="../../../.gitbook/assets/image (344).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (344) (3).png" alt=""><figcaption></figcaption></figure>
 
 `file_get_contents()` could be used to read some other files. Earlier, we did a `gobuster` directory enumeration and found a `/db` directory.
 
@@ -58,7 +58,7 @@ Creating a fake account to login reveals there are 2 cookies being used, one bei
 
 Viewing the page itself reveals several functions we can use.
 
-<figure><img src="../../../.gitbook/assets/image (481).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (481) (1).png" alt=""><figcaption></figcaption></figure>
 
 I was unable to access the File Management function at `/portal/php/files.php`, hence I took a look at the source code for it using the File Read we found earlier.
 
@@ -102,7 +102,7 @@ Viewing the requests shows that there's a `task` variable changing our file to a
 
 We can change this to .php and it bypasses the file extension check. However, the PHP webshell above does not work, and there may be a WAF in place. I tried different webshells, and `shell_exec()` works.
 
-<figure><img src="../../../.gitbook/assets/image (483).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (483) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can access the webshell via checking the `portal/uploads` folder.
 
@@ -110,7 +110,7 @@ Then, we can access the webshell via checking the `portal/uploads` folder.
 
 Then, we can get a reverse shell via whatever method.
 
-<figure><img src="../../../.gitbook/assets/image (346).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (346) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### SSH as Juliette
 
@@ -180,7 +180,7 @@ Firstly, we can see that this accesses a service on port 1234 of the machine, wh
 
 To check this, I port forwarded the service via SSH using juliette's credentials, then I tried to access the service using `curl`.
 
-<figure><img src="../../../.gitbook/assets/image (350).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (350) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### SQL Injection in Krypter
 
@@ -202,7 +202,7 @@ We can check the `bread` database to view some more stuff.
 
 Finally, we can just view all of the stuff within this table via `concat()`.
 
-<figure><img src="../../../.gitbook/assets/image (475).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (475) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can decrypt the password using the first key we found.
 
