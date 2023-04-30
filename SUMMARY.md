@@ -83,7 +83,7 @@
 
 ## 🖥 Active Directory
 
-* [Active Directory](active-directory/active-directory.md)
+* [Active Directory](active-directory/ad.md)
 * [Tools](active-directory/tools.md)
 * [Kerberos](active-directory/kerberos/README.md)
   * [Attacking Kerberos](active-directory/kerberos/attacking-kerberos.md)

@@ -20,6 +20,8 @@ There are a few sections here:
 
 {% embed url="https://rouvin.gitbook.io/ibreakstuff/buffer-overflows/buffer-overflows" %}
 
+{% embed url="https://rouvin.gitbook.io/ibreakstuff/active-directory/ad" %}
+
 **The main content I post are  writeups for HackTheBox and Proving Grounds Practice machines:**
 
 {% embed url="https://rouvin.gitbook.io/ibreakstuff/writeups/hackthebox" %}

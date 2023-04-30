@@ -1,4 +1,4 @@
-# What is AD?
+# Active Directory
 
 Active Directory is a system that allows administrators to create and manage domains, users and objects within a network. For example, an admin can create a group of users, such as local administrators, and give them control over specific directories and areas on the server. AD is used for organizing large groups of users into logical groups and smaller groups, providing different levels of access control at each level.
 
