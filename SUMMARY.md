@@ -37,7 +37,7 @@
 
 ## 🌏 Networks
 
-* [Networking](networks/introduction.md)
+* [Networking](networks/networking.md)
 * [Addresses](networks/addresses-subnets-and-ports.md)
 * [OSI Model](networks/osi-model.md)
 * [Packets](networks/packets/README.md)
@@ -52,7 +52,7 @@
 
 ## 🖱 Website Security
 
-* [Web Services](pentesting-methodology/recon/web-services.md)
+* [Web Services](website-security/web.md)
 * [SQL Injection](website-security/sql-injection.md)
 * [Authentication Bypass](website-security/authentication-bypass.md)
 * [Directory Traversal](website-security/directory-traversal.md)
@@ -70,11 +70,11 @@
 
 ## 👀 Buffer Overflows
 
-* [Buffer Overflows](buffer-overflows/prior-knowledge/README.md)
-  * [System Architecture](buffer-overflows/prior-knowledge/system-architecture.md)
-  * [Compilers, Assemblers, Debuggers and Decompilers](buffer-overflows/prior-knowledge/compilers-assemblers-debuggers-and-decompilers.md)
-  * [Binary Security](buffer-overflows/prior-knowledge/binary-security.md)
-  * [Address Manipulation](buffer-overflows/prior-knowledge/buffer-overflow.md)
+* [Buffer Overflows](buffer-overflows/buffer-overflows/README.md)
+  * [System Architecture](buffer-overflows/buffer-overflows/system-architecture.md)
+  * [Compilers, Assemblers, Debuggers and Decompilers](buffer-overflows/buffer-overflows/compilers-assemblers-debuggers-and-decompilers.md)
+  * [Binary Security](buffer-overflows/buffer-overflows/binary-security.md)
+  * [Address Manipulation](buffer-overflows/buffer-overflows/buffer-overflow.md)
 * [OSCP BOF (OUTDATED)](buffer-overflows/oscp-bof.md)
 * [Ret2Libc](buffer-overflows/ret2libc.md)
 * [ROP Chaining](buffer-overflows/rop-chaining.md)
