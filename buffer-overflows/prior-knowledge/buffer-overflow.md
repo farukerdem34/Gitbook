@@ -2,7 +2,7 @@
 description: Explanation of address manipulation
 ---
 
-# Buffer Overflow
+# Address Manipulation
 
 ## How it Works
 

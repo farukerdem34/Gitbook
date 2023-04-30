@@ -14,13 +14,11 @@ There are a few sections here:
 
 {% embed url="https://rouvin.gitbook.io/ibreakstuff/what-is-security/getting-started/ctfs" %}
 
+{% embed url="https://rouvin.gitbook.io/ibreakstuff/networks/networking" %}
+
 {% embed url="https://rouvin.gitbook.io/ibreakstuff/website-security/web-services" %}
 
-{% embed url="https://rouvin.gitbook.io/ibreakstuff/networks" %}
-
-{% embed url="https://rouvin.gitbook.io/ibreakstuff/buffer-overflows" %}
-
-{% embed url="https://rouvin.gitbook.io/ibreakstuff/active-directory" %}
+{% embed url="https://rouvin.gitbook.io/ibreakstuff/buffer-overflows/buffer-overflows" %}
 
 **The main content I post are  writeups for HackTheBox and Proving Grounds Practice machines:**
 

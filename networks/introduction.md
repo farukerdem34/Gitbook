@@ -1,4 +1,4 @@
-# Introduction
+# Networking
 
 Computer networks are basically interconnected devices that can exchange information and send data to one another using a set of communication protocols. The transferring of information can be done either physically through wire, or wirelessly.&#x20;
 
