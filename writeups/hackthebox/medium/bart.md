@@ -16,7 +16,7 @@ The website was a standard company page:
 
 I checked the page source, and found a unique bit here. Seems like there was a user that was not shown for some reason.
 
-<figure><img src="../../../.gitbook/assets/image (50) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (50) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 harvey is the user we probably need to access.&#x20;
 

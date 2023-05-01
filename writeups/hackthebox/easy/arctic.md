@@ -10,7 +10,7 @@ Nmap scan:
 
 When we visit port 8500, we see this:
 
-<figure><img src="../../../.gitbook/assets/image (78).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (78) (5).png" alt=""><figcaption></figcaption></figure>
 
 Adobe ColdFusion 8 is vulnerable to a lot of exploits.
 
@@ -18,7 +18,7 @@ Adobe ColdFusion 8 is vulnerable to a lot of exploits.
 
 We can use the Adobe ColdFusion 8 RCE exploit. When running the exploit, we would catch a shell on a listener port we set.
 
-<figure><img src="../../../.gitbook/assets/image (76).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (76) (5).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

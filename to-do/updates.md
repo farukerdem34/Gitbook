@@ -8,6 +8,10 @@ HTB Writeups added:
 
 * OnlyForYou (HTB Season 1)
 * MonitorsTwo (HTB Season 1)
+* Easy
+  * Omni
+* Medium
+  * Ophiuchi
 * Hard
   * Talkative
   * Seventeen

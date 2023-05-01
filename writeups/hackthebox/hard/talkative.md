@@ -30,7 +30,7 @@ Port 80 hosts a normal corporate website:
 
 This site had some usernames and emails that we can take note of for now.
 
-<figure><img src="../../../.gitbook/assets/image (59).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (59) (4).png" alt=""><figcaption></figcaption></figure>
 
 ```
 matt@talkative.htb
@@ -44,7 +44,7 @@ Other than that, there's nothing much here.&#x20;
 
 On port 3000, there was a Rocket Chat instance.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (48).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (48) (1).png" alt=""><figcaption></figcaption></figure>
 
 We have no credentials, so let's move on for now.
 
@@ -150,21 +150,21 @@ $ cat xdata.json | jq
 
 Now that we have some credentials, we need to find the Bolt login page. Normally, this is at the `/bolt` directory. We can find this login page at `talkative.htb/bolt`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (67) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (67) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can login with `saul@talkative.htb:jeO09ufhWD<s`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (55) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (55) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Bolt RCE
 
 This version of Bolt doesn't have any obvious vulnerabilities, so let's take a look at the File Management System since that is the most interesting. It appears that we can edit the themes and templates used for this machine:
 
-<figure><img src="../../../.gitbook/assets/image (50).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (50) (2).png" alt=""><figcaption></figcaption></figure>
 
 The page seems to use Twig templates to display the webpages:
 
-<figure><img src="../../../.gitbook/assets/image (54).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (54) (8).png" alt=""><figcaption></figcaption></figure>
 
 This means that we can probably execute code using SSTI via Twig templates. I added this one liner to the script and saved the changes.
 
@@ -405,7 +405,7 @@ In this case, I just used a simple password of '12345'. Then we can login to Roc
 
 The Rocket Chat dashboard had nothong of interest:
 
-<figure><img src="../../../.gitbook/assets/image (56) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (56) (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 I was taking a look at the Administration panel and seeing what I could do, when I found this:
 
@@ -448,7 +448,7 @@ curl -X POST -H 'Content-Type: application/json' --data '{"text":"Example messag
 
 Afterwards, we would catch a reverse shell on our listener port:
 
-<figure><img src="../../../.gitbook/assets/image (63) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (63) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Docker Vulnerabilities
 

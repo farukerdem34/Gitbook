@@ -52,7 +52,7 @@ The utility-scripts folder revealed some database credentials.
 
 The `index.php` folder also revealed some credentials.
 
-<figure><img src="../../../.gitbook/assets/image (78) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (78) (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, I was stumped here because I did not find any place to work on this. I understood that there was some kind of admirer-sounding application running somewhere, but gobuster was revealing nothing. Then, googling loads led me to the Adminer software, which was accessible on this website at `adminer.php`.
 

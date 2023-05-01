@@ -484,7 +484,7 @@ mark@seventeen:~$ curl localhost:4873
 
 As such, we can do some port forwarding using `ssh`. Viewing it reveals some sort of pacakage manager for NPM.
 
-<figure><img src="../../../.gitbook/assets/image (51) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (51) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 Within the `/opt/app` directory, there's a `startup.sh` script:
 
@@ -768,6 +768,6 @@ INFO:  Server running on port 8000
 
 Now that the application is running, it means that the module is loaded and our command has been executed and we can get an easy `root` shell.
 
-<figure><img src="../../../.gitbook/assets/image (52).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (52) (6).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

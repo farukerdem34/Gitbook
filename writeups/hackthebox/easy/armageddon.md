@@ -8,7 +8,7 @@ Nmap scan:
 
 Doing a detailed scan reveals that port 80 is running Drupal 7.
 
-<figure><img src="../../../.gitbook/assets/image (101).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (101) (4).png" alt=""><figcaption></figcaption></figure>
 
 ### Drupalgeddon
 
@@ -38,7 +38,7 @@ Within the Drupal configuration files at `/sites/default/settings`, we can find 
 
 With this, we can login to the SQL server and enumerate the database. By dumping the users table from the drupal database, we can find a username and hash.
 
-<figure><img src="../../../.gitbook/assets/image (100).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (100) (3).png" alt=""><figcaption></figcaption></figure>
 
 Hash is easily cracked with `john`.
 

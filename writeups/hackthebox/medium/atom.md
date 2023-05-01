@@ -93,7 +93,7 @@ After a while, our HTTP server would get a hit and our listener port would catch
 
 <figure><img src="../../../.gitbook/assets/image (37) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (67) (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (67) (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
