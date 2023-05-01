@@ -12,7 +12,7 @@ Interesting stuff.&#x20;
 
 Port 9999 was running a typical `nginx` web application. I used `gobuster` to find some hidden directories.
 
-<figure><img src="../../../.gitbook/assets/image (95).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (95) (2).png" alt=""><figcaption></figcaption></figure>
 
 Going to `/backup` reveals some credentials and another hidden directory.
 
@@ -92,7 +92,7 @@ This is the Brainfuck cipher, which can be decoded to find `idkwhatispass`.
 
 Now, we had another credential to try. I attempted logins using `admin:idkwhatispass` and logged in to the playSMS service yet again.
 
-<figure><img src="../../../.gitbook/assets/image (98).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (98) (5).png" alt=""><figcaption></figcaption></figure>
 
 playSMS had a few RCE exploits, so I grabbed one from Github and tried it.
 
@@ -112,7 +112,7 @@ Then we would gain a reverse shell as `www-data`.
 
 The user on this machine had an interesting `.binary` directory within their home directory.
 
-<figure><img src="../../../.gitbook/assets/image (86) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (86) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 In the `/home/ayush/.binary` directory, we can find this `rop` SUID binary.
 
@@ -120,7 +120,7 @@ In the `/home/ayush/.binary` directory, we can find this `rop` SUID binary.
 
 I ran an `ltrace` on the binary and tested it with some random input. I found that this uses the `strcpy` function, which is vulnerable to a BOF exploit.
 
-<figure><img src="../../../.gitbook/assets/image (81) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (81) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 Ran a `checksec` on it too:
 

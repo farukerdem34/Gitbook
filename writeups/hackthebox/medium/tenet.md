@@ -25,7 +25,7 @@ The machine has a blog-like website:
 
 This is a Wordpress based site if we view the page source. If we view some of the comments within the pages, we can see this comment that points us towards another file:
 
-<figure><img src="../../../.gitbook/assets/image (86).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (86) (4).png" alt=""><figcaption></figcaption></figure>
 
 Visiting `sator.php` won't do anything. Instead, visit`http://<IP>/sator.php.bak`, and it would download file to our machine. Then, we can view the file contents:
 
@@ -94,7 +94,7 @@ uid=33(www-data) gid=33(www-data) groups=33(www-data)
 
 Just spawn a reverse shell using a basic `bash` shell next.
 
-<figure><img src="../../../.gitbook/assets/image (56).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (56) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

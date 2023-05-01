@@ -26,15 +26,15 @@ This website seems to be a type of search engine using Flask:
 
 We can submit queries at the bottom using a custom machine and stuff:
 
-<figure><img src="../../.gitbook/assets/image (66) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (66) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 Whatever query we do here, depending on the engine, it would generate a URL for us with a `query` parameter appended at the end:
 
-<figure><img src="../../.gitbook/assets/image (64).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (64) (4).png" alt=""><figcaption></figcaption></figure>
 
 It seems that the website rejects any engine that is not present on its list. Running `gobuster` does not seem to reveal anything of interest, so let's take a closer look at the website itself. At the very bottom, it seems there's a link to the software being used, which is Searchor 2.4.0:
 
-<figure><img src="../../.gitbook/assets/image (67).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (67) (4).png" alt=""><figcaption></figcaption></figure>
 
 {% embed url="https://github.com/ArjunSharda/Searchor" %}
 
@@ -44,17 +44,17 @@ Looks like we need to do some source code review on this library.&#x20;
 
 The repository seems to be on v2.5.0, while the website is running v2.4.0. As such, we probably need to dive into the logs of this website to find out what was changed from v2.4.0. Looking at the commit history, we see that there's a `remove eval from search cli method` commit made:
 
-<figure><img src="../../.gitbook/assets/image (63) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (63) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 Here are the changes made:
 
-<figure><img src="../../.gitbook/assets/image (55).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (55) (4).png" alt=""><figcaption></figcaption></figure>
 
 This is vulnerbale because it uses `eval` to run the queries. Checking the v ersion, this edit was made for v2.4.2f, which means the machine is running a vulnerable version that is outdated since changes were not made for v2.4.0, specifically in the `query` parameter.&#x20;
 
 I sent `import('os').system('ping -c 1 10.10.16.41')` as the query, and got a response on `tcpdump`:
 
-<figure><img src="../../.gitbook/assets/image (65).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (65) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now, we just need to gain a reverse shell. It seems that `eval` as it cannot process the reverse shells I put in. I found this writeup for a bug bounty that bypasses this by using `compile()`.&#x20;
 
@@ -167,11 +167,11 @@ chisel server -p 1080 --reverse
 
 Then we can access http://localhost:3000 to view Gitea:
 
-<figure><img src="../../.gitbook/assets/image (62).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (62) (5).png" alt=""><figcaption></figcaption></figure>
 
 Using the same MySQL password of `yuiu1hoiu4i5ho1uh`, we can login as `administrator`. We can see some repos:
 
-<figure><img src="../../.gitbook/assets/image (59) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (59) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 And within administrator / scripts repo, we can read the system checkup script:
 

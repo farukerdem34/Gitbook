@@ -21,7 +21,7 @@ Another HTTP port exploit. We can add `mailroom.htb` to our `/etc/hosts` file fo
 
 Visiting port 80 reveals a basic corporate website:
 
-<figure><img src="../../.gitbook/assets/image (48) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (48) (5) (2).png" alt=""><figcaption></figcaption></figure>
 
 Viewing the paces reveals that this is a PHP based website. Within the functions available on the page, we can find a Contact Us page that tells us an AI will read our query.
 
@@ -152,7 +152,7 @@ We might need to use these somehow. Also, the script seems to be vulnerable to b
 
 When we submit any queries, this is the response that we get:
 
-<figure><img src="../../.gitbook/assets/image (61).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (61) (1).png" alt=""><figcaption></figcaption></figure>
 
 If we enter a simple `<script>` tag and view the page, we can confirm that we have XSS.
 
@@ -328,7 +328,7 @@ Serving HTTP on 0.0.0.0 port 1234 (http://0.0.0.0:1234/) ...
 
 Great! Now we can simply download a shell and execute it.
 
-<figure><img src="../../.gitbook/assets/image (59).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (59) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now we are in a docker container.
 

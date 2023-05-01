@@ -39,11 +39,11 @@ Loads of ports available.&#x20;
 
 When we visit the website hosted, we need to add `fuse.fabricorp.local` to our `/etc/hosts` file. I also added `fabricorp.local` in case. The wesbite was some sort of printing service.
 
-<figure><img src="../../../.gitbook/assets/image (79).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (79) (5).png" alt=""><figcaption></figcaption></figure>
 
 When we view the CSV files of each printing log, we can the user that printed them.
 
-<figure><img src="../../../.gitbook/assets/image (57).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (57) (4).png" alt=""><figcaption></figcaption></figure>
 
 We have 5 users in total:
 
@@ -71,7 +71,7 @@ cewl http://fuse.fabricorp.local/papercut/logs/html/index.htm --with-numbers > p
 
 Afterwards, we can run `crackmapexec` to brute force the passwords. Out of all the failures, one stood out.
 
-<figure><img src="../../../.gitbook/assets/image (81).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (81) (4).png" alt=""><figcaption></figcaption></figure>
 
 Seems that we have a valid expired credential here. To change passwords, we can use `smbpasswd`.
 
@@ -144,7 +144,7 @@ We now have more credentials! With this, we can try brute forcing the possible p
 
 We can test the credentials, and find that we are able to `evil-winrm` into the machine.
 
-<figure><img src="../../../.gitbook/assets/image (58).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (58) (2).png" alt=""><figcaption></figcaption></figure>
 
 Grab the user flag!
 
@@ -263,6 +263,6 @@ NTSTATUS: c0000033, WinError: 0
 
 Then, we would trigger a reverse shell.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (54).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (54) (7).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

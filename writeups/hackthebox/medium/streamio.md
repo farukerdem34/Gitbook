@@ -34,7 +34,7 @@ Within `search.php`, we can find a query function.
 
 This was vulnerable to SQL Injection, and the payload `a' union select 1,2,3,4,5,6;-- -` works. From here, we can enumerate out the users and tables present in the website.
 
-<figure><img src="../../../.gitbook/assets/image (56) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (56) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Using the STREAMIO database, we can dump out the tables present:
 

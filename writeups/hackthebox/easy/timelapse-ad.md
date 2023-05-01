@@ -87,4 +87,4 @@ UserPrincipalName :
 
 Then, we can just `evil-winrm` in as the administrator using these credentials. Either that or execute scriptblocks with more remote Powershell.
 
-<figure><img src="../../../.gitbook/assets/image (65) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (65) (1) (2).png" alt=""><figcaption></figcaption></figure>

@@ -33,7 +33,7 @@ Viewing the page source, we can see a small interesting bit here:
 
 I don't usually come across this, and it appears to be intentionally left there by the creator because the message is customised. We can try to view the JS code that's within this, and perhaps we would find something new. I searched for the box name, and found a new subdomain within the `app.js` file:
 
-<figure><img src="../../../.gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (51) (6).png" alt=""><figcaption></figcaption></figure>
 
 Interesting! We can add that to our `hosts` file and view it.&#x20;
 
@@ -72,7 +72,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 Viewing `/admin` would bringus to a `strapi` login page:
 
-<figure><img src="../../../.gitbook/assets/image (63).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (63) (4).png" alt=""><figcaption></figcaption></figure>
 
 Googling for exploits pertaining to `strapi` shows this:
 
@@ -155,7 +155,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 Interesting. Viewing the `/profiles` leads to a 500 error and brings us to a debug page.
 
-<figure><img src="../../../.gitbook/assets/image (66).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (66) (4).png" alt=""><figcaption></figcaption></figure>
 
 This application enabled the Debug mode and also had Laravel v8 running. It appears to be vulnerable to an older exploit that allows RCE through Laravel Debug mode.
 

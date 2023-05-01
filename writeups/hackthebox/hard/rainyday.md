@@ -186,7 +186,7 @@ while True:
 
 This would generate the SECRET\_KEY accordingly.
 
-<figure><img src="../../../.gitbook/assets/image (95) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (95) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now, we can actually generate another cookie to login as jack and gain RCE as jack.
 

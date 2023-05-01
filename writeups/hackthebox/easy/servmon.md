@@ -72,7 +72,7 @@ Great!&#x20;
 
 On port 80 and port 8443, there are HTTP and HTTPS sites presents respectively. Looking at port 80, we see this is running NVMS-1000:
 
-<figure><img src="../../../.gitbook/assets/image (52).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (52) (5).png" alt=""><figcaption></figcaption></figure>
 
 There are public exploits for these:
 
@@ -91,7 +91,7 @@ Shellcodes: No Results
 
 Following the PoC, we can see it works:
 
-<figure><img src="../../../.gitbook/assets/image (47).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (47) (6).png" alt=""><figcaption></figcaption></figure>
 
 Great! Now, we can read the `password.txt` file that we found hints of earlier. Here are the passwords retrieved:
 
@@ -125,7 +125,7 @@ SMB         10.129.227.77   445    SERVMON          [+] ServMon\nadine:L1k3B1gBu
 
 This would find that the credentials of `nadine:L1k3B1gBut7s@W0rk` is the right one. With these credentials, we can SSH into the machine as the `nmap` scan found earlier showed port 22 was open.
 
-<figure><img src="../../../.gitbook/assets/image (49).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (49) (3).png" alt=""><figcaption></figcaption></figure>
 
 Then grab the user flag.
 

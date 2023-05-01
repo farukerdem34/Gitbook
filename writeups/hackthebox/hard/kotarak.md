@@ -75,7 +75,7 @@ When viewing the `/home` directory, we can find another user present.
 
 The `tomcat` user also had some interesting files within their directory.
 
-<figure><img src="../../../.gitbook/assets/image (93).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (93) (3).png" alt=""><figcaption></figcaption></figure>
 
 The name of the file was a giveaway that this contained NTLM hashes from a memory dump of a Windows machine. As such, we can transfer this back to our machine and dump the credentials using `secretsdump.py`.
 
@@ -83,7 +83,7 @@ The name of the file was a giveaway that this contained NTLM hashes from a memor
 
 Then we can crack the Administrator's hash to get `f16tomcat!`. Afterwards, we can `su` to the `atanas` user with these credentials.
 
-<figure><img src="../../../.gitbook/assets/image (97).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (97) (4).png" alt=""><figcaption></figcaption></figure>
 
 ### wget RCE
 
@@ -93,7 +93,7 @@ Interestingly, the `atanas` user can access the root directory and find a hint a
 
 Reading the `app.log` file reveals some interesting stuff.
 
-<figure><img src="../../../.gitbook/assets/image (108).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (108) (3).png" alt=""><figcaption></figcaption></figure>
 
 First thing to note was that there was another IP address at 10.0.3.133. Next, this was using `wget` 1.16, which was a vulnerable version of the binary. Lastly, take a look at the timestamps. Notice how they occur exactly after every 2 minutes? Perhaps this was a cronjob running in the background that we needed to exploit.&#x20;
 
@@ -130,8 +130,8 @@ We can use `authbind` to bypass this.
 
 Afterwards, the exploit should work by first extracting the `/etc/shadow` file (as specified in the `.wgetrc` file we made earlier, although this can be any file).
 
-<figure><img src="../../../.gitbook/assets/image (79) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (79) (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, we would get a reverse shell on a listener port.
 
-<figure><img src="../../../.gitbook/assets/image (107).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (107) (3).png" alt=""><figcaption></figcaption></figure>

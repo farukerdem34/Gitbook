@@ -291,7 +291,7 @@ Using their `bamsi.txt`, we can bypass the AMSI that is (probably) present on th
 
 Then just upload this file with a basic Powershell reverse shell, and it would work!
 
-<figure><img src="../../.gitbook/assets/image (49) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (49) (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## User Access
 
@@ -320,7 +320,7 @@ As the administrator, we see some additional stuff like this thing:
 
 ADCS? Might need this for later. Anyways as this user, we can add new build steps on the builds. I simply added a new step whereby it would execute the same powershell as above.
 
-<figure><img src="../../.gitbook/assets/image (60).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (60) (4).png" alt=""><figcaption></figcaption></figure>
 
 But running just seems to give me a shell as the service user still. But at least the shell never times out unless I want it to.
 
@@ -467,6 +467,6 @@ This would retrieve the administrator PFX for us to use. We can then use this to
 
 <figure><img src="../../.gitbook/assets/image (56) (3).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (61) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (61) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

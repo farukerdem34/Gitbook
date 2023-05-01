@@ -8,6 +8,9 @@ HTB Writeups added:
 
 * Mailroom (HTB Season 1)
 * MonitorsTwo (HTB Season 1)
+* Hard
+  * Talkative
+  * Seventeen
 
 ### April 2023
 
