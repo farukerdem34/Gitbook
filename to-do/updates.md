@@ -6,7 +6,7 @@
 
 HTB Writeups added:
 
-* Mailroom (HTB Season 1)
+* OnlyForYou (HTB Season 1)
 * MonitorsTwo (HTB Season 1)
 * Hard
   * Talkative
@@ -19,6 +19,7 @@ HTB Writeups added: (Busy month with finals :C)
 * Socket (HTB Season 1)
 * Coder (HTB Season 1)
 * Busqueda (HTB Season 1)
+* Mailroom (HTB Season 1)
 * Easy
   * Buff (Updated Writeup)
   * Horizontall

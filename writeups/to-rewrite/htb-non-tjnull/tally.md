@@ -68,7 +68,7 @@ We can download this back to our machine for analysing, and I used `strings` as 
 
 With this, we can access the MSSQL instance with `sqsh`. Afterwards, getting RCE via `xp_cmdshell` was trivial.
 
-<figure><img src="../../../.gitbook/assets/image (55) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (55) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (7) (3) (3).png" alt=""><figcaption></figcaption></figure>
 

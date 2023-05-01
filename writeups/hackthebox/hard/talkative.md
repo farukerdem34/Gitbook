@@ -52,7 +52,7 @@ We have no credentials, so let's move on for now.
 
 On port 8080, I found a Jamovi instance:
 
-<figure><img src="../../../.gitbook/assets/image (65).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (65) (3).png" alt=""><figcaption></figcaption></figure>
 
 This is a statistical software that is used for data analytics. The more interesting part is, we can run R code using the Rj editor. R can be used to execute system commands via the `system` function.
 
@@ -62,7 +62,7 @@ This is a statistical software that is used for data analytics. The more interes
 
 We now have a very simple RCE on the machine. We can get a reverse shell using a simple `bash` script.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (61).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (61) (3).png" alt=""><figcaption></figcaption></figure>
 
 ### Docker Enum --> Bolt Creds
 
@@ -150,11 +150,11 @@ $ cat xdata.json | jq
 
 Now that we have some credentials, we need to find the Bolt login page. Normally, this is at the `/bolt` directory. We can find this login page at `talkative.htb/bolt`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (67).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (67) (3).png" alt=""><figcaption></figcaption></figure>
 
 We can login with `saul@talkative.htb:jeO09ufhWD<s`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (55).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (55) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Bolt RCE
 
@@ -405,7 +405,7 @@ In this case, I just used a simple password of '12345'. Then we can login to Roc
 
 The Rocket Chat dashboard had nothong of interest:
 
-<figure><img src="../../../.gitbook/assets/image (56).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (56) (5).png" alt=""><figcaption></figcaption></figure>
 
 I was taking a look at the Administration panel and seeing what I could do, when I found this:
 
@@ -417,7 +417,7 @@ This is sort of like plugins for Rocket Chat, and it appears I can add new ones 
 
 When we click Incoming, it appears we can run some type of Script here:
 
-<figure><img src="../../../.gitbook/assets/image (53).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (53) (1).png" alt=""><figcaption></figcaption></figure>
 
 Reading the documentation for Rocket Chat, it appears that this runs Javascript code!
 
@@ -448,7 +448,7 @@ curl -X POST -H 'Content-Type: application/json' --data '{"text":"Example messag
 
 Afterwards, we would catch a reverse shell on our listener port:
 
-<figure><img src="../../../.gitbook/assets/image (63).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (63) (3).png" alt=""><figcaption></figcaption></figure>
 
 ### Docker Vulnerabilities
 
@@ -615,6 +615,6 @@ chmod 600 id_rsa
 ssh -i id_rsa root@talkative.htb
 ```
 
-<figure><img src="../../../.gitbook/assets/image (58).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (58) (1).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

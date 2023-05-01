@@ -103,6 +103,7 @@
   * [Busqueda](writeups/htb-season-1/busqueda.md)
   * [Mailroom](writeups/htb-season-1/mailroom.md)
   * [OnlyForYou](writeups/htb-season-1/onlyforyou.md)
+  * [MonitorsTwo](writeups/htb-season-1/monitorstwo.md)
 * [HackTheBox](writeups/hackthebox/README.md)
   * [Easy](writeups/hackthebox/easy/README.md)
     * [Access](writeups/hackthebox/easy/access-ad.md)

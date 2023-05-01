@@ -42,7 +42,7 @@ WItin the website, there's a PDF Generator that would display certain courses.&#
 
 We can download this PDF and use `exiftool` to find out more information about it.
 
-<figure><img src="../../../.gitbook/assets/image (74) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (74) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 mPDF 6.0 is vulnerable to an LFI exploit that would allow for us to read the files on the server. With this, we can have to send this payload encoded with Base64:
 

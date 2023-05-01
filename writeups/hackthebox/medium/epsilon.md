@@ -267,7 +267,7 @@ costume=goggles&q=test&addr=test
 
 A quick test reveals the `costume` parameter to be the injection point using `{{config.items()}}`.
 
-<figure><img src="../../../.gitbook/assets/image (58) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (58) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Here's a payload I used that got me a reverse shell:
 
@@ -359,4 +359,4 @@ drwx------  2 tom tom 4096 Dec 20  2021 .ssh
 
 We can easily get a root shell via SSH.
 
-<figure><img src="../../../.gitbook/assets/image (61) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (61) (3) (1).png" alt=""><figcaption></figcaption></figure>

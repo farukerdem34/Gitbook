@@ -152,6 +152,6 @@ For this example, we can see how a group has **WriteDacl** privileges over anoth
 
 We can find out more information from each line and whether it can be abused by right-clicking on it and using more info.
 
-<figure><img src="../.gitbook/assets/image (53) (1) (1).png" alt=""><figcaption><p><em>Abuse Info on GenericAll Privilege</em></p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (53) (1) (1) (1).png" alt=""><figcaption><p><em>Abuse Info on GenericAll Privilege</em></p></figcaption></figure>
 
 Bloodhound is insanely useful and fast for mapping a domain out, and it even gives clear instructions and information about each abusable privilege.&#x20;

@@ -66,7 +66,7 @@ We can use this to gain a reverse shell as the `svc_deploy` user using whatever 
 
 When checking this user's privileges, we can see that we are part of the LAPS\_Readers group within the domain:
 
-<figure><img src="../../../.gitbook/assets/image (61) (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (61) (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 This means we can dump out the credentials for the DC:
 

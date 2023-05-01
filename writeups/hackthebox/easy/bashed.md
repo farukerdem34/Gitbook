@@ -28,7 +28,7 @@ Clicking `phpbash.php` gives us a webshell.
 
 We can check our sudo privleges to find that we can run everything as the `scriptmanager` user.
 
-<figure><img src="../../../.gitbook/assets/image (73).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (73) (3).png" alt=""><figcaption></figcaption></figure>
 
 So, we can first get a reverse shell using `python u`Then, we can simply run `sudo -u scriptmanager /bin/bash` within the shell on the listener port.
 

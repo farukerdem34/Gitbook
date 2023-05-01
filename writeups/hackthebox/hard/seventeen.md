@@ -292,7 +292,7 @@ So first, let's determine what kind of files we can upload to the school system.
 
 We find that it stores the uploads at `/files/<studentID>/uploads`. We can then verify the upload works by uploading a malicious `papers.php`. This name is required based on the PoC requiring our PHP file to have the same name as the directory it is in. This just contains a basic shell executed by PHP `system` calls.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (64).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (64) (3).png" alt=""><figcaption></figcaption></figure>
 
 Great! However, when I tried the exploit the first time, it wouldn't work for some reason. Turns out, we did not find the right directory where the files are stored. Running a ferox`buster` scan for the upload directory would reveal another one.
 
@@ -322,7 +322,7 @@ _step=2&_product_name=Seventeen+Webmail&_plugins_qwerty=../../../../../../../../
 
 After sending this, we just need to reload the page and we would catch a reverse shell.
 
-<figure><img src="../../../.gitbook/assets/image (49).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (49) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Docker Breakout
 
@@ -484,7 +484,7 @@ mark@seventeen:~$ curl localhost:4873
 
 As such, we can do some port forwarding using `ssh`. Viewing it reveals some sort of pacakage manager for NPM.
 
-<figure><img src="../../../.gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (51) (1).png" alt=""><figcaption></figcaption></figure>
 
 Within the `/opt/app` directory, there's a `startup.sh` script:
 

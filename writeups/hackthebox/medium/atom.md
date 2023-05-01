@@ -44,7 +44,7 @@ When viewing the plugins directory, we would find an app.7z file which we can op
 
 We can take a look at the resources file to view the source code and stuff, and there we find more hints that this is a Electron application.
 
-<figure><img src="../../../.gitbook/assets/image (64) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (64) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can dive further into the .asar file using `asar`.
 
@@ -52,7 +52,7 @@ We can dive further into the .asar file using `asar`.
 
 Within the main.js file, we can find that `electron-updater` was imported within this application.
 
-<figure><img src="../../../.gitbook/assets/image (69).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (69) (3).png" alt=""><figcaption></figcaption></figure>
 
 ### Signature Bypass
 
@@ -93,7 +93,7 @@ After a while, our HTTP server would get a hit and our listener port would catch
 
 <figure><img src="../../../.gitbook/assets/image (37) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (67) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (67) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

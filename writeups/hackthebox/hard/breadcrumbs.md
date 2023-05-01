@@ -124,7 +124,7 @@ I wanted to enumerate the files for the web application hosted, so I headed ther
 
 Within it, we can see one file that stands out.
 
-<figure><img src="../../../.gitbook/assets/image (51) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (51) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Within it, we can find some credentials for this user.
 

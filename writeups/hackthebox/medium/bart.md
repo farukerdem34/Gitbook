@@ -36,7 +36,7 @@ We can visit this to see that it's running PHP Server Monitor v3.2.1.
 
 I looked around and found the settings for this internal chat service, and found another subdomain.
 
-<figure><img src="../../../.gitbook/assets/image (71).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (71) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can head to that domain to find another application running.
 
@@ -56,11 +56,11 @@ Within the source code, we can view the register.php to see how to register a ne
 
 All we need to do is sent a POST request with the `uname` and `passwd` parameters to register.
 
-<figure><img src="../../../.gitbook/assets/image (65) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (65) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, I logged into the server.
 
-<figure><img src="../../../.gitbook/assets/image (49) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (49) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 Within this page, there's the ability to view the Log files, and when we do, we would first get a pop-up similar to xss with 1, and have this GET request be sent to the machine.
 
@@ -106,7 +106,7 @@ Then, we can get JuicyPotato on the machine and run it with a CLSID. We can find
 
 {% embed url="http://ohpe.it/juicy-potato/CLSID/Windows_10_Pro/" %}
 
-<figure><img src="../../../.gitbook/assets/image (74).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (74) (2).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, we would catch a shell as the administrator.
 
