@@ -11,11 +11,19 @@ HTB Writeups added:
 * Easy
   * Omni
   * Postman
+  * Remote
+  * Safe
+  * Sense
+  * Valentine
 * Medium
   * Ophiuchi
   * Pit
+  * Silo
+  * TartarSauce
+  * Time
 * Hard
-  * Talkative
+  * Pikaboo
+  * Quick
   * Seventeen
 
 ### April 2023

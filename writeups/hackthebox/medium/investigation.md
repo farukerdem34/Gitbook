@@ -22,7 +22,7 @@ Web Exploit based. We would have to add `eforenzics.htb` to our `/etc/hosts` fil
 
 The website reveals some web application advertising Digital Forensic Services.
 
-<figure><img src="../../../.gitbook/assets/image (11) (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 Clicking the big Go button reveals that we can upload a jpg file to the website for analysis.
 

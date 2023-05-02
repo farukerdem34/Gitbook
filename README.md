@@ -6,7 +6,7 @@ coverY: 139
 
 # Hello!
 
-What's this?
+## What's this?
 
 This is just a compilation of notes and knowledge I gained from scouring the Internet, self-practicing, going for courses, interning and learning from college. Also serves as a small portfolio for my skills.&#x20;
 
