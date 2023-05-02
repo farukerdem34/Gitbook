@@ -10,7 +10,7 @@ So, caches were developed to solve this problem. They are between the server and
 
 This saves a load of time, as websites do not have to keep requesting the same copy over and over again. Below is visual representation of how caches work:
 
-<figure><img src="../.gitbook/assets/image (7) (1) (3).png" alt=""><figcaption><p><em>Taken from Portswigger Web Security Academy</em></p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7) (1) (3) (1).png" alt=""><figcaption><p><em>Taken from Portswigger Web Security Academy</em></p></figcaption></figure>
 
 To determine if there is a cached response within the cache, **cache keys** are used. This would identify whether or not the request needs to head to the back-end server. The cache key would typically contain the request line and the HTTP Host header. The components that aren't included in it are considered 'unkeyed'.&#x20;
 

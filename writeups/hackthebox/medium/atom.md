@@ -16,11 +16,11 @@ Using `smbmap`, there is one share that is readable even without credentials.
 
 The Software\_Updates one is new. We can connect to it and see what are the files present.
 
-<figure><img src="../../../.gitbook/assets/image (46) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (46) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 The PDF contained some useful information:
 
-<figure><img src="../../../.gitbook/assets/image (36) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (36) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can place an update within this share's client folders, and then a user would run it. This is probably the way to gain a reverse shell.
 
@@ -36,7 +36,7 @@ There was a download button on the page, presumably to download the program used
 
 We can actually open .exe files to find out what is within it.
 
-<figure><img src="../../../.gitbook/assets/image (35) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (35) (1) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 When viewing the plugins directory, we would find an app.7z file which we can open to reveal the resources.
 
@@ -48,7 +48,7 @@ We can take a look at the resources file to view the source code and stuff, and 
 
 We can dive further into the .asar file using `asar`.
 
-<figure><img src="../../../.gitbook/assets/image (27) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (27) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Within the main.js file, we can find that `electron-updater` was imported within this application.
 

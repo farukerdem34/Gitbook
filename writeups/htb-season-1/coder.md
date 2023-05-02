@@ -89,7 +89,7 @@ Encrypter.exe: PE32 executable (console) Intel 80386 Mono/.Net assembly, for MS 
 
 So we can port this to a Windows VM for analysis via DnSpy. Here, we can see that the file uses AES for something:
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can take a look at the `main` function:
 
@@ -207,15 +207,15 @@ We can now head to that URL.
 
 We would see a login page, and we already have credentials for it:
 
-<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8) (3).png" alt=""><figcaption></figcaption></figure>
 
 Then, we would see a 2FA Mechanism in place:
 
-<figure><img src="../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (14) (4).png" alt=""><figcaption></figcaption></figure>
 
 I wasn't sure how to go about finding this, so I just brute forced it because it doesn't seem to have any account lockout. I used Burp Intruder to do this:
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (46).png" alt=""><figcaption></figcaption></figure>
 
 This works, but is hella slow.&#x20;
 
@@ -238,7 +238,7 @@ ffuf -request req -w possible_codes -t 70 -fs 89 > output
 
 Then just monitor the output file for any entries that end up inside. This would be the correct code used. This takes around 10-20 minutes, which is a lot faster.
 
-<figure><img src="../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (27) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then we can login!
 
@@ -271,7 +271,7 @@ The answer is simple. Include some small Powershell code that would execute some
 
 Uploading it and running gives me this:
 
-<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 Success! I tried to download and run Invoke-PowerShellTcp but it didn't work. Probably is some kind of firewall or security features present on the site. As such, we need to include another Powershell script to bypass it.
 

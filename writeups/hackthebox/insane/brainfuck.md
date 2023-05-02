@@ -16,7 +16,7 @@ Website revealed a Wordpress site:
 
 Because this was a HTTPS website, we can take a look at the certificate first to find an email address.
 
-<figure><img src="../../../.gitbook/assets/image (8) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Looking at the alternate DNS names, we can find another hidden subdomain, which we'll visit later.
 
@@ -59,7 +59,7 @@ When viewing the plugins, we can find another plugin that enables SMTP on the Wo
 
 When viewing the SMTP configuration settings, we can find the username and password for port 110.
 
-<figure><img src="../../../.gitbook/assets/image (12) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 The password can be taken by viewing the page source to reveal the hidden value.
 
@@ -115,7 +115,7 @@ Then we can use `openssl rsa` to write the key out.
 
 Afterwards, we can simply SSH in using this key.
 
-<figure><img src="../../../.gitbook/assets/image (32) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (32) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

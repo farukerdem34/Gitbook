@@ -26,7 +26,7 @@ So, I created a quick `aspx` reverse shell using `msfvenom`.
 
 Then, we can put this file in the FTP directory.
 
-<figure><img src="../../../.gitbook/assets/image (22) (1) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (22) (1) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, we can simply run the reverse shell via `curl`.
 
@@ -44,4 +44,4 @@ Seeing that we have the SeImpersonatePrivilege privilege enabled, we can use Jui
 
 <figure><img src="../../../.gitbook/assets/image (33) (6).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (29) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (29) (2) (2).png" alt=""><figcaption></figcaption></figure>

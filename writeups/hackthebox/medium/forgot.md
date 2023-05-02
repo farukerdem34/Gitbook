@@ -14,7 +14,7 @@ We can start with an nmap scan:
 
 Then we can view Port 80:
 
-<figure><img src="../../../.gitbook/assets/image (27) (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (27) (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 When viewing the page source, we can find this part here that points towards a potential user to gain access to.
 

@@ -14,7 +14,7 @@ Using `gobuster` we can find the directories:
 
 When trying to access the `admin.php` page, we get this error:
 
-<figure><img src="../../../.gitbook/assets/image (41) (2) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (41) (2) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Perhaps we can spoof the `X-Forwarded-For` header using an IP address. When checking the page sources of multiple pages, we can find this:
 
@@ -132,7 +132,7 @@ When looking through the services that Hector had FullControl permissions over (
 
 This service certainly fits the conditions needed. We can use `sc.exe config` to modify the `binpath` variable to give us a reverse shell. However, the `sc.exe` method lept failing.
 
-<figure><img src="../../../.gitbook/assets/image (28) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (28) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 I tried the Powershell `Set-ItemProperty` method, and it worked better:
 

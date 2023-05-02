@@ -66,7 +66,7 @@ The hint to look deeper indicates that we should look within the Windows Data St
 
 In short, there are alternate methods of storing data within these alternate data streams which can be used to hide files. We can view the flag by accessing these streams:
 
-<figure><img src="../../../.gitbook/assets/image (16) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can see that the alternate stream has 34 bytes of data that are hidden within it. We can redirect the file contents to another folder and read the flag.
 

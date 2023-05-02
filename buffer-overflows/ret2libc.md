@@ -34,7 +34,7 @@ This is an example of a ret2libc attack from HTB Frolic, which contains this exp
 
 Firstly, we would find a binary named `rop` that is left behind for us, and it has the SUID binary set, meaning that when we run it, we are running it as the `root` user. We can download a copy back to our machine for further testing (either using netcat or base64 to do so).
 
-<figure><img src="../.gitbook/assets/image (39) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (39) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Enumeration and Offset
 
@@ -52,7 +52,7 @@ So first, we notice that the program takes **an unsanitised input from the user.
 
 So we now we know the vulnerable parameter is probably the `main()` function's `argv[1]` call. We can generate an offset using `pattern_create.rb` of length 100 first, and then run the program in `gdb` to see how it responds to our payload.
 
-<figure><img src="../.gitbook/assets/image (27) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (27) (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can use `pattern_offset.rb` to find the offset.
 

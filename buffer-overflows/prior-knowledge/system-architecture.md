@@ -8,7 +8,7 @@ description: Taken from eCPPTv2.
 
 The Central Process Unit (CPU) is in charge of executing machine code of a program. For example, when we compile C code, we would need a **compiler** like `clang` or `gcc` that would convert the code into a binary (.elf or .exe), which is basically machine code that the computer can read.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (37) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (37) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 **Assembly** is the human interpretable format of machine code, which is written using a set of instructions that the CPU processes. In assembly, each instruction is a primitive command that executes specific operations, such as moving data, changing the execution flow and it performs logical operations.
 
@@ -130,7 +130,7 @@ int main (int argc, char *argv[]){
 
 When the `main()` function is called, the stack frames would look like so:
 
-<figure><img src="../../.gitbook/assets/image (32) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (32) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 The program first needs to save its location, since if we lose it, we can't run our program anymore as we would lose the `main()` function. Specifically, the processors PUSHes the content of the EIP (which is basically a pointer to the address of memory that the variables are stored in) to the stack. The `main()` function is called via a CALL instruction, and the EIP points to the **first byte** after the CALL instruction.&#x20;
 
@@ -162,7 +162,7 @@ Breaking it down:
    * This would substract the value of the ESP by a specific number (in this case, the value of the variable is an integer) to make space for the variables from `main()`.
    * This variable tends to be a multiple of 4.
 
-<figure><img src="../../.gitbook/assets/image (42) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (42) (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Once the prologue ends, the stack frame for `main()` is complete and local variables are coped onto the stack. Since the ESP is not pointing to the memory address right after the EBP, we cannot use the PUSH operation since it stores values top of the stack. **We want to store the variables where space has been allocated for it**.&#x20;
 

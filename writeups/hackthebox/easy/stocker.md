@@ -131,7 +131,7 @@ I attempted this exploit using the `file:///` wrapper to read the `/etc/passwd` 
 <iframe src='file:///etc/passwd' width=500px height=1000px ></iframe>
 ```
 
-<figure><img src="../../../.gitbook/assets/image (5) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (39) (2).png" alt=""><figcaption></figcaption></figure>
 

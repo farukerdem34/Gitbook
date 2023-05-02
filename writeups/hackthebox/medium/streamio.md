@@ -14,7 +14,7 @@ On port 443, we can head to the website to find some kind of streaming platform.
 
 Checking the cert, we can find another domain name:
 
-<figure><img src="../../../.gitbook/assets/image (31) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (31) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can add this domain to our `/etc/hosts` files. Another notable thing we found was the login function on the main domain.&#x20;
 
@@ -149,7 +149,7 @@ Upon decrypting the `logins.json` file, we can find some more passwords.
 
 Since we had credentials, I also ran a `bloodhound-python` to enumerate the objects within the host.
 
-<figure><img src="../../../.gitbook/assets/image (44) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (44) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Found that the `jdgodd` user had some permissions over the Core Staff group.
 

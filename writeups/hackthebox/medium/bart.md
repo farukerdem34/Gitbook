@@ -12,7 +12,7 @@ Only one port was available. We had to add `forum.bart.htb` to our `/etc/hosts` 
 
 The website was a standard company page:
 
-<figure><img src="../../../.gitbook/assets/image (5) (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (4) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 I checked the page source, and found a unique bit here. Seems like there was a user that was not shown for some reason.
 

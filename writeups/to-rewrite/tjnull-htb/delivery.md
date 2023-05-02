@@ -60,7 +60,7 @@ When looking at the MatterMost files in the `/opt` directory, we can find some S
 
 <figure><img src="../../../.gitbook/assets/image (125) (2).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (13) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can use `netstat` to find that there is a MySQL instance running on the machine.
 

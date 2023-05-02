@@ -81,7 +81,7 @@ I tried a few of the `os.execute()` payloads, and it worked!
 
 We now have RCe, and we can easily use a `mkfifo` shell to gain a reverse shell.
 
-<figure><img src="../../../.gitbook/assets/image (42) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (42) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -89,7 +89,7 @@ We now have RCe, and we can easily use a `mkfifo` shell to gain a reverse shell.
 
 Afterwards, I found the `.htpasswd` file for the webpage I was blocked from earlier.
 
-<figure><img src="../../../.gitbook/assets/image (23) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (23) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 With this, I was able to crack the hash to give `iamthebest` as the password and login to the service on port 80. We can view the `Authorization` header here.
 

@@ -4,7 +4,7 @@
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (3).png" alt=""><figcaption></figcaption></figure>
 
 We have to add `swagshop.htb` to our `/etc/hosts` file to access port 80.
 
@@ -12,7 +12,7 @@ We have to add `swagshop.htb` to our `/etc/hosts` file to access port 80.
 
 This is whatwe see when we view port 80:
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 This is running an outdated version of Magento shop, and we can easily find exploits for it. The exploit here would change admin password of the site via SQL Injection:
 
@@ -26,11 +26,11 @@ Then we can grab a publicly available RCE exploit from ExploitDB:
 
 This would require 3 fields, and we have 3 of them:
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (4).png" alt=""><figcaption></figcaption></figure>
 
 We can visit `/app/etc/local.xml` to find the date required:
 
-<figure><img src="../../../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (44) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can easily gain a reverse shell by using the PoC.
 

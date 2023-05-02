@@ -210,7 +210,7 @@ Weird that the sleep is this long. We can investigate this process in the /proc 
 
 There's this root directory within the process, and when going into it we are presented with another Linux / directory. This would contain the user flag and also jack's actual home directory.
 
-<figure><img src="../../../.gitbook/assets/image (2) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Also contains jack's private SSH key.
 
@@ -226,7 +226,7 @@ With this, we can finally SSH into the main machine as jack.
 
 When checking sudo privileges, we see this:
 
-<figure><img src="../../../.gitbook/assets/image (19) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (19) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 I wasn't sure what safe\_python was, but it looked to be some kind of binary. I was also unable to check it out and see what it does. Really weird. But it did seem to open files and accept something as a parameter to open.
 
@@ -272,7 +272,7 @@ Right, so we need to somehow make use of this to import the os library. I could 
 
 Ther ehas to be a way to load the module I want. Eventually, after a few hours of tinkering with this (and by hours I mean like literally 2 days), I got it to work!
 
-<figure><img src="../../../.gitbook/assets/image (21) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (21) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can then get RCE as jack\_adm.
 
@@ -335,7 +335,7 @@ H is the first character of the salt. Repeated tests of this script shows that t
 
 We can keep dragging out the next few characters by changing the hashed password and the plaintext password, removing 1 byte at a time and adding one to our flag variable.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (8) (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 'H34vyR41n' is the final salt, and now we can crack the original hash for root we found earlier.
 

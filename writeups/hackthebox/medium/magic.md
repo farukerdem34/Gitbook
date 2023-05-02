@@ -52,7 +52,7 @@ I used `mysqldump` (which was present on the machine somehow) and dumped out all
 
 I was able to find a set of credentials for the admin user.
 
-<figure><img src="../../../.gitbook/assets/image (40) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (40) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 From reading the `/home` directory, the user on this machine is `theseus`. These credentials work with `su`.
 
@@ -62,13 +62,13 @@ From reading the `/home` directory, the user on this machine is `theseus`. These
 
 I checked for SUID binaries, and found one at `/bin/sysinfo`. When trying to execute it, I found that it was executing `fdisk` without the full path.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (44) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (44) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 By manipulating the PATH variable and creating a reverse shell script named `fdisk`, I can get a reverse shell as root.
 
 <figure><img src="../../../.gitbook/assets/image (5) (3) (2).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (43) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (43) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 Port 9999 does not work (presumably due to firewall) so I changed to port 443 and ran `sysinfo` again.
 

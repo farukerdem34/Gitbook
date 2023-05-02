@@ -22,7 +22,7 @@ Vhost and directory scans don't reveal much regarding this.
 
 ### BroScience Enumeration
 
-<figure><img src="../../../.gitbook/assets/image (34) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (34) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can take note that there is an `administrator` user present on the website, as they have made posts. Also, there's a login feature for this website. We are redirected to `login.php` when we click on Log In.
 
@@ -231,7 +231,7 @@ vmsQdLZ9v5aUqAiUalTmt5CYnIxqrvpF
 
 Afterwards, we use this `token` variable at `activate.php`.
 
-<figure><img src="../../../.gitbook/assets/image (24) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (24) (1) (5).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, we can just login as the user.&#x20;
 
@@ -502,4 +502,4 @@ Email Address []:
 
 After a while, it would execute and allow us to spawn in a root shell.
 
-<figure><img src="../../../.gitbook/assets/image (33) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (33) (2) (3).png" alt=""><figcaption></figcaption></figure>

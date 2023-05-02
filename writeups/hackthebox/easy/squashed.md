@@ -10,11 +10,11 @@ description: >-
 
 We begin with another Nmap scan.
 
-<figure><img src="../../../.gitbook/assets/image (17) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (2) (3).png" alt=""><figcaption></figcaption></figure>
 
 Seeing that there are loads of unknown ports, I want to enumerate what services are running on those with an in-depth nmap scan. The rest of the ports are running RPC stuff, which is kind of related to the NFS services.
 
-<figure><img src="../../../.gitbook/assets/image (4) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1) (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### NFS
 
@@ -24,7 +24,7 @@ Seeing that port 111 is running the NFS service, I want to see what files are be
 
 Interesting directories to make public. We can mount these directories to view what's within them. Remember that mount requires sudo privileges.
 
-<figure><img src="../../../.gitbook/assets/image (18) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Ross Directory
 
@@ -118,7 +118,7 @@ Firstly, export the file to env variables.
 
 Then take a screeshot using xwd.
 
-<figure><img src="../../../.gitbook/assets/image (15) (1) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (1) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now we can transfer this file back to our machine and view the image.
 

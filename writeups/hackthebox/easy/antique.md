@@ -8,7 +8,7 @@ description: HP JetDirect SNMP exploits followed by some
 
 An Nmap scan reveals that there is only one port open:
 
-<figure><img src="../../../.gitbook/assets/image (16) (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 When trying to use this Telnet port, we needed some credentials.
 
@@ -44,7 +44,7 @@ When accessing the telnet instance, we find out that we have the `exec` command 
 
 With this, a simple reverse shell would do, and also allow us to become the **lp** user to capture the user flag.
 
-<figure><img src="../../../.gitbook/assets/image (38) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (38) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Root Flag&#x20;
 

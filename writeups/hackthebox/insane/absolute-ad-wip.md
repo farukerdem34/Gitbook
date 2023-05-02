@@ -235,4 +235,4 @@ Afterwards, we can use `crackmapexec` with this hash to dump the credentials out
 
 Then, pass the hash via `evil-winrm` as the administrator.
 
-<figure><img src="../../../.gitbook/assets/image (10) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (2) (1).png" alt=""><figcaption></figcaption></figure>

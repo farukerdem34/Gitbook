@@ -10,8 +10,10 @@ HTB Writeups added:
 * MonitorsTwo (HTB Season 1)
 * Easy
   * Omni
+  * Postman
 * Medium
   * Ophiuchi
+  * Pit
 * Hard
   * Talkative
   * Seventeen

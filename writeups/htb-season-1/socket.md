@@ -33,13 +33,13 @@ Website presents some kind of QR Code maker / reader application:
 
 We can actually download the application below and view the source code:
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
 Additionally, we can submit a report when something goes wrong:
 
-<figure><img src="../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Interesting. When we download the file, we will get a binary and a test image:
 
@@ -148,7 +148,7 @@ payload used: 0.0.2"UNION SELECT username,password,3,4 from users;-- -
 
 Great! The hash can be cracked on crackstation:
 
-<figure><img src="../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 Now, we need to find a username. I looked through the other tables of `reports` and `answers`.&#x20;
 
@@ -162,7 +162,7 @@ This was done using `group_concat(answers)`, and it seems that the user is eithe
 
 We can then `ssh` in as `tkeller` and grab the user flag.
 
-<figure><img src="../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (15) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -229,6 +229,6 @@ So this script checks for a `.spec` file extension, and takes an `$action` argum
 
 As such, the exploit is simple.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 Pretty straightforward machine. The hard part was the SQL injection.&#x20;
