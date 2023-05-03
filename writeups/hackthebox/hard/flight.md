@@ -22,9 +22,9 @@ When viewing the website, we can see the bottom of the page to get a possible do
 
 With this, we could fuzz out some hidden vhosts on the machine with gobuster. Turns out there is a `school.flight.htb` present. We can add both of these into our hosts file and proceed to enumerate the school website.
 
-<figure><img src="../../../.gitbook/assets/image (180) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (180) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (150) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (150) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Responder Hash
 
@@ -44,7 +44,7 @@ Since this is a AD machine, perhaps we can get some shares and intercept the res
 
 <figure><img src="../../../.gitbook/assets/image (196) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (186) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (186) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can crack this easily using John.
 
@@ -92,7 +92,7 @@ Crackmapexec can enumerate users using the credentials we found.
 
 Then we can gather these users into a file and brute force, checking for any password re-use. We can find that the S.Moon user seems to work.
 
-<figure><img src="../../../.gitbook/assets/image (193) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (193) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Retrieving Hash
 
@@ -168,7 +168,7 @@ Since this is an IIS server, we can actually generate a aspx reverse shell using
 
 Then, upload this to the website through wget and put it within the C:\inetpub\development directory which can be accessed through the chisel server.
 
-<figure><img src="../../../.gitbook/assets/image (153) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (153) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, we would receive a shell as another service account.
 

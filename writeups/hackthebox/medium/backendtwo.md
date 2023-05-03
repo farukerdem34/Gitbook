@@ -38,11 +38,11 @@ With this edit profile stuff, I found out that we can change the attributes rela
 
 When I found out this worked, I basically also changed the `is_superuser` attribute to `true`.
 
-<figure><img src="../../../.gitbook/assets/image (214) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (214).png" alt=""><figcaption></figcaption></figure>
 
 After changing all of these, we just need to retrieve the new JWT token we can use for further exploitation.
 
-<figure><img src="../../../.gitbook/assets/image (208) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (208).png" alt=""><figcaption></figcaption></figure>
 
 ### Read and Write Files
 
@@ -56,15 +56,15 @@ As usual, I started with reading the code that the application runs on. Since we
 
 Within the `/home/htb/app/api/v1/endpoints/user.py`  file, this was the original code.
 
-<figure><img src="../../../.gitbook/assets/image (192).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (192) (2).png" alt=""><figcaption></figcaption></figure>
 
 I changed the code to include a one-liner reverse shell everytime a unique ID was accessed.
 
-<figure><img src="../../../.gitbook/assets/image (217) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (217).png" alt=""><figcaption></figcaption></figure>
 
 Then we need to convert the file contents using the escape string function on Cyberchef.
 
-<figure><img src="../../../.gitbook/assets/image (172).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (172) (2).png" alt=""><figcaption></figcaption></figure>
 
 Using this, we can use curl to get the file where we want it. The command would look like this:
 
@@ -76,9 +76,9 @@ curl http://<IP>/api/v1/admin/file/$(echo -n "/home/htb/app/api/v1/endpoints/use
 
 Then, we can access the custom endpoint to gain a reverse shell easily.
 
-<figure><img src="../../../.gitbook/assets/image (180).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (180) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (203).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (203) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

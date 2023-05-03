@@ -4,7 +4,7 @@
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (126).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (126) (3).png" alt=""><figcaption></figcaption></figure>
 
 Only SMB is open it appears. Port 4386 is for a service called HQK, which I could not do much with at this point.
 
@@ -48,7 +48,7 @@ So the binary uses the `RU_config.xml` file and decrypts the password. We can se
 
 With these credentials, I can access the directory of the user through SMB, but I did not manage to get a shell. Doesn't really matter because we can still grab the user flag. Within the user's directory there some intresting files I downloaded:
 
-<figure><img src="../../../.gitbook/assets/image (149).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (149) (4).png" alt=""><figcaption></figcaption></figure>
 
 The `Debug Mode Password.txt` was empty for some reason, and I found that weird. As such, I used `allinfo` on SMB to view whether there were alternate data streams present for the file:
 
@@ -56,7 +56,7 @@ The `Debug Mode Password.txt` was empty for some reason, and I found that weird.
 
 This confirms the presence of the alternate data stream, and we can use `cat` to extract the information:
 
-<figure><img src="../../../.gitbook/assets/image (122).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (122) (3).png" alt=""><figcaption></figcaption></figure>
 
 Cool, now we have the HQK password.
 
@@ -68,7 +68,7 @@ Now that we have credentials, we can connect to the HQK port via `telnet` and en
 
 With this, I was able to extract the administrator hash.
 
-<figure><img src="../../../.gitbook/assets/image (153).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (153) (1).png" alt=""><figcaption></figcaption></figure>
 
 Within this, we also can find another binary being used:
 

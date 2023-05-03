@@ -89,7 +89,7 @@ Then we can crack the Administrator's hash to get `f16tomcat!`. Afterwards, we c
 
 Interestingly, the `atanas` user can access the root directory and find a hint as to where the root flag is.
 
-<figure><img src="../../../.gitbook/assets/image (117).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (117) (3).png" alt=""><figcaption></figcaption></figure>
 
 Reading the `app.log` file reveals some interesting stuff.
 

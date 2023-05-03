@@ -88,7 +88,7 @@ Interestingly, the owner was able to upload a torrent file with **screenshots**.
 
 I then tried to download a torrent file from the Kali Linux official website (because nowhere else offered non-shady torrent files to download). This worked in the uploading. Afterwards, I can see that we are able to 'Edit this torrent'&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (162).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (162) (3).png" alt=""><figcaption></figcaption></figure>
 
 Clicking created a pop-up where I was allowed to upload a screenshot.&#x20;
 
@@ -102,7 +102,7 @@ Now, I need to find a way to access this shell. Running a quick `gobuster` on th
 
 Here I was able to find a PHP file uploaded on today's date.
 
-<figure><img src="../../../.gitbook/assets/image (160).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (160) (3).png" alt=""><figcaption></figcaption></figure>
 
 And we can confirm we have RCE using `curl`.
 

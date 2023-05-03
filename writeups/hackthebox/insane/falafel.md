@@ -26,7 +26,7 @@ Interesting. So there's a `chris` user and he hacked the website first.&#x20;
 
 There was a login page on the website we could access.
 
-<figure><img src="../../../.gitbook/assets/image (474) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (474).png" alt=""><figcaption></figcaption></figure>
 
 When trying to enter credentials for the `admin` user, this was the error received.
 
@@ -98,7 +98,7 @@ We can then test our RCE.
 
 Then we can get a reverse shell easily.
 
-<figure><img src="../../../.gitbook/assets/image (488) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (488).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -162,7 +162,7 @@ close OUT;
 
 Afterwards, we can transfer this back to our machine and find that it is an image file.
 
-<figure><img src="../../../.gitbook/assets/image (489) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (489).png" alt=""><figcaption></figcaption></figure>
 
 Initially, the picture looked like some kind of rubbish.
 

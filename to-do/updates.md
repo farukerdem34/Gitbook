@@ -34,6 +34,8 @@ HTB Writeups added:
   * Quick
   * Seventeen
 
+Explained why `python3 -c 'import pty;pty.spawn("/bin/bash")` and `stty raw -echo;fg` works in Upgrading Shells.
+
 ### April 2023
 
 HTB Writeups added: (Busy month with finals :C)

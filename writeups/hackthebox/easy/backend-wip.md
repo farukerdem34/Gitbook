@@ -26,7 +26,7 @@ Starting with a Gobuster, we can find out the different endpoints for this:
 
 At the `/api/v1` endpoint, we find that that there is a `/user` endpoint that we can fuzz further using `wfuzz`.
 
-<figure><img src="../../../.gitbook/assets/image (175).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (175) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (1) (1) (6).png" alt=""><figcaption></figcaption></figure>
 
@@ -42,7 +42,7 @@ All other numbers do not have directories, so this means there's probably only o
 
 Within the API, we can try to signup as a user. I wasn't sure what parameters to give, so I just sent a test JSON input with a POST request.
 
-<figure><img src="../../../.gitbook/assets/image (177).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (177) (2).png" alt=""><figcaption></figcaption></figure>
 
 So we need to send them a `body, password and email` parameter within a JSON object to register the user.
 
@@ -50,7 +50,7 @@ So we need to send them a `body, password and email` parameter within a JSON obj
 
 Then when using the login function with the username and password, we can grab a JWT token.
 
-<figure><img src="../../../.gitbook/assets/image (189).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (189) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can now access the `/docs` endpoint, which was not allowed earlier due to the lack of the Authorization token.
 
@@ -60,11 +60,11 @@ We can now access the `/docs` endpoint, which was not allowed earlier due to the
 
 At first, I thought we were able to load the `/docs` endpoint, but I was wrong.
 
-<figure><img src="../../../.gitbook/assets/image (178).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (178) (1).png" alt=""><figcaption></figcaption></figure>
 
 Checking the traffic proxied, we can see that there was actually a GET request to this `/openapi.json` endpoint, which we can directly access.
 
-<figure><img src="../../../.gitbook/assets/image (170).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (170) (1).png" alt=""><figcaption></figcaption></figure>
 
 Within the documentation, there were 2 very significant endpoints, one to read the user flag, and another to have RCE on the machine.
 
@@ -80,13 +80,13 @@ Below is the endpont that would allow us to gain a shell on the machine. Notice 
 
 Using the API a bit more, we can find an `/updatepass` endpoint as well.
 
-<figure><img src="../../../.gitbook/assets/image (188).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (188) (2).png" alt=""><figcaption></figcaption></figure>
 
 This update pass requires the GUID of the user we are trying to reset and a new password. Earlier, we found the GUID of the administrator, so we can easily reset his password and then steal his token.
 
 <figure><img src="../../../.gitbook/assets/image (1) (1) (4) (2).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (185).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (185) (2).png" alt=""><figcaption></figcaption></figure>
 
 However, this still does not work as we do not have the 'debug' permission enabled on our token.
 
@@ -108,21 +108,21 @@ Notice the app home is within the `/home/htb/uhc` directory. Combine with the fa
 
 We can easily beautify this and read the dependencies it has.
 
-<figure><img src="../../../.gitbook/assets/image (224) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (224).png" alt=""><figcaption></figcaption></figure>
 
 What I did was to check all of these files. For example, for the `app.api.v1.api` portion, it would be located at the `/home/htb/uhc/app/api/v1/api.py` file. When reading these files, I wanted to find out the JWT token Secret so I could create and spoof my own with the Debug permission set.&#x20;
 
 The most interesting one was the `deps.py` file. This file had imported the JWT secret from the `core/config.py` directory.
 
-<figure><img src="../../../.gitbook/assets/image (181).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (181) (2).png" alt=""><figcaption></figcaption></figure>
 
 From there, we can read the secret.
 
-<figure><img src="../../../.gitbook/assets/image (199).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (199) (2).png" alt=""><figcaption></figcaption></figure>
 
 Once we had the Secret, spoofing another token is easy.
 
-<figure><img src="../../../.gitbook/assets/image (174).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (174) (2).png" alt=""><figcaption></figcaption></figure>
 
 We would then have RCE on the machine at this point.
 
@@ -130,7 +130,7 @@ We would then have RCE on the machine at this point.
 
 Using a Base64 encoded payload with %20 or $IFS as the space character, we can gain a reverse shell.
 
-<figure><img src="../../../.gitbook/assets/image (226) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (226).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -138,4 +138,4 @@ For root, this was rather simple. Within the `~/uhc` folder, there was an `auth.
 
 <figure><img src="../../../.gitbook/assets/image (190).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (215) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (215).png" alt=""><figcaption></figcaption></figure>

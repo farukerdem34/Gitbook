@@ -58,7 +58,7 @@ I recognised this as base64 and attempted to decode it, but it returned non-read
 
 This was some type of zip folder, because it contained an `index.php` file within it, and also it had the PK file signature (which indicates ZIP folders). So I decoded this to find a password protected zip file, which could be cracked using `zip2john`.
 
-<figure><img src="../../../.gitbook/assets/image (158).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (158) (3).png" alt=""><figcaption></figcaption></figure>
 
 Then, `index.php` was another cipher.
 

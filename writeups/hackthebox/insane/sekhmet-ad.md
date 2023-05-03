@@ -181,7 +181,7 @@ So 192.168.0.2 had the KDC (and hence DC) of this machine.  Within the other db 
 
 Within the machine, we can attempt to SSH in as ray.duncan@windcorp.htb (yes that's his user).
 
-<figure><img src="../../../.gitbook/assets/image (466) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (466).png" alt=""><figcaption></figcaption></figure>
 
 Now, we are on the same webserver host with persistence this time. Because of all of the Kerberos stuff and confirmation that this is an AD-related machine, we can request and cache a ticket via `kinit`. Searching on how to use a ticket in Linux led me to `ksu`, which basically is `su` with Kerberos.
 
@@ -386,6 +386,6 @@ Now, we can attempt some remote Powershell again.
 
 <figure><img src="../../../.gitbook/assets/image (91) (3).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (77) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (77) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can finally capture this flag and end the box. This took days to finish...

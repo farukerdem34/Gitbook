@@ -58,7 +58,7 @@ We can get these names into a file and then use a script to generate out all pos
 
 For the computer name, I found it by using `exiftool` on the document downloaded.
 
-<figure><img src="../../../.gitbook/assets/image (164) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (164) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now, we have all the details we need, and all we have left is to brute force the username.
 
@@ -92,7 +92,7 @@ As such, the next thing to do is get a **meterpreter shell** and use the modules
 
 We can easily generate one using MSFVenom.
 
-<figure><img src="../../../.gitbook/assets/image (241) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (241).png" alt=""><figcaption></figcaption></figure>
 
 Once we get this on the target machine and get a shell, we would need to migrate processes for stability, and then use the **espia** module to get a screenshot.
 
@@ -128,7 +128,7 @@ Using the same reverse shell .exe file I generated earlier, we can change the co
 
 <figure><img src="../../../.gitbook/assets/image (161) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (204) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (204) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (166) (1) (1).png" alt=""><figcaption></figcaption></figure>
 

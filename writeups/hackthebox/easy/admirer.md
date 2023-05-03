@@ -60,7 +60,7 @@ Afterwards, I was stumped here because I did not find any place to work on this.
 
 So far, none of the credentials work with FTP or SSH. The next logical step is to take a look at this directory to find an Adminer instance at `/utility-scripts/adminer.php`.
 
-<figure><img src="../../../.gitbook/assets/image (248) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (248).png" alt=""><figcaption></figcaption></figure>
 
 Adminer is a tool for managing MySQL databases within the machine. There is one specific LFI that can be exploited here:
 
@@ -95,7 +95,7 @@ This credential works with SSH as waldo.
 
 It seems that we have permission to set the environment variables for this script.
 
-<figure><img src="../../../.gitbook/assets/image (251) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (251).png" alt=""><figcaption></figcaption></figure>
 
 This was the script:
 
@@ -270,4 +270,4 @@ Afterwards, we can change the PYTHONPATH used for the script.
 
 Then, we can SSH in as root using the key we have.
 
-<figure><img src="../../../.gitbook/assets/image (247) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (247).png" alt=""><figcaption></figcaption></figure>

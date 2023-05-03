@@ -4,7 +4,7 @@
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (75) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (75) (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Doctors.htb
 
@@ -81,7 +81,7 @@ We can try using `su` with this credential, and it works.
 
 I checked the `/opt` directory, and found that there were some `splunkforwarder` related files within it.
 
-<figure><img src="../../../.gitbook/assets/image (126) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (126) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Normally, Splunk runs on port 8089, and we did find that port open on the machine earlier. Furthermore, this version of Splunk is vulnerable to an RCE exploit called SplunkWhisperer.
 

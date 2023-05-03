@@ -20,7 +20,7 @@ The FTP server did not allow for any anonymous logins, so we can head to the HTT
 
 The webpage just revealed a dashboard for some security stats.
 
-<figure><img src="../../../.gitbook/assets/image (186).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (186) (1).png" alt=""><figcaption></figcaption></figure>
 
 Trying to install the **second PCAP** file in the **Security Snapshot** directory directs us to the `/2` endpoint. We can change this to the `/0` endpoint to download a different file.
 

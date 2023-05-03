@@ -14,7 +14,7 @@ On the webapp, we can search for books using the title and author.
 
 <figure><img src="../../../.gitbook/assets/image (13) (1) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (476) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (476).png" alt=""><figcaption></figcaption></figure>
 
 Doing a quick directory enumeration reveals some interesting directories:
 
@@ -22,7 +22,7 @@ Doing a quick directory enumeration reveals some interesting directories:
 
 Testing for SQL Injection within the parameters above reveals nothing of interest. When viewing the Actions that we can do for each book, we would see that we can attempt to borrow it.
 
-<figure><img src="../../../.gitbook/assets/image (479) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (479).png" alt=""><figcaption></figcaption></figure>
 
 Clicking yes causes an error to pop up.
 
@@ -30,7 +30,7 @@ Clicking yes causes an error to pop up.
 
 I wanted to view the requests being made through Burpsuite, and saw this stuff.
 
-<figure><img src="../../../.gitbook/assets/image (348) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (348).png" alt=""><figcaption></figcaption></figure>
 
 Attempting to change the `book` parameter in any way causes this error to appear:
 
@@ -38,7 +38,7 @@ Attempting to change the `book` parameter in any way causes this error to appear
 
 `file_get_contents()` could be used to read some other files. Earlier, we did a `gobuster` directory enumeration and found a `/db` directory.
 
-<figure><img src="../../../.gitbook/assets/image (343) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (343).png" alt=""><figcaption></figcaption></figure>
 
 I attempted to read this file through the potential File Read vulnerability we found earlier, and it worked by changing the `book` paramter to `../../../../../../../../../Users/www-data/Desktop/xampp/htdocs/db/db.php`.
 
@@ -62,7 +62,7 @@ Viewing the page itself reveals several functions we can use.
 
 I was unable to access the File Management function at `/portal/php/files.php`, hence I took a look at the source code for it using the File Read we found earlier.
 
-<figure><img src="../../../.gitbook/assets/image (347) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (347).png" alt=""><figcaption></figcaption></figure>
 
 Seems that `paul` is the administrator of this website.
 
@@ -78,7 +78,7 @@ The first thing we notice is the dependencies required, which are the `db.php` f
 
 We can take a look at the `cookie.php` file.
 
-<figure><img src="../../../.gitbook/assets/image (352) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (352).png" alt=""><figcaption></figcaption></figure>
 
 In the last line, we can see that there's a notice to change the second part of the MD5 key every week, meaning that there's something that isn't changed. Also, we notice the `$key` and `$username[$seed]` values here. Then, `$username.md5($key)` is returned as the session cookie.
 
@@ -90,7 +90,7 @@ Next, the hint is that the second part of the MD5 key is unchanged, meaning that
 
 Changing these 2 tokens granted access to the file management page we found earlier. We can upload .zip files here.
 
-<figure><img src="../../../.gitbook/assets/image (358) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (358).png" alt=""><figcaption></figcaption></figure>
 
 ### Webshell and RCE
 
@@ -106,7 +106,7 @@ We can change this to .php and it bypasses the file extension check. However, th
 
 Then, we can access the webshell via checking the `portal/uploads` folder.
 
-<figure><img src="../../../.gitbook/assets/image (359) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (359).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can get a reverse shell via whatever method.
 
@@ -116,7 +116,7 @@ Then, we can get a reverse shell via whatever method.
 
 When viewing the users present on the machine, we can find a few others:
 
-<figure><img src="../../../.gitbook/assets/image (477) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (477).png" alt=""><figcaption></figcaption></figure>
 
 I wanted to enumerate the files for the web application hosted, so I headed there. Within the files for the portal directory, we find a `pizzaDeliveryUserData` folder which is rather suspicious.
 
@@ -138,7 +138,7 @@ Then, we can SSH in as this user.
 
 When checking the user directory, we find a `todo.html` file.
 
-<figure><img src="../../../.gitbook/assets/image (353) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (353).png" alt=""><figcaption></figcaption></figure>
 
 Viewing it reveals a hint to check the Sticky Notes application files for passwords.
 
@@ -146,11 +146,11 @@ Viewing it reveals a hint to check the Sticky Notes application files for passwo
 
 The files for this are located within the `C:\users\juliette\Appdata\local\pacakages` directory.
 
-<figure><img src="../../../.gitbook/assets/image (354) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (354).png" alt=""><figcaption></figcaption></figure>
 
 There we can find some SQLite files.
 
-<figure><img src="../../../.gitbook/assets/image (349) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (349).png" alt=""><figcaption></figcaption></figure>
 
 We can transfer this over to our machine and use `sqlite3` to view the contents. Within it, we can find credentials for the `development` user.
 
@@ -162,15 +162,15 @@ We can transfer this over to our machine and use `sqlite3` to view the contents.
 
 These credentials could be used for checking the SMB shares that were open, revealing that we had access to the `Development` share.
 
-<figure><img src="../../../.gitbook/assets/image (480) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (480).png" alt=""><figcaption></figcaption></figure>
 
 Within it, we can find a file of interest.
 
-<figure><img src="../../../.gitbook/assets/image (478) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (478).png" alt=""><figcaption></figcaption></figure>
 
 This was a ELF binary, and we can run it to see this:
 
-<figure><img src="../../../.gitbook/assets/image (355) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (355).png" alt=""><figcaption></figcaption></figure>
 
 So this thing can retrieve a password that is encrypted from somewhere. I opened this file up in IDA to see how it functions.
 
@@ -196,7 +196,7 @@ Then, we can enumerate the databases present.
 
 We can check the `bread` database to view some more stuff.
 
-<figure><img src="../../../.gitbook/assets/image (482) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (482).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (21) (3) (2).png" alt=""><figcaption></figcaption></figure>
 
@@ -206,7 +206,7 @@ Finally, we can just view all of the stuff within this table via `concat()`.
 
 Then, we can decrypt the password using the first key we found.
 
-<figure><img src="../../../.gitbook/assets/image (360) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (360).png" alt=""><figcaption></figcaption></figure>
 
 This password was base64 encoded, and decoding it gives the administrator password, which we can use to SSH in.
 

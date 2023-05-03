@@ -34,7 +34,7 @@ When trying the RCE exploit, we find that it works.
 
 This part took me ages to find out. In the user `djmardov` directory, we find the user flag and some kind of key.
 
-<figure><img src="../../../.gitbook/assets/image (345) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (345).png" alt=""><figcaption></figcaption></figure>
 
 Steg was the hint here, and it seems that we have to find an image to retrieve a password from. I spent a long time trying out different images.&#x20;
 

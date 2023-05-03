@@ -399,7 +399,7 @@ Checking the `/etc/passwd` file, we can see that the openmediavault-webgui user 
 
 I extracted this hash and attempted to crack it.
 
-<figure><img src="../../../.gitbook/assets/image (449) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (449).png" alt=""><figcaption></figcaption></figure>
 
 WIth this, we can `su` to the openmediavault-webgui user.
 

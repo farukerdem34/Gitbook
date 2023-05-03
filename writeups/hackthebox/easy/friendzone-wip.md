@@ -42,7 +42,7 @@ http://administrator1.friendzone.red/dashboard.php?image_id=a.jpg&pagename=/etc/
 
 This works because the `pagename` paramter automatically truncates the `.php` extension. The original page included a timestamp at the bottom that is being dynamically generated.
 
-<figure><img src="../../../.gitbook/assets/image (127).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (127) (2).png" alt=""><figcaption></figcaption></figure>
 
 This points towards to some script being used in the backend, and thus we can replace that with our own malicious PHP script to gain a shell.
 
@@ -64,7 +64,7 @@ We can use this to `su friend`.
 
 When we run `pspy64`, we can see that `root` is runnin some scripts in the background:
 
-<figure><img src="../../../.gitbook/assets/image (167).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (167) (2).png" alt=""><figcaption></figcaption></figure>
 
 When we read this script, we can see that it contains some random code that we can't really exploit because we cannot edit it:
 
@@ -80,4 +80,4 @@ Then, we just need to append a Python reverse shell to this:
 
 After opening a listener port and waiting, we would catch a root shell.
 
-<figure><img src="../../../.gitbook/assets/image (70).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (70) (3).png" alt=""><figcaption></figcaption></figure>

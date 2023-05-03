@@ -4,7 +4,7 @@
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (166).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (166) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can add `monitors.htb` to our `/etc/hosts` file.
 
@@ -16,11 +16,11 @@ Port 80 hosts a Wordpress site.
 
 We can run `wpscan` to enumerate the plugins and version, and this finds that **wp-with-spritz** is being used.
 
-<figure><img src="../../../.gitbook/assets/image (120).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (120) (2).png" alt=""><figcaption></figcaption></figure>
 
 This version is vulnerable to RFI.
 
-<figure><img src="../../../.gitbook/assets/image (150).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (150) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can confirm this by viewing the `/etc/passwd` file.
 
@@ -42,7 +42,7 @@ Upon visting this separate domain, we are greeted by another login page:
 
 This version of Cacti is old and vulnerable to loads of exploits. We can login with the credentials for Wordpress. Afterwards, we can use an exploit that uses SQL injection to gain a reverse shell.
 
-<figure><img src="../../../.gitbook/assets/image (125).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (125) (2).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (12) (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -70,7 +70,7 @@ Port 8443 was open and we could access it. The next step is port forwarding.
 
 I used `ssh -L 8443:localhost:8443 marcus@monitors.htb` to port forward after dropping my public key in the `authorized_keys` folder. Then, I used `gobuster` to find hidden directories present:
 
-<figure><img src="../../../.gitbook/assets/image (68).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (68) (3).png" alt=""><figcaption></figcaption></figure>
 
 Visting any of these would redirect us to `/content/control/main`, where there is a login page present.
 
@@ -86,7 +86,7 @@ We can follow the PoC here to execute it:
 
 Then, we would gain a shell as root in the container.
 
-<figure><img src="../../../.gitbook/assets/image (157).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (157) (4).png" alt=""><figcaption></figcaption></figure>
 
 ### Sys Module Exploit
 

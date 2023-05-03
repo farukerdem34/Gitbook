@@ -10,7 +10,7 @@ description: >-
 
 As usual, an nmap scan to start:
 
-<figure><img src="../../../.gitbook/assets/image (178) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (178) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Webpage
 
@@ -20,7 +20,7 @@ Pretty standard webpage. Has a login page and a few other categories that could 
 
 When investigating the login page, we can see that it allows us to create an account.
 
-<figure><img src="../../../.gitbook/assets/image (170) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (170) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can create a quick account for testing purposes.
 
@@ -90,7 +90,7 @@ A quick check on the page source reveals this is **version 1.7.3**. A bit of dig
 
 {% embed url="https://github.com/garySec/CVE-2022-24637" %}
 
-<figure><img src="../../../.gitbook/assets/image (194) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (194) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (169) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -102,7 +102,7 @@ We now have gained access to the machine.
 
 Now that we are www-data, we should check for what users are present. Within the /home directory, there are 2 users named **ethan** and **steven**.
 
-<figure><img src="../../../.gitbook/assets/image (175) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (175) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We cannot access ethan's directory, but we can access steven's and see that he has a binary within his home directory that generates passwords.
 
@@ -142,7 +142,7 @@ We can use another decompiler to extract code from the .pyc file into readable p
 
 There was some difficulty in making this work due to incompatible Python versions, but there are a lot of releases that are comptaible with the newer Python versions.
 
-<figure><img src="../../../.gitbook/assets/image (187) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (187) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now, we can take a look at how this application generates its random passwords, and if we can possibly create our own wordlist and brute force the password out. Firstly, we can see this thisi binary uses the PySide2.Qt library to generate its passwords.
 
