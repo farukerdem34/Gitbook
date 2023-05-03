@@ -70,4 +70,4 @@ In short, there are alternate methods of storing data within these alternate dat
 
 We can see that the alternate stream has 34 bytes of data that are hidden within it. We can redirect the file contents to another folder and read the flag.
 
-<figure><img src="../../../.gitbook/assets/image (13) (5) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (5).png" alt=""><figcaption></figcaption></figure>

@@ -42,7 +42,7 @@ We can set up a quick Python server and check this URL to find that we can recei
 
 Since this is a AD machine, perhaps we can get some shares and intercept the response using Responder.
 
-<figure><img src="../../../.gitbook/assets/image (196) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (196) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (186) (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -116,7 +116,7 @@ Since we do have another share called Web, perhaps we can upload a simple web sh
 
 I tried this method using a cmd.php basic web shell.
 
-<figure><img src="../../../.gitbook/assets/image (182) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (182) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 This works in getting me a shell as svc\_apache.
 
@@ -146,7 +146,7 @@ Within the C:\inetpub directory, there's an interesting folder called developmen
 
 This was interesting as it suggested that perhaps there was another port listening on the localhost.  Sure enough, there was a service listening on port 8000 that was not detected by nmap earlier.
 
-<figure><img src="../../../.gitbook/assets/image (176) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (176) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 When curled, it reveals a webpage tha matches the index.html file in the development server. For now, we can do some port forwarding to access it.
 

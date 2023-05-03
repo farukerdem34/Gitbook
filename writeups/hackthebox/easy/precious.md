@@ -30,7 +30,7 @@ This version of pdfkit is vulnerable to RCE using CVE-2022-25765. There are publ
 
 Following the exploit, we can test to see if we indeed have RCE:
 
-<figure><img src="../../../.gitbook/assets/image (8) (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (4).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (5) (2) (1) (3).png" alt=""><figcaption></figcaption></figure>
 

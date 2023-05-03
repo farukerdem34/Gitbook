@@ -252,7 +252,7 @@ You can now run 'firejail --join=1407' in another terminal to obtain a shell whe
 
 We have to repeat the RCE exploit that we did previously to make this work. Then, we can run the command and be able to become root. **Take note we can just run `su -` for this to work.**
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 Great! Now we have access as root on the Linux docker.&#x20;
 

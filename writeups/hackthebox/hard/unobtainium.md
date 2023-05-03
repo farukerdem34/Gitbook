@@ -323,7 +323,7 @@ So to craft our exploit, we need to find out what information the JSON object mu
 
 The final request I sent looked like this:
 
-<figure><img src="../../../.gitbook/assets/image (528).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (528) (1).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, I was able to upload files to the server:
 

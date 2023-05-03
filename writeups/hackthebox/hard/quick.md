@@ -23,7 +23,7 @@ Port 9001 had a typical corporate website:
 
 There was a link towards a new portal hosted on `portal.quick.htb`. However, it pointed to port 443 and I could not access that for now. Looking at the rest of the page, we can see other information like the clients they had:
 
-<figure><img src="../../../.gitbook/assets/image (3) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 There are also some testimonials from users:
 
@@ -260,7 +260,7 @@ Command: <xsl:value-of select="$cmd"/>
 
 Our listener port would then receive a shell:
 
-<figure><img src="../../../.gitbook/assets/image (7) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
 We can grab the user flag now.&#x20;
 
@@ -387,7 +387,7 @@ This does the same thing as `index.php`, and it compares each hash to the correc
 
 ### Printing LFI
 
-<figure><img src="../../../.gitbook/assets/image (9) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
 We can add printers and customise them to connect to other IP addresses:
 

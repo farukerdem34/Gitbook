@@ -4,7 +4,7 @@
 
 An Nmap scan reveals that ports 22 and 80 are open.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (204).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (204) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Portal Endpoint
 
@@ -24,7 +24,7 @@ Trying out some random input reveals this:
 
 When proxied through Burp, we can view that it sends a `data` parameter with a Base64 encoded XML input.
 
-<figure><img src="../../../.gitbook/assets/image (198).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (198) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (164) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -42,7 +42,7 @@ The `db.php` file was the most interesting. I also took a look at the `/resource
 
 Then, the `bountylog.js` file revealed an interesting endpoint.
 
-<figure><img src="../../../.gitbook/assets/image (205).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (205) (2).png" alt=""><figcaption></figcaption></figure>
 
 It seems that POST requests are being sent to the `tracker.php` endpoint and processed. So this means our XXE payloads have to be sent there.
 
@@ -76,7 +76,7 @@ We can read this file to that it has a vulnerbale function being used.
 
 Since this was using `eval`, it means that we can include some code here and the script would execute it. First, we would need to create a valid 'ticket' as per the machine's instructions. Based on the code, this right here works:
 
-<figure><img src="../../../.gitbook/assets/image (206).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (206) (2).png" alt=""><figcaption></figcaption></figure>
 
 To achieve RCE, we would first need to include a `true` condition to cause the `exec` function to short-circuit and move on to the next bit.
 

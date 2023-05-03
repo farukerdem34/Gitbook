@@ -63,7 +63,7 @@ There was a `connect.sid` endpoint, indicating that this was some type of Expres
 
 The website was some ordering website where we could place orders for items.
 
-<figure><img src="../../../.gitbook/assets/image (10) (5) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (5).png" alt=""><figcaption></figcaption></figure>
 
 ### Stock LFI
 
@@ -139,7 +139,7 @@ We find that the user is called `angoose`. I attempted to read more files such a
 
 Remembering that this was an Express website, perhaps there was a Javascript file that I could read to find some credentials, particularly those used to access this server in the first place. WIthin  the `/var/www/dev/index.js` file, I managed to find some credentials.
 
-<figure><img src="../../../.gitbook/assets/image (2) (6) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (6).png" alt=""><figcaption></figcaption></figure>
 
 With this password, we can `ssh` in as `angoose`.&#x20;
 

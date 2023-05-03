@@ -32,7 +32,7 @@ The `users` table had an `Administrator` user with a hashed password, however th
 
 In this case, we can dump the `faculty` table and attempt to login via the original login method. There's a PIN number associated with the `Administrator` user and we can use that to login.
 
-<figure><img src="../../../.gitbook/assets/image (176).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (176) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### PDF Generator LFI
 
@@ -54,7 +54,7 @@ mPDF 6.0 is vulnerable to an LFI exploit that would allow for us to read the fil
 
 This would load a PDF file that contains the `/etc/passwd` file.
 
-<figure><img src="../../../.gitbook/assets/image (182).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (182) (1).png" alt=""><figcaption></figcaption></figure>
 
 The `/etc/passwd` file would be attached to the main PDF like this:
 

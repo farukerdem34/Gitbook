@@ -4,7 +4,7 @@
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (147).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (147) (3).png" alt=""><figcaption></figcaption></figure>
 
 ### ColdFusion
 
@@ -36,4 +36,4 @@ We can also use `wesng.py` to find possible vulnerabilities for this machine. Th
 
 We can execute it to gain a shell as the administrator.
 
-<figure><img src="../../../.gitbook/assets/image (152).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (152) (3).png" alt=""><figcaption></figcaption></figure>

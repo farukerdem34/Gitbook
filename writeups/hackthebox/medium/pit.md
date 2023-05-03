@@ -22,11 +22,11 @@ PORT     STATE SERVICE
 
 Port 9090 was a HTTPS site with a login page:
 
-<figure><img src="../../../.gitbook/assets/image (15) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (1).png" alt=""><figcaption></figcaption></figure>
 
 We had no credentials and weak default credentials didn't work. Port 80 hosted a Red Hat default page:
 
-<figure><img src="../../../.gitbook/assets/image (13) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
 
 Directory, subdomain and other web scans all didn't find anything. So this was an obvious rabbit hole.
 
@@ -112,7 +112,7 @@ End of MIB
 
 So we have 2 users, `michelle` and `root`. We als ofound a new directory at Seed DMS or something. When we view the certificate of the HTTPS site on port 9090, we can see a new subdomain to enumerate.
 
-<figure><img src="../../../.gitbook/assets/image (11) (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
 
 ### Seed DMS
 
@@ -122,7 +122,7 @@ After adding the new domain to our hosts file, we can head to `http://dms-pit.ht
 
 I tried a few credentials, and found that `michelle:michelle` was the right one to login.
 
-<figure><img src="../../../.gitbook/assets/image (4) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 We can view the change log from the administrator, which states the version of Seed DMS that is currently being used.
 

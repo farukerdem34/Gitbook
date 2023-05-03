@@ -192,7 +192,7 @@ This functio was taking the JSON data and checking for SSRF (poorly). It only ch
 
 I was stuck here for a while, as I was unable to enumerate any subdomain without getting rejected and I didn't know what other files existed on the server. I began testing random directories using the LFI I had found and just tried `/.git/HEAD` to see if it existed, and it did!
 
-<figure><img src="../../../.gitbook/assets/image (7) (6) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (6).png" alt=""><figcaption></figcaption></figure>
 
 So, now I know that there was a Git repository on this website, but the question was how to get it out. We could use `gitdumper.py`, but it would have to get the files out rather uniquely through the LFI and decode it from hex. Using this one-liner in bash, we could do just that:
 

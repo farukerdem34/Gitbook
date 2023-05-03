@@ -46,7 +46,7 @@ Also, we can find a portal that leads to a Windows PowerShell Web Access portal.
 
 From here, we just need to find some credentials and the computer name. Looking through the document again, we can find a password of `Password1!`.
 
-<figure><img src="../../../.gitbook/assets/image (201) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (201) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Username and Computer Name
 
@@ -92,7 +92,7 @@ As such, the next thing to do is get a **meterpreter shell** and use the modules
 
 We can easily generate one using MSFVenom.
 
-<figure><img src="../../../.gitbook/assets/image (241).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (241) (1).png" alt=""><figcaption></figcaption></figure>
 
 Once we get this on the target machine and get a shell, we would need to migrate processes for stability, and then use the **espia** module to get a screenshot.
 
@@ -128,7 +128,7 @@ Using the same reverse shell .exe file I generated earlier, we can change the co
 
 <figure><img src="../../../.gitbook/assets/image (161) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (204) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (204) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (166) (1) (1).png" alt=""><figcaption></figcaption></figure>
 

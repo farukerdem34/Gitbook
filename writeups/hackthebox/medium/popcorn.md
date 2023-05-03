@@ -84,7 +84,7 @@ Seems that this was not the right page to be exploiting. So I looked elsewhere a
 
 Interestingly, the owner was able to upload a torrent file with **screenshots**.
 
-<figure><img src="../../../.gitbook/assets/image (161).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (161) (3).png" alt=""><figcaption></figcaption></figure>
 
 I then tried to download a torrent file from the Kali Linux official website (because nowhere else offered non-shady torrent files to download). This worked in the uploading. Afterwards, I can see that we are able to 'Edit this torrent'&#x20;
 

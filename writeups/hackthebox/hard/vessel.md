@@ -16,7 +16,7 @@ As usual, an nmap scan to start:
 
 Pretty standard webpage. Has a login page and a few other categories that could be vulnerable.
 
-<figure><img src="../../../.gitbook/assets/image (198) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (198) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 When investigating the login page, we can see that it allows us to create an account.
 

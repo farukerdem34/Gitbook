@@ -10,7 +10,7 @@ Nmap scan:
 
 I found nothing interesting about the web application hosted on port 80. However, when viewing the traffic proxied through Burpsuite, we see an interesting header:
 
-<figure><img src="../../../.gitbook/assets/image (5) (6) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (6).png" alt=""><figcaption></figcaption></figure>
 
 PHP/8.1.0-dev is vulnerable to a publicly available RCE exploit.
 

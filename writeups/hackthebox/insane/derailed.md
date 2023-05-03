@@ -72,7 +72,7 @@ I messed around a lot with the clipnotes and tried all sorts of stuff, but it wa
 
 So I started a HTTP server, and attempted this:
 
-<figure><img src="../../../.gitbook/assets/image (15) (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (3).png" alt=""><figcaption></figcaption></figure>
 
 The reason I did this was because I am aware that there is a potential limit to the username, and trying to overflow that may cause the end bit to be rendered as JS code. Then I created a clipnote:
 
@@ -399,7 +399,7 @@ Checking the `/etc/passwd` file, we can see that the openmediavault-webgui user 
 
 I extracted this hash and attempted to crack it.
 
-<figure><img src="../../../.gitbook/assets/image (449).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (449) (1).png" alt=""><figcaption></figcaption></figure>
 
 WIth this, we can `su` to the openmediavault-webgui user.
 

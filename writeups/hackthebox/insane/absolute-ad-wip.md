@@ -23,7 +23,7 @@ Standard Ports. I added absolute.htb  and its DC into my hosts file for this mac
 
 Interestingly, doing all of these revealed nothing useful, **except for my last resort.** Running a kerbrute reveals this:
 
-<figure><img src="../../../.gitbook/assets/image (32) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (32) (1) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 This username wordlist was just within my machine from another machine that required it. Very useful! However, these usernames cannot be used to do anything, leading me to believe that there are other users on this domain.
 
@@ -79,7 +79,7 @@ Kerberoasting reveals that there are no SPNs to roast. Instead, we can use this 
 
 <figure><img src="../../../.gitbook/assets/image (5) (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (12) (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (4).png" alt=""><figcaption></figcaption></figure>
 
 Really interesting output. We have found another user and credential!
 

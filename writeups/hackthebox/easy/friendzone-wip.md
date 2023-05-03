@@ -46,7 +46,7 @@ This works because the `pagename` paramter automatically truncates the `.php` ex
 
 This points towards to some script being used in the backend, and thus we can replace that with our own malicious PHP script to gain a shell.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -76,7 +76,7 @@ We can see that `import os` is used, and any external modules could be exploitab
 
 Then, we just need to append a Python reverse shell to this:
 
-<figure><img src="../../../.gitbook/assets/image (165).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (165) (6).png" alt=""><figcaption></figcaption></figure>
 
 After opening a listener port and waiting, we would catch a root shell.
 

@@ -20,11 +20,11 @@ PORT   STATE SERVICE
 
 Port 80 was running a JSON Beautifier:
 
-<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (532).png" alt=""><figcaption></figcaption></figure>
 
 This would accept JSON inputs, but I had no idea what kind of engine this was using. There were 2 modes to this: Beautify and Validate, of which the latter was in Beta. I tried sending some random input and managed to trigger an error:
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (534).png" alt=""><figcaption></figcaption></figure>
 
 We can view the rest of this error either in Burp or by examining the page source.
 
@@ -61,7 +61,7 @@ Afterwards, we need to send this input to the application to be parsed:
 
 When we send this, it would download the file and give us a reverse shell.
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (535).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -90,6 +90,6 @@ This looks like something that the `root` user would have on a cronjob. As such,
 pericles@time:/usr/bin$ echo 'chmod u+s /bin/bash' >> timer_backup.sh
 ```
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (528).png" alt=""><figcaption></figcaption></figure>
 
 Easy root!

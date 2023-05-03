@@ -32,11 +32,11 @@ At the `/api/v1` endpoint, we find that that there is a `/user` endpoint that we
 
 From here, we can check the `admin` user with an ID of 1.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (173).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (173) (2).png" alt=""><figcaption></figcaption></figure>
 
 All other numbers do not have directories, so this means there's probably only one user available. I ran further scans on the `/user` endpoint, as there had to be a way to signup or login, and it does exist.
 
-<figure><img src="../../../.gitbook/assets/image (183).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (183) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Creation of User
 
@@ -56,7 +56,7 @@ We can now access the `/docs` endpoint, which was not allowed earlier due to the
 
 ### /docs
 
-<figure><img src="../../../.gitbook/assets/image (201).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (201) (1).png" alt=""><figcaption></figcaption></figure>
 
 At first, I thought we were able to load the `/docs` endpoint, but I was wrong.
 
@@ -70,7 +70,7 @@ Within the documentation, there were 2 very significant endpoints, one to read t
 
 The user flag can be retrieved by sending a PUT request to this endpoint:
 
-<figure><img src="../../../.gitbook/assets/image (196).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (196) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Getting Admin JWT
 
@@ -108,7 +108,7 @@ Notice the app home is within the `/home/htb/uhc` directory. Combine with the fa
 
 We can easily beautify this and read the dependencies it has.
 
-<figure><img src="../../../.gitbook/assets/image (224).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (224) (2).png" alt=""><figcaption></figcaption></figure>
 
 What I did was to check all of these files. For example, for the `app.api.v1.api` portion, it would be located at the `/home/htb/uhc/app/api/v1/api.py` file. When reading these files, I wanted to find out the JWT token Secret so I could create and spoof my own with the Debug permission set.&#x20;
 
@@ -130,7 +130,7 @@ We would then have RCE on the machine at this point.
 
 Using a Base64 encoded payload with %20 or $IFS as the space character, we can gain a reverse shell.
 
-<figure><img src="../../../.gitbook/assets/image (226).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (226) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -138,4 +138,4 @@ For root, this was rather simple. Within the `~/uhc` folder, there was an `auth.
 
 <figure><img src="../../../.gitbook/assets/image (190).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (215).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (215) (2).png" alt=""><figcaption></figcaption></figure>

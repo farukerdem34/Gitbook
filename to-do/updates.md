@@ -14,13 +14,21 @@ HTB Writeups added:
   * Remote
   * Safe
   * Sense
+  * Shocker
+  * Lame
+  * Nibbles
   * Valentine
 * Medium
   * Ophiuchi
   * Pit
+  * Ready
+  * Seal
   * Silo
+  * SneakyMailer
+  * Sniper
   * TartarSauce
   * Time
+  * Worker
 * Hard
   * Pikaboo
   * Quick

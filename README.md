@@ -1,7 +1,6 @@
 ---
-cover: >-
-  https://images.unsplash.com/photo-1541728472741-03e45a58cf88?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxOTcwMjR8MHwxfHNlYXJjaHwzfHxoYWNraW5nfGVufDB8fHx8MTY4Mjg0NjkwMA&ixlib=rb-4.0.3&q=85
-coverY: 139
+cover: .gitbook/assets/586185-terminal-computer.jpg
+coverY: 28
 ---
 
 # Hello!

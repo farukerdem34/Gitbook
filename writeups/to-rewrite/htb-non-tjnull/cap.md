@@ -40,4 +40,4 @@ I ran LinPEAS to find some Escalation Vectors. Python has the `cap_setuid` bit s
 
 <figure><img src="../../../.gitbook/assets/image (2) (1) (6) (2).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (184).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (184) (2).png" alt=""><figcaption></figcaption></figure>

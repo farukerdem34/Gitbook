@@ -24,7 +24,7 @@ We can do the same stuff to create, signin as a user and receive the JWT token f
 
 Afterwards, we can access the `/openapi.json` endpoint to view the functionalities of this API. There was one new functionality, which was to edit the profiles of users.
 
-<figure><img src="../../../.gitbook/assets/image (171).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (171) (2).png" alt=""><figcaption></figcaption></figure>
 
 This endpoint was rather interesting because it allows us to edit profiles. Checking the JWT token of our current user, we find out that our `id` is 12.
 
@@ -38,11 +38,11 @@ With this edit profile stuff, I found out that we can change the attributes rela
 
 When I found out this worked, I basically also changed the `is_superuser` attribute to `true`.
 
-<figure><img src="../../../.gitbook/assets/image (214).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (214) (2).png" alt=""><figcaption></figcaption></figure>
 
 After changing all of these, we just need to retrieve the new JWT token we can use for further exploitation.
 
-<figure><img src="../../../.gitbook/assets/image (208).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (208) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Read and Write Files
 
@@ -60,7 +60,7 @@ Within the `/home/htb/app/api/v1/endpoints/user.py`  file, this was the original
 
 I changed the code to include a one-liner reverse shell everytime a unique ID was accessed.
 
-<figure><img src="../../../.gitbook/assets/image (217).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (217) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then we need to convert the file contents using the escape string function on Cyberchef.
 
