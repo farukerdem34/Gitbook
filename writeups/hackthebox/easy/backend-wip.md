@@ -42,7 +42,7 @@ All other numbers do not have directories, so this means there's probably only o
 
 Within the API, we can try to signup as a user. I wasn't sure what parameters to give, so I just sent a test JSON input with a POST request.
 
-<figure><img src="../../../.gitbook/assets/image (177) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (177) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 So we need to send them a `body, password and email` parameter within a JSON object to register the user.
 
@@ -80,13 +80,13 @@ Below is the endpont that would allow us to gain a shell on the machine. Notice 
 
 Using the API a bit more, we can find an `/updatepass` endpoint as well.
 
-<figure><img src="../../../.gitbook/assets/image (188) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (188) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 This update pass requires the GUID of the user we are trying to reset and a new password. Earlier, we found the GUID of the administrator, so we can easily reset his password and then steal his token.
 
 <figure><img src="../../../.gitbook/assets/image (1) (1) (4) (2).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (185) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (185) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 However, this still does not work as we do not have the 'debug' permission enabled on our token.
 
@@ -122,7 +122,7 @@ From there, we can read the secret.
 
 Once we had the Secret, spoofing another token is easy.
 
-<figure><img src="../../../.gitbook/assets/image (174) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (174) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 We would then have RCE on the machine at this point.
 

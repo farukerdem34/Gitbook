@@ -204,7 +204,7 @@ drwxr-xr-x  8 root root 4096 Jun 23  2020 sneakycorp.htb
 
 So there's a `pypi.sneakycorp.htb` domain present. With some testing, I found it runs on port 8080.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (172).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (172) (2).png" alt=""><figcaption></figcaption></figure>
 
 Within the files, I also found a `.htpasswd` file with a hash:
 

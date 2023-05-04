@@ -14,7 +14,7 @@ First, we can use `gobuster` on the website:
 
 The `/backup` directory would show us a directory with a backup file:
 
-<figure><img src="../../../.gitbook/assets/image (164) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (164) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Within the backup file, there's this PHP code here:
 
@@ -88,7 +88,7 @@ Then, we can upload it to `upload.php`. We can visit `photos.php` to trigger the
 
 Within the machine, we can view the user `guly` directory:
 
-<figure><img src="../../../.gitbook/assets/image (154) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (154) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 The crontab specifies that the user is running the `check_attack` script routinely.
 

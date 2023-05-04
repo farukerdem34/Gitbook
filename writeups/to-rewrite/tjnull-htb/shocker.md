@@ -80,7 +80,7 @@ This software bugs allows us to have RCE on the website because of how environme
 
 So it does work. We can replace the `ping` command with a reverse shell.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (155).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (155) (3).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -106,6 +106,6 @@ sudo perl -e 'exec "/bin/bash";'
 ```
 {% endcode %}
 
-<figure><img src="../../../.gitbook/assets/image (188).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (188) (2).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

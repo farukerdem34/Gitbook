@@ -87,7 +87,7 @@ utf8=%E2%9C%93&authenticity_token=r4%2FWxTxkvjl0JJxJ1q12HiZvhGxkJgc0J9QD%2BXOGKu
 
 Afterwards, it would download and execute a reverse shell script from us:
 
-<figure><img src="../../../.gitbook/assets/image (117).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (117) (4).png" alt=""><figcaption></figcaption></figure>
 
 We can grab the user flag after this.
 

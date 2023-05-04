@@ -56,7 +56,7 @@ The `Debug Mode Password.txt` was empty for some reason, and I found that weird.
 
 This confirms the presence of the alternate data stream, and we can use `cat` to extract the information:
 
-<figure><img src="../../../.gitbook/assets/image (122) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (122) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Cool, now we have the HQK password.
 
@@ -68,7 +68,7 @@ Now that we have credentials, we can connect to the HQK port via `telnet` and en
 
 With this, I was able to extract the administrator hash.
 
-<figure><img src="../../../.gitbook/assets/image (153) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (153) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Within this, we also can find another binary being used:
 

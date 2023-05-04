@@ -20,7 +20,7 @@ We can run `wpscan` to enumerate the plugins and version, and this finds that **
 
 This version is vulnerable to RFI.
 
-<figure><img src="../../../.gitbook/assets/image (150) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (150) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can confirm this by viewing the `/etc/passwd` file.
 
@@ -86,7 +86,7 @@ We can follow the PoC here to execute it:
 
 Then, we would gain a shell as root in the container.
 
-<figure><img src="../../../.gitbook/assets/image (157) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (157) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Sys Module Exploit
 

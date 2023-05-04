@@ -14,7 +14,7 @@ Port 80 brings us to an API again, with the admin user still being viewable.
 
 <figure><img src="../../../.gitbook/assets/image (223).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (166) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (166) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Creating User
 
@@ -64,7 +64,7 @@ I changed the code to include a one-liner reverse shell everytime a unique ID wa
 
 Then we need to convert the file contents using the escape string function on Cyberchef.
 
-<figure><img src="../../../.gitbook/assets/image (172) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (172) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Using this, we can use curl to get the file where we want it. The command would look like this:
 

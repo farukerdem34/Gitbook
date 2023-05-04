@@ -78,7 +78,7 @@ Using the one we found in `deploy.ps1`, we can login.&#x20;
 
 This is hosting an Azure Devops instance.
 
-<figure><img src="../../../.gitbook/assets/image (152).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (152) (3).png" alt=""><figcaption></figcaption></figure>
 
 Here, there was one repository for SmartHotel360, which was located at `spectral.worker.htb`. \
 
@@ -91,7 +91,7 @@ This was an IIS site, so we can try to upload an ASPX shell on this site and see
 
 I tried submitting one by issuing a request using a new branch name.
 
-<figure><img src="../../../.gitbook/assets/image (147).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (147) (3).png" alt=""><figcaption></figcaption></figure>
 
 The funny thing is, I can approve of the PR myself.&#x20;
 
@@ -107,7 +107,7 @@ Then complete the merge:
 
 Then just trigger the webshell by visiting the file or using `curl`.
 
-<figure><img src="../../../.gitbook/assets/image (177).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (177) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -230,7 +230,7 @@ There wasn't much in the machine to begin with, so I shifted back to the Azure D
 
 Now, we have access to another repository. When viewing the project settings, I can see that our user is a Build Administrator.
 
-<figure><img src="../../../.gitbook/assets/image (166).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (166) (1).png" alt=""><figcaption></figcaption></figure>
 
 This means that we can set pipeline permissions. Using this, we can create a new pipeline that uses YAML to execute code:
 
@@ -238,7 +238,7 @@ This means that we can set pipeline permissions. Using this, we can create a new
 
 Use Azure Repos Git > Parts Unlimited > Starter Pipeline. Here, we can create a YAML script to gain a reverse shell.
 
-<figure><img src="../../../.gitbook/assets/image (127).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (127) (2).png" alt=""><figcaption></figcaption></figure>
 
 Replace it with this:
 

@@ -62,11 +62,11 @@ Port 8080 is hosting a GitBucket instance:
 
 We can create a new account and sign in to see if there are any existing repositories. Straight away, we see tons of push requests to the Market repository.
 
-<figure><img src="../../../.gitbook/assets/image (122).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (122) (3).png" alt=""><figcaption></figcaption></figure>
 
 From this, we can find the changes made to the repository. From one of them, we can view the password for the administrator panel by viewing changes made to `tomcat-users.xml`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (185).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (185) (2).png" alt=""><figcaption></figcaption></figure>
 
 However, we still cannot access the portal.&#x20;
 
@@ -82,7 +82,7 @@ So by using `/;/`, we might be able to bypass the 403 given earlier. This works 
 
 Using `tomcat:42MrHBf*z8{Z%`, we can access the Tomcat dashboard:
 
-<figure><img src="../../../.gitbook/assets/image (154).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (154) (4).png" alt=""><figcaption></figcaption></figure>
 
 Now we just need to generate a reverse shell with a `msfvenom`.&#x20;
 
@@ -103,7 +103,7 @@ https://10.129.95.190/manager/.;/html/upload?org.apache.catalina.filters.CSRF_NO
 
 Then, we can run our file and get a shell:
 
-<figure><img src="../../../.gitbook/assets/image (156).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (156) (3).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
