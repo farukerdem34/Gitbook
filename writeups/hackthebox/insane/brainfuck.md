@@ -45,7 +45,7 @@ Here's the HTML frames we need:
 
 Afterwards, we just need to set this up on a Python server and visit the site. The username is based on the username of the first post we saw.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (27) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (27) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 Initially, nothing happens when we click the login button, however after refreshing the page, we are notified that we have logged in as the administrator.
 
@@ -55,7 +55,7 @@ Initially, nothing happens when we click the login button, however after refresh
 
 When viewing the plugins, we can find another plugin that enables SMTP on the Wordpress site.
 
-<figure><img src="../../../.gitbook/assets/image (14) (2) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (2) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 When viewing the SMTP configuration settings, we can find the username and password for port 110.
 
@@ -95,7 +95,7 @@ Some of the forum pages mention sending SSH keys somehow.
 
 There was also an encrypted few posts.
 
-<figure><img src="../../../.gitbook/assets/image (19) (1) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (19) (1) (1) (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 There was clearly a URL within that, and it seems that numbers **are not being scrambled**. This means this is a letter-only cipher. After a bit of research and testing on CyberChef, Vignere cipher is the one used here.
 
@@ -115,7 +115,7 @@ Then we can use `openssl rsa` to write the key out.
 
 Afterwards, we can simply SSH in using this key.
 
-<figure><img src="../../../.gitbook/assets/image (32) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (32) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

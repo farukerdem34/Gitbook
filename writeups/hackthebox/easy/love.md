@@ -44,7 +44,7 @@ With credentials, we now get a shell using an RCE exploit that is publicly avail
 
 Then run the exploit:
 
-<figure><img src="../../../.gitbook/assets/image (42) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (42) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

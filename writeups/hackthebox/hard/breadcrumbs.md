@@ -124,7 +124,7 @@ I wanted to enumerate the files for the web application hosted, so I headed ther
 
 Within it, we can see one file that stands out.
 
-<figure><img src="../../../.gitbook/assets/image (51) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (51) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Within it, we can find some credentials for this user.
 
@@ -154,7 +154,7 @@ There we can find some SQLite files.
 
 We can transfer this over to our machine and use `sqlite3` to view the contents. Within it, we can find credentials for the `development` user.
 
-<figure><img src="../../../.gitbook/assets/image (48) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (48) (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (9) (1) (7).png" alt=""><figcaption></figcaption></figure>
 

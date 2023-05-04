@@ -48,7 +48,7 @@ Earlier, we saw some form of clipnote function. Testing it shows us that each ti
 
 I was interested in what other number is present, so I used wfuzz to enumerate out all other numbers. None are present it seems
 
-<figure><img src="../../../.gitbook/assets/image (14) (2) (2) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (2) (2) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 I checked out the other endpoints, as there may be more interesting ones. The **/report** one looks good.
 
@@ -132,7 +132,7 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<select<style/><img src='http://
 
 This payload worked! I was able to retrieve two callbacks after creating the clipnote.
 
-<figure><img src="../../../.gitbook/assets/image (2) (1) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now we can use a script from Hacktricks to steal the page content of the administration panel.&#x20;
 
@@ -359,7 +359,7 @@ When waiting around, I eventually got a callback via the `curl` command I inject
 
 With this, we can easily gain a reverse shell through this method. I used the `mkfifo` shell, and it worked!
 
-<figure><img src="../../../.gitbook/assets/image (20) (1) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20) (1) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can grab the user flag while we're here.
 

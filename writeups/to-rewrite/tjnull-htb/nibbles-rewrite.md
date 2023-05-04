@@ -94,4 +94,4 @@ nibbler@Nibbles:/home/nibbler/personal/stuff$ ls -la /bin/bash
 
 Then, we can easily get `root`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (167) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (167) (3).png" alt=""><figcaption></figcaption></figure>

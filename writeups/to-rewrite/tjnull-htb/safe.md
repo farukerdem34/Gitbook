@@ -22,7 +22,7 @@ Might be a HTTP exploit here.
 
 Port 80 had nothing on it, just the default Apache2 page and no directories. However, it did contain this on the page source:
 
-<figure><img src="../../../.gitbook/assets/image (150) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (150) (4).png" alt=""><figcaption></figcaption></figure>
 
 Visiting `/myapp` would download an application to my machine.&#x20;
 
@@ -30,7 +30,7 @@ Visiting `/myapp` would download an application to my machine.&#x20;
 
 Port 1337 seems to be running an application of some sorts:
 
-<figure><img src="../../../.gitbook/assets/image (181).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (181) (3).png" alt=""><figcaption></figcaption></figure>
 
 It was identical to the binary downloaded from port 80.&#x20;
 
@@ -99,7 +99,7 @@ What do you want me to echo back?
 
 Afterwards, enter our large input and check the first 8 characters of the stack values:
 
-<figure><img src="../../../.gitbook/assets/image (164) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (164) (6).png" alt=""><figcaption></figcaption></figure>
 
 Now we can use `pattern query` to find the offset required:
 
@@ -243,6 +243,6 @@ Notes:
 kpcli:/MyPasswords>
 ```
 
-<figure><img src="../../../.gitbook/assets/image (157) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (157) (5).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

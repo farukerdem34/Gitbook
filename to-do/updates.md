@@ -9,20 +9,27 @@ HTB Writeups added:
 * OnlyForYou (HTB Season 1)
 * MonitorsTwo (HTB Season 1)
 * Easy
-  * Omni
+  * Beep
+  * Lame&#x20;
+  * Nibbles&#x20;
+  * Omni&#x20;
   * Postman
-  * Remote
-  * Safe
-  * Sense
-  * Shocker
-  * Lame
-  * Nibbles
+  * Remote&#x20;
+  * Safe&#x20;
+  * Sense&#x20;
+  * Shocker&#x20;
+  * Traverxec&#x20;
   * Valentine
 * Medium
+  * Bitlab
+  * Jarvis
+  * Mango
+  * Node
   * Ophiuchi
   * Pit
   * Ready
   * Seal
+  * Secnotes
   * Silo
   * SneakyMailer
   * Sniper
@@ -86,7 +93,7 @@ Added Portswigger Web Academy links.
 
 Removed Cryptography portion, too theoretical and better guides can be found online / at university courses.&#x20;
 
-OSCP BOF --> OSCP BOF (OUTDATED)
+OSCP BOF --> **OSCP BOF (OUTDATED)**
 
 ### February 2023
 

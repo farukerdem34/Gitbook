@@ -22,7 +22,7 @@ There's only one that was interesting, and it was the `UserInfo.exe` file. I too
 
 When decompiled, it seems that the binary was sending LDAP queries:
 
-<figure><img src="../../../.gitbook/assets/image (26) (1) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (26) (1) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 Looking around, I also found this `password` function.
 
@@ -91,4 +91,4 @@ This would spawn in a shell for us.
 
 How it works is that we first create a new user that has the Constrained Delegation privilege. Then, we are able to impersonate the administrator and request a ticket that we can use to gain a shell with `smbexec.py`.
 
-<figure><img src="../../../.gitbook/assets/image (24) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (24) (2) (1) (1).png" alt=""><figcaption></figcaption></figure>

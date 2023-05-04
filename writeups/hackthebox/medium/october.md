@@ -34,7 +34,7 @@ We can use one of them to upload a `cmd.php5` file to execute on the server, as 
 
 We can confirm we have RCE via `curl`.
 
-<figure><img src="../../../.gitbook/assets/image (37) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (37) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Getting a reverse shell is then trivial.
 
@@ -63,11 +63,11 @@ RELRO     : Partial
 
 In this case, we can go for a Ret2Libc attack. First, we find the buffer size:
 
-<figure><img src="../../../.gitbook/assets/image (38) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (38) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Fixed at 112 it appears (same as length of `local_74`). Now, we can use `ldd` to find the address where `libc` is loaded on the machine:
 
-<figure><img src="../../../.gitbook/assets/image (42) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (42) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then we can simply execute the following commands to get the addresses we need
 

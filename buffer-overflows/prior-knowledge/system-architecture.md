@@ -130,7 +130,7 @@ int main (int argc, char *argv[]){
 
 When the `main()` function is called, the stack frames would look like so:
 
-<figure><img src="../../.gitbook/assets/image (32) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (32) (1) (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 The program first needs to save its location, since if we lose it, we can't run our program anymore as we would lose the `main()` function. Specifically, the processors PUSHes the content of the EIP (which is basically a pointer to the address of memory that the variables are stored in) to the stack. The `main()` function is called via a CALL instruction, and the EIP points to the **first byte** after the CALL instruction.&#x20;
 

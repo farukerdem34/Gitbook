@@ -144,7 +144,7 @@ So the exploit path is to somehow use NoSQL to retrieve the token, and then logi
 
 Viewing the Gitea users, we can find two:
 
-<figure><img src="../../.gitbook/assets/image (52) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (52) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We might need to use these somehow. Also, the script seems to be vulnerable to blind NoSQL injection based on the error messages it sends. Based on the `auth.php` script, if get a `true` condition, we would get the `Check inbox for 2FA token` message. If not, we would get the `Invalid email or password` error.&#x20;
 
@@ -514,4 +514,4 @@ Notes: root account for sysadmin jobs
 
 Now we can `su` to root and finish the machine.
 
-<figure><img src="../../.gitbook/assets/image (50) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (50) (1) (1).png" alt=""><figcaption></figcaption></figure>

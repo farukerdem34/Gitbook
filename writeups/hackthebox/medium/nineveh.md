@@ -4,17 +4,17 @@
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Port 80
 
 I ran a `gobuster` scan against the web application on port 80 and found a hidden directory:
 
-<figure><img src="../../../.gitbook/assets/image (41) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (41) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 When we visit the `/department` directory, we are presented with a login page:
 
-<figure><img src="../../../.gitbook/assets/image (5) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 There was really nothing I could do with this page, so I moved on.
 
@@ -71,7 +71,7 @@ This version of phpLiteAdmin is vulnerable to RCE, and we can follow the PoC her
 
 However, this exploit requires us to be able to run the PHP file somehow, and the LFI on the port 80 dashboard allows for that since it is also in PHP.
 
-<figure><img src="../../../.gitbook/assets/image (4) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now that we have RCE, getting a shell is trivial.&#x20;
 
@@ -81,7 +81,7 @@ Now that we have RCE, getting a shell is trivial.&#x20;
 
 When we move to the main directory, we can find a `/report` directory present, and within it confirmation that the machine has a rootkit installed.
 
-<figure><img src="../../../.gitbook/assets/image (23) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (23) (2) (4).png" alt=""><figcaption></figcaption></figure>
 
 This root kit has some local privilege escalation exploits.&#x20;
 
@@ -89,6 +89,6 @@ This root kit has some local privilege escalation exploits.&#x20;
 
 We can use this to gain a `root` shell.
 
-<figure><img src="../../../.gitbook/assets/image (19) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (19) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ![](<../../../.gitbook/assets/image (36) (1).png>)

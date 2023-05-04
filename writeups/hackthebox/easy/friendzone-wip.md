@@ -28,7 +28,7 @@ This folder contains nothing, but the fact that we have write access indicates t
 
 We can login using the credentials we found earlier in the SMB share. The page then tells us to visit `dashboard.php`, which is a Smart Photo Script.
 
-<figure><img src="../../../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 The `pagename` parameter is vulnerable to LFI, and since this is a PHP application, we can place a PHP reverse shell file somewhere and execute it using this page. That's where the share that we can write to comes in.
 
@@ -42,11 +42,11 @@ http://administrator1.friendzone.red/dashboard.php?image_id=a.jpg&pagename=/etc/
 
 This works because the `pagename` paramter automatically truncates the `.php` extension. The original page included a timestamp at the bottom that is being dynamically generated.
 
-<figure><img src="../../../.gitbook/assets/image (127) (2) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (127) (2).png" alt=""><figcaption></figcaption></figure>
 
 This points towards to some script being used in the backend, and thus we can replace that with our own malicious PHP script to gain a shell.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -54,7 +54,7 @@ This points towards to some script being used in the backend, and thus we can re
 
 As `www-data`, we have limited access over everything. The first place to look is within the `/var/www` file which can contain some credentials.
 
-<figure><img src="../../../.gitbook/assets/image (21) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (21) (2) (3).png" alt=""><figcaption></figcaption></figure>
 
 We can use this to `su friend`.
 
@@ -64,15 +64,15 @@ We can use this to `su friend`.
 
 When we run `pspy64`, we can see that `root` is runnin some scripts in the background:
 
-<figure><img src="../../../.gitbook/assets/image (167) (2) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (167) (2).png" alt=""><figcaption></figcaption></figure>
 
 When we read this script, we can see that it contains some random code that we can't really exploit because we cannot edit it:
 
-<figure><img src="../../../.gitbook/assets/image (29) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (29) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can see that `import os` is used, and any external modules could be exploitable. Conveniently, the machine let's us have write permission to `os.py`.
 
-<figure><img src="../../../.gitbook/assets/image (33) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (33) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then, we just need to append a Python reverse shell to this:
 

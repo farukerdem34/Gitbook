@@ -34,7 +34,7 @@ Earlier, we found some Wordpress-related directories, hence we can use `wpscan` 
 
 With the password and this username, we can SSH into the machine.
 
-<figure><img src="../../../.gitbook/assets/image (18) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

@@ -28,7 +28,7 @@ Here's the web page:
 
 There's some API documentations available for us to read.
 
-<figure><img src="../../../.gitbook/assets/image (15) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (1) (2) (3).png" alt=""><figcaption></figcaption></figure>
 
 Interesting, and there's definitely some exploit available with this. However, just to be sure, I did a `gobuster` scan of the website with the php extension. Didn't manage to find much on the main website, but on the API domain I found something interesting.
 

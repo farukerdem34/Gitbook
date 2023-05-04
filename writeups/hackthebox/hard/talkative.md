@@ -413,7 +413,7 @@ I was taking a look at the Administration panel and seeing what I could do, when
 
 This is sort of like plugins for Rocket Chat, and it appears I can add new ones via Webhooks:
 
-<figure><img src="../../../.gitbook/assets/image (47).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (47) (1).png" alt=""><figcaption></figcaption></figure>
 
 When we click Incoming, it appears we can run some type of Script here:
 

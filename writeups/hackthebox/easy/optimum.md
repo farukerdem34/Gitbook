@@ -4,7 +4,7 @@
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (21) (2) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (21) (2) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 The version of HttpFileServer running here is vulnerable to RCE exploits.
 
@@ -12,7 +12,7 @@ The version of HttpFileServer running here is vulnerable to RCE exploits.
 
 Pick any that you'd like, and we can get a reverse shell as the user.
 
-<figure><img src="../../../.gitbook/assets/image (25) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (25) (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

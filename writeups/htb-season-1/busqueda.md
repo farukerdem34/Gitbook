@@ -22,7 +22,7 @@ We would have to add `searcher.htb` to our `/etc/hosts` file to view the website
 
 This website seems to be a type of search engine using Flask:
 
-<figure><img src="../../.gitbook/assets/image (50) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (50) (1) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 We can submit queries at the bottom using a custom machine and stuff:
 

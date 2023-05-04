@@ -58,7 +58,7 @@ I found this rather interesting, and wanted to fuzz this more. I was able to fin
 
 I also used `gobuster` to see what other files were present on this directory.
 
-<figure><img src="../../../.gitbook/assets/image (29) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (29) (1) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 `master.php` was the most unique.
 

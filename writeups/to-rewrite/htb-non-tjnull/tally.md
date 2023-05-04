@@ -12,7 +12,7 @@ The most interesting was port 1433 with MSSQL and port 21 with FTP, both of whic
 
 Checking port 80 reveals a Microsoft Sharepoint instance.
 
-<figure><img src="../../../.gitbook/assets/image (47) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (47) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 For Microsoft Sharepoint, we can visit the `viewlsts.aspx` file to see all the site contents.
 
@@ -36,7 +36,7 @@ With these, we can access the FTP server.
 
 Within the FTP server, I found a KeePass database within the `/user/tim/files` directory.
 
-<figure><img src="../../../.gitbook/assets/image (39) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (39) (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can download this KeePass database back, and then use `keepass2john` to convert it to a hash and crack it with `john`.
 
@@ -48,7 +48,7 @@ Using this password, we can access the database via `kpcli`.&#x20;
 
 Then, we can use `show -f 0` to view all the passwords available.
 
-<figure><img src="../../../.gitbook/assets/image (26) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (26) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 I tested these credentials with `smbmap`, and we can read one share:
 
@@ -64,7 +64,7 @@ Looking around it, wecome across a suspicious `tester.exe` that does not fit in 
 
 We can download this back to our machine for analysing, and I used `strings` as I always do on binaries I get. When looking through the output, we can see a few lines that contains MSSQL credentials:
 
-<figure><img src="../../../.gitbook/assets/image (52) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (52) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 With this, we can access the MSSQL instance with `sqsh`. Afterwards, getting RCE via `xp_cmdshell` was trivial.
 

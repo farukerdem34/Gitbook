@@ -67,7 +67,7 @@ When interacting with this endpoint, we get some instructions on parameters to s
 
 We can interact with this API and it will return certain bits of information to us about the weather forecasts in cities.
 
-<figure><img src="../../../.gitbook/assets/image (13) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (1) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### RCE Discovery
 
@@ -93,7 +93,7 @@ Afterwards, I found the `.htpasswd` file for the webpage I was blocked from earl
 
 With this, I was able to crack the hash to give `iamthebest` as the password and login to the service on port 80. We can view the `Authorization` header here.
 
-<figure><img src="../../../.gitbook/assets/image (49) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (49) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 With this, I enumerated the users on the machine, of which there was just `r.michaels`. I enumerated the processes he was running, and found that he was running a similar process to the `_httpd` user, but on port 3001 instead.
 
@@ -117,11 +117,11 @@ With this, we can SSH inas the `r.michaels` user.
 
 Within the user's directory, we would find a `devel` backup file.
 
-<figure><img src="../../../.gitbook/assets/image (40) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (40) (2) (3).png" alt=""><figcaption></figcaption></figure>
 
 Since this was a BSD machine, the commands and binaries are a little different. I searched for all the binaries within this machine (since `gpg` was not available) and found that `netpgp` was downloaded. With `netpgp`, we can decrypt this file.
 
-<figure><img src="../../../.gitbook/assets/image (47) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (47) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can decrypt this file and find another `.htpasswd` file.
 

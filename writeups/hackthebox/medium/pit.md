@@ -22,11 +22,11 @@ PORT     STATE SERVICE
 
 Port 9090 was a HTTPS site with a login page:
 
-<figure><img src="../../../.gitbook/assets/image (15) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 We had no credentials and weak default credentials didn't work. Port 80 hosted a Red Hat default page:
 
-<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
 
 Directory, subdomain and other web scans all didn't find anything. So this was an obvious rabbit hole.
 
@@ -112,25 +112,25 @@ End of MIB
 
 So we have 2 users, `michelle` and `root`. We als ofound a new directory at Seed DMS or something. When we view the certificate of the HTTPS site on port 9090, we can see a new subdomain to enumerate.
 
-<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (4).png" alt=""><figcaption></figcaption></figure>
 
 ### Seed DMS
 
 After adding the new domain to our hosts file, we can head to `http://dms-pit.htb/seeddms51x/seeddms` and find another login page:
 
-<figure><img src="../../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (3).png" alt=""><figcaption></figcaption></figure>
 
 I tried a few credentials, and found that `michelle:michelle` was the right one to login.
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can view the change log from the administrator, which states the version of Seed DMS that is currently being used.
 
-<figure><img src="../../../.gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (41) (1).png" alt=""><figcaption></figcaption></figure>
 
 It appears that this is version 5.1.15, which does not have any vulnerabilities via `searchsploit`. This service supports file uploads and is PHP based, so let's try to upload a webshell within Michells' folder.
 
-<figure><img src="../../../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (39) (5).png" alt=""><figcaption></figcaption></figure>
 
 This had the document ID of 29, but I didn't know what to do further. Checking the `searchsploit` output again, we can see that there are RCE exploits for this but they are of the wrong version.
 
@@ -190,11 +190,11 @@ Within `settings.xml`, we can find a set of credentials
 
 This doesn't work with SSH, but we can use this to login to the CentOS interface as `michelle`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (25) (6).png" alt=""><figcaption></figcaption></figure>
 
 In the bottom left corner, we can access the Terminal application, which is basically another webshell as `michelle`.
 
-<figure><img src="../../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (42) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now, we can grab the user flag and also a reverse shell as the user.
 
@@ -227,4 +227,4 @@ It seems to be running any script using a wildcard. Plus, the user can write to 
 snmpwalk -v1 -c public 10.129.228.106 NET-SNMP-EXTEND-MIB::nsExtendObjects
 ```
 
-<figure><img src="../../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (33) (1).png" alt=""><figcaption></figcaption></figure>

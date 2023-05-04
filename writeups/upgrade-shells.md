@@ -57,7 +57,7 @@ This is because the top terminal is **interactive.** `sudo` requires interactive
 
 Let's take a look at another example where I run `whoami`:
 
-<figure><img src="../.gitbook/assets/image (174) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (174) (3).png" alt=""><figcaption></figcaption></figure>
 
 `whoami` is a command that does not require any interactive shell to be executed, hence running it without `sudo` does not require an interactive shell.&#x20;
 
@@ -65,7 +65,7 @@ When I execute `sudo whoami`, it asks for a password on the top terminal, and wh
 
 Here it is after stabilisation:
 
-<figure><img src="../.gitbook/assets/image (153) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (153) (4).png" alt=""><figcaption></figcaption></figure>
 
 Now the output of `sudo` is output onto the same terminal because it is a TTY shell and it is interactive. Take note that commands like `sudo` can still work in non-interactive shells with the `-S` flag, but it is not recommended due to security reasons.&#x20;
 
@@ -97,7 +97,7 @@ Set Teletype (stty) is a program that changes terminal line settings.&#x20;
 
 When we run `stty raw`, we are setting our terminal driver to **raw mode**. In raw mode, the terminal driver **no longer processes any input and output**. If we were to do it on our own terminal, we would be unable to send control characters.&#x20;
 
-<figure><img src="../.gitbook/assets/image (163) (1).png" alt=""><figcaption><p>I cannot execute Ctrl + C here.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (163) (3).png" alt=""><figcaption><p>I cannot execute Ctrl + C here.</p></figcaption></figure>
 
 A side effect of this is the terminal output being a bit visually messy because **output is also no longer processed**.&#x20;
 
@@ -111,7 +111,7 @@ The end product is a fully functioning shell that can execute all commands and c
 
 ## Summary
 
-When we get a reverse shell, we are in a **non-interactive shell**. This means our inputs are **first processed by the local terminal driver**, then sent to the remote machine via the connection, which is then sent to the **remote interactive terminal that executes our shell**. Programs with a visual interface like `vim` or require user input like `sudo` won't work properly as user input is requested in the **interactive terminal**.&#x20;
+When we get a reverse shell, we are in a **non-interactive shell**. This means our inputs are **first processed by the local terminal driver**, then sent to the remote machine via the connection, which is then sent to the **remote interactive terminal that executes our command**. Programs with a visual interface like `vim` or require user input like `sudo` won't work properly as user input is requested in the **interactive terminal**.&#x20;
 
 We have to spawn an interactive shell first using `python` or `script`, and this would allow our reverse shell to take user input and execute all commands properly.&#x20;
 

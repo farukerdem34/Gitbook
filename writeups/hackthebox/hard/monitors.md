@@ -20,7 +20,7 @@ We can run `wpscan` to enumerate the plugins and version, and this finds that **
 
 This version is vulnerable to RFI.
 
-<figure><img src="../../../.gitbook/assets/image (150) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (150) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can confirm this by viewing the `/etc/passwd` file.
 
@@ -28,7 +28,7 @@ We can confirm this by viewing the `/etc/passwd` file.
 
 After further enumeration, there's nothing else that I could find. So we probably need to read more files within this machine. I could not read any user files, so I tried to check some configuration files for the server at `/etc/apache2/sites-enabled/000-default.conf`.
 
-<figure><img src="../../../.gitbook/assets/image (14) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can find a new domain at `cacti-admin.monitors.htb`. Afterwards, I also read the Wordpress configuration files at `/var/www/wordpress/wp-config.php` to find a password.
 
@@ -44,7 +44,7 @@ This version of Cacti is old and vulnerable to loads of exploits. We can login w
 
 <figure><img src="../../../.gitbook/assets/image (125) (2).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (12) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We now have remote access as the user `marcus` and can capture the user flag.
 
@@ -58,7 +58,7 @@ In the user's directory, we find a `note.txt` file that points towards a docker 
 
 I read the configuration files at `/etc/containerd`, and found that the `root` user was running the image.
 
-<figure><img src="../../../.gitbook/assets/image (20) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 We can check the open ports of this machine via `netstat -tulpn` to see other open ports.
 
@@ -86,7 +86,7 @@ We can follow the PoC here to execute it:
 
 Then, we would gain a shell as root in the container.
 
-<figure><img src="../../../.gitbook/assets/image (157) (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (157) (4).png" alt=""><figcaption></figcaption></figure>
 
 ### Sys Module Exploit
 

@@ -4,7 +4,7 @@
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (16) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (4) (3).png" alt=""><figcaption></figcaption></figure>
 
 ### Login Bypass --> File Upload RCE
 
@@ -36,7 +36,7 @@ So the `/uploads` directory is where our files end up. I tried some basic comman
 
 Getting a shell from here is easy.
 
-<figure><img src="../../../.gitbook/assets/image (7) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -66,7 +66,7 @@ I checked for SUID binaries, and found one at `/bin/sysinfo`. When trying to exe
 
 By manipulating the PATH variable and creating a reverse shell script named `fdisk`, I can get a reverse shell as root.
 
-<figure><img src="../../../.gitbook/assets/image (5) (3) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (3) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (43) (1) (3).png" alt=""><figcaption></figcaption></figure>
 

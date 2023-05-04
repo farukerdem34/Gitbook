@@ -19,15 +19,15 @@ PORT     STATE SERVICE
 
 Port 9001 had a typical corporate website:
 
-<figure><img src="../../../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (26) (1).png" alt=""><figcaption></figcaption></figure>
 
 There was a link towards a new portal hosted on `portal.quick.htb`. However, it pointed to port 443 and I could not access that for now. Looking at the rest of the page, we can see other information like the clients they had:
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (5).png" alt=""><figcaption></figcaption></figure>
 
 There are also some testimonials from users:
 
-<figure><img src="../../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (1).png" alt=""><figcaption></figcaption></figure>
 
 We also can note that this is a PHP website as the page above is at `clients.php`. A quick directory search revealed the following:
 
@@ -59,7 +59,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 When viewing the `login.php` page, we see some Ticketing System is used:
 
-<figure><img src="../../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (27) (4).png" alt=""><figcaption></figcaption></figure>
 
 Default credentials don't work here, when examining the HTTP reply we get from trying to login, we see that this is powered by Esigate:
 
@@ -166,7 +166,7 @@ curl --http3 https://portal.quick.htb/docs/Connectivity.pdf > Connect.pdf
 
 Afterwards, when viewing the PDFs, we find some credentials in the Connectivity one.
 
-<figure><img src="../../../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (19) (1).png" alt=""><figcaption></figcaption></figure>
 
 Cool! This also tells us that there might be a Docker container present. Now, we need to guess the email address. Earlier, we saw a bunch of testimonials with countries. I assumed that this was a hint to guess the email somehow.&#x20;
 
@@ -190,11 +190,11 @@ After some brute forcing via `hydra` and guessing the right email, I found that 
 
 After logging in, we see a Ticket Management System:
 
-<figure><img src="../../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (23) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can raise tickets and it takes a message from us.
 
-<figure><img src="../../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20) (1).png" alt=""><figcaption></figcaption></figure>
 
 This is where ESI injection can come in handy. Following the PoC earlier, we can use this:
 
@@ -260,7 +260,7 @@ Command: <xsl:value-of select="$cmd"/>
 
 Our listener port would then receive a shell:
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can grab the user flag now.&#x20;
 
@@ -315,7 +315,7 @@ chisel server -p 5555 --reverse
 
 Then we need to add `printerv2.quick.htb` to our hosts file under `localhost`. Then, we can visit it and see a login page.
 
-<figure><img src="../../../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (21) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### SQL Credentials
 
@@ -387,11 +387,11 @@ This does the same thing as `index.php`, and it compares each hash to the correc
 
 ### Printing LFI
 
-<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can add printers and customise them to connect to other IP addresses:
 
-<figure><img src="../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can also make them run jobs. We obviously need to add a printer pointing to our IP address, but what do we do with it? Let's analyse the `job.php` file to find out more:
 
@@ -502,4 +502,4 @@ DeviceURI https://srvadm%40quick.htb:%26ftQ4K3SGde8%3F@printerv3.quick.htb/print
 
 When URL decoded, we can just use that as the password to `su` to `root`.
 
-<figure><img src="../../../.gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (38) (1).png" alt=""><figcaption></figcaption></figure>

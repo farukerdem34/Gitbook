@@ -39,7 +39,7 @@ So to circumvent this, I took the names.txt file from Seclists (/seclists/userna
 
 Everytime I would find a username, I would then test it for AS-REP roasting and check for null credentials. Eventually, I found this d.klay user.
 
-<figure><img src="../../../.gitbook/assets/image (31) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (31) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 When testing this for AS-REP Roasting, it worked!
 
@@ -121,7 +121,7 @@ Out of all of these users, m.lovegod has the most privileges. The user owns the 
 
 <figure><img src="../../../.gitbook/assets/image (3) (1) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (33) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (33) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 We now need to somehow get a ticket from the `m.lovegod` user and gain access as the `winrm_user` to get a shell.
 

@@ -4,7 +4,7 @@
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (41) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (41) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Sparklays Directories
 
@@ -39,7 +39,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 I also ran a `feroxbuster` scan to leverage on its recursive scans, and found some more directories.
 
-<figure><img src="../../../.gitbook/assets/image (35) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (35) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 These directories returned nothing, so I did another `gobuster` scan with the `-x` flag to indicate file extensions like .html or .php.
 
@@ -76,7 +76,7 @@ On the `design.html` page, all we see is this:
 
 This brings us to `changelogo.php`, which allows us to upload a file. Only image file are allowed. Obviously, we have to upload a PHP webshell somehow and bypass the file type check. I tried with multiple PHP extensions, and found that `.php5` works.
 
-<figure><img src="../../../.gitbook/assets/image (38) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (38) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 ```
 $ curl http://sparklays.com/sparklays/design/uploads/test1.php5?cmd=id
@@ -149,7 +149,7 @@ The page reveals a DNS server:
 
 The first link doesn't work, but the second brings us to this page where .ovpn files can be uploaded and tested.
 
-<figure><img src="../../../.gitbook/assets/image (37) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (37) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Googling around for possible exploits reveals that it is possible for us to gain a reverse shell using .ovpn files. First we need to find the local IP Address of the machine, which is 192.168.122.1 when inspecting `ip addr` output.
 

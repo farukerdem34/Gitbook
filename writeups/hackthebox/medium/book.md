@@ -75,7 +75,7 @@ When I set this as the Book Title and Author when uploading the book, and when w
 
 `reader` was the user in this machine. We can attempt to read his private SSH key at `/home/reader/.ssh/id_rsa`, which he does have. We can then take that key and SSH into the machine.
 
-<figure><img src="../../../.gitbook/assets/image (30) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (30) (2) (3).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
