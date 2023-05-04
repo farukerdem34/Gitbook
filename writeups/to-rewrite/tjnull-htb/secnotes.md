@@ -26,7 +26,7 @@ Port 80 just shows a login page:
 
 We can create a user to login.
 
-<figure><img src="../../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
 
 There's a user with an email, and this user might click on the links we send. I sent one like so:
 
@@ -108,7 +108,7 @@ Now we have RCE, and we can get a reverse shell through downloading and executin
 
 &#x20;
 
-<figure><img src="../../../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -159,7 +159,7 @@ c:\Windows\WinSxS\amd64_microsoft-windows-lxss-bash_31bf3856ad364e35_10.0.17134.
 
 The first one doesn't work, so I tried the second one.
 
-<figure><img src="../../../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
 
 We would spawn in a `root` shell. We can spawn a PTY shell the normal way with `python3`.
 

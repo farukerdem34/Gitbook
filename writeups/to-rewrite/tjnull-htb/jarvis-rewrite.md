@@ -26,7 +26,7 @@ Port 80 reveals a hotel site:
 
 When looking at the rooms available, a unique URL is being used:
 
-<figure><img src="../../../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
 
 Interesting. I ran a `gobuster` scan in the background while enumerating the URL for possible injection.&#x20;
 

@@ -133,7 +133,7 @@ The administrator can be cracked on CrackStation:
 
 When we login, all we see is this:
 
-<figure><img src="../../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
 
 We can download the backup files and view it to find that it's a base64 encoded file. When decoded, it gives a Zip file.
 

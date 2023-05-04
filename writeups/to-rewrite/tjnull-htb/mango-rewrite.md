@@ -46,7 +46,7 @@ When examining requests in Burp, I found that the NoSQL Injection returned a 302
 
 While the regular request returned a 200.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
 
 This to me was a clear indication that NoSQL Injection was the path here. I used a script I found on Github to find the rest:
 
@@ -74,7 +74,7 @@ We can also `su` to `admin` using the other password.
 
 I ran LinPEAS for to enumerate. Within the output, I found one SGID binary.
 
-<figure><img src="../../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
 
 We can run `jjs` to get a `root` shell. All we need to do is follow what is written on GTFOBins:
 
