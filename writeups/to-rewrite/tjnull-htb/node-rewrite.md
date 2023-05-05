@@ -331,7 +331,7 @@ tom@node:~$ backup 1 2 3
 
 I transferred this back to my machine and took a look at it using `ltrace` and `strace`.
 
-<figure><img src="../../../.gitbook/assets/image (49).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (49) (6).png" alt=""><figcaption></figcaption></figure>
 
 It seems that it first checks whether `-q` is entered, so that must be the first argument. This was also using `strcmp`, which was obviously vulnerable to BOF. A quick `checksec` reveals this has NX enabled:
 
@@ -440,7 +440,7 @@ newline=$'\n'
 ```
 {% endcode %}
 
-<figure><img src="../../../.gitbook/assets/image (17) (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (11) (1).png" alt=""><figcaption></figcaption></figure>
 
 This not my work, but rather from here:
 

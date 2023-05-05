@@ -146,6 +146,6 @@ Session completed.
 
 Then, we can get a shell via `smbexec.py`.
 
-<figure><img src="../../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (11).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!
