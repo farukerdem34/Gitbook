@@ -20,7 +20,7 @@ PORT    STATE SERVICE
 
 Port 80 straight up denies me, and when we head to port 443 we see that this is some type of search engine:
 
-<figure><img src="../../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (6).png" alt=""><figcaption></figcaption></figure>
 
 When we view the certificate, we see that there's another domain present:
 
@@ -42,7 +42,7 @@ username[$ne]=toto&password[$ne]=toto
 
 When examining requests in Burp, I found that the NoSQL Injection returned a 302.
 
-<figure><img src="../../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (42) (7).png" alt=""><figcaption></figcaption></figure>
 
 While the regular request returned a 200.&#x20;
 
@@ -66,7 +66,7 @@ Then, we can use one of the passwords to SSH in:
 
 We can also `su` to `admin` using the other password.
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (4).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

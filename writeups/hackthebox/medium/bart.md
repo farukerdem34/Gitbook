@@ -22,7 +22,7 @@ harvey is the user we probably need to access.&#x20;
 
 We can fuzz subdomains using the `bart.htb` domain to find more places to visit.
 
-<figure><img src="../../../.gitbook/assets/image (32) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (32) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### monitor.bart.htb
 
@@ -94,7 +94,7 @@ When checking our privileges, we notice we have the SeImpersonatePrivilege enabl
 
 Checking `systeminfo`, we also find that a vulnerable version of Windows was running with no hotfixes.
 
-<figure><img src="../../../.gitbook/assets/image (31) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (31) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can run the JuicyPotato exploit to get a reverse shell as root. First, we need to create a .bat file that would be run. I used nc.exe to run my shell:
 

@@ -36,7 +36,7 @@ Connection: close
 
 I took a look at the page source, and found that the controllers were left there.
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (3).png" alt=""><figcaption></figcaption></figure>
 
 If we take a look at the `admin.js` file, we can find an `/api` backend.&#x20;
 
@@ -133,7 +133,7 @@ The administrator can be cracked on CrackStation:
 
 When we login, all we see is this:
 
-<figure><img src="../../../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (32) (3).png" alt=""><figcaption></figcaption></figure>
 
 We can download the backup files and view it to find that it's a base64 encoded file. When decoded, it gives a Zip file.
 
@@ -393,7 +393,7 @@ I chose the second becuase it's easier. In this case, I chose to backup the `/et
 backup -q 45fac180e9eee72f4fd2d9386ea7033e52b7c740afc3d98a8d0230167104d47 /etc/shadow > backup.shadow
 ```
 
-<figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (8).png" alt=""><figcaption></figcaption></figure>
 
 I took a look at the `ltrace` output again and found out why it woudln't work. It seems that some directories are blacklisted when I tried to backup the user's directory:
 
@@ -440,7 +440,7 @@ newline=$'\n'
 ```
 {% endcode %}
 
-<figure><img src="../../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (11).png" alt=""><figcaption></figcaption></figure>
 
 This not my work, but rather from here:
 

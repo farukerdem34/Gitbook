@@ -74,7 +74,7 @@ uid=33(www-data) gid=33(www-data) groups=33(www-data)
 
 Then, we can get an easy reverse shell by using a `bash` one-liner.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (39) (8).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
