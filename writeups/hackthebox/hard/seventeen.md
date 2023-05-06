@@ -26,7 +26,7 @@ Port 80 hosts a education based website:
 
 The Github tag there is to the creator's own repository, so there's nothing to investigate there. There isn't much on the website aside from the usual. Let's move on to port 8000.
 
-<figure><img src="../../../.gitbook/assets/image (81).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (81) (4).png" alt=""><figcaption></figcaption></figure>
 
 Perhaps we need to gain access and do port forwarding for this later. For now, we can fuzz for both subdomains and directories within the main website itself.&#x20;
 
@@ -86,7 +86,7 @@ A directory scan reveals nothing, but the subdomain scanner finds an `exam.seven
 
 The website is hosting some kind of exam reviewer software.
 
-<figure><img src="../../../.gitbook/assets/image (95).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (95) (4).png" alt=""><figcaption></figcaption></figure>
 
 A quick search via `searchsploit` reveals that there are exploits for this software.&#x20;
 
@@ -161,7 +161,7 @@ The most interesting part of this was the `avatar` column, which a directory wit
 
 When we add the new subdomain to our `/etc/hosts` file and visit it, it brings us to a new login page.
 
-<figure><img src="../../../.gitbook/assets/image (93).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (93) (4).png" alt=""><figcaption></figcaption></figure>
 
 Now there's another management system, and we still have SQL Injection within the exam system to find the passwords needed. We can continue to enumerate that database:
 
@@ -207,11 +207,11 @@ Table: student
 
 The hashes in the `user` table cannot be cracked. However, the hash for Kelly within the student table can be cracked.
 
-<figure><img src="../../../.gitbook/assets/image (79).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (79) (5).png" alt=""><figcaption></figcaption></figure>
 
 Using this, we can login to the school system.
 
-<figure><img src="../../../.gitbook/assets/image (86).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (86) (5).png" alt=""><figcaption></figcaption></figure>
 
 Based on the theme of this box, we can search for more exploits regarding the software used here:
 

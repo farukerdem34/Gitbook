@@ -111,7 +111,7 @@ SMB         10.129.85.209   445    RESOLUTE         [+] megabank.local\melanie:W
 
 We have a user `melanie` who has the weak password. We can login as this user using `evil-winrm`.
 
-<figure><img src="../../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (7).png" alt=""><figcaption></figcaption></figure>
 
 Grab the user flag.
 
@@ -173,7 +173,7 @@ At line:1 char:1
 
 With these credentials, we can login as `ryan`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (8).png" alt=""><figcaption></figcaption></figure>
 
 ### DNS Admin
 

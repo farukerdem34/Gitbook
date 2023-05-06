@@ -19,7 +19,7 @@ PORT     STATE SERVICE
 
 This was a default website:
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
 
 There was nothing inherently interesting about the site, and I didn't have any good credentials. However, based on the box name, I knew we had to exploit some type of JS framework here. When we take a look at the requests sent in Burp, we can see this is an Express website.
 
@@ -393,7 +393,7 @@ I chose the second becuase it's easier. In this case, I chose to backup the `/et
 backup -q 45fac180e9eee72f4fd2d9386ea7033e52b7c740afc3d98a8d0230167104d47 /etc/shadow > backup.shadow
 ```
 
-<figure><img src="../../../.gitbook/assets/image (16) (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 I took a look at the `ltrace` output again and found out why it woudln't work. It seems that some directories are blacklisted when I tried to backup the user's directory:
 
@@ -421,7 +421,7 @@ tom@node:/etc$ ls -la /dev/shm/shadow.back
 
 We can then transfer it over using `nc` and then decode it in the same manner, with the same password protected zip.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (36) (5).png" alt=""><figcaption></figcaption></figure>
 
 However, this hash cannot be cracked...
 

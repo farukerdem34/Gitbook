@@ -39,7 +39,7 @@ Loads of ports available.&#x20;
 
 When we visit the website hosted, we need to add `fuse.fabricorp.local` to our `/etc/hosts` file. I also added `fabricorp.local` in case. The wesbite was some sort of printing service.
 
-<figure><img src="../../../.gitbook/assets/image (79) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (79) (5) (2).png" alt=""><figcaption></figcaption></figure>
 
 When we view the CSV files of each printing log, we can the user that printed them.
 
@@ -71,7 +71,7 @@ cewl http://fuse.fabricorp.local/papercut/logs/html/index.htm --with-numbers > p
 
 Afterwards, we can run `crackmapexec` to brute force the passwords. Out of all the failures, one stood out.
 
-<figure><img src="../../../.gitbook/assets/image (81) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (81) (4) (2).png" alt=""><figcaption></figcaption></figure>
 
 Seems that we have a valid expired credential here. To change passwords, we can use `smbpasswd`.
 
@@ -140,7 +140,7 @@ rpcclient $> enumprinters
 
 We now have more credentials! With this, we can try brute forcing the possible passwords with the username list we updated earlier.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (85).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (85) (4).png" alt=""><figcaption></figcaption></figure>
 
 We can test the credentials, and find that we are able to `evil-winrm` into the machine.
 

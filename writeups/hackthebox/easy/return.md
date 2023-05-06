@@ -52,7 +52,7 @@ There is a HTTP port open, and when viewed, it shows a Printer Admin Panel:
 
 When we view the settings, this is what we see:
 
-<figure><img src="../../../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (31) (7).png" alt=""><figcaption></figcaption></figure>
 
 This looks poisanable since we can control the server address. As such, I started `responder`.&#x20;
 
@@ -194,4 +194,4 @@ I wasn't too sure how they got to using this. Anyways, we can configure it like 
 
 This would create a reverse shell on our listener port:
 
-<figure><img src="../../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (42) (8).png" alt=""><figcaption></figcaption></figure>

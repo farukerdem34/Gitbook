@@ -17,7 +17,7 @@ PORT   STATE SERVICE
 
 Port 80 hosts a Portfolio site for a David White:
 
-<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (7).png" alt=""><figcaption></figcaption></figure>
 
 Here are the HTTP headers when visiting the site:
 

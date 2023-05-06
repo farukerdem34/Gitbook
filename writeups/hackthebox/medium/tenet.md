@@ -21,7 +21,7 @@ Another web-based exploit. We have to add `tenet.htb` to our `/etc/hosts` file t
 
 The machine has a blog-like website:
 
-<figure><img src="../../../.gitbook/assets/image (84).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (84) (4).png" alt=""><figcaption></figcaption></figure>
 
 This is a Wordpress based site if we view the page source. If we view some of the comments within the pages, we can see this comment that points us towards another file:
 
@@ -179,10 +179,10 @@ done
 
 After a while, we should get an error like this:
 
-<figure><img src="../../../.gitbook/assets/image (91).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (91) (4).png" alt=""><figcaption></figcaption></figure>
 
 Then we can just SSH to `root`.
 
-<figure><img src="../../../.gitbook/assets/image (82).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (82) (4).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

@@ -9,19 +9,34 @@ HTB Writeups added:
 * OnlyForYou (HTB Season 1)
 * MonitorsTwo (HTB Season 1)
 * Easy
+  * Bank
   * Beep
+  * Curling
+  * Bounty
+  * Driver
+  * Help
   * Lame&#x20;
+  * Legacy
   * Nibbles&#x20;
   * Omni&#x20;
+  * Photobomb
   * Postman
+  * Previse
   * Remote&#x20;
+  * Routerspace
   * Safe&#x20;
+  * Sauna
   * Sense&#x20;
   * Shocker&#x20;
+  * Shoppy
   * Traverxec&#x20;
   * Valentine
+  * Writeup
 * Medium
   * Bitlab
+  * Cascade
+  * Cronos
+  * Intelligence
   * Jarvis
   * Mango
   * Node

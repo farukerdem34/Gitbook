@@ -32,7 +32,7 @@ We can enumerate that instead, because why would they hide it if testing for SSR
 
 The HTTPS site had nothing for that domain, but the HTTP site revealed a login page:
 
-<figure><img src="../../../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (35) (6).png" alt=""><figcaption></figcaption></figure>
 
 From reading the box name, it was obviously related to exploiting MongoDB, which does not use SQL (otherwise called NoSQL). This login page might be vulnerable to NoSQL injection. I tried this payload:
 
@@ -46,7 +46,7 @@ When examining requests in Burp, I found that the NoSQL Injection returned a 302
 
 While the regular request returned a 200.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (26) (9).png" alt=""><figcaption></figcaption></figure>
 
 This to me was a clear indication that NoSQL Injection was the path here. I used a script I found on Github to find the rest:
 
@@ -54,7 +54,7 @@ This to me was a clear indication that NoSQL Injection was the path here. I used
 
 We can first verify the usernames:
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (10).png" alt=""><figcaption></figcaption></figure>
 
 This also confirms that it works and it finds 2 users, `mango` and `admin`. Then, we can find the passwords:
 
@@ -62,7 +62,7 @@ This also confirms that it works and it finds 2 users, `mango` and `admin`. Then
 
 Then, we can use one of the passwords to SSH in:
 
-<figure><img src="../../../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (30) (8).png" alt=""><figcaption></figcaption></figure>
 
 We can also `su` to `admin` using the other password.
 

@@ -60,7 +60,7 @@ There was a `/phpmyadmin` panel on the website, but we don't have any credential
 
 The fact that it runs means that SQL injection might be the way. Initially, I tried `sqlmap` but it always crashes and blocks me for a while. So there was a firewall and I had to do this manually. First, we can try UNION injection to find out the number of columns.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (34) (8).png" alt=""><figcaption></figcaption></figure>
 
 It appears there are 7 columns. Now, we can start to enumerate the database. Following Hacktricks, we can make use of `group_concat()` to get the data out. This can be done using&#x20;
 
@@ -90,11 +90,11 @@ Host,User,Password,Select_priv,Insert_priv,Update_priv,Delete_priv,Create_priv,D
 
 The username and password look like the best thing to get out.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (44) (8).png" alt=""><figcaption></figcaption></figure>
 
 This can be cracked on CrackStation.
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (9).png" alt=""><figcaption></figcaption></figure>
 
 With these credentials, we can login to the phpMyAdmin instance. The instance used here is outdated.
 
@@ -112,7 +112,7 @@ phpMyAdmin 4.8.1 - Remote Code Execution (RCE)             | php/webapps/50457.p
 
 We can verify that the exploit works.
 
-<figure><img src="../../../.gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (51) (5).png" alt=""><figcaption></figcaption></figure>
 
 A `mkfifo` one-liner can be used to gain a reverse shell.
 
@@ -320,7 +320,7 @@ www-data@jarvis:/tmp$ sudo -u pepper /var/www/Admin-Utilities/simpler.py -p
 Enter an IP: $(/tmp/shell.sh)
 ```
 
-<figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (11).png" alt=""><figcaption></figcaption></figure>
 
 We can now grab the user flag.&#x20;
 
@@ -364,6 +364,6 @@ systemctl start suid
 /bin/bash -p
 ```
 
-<figure><img src="../../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (27) (8).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!&#x20;

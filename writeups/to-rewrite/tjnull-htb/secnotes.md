@@ -76,7 +76,7 @@ http://10.129.85.180/change_pass.php?password=easypass&confirm_password=easypass
 
 After waiting for a bit, we can login as `tyler` using this password.
 
-<figure><img src="../../../.gitbook/assets/image (50).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (50) (5).png" alt=""><figcaption></figcaption></figure>
 
 There are some credentials located within the note **new site**.&#x20;
 
@@ -108,7 +108,7 @@ Now we have RCE, and we can get a reverse shell through downloading and executin
 
 &#x20;
 
-<figure><img src="../../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20) (9).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -159,7 +159,7 @@ c:\Windows\WinSxS\amd64_microsoft-windows-lxss-bash_31bf3856ad364e35_10.0.17134.
 
 The first one doesn't work, so I tried the second one.
 
-<figure><img src="../../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (25) (7).png" alt=""><figcaption></figcaption></figure>
 
 We would spawn in a `root` shell. We can spawn a PTY shell the normal way with `python3`.
 
@@ -185,7 +185,7 @@ smbclient -U 'administrator%u6!4ZwgwOM#^OBf#Nwnh' \\\\127.0.0.1\\c$
 
 We can verify these credentials via `smbmap`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (37).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (37) (6).png" alt=""><figcaption></figcaption></figure>
 
 We have complete control over the file system, and we can get a shell with `smbexec.py` because only SMB is open.
 

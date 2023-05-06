@@ -312,7 +312,7 @@ Based on this, we just need to head to `C:\TeamCity\logs` and run `type * | Sele
 
 Following the instructions, we would gain access as the administrator of TeamCity rather easily.
 
-<figure><img src="../../.gitbook/assets/image (51) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (51) (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 As the administrator, we see some additional stuff like this thing:
 
