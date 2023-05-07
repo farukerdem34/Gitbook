@@ -19,7 +19,7 @@ PORT   STATE SERVICE
 
 Port 80 is hosting a GitLab instance:
 
-<figure><img src="../../../.gitbook/assets/image (75).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (75) (5).png" alt=""><figcaption></figcaption></figure>
 
 It appears I cannot createa a new account, so I took a look at the links present on the site. By clicking on Help, I was brought to a new page:
 
@@ -222,7 +222,7 @@ chisel server -p 5555 --reverse
 
 With this, we can use `psql` on our machine along with the password we found earlier to login.
 
-<figure><img src="../../../.gitbook/assets/image (117).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (117) (2).png" alt=""><figcaption></figcaption></figure>
 
 I was able to find a password from this database:
 
@@ -281,7 +281,7 @@ This seems to be parsing some kind of input, and denying access if it is wrong. 
 
 It appears that this is executing `putty.exe`, which is an SSH client for Windows. That would explain the Access Denied string. This binary was trying to `ssh` somewhere, and there was probably a password being sent. I also found that despite ASLR being enabled, the last 4 characters of addresses are always the same.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (122).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (122) (4).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (174).png" alt=""><figcaption></figcaption></figure>
 

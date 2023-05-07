@@ -14,7 +14,7 @@ Port 80 shows this page here.
 
 The hint here is to check the `/sparklays` directory, which returns a 403 error.
 
-<figure><img src="../../../.gitbook/assets/image (75) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (75) (5) (2).png" alt=""><figcaption></figcaption></figure>
 
 Since we know this directory exists, what we can do is to use `gobuster` on the `/sparklays` directory to find others. Doing this reveals the `/design` directory.
 

@@ -206,4 +206,4 @@ Afterwards, we can create a `deploy.sh` file that adds our public key into the `
 
 This would allow us to SSH in as `root`.
 
-<figure><img src="../../../.gitbook/assets/image (100).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (100) (4).png" alt=""><figcaption></figcaption></figure>

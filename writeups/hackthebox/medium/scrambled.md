@@ -2,7 +2,7 @@
 description: Linux Method here.
 ---
 
-# Scrambled (AD)
+# Scrambled
 
 ## Gaining Access
 
@@ -180,4 +180,4 @@ Afterwards, we just need to prepend a UPLOAD\_ORDER; string, and send this to po
 
 <figure><img src="../../../.gitbook/assets/image (421).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (77) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (77) (1) (2).png" alt=""><figcaption></figcaption></figure>

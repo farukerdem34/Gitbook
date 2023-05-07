@@ -58,11 +58,11 @@ Interesting. Let's take a look at port 8080.
 
 Port 8080 is hosting a GitBucket instance:
 
-<figure><img src="../../../.gitbook/assets/image (120).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (120) (3).png" alt=""><figcaption></figcaption></figure>
 
 We can create a new account and sign in to see if there are any existing repositories. Straight away, we see tons of push requests to the Market repository.
 
-<figure><img src="../../../.gitbook/assets/image (122) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (122) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 From this, we can find the changes made to the repository. From one of them, we can view the password for the administrator panel by viewing changes made to `tomcat-users.xml`.&#x20;
 
@@ -78,7 +78,7 @@ While reading Hakctricks for Tomcat vulnerabilities, I found this:
 
 So by using `/;/`, we might be able to bypass the 403 given earlier. This works for this machine.
 
-<figure><img src="../../../.gitbook/assets/image (102).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (102) (2).png" alt=""><figcaption></figcaption></figure>
 
 Using `tomcat:42MrHBf*z8{Z%`, we can access the Tomcat dashboard:
 

@@ -8,7 +8,7 @@ description: Took me a few weeks...really long and really convuluted.
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (447).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (447) (1).png" alt=""><figcaption></figcaption></figure>
 
 When trying to head to the webpage, we need to use the `www.windcorp.htb`domain.
 
@@ -24,7 +24,7 @@ Looking through the web page, we can take note of some names which might be impo
 
 This website might have other subdomains, so I began fuzzing with `gobuster` and `wfuzz`. Found one at `portal.windcorp.htb`.
 
-<figure><img src="../../../.gitbook/assets/image (450).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (450) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can add that to the `/etc/hosts` file and enumerate there.
 
@@ -32,11 +32,11 @@ We can add that to the `/etc/hosts` file and enumerate there.
 
 At the new domain, we are greeted by a login page.
 
-<figure><img src="../../../.gitbook/assets/image (438).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (438) (1).png" alt=""><figcaption></figcaption></figure>
 
 I attempted to login with `admin:admin`, and it worked!
 
-<figure><img src="../../../.gitbook/assets/image (432).png" alt=""><figcaption><p><br></p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (432) (1).png" alt=""><figcaption><p><br></p></figcaption></figure>
 
 When proxying the traffic, we can view an interesting cookie.
 
@@ -56,7 +56,7 @@ If-None-Match: W/"56c-p/i7GTqmqUq+k/bjnk4SFBcSAkI"
 
 The `profile` cookie looked like a JWT token, but it was not.
 
-<figure><img src="../../../.gitbook/assets/image (442).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (442) (1).png" alt=""><figcaption></figcaption></figure>
 
 Also, the website was **powered by Express,** which might be useful in determining possible exploits regarding these cookies.&#x20;
 
@@ -72,11 +72,11 @@ It seems that ModSec is the WAF used to protect this webpage. Odd that they woul
 
 This article states how there's a DoS condition possible with Mod Security through the use of a second `=` sign within the cookie parameter.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (459).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (459) (1).png" alt=""><figcaption></figcaption></figure>
 
 The PoC also states that it's possible to inject payloads through this.
 
-<figure><img src="../../../.gitbook/assets/image (457).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (457) (1).png" alt=""><figcaption></figcaption></figure>
 
 So with this website, so far we know that this is running an Express framework, and the cookie is the point of injection. Doing research on cookie and Express related vulnerabilities led me to this article:
 
@@ -117,7 +117,7 @@ This machine was supposed to be a Windows machine, but I ended up within a Linux
 
 Anyways, when viewing the home directory, we see this backup.zip file:
 
-<figure><img src="../../../.gitbook/assets/image (437).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (437) (1).png" alt=""><figcaption></figcaption></figure>
 
 When trying to unzip it, we can see that it is password protected and that the `/etc/passwd` file si within it. There are also a ton of other files related to Active Directory, such as GPOs and Kerberos configurations.
 
@@ -155,15 +155,15 @@ Within the zip file, there were tons of configuration files to look through. Nat
 
 Within it, there were some ldb files.
 
-<figure><img src="../../../.gitbook/assets/image (453).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (453) (1).png" alt=""><figcaption></figcaption></figure>
 
 Within the cache\_windcorp.htb.ldb file, I found a credential after using `strings` on it. The user was `ray.duncan`.
 
-<figure><img src="../../../.gitbook/assets/image (433).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (433) (1).png" alt=""><figcaption></figcaption></figure>
 
 And he has a hashed password within this folder.
 
-<figure><img src="../../../.gitbook/assets/image (439).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (439) (1).png" alt=""><figcaption></figcaption></figure>
 
 This hash can be cracked easily:
 
@@ -175,7 +175,7 @@ So now we have SOME credentails. Doing further enumeration on the files reveals 
 
 So 192.168.0.2 had the KDC (and hence DC) of this machine.  Within the other db files, there was mention of a `hope.windcorp.htb` domain.
 
-<figure><img src="../../../.gitbook/assets/image (455).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (455) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Ray.Duncan
 
@@ -223,7 +223,7 @@ Now we can start with some proper enumeration of the domain. The first thing I n
 
 With the credentials for ray.duncan, we can actually request a ticket for him. This can be done using `getST.py`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (97) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (97) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 WIth this ticket, we can check out the shares within the domain, since SMB was open on the host.
 

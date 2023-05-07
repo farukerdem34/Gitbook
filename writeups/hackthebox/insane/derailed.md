@@ -40,7 +40,7 @@ This directory basically shows us every single path there was in the website:
 
 Earlier, we saw some form of clipnote function. Testing it shows us that each time we create a new one, it is stored on the server somewhere. Notice that this one I created was 110.
 
-<figure><img src="../../../.gitbook/assets/image (102) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (102) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 &#x20;Using the **/clipnotes/raw/:id** format, I was able to view the first clipnote, submitted by a user called Alice. Visiting anything other than 1 was not possible.
 
@@ -391,7 +391,7 @@ WIthin the config file, we can find another password.&#x20;
 
 There was a sqlite3 file here. Within it, we can find this portion here with hashes for toby.
 
-<figure><img src="../../../.gitbook/assets/image (458).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (458) (1).png" alt=""><figcaption></figcaption></figure>
 
 Checking the `/etc/passwd` file, we can see that the openmediavault-webgui user is Toby Wright.
 
@@ -403,7 +403,7 @@ I extracted this hash and attempted to crack it.
 
 WIth this, we can `su` to the openmediavault-webgui user.
 
-<figure><img src="../../../.gitbook/assets/image (435).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (435) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### OpenMediaVault
 
@@ -417,7 +417,7 @@ Also, I saw this config file when re-running LinPEAS.
 
 Open Media Vault is a network-attahced storage system, and I wanted to take a look into it. We can port forward this via `chisel`.
 
-<figure><img src="../../../.gitbook/assets/image (434).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (434) (1).png" alt=""><figcaption></figcaption></figure>
 
 I couldn't find the creds for this to login, so I was unable to exploit it.
 
@@ -425,7 +425,7 @@ I couldn't find the creds for this to login, so I was unable to exploit it.
 
 I took a look at the config files that we had access to. There was one portion that was interesting.
 
-<figure><img src="../../../.gitbook/assets/image (451).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (451) (1).png" alt=""><figcaption></figcaption></figure>
 
 There were user entries, and they seemed to accept a `name` and an `sshpubkeys`. Perhaps this could be used to update the SSH for the machine or something. Checking our `id`, it seems we can edit this config file and update it as well.
 
@@ -433,7 +433,7 @@ There were user entries, and they seemed to accept a `name` and an `sshpubkeys`.
 
 The `/usr/sbin` file contains loads of `omv` related tools too:
 
-<figure><img src="../../../.gitbook/assets/image (446).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (446) (1).png" alt=""><figcaption></figcaption></figure>
 
 This website on the OMV website was very helpful:
 

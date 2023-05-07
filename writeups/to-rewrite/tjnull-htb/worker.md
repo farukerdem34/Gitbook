@@ -218,7 +218,7 @@ dir
 
 I tried to `evil-winrm` in as the user, and it worked!
 
-<figure><img src="../../../.gitbook/assets/image (70).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (70) (4).png" alt=""><figcaption></figcaption></figure>
 
 We can then grab the user flag easily.&#x20;
 
@@ -238,7 +238,7 @@ This means that we can set pipeline permissions. Using this, we can create a new
 
 Use Azure Repos Git > Parts Unlimited > Starter Pipeline. Here, we can create a YAML script to gain a reverse shell.
 
-<figure><img src="../../../.gitbook/assets/image (127) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (127) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Replace it with this:
 
@@ -264,6 +264,6 @@ The reason we need to change the Pool is because there is no pool named 'Default
 
 Once we run it, we would get a reverse shell once the command executes.
 
-<figure><img src="../../../.gitbook/assets/image (77).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (77) (1).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

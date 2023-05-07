@@ -43,7 +43,7 @@ What do you want me to echo back?
 
 So this was a Buffer Overflow challenge! We probably need to exploit this binary to get a shell. Let's take a look at the `main` function of this binary in `ghidra`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (72).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (72) (4).png" alt=""><figcaption></figcaption></figure>
 
 This was obviously vulnerable to BOF. The most important thing is that `system` is used in the binary, **so we don't need to find the system function.** We can just use the existing one via ROP chaining.&#x20;
 

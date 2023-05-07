@@ -66,7 +66,7 @@ So his password is rubberducky. With these credentials, we can log in to the web
 
 Within the login, we are able to simply register and start a new docker container.
 
-<figure><img src="../../../.gitbook/assets/image (141).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (141) (2).png" alt=""><figcaption></figcaption></figure>
 
 Within each docker container, we can basically get RCE on it. This can be done using the execute command button. I found that using the one without the background creates a very unstable shell, so use the other one.
 

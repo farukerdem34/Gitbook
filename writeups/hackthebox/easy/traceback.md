@@ -52,7 +52,7 @@ There's also a message left behind by the `sysadmin` user.
 
 When running LinPEAS, we can find that there are some interesting files we can write to:
 
-<figure><img src="../../../.gitbook/assets/image (117) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (117) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 To exploit this, we would need to trigger the message to be displayed through SSH. As such, we can create a public key and echo it into the `authorized_keys` file for `sysadmin`. Afterwards, we need to execute this command:
 

@@ -126,7 +126,7 @@ We can login as `sierra.frye` usingthe credentials we found earlier. For Compute
 
 Now, we had a CLI as Sierra.frye.
 
-<figure><img src="../../../.gitbook/assets/image (98) (1).png" alt=""><figcaption><p>'</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (98) (1) (3).png" alt=""><figcaption><p>'</p></figcaption></figure>
 
 Looking back to Bloodhound, I found that this user was able to ReadGMSAPassword for the `bir-adfs-gmsa` user, in which the latter had GenericAll privileges over the domain admin `tristan.davies`.
 

@@ -43,7 +43,7 @@ We don't have credentials as the administrator, but we do have an account. Most 
 
 First, we need to create a new project and import project via Repo by URL:
 
-<figure><img src="../../../.gitbook/assets/image (126).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (126) (4).png" alt=""><figcaption></figcaption></figure>
 
 Then, we need to send this within the Git Repository URL field:
 

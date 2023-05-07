@@ -22,7 +22,7 @@ Based on normal HTB practice, we can add `seventeen.htb` to our `/etc/hosts` fil
 
 Port 80 hosts a education based website:
 
-<figure><img src="../../../.gitbook/assets/image (97).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (97) (2).png" alt=""><figcaption></figcaption></figure>
 
 The Github tag there is to the creator's own repository, so there's nothing to investigate there. There isn't much on the website aside from the usual. Let's move on to port 8000.
 
@@ -257,7 +257,7 @@ When we visit the new subdomain, we are presented with antoehr login page.
 
 &#x20;A quick inspection on the page source reveals this is using an application called RoundCube.
 
-<figure><img src="../../../.gitbook/assets/image (107).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (107) (4).png" alt=""><figcaption></figcaption></figure>
 
 The page source also tells us this is RoundCube version 1.4.2. When searching for exploits, we can come across this:
 
@@ -296,7 +296,7 @@ We find that it stores the uploads at `/files/<studentID>/uploads`. We can then 
 
 Great! However, when I tried the exploit the first time, it wouldn't work for some reason. Turns out, we did not find the right directory where the files are stored. Running a ferox`buster` scan for the upload directory would reveal another one.
 
-<figure><img src="../../../.gitbook/assets/image (98).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (98) (1).png" alt=""><figcaption></figcaption></figure>
 
 The `/papers` directory seems to be where they are stored. After that, we can perform the RCE. Following the PoC, we need to send this POST request via Burp.
 
