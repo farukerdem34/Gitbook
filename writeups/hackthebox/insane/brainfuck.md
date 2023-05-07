@@ -111,7 +111,7 @@ The file is password encrypted, so we have to use `ssh2john.py` to convert this 
 
 Then we can use `openssl rsa` to write the key out.
 
-<figure><img src="../../../.gitbook/assets/image (7) (4) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (4) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, we can simply SSH in using this key.
 

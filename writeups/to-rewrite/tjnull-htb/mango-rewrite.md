@@ -66,7 +66,7 @@ Then, we can use one of the passwords to SSH in:
 
 We can also `su` to `admin` using the other password.
 
-<figure><img src="../../../.gitbook/assets/image (7) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (4) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

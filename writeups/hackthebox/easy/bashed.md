@@ -16,7 +16,7 @@ The page is about something called PHP Bash.
 
 I gobusted the website, and found a `/dev` directory.
 
-<figure><img src="../../../.gitbook/assets/image (6) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (6) (2).png" alt=""><figcaption></figcaption></figure>
 
 When viewed, we can find this directory listing.
 
@@ -40,7 +40,7 @@ So, we can first get a reverse shell using `python u`Then, we can simply run `su
 
 Within the directory of the `scriptmanager` user, we can find a `/scripts` directory with some python code.
 
-<figure><img src="../../../.gitbook/assets/image (11) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (5) (2).png" alt=""><figcaption></figcaption></figure>
 
 It opens the `test.txt` file and does something to it. When checking the permissions of the file, we can see that the root user owns the test.txt file and we are able to write to this file.
 

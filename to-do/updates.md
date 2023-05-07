@@ -9,6 +9,7 @@ HTB Writeups added:
 * OnlyForYou (HTB Season 1)
 * MonitorsTwo (HTB Season 1)
 * Easy
+  * Academy
   * Bank
   * Beep
   * Curling
@@ -17,6 +18,7 @@ HTB Writeups added:
   * Help
   * Lame&#x20;
   * Legacy
+  * MetaTwo
   * Nibbles&#x20;
   * Omni&#x20;
   * Photobomb
@@ -26,19 +28,24 @@ HTB Writeups added:
   * Routerspace
   * Safe&#x20;
   * Sauna
+  * Secret
   * Sense&#x20;
   * Shocker&#x20;
   * Shoppy
+  * Toolbox
   * Traverxec&#x20;
   * Valentine
   * Writeup
 * Medium
+  * Ambassador
   * Bitlab
   * Cascade
   * Cronos
+  * Forge
   * Intelligence
   * Jarvis
   * Mango
+  * Meta
   * Node
   * Ophiuchi
   * Pit
@@ -52,6 +59,7 @@ HTB Writeups added:
   * Time
   * Worker
 * Hard
+  * Blackfield
   * Pikaboo
   * Quick
   * Seventeen

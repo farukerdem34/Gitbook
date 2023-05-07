@@ -68,7 +68,7 @@ It appears there are 7 columns. Now, we can start to enumerate the database. Fol
 100 UNION SELECT 1,group_concat(schema_name),3,4,5,6,7 from information_schema.schemata-- -
 ```
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (7).png" alt=""><figcaption></figcaption></figure>
 
 So this is a MySQL database being used. We can check on the tables and columns that are present within the database.&#x20;
 
@@ -94,11 +94,11 @@ The username and password look like the best thing to get out.&#x20;
 
 This can be cracked on CrackStation.
 
-<figure><img src="../../../.gitbook/assets/image (5) (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (9) (2).png" alt=""><figcaption></figcaption></figure>
 
 With these credentials, we can login to the phpMyAdmin instance. The instance used here is outdated.
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (10).png" alt=""><figcaption></figcaption></figure>
 
 There are public exploits for this.
 
@@ -116,7 +116,7 @@ We can verify that the exploit works.
 
 A `mkfifo` one-liner can be used to gain a reverse shell.
 
-<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (5).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -320,7 +320,7 @@ www-data@jarvis:/tmp$ sudo -u pepper /var/www/Admin-Utilities/simpler.py -p
 Enter an IP: $(/tmp/shell.sh)
 ```
 
-<figure><img src="../../../.gitbook/assets/image (12) (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (11) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can now grab the user flag.&#x20;
 

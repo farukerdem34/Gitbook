@@ -36,7 +36,7 @@ Connection: close
 
 I took a look at the page source, and found that the controllers were left there.
 
-<figure><img src="../../../.gitbook/assets/image (4) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (3) (3).png" alt=""><figcaption></figcaption></figure>
 
 If we take a look at the `admin.js` file, we can find an `/api` backend.&#x20;
 
@@ -137,7 +137,7 @@ When we login, all we see is this:
 
 We can download the backup files and view it to find that it's a base64 encoded file. When decoded, it gives a Zip file.
 
-<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (7).png" alt=""><figcaption></figcaption></figure>
 
 It's password protected, so we can use `zip2john` and `john` to crack it:
 

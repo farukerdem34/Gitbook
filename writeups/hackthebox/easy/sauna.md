@@ -100,7 +100,7 @@ Session completed.
 
 Afterwards, we can get a shell using `evil-winrm`.
 
-<figure><img src="../../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (3).png" alt=""><figcaption></figcaption></figure>
 
 Grab the user flag.
 

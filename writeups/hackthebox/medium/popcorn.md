@@ -62,7 +62,7 @@ PHP version 5.2.10 is insecure by today's standards, however without access to t
 
 `/torrent` revealed a BitTorrent instance.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (14) (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 Lastly, on the `/rename` file, we see this API in play:
 

@@ -348,7 +348,7 @@ INFO: Done in 00M 04S
 
 Then we can start `neo4j` and `bloodhound`. After uploading the information, let's view what `Ted.Graves` has access to. We find that they are part of the ITSupport group.
 
-<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (7).png" alt=""><figcaption></figcaption></figure>
 
 This group has ReadGMSAPassword privileges over `svc_int`.&#x20;
 
@@ -366,7 +366,7 @@ This cannot be cracked, but Pass The Hash can still be done.
 
 When checking this node, we see that it is allowed to delegate for the DC.
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
 
 We don't have a shell to the machine, but with this we can request service tickets for the administrator. We can use `getST.py` to do this.
 

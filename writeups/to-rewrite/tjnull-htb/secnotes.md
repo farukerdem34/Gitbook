@@ -30,7 +30,7 @@ We can create a user to login.
 
 There's a user with an email, and this user might click on the links we send. I sent one like so:
 
-<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (6).png" alt=""><figcaption></figcaption></figure>
 
 And we do indeed get a callback on a `nc` listening port.
 
@@ -102,7 +102,7 @@ $ smbmap -u tyler -p '92g!mA8BGjOirkL%OG*&' -H 10.129.85.182
 
 So we have read and write permissions on `new-site`. There's another IIS web server on port 8808, which I think is the new site being referred to. We can put a webshell on it and check if it works.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (8).png" alt=""><figcaption></figcaption></figure>
 
 Now we have RCE, and we can get a reverse shell through downloading and executing `nc.exe`.
 
@@ -189,4 +189,4 @@ We can verify these credentials via `smbmap`.&#x20;
 
 We have complete control over the file system, and we can get a shell with `smbexec.py` because only SMB is open.
 
-<figure><img src="../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (8).png" alt=""><figcaption></figcaption></figure>
