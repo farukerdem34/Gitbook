@@ -185,7 +185,7 @@ Within the machine, we can attempt to SSH in as ray.duncan@windcorp.htb (yes tha
 
 Now, we are on the same webserver host with persistence this time. Because of all of the Kerberos stuff and confirmation that this is an AD-related machine, we can request and cache a ticket via `kinit`. Searching on how to use a ticket in Linux led me to `ksu`, which basically is `su` with Kerberos.
 
-With these commands, we can become root on this container and capture the user flag.
+With these commands, we can become root on this machine and capture the user flag.
 
 <figure><img src="../../../.gitbook/assets/image (444).png" alt=""><figcaption></figcaption></figure>
 
@@ -195,7 +195,7 @@ With these commands, we can become root on this container and capture the user f
 
 Earlier, we found another IP address at 192.168.0.2. I wanted to enumerate the ports that are open on that machine. We can first see what ports are open with this one liner:
 
-```
+```bash
 for p in {1..65535}; do nc -vn 192.168.0.2 $p -w 1 -z & done 2> output.txt
 ```
 
@@ -388,4 +388,4 @@ Now, we can attempt some remote Powershell again.
 
 <figure><img src="../../../.gitbook/assets/image (77) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
-Then, we can finally capture this flag and end the box. This took days to finish...
+Then, we can finally capture this flag and end the box. This machine took about 2 weeks to finish because all the steps were pretty hard to spot...

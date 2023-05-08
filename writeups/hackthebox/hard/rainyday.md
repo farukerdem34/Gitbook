@@ -8,7 +8,7 @@ description: Decent Linux machine with a not so straightforward Python heavy exp
 
 As usual, an Nmap scan to find the ports listening on this:
 
-<figure><img src="../../../.gitbook/assets/image (342).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (342) (1).png" alt=""><figcaption></figcaption></figure>
 
 When trying to access the HTTP website, the website domain is rainycloud.htb. Add that to the hosts file and move on.
 

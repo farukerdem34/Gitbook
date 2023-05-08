@@ -21,11 +21,11 @@ We have to add `artcorp.htb` to our `/etc/hosts` file to view port 80.
 
 The webpage was a start-up website:
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (8).png" alt=""><figcaption></figcaption></figure>
 
 They had a team with some names I might need to use, along with a hint that this was a PHP based website.
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (12).png" alt=""><figcaption></figcaption></figure>
 
 There wasn't much on the website, so we can try `gobuster` scanning for directories and `wfuzz` scanning for sub-domains. A `gobuster` scan reveals nothing, but the `wfuzz` scan did reveal one sub-domain.
 
@@ -53,11 +53,11 @@ Here's the webpage:
 
 The application allows us to upload images to the machine.
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (11).png" alt=""><figcaption></figcaption></figure>
 
 Wneh an image is uploaded, the metadata of the image is printed on screen below:
 
-<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (8).png" alt=""><figcaption></figcaption></figure>
 
 This was the output of `exiftool`, which has some RCE attacks possible through metadata.&#x20;
 
@@ -70,7 +70,7 @@ exiftool -config eval.config runme.jpg -eval='system("ls -la")'
 # upload runme.jpg
 ```
 
-<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (8).png" alt=""><figcaption></figcaption></figure>
 
 For some reason, the above PoC doesn't let me execute reverse shells. So I changed the script used to this:
 
@@ -78,7 +78,7 @@ For some reason, the above PoC doesn't let me execute reverse shells. So I chang
 
 After changing the `exploit.py` file to have the correct port and IP address, I got a reverse shell.
 
-<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (8).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -143,7 +143,7 @@ How the exploit works is thorugh embedding XML code within an SVG file. Here's t
 
 This uses a base64 encoded `bash` one-liner reverse shell. After waiting for a little bit, we should get a shell as `thomas`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (10).png" alt=""><figcaption></figcaption></figure>
 
 ### Neofetch
 
@@ -170,4 +170,4 @@ sudo neofetch --config $TF
 
 Then, I noticed the `XDG_CONFIG_HOME` environment variable. The exploit above relies on changing the configuration files for `neofetch`. In this case, since we cannot specify any flags, we can just create a malicious configuration file that would give us a root shell.
 
-<figure><img src="../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (10).png" alt=""><figcaption></figcaption></figure>

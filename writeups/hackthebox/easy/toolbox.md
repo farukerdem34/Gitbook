@@ -72,7 +72,7 @@ Sending a single `'` reveals an SQL error.
 
 So this is vulnerable to SQL Injection, and we can use `'OR 1=1 -- -` to bypass the login. On the admin dashboard, we see some stuff regarding credentials:
 
-<figure><img src="../../../.gitbook/assets/image (446).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (446) (2).png" alt=""><figcaption></figcaption></figure>
 
 There wasn't much within the administrator panel for us to use, so let's go back to the SQL Injection and see if we can get a webshell via `sqlmap`.&#x20;
 
@@ -143,7 +143,7 @@ While Googling for `docker-toolbox` and `ssh`, I came across this StackOverflow 
 
 I tried the password and username he specified (which looked default to me) and it worked:
 
-<figure><img src="../../../.gitbook/assets/image (434).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (434) (2).png" alt=""><figcaption></figcaption></figure>
 
 On the docker, we can run `sudo su` to become `root`.
 
@@ -183,4 +183,4 @@ drwxrwxrwx    1 docker   staff            0 Feb 19  2020 .ssh
 
 Within the `.ssh` file, we can find an `id_rsa` private key. Using that, we can `ssh` in as `administrator` on the main machine.
 
-<figure><img src="../../../.gitbook/assets/image (437).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (437) (2).png" alt=""><figcaption></figcaption></figure>

@@ -22,11 +22,11 @@ We have to add `forge.htb` to our `/etc/hosts` file to enumerate the website. Al
 
 The website is some kind of Gallery that lets us view and upload images.
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (9).png" alt=""><figcaption></figcaption></figure>
 
 The uploads portion allow us to use URLs:
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (8).png" alt=""><figcaption></figcaption></figure>
 
 If we were to start a `nc` listener port and redirect the request to our machine, we would see this:
 
@@ -95,7 +95,7 @@ if __name__ == '__main__':
 
 When we start this, the website would generate a link to an 'image', which would always fail to display because it's not an image.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (11).png" alt=""><figcaption></figcaption></figure>
 
 But, when we `curl` it, we can see it contains the page contents of the admin panel:
 
@@ -195,7 +195,7 @@ $ curl http://forge.htb/uploads/EvkwW5i3ganDEIzW2doi
 
 We can grab the `id_rsa` flag through this and SSH in as `user`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (10).png" alt=""><figcaption></figcaption></figure>
 
 Grab the user flag.&#x20;
 
@@ -263,10 +263,10 @@ finally:
 
 This program opens a port and then runs commands as `root`. The vulnerable part is when it opens `pdb` upon receivinig an input that is not a number.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (10).png" alt=""><figcaption></figcaption></figure>
 
 `pdb` is Python Debugger, and running it as `root` means we can gain an easy shell.
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (636).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

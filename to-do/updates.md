@@ -8,6 +8,7 @@ HTB Writeups added:
 
 * OnlyForYou (HTB Season 1)
 * MonitorsTwo (HTB Season 1)
+* Snoopy (HTB Season 1)
 * Easy
   * Academy
   * Bank
@@ -42,10 +43,12 @@ HTB Writeups added:
   * Cascade
   * Cronos
   * Forge
+  * Giddy
   * Intelligence
   * Jarvis
   * Mango
   * Meta
+  * Mentor
   * Node
   * Ophiuchi
   * Pit
@@ -56,7 +59,11 @@ HTB Writeups added:
   * SneakyMailer
   * Sniper
   * TartarSauce
+  * TheNotebook
   * Time
+  * Unicode
+  * Union
+  * Updown
   * Worker
 * Hard
   * Blackfield

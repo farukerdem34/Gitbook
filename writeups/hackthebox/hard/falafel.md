@@ -78,7 +78,7 @@ I attempted to upload some PHP webshells, but it did not work.
 
 When uploading a jpg file, this is the output we get.
 
-<figure><img src="../../../.gitbook/assets/image (525).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (525) (1).png" alt=""><figcaption></figcaption></figure>
 
 Attempting to access our webshell does not work. However, we can see how the name of our file can be manipulated to fit the CMD being executed. Seeing the hint earlier on the `admin` profile about the limits of the file name.
 
@@ -120,7 +120,7 @@ We can then `su` to moshe.
 
 When running LinPEAS, we see that `moshe` is part of the `video` group.
 
-<figure><img src="../../../.gitbook/assets/image (511).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (511) (1).png" alt=""><figcaption></figcaption></figure>
 
 Users part of the `video` group have access to a video device or the screen output. I first checked if there were other users logged in via `w`, and `yossi` is logged in.
 
@@ -180,7 +180,7 @@ Then, we can `su` as `yossi`.
 
 Earlier, we found that `yossi` was part of the `disk` and `cdrom` group. Perhaps there was something mounted on the machine that we can access.
 
-<figure><img src="../../../.gitbook/assets/image (507).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (507) (1).png" alt=""><figcaption></figcaption></figure>
 
 Using `debugfs` on the `/dev/sda1` filesystem (which just looked off), we find out that we can access the `/root` directory.
 

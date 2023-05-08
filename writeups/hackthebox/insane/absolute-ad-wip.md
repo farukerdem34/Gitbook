@@ -160,7 +160,7 @@ Then I ran these commands:
 </strong>Add-ADPrincipalGroupMembership -Identity m.lovegod -MemberOf "Network Audit" -Credential $Cred -server dc.absolute.htb
 </code></pre>
 
-You might need to run the last 2 powershell commands again and again until no errors come up. Afterwards, we can switch back to the Kali machine **quickly!** The AD machine seems to reset this change in configurations super fast.
+You might need to run the last 2 Powershell commands again and again until no errors come up. Afterwards, we can switch back to the Kali machine **quickly!** The AD machine seems to reset this change in configurations super fast.
 
 We need to then run this:
 

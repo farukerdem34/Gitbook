@@ -205,7 +205,7 @@ DPAPI: NA
 
 Unfortunately, the hash for the administrator doesn't work. However, the one for `svc_backup` works and we can login:
 
-<figure><img src="../../../.gitbook/assets/image (433).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (433) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -300,4 +300,4 @@ Administrator:500:aad3b435b51404eeaad3b435b51404ee:184fb5e5178480be64824d4cd53b9
 
 This time, the hash works and we can get a shell using `evil-winrm`.
 
-<figure><img src="../../../.gitbook/assets/image (438).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (438) (2).png" alt=""><figcaption></figcaption></figure>
