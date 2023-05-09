@@ -42,6 +42,7 @@ HTB Writeups added:
   * Bitlab
   * Cascade
   * Cronos
+  * Dynstr
   * Forge
   * Giddy
   * Intelligence
@@ -61,6 +62,7 @@ HTB Writeups added:
   * TartarSauce
   * TheNotebook
   * Time
+  * Undetected
   * Unicode
   * Union
   * Updown

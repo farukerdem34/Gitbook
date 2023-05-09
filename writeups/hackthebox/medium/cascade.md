@@ -362,6 +362,6 @@ cascadeLegacyPwd                : YmFDVDNyMWFOMDBkbGVz
 
 This decodes to give `baCT3r1aN00dles`, and I noticed this was for a user called `TempAdmin`. By testing password reuse, we find that we can login as the Administrator using this password.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (9).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

@@ -68,7 +68,7 @@ Once in the machine, I ran `Sharphound.ps1` to enumerate for me:
 
 We find that within Bloodhound, the `oliver` user has the `ForceChangePassword` permission over the `smith` user.
 
-<figure><img src="../../../.gitbook/assets/image (34) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (34) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 The `smith` user has `GenericWrite` permissions over the `maria` user:
 

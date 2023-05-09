@@ -44,7 +44,7 @@ From this, I attempted a few direct OS command injections but it didn't work out
 
 <figure><img src="../../../.gitbook/assets/image (17) (10).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (21) (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (21) (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can then replace the Base64 encoded command with a simple bash reverse shell and it works!
 

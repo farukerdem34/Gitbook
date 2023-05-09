@@ -125,7 +125,7 @@ I looked around for tools that could spawn a shell directly. The page above link
 
 {% embed url="https://github.com/cyberark/kubeletctl" %}
 
-<figure><img src="../../../.gitbook/assets/image (20) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Docker Escape
 

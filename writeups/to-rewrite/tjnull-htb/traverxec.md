@@ -132,7 +132,7 @@ I searched a bit on Nostromo and this configuration, and this:
 
 Basically, this allows for us to view the user's home directory by accessing `~david`. When accessed, this is what I get:
 
-<figure><img src="../../../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (40) (7).png" alt=""><figcaption></figcaption></figure>
 
 There was also a hint that a `public_www` exists in the user's directory.&#x20;
 
@@ -235,4 +235,4 @@ However, because we don't have the credentials to run `sudo`, what we can do is 
 !/bin/sh
 ```
 
-<figure><img src="../../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (22) (4).png" alt=""><figcaption></figcaption></figure>

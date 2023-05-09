@@ -173,7 +173,7 @@ At line:1 char:1
 
 With these credentials, we can login as `ryan`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (16) (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### DNS Admin
 
@@ -240,4 +240,4 @@ sc.exe stop dns
 sc.exe start dns
 ```
 
-<figure><img src="../../../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (32) (3).png" alt=""><figcaption></figcaption></figure>

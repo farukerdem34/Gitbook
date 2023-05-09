@@ -27,7 +27,7 @@ Port 80 requires credentials to access.
 
 I tested weak credentials of `admin:admin`, and it worked. The page is some type of printer service panel.
 
-<figure><img src="../../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (25) (7).png" alt=""><figcaption></figcaption></figure>
 
 The only working part is the Firmware Updates, which redirects us to this page:
 
@@ -67,7 +67,7 @@ Session completed.
 
 We can then log in using `evil-winrm` since port 5985 is open.
 
-<figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (8).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

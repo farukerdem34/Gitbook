@@ -4,7 +4,7 @@
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (17) (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (9) (1).png" alt=""><figcaption></figcaption></figure>
 
 Running a detailed scan reveals that Jetty is running on port 50000.
 

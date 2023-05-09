@@ -26,7 +26,7 @@ Port 80 reveals a hotel site:
 
 When looking at the rooms available, a unique URL is being used:
 
-<figure><img src="../../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (33) (7).png" alt=""><figcaption></figcaption></figure>
 
 Interesting. I ran a `gobuster` scan in the background while enumerating the URL for possible injection.&#x20;
 
@@ -56,7 +56,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 There was a `/phpmyadmin` panel on the website, but we don't have any credentials yet. I tried some basic SQL injection on the `room.php` and found an interesting result.
 
-<figure><img src="../../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (28) (7).png" alt=""><figcaption></figcaption></figure>
 
 The fact that it runs means that SQL injection might be the way. Initially, I tried `sqlmap` but it always crashes and blocks me for a while. So there was a firewall and I had to do this manually. First, we can try UNION injection to find out the number of columns.&#x20;
 
@@ -364,6 +364,6 @@ systemctl start suid
 /bin/bash -p
 ```
 
-<figure><img src="../../../.gitbook/assets/image (27) (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (27) (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!&#x20;

@@ -185,7 +185,7 @@ $ for FILE in *; do pdftotext $FILE; done;
 
 Then, we can use `grep` to find keywords in these files.
 
-<figure><img src="../../../.gitbook/assets/image (41) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (41) (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 We have a credential, and also searching for `security` tells me there's some type of vulnerability with the service accounts:
 
@@ -352,7 +352,7 @@ Then we can start `neo4j` and `bloodhound`. After uploading the information, let
 
 This group has ReadGMSAPassword privileges over `svc_int`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (39) (5).png" alt=""><figcaption></figcaption></figure>
 
 USing `gMSADumper.py`, we can get a hash for this user:
 
@@ -366,7 +366,7 @@ This cannot be cracked, but Pass The Hash can still be done.
 
 When checking this node, we see that it is allowed to delegate for the DC.
 
-<figure><img src="../../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (3).png" alt=""><figcaption></figcaption></figure>
 
 We don't have a shell to the machine, but with this we can request service tickets for the administrator. We can use `getST.py` to do this.
 
@@ -388,4 +388,4 @@ $ export KRB5CCNAME = Administrator.ccache
 
 Then we can get a shell using `psexec.py`.
 
-<figure><img src="../../../.gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (41) (6).png" alt=""><figcaption></figcaption></figure>

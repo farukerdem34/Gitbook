@@ -52,7 +52,7 @@ There is a HTTP port open, and when viewed, it shows a Printer Admin Panel:
 
 When we view the settings, this is what we see:
 
-<figure><img src="../../../.gitbook/assets/image (31) (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (31) (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 This looks poisanable since we can control the server address. As such, I started `responder`.&#x20;
 

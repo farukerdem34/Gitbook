@@ -56,11 +56,11 @@ It seems the domain is `EGOTISTICAL-BANK.LOCAL`.&#x20;
 
 This was a bank company website:
 
-<figure><img src="../../../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (31) (7).png" alt=""><figcaption></figcaption></figure>
 
 At the bottom, we can 'Meet The Team':
 
-<figure><img src="../../../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (19) (5).png" alt=""><figcaption></figcaption></figure>
 
 Using these names, we can make use of `usernamer.py` to generate possible usernames for the machine:
 
@@ -100,7 +100,7 @@ Session completed.
 
 Afterwards, we can get a shell using `evil-winrm`.
 
-<figure><img src="../../../.gitbook/assets/image (15) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Grab the user flag.
 
@@ -144,11 +144,11 @@ INFO: Done in 00M 03S
 
 After uploading the data, we can see what privileges this user has, and find out that he has DCSync privileges over the DC.
 
-<figure><img src="../../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (27) (8).png" alt=""><figcaption></figcaption></figure>
 
 This means we can use `secretsdump.py` to read the hashes of the entire machine.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20) (4).png" alt=""><figcaption></figcaption></figure>
 
 Then, just pass the hash using `evil-winrm` to get an administrator shell.
 

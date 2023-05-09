@@ -137,7 +137,7 @@ ssh -f -N -D 1080 dave@sparklays.com
 
 Then, we can begin to scan both of these machines with `nmap`. Scanning the first 1000 ports, I found that there was indeed a service running on it.
 
-<figure><img src="../../../.gitbook/assets/image (36) (5) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (36) (5) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can take a look at this using a browser with proxychains configured.&#x20;
 

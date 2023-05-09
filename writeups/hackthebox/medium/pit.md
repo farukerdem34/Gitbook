@@ -130,7 +130,7 @@ We can view the change log from the administrator, which states the version of S
 
 It appears that this is version 5.1.15, which does not have any vulnerabilities via `searchsploit`. This service supports file uploads and is PHP based, so let's try to upload a webshell within Michells' folder.
 
-<figure><img src="../../../.gitbook/assets/image (39) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (39) (5) (2).png" alt=""><figcaption></figcaption></figure>
 
 This had the document ID of 29, but I didn't know what to do further. Checking the `searchsploit` output again, we can see that there are RCE exploits for this but they are of the wrong version.
 

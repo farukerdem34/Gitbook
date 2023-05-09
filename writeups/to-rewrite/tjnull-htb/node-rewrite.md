@@ -19,7 +19,7 @@ PORT     STATE SERVICE
 
 This was a default website:
 
-<figure><img src="../../../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (35) (6).png" alt=""><figcaption></figcaption></figure>
 
 There was nothing inherently interesting about the site, and I didn't have any good credentials. However, based on the box name, I knew we had to exploit some type of JS framework here. When we take a look at the requests sent in Burp, we can see this is an Express website.
 
@@ -127,13 +127,13 @@ $ curl http://10.129.85.176:3000/api/users | jq
 
 The administrator can be cracked on CrackStation:
 
-<figure><img src="../../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (24) (8).png" alt=""><figcaption></figcaption></figure>
 
 ### Backup
 
 When we login, all we see is this:
 
-<figure><img src="../../../.gitbook/assets/image (32) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (32) (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can download the backup files and view it to find that it's a base64 encoded file. When decoded, it gives a Zip file.
 
@@ -268,7 +268,7 @@ WriteResult({ "nInserted" : 1 })
 
 After a little bit, we should get a reverse shell on our machine as `tom`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (38) (6).png" alt=""><figcaption></figcaption></figure>
 
 Then we can grab the user flag.
 
@@ -393,7 +393,7 @@ I chose the second becuase it's easier. In this case, I chose to backup the `/et
 backup -q 45fac180e9eee72f4fd2d9386ea7033e52b7c740afc3d98a8d0230167104d47 /etc/shadow > backup.shadow
 ```
 
-<figure><img src="../../../.gitbook/assets/image (16) (8) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (8) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 I took a look at the `ltrace` output again and found out why it woudln't work. It seems that some directories are blacklisted when I tried to backup the user's directory:
 
@@ -421,7 +421,7 @@ tom@node:/etc$ ls -la /dev/shm/shadow.back
 
 We can then transfer it over using `nc` and then decode it in the same manner, with the same password protected zip.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (36) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (36) (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 However, this hash cannot be cracked...
 

