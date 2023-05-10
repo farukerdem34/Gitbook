@@ -24,7 +24,7 @@ Port 80 straight up denies me, and when we head to port 443 we see that this is 
 
 When we view the certificate, we see that there's another domain present:
 
-<figure><img src="../../../.gitbook/assets/image (18) (9) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (9).png" alt=""><figcaption></figcaption></figure>
 
 We can enumerate that instead, because why would they hide it if testing for SSRF wasn't a rabbit hole?
 
@@ -58,7 +58,7 @@ We can first verify the usernames:
 
 This also confirms that it works and it finds 2 users, `mango` and `admin`. Then, we can find the passwords:
 
-<figure><img src="../../../.gitbook/assets/image (29) (6) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (29) (6).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can use one of the passwords to SSH in:
 
@@ -66,7 +66,7 @@ Then, we can use one of the passwords to SSH in:
 
 We can also `su` to `admin` using the other password.
 
-<figure><img src="../../../.gitbook/assets/image (7) (4) (2) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (4) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -74,7 +74,7 @@ We can also `su` to `admin` using the other password.
 
 I ran LinPEAS for to enumerate. Within the output, I found one SGID binary.
 
-<figure><img src="../../../.gitbook/assets/image (23) (8) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (23) (8).png" alt=""><figcaption></figcaption></figure>
 
 We can run `jjs` to get a `root` shell. All we need to do is follow what is written on GTFOBins:
 
@@ -84,6 +84,6 @@ echo "Java.type('java.lang.Runtime').getRuntime().exec('/bin/sh -pc \$@|sh\${IFS
 ```
 {% endcode %}
 
-<figure><img src="../../../.gitbook/assets/image (47) (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (47).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

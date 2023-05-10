@@ -62,7 +62,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 When we view the `/vendor` endpoint, we see a file system with different PHP libraries:
 
-<figure><img src="../../../.gitbook/assets/image (1) (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 Searching for exploits for each of them leads me an RCE for PHPUnit:
 
@@ -104,15 +104,15 @@ We can transfer this back to my machine for some reverse engineering via `ghidra
 
 There are a lot of functions within this function:
 
-<figure><img src="../../../.gitbook/assets/image (15) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
 
 Out of all the functions, `exec_shell` is the most unique because it actually executes something.
 
-<figure><img src="../../../.gitbook/assets/image (33) (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (33) (8).png" alt=""><figcaption></figcaption></figure>
 
 We can see the `-c` flag, and it is passed to `execve`, which means that some commands are being executed here. However, `ghidra` is unable to to see what is being executed. When we open it up in `ida64`, we can see a huge chunk of hex.
 
-<figure><img src="../../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (25) (8).png" alt=""><figcaption></figcaption></figure>
 
 When converted to a string, it gives this:
 
@@ -156,13 +156,13 @@ Session completed.
 
 Reading the code, it seems to make the user `$user"1"`, which means it is `steven1` in this case. We can then `ssh` in as `steven1` using this password:
 
-<figure><img src="../../../.gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (36) (7).png" alt=""><figcaption></figcaption></figure>
 
 ### Mod\_Reader.o RE
 
 Running LinPEAS reveals there is mail for the user:
 
-<figure><img src="../../../.gitbook/assets/image (37).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (37) (7).png" alt=""><figcaption></figcaption></figure>
 
 {% code overflow="wrap" %}
 ```
@@ -209,11 +209,11 @@ The rest of the files were about 500 bytes, meanwhile this thing was massive. We
 
 Then, using `ida64`, we see that there are base64 related functions for this:
 
-<figure><img src="../../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (24) (9).png" alt=""><figcaption></figcaption></figure>
 
 We can locate the string and see that it is being passed into another `bash -c` command:
 
-<figure><img src="../../../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (19) (8).png" alt=""><figcaption></figcaption></figure>
 
 When decoded, it shows this:
 
@@ -297,4 +297,4 @@ Afterwards, we just need to convert this to a string, XOR it with `0x96`, then r
 
 This would give us the string `@=qfe5%2^k-aq@%k@%6k6b@$u#f*b?3`, which is the `root` password:
 
-<figure><img src="../../../.gitbook/assets/image (23) (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (23) (9).png" alt=""><figcaption></figcaption></figure>

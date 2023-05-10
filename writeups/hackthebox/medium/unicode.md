@@ -51,7 +51,7 @@ Upgrade-Insecure-Requests: 1
 
 When decoded on [jwt.io](https://jwt.io/), we can see that it contains the username field and is signed via RSA.
 
-<figure><img src="../../../.gitbook/assets/image (11) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
 
 Interesting! There's also a `jku` field with a URL to the site. When viewed, it appears to contain the public key of the JWT token:
 
@@ -139,7 +139,7 @@ http://10.129.246.167/display/?page=monthly.pdf
 
 This looks vulnerable to LFI, so I tried to view the `/etc/passwd` file but it didn't work.
 
-<figure><img src="../../../.gitbook/assets/image (6) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
 Looks like it isn't processing. Now because this box was literally named Unicode, we might have to use Unicode characters to make this work. When we use this payload, the LFI works:
 

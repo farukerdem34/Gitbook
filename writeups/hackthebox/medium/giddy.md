@@ -91,7 +91,7 @@ Session completed.
 
 By right, this machine came our before `evil-winrm`, so the intentional route is to use the Remote Powershell Web Access to download and execute a reverse shell. I did it the `evil-winrm` way.
 
-<figure><img src="../../../.gitbook/assets/image (7) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

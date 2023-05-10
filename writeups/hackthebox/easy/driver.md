@@ -31,7 +31,7 @@ I tested weak credentials of `admin:admin`, and it worked. The page is some type
 
 The only working part is the Firmware Updates, which redirects us to this page:
 
-<figure><img src="../../../.gitbook/assets/image (6) (6) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (6).png" alt=""><figcaption></figcaption></figure>
 
 This would take any file and upload them to the file share, and a user would open it. Because it uploads to SMB, we can create a malicious SCF File to exploit this.
 
@@ -49,7 +49,7 @@ Command=ToggleDesktop
 
 Once uploaded, `responder` would capture a hash:
 
-<figure><img src="../../../.gitbook/assets/image (5) (9) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (9).png" alt=""><figcaption></figcaption></figure>
 
 This can be cracked easily:
 

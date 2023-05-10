@@ -44,6 +44,7 @@ HTB Writeups added:
   * Awkward
   * Bitlab
   * Cascade
+  * Cache
   * Cronos
   * Dynstr
   * Forge

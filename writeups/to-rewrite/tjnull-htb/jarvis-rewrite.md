@@ -26,7 +26,7 @@ Port 80 reveals a hotel site:
 
 When looking at the rooms available, a unique URL is being used:
 
-<figure><img src="../../../.gitbook/assets/image (33) (7) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (33) (7).png" alt=""><figcaption></figcaption></figure>
 
 Interesting. I ran a `gobuster` scan in the background while enumerating the URL for possible injection.&#x20;
 
@@ -56,7 +56,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 There was a `/phpmyadmin` panel on the website, but we don't have any credentials yet. I tried some basic SQL injection on the `room.php` and found an interesting result.
 
-<figure><img src="../../../.gitbook/assets/image (28) (7) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (28) (7).png" alt=""><figcaption></figcaption></figure>
 
 The fact that it runs means that SQL injection might be the way. Initially, I tried `sqlmap` but it always crashes and blocks me for a while. So there was a firewall and I had to do this manually. First, we can try UNION injection to find out the number of columns.&#x20;
 
@@ -68,7 +68,7 @@ It appears there are 7 columns. Now, we can start to enumerate the database. Fol
 100 UNION SELECT 1,group_concat(schema_name),3,4,5,6,7 from information_schema.schemata-- -
 ```
 
-<figure><img src="../../../.gitbook/assets/image (8) (7) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (7).png" alt=""><figcaption></figcaption></figure>
 
 So this is a MySQL database being used. We can check on the tables and columns that are present within the database.&#x20;
 
@@ -90,15 +90,15 @@ Host,User,Password,Select_priv,Insert_priv,Update_priv,Delete_priv,Create_priv,D
 
 The username and password look like the best thing to get out.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (44) (8) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (44) (8).png" alt=""><figcaption></figcaption></figure>
 
 This can be cracked on CrackStation.
 
-<figure><img src="../../../.gitbook/assets/image (5) (9) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (9) (2).png" alt=""><figcaption></figcaption></figure>
 
 With these credentials, we can login to the phpMyAdmin instance. The instance used here is outdated.
 
-<figure><img src="../../../.gitbook/assets/image (1) (10) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (10).png" alt=""><figcaption></figcaption></figure>
 
 There are public exploits for this.
 
@@ -112,11 +112,11 @@ phpMyAdmin 4.8.1 - Remote Code Execution (RCE)             | php/webapps/50457.p
 
 We can verify that the exploit works.
 
-<figure><img src="../../../.gitbook/assets/image (51) (5) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (51) (5).png" alt=""><figcaption></figcaption></figure>
 
 A `mkfifo` one-liner can be used to gain a reverse shell.
 
-<figure><img src="../../../.gitbook/assets/image (11) (5) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (5).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -320,7 +320,7 @@ www-data@jarvis:/tmp$ sudo -u pepper /var/www/Admin-Utilities/simpler.py -p
 Enter an IP: $(/tmp/shell.sh)
 ```
 
-<figure><img src="../../../.gitbook/assets/image (12) (11) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (11) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can now grab the user flag.&#x20;
 
@@ -364,6 +364,6 @@ systemctl start suid
 /bin/bash -p
 ```
 
-<figure><img src="../../../.gitbook/assets/image (27) (8) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (27) (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!&#x20;

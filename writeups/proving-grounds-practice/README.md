@@ -1,5 +1,3 @@
 # Proving Grounds Practice
 
-Writeups from most Proving Grounds Practice machines found here. (WIP transferring files over!)
-
-Machines updated till 28/7/2022, as all machines were rooted at that time and I unsuscribed.
+When I eventually start rewriting after finishing all 200+ HTB machine writeups...
