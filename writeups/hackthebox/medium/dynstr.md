@@ -24,7 +24,7 @@ This was a corporate page for a DNS service:
 
 At the bottom, it appears we have to add `dyna.htb` to the `/etc/hosts` file:
 
-<figure><img src="../../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (28) (7).png" alt=""><figcaption></figcaption></figure>
 
 Also, there is some information on the page:
 
@@ -106,7 +106,7 @@ badauth
 
 Weird. Googling "badauth DNS" shows us ths is an error caused by a DNS software called DynDns:
 
-<figure><img src="../../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20) (4).png" alt=""><figcaption></figcaption></figure>
 
 Googling `/nic/update` reveals that this is actually an API that we can access:
 
@@ -181,7 +181,7 @@ drwxr-xr-x 5 bindmgr bindmgr   4096 Mar 15  2021 ..
 
 When we read the debug script, we can find a SSH private key within it:
 
-<figure><img src="../../../.gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (41) (5).png" alt=""><figcaption></figcaption></figure>
 
 I tried to use this to `ssh` in as the user, but it seems that we are being blocked. On enumeration of the `authorized_keys` file, we cansee that it only accepts requests from `*.infra.dyna.htb`.
 
@@ -321,4 +321,4 @@ sudo /usr/local/bin/bindmgr.sh
 /etc/bind/named.bindmgr/bash -p
 ```
 
-<figure><img src="../../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (29) (6).png" alt=""><figcaption></figcaption></figure>

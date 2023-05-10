@@ -47,7 +47,7 @@ ID           Response   Lines    Word       Chars       Payload
 
 Here's the webpage:
 
-<figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (11).png" alt=""><figcaption></figcaption></figure>
 
 ### Metadata RCE
 

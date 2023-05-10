@@ -59,7 +59,7 @@ I tried to upload an ASPX reverse shell, but it gives me an Invalid File error.
 
 This can be bypassed via NULL byte by appending `%00.jpg` to the end of the filename in Burp.
 
-<figure><img src="../../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (42) (8).png" alt=""><figcaption></figcaption></figure>
 
 However, when trying to view the file at `/UploadedFiles/rev.aspx`, it returns an error instead of a shell.
 

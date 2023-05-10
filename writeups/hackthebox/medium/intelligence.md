@@ -43,11 +43,11 @@ Page is some kind of company website.
 
 We can add `intelligence.htb` to our `/etc/hosts` file as well. Within the page, I noticed there were some downloads:
 
-<figure><img src="../../../.gitbook/assets/image (49).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (49) (6).png" alt=""><figcaption></figcaption></figure>
 
 When we download them, we would get redirected to a PDF which did not have anything useful on it.
 
-<figure><img src="../../../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (43) (7).png" alt=""><figcaption></figcaption></figure>
 
 The more interesting part is the URL. For the above document, I was redirected to `http://10.129.95.154/documents/2020-01-01-upload.pdf`. We can fuzz this and see what other PDFs are present. We can create a wordlist using this:
 
@@ -348,7 +348,7 @@ INFO: Done in 00M 04S
 
 Then we can start `neo4j` and `bloodhound`. After uploading the information, let's view what `Ted.Graves` has access to. We find that they are part of the ITSupport group.
 
-<figure><img src="../../../.gitbook/assets/image (10) (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 This group has ReadGMSAPassword privileges over `svc_int`.&#x20;
 
@@ -366,7 +366,7 @@ This cannot be cracked, but Pass The Hash can still be done.
 
 When checking this node, we see that it is allowed to delegate for the DC.
 
-<figure><img src="../../../.gitbook/assets/image (15) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 We don't have a shell to the machine, but with this we can request service tickets for the administrator. We can use `getST.py` to do this.
 

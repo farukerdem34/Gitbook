@@ -100,7 +100,7 @@ Session completed.
 
 Afterwards, we can get a shell using `evil-winrm`.
 
-<figure><img src="../../../.gitbook/assets/image (15) (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (3) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Grab the user flag.
 
@@ -110,7 +110,7 @@ Grab the user flag.
 
 I ran a WinPEAS scan to enumerate for me. There, I found some AutoLogon credentials for the user.
 
-<figure><img src="../../../.gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (51) (5).png" alt=""><figcaption></figcaption></figure>
 
 We can login as this user using `evil-winrm`, but there's not much there for us.
 
@@ -144,11 +144,11 @@ INFO: Done in 00M 03S
 
 After uploading the data, we can see what privileges this user has, and find out that he has DCSync privileges over the DC.
 
-<figure><img src="../../../.gitbook/assets/image (27) (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (27) (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 This means we can use `secretsdump.py` to read the hashes of the entire machine.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (20) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20) (4) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then, just pass the hash using `evil-winrm` to get an administrator shell.
 

@@ -21,10 +21,12 @@ HTB Writeups added:
   * Legacy
   * MetaTwo
   * Nibbles&#x20;
+  * Nunchucks
   * Omni&#x20;
   * Photobomb
   * Postman
   * Previse
+  * RedPanda
   * Remote&#x20;
   * Routerspace
   * Safe&#x20;
@@ -39,12 +41,14 @@ HTB Writeups added:
   * Writeup
 * Medium
   * Ambassador
+  * Awkward
   * Bitlab
   * Cascade
   * Cronos
   * Dynstr
   * Forge
   * Giddy
+  * Health
   * Intelligence
   * Jarvis
   * Mango

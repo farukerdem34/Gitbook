@@ -229,7 +229,7 @@ Because it checks each site manually to see if it is alive, we can actually embe
 
 This is the test file I used:
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (9).png" alt=""><figcaption></figcaption></figure>
 
 There's about 2000 lines within this. When the file is uploaded, it hangs for a long me. Then, we can head to `/uploads` to view the file uploaded.
 
@@ -286,7 +286,7 @@ if (is_resource($process)) {
 
 Embed this within our long text file, and when visited in `/uploads`, we will get a reverse shell:
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (4).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
