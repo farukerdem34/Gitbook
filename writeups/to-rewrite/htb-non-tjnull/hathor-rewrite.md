@@ -1,6 +1,0 @@
----
-description: Jesus
----
-
-# Hathor (Rewrite)
-

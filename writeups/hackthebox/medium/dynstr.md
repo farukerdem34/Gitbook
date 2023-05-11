@@ -20,7 +20,7 @@ PORT   STATE SERVICE
 
 This was a corporate page for a DNS service:
 
-<figure><img src="../../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (13).png" alt=""><figcaption></figcaption></figure>
 
 At the bottom, it appears we have to add `dyna.htb` to the `/etc/hosts` file:
 

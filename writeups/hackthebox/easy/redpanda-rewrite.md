@@ -33,7 +33,7 @@ There are a few possibilities in my mind:
 
 When we use `${7*7}`, we get a unique error:
 
-<figure><img src="../../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (10).png" alt=""><figcaption></figcaption></figure>
 
 It seems that some characters are being blocked. We can fuzz this using `wfuzz`.&#x20;
 

@@ -19,7 +19,7 @@ PORT   STATE SERVICE
 
 Port 80 reveals a basic web page:
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (3).png" alt=""><figcaption></figcaption></figure>
 
 We can fuzz for directories using `gobuster`.&#x20;
 
@@ -54,15 +54,15 @@ There's an `image.php` file that we can access, but the Size being 0 means nothi
 
 &#x20;
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (6).png" alt=""><figcaption></figcaption></figure>
 
 Why would there be an `image.php` file when the images are static on the page itself? When testing, I fuzzed a few parameters, and found that `?img` was the right parameter to use:
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (4).png" alt=""><figcaption></figcaption></figure>
 
 This looks vulnerable to LFI, but when trying to read it we get blocked:
 
-<figure><img src="../../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (3).png" alt=""><figcaption></figcaption></figure>
 
 Since this is PHP based, we can try to bypass this using the `php://filter` wrapper, and it works.
 
@@ -206,17 +206,17 @@ cpu     0%
 
 Using `aaron:aaron`, we can login!
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (4).png" alt=""><figcaption></figcaption></figure>
 
 ### Broken Access Control
 
 When update our profile, we cansee that it returns some parameters:
 
-<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (5).png" alt=""><figcaption></figcaption></figure>
 
 If we append `role=1` to the end of the POST parameters, it would actually change the response:
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (4).png" alt=""><figcaption></figcaption></figure>
 
 Upon reloading the page, we can see an Admin Panel:
 

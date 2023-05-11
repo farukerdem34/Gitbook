@@ -88,7 +88,7 @@ Using this, we can start the server and create a webhook to always run.
 
 In the next minute, it would visit our `/redir` endpoint and be redirected to port 3000, which would be up, and then return the information to `/hook`. This only works because the application returns the entire page when the health is 'up'.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (18) (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (10) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Gogs SQL Injection
 
