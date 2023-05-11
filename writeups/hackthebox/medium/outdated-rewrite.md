@@ -69,7 +69,7 @@ smb: \> ls
 
 When we view the PDF, it talks about how the systems are vulnerable to some CVEs, and that we have to send an email to `itsupport@outdated.htb` for it.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (7).png" alt=""><figcaption></figcaption></figure>
 
 We have to sent a link to web applications, meaning someone will click on our links. We can start with researching the vulnerabilities listed in the PDF. The first CVE (also known as Follina) is an RCE vulnerability that makes use of a HTML file that the user has to click to execute arbitrary code.&#x20;
 
@@ -96,7 +96,7 @@ After waiting for a little bit, we should get a hit on both HTTP servers (one fo
 
 `nc.exe`) and get a reverse shell:
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (4).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -122,7 +122,7 @@ dir
 
 Then we just need to transfer this file over to our machine via `copy`. Afterwards, start `neo4j` and `bloodhound`, then upload the data. We can find the privilege escalation vector here:
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (5).png" alt=""><figcaption></figcaption></figure>
 
 The `AddKeyCredentialLink` is exploitable using Shadow Credentials.&#x20;
 
@@ -138,15 +138,15 @@ Then run this:
 
 This should output a huge command for `Rubeus.exe`.
 
-<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (5).png" alt=""><figcaption></figcaption></figure>
 
 Download and run `Rubeus.exe` with that command, and we should get a hash to use:
 
-<figure><img src="../../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (3).png" alt=""><figcaption></figcaption></figure>
 
 Using that NTLM hash, we can PTH and `evil-winrm` in.
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (4).png" alt=""><figcaption></figcaption></figure>
 
 Grab the user flag.
 
@@ -273,11 +273,11 @@ Then we need to wait for a while until the update installs. We can check when it
 
 Once installed, we will see that we are the part of the Administrators group.
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (4).png" alt=""><figcaption></figcaption></figure>
 
 Then, all we need to do is relog in using `evil-winrm` and we can access the root flag:
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (6).png" alt=""><figcaption></figcaption></figure>
 
 Alternatively, we can dump the hashes from the entire domain:
 
@@ -289,4 +289,4 @@ Administrator:500:aad3b435b51404eeaad3b435b51404ee:716f1ce2e2cf38ee1210cce35eb78
 ```
 {% endcode %}
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (3).png" alt=""><figcaption></figcaption></figure>

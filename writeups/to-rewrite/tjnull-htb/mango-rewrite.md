@@ -46,7 +46,7 @@ When examining requests in Burp, I found that the NoSQL Injection returned a 302
 
 While the regular request returned a 200.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (26) (9) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (26) (9) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 This to me was a clear indication that NoSQL Injection was the path here. I used a script I found on Github to find the rest:
 
@@ -84,6 +84,6 @@ echo "Java.type('java.lang.Runtime').getRuntime().exec('/bin/sh -pc \$@|sh\${IFS
 ```
 {% endcode %}
 
-<figure><img src="../../../.gitbook/assets/image (47).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (47) (4).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

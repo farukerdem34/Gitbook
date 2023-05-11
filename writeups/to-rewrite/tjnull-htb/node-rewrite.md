@@ -133,7 +133,7 @@ The administrator can be cracked on CrackStation:
 
 When we login, all we see is this:
 
-<figure><img src="../../../.gitbook/assets/image (32) (3) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (32) (3) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can download the backup files and view it to find that it's a base64 encoded file. When decoded, it gives a Zip file.
 
@@ -429,7 +429,7 @@ However, this hash cannot be cracked...
 
 I still didn't want to do BOF, so let's take a look at the code within `main` using `ghidra`. There's a possible point of injection here:
 
-<figure><img src="../../../.gitbook/assets/image (48).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (48) (5).png" alt=""><figcaption></figcaption></figure>
 
 Notice how the newline character is **not blacklisted**. Meaning we can use it to bypass this command **and then inject our command**. This can be done by using a **bash variable** to bypass this check since `{}` is not blacklisted as well. This would allow us to execute commands without `;`.&#x20;
 

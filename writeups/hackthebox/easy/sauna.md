@@ -60,7 +60,7 @@ This was a bank company website:
 
 At the bottom, we can 'Meet The Team':
 
-<figure><img src="../../../.gitbook/assets/image (19) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (19) (5) (3).png" alt=""><figcaption></figcaption></figure>
 
 Using these names, we can make use of `usernamer.py` to generate possible usernames for the machine:
 
@@ -148,7 +148,7 @@ After uploading the data, we can see what privileges this user has, and find out
 
 This means we can use `secretsdump.py` to read the hashes of the entire machine.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (20) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20) (4) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then, just pass the hash using `evil-winrm` to get an administrator shell.
 

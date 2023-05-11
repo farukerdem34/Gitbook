@@ -223,7 +223,7 @@ In Big Endian representation, the LSB is stored in the **highest memory address*
 
 For LSB, it's the opposite:
 
-<figure><img src="../../.gitbook/assets/image (5) (6) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (6) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 This affects the order of which a program reads code, and affects the type of payloads associated with buffer overflows.
 

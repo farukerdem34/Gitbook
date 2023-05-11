@@ -62,7 +62,7 @@ The box name was a hint that it was using NUNJUCKS, so we can try some SSTI here
 
 Using this, we can start to gain a reverse shell using SSTI for RCE. If we analyse the HTTP traffic, we can see that the emails are being sent to `/api/submit` and processed.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (41) (5).png" alt=""><figcaption></figcaption></figure>
 
 Using this, we can start to generate a payload:
 

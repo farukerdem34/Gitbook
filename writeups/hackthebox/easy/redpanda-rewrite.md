@@ -33,7 +33,7 @@ There are a few possibilities in my mind:
 
 When we use `${7*7}`, we get a unique error:
 
-<figure><img src="../../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (2).png" alt=""><figcaption></figcaption></figure>
 
 It seems that some characters are being blocked. We can fuzz this using `wfuzz`.&#x20;
 
@@ -310,7 +310,7 @@ echo 'a||aa||aa||../../../../../../../../../../../../../tmp/read.jpg' >> redpand
 
 Then we wait for a little bit, then read the `read_creds.xml` file to find the `root` SSH key.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (19) (5).png" alt=""><figcaption></figcaption></figure>
 
 Then we can `ssh` in as `root`.
 
