@@ -1,5 +1,6 @@
 ---
-cover: .gitbook/assets/586185-terminal-computer.jpg
+cover: >-
+  https://images.unsplash.com/photo-1514168757508-07ffe9ae125b?crop=entropy&cs=srgb&fm=jpg&ixid=M3wxOTcwMjR8MHwxfHNlYXJjaHw5fHxoYWNraW5nfGVufDB8fHx8MTY4MzgyMzE1NXww&ixlib=rb-4.0.3&q=85
 coverY: 28
 ---
 

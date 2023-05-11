@@ -300,7 +300,7 @@
     * [Absolute](writeups/hackthebox/insane/absolute-ad-wip.md)
     * [BrainFuck](writeups/hackthebox/insane/brainfuck.md)
     * [Derailed](writeups/hackthebox/insane/derailed.md)
-    * [Hathor](writeups/hackthebox/insane/hathor.md)
+    * [Hathor](writeups/to-rewrite/htb-non-tjnull/hathor-rewrite.md)
     * [Sekhmet](writeups/hackthebox/insane/sekhmet-ad.md)
 * [Proving Grounds Practice](writeups/proving-grounds-practice/README.md)
   * [Page 1](writeups/proving-grounds-practice/page-1.md)

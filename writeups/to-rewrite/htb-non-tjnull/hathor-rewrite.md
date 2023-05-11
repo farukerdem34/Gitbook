@@ -121,7 +121,7 @@ The administrator panel lets us edit the pages and what is shown:
 
 This is an IIS server, so uploading an `.aspx` reverse shell might work. Head to File Manager > Upload Files:
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
 When trying to upload, it doesn't work.
 
@@ -149,7 +149,7 @@ Turns out this is actually a CVE:
 
 Anyways, we can access our webshell using this CVE:
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 However, getting **ANY** shell fails to work. Similar to Sekhmet (which I actually solved before this), there's some kind of firewall in use here that is blocking us.
 
@@ -265,7 +265,7 @@ active;weak;regular;BeatriceMill;S-1-5-21-3783586571-2109290616-3725730865-5992;
 
 This is crackable:
 
-<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
 `!!!!ilovegood17` is the password here.
 
