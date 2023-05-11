@@ -21,7 +21,7 @@ We have to add `mentorquotes.htb` to the `/etc/hosts` file to access port 80.
 
 The website has daily motivational quotes posted:
 
-<figure><img src="../../../.gitbook/assets/image (619).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (619) (1).png" alt=""><figcaption></figcaption></figure>
 
 Doing a subdomain enumeration reveals an `api` subdomain:
 
@@ -61,7 +61,7 @@ $ feroxbuster -u http://api.mentorquotes.htb
 
 These are some interesting endpoints, and I think viewing the Documentation is the most important.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (624).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (624) (1).png" alt=""><figcaption></figcaption></figure>
 
 This is a token-based API, so when we register a new user, it would return a JWT token to us. We either have to spoof the token to become the administrator to read sensitive information, OR we have to find an injection point for RCE.&#x20;
 
@@ -375,11 +375,11 @@ mentorquotes_db=# select * from users;
 
 The hash for `svc` is crackable.
 
-<figure><img src="../../../.gitbook/assets/image (638).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (638) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then we can SSH in as `svc` and grab the user flag:
 
-<figure><img src="../../../.gitbook/assets/image (511).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (511) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Sudo /bin/sh
 

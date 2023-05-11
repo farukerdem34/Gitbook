@@ -306,7 +306,7 @@ There was some type of password encrypting, and it uses `c4scadek3y654321` to do
 
 When we view the local variables, we find a password:
 
-<figure><img src="../../../.gitbook/assets/image (44) (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
 
 With this, we can login as the `ArkSvc` user.
 

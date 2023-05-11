@@ -52,6 +52,7 @@ HTB Writeups added:
   * Health
   * Intelligence
   * Jarvis
+  * LogForge
   * Mango
   * Meta
   * Mentor
@@ -77,9 +78,13 @@ HTB Writeups added:
   * Worker
 * Hard
   * Blackfield
+  * Carpediem
+  * Compromised
   * Pikaboo
   * Quick
   * Seventeen
+* Insane
+  * Hathor
 
 Explained why `python3 -c 'import pty;pty.spawn("/bin/bash")` and `stty raw -echo;fg` works in Upgrading Shells.
 

@@ -97,7 +97,7 @@ marcus  $2y$10$vcrYth5YcCLlZaPDj6PwqOYTw68W1.3WeKlBn70JonsdW/MhFYK4C
 
 I ran `john` on the hashes, and managed to crack one of them to get `funkymonkey`.
 
-![](<../../.gitbook/assets/image (9) (6) (4).png>)
+![](<../../.gitbook/assets/image (9) (6).png>)
 
 With this and a username, we can `ssh` into the machine as `marcus`. Then, grab the user flag.
 
@@ -188,7 +188,7 @@ This works because of the CVE allowing for us to create SUID binaries across mac
 
 We can see the SUID `bash` binary here:
 
-<figure><img src="../../.gitbook/assets/image (625).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (625) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can get a root shell easily:
 

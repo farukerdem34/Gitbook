@@ -78,7 +78,7 @@ I played around with this and altered my `User-Agent` field to something else, a
 
 With this, because it is a PHP page, I attempted to write a webshell within the HTTP header and also change the page to a PHP page by altering the `filename` parameter.
 
-<figure><img src="../../../.gitbook/assets/image (17) (6) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (6).png" alt=""><figcaption></figcaption></figure>
 
 With this, we can easily gain a reverse shell into the machine using Invoke-PowerShellTcp, as other shells don't work out well.
 

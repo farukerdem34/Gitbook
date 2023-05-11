@@ -32,7 +32,7 @@ When checking the web portal, we see that it's a regular corporate website.
 
 There was a download button on the page, presumably to download the program used for this application. This would make us download a .exe file.
 
-<figure><img src="../../../.gitbook/assets/image (25) (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (25) (4).png" alt=""><figcaption></figcaption></figure>
 
 We can actually open .exe files to find out what is within it.
 

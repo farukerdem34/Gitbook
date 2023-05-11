@@ -98,7 +98,7 @@ $ bloodhound-python -u support -p '#00^BlackKnight' -d blackfield.local -ns 10.1
 
 After uploading the data to Bloodhound, we can view what the `support` user can do. It appears `support` has ForceChangePassword privileges over `audit2020`.
 
-<figure><img src="../../../.gitbook/assets/image (435).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (435) (2).png" alt=""><figcaption></figcaption></figure>
 
 `rpcclient` can be used to exploit this and change the password of this user to something else. Take note that there's a password policy present, and it can reject the change if the password does not meet the requirements:
 
@@ -205,7 +205,7 @@ DPAPI: NA
 
 Unfortunately, the hash for the administrator doesn't work. However, the one for `svc_backup` works and we can login:
 
-<figure><img src="../../../.gitbook/assets/image (433) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (433) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -300,4 +300,4 @@ Administrator:500:aad3b435b51404eeaad3b435b51404ee:184fb5e5178480be64824d4cd53b9
 
 This time, the hash works and we can get a shell using `evil-winrm`.
 
-<figure><img src="../../../.gitbook/assets/image (438) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (438) (2) (1).png" alt=""><figcaption></figcaption></figure>

@@ -88,7 +88,7 @@ We can use the online version for ourselves:
 
 We can upload the APK file we downloaded and let it analyse it for us. What's great about this is that it also checks for secrets and passwords alike. At the bottom of the page, we would see these tokens:
 
-<figure><img src="../../../.gitbook/assets/image (48) (5) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (48) (5).png" alt=""><figcaption></figcaption></figure>
 
 I didn't really know what to do even if I had Gitea access, so let's exploit the Let's Chat Token
 

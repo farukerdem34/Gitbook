@@ -19,7 +19,7 @@ PORT   STATE SERVICE
 
 Port 80 hosts an application that checks whether a website is up.
 
-<figure><img src="../../../.gitbook/assets/image (342).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (342) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can use `nc` listener and use a URL that points to our machine.
 
@@ -142,7 +142,7 @@ We need to have a special HTTP header in order to be verified. We can use the Mo
 
 Then we can view the site:
 
-<figure><img src="../../../.gitbook/assets/image (629).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (629) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Execute PHP Code
 
@@ -233,7 +233,7 @@ This is the test file I used:
 
 There's about 2000 lines within this. When the file is uploaded, it hangs for a long me. Then, we can head to `/uploads` to view the file uploaded.
 
-<figure><img src="../../../.gitbook/assets/image (618).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (618) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can then verify that our PHP code is indeed executed, and the rest of the websites have yet to be evauluated.
 
@@ -356,7 +356,7 @@ This occurs because the argument is directed taken from the user's input and pas
 
 We have to import the `os` library, and since we cannot do so statically using `import`, we have to dynamically do it using `__import__`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (635).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (635) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can the nread the user's private SSH key and SSH in to upgrade our shell. We can also grab the user flag.&#x20;
 
@@ -382,6 +382,6 @@ echo "import os; os.execl('/bin/sh', 'sh', '-c', 'sh <$(tty) >$(tty) 2>$(tty)')"
 sudo easy_install $TF
 ```
 
-<figure><img src="../../../.gitbook/assets/image (634).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (634) (1).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

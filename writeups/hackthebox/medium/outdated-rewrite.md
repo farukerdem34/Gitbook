@@ -69,7 +69,7 @@ smb: \> ls
 
 When we view the PDF, it talks about how the systems are vulnerable to some CVEs, and that we have to send an email to `itsupport@outdated.htb` for it.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (10) (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
 
 We have to sent a link to web applications, meaning someone will click on our links. We can start with researching the vulnerabilities listed in the PDF. The first CVE (also known as Follina) is an RCE vulnerability that makes use of a HTML file that the user has to click to execute arbitrary code.&#x20;
 
@@ -122,7 +122,7 @@ dir
 
 Then we just need to transfer this file over to our machine via `copy`. Afterwards, start `neo4j` and `bloodhound`, then upload the data. We can find the privilege escalation vector here:
 
-<figure><img src="../../../.gitbook/assets/image (8) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
 The `AddKeyCredentialLink` is exploitable using Shadow Credentials.&#x20;
 
@@ -277,7 +277,7 @@ Once installed, we will see that we are the part of the Administrators group.
 
 Then, all we need to do is relog in using `evil-winrm` and we can access the root flag:
 
-<figure><img src="../../../.gitbook/assets/image (1) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 Alternatively, we can dump the hashes from the entire domain:
 

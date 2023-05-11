@@ -267,6 +267,6 @@ This program opens a port and then runs commands as `root`. The vulnerable part 
 
 `pdb` is Python Debugger, and running it as `root` means we can gain an easy shell.
 
-<figure><img src="../../../.gitbook/assets/image (636).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (636) (1).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

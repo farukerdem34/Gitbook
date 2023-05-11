@@ -240,4 +240,4 @@ sc.exe stop dns
 sc.exe start dns
 ```
 
-<figure><img src="../../../.gitbook/assets/image (32) (3) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (32) (3).png" alt=""><figcaption></figcaption></figure>

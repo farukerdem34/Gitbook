@@ -49,7 +49,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 Visiting it reveals a Windows Powershell Web Access page:
 
-<figure><img src="../../../.gitbook/assets/image (507).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (507) (2).png" alt=""><figcaption></figcaption></figure>
 
 The MVC site reveals some online store:
 
@@ -73,7 +73,7 @@ This is vulnerable to SQL injection. Googling any of the errors here reveals tha
 
 We can start `responder` and intercept the response by sending the above command:
 
-<figure><img src="../../../.gitbook/assets/image (432).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (432) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then we can crack this hash easily using `john`:
 
@@ -163,7 +163,7 @@ run
 
 Afterwards, we just need to transfer this reverse shell over and name it as `taskkill.exe` within `C:\programdata\unifi-video` and then run the `stop-service -name Unifivideoservice` command.
 
-<figure><img src="../../../.gitbook/assets/image (633).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (633) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then, we would get a meterpreter shell on the listener:
 

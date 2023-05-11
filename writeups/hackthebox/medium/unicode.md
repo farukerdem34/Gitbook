@@ -19,7 +19,7 @@ PORT   STATE SERVICE
 
 The website was a corporate page for a threat analytics company:
 
-<figure><img src="../../../.gitbook/assets/image (446).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (446) (2).png" alt=""><figcaption></figcaption></figure>
 
 If we click `Google about us`, it redirects us using this URL:
 
@@ -29,7 +29,7 @@ http://10.129.246.167/redirect/?url=google.com
 
 This might be vulnerable to SSRF, but let's first add `hackmedia.htb` to our `/etc/hosts` file and register a user on the site. Upon accessing the dashboard, we see that we have a few functions:
 
-<figure><img src="../../../.gitbook/assets/image (626).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (626) (1).png" alt=""><figcaption></figcaption></figure>
 
 When the request is viewed in Burp, we can see it uses a JWT token:
 
@@ -51,7 +51,7 @@ Upgrade-Insecure-Requests: 1
 
 When decoded on [jwt.io](https://jwt.io/), we can see that it contains the username field and is signed via RSA.
 
-<figure><img src="../../../.gitbook/assets/image (11) (5) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (5).png" alt=""><figcaption></figcaption></figure>
 
 Interesting! There's also a `jku` field with a URL to the site. When viewed, it appears to contain the public key of the JWT token:
 
@@ -85,7 +85,7 @@ openssl pkcs8 -topk8 -inform PEM -outform PEM -nocrypt -in keypair.pem -out pkcs
 
 Afterwards, we can head back to jwt.io and create a new token with a new URL. Since there's a `redirect` functionality available, I'll just use that to make it request the `jwks.json` file to our machine. Then, we can also change the username to `admin`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (438).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (438) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then we need to create the `jwks.json` file. This can be done by first downloading the format from the machine, and then replacing the values in it with our own key pair's.&#x20;
 
@@ -359,6 +359,6 @@ The `ip` variable is passed into a shell command, and it uses `curl`. However, t
 
 We can use this to read files like the `id_rsa` of root.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (637).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (637) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can transfer this to our machine and begin to convert it to the correct format and then use it to `ssh` in as `root`. I admit, I got a bit lazy and just read the root flag.&#x20;

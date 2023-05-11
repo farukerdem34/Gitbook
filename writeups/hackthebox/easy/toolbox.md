@@ -56,23 +56,23 @@ I don't know what this is for, but we'll keep this in mind for now.
 
 The HTTPS page shows a freight corporate page:
 
-<figure><img src="../../../.gitbook/assets/image (453).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (453) (2).png" alt=""><figcaption></figcaption></figure>
 
 I took a look at the certificate, and found another subdomain.
 
-<figure><img src="../../../.gitbook/assets/image (458).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (458) (2).png" alt=""><figcaption></figcaption></figure>
 
 Heading to `admin.megalogistic.com` reveals a login page:
 
-<figure><img src="../../../.gitbook/assets/image (439).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (439) (2).png" alt=""><figcaption></figcaption></figure>
 
 Sending a single `'` reveals an SQL error.
 
-<figure><img src="../../../.gitbook/assets/image (450).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (450) (2).png" alt=""><figcaption></figcaption></figure>
 
 So this is vulnerable to SQL Injection, and we can use `'OR 1=1 -- -` to bypass the login. On the admin dashboard, we see some stuff regarding credentials:
 
-<figure><img src="../../../.gitbook/assets/image (446) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (446) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 There wasn't much within the administrator panel for us to use, so let's go back to the SQL Injection and see if we can get a webshell via `sqlmap`.&#x20;
 
@@ -86,7 +86,7 @@ command standard output: 'uid=102(postgres) gid=104(postgres) groups=104(postgre
 
 This works, and we can get a webshell. The weird part is, this is a Windows machine and I ran `id` out of instinct. This means that the website and database are probably run within a Docker container. Anyways, we can get a reverse shell via a `bash` one-liner.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (457).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (457) (2).png" alt=""><figcaption></figcaption></figure>
 
 I found the user flag within the `/var/lib/postgresql` folder:
 
@@ -143,7 +143,7 @@ While Googling for `docker-toolbox` and `ssh`, I came across this StackOverflow 
 
 I tried the password and username he specified (which looked default to me) and it worked:
 
-<figure><img src="../../../.gitbook/assets/image (434) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (434) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 On the docker, we can run `sudo su` to become `root`.
 
@@ -183,4 +183,4 @@ drwxrwxrwx    1 docker   staff            0 Feb 19  2020 .ssh
 
 Within the `.ssh` file, we can find an `id_rsa` private key. Using that, we can `ssh` in as `administrator` on the main machine.
 
-<figure><img src="../../../.gitbook/assets/image (437) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (437) (2) (1).png" alt=""><figcaption></figcaption></figure>

@@ -19,11 +19,11 @@ PORT      STATE    SERVICE
 
 The website is a notebook website:
 
-<figure><img src="../../../.gitbook/assets/image (623).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (623) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can create a new user because we don't have any credentials. Once created, we can login and view our notes, of which we have none:
 
-<figure><img src="../../../.gitbook/assets/image (10) (7) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (7).png" alt=""><figcaption></figcaption></figure>
 
 When the requests are viewed in Burp, we can see that it uses a JWT token and a `uuid` parameter:
 
@@ -44,7 +44,7 @@ Upgrade-Insecure-Requests: 1
 
 We can take a look at this cookie within jwt.io and see that it uses a private key hosted on the server.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (627).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (627) (1).png" alt=""><figcaption></figcaption></figure>
 
 The token is spoofable, similar to another machine Unicode. We can generate our own private key using `openssl` and use it to spoof the token by replacing the `kid` parameter with a link hosting the key instead. Also, we can change `admin_cap` to be 1.&#x20;
 
@@ -52,7 +52,7 @@ The token is spoofable, similar to another machine Unicode. We can generate our 
 openssl genrsa -out priv.key 2048
 ```
 
-<figure><img src="../../../.gitbook/assets/image (455).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (455) (2).png" alt=""><figcaption></figcaption></figure>
 
 When we use this token after refreshing the page, we can see an Admin Panel present.&#x20;
 
@@ -60,11 +60,11 @@ When we use this token after refreshing the page, we can see an Admin Panel pres
 
 Then, we can view the notes of the administrator through Admin Panel > View Notes.
 
-<figure><img src="../../../.gitbook/assets/image (442).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (442) (2).png" alt=""><figcaption></figcaption></figure>
 
 Conveniently, the first note reveals that PHP files are left executable on this website.
 
-<figure><img src="../../../.gitbook/assets/image (628).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (628) (1).png" alt=""><figcaption></figcaption></figure>
 
 The admin panel also has an upload file feature:
 
@@ -72,15 +72,15 @@ The admin panel also has an upload file feature:
 
 I uploaded a basic PHP webshell, and the page shows this:
 
-<figure><img src="../../../.gitbook/assets/image (525).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (525) (2).png" alt=""><figcaption></figcaption></figure>
 
 Using this, we can get RCE:
 
-<figure><img src="../../../.gitbook/assets/image (631).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (631) (1).png" alt=""><figcaption></figcaption></figure>
 
 And subsequently, a reverse shell.
 
-<figure><img src="../../../.gitbook/assets/image (437).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (437) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

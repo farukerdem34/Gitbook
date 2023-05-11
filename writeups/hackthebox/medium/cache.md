@@ -19,7 +19,7 @@ PORT   STATE SERVICE
 
 Port 80 reveals a blog like website:
 
-<figure><img src="../../../.gitbook/assets/image (24) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
 
 There's not much here, but we can add `cache.htb` to our `/etc/hosts` file since there's a banner for it on screen. I ran a `gobuster` and `wfuzz` scan on the machine. Funnily, I accidentally had a typo in my `wfuzz` command, and found a completely new domain present:
 
@@ -45,7 +45,7 @@ ID           Response   Lines    Word       Chars       Payload
 
 The page shows us a login for OpenEMR, which is known to have a ton of vulnerabilities:
 
-<figure><img src="../../../.gitbook/assets/image (22) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
 
 We can head to the Github Repo for this software and attempt to find its version using the default files present:
 

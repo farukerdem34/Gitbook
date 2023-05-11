@@ -349,7 +349,7 @@ First, we would need to get a valid token to interact with the API. Earlier, we 
 
 We can do this with the MySQL instance we accessed earlier.
 
-<figure><img src="../../../.gitbook/assets/image (8) (5) (1).png" alt=""><figcaption><p>\</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (5).png" alt=""><figcaption><p>\</p></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (1) (1) (4) (1).png" alt=""><figcaption></figcaption></figure>
 

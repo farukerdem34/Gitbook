@@ -53,7 +53,7 @@ UHC{F1rst_5tep_2_Qualify}
 
 Once we submit the flag, we have SSH access, but we still have no password.
 
-<figure><img src="../../../.gitbook/assets/image (620).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (620) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### SSH Creds
 
@@ -178,4 +178,4 @@ User www-data may run the following commands on union:
     (ALL : ALL) NOPASSWD: ALL
 ```
 
-<figure><img src="../../../.gitbook/assets/image (622).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (622) (1).png" alt=""><figcaption></figcaption></figure>

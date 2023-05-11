@@ -23,9 +23,9 @@ PORT   STATE SERVICE
 
 When we visit port 80, there's an obvious LFI present:
 
-<figure><img src="../../../.gitbook/assets/image (9) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (12) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
 
 I was a bit lazy, so I created a quick Python script to read the files:
 
@@ -66,7 +66,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 `beta.html` contained a file upload that did nothing, but it revealed some information regarding an `activate_license` application present:
 
-<figure><img src="../../../.gitbook/assets/image (14) (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
 
 We can fuzz to find this binary somewhere. Create a quck file with PATH variables:
 
@@ -215,11 +215,11 @@ RELRO     : FULL
 
 NX is also enabled, so we probably need to do a Ret2Libc exploit after leaking the `libc` address. Within the `activate_license` function, there's a BOF vulnerability due to the hardcoded buffer length and lack of length validation. Furthermore, the first 4 characters read from input are the buffer length used:
 
-<figure><img src="../../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 So we can probably overwrite this with a huge number of bytes. I ran the binary on my own machine on port 5555, and it seems to take some input.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (11) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
 
 From reading `ghidra`, it appears that it does some SQL stuff with our input after getting it:
 
@@ -372,7 +372,7 @@ rop += pop_rdi
 
 If this script is run, it gives us a reverse shell that we can upgrade.
 
-<figure><img src="../../../.gitbook/assets/image (48).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -546,7 +546,7 @@ exec "$target"
 
 The `/usr/lib/emuemu/reg_helper` binary is used because it is owned by `root`. The one within our home directory is owned by us, so it won't work in bypassing restrictions. After downloading it and running it, we would get a `root` shell.
 
-<figure><img src="../../../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
 This machine was hard for me, and I used a writeup for initial access and `emuemu` exploitation.&#x20;
 

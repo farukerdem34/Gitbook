@@ -47,7 +47,7 @@ We can add `intelligence.htb` to our `/etc/hosts` file as well. Within the page,
 
 When we download them, we would get redirected to a PDF which did not have anything useful on it.
 
-<figure><img src="../../../.gitbook/assets/image (43) (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
 
 The more interesting part is the URL. For the above document, I was redirected to `http://10.129.95.154/documents/2020-01-01-upload.pdf`. We can fuzz this and see what other PDFs are present. We can create a wordlist using this:
 
