@@ -335,7 +335,7 @@ chisel server -p 5555 --reverse
 
 Afterwards, we can access the database:
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (7).png" alt=""><figcaption></figcaption></figure>
 
 We can view the databases present:
 
@@ -408,4 +408,4 @@ access AllGroup "" any noauth exact AllView none non
 
 We can then `su` to `james` using this and check our `sudo` privileges, finding that getting a `root` shell is easy:
 
-<figure><img src="../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (8).png" alt=""><figcaption></figcaption></figure>

@@ -310,7 +310,7 @@ When we view the local variables, we find a password:
 
 With this, we can login as the `ArkSvc` user.
 
-<figure><img src="../../../.gitbook/assets/image (12) (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (11) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Recycle Bin
 

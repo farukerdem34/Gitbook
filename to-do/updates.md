@@ -57,8 +57,10 @@ HTB Writeups added:
   * Mentor
   * Node
   * Ophiuchi
+  * Outdated
   * Pit
   * Ready
+  * Retired
   * Seal
   * Secnotes
   * Silo

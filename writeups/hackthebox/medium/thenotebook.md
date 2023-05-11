@@ -23,7 +23,7 @@ The website is a notebook website:
 
 We can create a new user because we don't have any credentials. Once created, we can login and view our notes, of which we have none:
 
-<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (7).png" alt=""><figcaption></figcaption></figure>
 
 When the requests are viewed in Burp, we can see that it uses a JWT token and a `uuid` parameter:
 

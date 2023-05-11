@@ -62,7 +62,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 When we view the `/vendor` endpoint, we see a file system with different PHP libraries:
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (10).png" alt=""><figcaption></figcaption></figure>
 
 Searching for exploits for each of them leads me an RCE for PHPUnit:
 
@@ -104,7 +104,7 @@ We can transfer this back to my machine for some reverse engineering via `ghidra
 
 There are a lot of functions within this function:
 
-<figure><img src="../../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (3).png" alt=""><figcaption></figcaption></figure>
 
 Out of all the functions, `exec_shell` is the most unique because it actually executes something.
 
