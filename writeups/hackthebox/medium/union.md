@@ -20,7 +20,7 @@ The name implies I should be looking for some type of UNION SQL Injection somewh
 
 This reveals a simple website that takes one user input:
 
-<figure><img src="../../../.gitbook/assets/image (4) (3) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (3) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 If we enter anything, it says that we are eligible to compete in the tournament and gives us a link to `challenge.php`.&#x20;
 

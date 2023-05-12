@@ -18,7 +18,7 @@ PHP/8.1.0-dev is vulnerable to a publicly available RCE exploit.
 
 This script can be used to gain a shell as the user.
 
-<figure><img src="../../../.gitbook/assets/image (1) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (6) (2).png" alt=""><figcaption></figcaption></figure>
 
 From this, we can get a shell using the `mkfifo` script. After spawning a TTY shell, we find that we are the user `james`.
 

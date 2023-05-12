@@ -32,7 +32,7 @@ With Jenkins, we can make use of the script console to run a malicious script. T
 
 Within the Documents folder for the user, we can find a kdbx file.
 
-<figure><img src="../../../.gitbook/assets/image (14) (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 The password for this can be cracked rather easily.
 

