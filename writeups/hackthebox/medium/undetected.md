@@ -213,7 +213,7 @@ Then, using `ida64`, we see that there are base64 related functions for this:
 
 We can locate the string and see that it is being passed into another `bash -c` command:
 
-<figure><img src="../../../.gitbook/assets/image (19) (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (19) (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 When decoded, it shows this:
 

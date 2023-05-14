@@ -12,7 +12,7 @@ We don't need to add anything into the hosts file.
 
 The website was running OctoberCMS and appears to have a default look:
 
-<figure><img src="../../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 Registering an account and trying to do stuff with it was useless and had no functionalities. So instead, we can abuse the fact that OctoberCMS is an open-source project. A quick Google search reveals that the backend of this is at `/backend`:
 

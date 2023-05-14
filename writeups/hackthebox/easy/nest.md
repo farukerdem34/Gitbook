@@ -80,4 +80,4 @@ Similar to the previous time, we can load the binary in dnSpy and set a breakpoi
 
 Afterwards, we would have full access to the C Drive:
 
-<figure><img src="../../../.gitbook/assets/image (16) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (1) (5).png" alt=""><figcaption></figcaption></figure>

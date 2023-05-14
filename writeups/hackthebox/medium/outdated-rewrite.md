@@ -96,7 +96,7 @@ After waiting for a little bit, we should get a hit on both HTTP servers (one fo
 
 `nc.exe`) and get a reverse shell:
 
-<figure><img src="../../../.gitbook/assets/image (7) (4) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (4) (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -142,11 +142,11 @@ This should output a huge command for `Rubeus.exe`.
 
 Download and run `Rubeus.exe` with that command, and we should get a hash to use:
 
-<figure><img src="../../../.gitbook/assets/image (15) (3) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (3) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Using that NTLM hash, we can PTH and `evil-winrm` in.
 
-<figure><img src="../../../.gitbook/assets/image (6) (4) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (4) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Grab the user flag.
 

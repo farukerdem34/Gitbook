@@ -76,4 +76,4 @@ Then, we can read the Users table data to find the hash for the root user.
 
 The hash can be cracked via `hashcat -m 3200` to give `Password!21` as the password. We can then `su` to root.
 
-<figure><img src="../../../.gitbook/assets/image (14) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (6) (1).png" alt=""><figcaption></figcaption></figure>

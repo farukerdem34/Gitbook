@@ -109,13 +109,13 @@ Poking around the shares, we don't seem to get much from it. I could decompiled 
 
 The next step was to use Bloodhound, since we had credentials and a ticket.
 
-<figure><img src="../../../.gitbook/assets/image (1) (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% embed url="https://github.com/jazzpizazz/BloodHound.py-Kerberos" %}
 
 Now we just need to fire up bloodhound and neo4j to view this data in a neat format. Bloodhound reveals a few users that are significant.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (2) (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Out of all of these users, m.lovegod has the most privileges. The user owns the Network Audit group. **This group has GenericWrite over the WinRM\_User**, which I suspect is where the user flag would be. So our exploit path is clear.&#x20;
 
@@ -139,7 +139,7 @@ Now that we know that the `m.lovegod` user owns the Network Audit group, and mem
 
 First, we need to request a ST using `impacket-getTGT` using these credentials. Then we can export to `KRB5CCNAME`.
 
-<figure><img src="../../../.gitbook/assets/image (3) (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (4) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 The tricky part was figuring out how to use this ticket. The easiest way to do this is to use a Windows VM connected to the VPN and run some Powerview commands on it, such as `Add-DomainObjectAcl` and stuff. We have to do this because it is not possible for us to use this ticket to add group members to the Network Audit group from a Linux machine. (I could not make pywhisker or dacledit) to work.
 

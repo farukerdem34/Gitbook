@@ -97,7 +97,7 @@ marcus  $2y$10$vcrYth5YcCLlZaPDj6PwqOYTw68W1.3WeKlBn70JonsdW/MhFYK4C
 
 I ran `john` on the hashes, and managed to crack one of them to get `funkymonkey`.
 
-![](<../../.gitbook/assets/image (9) (6).png>)
+![](<../../.gitbook/assets/image (9) (6) (2).png>)
 
 With this and a username, we can `ssh` into the machine as `marcus`. Then, grab the user flag.
 

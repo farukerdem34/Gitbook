@@ -105,6 +105,7 @@
   * [OnlyForYou](writeups/htb-season-1/onlyforyou.md)
   * [MonitorsTwo](writeups/htb-season-1/monitorstwo.md)
   * [Snoopy](writeups/htb-season-1/snoopy.md)
+  * [Format](writeups/htb-season-1/format.md)
 * [HackTheBox](writeups/hackthebox/README.md)
   * [Easy](writeups/hackthebox/easy/README.md)
     * [Academy](writeups/hackthebox/easy/academy-rewrite.md)

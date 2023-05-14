@@ -62,7 +62,7 @@ Why would there be an `image.php` file when the images are static on the page it
 
 This looks vulnerable to LFI, but when trying to read it we get blocked:
 
-<figure><img src="../../../.gitbook/assets/image (15) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (3) (3).png" alt=""><figcaption></figcaption></figure>
 
 Since this is PHP based, we can try to bypass this using the `php://filter` wrapper, and it works.
 
@@ -206,7 +206,7 @@ cpu     0%
 
 Using `aaron:aaron`, we can login!
 
-<figure><img src="../../../.gitbook/assets/image (6) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (4) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Broken Access Control
 

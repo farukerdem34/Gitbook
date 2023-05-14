@@ -116,7 +116,7 @@ We can verify that the exploit works.
 
 A `mkfifo` one-liner can be used to gain a reverse shell.
 
-<figure><img src="../../../.gitbook/assets/image (11) (5) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (5) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

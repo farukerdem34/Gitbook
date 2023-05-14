@@ -24,7 +24,7 @@ This version is vulnerable to RFI.
 
 We can confirm this by viewing the `/etc/passwd` file.
 
-<figure><img src="../../../.gitbook/assets/image (5) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (2) (3).png" alt=""><figcaption></figcaption></figure>
 
 After further enumeration, there's nothing else that I could find. So we probably need to read more files within this machine. I could not read any user files, so I tried to check some configuration files for the server at `/etc/apache2/sites-enabled/000-default.conf`.
 
@@ -54,7 +54,7 @@ We now have remote access as the user `marcus` and can capture the user flag.
 
 In the user's directory, we find a `note.txt` file that points towards a docker image being present.
 
-<figure><img src="../../../.gitbook/assets/image (17) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (1) (6).png" alt=""><figcaption></figcaption></figure>
 
 I read the configuration files at `/etc/containerd`, and found that the `root` user was running the image.
 
