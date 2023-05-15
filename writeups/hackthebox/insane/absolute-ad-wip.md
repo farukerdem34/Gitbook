@@ -47,7 +47,7 @@ When testing this for AS-REP Roasting, it worked!
 
 Then we can crack this hash.
 
-<figure><img src="../../../.gitbook/assets/image (3) (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (4) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Retrieving Tickets
 
@@ -79,7 +79,7 @@ Kerberoasting reveals that there are no SPNs to roast. Instead, we can use this 
 
 <figure><img src="../../../.gitbook/assets/image (5) (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (12) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 Really interesting output. We have found another user and credential!
 

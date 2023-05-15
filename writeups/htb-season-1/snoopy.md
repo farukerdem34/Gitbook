@@ -23,7 +23,7 @@ We can add `snoopy.htb` to our `/etc/hosts` file as per standard HTB practice.
 
 This was a corporate page that provides DevSecOps services:
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (4).png" alt=""><figcaption></figcaption></figure>
 
 Looking around, there's another subdomain present in the form of a mail server.
 
@@ -352,7 +352,7 @@ listen interfaces 0.0.0.0 and :: on port 2222
 
 We have a credential! With this, we can `ssh` in as the user `cbrown`:
 
-<figure><img src="../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (18) (7).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

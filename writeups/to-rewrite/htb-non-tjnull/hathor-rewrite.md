@@ -125,7 +125,7 @@ This is an IIS server, so uploading an `.aspx` reverse shell might work. Head to
 
 When trying to upload, it doesn't work.
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 If we change it to `cmd.txt`, it works.&#x20;
 
@@ -185,11 +185,11 @@ In this case, we can try some better webshells that don't rely on external binar
 
 Insomnia shell is a fully implemented web shell that can give us a reverse shell without the use of external binaries. We can upload this one and try again.
 
-<figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (4).png" alt=""><figcaption></figcaption></figure>
 
 Using this, we can get a reverse shell as `web`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (3) (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## GinaWild Shell
 
@@ -676,7 +676,7 @@ WshShell.Run Command
 
 We can simply use `cscript ./run.vbs` to run this, and we would get another reverse shell:
 
-<figure><img src="../../../.gitbook/assets/image (1) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Root Shell
 
@@ -738,6 +738,6 @@ $ export KRB5CCNAME=administrator@windcorp.htb.ccache
 
 Then, we can use this ticket to get a shell using this ticket:
 
-<figure><img src="../../../.gitbook/assets/image (3) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 Rooted! Although hard, this machine had steps that were simple if the enumeration was done properly. Great machine!&#x20;

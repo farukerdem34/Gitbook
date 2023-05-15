@@ -20,7 +20,7 @@ Within the Reports directory, I found a .xlsm file.
 
 We can download this Excel file back to our machine for analysis. Here, I used `oletools` to find out more about the file:
 
-<figure><img src="../../../.gitbook/assets/image (1) (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (4) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can see how there are VBA Macros within this file. Again, we can use `olevba` to extract the code.
 
