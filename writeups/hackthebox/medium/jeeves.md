@@ -36,7 +36,7 @@ Within the Documents folder for the user, we can find a kdbx file.
 
 The password for this can be cracked rather easily.
 
-<figure><img src="../../../.gitbook/assets/image (4) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (6) (2).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, we can use `kp-cli` to view the passwords stored within this database.
 

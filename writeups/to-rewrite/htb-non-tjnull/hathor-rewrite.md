@@ -657,7 +657,7 @@ Set-AuthenticodeSignature .\Get-bADpasswords.ps1 $pfx
 
 This script should let us know that we have imported it:
 
-<figure><img src="../../../.gitbook/assets/image (14) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (6) (2).png" alt=""><figcaption></figcaption></figure>
 
 It should also let us know that we have signed it successfully:
 

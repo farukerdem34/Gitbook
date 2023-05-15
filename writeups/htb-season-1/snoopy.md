@@ -27,7 +27,7 @@ This was a corporate page that provides DevSecOps services:
 
 Looking around, there's another subdomain present in the form of a mail server.
 
-<figure><img src="../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (20) (4).png" alt=""><figcaption></figcaption></figure>
 
 It syas that the DNS records are being migrated to another domain and that their email server is offline. We can run both a `gobuster` directory and `wfuzz` subdomain scan first. The subdomain scan reveals a `mm` subdomain present.
 
@@ -78,11 +78,11 @@ The last thing is that `mail.snoopy.htb` is not present within the records and i
 
 We can visit the `mm` subdomain to verify that it is running:
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
 We don't have any credentials, but there is a Password Reset in use here that requires an email address:
 
-<figure><img src="../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (14) (6).png" alt=""><figcaption></figcaption></figure>
 
 Lastly, there are some emails present:
 
@@ -107,7 +107,7 @@ Upgrade-Insecure-Requests: 1
 
 The `announcement.pdf` file had nothing interesting itself, but this looks vulnerable to LFI. Inital testing reveals this isn't vulnerable at first:
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (6).png" alt=""><figcaption></figcaption></figure>
 
 After using `....//` instead, we can see that a file is generated:
 
@@ -299,17 +299,17 @@ It talks about ClamAV being used as the anti-virus, and also about some provisio
 
 There was a weird command `/server_provision` without any description. When run, it opens up a UI that seems to spawn a server:
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (8).png" alt=""><figcaption></figcaption></figure>
 
 We can fill it in to have our credentials and required details. It appears that Windows is disabled too:
 
-<figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (9) (6).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
 
 Anyways, after filling in the fields and clicking submit, we get this weird thing on a listener port:
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (11).png" alt=""><figcaption></figcaption></figure>
 
 I thought that it would be a shell and hence ran `id`, but it quickly closed. In this case, I took a look at the traffic within `wireshark` but wasn't able to find out much. I tried out a few methods from the SSH page of Hacktricks, and found `ssh-mitm`.&#x20;
 

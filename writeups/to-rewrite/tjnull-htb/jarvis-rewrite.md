@@ -90,7 +90,7 @@ Host,User,Password,Select_priv,Insert_priv,Update_priv,Delete_priv,Create_priv,D
 
 The username and password look like the best thing to get out.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (44) (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (44) (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 This can be cracked on CrackStation.
 
