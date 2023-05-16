@@ -433,8 +433,8 @@
 
 ## 🐍 Evasion
 
-* [WIP!](evasion/wip.md)
+* [WIP!](evasion/evasion.md)
 
 ## 🔺 Adversary Emulation
 
-* [WIP!](adversary-emulation/wip.md)
+* [WIP!](adversary-emulation/emulation.md)

@@ -24,9 +24,9 @@ I wrote these when starting my journey in Infosec. It covers stuff that is more 
 
 {% embed url="https://rouvin.gitbook.io/active-directory/ad" %}
 
-## Writeups
+### Writeups
 
-Here's the writeups to machines I've done on HTB or PGP, and it is the **main bulk** of content here.
+Here's the writeups to machines I've done on HTB or PGP, and it is the **main bulk** of content here.&#x20;
 
 {% embed url="https://rouvin.gitbook.io/ibreakstuff/writeups/hackthebox" %}
 
@@ -34,11 +34,7 @@ Here's the writeups to machines I've done on HTB or PGP, and it is the **main bu
 
 ## In-Depth
 
-Some of the stuff I've picked up from interning with red / pentesting teams, as well as my own research and courses done. A bit more technical and less friendly, but 100% more fun.
-
-{% embed url="https://rouvin.gitbook.io/ibreakstuff/evasion" %}
-
-{% embed url="https://rouvin.gitbook.io/ibreakstuff/adversary-emulation" %}
+Some of the stuff I've picked up from interning with red / pentesting teams, as well as my own research and courses done. A bit more technical and less friendly, but still the same fun.
 
 This book will be updated as frequently as I can while juggling school work. Check the Updates page to see what I've added (categorised by month) and the To Add page to see what I plan to add.
 
