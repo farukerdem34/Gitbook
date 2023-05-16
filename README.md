@@ -10,7 +10,9 @@ coverY: 28
 
 This is just a compilation of notes and knowledge I gained from scouring the Internet, self-practicing, going for courses, interning and learning from college. Also serves as a small portfolio for my skills.&#x20;
 
-There are a few sections here:
+## Basic Knowledge
+
+Here's some of the more 'entry-level' knowledge.&#x20;
 
 {% embed url="https://rouvin.gitbook.io/ibreakstuff/what-is-security/getting-started/ctfs" %}
 
@@ -22,11 +24,19 @@ There are a few sections here:
 
 {% embed url="https://rouvin.gitbook.io/active-directory/ad" %}
 
-**The main content I post are  writeups for HackTheBox and Proving Grounds Practice machines:**
+## Writeups
+
+Here's the writeups to machines I've done:
 
 {% embed url="https://rouvin.gitbook.io/ibreakstuff/writeups/hackthebox" %}
 
 {% embed url="https://rouvin.gitbook.io/ibreakstuff/writeups/proving-grounds-practice" %}
+
+## In-Depth
+
+I've also included some pages for more in-depth stuff like Defence Evasion and others. Mainly learning this from courses like OSEP and CRTO.
+
+
 
 This book will be updated as frequently as I can while juggling school work. Check the Updates page to see what I've added (categorised by month) and the To Add page to see what I plan to add.
 
