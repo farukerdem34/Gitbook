@@ -8,11 +8,11 @@ coverY: 28
 
 ## What's this?
 
-This is just a compilation of notes and knowledge I gained from scouring the Internet, self-practicing, going for courses, interning and learning from college. Also serves as a small portfolio for my skills.&#x20;
+This is just a compilation of notes and knowledge I gained from scouring the Internet, self-practicing, going for courses, interning and learning from college. Also serves as a small portfolio for me.&#x20;
 
-## Basic Knowledge
+### Basic Knowledge
 
-Here's some of the more 'entry-level' knowledge.&#x20;
+I wrote these when starting my journey in Infosec. It covers stuff that is more beginner-friendly to intermediate level.&#x20;
 
 {% embed url="https://rouvin.gitbook.io/ibreakstuff/what-is-security/getting-started/ctfs" %}
 
@@ -26,7 +26,7 @@ Here's some of the more 'entry-level' knowledge.&#x20;
 
 ## Writeups
 
-Here's the writeups to machines I've done:
+Here's the writeups to machines I've done on HTB or PGP, and it is the **main bulk** of content here.
 
 {% embed url="https://rouvin.gitbook.io/ibreakstuff/writeups/hackthebox" %}
 
@@ -34,9 +34,11 @@ Here's the writeups to machines I've done:
 
 ## In-Depth
 
-I've also included some pages for more in-depth stuff like Defence Evasion and others. Mainly learning this from courses like OSEP and CRTO.
+Some of the stuff I've picked up from interning with red / pentesting teams, as well as my own research and courses done. A bit more technical and less friendly, but 100% more fun.
 
+{% embed url="https://rouvin.gitbook.io/ibreakstuff/evasion" %}
 
+{% embed url="https://rouvin.gitbook.io/ibreakstuff/adversary-emulation" %}
 
 This book will be updated as frequently as I can while juggling school work. Check the Updates page to see what I've added (categorised by month) and the To Add page to see what I plan to add.
 

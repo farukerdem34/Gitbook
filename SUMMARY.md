@@ -430,3 +430,11 @@
     * [Heist](writeups/to-rewrite/proving-grounds/heist.md)
     * [Resourced](writeups/to-rewrite/proving-grounds/resourced-1.md)
     * [Zino](writeups/to-rewrite/proving-grounds/zino.md)
+
+## 🐍 Evasion
+
+* [WIP!](evasion/wip.md)
+
+## 🔺 Adversary Emulation
+
+* [WIP!](adversary-emulation/wip.md)
