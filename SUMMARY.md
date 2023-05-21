@@ -88,7 +88,6 @@
 * [ACLs and GPOs](active-directory/acls-and-gpos/README.md)
   * [Abusing ACLs and GPOs](active-directory/acls-and-gpos/abusing-acls-and-gpos.md)
 * [LDAP](active-directory/ldap.md)
-* [Advanced AD](active-directory/advanced-ad.md)
 
 ## ✍ Writeups
 
