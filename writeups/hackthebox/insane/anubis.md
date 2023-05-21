@@ -352,7 +352,7 @@ putting file Whatif.omv as \Documents\Analytics\Whatif.omv (130.9 kb/s) (average
 
 Then we just wait. After a while, we would start to get calls on our HTTP servers and get a reverse shell as the user.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (43) (8).png" alt=""><figcaption></figcaption></figure>
 
 We can then grab the user flag.
 
@@ -460,6 +460,6 @@ Thumbprint                                Subject
 
 Then, using this hash, we can easily `psexec.py` in as the administrator and grab the root flag:
 
-<figure><img src="../../../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (44) (9).png" alt=""><figcaption></figcaption></figure>
 
 This part was pretty hard for me, and I had to use a walkthrough because I couldn't find the right tools to use. Great machine though!&#x20;
