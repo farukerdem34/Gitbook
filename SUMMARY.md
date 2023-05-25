@@ -9,6 +9,10 @@
 
 * [To Add](to-do/to-add.md)
 
+## 📔 Resources
+
+* [Resources](resources/resources.md)
+
 ## 🔐 What is Security
 
 * [Information Security](what-is-security/information-security.md)
