@@ -9,7 +9,7 @@
 
 * [To Add](to-do/to-add.md)
 
-## 📔 Resources
+## 📔 Resources Dump <a href="#resources" id="resources"></a>
 
 * [Resources](resources/resources.md)
 
