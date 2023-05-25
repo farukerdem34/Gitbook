@@ -20,7 +20,9 @@ A collection of really good resources and readings I found while on the web / Li
 
 {% embed url="https://redops.at/en/blog/direct-syscalls-vs-indirect-syscalls" %}
 
+### SCRT
 
+{% embed url="https://blog.scrt.ch/2020/06/19/engineering-antivirus-evasion/" %}
 
 ## ICS / OT / SCADA
 
