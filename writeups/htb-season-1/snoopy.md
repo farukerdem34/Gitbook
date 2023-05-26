@@ -23,11 +23,11 @@ We can add `snoopy.htb` to our `/etc/hosts` file as per standard HTB practice.
 
 This was a corporate page that provides DevSecOps services:
 
-<figure><img src="../../.gitbook/assets/image (3) (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (4).png" alt=""><figcaption></figcaption></figure>
 
 Looking around, there's another subdomain present in the form of a mail server.
 
-<figure><img src="../../.gitbook/assets/image (20) (4) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (20) (4).png" alt=""><figcaption></figcaption></figure>
 
 It syas that the DNS records are being migrated to another domain and that their email server is offline. We can run both a `gobuster` directory and `wfuzz` subdomain scan first. The subdomain scan reveals a `mm` subdomain present.
 
@@ -78,15 +78,15 @@ The last thing is that `mail.snoopy.htb` is not present within the records and i
 
 We can visit the `mm` subdomain to verify that it is running:
 
-<figure><img src="../../.gitbook/assets/image (9) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
 We don't have any credentials, but there is a Password Reset in use here that requires an email address:
 
-<figure><img src="../../.gitbook/assets/image (14) (6) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (14) (6).png" alt=""><figcaption></figcaption></figure>
 
 Lastly, there are some emails present:
 
-<figure><img src="../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
 
 ### Download LFI --> DNS Vuln
 
@@ -107,7 +107,7 @@ Upgrade-Insecure-Requests: 1
 
 The `announcement.pdf` file had nothing interesting itself, but this looks vulnerable to LFI. Inital testing reveals this isn't vulnerable at first:
 
-<figure><img src="../../.gitbook/assets/image (4) (6) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (6).png" alt=""><figcaption></figcaption></figure>
 
 After using `....//` instead, we can see that a file is generated:
 
@@ -172,7 +172,7 @@ if __name__ == '__main__':
 	main()
 ```
 
-<figure><img src="../../.gitbook/assets/image (21) (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
 
 This made enumeration a lot easier. Now, we can proceed with enumeration of the file system and other sensitive files. We can start with `/etc/nginx/sites-available/default`.&#x20;
 
@@ -285,7 +285,7 @@ http://mm.snoopy.htb/reset_password_complete?token=b4akcwn9adntaawingkbho8ctcyzf
 
 Afterwards, we can reset the password and see that it works here:
 
-<figure><img src="../../.gitbook/assets/image (17) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
 
 Then we can login.
 
@@ -293,19 +293,19 @@ Then we can login.
 
 When we login, we can see a ton of chat logs:
 
-<figure><img src="../../.gitbook/assets/image (8) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
 It talks about ClamAV being used as the anti-virus, and also about some provisioning server. We can view the different commands present on this:
 
 There was a weird command `/server_provision` without any description. When run, it opens up a UI that seems to spawn a server:
 
-<figure><img src="../../.gitbook/assets/image (6) (8) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (8).png" alt=""><figcaption></figcaption></figure>
 
 We can fill it in to have our credentials and required details. It appears that Windows is disabled too:
 
-<figure><img src="../../.gitbook/assets/image (9) (6) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (9) (6).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (16) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
 
 Anyways, after filling in the fields and clicking submit, we get this weird thing on a listener port:
 
@@ -352,7 +352,7 @@ listen interfaces 0.0.0.0 and :: on port 2222
 
 We have a credential! With this, we can `ssh` in as the user `cbrown`:
 
-<figure><img src="../../.gitbook/assets/image (18) (7) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (18) (7).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -426,7 +426,7 @@ index 0000000..8e881d1
 
 Afterwards, just run the `sudo` command on the `/tmp/diff` file. This would put our public key within the `sbrown` directory since we are running the command as `sbrown`. Then, we can `ssh` in.
 
-<figure><img src="../../.gitbook/assets/image (19) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
 
 Grab the user flag.
 
@@ -451,14 +451,14 @@ User sbrown may run the following commands on snoopy:
 
 Based on the documentation, since we can run this as `root`, we should be able to read files like `/etc/shadow`. This can be done using the `-f` flag and it works as shown:
 
-<figure><img src="../../.gitbook/assets/image (11) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can simply read the private SSH key of `root` located at `/root/.ssh/id_rsa`.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (5) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
 After some tidying up, we can `ssh` in as `root`.
 
-<figure><img src="../../.gitbook/assets/image (7) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

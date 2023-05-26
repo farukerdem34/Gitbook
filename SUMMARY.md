@@ -306,7 +306,7 @@
     * [Derailed](writeups/hackthebox/insane/derailed.md)
     * [Hathor](writeups/to-rewrite/htb-non-tjnull/hathor-rewrite.md)
     * [Sekhmet](writeups/hackthebox/insane/sekhmet-ad.md)
-    * [Sizzle](writeups/hackthebox/insane/sizzle.md)
+    * [Sizzle](writeups/hackthebox/insane/sizzle-wip.md)
 * [Proving Grounds Practice](writeups/proving-grounds-practice/README.md)
   * [Page 1](writeups/proving-grounds-practice/page-1.md)
 * [To Rewrite](writeups/to-rewrite/README.md)

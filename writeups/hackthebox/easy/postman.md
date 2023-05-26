@@ -51,7 +51,7 @@ ssh -i id_rsa redis@10.129.2.1
 
 This would generate a pair of keys, and afterwards write it into the machine as the keys for `redis`. Then we can directly SSH in.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

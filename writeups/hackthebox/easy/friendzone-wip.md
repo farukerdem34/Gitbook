@@ -46,7 +46,7 @@ This works because the `pagename` paramter automatically truncates the `.php` ex
 
 This points towards to some script being used in the backend, and thus we can replace that with our own malicious PHP script to gain a shell.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

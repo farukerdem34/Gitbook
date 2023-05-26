@@ -48,7 +48,7 @@ Now, we need to find some credentials to log in as the administrator.
 
 Initially, I brute forced the login page for the admin panel, but it didn't work out. I tried using `cewl` to create a custom wordlist using the website. Afterwards, using a Auth bruteforce Bypass exploit for Bludit, we can brute force the login and find the correct password.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (24) (4).png" alt=""><figcaption><p><br></p></figcaption></figure>
 

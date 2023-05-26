@@ -122,7 +122,7 @@ We can see that there's an `azure.xml` file here. It contains a user credential:
 
 I also noticed that this uses Azure to do stuff, so let's keep that in mind for now. Anyways, we can login via `evil-winrm` with `mhope` and this password.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (19) (5) (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (19) (5) (3).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

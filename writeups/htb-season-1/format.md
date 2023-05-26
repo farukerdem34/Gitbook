@@ -34,7 +34,7 @@ By clicking on Contrubute Here, we are redirected to port 3000 that hosts a Gite
 
 Before going there, let's take a look at the rest of the website. After registering a user, it seems that we can 'create' a subdomain:
 
-<figure><img src="../../.gitbook/assets/image (691).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (691) (1).png" alt=""><figcaption></figcaption></figure>
 
 After creating one, we can edit it.
 
@@ -42,7 +42,7 @@ After creating one, we can edit it.
 
 Going to the edit page reveals that we can use h1 or txt.
 
-<figure><img src="../../.gitbook/assets/image (686).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (686) (1).png" alt=""><figcaption></figcaption></figure>
 
 This would send a POST request to `/edit/index.php`:
 
@@ -70,7 +70,7 @@ id=02nc8ktv0kk4&txt=test
 
 When checking the application, it seems that we have a `sunny` subdomain.
 
-<figure><img src="../../.gitbook/assets/image (692).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (692) (1).png" alt=""><figcaption></figcaption></figure>
 
 Witin the `sunny` directory, it seems that there is an `edit` function. The PHP code for this is pretty long, so let's break it down:
 
@@ -148,7 +148,7 @@ if (isset($_POST['header']) && isset($_POST['id'])) {
 
 In this case, it seems that the `id` parameter is directly passed into `fopen`, meaning this could be vulnerable to LFI. Earlier, we created a new blog which created a new subdomain, so let's test our vulnerability there and confirm that it works.
 
-<figure><img src="../../.gitbook/assets/image (693).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (693) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```http
 POST /edit/index.php HTTP/1.1
@@ -233,7 +233,7 @@ curl -X "HSET" http://microblog.htb/static/unix:%2fvar%2frun%2fredis%2fredis.soc
 
 Afterwards, if we create a website, we notice that we can upload Images:
 
-<figure><img src="../../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (43) (9).png" alt=""><figcaption></figcaption></figure>
 
 Great! We are a Pro User and can upload files now. Since we are Pro, this chunk of code would be executed:
 
@@ -290,7 +290,7 @@ Afterwards, we can confirm we have RCE:
 
 And then we can get a reverse shell:
 
-<figure><img src="../../.gitbook/assets/image (694).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (694) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -466,6 +466,6 @@ microblog{'__name__': '__main__', '__doc__': None, '__package__': None, '__loade
 
 Within this entire string is the `root` password of :`unCR4ckaBL3Pa$$w0rd`. We can then `su` to `root`.
 
-<figure><img src="../../.gitbook/assets/image (684).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (684) (1).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!
