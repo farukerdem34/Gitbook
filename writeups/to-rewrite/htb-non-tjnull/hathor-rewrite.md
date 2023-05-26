@@ -125,7 +125,7 @@ This is an IIS server, so uploading an `.aspx` reverse shell might work. Head to
 
 When trying to upload, it doesn't work.
 
-<figure><img src="../../../.gitbook/assets/image (1) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 If we change it to `cmd.txt`, it works.&#x20;
 
@@ -676,7 +676,7 @@ WshShell.Run Command
 
 We can simply use `cscript ./run.vbs` to run this, and we would get another reverse shell:
 
-<figure><img src="../../../.gitbook/assets/image (1) (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (4) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 ## Root Shell
 

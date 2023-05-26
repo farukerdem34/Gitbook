@@ -49,7 +49,7 @@ Add the domains to the `/etc/hosts` file, and `www` is visited it shows a typica
 
 When we fill in the Contact and try to submit, it let's us preview our submission at `preview.asp`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 Here's the HTTP request for the `Send` function, which is a GET request to `save.asp`:
 
@@ -224,7 +224,7 @@ Afterwards, we can add `softwareportal.windcorp.htb` within our `/etc/hosts` fil
 
 Within the software present on the page, we can see that there is a VNC service available.
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 When we click on it, it would show us this page before going back to the main website. The URL also contains another IP address:
 
@@ -242,7 +242,7 @@ Since VNC is like an RDP software, there might potentially be credentials beign 
 
 This occurs because port 5985 is not open on our machine. So, using this SSRF, we can start `responder` and intercept the request to retrieve any NTLM hashes, which works:
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (11).png" alt=""><figcaption></figcaption></figure>
 
 We can then crack this hash easily using `john`:
 

@@ -309,7 +309,7 @@ We can fill it in to have our credentials and required details. It appears that 
 
 Anyways, after filling in the fields and clicking submit, we get this weird thing on a listener port:
 
-<figure><img src="../../.gitbook/assets/image (2) (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (11) (1).png" alt=""><figcaption></figcaption></figure>
 
 I thought that it would be a shell and hence ran `id`, but it quickly closed. In this case, I took a look at the traffic within `wireshark` but wasn't able to find out much. I tried out a few methods from the SSH page of Hacktricks, and found `ssh-mitm`.&#x20;
 
