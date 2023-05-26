@@ -366,7 +366,7 @@ This cannot be cracked, but Pass The Hash can still be done.
 
 When checking this node, we see that it is allowed to delegate for the DC.
 
-<figure><img src="../../../.gitbook/assets/image (15) (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (3) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 We don't have a shell to the machine, but with this we can request service tickets for the administrator. We can use `getST.py` to do this.
 

@@ -36,7 +36,7 @@ I wrote these when starting my journey in Infosec. It covers stuff that is more 
 
 ### Writeups
 
-Here's the writeups to machines I've done on HTB or PGP, and it is the **main bulk** of content here.&#x20;
+Here's the writeups to machines I've done on HTB or PGP, and it is the **main bulk** of content here. Nowadays, I don't do as many boxes as I did in the past. However, I will still do the occassional Insane machine (because they're the most fun, albeit frustrating at times).
 
 #### HackTheBox:
 

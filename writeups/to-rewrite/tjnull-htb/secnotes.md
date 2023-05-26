@@ -26,11 +26,11 @@ Port 80 just shows a login page:
 
 We can create a user to login.
 
-<figure><img src="../../../.gitbook/assets/image (21) (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (21) (7) (2).png" alt=""><figcaption></figcaption></figure>
 
 There's a user with an email, and this user might click on the links we send. I sent one like so:
 
-<figure><img src="../../../.gitbook/assets/image (9) (6) (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (6) (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 And we do indeed get a callback on a `nc` listening port.
 
