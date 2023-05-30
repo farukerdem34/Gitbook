@@ -328,7 +328,7 @@ git config filter.indent.clean /tmp/lol
 sudo -u svc /var/www/image/scripts/git-commit.sh
 ```
 
-<figure><img src="../../../.gitbook/assets/image (10) (1) (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (1) (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 The creator left a private SSH key in the directory for this new user, which was really useful.
 

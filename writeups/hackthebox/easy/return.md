@@ -106,7 +106,7 @@ download system
 
 Afterwards, we can dump hashes:
 
-<figure><img src="../../../.gitbook/assets/image (7) (4) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (4) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 However, when trying to pass the hash, it seems that this doesn't work.
 

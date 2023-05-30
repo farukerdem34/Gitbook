@@ -77,7 +77,7 @@ Interesting. Since this is using `asp`, and the output is printed on another scr
 
 And this was returned:
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (4).png" alt=""><figcaption></figcaption></figure>
 
 This confirms that SSTI is possible on this machine, and that we can use this to gain a reverse shell (if there's no AMSI / AppLocker).&#x20;
 
@@ -89,7 +89,7 @@ This confirms that SSTI is possible on this machine, and that we can use this to
 
 Using this, we can get a reverse shell easily.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (6).png" alt=""><figcaption></figcaption></figure>
 
 ## Localadmin Creds
 
@@ -224,7 +224,7 @@ Afterwards, we can add `softwareportal.windcorp.htb` within our `/etc/hosts` fil
 
 Within the software present on the page, we can see that there is a VNC service available.
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (4).png" alt=""><figcaption></figcaption></figure>
 
 When we click on it, it would show us this page before going back to the main website. The URL also contains another IP address:
 
@@ -238,7 +238,7 @@ http://softwareportal.windcorp.htb/install.asp?client=172.20.159.137&software=VN
 
 Since VNC is like an RDP software, there might potentially be credentials beign sent in the packets, so I started `wireshark` and also changed the `client` parameter to be my IP address. When the packets are viewed, we can see a lot of failed TCP requests:
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (8).png" alt=""><figcaption></figcaption></figure>
 
 This occurs because port 5985 is not open on our machine. So, using this SSRF, we can start `responder` and intercept the request to retrieve any NTLM hashes, which works:
 

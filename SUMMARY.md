@@ -109,6 +109,7 @@
   * [Snoopy](writeups/htb-season-1/snoopy.md)
   * [Format](writeups/htb-season-1/format.md)
   * [PC](writeups/htb-season-1/pc.md)
+  * [Bookworm](writeups/htb-season-1/bookworm.md)
 * [HackTheBox](writeups/hackthebox/README.md)
   * [Easy](writeups/hackthebox/easy/README.md)
     * [Academy](writeups/hackthebox/easy/academy-rewrite.md)

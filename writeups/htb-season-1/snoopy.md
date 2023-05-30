@@ -23,7 +23,7 @@ We can add `snoopy.htb` to our `/etc/hosts` file as per standard HTB practice.
 
 This was a corporate page that provides DevSecOps services:
 
-<figure><img src="../../.gitbook/assets/image (3) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 Looking around, there's another subdomain present in the form of a mail server.
 
@@ -78,7 +78,7 @@ The last thing is that `mail.snoopy.htb` is not present within the records and i
 
 We can visit the `mm` subdomain to verify that it is running:
 
-<figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (9) (6).png" alt=""><figcaption></figcaption></figure>
 
 We don't have any credentials, but there is a Password Reset in use here that requires an email address:
 
@@ -86,7 +86,7 @@ We don't have any credentials, but there is a Password Reset in use here that re
 
 Lastly, there are some emails present:
 
-<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Download LFI --> DNS Vuln
 
@@ -107,7 +107,7 @@ Upgrade-Insecure-Requests: 1
 
 The `announcement.pdf` file had nothing interesting itself, but this looks vulnerable to LFI. Inital testing reveals this isn't vulnerable at first:
 
-<figure><img src="../../.gitbook/assets/image (4) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (6) (3).png" alt=""><figcaption></figcaption></figure>
 
 After using `....//` instead, we can see that a file is generated:
 
@@ -293,17 +293,17 @@ Then we can login.
 
 When we login, we can see a ton of chat logs:
 
-<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8) (5).png" alt=""><figcaption></figcaption></figure>
 
 It talks about ClamAV being used as the anti-virus, and also about some provisioning server. We can view the different commands present on this:
 
 There was a weird command `/server_provision` without any description. When run, it opens up a UI that seems to spawn a server:
 
-<figure><img src="../../.gitbook/assets/image (6) (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (8) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can fill it in to have our credentials and required details. It appears that Windows is disabled too:
 
-<figure><img src="../../.gitbook/assets/image (9) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (9) (6) (3).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
 
@@ -451,14 +451,14 @@ User sbrown may run the following commands on snoopy:
 
 Based on the documentation, since we can run this as `root`, we should be able to read files like `/etc/shadow`. This can be done using the `-f` flag and it works as shown:
 
-<figure><img src="../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (11) (5).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can simply read the private SSH key of `root` located at `/root/.ssh/id_rsa`.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (2).png" alt=""><figcaption></figcaption></figure>
 
 After some tidying up, we can `ssh` in as `root`.
 
-<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7) (4).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!
