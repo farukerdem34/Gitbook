@@ -87,7 +87,7 @@ There are specific tools that are used to interact with this software, and we ca
 
 {% embed url="https://github.com/vadimi/grpc-client-cli" %}
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (13).png" alt=""><figcaption></figcaption></figure>
 
 The tool worked, which means this is indeed gRPC running.
 
@@ -203,7 +203,7 @@ $ ./grpcui -plaintext 10.129.40.34:50051
 gRPC Web UI available at http://127.0.0.1:35935/
 ```
 
-<figure><img src="../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (11) (8).png" alt=""><figcaption></figcaption></figure>
 
 Using this, we can capture the request in Burpsuite and attempt to include our administrator token. This was the HTTP request I sent via Burp, and it kept running into an error:
 
@@ -233,15 +233,15 @@ Sec-Fetch-Site: same-origin
 ```
 {% endcode %}
 
-<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7) (6).png" alt=""><figcaption></figcaption></figure>
 
 I thought it was intentional, so I attempted some basic command and SQL injection. I found that UNION SQL injection works!
 
-<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8) (10).png" alt=""><figcaption></figcaption></figure>
 
 Using version enumeration, we can find that this uses SQLite.
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (12).png" alt=""><figcaption></figcaption></figure>
 
 I tossed this Burp request to `sqlmap`, which also gives me a true positive.
 
@@ -249,7 +249,7 @@ I tossed this Burp request to `sqlmap`, which also gives me a true positive.
 sqlmap -r req -p id --level 5 --risk 3 --dbms sqlite
 ```
 
-<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (10) (10).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can enumerate the database and dump the passwords within the database.
 
@@ -281,7 +281,7 @@ Table: accounts
 
 We had credentials for this user, and it works with `ssh`.
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (12).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -343,6 +343,6 @@ $ curl -i -s -k -X $'POST' \
 ```
 {% endcode %}
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (11).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!&#x20;

@@ -277,7 +277,7 @@ Using the credentials we have, we can access it:
 
 We can try to request a certificate, and this presents us with 2 options:
 
-<figure><img src="../../../.gitbook/assets/image (703).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (703) (1).png" alt=""><figcaption></figcaption></figure>
 
 Clicking on User Certificate brings us to a page requesting its key strength:
 
@@ -285,7 +285,7 @@ Clicking on User Certificate brings us to a page requesting its key strength:
 
 For some reason, I cannot specify the key strength in this, so we probably aren't supposed to have this functionality. In this case, we can check the advanced request form:
 
-<figure><img src="../../../.gitbook/assets/image (696).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (696) (1).png" alt=""><figcaption></figcaption></figure>
 
 It appears we have to create a certificate ourselves, then use it to submit a request to be approved. I know that certificates can be used for authentication purposes, and this service is used to signed the certificates to 'make them legit'. As such, we can create a Certificate Signing Request (CSR) via `openssl`.&#x20;
 
@@ -321,7 +321,7 @@ $ bloodhound-python -d HTB.local -u amanda -p Ashare1972 -c all -ns 10.129.101.1
 
 Then, start `bloodhound` and `neo4j`, then upload the data required. I found that the user `amanda` has no privileges at all. Checking the Kerberoastable accounts, we find that `mrlky` is a possible target.
 
-<figure><img src="../../../.gitbook/assets/image (705).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (705) (1).png" alt=""><figcaption></figcaption></figure>
 
 Checking the privileges of this user, we can see that they have DCSync privileges over the forest.
 
@@ -333,7 +333,7 @@ So that's the attack path. Normally, I would aim to Kerberoast remotely for both
 
 I tried to download and execute Rubeus, but this is the error I get due to AppLocker:
 
-<figure><img src="../../../.gitbook/assets/image (706).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (706) (1).png" alt=""><figcaption></figcaption></figure>
 
 Other tools like `PowerView.ps1` don't work as well. The current shell that I have is extremely limited in  We can check the Execution Context to confirm this:
 
@@ -348,7 +348,7 @@ There are 2 methods of exploitation here. One is we could run a Kerberoast Power
 
 All we need to do is specify that we want to use Powershell Version 2:
 
-<figure><img src="../../../.gitbook/assets/image (702).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (702) (1).png" alt=""><figcaption></figcaption></figure>
 
 Using this method, we can run some scripts using this. However, its even better if we can get a CLM Bypassed shell. To do so, we can simply download the `Invoke-PowerShellTcp` shell to the machine, and then run this command:
 
@@ -421,7 +421,7 @@ Session completed.
 
 Earlier, we saw that this user had DCSync privileges over the domain, so we can easily use `secretsdump.py` to dump the administrator hash:
 
-<figure><img src="../../../.gitbook/assets/image (694).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (694) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can use `smbexec.py` to pass the hash and get an administrator shell.
 

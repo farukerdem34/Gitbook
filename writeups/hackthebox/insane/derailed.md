@@ -387,7 +387,7 @@ This password was rather useless.
 
 WIthin the config file, we can find another password.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (467).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (467) (1).png" alt=""><figcaption></figcaption></figure>
 
 There was a sqlite3 file here. Within it, we can find this portion here with hashes for toby.
 
@@ -395,7 +395,7 @@ There was a sqlite3 file here. Within it, we can find this portion here with has
 
 Checking the `/etc/passwd` file, we can see that the openmediavault-webgui user is Toby Wright.
 
-<figure><img src="../../../.gitbook/assets/image (461).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (461) (1).png" alt=""><figcaption></figcaption></figure>
 
 I extracted this hash and attempted to crack it.
 
@@ -443,7 +443,7 @@ The vulnerability here is that the `config.xml` file is owned by our current use
 
 There are 2 entries within the machine, one for `rails` and one for `test`. We can edit the `test` one for the root user, and use `ssh-keygen -t rsa; ssh-keygen -e -f ~/.ssh/id_rsa.pub` to generate the needed key in the right format.
 
-<figure><img src="../../../.gitbook/assets/image (460).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (460) (1).png" alt=""><figcaption></figcaption></figure>
 
 Note that we need to add the `<sshpubkey>` tag because we are specifying a new object. Then, we need to reset the OMV instance to read the new config file. From the OMV documentation, we can use the `omv-confdbadm` file to do so.
 
@@ -453,6 +453,6 @@ Note that we need to add the `<sshpubkey>` tag because we are specifying a new o
 
 Then, we need to make changes to edit the SSH module for the OMV instance. This can be done using `omv-rpc` to force a config update for the SSH module.
 
-<figure><img src="../../../.gitbook/assets/image (464).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (464) (1).png" alt=""><figcaption></figcaption></figure>
 
 Interesting root for this machine. OMV is something that I don't see around often.

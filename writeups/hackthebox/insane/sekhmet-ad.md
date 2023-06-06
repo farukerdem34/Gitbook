@@ -86,7 +86,7 @@ There might be a deserialisation exploit with the cookies here, and ModSec was t
 
 We can follow the tutorial exactly to create the payload. First we can generate the shell using `nodejsshell.py` provided by the article and use base64 to encode it.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (471).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (471) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then, we would need to append something at the back of the cookie **to make sure we bypass ModSec and let the cookie pass through**. This would allow for the RCE to work. This was the final request sent via Burpsuite:
 
@@ -125,7 +125,7 @@ When trying to unzip it, we can see that it is password protected and that the `
 
 I found it incredibly odd that there was a random zip file here. Trying to crack the hash didn't work for me as well. Transferring the file back to my machine, we can use `7z l -slt` to view the technical information of the zip file.
 
-<figure><img src="../../../.gitbook/assets/image (469).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (469) (1).png" alt=""><figcaption></figcaption></figure>
 
 This was using ZipCrypto Deflate, meaning that the `bkcrack` exploit would work on this due to the legacy encryption used.
 
@@ -145,7 +145,7 @@ zip passwd.zip passwd
 
 This should create a new zip file that we can open easily.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (465).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (465) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now, we can take a proper look at the files within this zip folder.&#x20;
 

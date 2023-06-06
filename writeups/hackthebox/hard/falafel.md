@@ -42,7 +42,7 @@ It seems that there's a boolean condition present on the website. I proceeded to
 
 We can then dump out the database.
 
-<figure><img src="../../../.gitbook/assets/image (495).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (495) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now we can login as `chris`.
 

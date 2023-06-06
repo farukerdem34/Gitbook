@@ -352,7 +352,7 @@ putting file Whatif.omv as \Documents\Analytics\Whatif.omv (130.9 kb/s) (average
 
 Then we just wait. After a while, we would start to get calls on our HTTP servers and get a reverse shell as the user.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (43) (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (43) (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can then grab the user flag.
 

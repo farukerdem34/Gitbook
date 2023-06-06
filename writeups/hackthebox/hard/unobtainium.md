@@ -136,7 +136,7 @@ rm -f '/usr/bin/unobtainium'
 
 Using `xz -d` and `tar xvf` on the `data.tar.xz` file revealed lots of files pertaining to the application.
 
-<figure><img src="../../../.gitbook/assets/image (529).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (529) (1).png" alt=""><figcaption></figcaption></figure>
 
 Amongst all the files mentioned, it appears that the source code was within the `./opt/unobtainium/resources/app.asar` directory of the folder. We can decompile this file using `npx asar`.
 
