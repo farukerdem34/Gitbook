@@ -302,7 +302,7 @@ Within the machine, if we run `pspy64`, we would eventually see this:
 
 We can use these credentials to access the user via `ssh`.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (690) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (690) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Format String --> Root Creds
 

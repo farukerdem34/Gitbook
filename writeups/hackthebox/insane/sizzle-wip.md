@@ -269,15 +269,15 @@ $ smbmap -u amanda -p Ashare1972 -H 10.129.73.156
 
 Now the CertEnroll share is available. CertEnroll is a reference to an ADCS service that provides a web platform to enroll certificates. This means that `/certsrv` is probably present on the web server, and visiting it requires credentials:
 
-<figure><img src="../../../.gitbook/assets/image (697).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (697) (1).png" alt=""><figcaption></figcaption></figure>
 
 Using the credentials we have, we can access it:
 
-<figure><img src="../../../.gitbook/assets/image (700).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (700) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can try to request a certificate, and this presents us with 2 options:
 
-<figure><img src="../../../.gitbook/assets/image (703) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (703) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Clicking on User Certificate brings us to a page requesting its key strength:
 
@@ -285,7 +285,7 @@ Clicking on User Certificate brings us to a page requesting its key strength:
 
 For some reason, I cannot specify the key strength in this, so we probably aren't supposed to have this functionality. In this case, we can check the advanced request form:
 
-<figure><img src="../../../.gitbook/assets/image (696) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (696) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 It appears we have to create a certificate ourselves, then use it to submit a request to be approved. I know that certificates can be used for authentication purposes, and this service is used to signed the certificates to 'make them legit'. As such, we can create a Certificate Signing Request (CSR) via `openssl`.&#x20;
 
@@ -321,7 +321,7 @@ $ bloodhound-python -d HTB.local -u amanda -p Ashare1972 -c all -ns 10.129.101.1
 
 Then, start `bloodhound` and `neo4j`, then upload the data required. I found that the user `amanda` has no privileges at all. Checking the Kerberoastable accounts, we find that `mrlky` is a possible target.
 
-<figure><img src="../../../.gitbook/assets/image (705) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (705) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Checking the privileges of this user, we can see that they have DCSync privileges over the forest.
 
@@ -421,7 +421,7 @@ Session completed.
 
 Earlier, we saw that this user had DCSync privileges over the domain, so we can easily use `secretsdump.py` to dump the administrator hash:
 
-<figure><img src="../../../.gitbook/assets/image (694) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (694) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can use `smbexec.py` to pass the hash and get an administrator shell.
 

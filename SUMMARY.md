@@ -233,6 +233,7 @@
     * [Investigation](writeups/hackthebox/medium/investigation.md)
     * [Jarvis](writeups/to-rewrite/tjnull-htb/jarvis-rewrite.md)
     * [Jeeves](writeups/hackthebox/medium/jeeves.md)
+    * [Jupiter](writeups/hackthebox/medium/jupiter.md)
     * [Lightweight](writeups/hackthebox/medium/lightweight.md)
     * [LogForge](writeups/to-rewrite/htb-non-tjnull/logforge-wip.md)
     * [Magic](writeups/hackthebox/medium/magic.md)
