@@ -24,4 +24,8 @@ There is some degree of overlap with penetration testing, but they have fundamen
 
 On the other hand, the red team has a clear objective laid out, which is to gain access to a particular system (such as the backend database) instead of finding all the bugs within the infrastructure. They also have to emulate a **real-life threat** to the organistaion (For example, banks may be attacked by FIN APT groups). So for this case, we need to use specific TTPs based on the adversary we are trying to emulate.&#x20;
 
-WIP!&#x20;
+A penetration test is not focused on stealth, evasion or the ability for the blue team to detect and respond. Rather, the blue team might be aware that the penetration test is even happening, and let it happen because they are here to find out all the vulnerabilities and weak endpoints, so very noisy scans such as `autorecon` and `nmap` can be used for this.&#x20;
+
+A red team operation is **very focused on stealth and evasion**. As the goal is to emulate a real-life threat, OPSEC and not getting caught is the most important aspect of a red team operation. The blue team is actively trying to detect the red team operations and block them instead of letting it happen.&#x20;
+
+The tools used are different as well. Penetration testers might have more scanners and other tools which focus more on testing individual systems within the scope. A red team would use tools such as Cobalt Strike to again, simulate a real APT.&#x20;
