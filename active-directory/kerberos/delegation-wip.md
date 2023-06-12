@@ -1,8 +1,6 @@
 # Delegation (WIP)
 
-Personally, I'm not 100% familiar with Kerberos delegation as of now, which is why I want to take the time to break it down and attempt to understand all the attacks and tools used (such as `Rubeus.exe` and others) in this page.&#x20;
-
-Basically, this is my attempt of Kerberos Delegation and its attacks put into my own words.&#x20;
+Personally, Kerberos and its delegation mechanisms have always been a little hazy for me, and I wanted to take the time to understand it. Basically, this page is my attempt of understanding Delegation, why its used and attacks on it phrased in my own words.&#x20;
 
 ## Double Hop Problem
 
@@ -24,7 +22,7 @@ Delegation basically allows a user or machine to act on the behalf of another us
 
 The front-end needs to authenticate to the back-end database (using Kerberos) as the authenticated user. This is how delegation works in a nutshell:
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (712).png" alt=""><figcaption></figcaption></figure>
 
 ### Password / NTLM Authentication?
 
