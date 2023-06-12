@@ -22,7 +22,7 @@ Delegation basically allows a user or machine to act on the behalf of another us
 
 The front-end needs to authenticate to the back-end database (using Kerberos) as the authenticated user. This is how delegation works in a nutshell:
 
-<figure><img src="../../.gitbook/assets/image (714).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
 ### Password / NTLM Authentication?
 
@@ -68,9 +68,9 @@ Exploitation of any of these privileges is not a CVE, but rather an **abuse of a
 
 This is the first type of delegation introduced in Windows 2000. When configured, the KDC would include a copy of the user's TGT **inside the TGS**. when the user accesses the `DB` machine, it extracts the user's TGT from the TGS and caches it in memory. Then, it would use this TGT to request for a TGS, which would allow for the accessing of database resources.
 
-<figure><img src="../../.gitbook/assets/image (713).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
 The service can act on behalf of the client in the network **simply by using its TGT**. This feature requires the `SeEnableDelegation` privilege to be enabled. We can configure this like so:
 
-<figure><img src="../../.gitbook/assets/image (712).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 

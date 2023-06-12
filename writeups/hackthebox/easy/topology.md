@@ -21,7 +21,7 @@ HTTP exploits it seems.&#x20;
 
 The website is seems to be a university website:
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (10).png" alt=""><figcaption></figcaption></figure>
 
 There's a LaTeX Equation Generator available. LaTeX is a software made for documentation, and I'm roughly familiar with how it works to make mathematical equations for stuff like university math module notes. Anyways, we have to add `latex.topology.htb` to our `/etc/hosts` file to visit the `equation.php` site available.&#x20;
 
@@ -47,7 +47,7 @@ I tested different payloads, and eventually found one that worked on this site:
 
 Using this, we can get the first line of the `/etc/passwd` file:
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (12).png" alt=""><figcaption></figcaption></figure>
 
 Before carrying on, I wanted to some proper web enumeration to find out what I was supposed to do with this LFI. Using `wfuzz`, I found a `dev` subdomain:
 
@@ -88,7 +88,7 @@ If we use `\\lstinputlisting{/var/www/dev/.htpasswd}` instead, we see that it pr
 
 So by using `$\lstinputlisting{/var/www/dev/.htpasswd}$`, it would be processed as an expression (similar to `$()` in bash) and loads the hash:
 
-<figure><img src="../../../.gitbook/assets/image (2) (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (12).png" alt=""><figcaption></figcaption></figure>
 
 We can crack the hash easily with `john`:
 
@@ -112,7 +112,7 @@ Then we can access the `dev` subdomain:
 
 More importantly, we can access the user via `ssh`:
 
-<figure><img src="../../../.gitbook/assets/image (1) (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (13).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

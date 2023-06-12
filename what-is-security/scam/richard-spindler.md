@@ -17,7 +17,7 @@ engineer richard spindler
 ```
 {% endcode %}
 
-Low effort, disappointed. Naturally, I replied with:
+Such a low effort, ChatGPT copy and pasted email, so disappointing! Naturally, I replied with:
 
 {% code overflow="wrap" %}
 ```
@@ -31,6 +31,8 @@ Cheers.
 ```
 {% endcode %}
 
-No reply though...and he's not a Nigerian prince so I am having a hard time believing his cause. James Veitch is someone who made a TedTalk years ago (which is my favourite TedTalk to date) on replying scam emails, and I was hoping that Engineer Richard Spindler would reply, but he didnt...oh well.&#x20;
+He's not a Nigerian prince or shipping diamonds/gold so honestly, I'm having a hard time believing his cause.&#x20;
+
+James Veitch is someone who made a TedTalk years ago (which is my favourite TedTalk to date) on replying scam emails, and I was hoping that Engineer Richard Spindler would reply, but he didnt...oh well.&#x20;
 
 {% embed url="https://ted.com/talks/james_veitch_this_is_what_happens_when_you_reply_to_spam_email?language=en" %}

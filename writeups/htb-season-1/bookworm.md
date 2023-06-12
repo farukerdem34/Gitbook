@@ -33,11 +33,11 @@ Proxying the traffic through Burpsuite reveals that this is an Express based web
 
 The website allows us to create a user, and afterwards we can access the cart and checkout functions. Immediately after adding my book, we can see that the website updates to show that:
 
-<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7) (6).png" alt=""><figcaption></figcaption></figure>
 
 I looked through the traffic and refreshed the page. This time, the Updates included another user who was adding books to their basket:
 
-<figure><img src="../../.gitbook/assets/image (5) (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (13) (1).png" alt=""><figcaption></figcaption></figure>
 
 So this is the first indication that **there was another user present on the site and interacting with the shop**. Within the checkout function, there was an Edit Note function available.
 
@@ -59,7 +59,7 @@ So XSS was possible, but right now it's only viewable by us and we need to someh
 
 On a side note, I noticed that there were different usernames for the bot each time I refreshed the page:
 
-<figure><img src="../../.gitbook/assets/image (8) (10) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8) (10) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Examining the page source reveals that there was some number associated with the updates:
 
@@ -67,7 +67,7 @@ Examining the page source reveals that there was some number associated with the
 
 This number incremented itself each time, and it was likely that this is the same number used for the cart ID, giving us an opportunity to inject XSS payloads into the cart of the bot. Apart from the checkout, viewing the user profile reveals that we can upload an avatar to the site:
 
-<figure><img src="../../.gitbook/assets/image (9) (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (9) (10) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can try uploading some basic Javascript files (since this was likely an XSS-based initial access). After some trial and error, I found that by changing the `Content-Type` header to `image/jpeg`, we can bypass the content check and upload whatever we want.&#x20;
 
@@ -103,7 +103,7 @@ This payload works in getting a callback from the machine itself.&#x20;
 
 Interestingly, when we send the above request, we would get a `base64` encoded cookie which indicates that our avatar is loaded, which might be our XSS point:
 
-<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (10) (10).png" alt=""><figcaption></figcaption></figure>
 
 We can test this first by updating our profile picture with the following request:
 
@@ -486,7 +486,7 @@ Content-Disposition: form-data; name="outputType"
 
 Then we can `ssh` in as `neil`.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (2) (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (12) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### SQL PostScript Injection
 

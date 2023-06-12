@@ -214,7 +214,7 @@ udp        0      0 0.0.0.0:68              0.0.0.0:*                           
 
 Port 8888 was a HTTP port, so let's do some `chisel` forwarding. When visited, it shows a Jupyter instance:
 
-<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (10).png" alt=""><figcaption></figcaption></figure>
 
 There was some token required before we could visit the site. Normally, I'd access this through running `jupyter notebook list`, but there are Python errors with this method. So, we would have to find the source of this website instead to either fix the error or view the logs to find a token. A bit of enumeration reveals that the `/opt` directory contains some interesting files:
 
@@ -252,7 +252,7 @@ juno@jupiter:/opt/solar-flares/logs$ cat jupyter-2023-06-08-18.log
 
 We can visit the site with the `?token` parameter at the end and be brought to a file directory:
 
-<figure><img src="../../../.gitbook/assets/image (8) (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (10) (1).png" alt=""><figcaption></figcaption></figure>
 
 When we click 'New', there's an option to create a new Notebook:
 

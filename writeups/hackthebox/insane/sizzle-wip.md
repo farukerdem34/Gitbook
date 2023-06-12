@@ -70,7 +70,7 @@ This just shows a GIF of bacon sizzling:
 
 When viewing the page source, this is located at the `/images` directory, which we don't have access to. However, it does tell us this is an IIS server based on the error page:
 
-<figure><img src="../../../.gitbook/assets/image (1) (13) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (13) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### SMB Shares Enumeration
 
@@ -295,7 +295,7 @@ $ openssl req -new -newkey rsa:2048 -nodes -keyout user.key -out user.csr
 
 Then, we can grab the `.csr` contents and paste it into the box:
 
-<figure><img src="../../../.gitbook/assets/image (1) (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (13) (1).png" alt=""><figcaption></figcaption></figure>
 
 When submitted, we would get the option to download the certificate:
 

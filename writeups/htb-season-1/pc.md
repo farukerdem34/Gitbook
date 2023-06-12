@@ -70,7 +70,7 @@ SF:0\0\0\0\0\?\0\0");
 
 I see that this has some headers. I tried connecting using `telnet` or `nc`, then viewing the traffic within `wireshark`, but all I saw was this:
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (13).png" alt=""><figcaption></figcaption></figure>
 
 Just a bunch of unrelated TCP traffic. I tried running `curl` on the port and received another weird error.
 
@@ -87,7 +87,7 @@ There are specific tools that are used to interact with this software, and we ca
 
 {% embed url="https://github.com/vadimi/grpc-client-cli" %}
 
-<figure><img src="../../.gitbook/assets/image (5) (13) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (13) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 The tool worked, which means this is indeed gRPC running.
 
@@ -233,15 +233,15 @@ Sec-Fetch-Site: same-origin
 ```
 {% endcode %}
 
-<figure><img src="../../.gitbook/assets/image (7) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7) (6) (2).png" alt=""><figcaption></figcaption></figure>
 
 I thought it was intentional, so I attempted some basic command and SQL injection. I found that UNION SQL injection works!
 
-<figure><img src="../../.gitbook/assets/image (8) (10) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8) (10) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Using version enumeration, we can find that this uses SQLite.
 
-<figure><img src="../../.gitbook/assets/image (2) (12) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (12) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 I tossed this Burp request to `sqlmap`, which also gives me a true positive.
 
@@ -249,7 +249,7 @@ I tossed this Burp request to `sqlmap`, which also gives me a true positive.
 sqlmap -r req -p id --level 5 --risk 3 --dbms sqlite
 ```
 
-<figure><img src="../../.gitbook/assets/image (10) (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (10) (10) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can enumerate the database and dump the passwords within the database.
 
@@ -281,7 +281,7 @@ Table: accounts
 
 We had credentials for this user, and it works with `ssh`.
 
-<figure><img src="../../.gitbook/assets/image (6) (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (12) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
