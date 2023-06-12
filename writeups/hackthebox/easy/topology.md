@@ -112,7 +112,7 @@ Then we can access the `dev` subdomain:
 
 More importantly, we can access the user via `ssh`:
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (14).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -159,6 +159,6 @@ system "chmod u+s /bin/bash"
 
 Then, we can just wait for `root` to execute our new file and privesc that way:
 
-<figure><img src="../../../.gitbook/assets/image (4) (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!&#x20;

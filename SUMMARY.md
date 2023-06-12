@@ -30,6 +30,7 @@
 * [Scam?](what-is-security/scam/README.md)
   * [May Chong](what-is-security/scam/may-chong.md)
   * [Liu Hongtian](what-is-security/scam/liu-hongtian.md)
+  * [Richard Spindler](what-is-security/scam/richard-spindler.md)
 
 ## 🟥 Pentesting Methodology
 
