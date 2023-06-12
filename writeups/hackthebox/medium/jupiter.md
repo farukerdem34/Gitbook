@@ -252,7 +252,7 @@ juno@jupiter:/opt/solar-flares/logs$ cat jupyter-2023-06-08-18.log
 
 We can visit the site with the `?token` parameter at the end and be brought to a file directory:
 
-<figure><img src="../../../.gitbook/assets/image (8) (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (10) (1).png" alt=""><figcaption></figcaption></figure>
 
 When we click 'New', there's an option to create a new Notebook:
 

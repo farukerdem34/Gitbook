@@ -56,7 +56,7 @@ The signing of the key with the Service LT Key and KDC LT Key basically acts lik
    * Client sends this encrypted TGT to the TGS with the SPN of the service that the client wants to access.
    * This basically tells the TGS something like "Hi, I'm \<support account name>, and I want to access the MySQL Database".
 4. TGS-REP
-   * KDC would verify the TGT of the user and that this user has access to the service by checking the privileges of this
+   * KDC would verify the TGT of the user and that this user has access to the service by checking the privileges of this.
    * Once verified, it sends back a valid session key and service ticket for the service
 5. AP-REQ
    * Client takes this session key and ticket and goes to the resource and requests what is wanted.

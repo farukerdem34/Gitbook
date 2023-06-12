@@ -88,6 +88,7 @@
 * [Active Directory](active-directory/ad.md)
 * [Tools](active-directory/tools.md)
 * [Kerberos](active-directory/kerberos/README.md)
+  * [Delegation (WIP)](active-directory/kerberos/delegation-wip.md)
   * [Attacking Kerberos](active-directory/kerberos/attacking-kerberos.md)
 * [ACLs and GPOs](active-directory/acls-and-gpos/README.md)
   * [Abusing ACLs and GPOs](active-directory/acls-and-gpos/abusing-acls-and-gpos.md)

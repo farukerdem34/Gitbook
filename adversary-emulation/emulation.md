@@ -26,6 +26,6 @@ On the other hand, the red team has a clear objective laid out, which is to gain
 
 A penetration test is not focused on stealth, evasion or the ability for the blue team to detect and respond. Rather, the blue team might be aware that the penetration test is even happening, and let it happen because they are here to find out all the vulnerabilities and weak endpoints, so very noisy scans such as `autorecon` and `nmap` can be used for this.&#x20;
 
-A red team operation is **very focused on stealth and evasion**. As the goal is to emulate a real-life threat, OPSEC and not getting caught is the most important aspect of a red team operation. The blue team is actively trying to detect the red team operations and block them instead of letting it happen.&#x20;
+On the other hand, a red team operation is **very focused on stealth and evasion**. As the goal is to emulate a real-life threat, OPSEC and not getting caught is the most important aspect of a red team operation. The blue team is actively trying to detect the red team operations and block them instead of letting it happen.&#x20;
 
 The tools used are different as well. Penetration testers might have more scanners and other tools which focus more on testing individual systems within the scope. A red team would use tools such as Cobalt Strike to again, simulate a real APT.&#x20;

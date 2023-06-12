@@ -36,7 +36,7 @@ I wrote these when starting my journey in Infosec. It covers stuff that is more 
 
 ### Writeups
 
-Here's the writeups to machines I've done on HTB or PGP, and it is the **main bulk** of content here. Nowadays, I don't do as many boxes as I did in the past. However, I will still do the occassional Insane machine (because they're the most fun, albeit frustrating at times).
+Here's the writeups to machines I've done on HTB or PGP (which I'm still finding the time to actually write out), and it is the **main bulk** of content here. Nowadays, I don't do as many boxes as I did in the past, but I will still do some machines because its fun to me. Also, I will try my best to take part in the new HTB Season thing.&#x20;
 
 #### HackTheBox:
 
@@ -58,14 +58,12 @@ Some of the stuff I've picked up from interning with red / pentesting teams, as 
 
 {% embed url="https://rouvin.gitbook.io/ibreakstuff/adversary-emulation/emulation" %}
 
-This book will be updated as frequently as I can while juggling school work. Check the Updates page to see what I've added (categorised by month) and the To Add page to see what I plan to add.
+This book will be updated as frequently as I can while juggling school work, and it is not meant to be a high-maintenance project.&#x20;
 
 ## Disclaimer
 
-I do not claim to be the most correct, the best, or even remotely good at security or pentesting. I'm just a guy that is really into security and wants to learn as much as possible.
+I do not claim to be the most correct, the best, or even remotely good at security and/or pentesting. I'm just a guy that is really into security and wants to learn as much as possible.
 
-I do not condone any illegal activity done using any methods in this notebook. All of the concepts listed here are for **educational purposes** only. What you decide to do with these skills is on you.&#x20;
-
-Please exercise responsibility and keep the law in mind when you are learning and testing on systems. Only test your skills on personal systems, or on systems / platforms where you have the permission to do so.
+I do not condone any illegal activity done using any methods in this notebook. All of the concepts listed here are for **educational purposes** only. What you decide to do with these skills is on you (basically, you can't sue me).&#x20;
 
 If I wrote anything wrongly or inaccurately, please do let me know or submit a PR!&#x20;
