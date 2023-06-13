@@ -35,7 +35,7 @@ We can take a look at the Pokatdex and see that there are entries for each speci
 
 When we try to view the entries, we just see this:
 
-<figure><img src="../../../.gitbook/assets/image (52).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (52) (1).png" alt=""><figcaption></figcaption></figure>
 
 The URL visited `http://10.129.95.191/pokeapi.php?id=6`, which might be relevant later on. I tested LFI and other types of injection, but nothing worked. I took a closer look at the administrator login, and found that if I keyed in wrong credentails, I got a unique error.
 

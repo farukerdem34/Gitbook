@@ -108,7 +108,7 @@ Session completed.
 
 Then we can access the `dev` subdomain:
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
 More importantly, we can access the user via `ssh`:
 

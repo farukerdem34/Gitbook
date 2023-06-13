@@ -215,7 +215,7 @@ Then, we would see a 2FA Mechanism in place:
 
 I wasn't sure how to go about finding this, so I just brute forced it because it doesn't seem to have any account lockout. I used Burp Intruder to do this:
 
-<figure><img src="../../.gitbook/assets/image (46).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (46) (2).png" alt=""><figcaption></figcaption></figure>
 
 This works, but is hella slow.&#x20;
 
@@ -248,7 +248,7 @@ TeamCity is a CI/CD dashboard, and I'm 99% sure we can gain access by building s
 
 When checking the build that we have, we can upload a file here:
 
-<figure><img src="../../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (45) (6).png" alt=""><figcaption></figcaption></figure>
 
 I read more here:
 
