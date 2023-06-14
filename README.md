@@ -46,6 +46,12 @@ Here's the writeups to machines I've done on HTB or PGP (which I'm still finding
 
 {% embed url="https://rouvin.gitbook.io/ibreakstuff/writeups/proving-grounds-practice" %}
 
+### Scams / Malware
+
+Sometimes I receive some form of phishing emails, or I find malware that's being distributed on the web. I like to delve into them too, just to see how they work and how the threat actors model the scam. If there's malware, I try to reverse engineer it too.
+
+{% embed url="https://rouvin.gitbook.io/ibreakstuff/what-is-security/scam" %}
+
 ### In-Depth
 
 Some of the stuff I've picked up from interning with red / pentesting teams, as well as my own research and courses done. A bit more technical and less friendly, but still the same fun.

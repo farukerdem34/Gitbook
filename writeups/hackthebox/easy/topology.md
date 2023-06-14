@@ -108,7 +108,7 @@ Session completed.
 
 Then we can access the `dev` subdomain:
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (13).png" alt=""><figcaption></figcaption></figure>
 
 More importantly, we can access the user via `ssh`:
 
@@ -159,6 +159,6 @@ system "chmod u+s /bin/bash"
 
 Then, we can just wait for `root` to execute our new file and privesc that way:
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (11).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!&#x20;

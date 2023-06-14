@@ -22,7 +22,7 @@ Delegation basically allows a user or machine to act on the behalf of another us
 
 The front-end needs to authenticate to the back-end database (using Kerberos) as the authenticated user. This is how delegation works in a nutshell:
 
-<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (259).png" alt=""><figcaption></figcaption></figure>
 
 ### Password / NTLM Authentication?
 
@@ -68,11 +68,11 @@ Exploitation of any of these privileges is not a CVE, but rather an **abuse of a
 
 This is the first type of delegation introduced in Windows 2000. When configured, the KDC would include a copy of the user's TGT **inside the TGS**. when the user accesses the `DB` machine, it extracts the user's TGT from the TGS and caches it in memory. Then, it would use this TGT to request for a TGS, which would allow for the accessing of database resources.
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>
 
 The service can act on behalf of the client in the network **simply by using its TGT**. This feature requires the `SeEnableDelegation` privilege to be enabled. We can configure this like so:
 
-<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (290).png" alt=""><figcaption></figcaption></figure>
 
 With this setting enabled, all we need are credentials for the user. Now suppose that we are on `WEB` machine and want to access the files on the `DB` machine, and we can do so using a web login form. This is how the requests are formed:
 
@@ -91,7 +91,7 @@ With this setting enabled, all we need are credentials for the user. Now suppose
 
 That's a lot to take in. Here's a packet capture from ATTL4S regarding this subject (take note he uses different machines here, but the concept is roughly the same):
 
-<figure><img src="../../.gitbook/assets/image (52).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
 ### Abuse
 
@@ -131,7 +131,7 @@ This new method was introduced in 2003 as a safer means to perform Kerberos dele
 
 To configure this, we just have to check the other setting and specify what type of authentication is allowed:
 
-<figure><img src="../../.gitbook/assets/image (46).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
 Additionally, there are 2 new Service-For-User (S4U) Kerberos extensions introduced for these services:
 
@@ -148,7 +148,7 @@ The **Kerberos only** option uses S4U2Proxy, while the other option both new ext
 
 In the interest of keeping this page shorter, I won't be covering the full request here since it's largely the same as Unconstrained Delegation except for a few changes. Again, ATTL4S provides a clear packet capture on how it works:
 
-<figure><img src="../../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
 The main difference here is the replacement of the TGS REQ and TGS REP to the `cifs` service with the S4U2Proxy extension. It's the same up the point AFTER the AP REQ (HTTP) part:
 

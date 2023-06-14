@@ -37,7 +37,7 @@ After some digging around on Kali Linux tools, we can find that there is this co
 
 When we open this file up in Kali, we can get some interesting results. There are bunch of table names, with one called `auth_user` sticking out.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (331).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (331) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can dump out the contents of that table using `mdb-export`.&#x20;
 

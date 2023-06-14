@@ -29,7 +29,7 @@ We can view the shop to find some books on sale:
 
 Proxying the traffic through Burpsuite reveals that this is an Express based website:
 
-<figure><img src="../../.gitbook/assets/image (4) (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (11) (1).png" alt=""><figcaption></figcaption></figure>
 
 The website allows us to create a user, and afterwards we can access the cart and checkout functions. Immediately after adding my book, we can see that the website updates to show that:
 
@@ -99,7 +99,7 @@ quantity=1&note=%3Cimg+src%3D%22http%3A%2F%2F10.10.14.34%2F%3Fbotcallback%22%3E
 
 This payload works in getting a callback from the machine itself.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (6) (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (13) (1).png" alt=""><figcaption></figcaption></figure>
 
 Interestingly, when we send the above request, we would get a `base64` encoded cookie which indicates that our avatar is loaded, which might be our XSS point:
 

