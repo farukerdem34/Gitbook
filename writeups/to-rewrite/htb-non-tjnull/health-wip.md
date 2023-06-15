@@ -20,7 +20,7 @@ PORT     STATE    SERVICE
 
 The web application performs 'health checks' for any URL:
 
-<figure><img src="../../../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (30) (9).png" alt=""><figcaption></figcaption></figure>
 
 For enumeration, I started 2 `nc` listeners, one on port 5555 and the other on port 4444. Then, we can create a webhook like so:
 
