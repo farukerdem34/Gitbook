@@ -19,7 +19,7 @@ PORT     STATE SERVICE
 
 Port 9001 had a typical corporate website:
 
-<figure><img src="../../../.gitbook/assets/image (26) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (26) (1) (5).png" alt=""><figcaption></figcaption></figure>
 
 There was a link towards a new portal hosted on `portal.quick.htb`. However, it pointed to port 443 and I could not access that for now. Looking at the rest of the page, we can see other information like the clients they had:
 

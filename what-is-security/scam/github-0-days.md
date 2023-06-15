@@ -8,7 +8,7 @@ Recently, some people have been creating fake researcher profiles on Github and 
 
 &#x20;Here's an example of one:
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (46).png" alt=""><figcaption></figcaption></figure>
 
 A 'famous' researcher only having 1 repository...strange. Here's the link if you wanna take a look at it for yourself, and obviously **do not run their POC scripts:**
 
@@ -192,7 +192,7 @@ The interesting part is the `.zip` files they install and run on the host. There
 
 I took a look at the Linux malware because I was pretty lazy to delve into both since the article above gave us a rough idea of what the malware does. I'm by no means a reverse engineering expert, so don't expect a technical walkthrough of what's running under the hood.&#x20;
 
-## Linux Malware
+## Static Analysis
 
 Using a brand new VM, we can analyse this malware.&#x20;
 
@@ -216,21 +216,21 @@ Interesting. I opened this up in `ghidra` and took a look at the decompiled code
 
 Random strings that looks looks like some kind of C2 Server stuff becuase I saw the `HTTP /`:
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (48).png" alt=""><figcaption></figcaption></figure>
 
 It also references `.onion`, and the article did say that both Windows and Linux versions downloads the TOR client. I checked the output of `strings`, and sure enough, I saw this part here:
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (47).png" alt=""><figcaption></figcaption></figure>
 
 Definitely looks like a beacon or something. There's also some kind of Go binary being executed / downloaded on the system:
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>
 
 ### Switch Statements
 
 There were a bunch of `switch` statements in this one function:
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
 
 They all call the same 6 functions, so uh, cool I guess.
 
@@ -238,8 +238,53 @@ They all call the same 6 functions, so uh, cool I guess.
 
 I uploaded and ran the binary on a few free sandbox sites to see the processes that were being run (also because I was lazy to spin up a dedicated VM to monitor processes). Hybrid Analysis flags it as malicious with 16 MITRE ATT\&CK TTPs being detected.&#x20;
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (50).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/image (49).png" alt=""><figcaption></figcaption></figure>
+
+Other websites provided similar information that we already had from other methods, such as this binary using Go to build something.&#x20;
+
+## Dynamic Analysis
+
+### SSH?
+
+There are 2 tools I used for this thing:
+
+* Wireshark
+* Sysmon
+
+I used a brand new Windows 10 VM for the analysis with all network adapters all turned off. Then, I ran the malware. It spawned a command prompt very very briefly before seemingly disappearing.&#x20;
+
+In Wireshark, the only thing I captured was some loopback interface traffic, so nothing much there.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+
+I ran it a few more times, and each time the process seems to terminate almost immediately.
 
 <figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
-I'm still working on this, so I'll update this when I get more information about this malware.&#x20;
+It was kind of obvious that this malware was reaching out to the Internet, seeing the connection fail, and then just dying. So this time, I turned on the Wifi, and ran it again, and it showed some more interesting parts.
+
+<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+
+As specified, this would spin up `tor.exe`, and connect to a remote device somewhere out there. We can also see that this malware runs some kind of command too:
+
+<figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+
+Lastly, it seems to open up SSH on the system.
+
+<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+
+So this thing was providing remote SSH access somehow. I checked my listener ports, and sure enough port 22 was open on the VM after running it.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+
+Interesting! At this point, I didn't want the attacker to stay around, so I closed the entire VM and started doing some basic research of the IP address.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+
+Since it is using `tor`, this probably is just one of the nodes being used. If not, then this is an OPSEC failure (which is highly unlikely).&#x20;
+
+## Conclusion
+
+Interesting form of distribution targeting people that just blindly run POC scripts. Always check your scripts and 'POCs' before blindly running them! Impersonation is an inevitability. Apparently, these attackers are relentless and despite having their repos deleted, more will soon popup to distribute the same malware, so be on the lookout for these fake profiles.&#x20;

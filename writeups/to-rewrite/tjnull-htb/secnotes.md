@@ -76,7 +76,7 @@ http://10.129.85.180/change_pass.php?password=easypass&confirm_password=easypass
 
 After waiting for a bit, we can login as `tyler` using this password.
 
-<figure><img src="../../../.gitbook/assets/image (50) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (50) (5) (2).png" alt=""><figcaption></figcaption></figure>
 
 There are some credentials located within the note **new site**.&#x20;
 

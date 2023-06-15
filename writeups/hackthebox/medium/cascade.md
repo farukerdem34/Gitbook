@@ -163,7 +163,7 @@ Sure enough, we can find a password there. However, VNC passwords are encrypted,
 
 {% embed url="https://github.com/frizb/PasswordDecrypts" %}
 
-<figure><img src="../../../.gitbook/assets/image (50).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (50) (5).png" alt=""><figcaption></figcaption></figure>
 
 With these credentials, we can login as `s.smith`.
 

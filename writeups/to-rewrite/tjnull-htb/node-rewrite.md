@@ -331,7 +331,7 @@ tom@node:~$ backup 1 2 3
 
 I transferred this back to my machine and took a look at it using `ltrace` and `strace`.
 
-<figure><img src="../../../.gitbook/assets/image (49) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (49) (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 It seems that it first checks whether `-q` is entered, so that must be the first argument. This was also using `strcmp`, which was obviously vulnerable to BOF. A quick `checksec` reveals this has NX enabled:
 
@@ -429,7 +429,7 @@ However, this hash cannot be cracked...
 
 I still didn't want to do BOF, so let's take a look at the code within `main` using `ghidra`. There's a possible point of injection here:
 
-<figure><img src="../../../.gitbook/assets/image (48).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (48) (6).png" alt=""><figcaption></figcaption></figure>
 
 Notice how the newline character is **not blacklisted**. Meaning we can use it to bypass this command **and then inject our command**. This can be done by using a **bash variable** to bypass this check since `{}` is not blacklisted as well. This would allow us to execute commands without `;`.&#x20;
 

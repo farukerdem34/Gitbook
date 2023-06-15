@@ -107,7 +107,7 @@ bash /tmp/rev
 
 Our listener port would catch a shell:
 
-<figure><img src="../../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (28) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

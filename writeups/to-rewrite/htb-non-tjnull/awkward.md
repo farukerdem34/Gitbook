@@ -26,7 +26,7 @@ This was a page dedicated to hats:
 
 On the page, there is mention of another site for the Store:
 
-<figure><img src="../../../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (26) (1).png" alt=""><figcaption></figcaption></figure>
 
 There are also some users on the page, and we can note their names:
 
@@ -155,7 +155,7 @@ This can easily be bypassed by changing the `token` parameter to literally anyth
 
 Then, upon refreshing, we can view the dashboard:
 
-<figure><img src="../../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (25) (2).png" alt=""><figcaption></figcaption></figure>
 
 On this platform, there was only a Leave Requests form present:
 
@@ -400,7 +400,7 @@ if __name__ == "__main__":
 
 This works:
 
-<figure><img src="../../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (27) (2).png" alt=""><figcaption></figcaption></figure>
 
 Now that we have easy LFI, we can enumerate some possible files:
 

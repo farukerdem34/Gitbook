@@ -43,7 +43,7 @@ Page is some kind of company website.
 
 We can add `intelligence.htb` to our `/etc/hosts` file as well. Within the page, I noticed there were some downloads:
 
-<figure><img src="../../../.gitbook/assets/image (49).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (49) (6).png" alt=""><figcaption></figcaption></figure>
 
 When we download them, we would get redirected to a PDF which did not have anything useful on it.
 

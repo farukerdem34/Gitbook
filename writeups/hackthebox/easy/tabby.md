@@ -14,7 +14,7 @@ We would have to add `megahosting.htb` to our `/etc/hosts` file to view port 80.
 
 When we press the Compare button, we would be brought to `/news.php?file=statement`. I tested for LFI, and it worked!
 
-<figure><img src="../../../.gitbook/assets/image (25) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (25) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Tomcat
 

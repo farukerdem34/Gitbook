@@ -110,7 +110,7 @@ Grab the user flag.
 
 I ran a WinPEAS scan to enumerate for me. There, I found some AutoLogon credentials for the user.
 
-<figure><img src="../../../.gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (51) (5).png" alt=""><figcaption></figcaption></figure>
 
 We can login as this user using `evil-winrm`, but there's not much there for us.
 

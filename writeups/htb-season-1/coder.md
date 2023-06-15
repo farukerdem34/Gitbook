@@ -238,7 +238,7 @@ ffuf -request req -w possible_codes -t 70 -fs 89 > output
 
 Then just monitor the output file for any entries that end up inside. This would be the correct code used. This takes around 10-20 minutes, which is a lot faster.
 
-<figure><img src="../../.gitbook/assets/image (27) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (27) (2) (3).png" alt=""><figcaption></figcaption></figure>
 
 Then we can login!
 

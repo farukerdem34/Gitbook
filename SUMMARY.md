@@ -27,7 +27,7 @@
     * [Metasploit Framework](pentesting-methodology/terms-and-concepts/metasploit-framework.md)
     * [Passwords and Encryption](pentesting-methodology/terms-and-concepts/passwords-and-encryption.md)
     * [File Transfers](pentesting-methodology/terms-and-concepts/file-transfers.md)
-* [Scams](what-is-security/scam/README.md)
+* [Scams / Malware](what-is-security/scam/README.md)
   * [May Chong](what-is-security/scam/may-chong.md)
   * [Liu Hongtian](what-is-security/scam/liu-hongtian.md)
   * [Richard Spindler](what-is-security/scam/richard-spindler.md)
