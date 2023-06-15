@@ -45,7 +45,7 @@ ID           Response   Lines    Word       Chars       Payload
 
 The page shows us a login for OpenEMR, which is known to have a ton of vulnerabilities:
 
-<figure><img src="../../../.gitbook/assets/image (22) (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (22) (9) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can head to the Github Repo for this software and attempt to find its version using the default files present:
 

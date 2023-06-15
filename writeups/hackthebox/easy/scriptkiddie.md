@@ -54,7 +54,7 @@ Now, we can see how the `${ip}` variable is not being sanitised and is run with 
 
 After echoing it in, we would gain anoter reverse shell:
 
-<figure><img src="../../../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Sudo MSFConsole
 

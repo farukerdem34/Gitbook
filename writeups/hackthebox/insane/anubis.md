@@ -45,7 +45,7 @@ ID           Response   Lines    Word       Chars       Payload
 
 Add the domains to the `/etc/hosts` file, and `www` is visited it shows a typical corporate page:
 
-<figure><img src="../../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (7).png" alt=""><figcaption></figcaption></figure>
 
 When we fill in the Contact and try to submit, it let's us preview our submission at `preview.asp`.&#x20;
 
@@ -73,7 +73,7 @@ Te: trailers
 
 Interesting. Since this is using `asp`, and the output is printed on another screen, we can test some SSTI. I used this payload:
 
-<figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (10).png" alt=""><figcaption></figcaption></figure>
 
 And this was returned:
 
@@ -218,7 +218,7 @@ chisel server -p 5555 --reverse
 
 Afterwards, we can add `softwareportal.windcorp.htb` within our `/etc/hosts` file under `172.25.80.1`, and visit it using our browser (with FoxyProxy Proxychains).&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (3).png" alt=""><figcaption></figcaption></figure>
 
 ### VNC --> Responder Creds
 
@@ -234,7 +234,7 @@ http://softwareportal.windcorp.htb/install.asp?client=172.20.159.137&software=VN
 ```
 {% endcode %}
 
-<figure><img src="../../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20) (4).png" alt=""><figcaption></figcaption></figure>
 
 Since VNC is like an RDP software, there might potentially be credentials beign sent in the packets, so I started `wireshark` and also changed the `client` parameter to be my IP address. When the packets are viewed, we can see a lot of failed TCP requests:
 

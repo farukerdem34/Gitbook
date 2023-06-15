@@ -101,7 +101,7 @@ Port 80 shows a corporate page that is still under construction:
 
 At the bottom of the page, there's a link that brings us to a login page on the website:
 
-<figure><img src="../../../.gitbook/assets/image (15) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (3) (4).png" alt=""><figcaption></figcaption></figure>
 
 Viewing the page source reveals this is a mojoPortal instance:
 
@@ -133,15 +133,15 @@ If we change it to `cmd.txt`, it works.&#x20;
 
 Then it shows up here:
 
-<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (6).png" alt=""><figcaption></figcaption></figure>
 
 Interestingly, there's a Move function as well, and we can try moving this to be `cmd.aspx`.
 
-<figure><img src="../../../.gitbook/assets/image (16) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 We can try to rename it as `cmd.aspx`, and it seems to work:
 
-<figure><img src="../../../.gitbook/assets/image (17) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (1) (7).png" alt=""><figcaption></figcaption></figure>
 
 Turns out this is actually a CVE:
 

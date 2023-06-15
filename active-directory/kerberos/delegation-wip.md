@@ -22,7 +22,7 @@ Delegation basically allows a user or machine to act on the behalf of another us
 
 The front-end needs to authenticate to the back-end database (using Kerberos) as the authenticated user. This is how delegation works in a nutshell:
 
-<figure><img src="../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
 
 ### Password / NTLM Authentication?
 
@@ -68,11 +68,11 @@ Exploitation of any of these privileges is not a CVE, but rather an **abuse of a
 
 This is the first type of delegation introduced in Windows 2000. When configured, the KDC would include a copy of the user's TGT **inside the TGS**. when the user accesses the `DB` machine, it extracts the user's TGT from the TGS and caches it in memory. Then, it would use this TGT to request for a TGS, which would allow for the accessing of database resources.
 
-<figure><img src="../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
 
 The service can act on behalf of the client in the network **simply by using its TGT**. This feature requires the `SeEnableDelegation` privilege to be enabled. We can configure this like so:
 
-<figure><img src="../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 With this setting enabled, all we need are credentials for the user. Now suppose that we are on `WEB` machine and want to access the files on the `DB` machine, and we can do so using a web login form. This is how the requests are formed:
 
@@ -91,7 +91,7 @@ With this setting enabled, all we need are credentials for the user. Now suppose
 
 That's a lot to take in. Here's a packet capture from ATTL4S regarding this subject (take note he uses different machines here, but the concept is roughly the same):
 
-<figure><img src="../../.gitbook/assets/image (52).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
 ### Abuse
 
@@ -131,7 +131,7 @@ This new method was introduced in 2003 as a safer means to perform Kerberos dele
 
 To configure this, we just have to check the other setting and specify what type of authentication is allowed:
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
 
 Additionally, there are 2 new Service-For-User (S4U) Kerberos extensions introduced for these services:
 
@@ -148,12 +148,60 @@ The **Kerberos only** option uses S4U2Proxy, while the other option both new ext
 
 In the interest of keeping this page shorter, I won't be covering the full request here since it's largely the same as Unconstrained Delegation except for a few changes. Again, ATTL4S provides a clear packet capture on how it works:
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
 
-The main difference here is the replacement of the TGS REQ and TGS REP to the `cifs` service with the S4U2Proxy extension. It's the same up the point AFTER the AP REQ (HTTP) part:
+The differences are in the TGS REQ and TGS REP to the `cifs` service with the S4U2Proxy extension. It's the same up the point AFTER the AP REQ (HTTP) part:
 
 1. **TGS REQ 3 -->** This takes the machine's TGT + authenticator string and sends a request for SPN `cifs/db.corp.local`. Additionally, the user's ST is sent too. This request would have the RBCD and Constrained Delegation flags set to **true**. The user's ST also has the **forwardable** flag set to **true**.&#x20;
 2. **TGS REP 3 -->** The DC checks whether the current `WEB` machine is able to delegate to the service requested (whether `WEB` can delegate to `DB`). It then responds with the user's ST + Session Key.&#x20;
 3. **AP REQ (SMB) -->** The `WEB` machine sends an AP REQ through SMB on behalf of the user.&#x20;
+4. **AP REP (SMB) -->** The AP REP would send the ST back, and it would sent the **AP REP (HTTP)** back to the `WEB` machine. This would complete the authentication process.
 
-WIP!
+This is deemed more secure than Unconstrained Delegation because it no longer allows servers to cache the TGTs of other users, but rather it allows the user to request a TGS for another user using their own TGT.&#x20;
+
+### Abuse of Kerberos Only
+
+The abuse of this service only requires an addtional ticket as a requirement to invoke S4U2Proxy. In short, we just need the TGT of the principal that is trusted for delegation, and we can use `Rubeus.exe` to gain access to the resource. The most common method of abuse involves using RBCD (which will be covered below).&#x20;
+
+We can find out the principals that are trusted for delegation by checking for the `msds-allowedtodelegate` attribute.
+
+```
+ADSearch.exe --search "(&(objectCategory=computer)(msds-allowedtodelegateto=*))" --attributes dnshostname,samaccountname,msds-allowedtodelegateto --json
+
+[*] TOTAL NUMBER OF SEARCH RESULTS: 1
+[
+  {
+    "dnshostname": "sql-2.dev.cyberbotic.io",
+    "samaccountname": "SQL-2$",
+    "msds-allowedtodelegateto": [
+      "cifs/dc-2.dev.cyberbotic.io/dev.cyberbotic.io",
+      "cifs/dc-2.dev.cyberbotic.io",
+      "cifs/DC-2",
+      "cifs/dc-2.dev.cyberbotic.io/DEV",
+      "cifs/DC-2/DEV"
+    ]
+  }
+]
+```
+
+There are other ways to enumerate this with Powershell and what not. How the exploit works is first getting the TGT of the `SQL-2` machine in the above example. Afterwards, we can use `Rubeus.exe s4u` module to request a ST for the resource we want, in this case the `cifs/dc-2` service.&#x20;
+
+```
+.\Rubeus.exe s4u /impersonateuser:administrator /user:SQL$ /msdsspn:cifs/dc-2 /ticket:<TICKET> /nowrap
+```
+
+The above command would return the ticket that we can use to `createnetonly` and access the file system of `dc-2` via `cifs/dc-2`.&#x20;
+
+### Protocol Transition
+
+In short, this is the machine's way of saying that **it doesn't actually care how the client authenticates.** It can be via cleartext password, NTLM hashes or whatever. This can be configured by specifying a provider:
+
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+
+This would make use of the S4U2Self extension, and we can technically invoke S4U2Proxy using this even if we don't have an additional ticket to use. Again, ATTL4S provides the network traffic:
+
+<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+
+There are bigger differences in the requests made using this method:
+
+1. **TGS REQ 1 (S4U2Self) -->** The machine would **request for its own TGT!** The authentication used here would be NTLM, and afterwards

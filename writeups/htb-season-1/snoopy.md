@@ -27,7 +27,7 @@ This was a corporate page that provides DevSecOps services:
 
 Looking around, there's another subdomain present in the form of a mail server.
 
-<figure><img src="../../.gitbook/assets/image (20) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (20) (4) (3).png" alt=""><figcaption></figcaption></figure>
 
 It syas that the DNS records are being migrated to another domain and that their email server is offline. We can run both a `gobuster` directory and `wfuzz` subdomain scan first. The subdomain scan reveals a `mm` subdomain present.
 
@@ -111,7 +111,7 @@ The `announcement.pdf` file had nothing interesting itself, but this looks vulne
 
 After using `....//` instead, we can see that a file is generated:
 
-<figure><img src="../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (22) (9).png" alt=""><figcaption></figcaption></figure>
 
 When the file is downloaded and viewed, we see that it works!
 
@@ -172,7 +172,7 @@ if __name__ == '__main__':
 	main()
 ```
 
-<figure><img src="../../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (21) (3).png" alt=""><figcaption></figcaption></figure>
 
 This made enumeration a lot easier. Now, we can proceed with enumeration of the file system and other sensitive files. We can start with `/etc/nginx/sites-available/default`.&#x20;
 
@@ -285,7 +285,7 @@ http://mm.snoopy.htb/reset_password_complete?token=b4akcwn9adntaawingkbho8ctcyzf
 
 Afterwards, we can reset the password and see that it works here:
 
-<figure><img src="../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (17) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then we can login.
 
@@ -305,7 +305,7 @@ We can fill it in to have our credentials and required details. It appears that 
 
 <figure><img src="../../.gitbook/assets/image (9) (6) (3).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (16) (1).png" alt=""><figcaption></figcaption></figure>
 
 Anyways, after filling in the fields and clicking submit, we get this weird thing on a listener port:
 
@@ -352,7 +352,7 @@ listen interfaces 0.0.0.0 and :: on port 2222
 
 We have a credential! With this, we can `ssh` in as the user `cbrown`:
 
-<figure><img src="../../.gitbook/assets/image (18) (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (18) (7) (3).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -426,7 +426,7 @@ index 0000000..8e881d1
 
 Afterwards, just run the `sudo` command on the `/tmp/diff` file. This would put our public key within the `sbrown` directory since we are running the command as `sbrown`. Then, we can `ssh` in.
 
-<figure><img src="../../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (19) (2).png" alt=""><figcaption></figcaption></figure>
 
 Grab the user flag.
 

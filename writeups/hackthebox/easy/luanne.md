@@ -101,7 +101,7 @@ With this, I enumerated the users on the machine, of which there was just `r.mic
 
 Interactions with this instance revealed that it was similar to the weather API we found earlier.
 
-<figure><img src="../../../.gitbook/assets/image (12) (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (10) (1).png" alt=""><figcaption></figcaption></figure>
 
 However, no command injection seems to work here. Perhaps this was a patched version of the script.&#x20;
 
