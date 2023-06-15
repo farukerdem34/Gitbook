@@ -63,7 +63,7 @@ With this, we can login to the admin panel:
 
 Within the configuration files, we can find a `mysql.yaml` file.
 
-<figure><img src="../../../.gitbook/assets/image (72).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (72) (5).png" alt=""><figcaption></figcaption></figure>
 
 We can't edit it, and there wasn't any credentials in it:
 

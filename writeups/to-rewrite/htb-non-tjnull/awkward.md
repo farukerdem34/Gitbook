@@ -22,7 +22,7 @@ We have to add `hat-valley.htb` to our `/etc/hosts` file to access this.&#x20;
 
 This was a page dedicated to hats:
 
-<figure><img src="../../../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (40) (4).png" alt=""><figcaption></figcaption></figure>
 
 On the page, there is mention of another site for the Store:
 

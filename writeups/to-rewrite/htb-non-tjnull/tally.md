@@ -16,7 +16,7 @@ Checking port 80 reveals a Microsoft Sharepoint instance.
 
 For Microsoft Sharepoint, we can visit the `viewlsts.aspx` file to see all the site contents.
 
-<figure><img src="../../../.gitbook/assets/image (40) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (40) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 The Documents had one folder which contained FTP credentials:
 

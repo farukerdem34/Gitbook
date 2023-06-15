@@ -46,7 +46,7 @@ This was the main exploit I found interesting because the version running on `me
 
 While clicking on the URL within the blog post, I noticed that it was using a certain plugin.
 
-<figure><img src="../../../.gitbook/assets/image (70).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (70) (5).png" alt=""><figcaption></figcaption></figure>
 
 This is a plugin that has a lot of vulnerabilities:
 
