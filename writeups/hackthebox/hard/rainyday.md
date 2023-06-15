@@ -134,7 +134,7 @@ The last part is the most interesting because it contains some form of regex pat
 
 Was kinda right in this case, but it appears we are not authenticated.
 
-<figure><img src="../../../.gitbook/assets/image (11) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can try to grab the Cookie from the session earlier on the main website as gary, and it works.
 

@@ -300,6 +300,6 @@ ls -la /usr/local/bin/sattrack
 
 We can just overwrite this with `/bin/bash`, and then run it using `sudo` to get an easy root shell.
 
-<figure><img src="../../../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

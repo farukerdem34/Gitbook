@@ -76,7 +76,7 @@ If-None-Match: W/"b41-tn8t3x3qcvcm126OQ/i0AXwBj8M"
 
 Interesting. While looking at hte page source, we can see loads of files are actually left available for us to read.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (31) (6).png" alt=""><figcaption></figcaption></figure>
 
 While using Inspector tools, we can see this Webpack part here:
 
