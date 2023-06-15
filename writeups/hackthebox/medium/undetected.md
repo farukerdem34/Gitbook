@@ -162,7 +162,7 @@ Reading the code, it seems to make the user `$user"1"`, which means it is `steve
 
 Running LinPEAS reveals there is mail for the user:
 
-<figure><img src="../../../.gitbook/assets/image (37) (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (37) (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% code overflow="wrap" %}
 ```

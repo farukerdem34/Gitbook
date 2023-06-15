@@ -314,4 +314,4 @@ Then we wait for a little bit, then read the `read_creds.xml` file to find the `
 
 Then we can `ssh` in as `root`.
 
-<figure><img src="../../../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (35) (7).png" alt=""><figcaption></figcaption></figure>

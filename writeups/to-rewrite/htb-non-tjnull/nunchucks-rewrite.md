@@ -50,11 +50,11 @@ ID           Response   Lines    Word       Chars       Payload
 
 This was another store:
 
-<figure><img src="../../../.gitbook/assets/image (37).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (37) (7).png" alt=""><figcaption></figcaption></figure>
 
 When we submit an email, it would print it back on the screen.
 
-<figure><img src="../../../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (39) (10).png" alt=""><figcaption></figcaption></figure>
 
 The box name was a hint that it was using NUNJUCKS, so we can try some SSTI here. We can verify it works by using `{{7*7}}` as part of the email:
 

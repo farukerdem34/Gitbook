@@ -4,7 +4,7 @@
 
 A few days ago, I received this email:
 
-<figure><img src="../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
 
 Here's the text format if you're interested:
 

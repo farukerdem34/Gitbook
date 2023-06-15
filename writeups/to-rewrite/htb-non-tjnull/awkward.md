@@ -198,7 +198,7 @@ When we try to submit leave, we get some weird JWT error:
 
 JWT is a cookie, so what happens if we remove Cookies altogether? We would get a different error:
 
-<figure><img src="../../../.gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (36) (8).png" alt=""><figcaption></figcaption></figure>
 
 I wasn't sure how to exploit this yet. Looking at the `src/services` scripts within Webpack, we can find more endpoints like `/api/staff-details`. When visited, it returns a bunch of hashes without a token:
 
@@ -266,7 +266,7 @@ Then, we can replace our placeholder cookie with this value.&#x20;
 
 Using this token, we can actually send leave requests.
 
-<figure><img src="../../../.gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (38) (7).png" alt=""><figcaption></figcaption></figure>
 
 Using it, we can enumerate the `/store-status` endpoint:
 
@@ -314,7 +314,7 @@ ID           Response   Lines    Word       Chars       Payload
 
 By visiting the link, we can actually load the pages ourselves. Port 3002 in this case hosts the documentation of the API.
 
-<figure><img src="../../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (33) (4).png" alt=""><figcaption></figcaption></figure>
 
 The code for `all-leave` is rather interesting:
 

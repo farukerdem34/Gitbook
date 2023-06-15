@@ -222,4 +222,4 @@ root@ee809b31a278:~# chmod u+s /bin/bash
 
 Then we can exit this and get a shell with EUID of `root`.
 
-<figure><img src="../../../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (34) (10).png" alt=""><figcaption></figcaption></figure>
