@@ -125,7 +125,7 @@ This CVE works!&#x20;
 
 We can then get an easy reverse shell as `www-data`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (117).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (117) (5).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

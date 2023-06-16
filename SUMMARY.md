@@ -88,6 +88,7 @@
 ## 🖥 Active Directory
 
 * [Active Directory](active-directory/ad.md)
+* [Lateral Movement](active-directory/lateral-movement.md)
 * [Tools](active-directory/tools.md)
 * [Kerberos](active-directory/kerberos/README.md)
   * [Delegation](active-directory/kerberos/delegation.md)
@@ -299,6 +300,7 @@
     * [Pollution](writeups/hackthebox/hard/pollution.md)
     * [Quick](writeups/hackthebox/hard/quick.md)
     * [RainyDay](writeups/hackthebox/hard/rainyday.md)
+    * [Reel](writeups/hackthebox/hard/reel.md)
     * [Registry](writeups/hackthebox/hard/registry.md)
     * [Search](writeups/hackthebox/hard/search-ad.md)
     * [Seventeen](writeups/hackthebox/hard/seventeen.md)
@@ -448,4 +450,5 @@
 
 ## 🔺 Adversary Emulation
 
-* [Emulation](adversary-emulation/emulation.md)
+* [Red Teaming](adversary-emulation/emulation/README.md)
+  * [Emulation](adversary-emulation/emulation/emulation.md)

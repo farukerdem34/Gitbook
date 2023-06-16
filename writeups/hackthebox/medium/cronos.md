@@ -116,4 +116,4 @@ exec("chmod u+s /bin/bash");
 
 Wait for a little bit, and the script should execute. We can then easily get a `root` shell.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (605).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (605) (1).png" alt=""><figcaption></figcaption></figure>
