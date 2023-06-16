@@ -22,7 +22,7 @@ We can take a look at port 80.
 
 Port 80 reveals a hotel site:
 
-<figure><img src="../../../.gitbook/assets/image (177).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (177) (3).png" alt=""><figcaption></figcaption></figure>
 
 When looking at the rooms available, a unique URL is being used:
 

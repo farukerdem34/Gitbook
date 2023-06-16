@@ -111,11 +111,11 @@ The hash for `josh` cracks.
 
 Using that, we can login to Mattermost and see that there are credentials on the screen!
 
-<figure><img src="../../../.gitbook/assets/image (604) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (604).png" alt=""><figcaption></figcaption></figure>
 
 We can use this to `ssh` in as the user.
 
-<figure><img src="../../../.gitbook/assets/image (608) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (608).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

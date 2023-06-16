@@ -167,7 +167,7 @@ Sure enough, we can find a password there. However, VNC passwords are encrypted,
 
 With these credentials, we can login as `s.smith`.
 
-<figure><img src="../../../.gitbook/assets/image (68).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (68) (1).png" alt=""><figcaption></figcaption></figure>
 
 Grab the user flag.
 

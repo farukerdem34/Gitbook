@@ -107,7 +107,7 @@ Then complete the merge:
 
 Then just trigger the webshell by visiting the file or using `curl`.
 
-<figure><img src="../../../.gitbook/assets/image (177) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (177) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

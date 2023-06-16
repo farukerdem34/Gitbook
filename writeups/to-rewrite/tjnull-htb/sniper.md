@@ -26,7 +26,7 @@ Port 80 is hosting a corporate website:
 
 I clicked all the services, and found that Our Services works and brings us to `/blog/index.php`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (182).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (182) (3).png" alt=""><figcaption></figcaption></figure>
 
 When changing languages, I noticed this:
 

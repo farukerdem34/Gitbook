@@ -28,11 +28,11 @@ With this, we can easily gain a reverse shell:
 
 Within the `/var/www/html/CuteNews/cdata/users` directory, we can find some base64 encoded lines:
 
-<figure><img src="../../../.gitbook/assets/image (80).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (80) (4).png" alt=""><figcaption></figcaption></figure>
 
 When one of them was decoded, we find a token of some sorts:
 
-<figure><img src="../../../.gitbook/assets/image (121).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (121) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can crack this hash on crackstation:
 
@@ -58,7 +58,7 @@ I tried to `ssh` in as `nadav` from `paul`, and it worked!
 
 When running another LinPEAS, we find this part here:
 
-<figure><img src="../../../.gitbook/assets/image (131).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (131) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% embed url="https://rioasmara.com/2021/07/16/usbcreator-d-bus-privilege-escalation/" %}
 

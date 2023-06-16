@@ -20,7 +20,7 @@ The `preprod-payroll` subdomain was new, and I headed there.
 
 The page revealed some kind of application used to manage employee salary tracking.
 
-<figure><img src="../../../.gitbook/assets/image (111) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (111) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Initially, I assumed that there would be some kind of public exploit for this Employee Record system, and found quite a few.
 
@@ -44,7 +44,7 @@ The new page contained a load of rubbish information, and when clicking on the d
 
 We can test this for a simple directory traversal exploit. Using the standard `../../../` did not work, but `....//....//....//` worked instead.
 
-<figure><img src="../../../.gitbook/assets/image (95) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (95) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 With this, I attempted to read the private SSH keys of the user `michael`.
 

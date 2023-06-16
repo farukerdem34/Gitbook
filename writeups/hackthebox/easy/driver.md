@@ -23,7 +23,7 @@ Interestingly, WinRM is open.&#x20;
 
 Port 80 requires credentials to access.
 
-<figure><img src="../../../.gitbook/assets/image (93).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (93) (1).png" alt=""><figcaption></figcaption></figure>
 
 I tested weak credentials of `admin:admin`, and it worked. The page is some type of printer service panel.
 

@@ -356,7 +356,7 @@ This group has ReadGMSAPassword privileges over `svc_int`.&#x20;
 
 USing `gMSADumper.py`, we can get a hash for this user:
 
-<figure><img src="../../../.gitbook/assets/image (91).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (91) (3).png" alt=""><figcaption></figcaption></figure>
 
 This cannot be cracked, but Pass The Hash can still be done.
 

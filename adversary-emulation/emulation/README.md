@@ -49,6 +49,10 @@ For example, if I was part of the red team in a bank and tasked to prepare an ad
 
 This would allow me to get a better understanding of the current flaws in my defence systems, better preparing our organisation against real attacks.&#x20;
 
+DFIR Report is a website that provides really comprehensive reports of how APTs infiltrate systems and what they do there. Their illustrations of the timeline is top-notch and really helpful in learning what an APT does after getting in.
+
+{% embed url="https://thedfirreport.com/" %}
+
 ## Red Team vs Pentesting
 
 The red team is meant to **emulate adversary attacks.** They provide an adversarial perspective by challenging the assumptions made by an organisation and defenders. By challenging these assumptions, a red team can identify vulnerabilities in an organisation's OPSEC.&#x20;
@@ -65,7 +69,7 @@ On the other hand, a red team operation is **very focused on stealth and evasion
 
 The tools used are different as well. Penetration testers might have more scanners and other tools which focus more on testing individual systems within the scope. A red team would use tools such as Cobalt Strike to again, simulate a real APT.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (605).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
 
 ## Purple Teaming
 

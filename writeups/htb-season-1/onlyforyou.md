@@ -270,7 +270,7 @@ Trying to use `proxychains` with Firefox didn't really work for some reason, so 
 
 Port 8001 was another login page:
 
-<figure><img src="../../.gitbook/assets/image (74).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (74) (3).png" alt=""><figcaption></figcaption></figure>
 
 I tried some weak credentials, and found that `admin:admin` worked. This was some sort of dashboard with sales and stuff.
 

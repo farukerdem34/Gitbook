@@ -55,7 +55,7 @@ var _0x4b18 = [ & quot;value & quot;, & quot;user_login & quot;, & quot;getEleme
 
 It appears we have a username and password here. We can use this to login to Gitlab. Once in, we can see the projects and things the user has:
 
-<figure><img src="../../../.gitbook/assets/image (181).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (181) (3).png" alt=""><figcaption></figcaption></figure>
 
 Within the Profile project, there's an `index.php` file and I found that we can edit this repository. I uploaded a `cmd.php` file and checked if I had RCE when visiting `/profile/cmd.php`. This is done by creating a new Merge Request and Approving it ourselves. We can then trigger the webshell.
 

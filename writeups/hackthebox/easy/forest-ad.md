@@ -12,7 +12,7 @@ Lots of ports as per normal DC scanning.
 
 Using `enum4linux` with no credentials, we find that it accepts null credentials and we can enumerate some users.
 
-<figure><img src="../../../.gitbook/assets/image (130) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (130) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 With a user list, we can attempt to do AS-REP Roasting before moving on, and we would find a hash for the `svc-alfresco` user.
 

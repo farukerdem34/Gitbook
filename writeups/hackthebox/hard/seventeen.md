@@ -253,7 +253,7 @@ It appears there's another subdomain for an email client at `mastermailer.sevent
 
 When we visit the new subdomain, we are presented with antoehr login page.
 
-<figure><img src="../../../.gitbook/assets/image (108).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (108) (4).png" alt=""><figcaption></figcaption></figure>
 
 &#x20;A quick inspection on the page source reveals this is using an application called RoundCube.
 

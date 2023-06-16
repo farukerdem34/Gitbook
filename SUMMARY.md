@@ -88,8 +88,8 @@
 ## 🖥 Active Directory
 
 * [Active Directory](active-directory/ad.md)
-* [Lateral Movement](active-directory/lateral-movement.md)
 * [Tools](active-directory/tools.md)
+* [Windows Authentication](active-directory/windows-authentication.md)
 * [Kerberos](active-directory/kerberos/README.md)
   * [Delegation](active-directory/kerberos/delegation.md)
   * [Attacking Kerberos](active-directory/kerberos/attacking-kerberos.md)

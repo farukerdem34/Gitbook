@@ -30,7 +30,7 @@ Visiting `/myapp` would download an application to my machine.&#x20;
 
 Port 1337 seems to be running an application of some sorts:
 
-<figure><img src="../../../.gitbook/assets/image (181) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (181) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 It was identical to the binary downloaded from port 80.&#x20;
 

@@ -14,7 +14,7 @@ We can run a `gobuster` scan on port 80:
 
 I visited the `/music` directory first and it brought me to some corporate website:
 
-<figure><img src="../../../.gitbook/assets/image (130).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (130) (1).png" alt=""><figcaption></figcaption></figure>
 
 When I clicked `login`, it brought me to `/ona`, which was a dashboard for OpenNetAdmin:
 
@@ -58,7 +58,7 @@ The hash can be cracked to give `Revealed`. We can read `/etc/apache2/sites-avai
 
 After port forwarding via `ssh -L 52846:127.0.0.1:52846 jimmy@10.10.10.71`, we can access the login page:
 
-<figure><img src="../../../.gitbook/assets/image (90).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (90) (1).png" alt=""><figcaption></figcaption></figure>
 
 Logging in reveals a password protected RSA Private Key:
 

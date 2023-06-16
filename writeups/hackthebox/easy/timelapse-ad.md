@@ -8,7 +8,7 @@ Nmap scan reveals the default AD ports that are open.
 
 As usual, I always check the shares that I can access with no credentials, and found one here.
 
-<figure><img src="../../../.gitbook/assets/image (74) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (74) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Within this share, we can find a `winrm_backup.zip` file that has a password on its files.
 

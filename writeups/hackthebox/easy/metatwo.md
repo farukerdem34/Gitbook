@@ -197,7 +197,7 @@ $mail->Port = 587;
 
 With these credentials, we can `ssh` in as `jnelson`.
 
-<figure><img src="../../../.gitbook/assets/image (107) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (107).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
