@@ -22,7 +22,7 @@ We have to add `app.microblog.htb` and `microblog.htb` to our `/etc/hosts` file 
 
 Port 80 reveals a blogging service called Microblog:
 
-<figure><img src="../../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (44) (1).png" alt=""><figcaption></figcaption></figure>
 
 At the bottom, it appears that the website creates new blogs by using new subdomains.
 

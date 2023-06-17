@@ -380,7 +380,7 @@ This tool would help us decrypt the data we need. We can download this to the ma
 
 And we can find the credentials for bob.woodadm.
 
-<figure><img src="../../../.gitbook/assets/image (78) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (78) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now, we can attempt some remote Powershell again.
 

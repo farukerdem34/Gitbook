@@ -24,7 +24,7 @@ When searching for exploits regarding UnrealIRC, I found a few RCE exploits:
 
 When trying the RCE exploit, we find that it works.
 
-<figure><img src="../../../.gitbook/assets/image (54) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (54) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (165) (4).png" alt=""><figcaption></figcaption></figure>
 

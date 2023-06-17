@@ -74,7 +74,7 @@ With this, we can access the MSSQL instance with `sqsh`. Afterwards, getting RCE
 
 Then, we can gain a reverse shell as this user with whatever method.
 
-<figure><img src="../../../.gitbook/assets/image (66) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (66) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

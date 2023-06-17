@@ -22,7 +22,7 @@ After unzipping the file, we can get a pfx file out. PFX files contains SSL cert
 
 I tried to import the certificate or extract the keys but this file is also password protected.
 
-<figure><img src="../../../.gitbook/assets/image (67) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (67) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 `pfx2john` and `john` again.
 

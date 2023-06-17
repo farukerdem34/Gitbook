@@ -372,7 +372,7 @@ rop += pop_rdi
 
 If this script is run, it gives us a reverse shell that we can upgrade.
 
-<figure><img src="../../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (42) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

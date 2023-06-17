@@ -400,7 +400,7 @@ Decrypting this would give us the user's credentials as remote Powershell was be
 
 This would decrypt to give `ypOSJXPqlDOxxbQSfEERy300`, which we can easily use to `evil-winrm` in as the user and capture the user flag.
 
-<figure><img src="../../.gitbook/assets/image (58) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (58) (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## AD Privilege Escalation
 

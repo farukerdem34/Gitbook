@@ -10,7 +10,7 @@ Nmap Scan:
 
 On port 443, we can head to the website to find some kind of streaming platform.
 
-<figure><img src="../../../.gitbook/assets/image (64) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (64) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Checking the cert, we can find another domain name:
 
@@ -145,7 +145,7 @@ When I ran WinPEAS on this machine, it picked up on a Firefox credential file. W
 
 Upon decrypting the `logins.json` file, we can find some more passwords.
 
-<figure><img src="../../../.gitbook/assets/image (69) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (69) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Since we had credentials, I also ran a `bloodhound-python` to enumerate the objects within the host.
 

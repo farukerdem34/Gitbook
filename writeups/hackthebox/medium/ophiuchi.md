@@ -4,7 +4,7 @@
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (59).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (59) (5).png" alt=""><figcaption></figcaption></figure>
 
 ### YAML Parser
 
@@ -122,7 +122,7 @@ jar -cvf AwesomeScriptingEngineFactory.jar -C src/ .
 
 This would create a JAR file. Then, we can make the machine download the JAR file using the same method as above to receive callback. This would trigger the command and our listener port would receive a reverse shell as `tomcat`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (63).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (63) (5).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -134,13 +134,13 @@ Since we are `tomcat`, we should look into the configurations for the Tomcat int
 
 We can try an `su` to the `admin` user and find that it works with this password.
 
-<figure><img src="../../../.gitbook/assets/image (67).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (67) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Sudo Privileges
 
 Since we have the password, we can check for `sudo` privileges.
 
-<figure><img src="../../../.gitbook/assets/image (78).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (78) (3).png" alt=""><figcaption></figcaption></figure>
 
 Seems that we can run `go` on a certain script:
 

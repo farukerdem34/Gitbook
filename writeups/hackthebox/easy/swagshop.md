@@ -30,7 +30,7 @@ This would require 3 fields, and we have 3 of them:
 
 We can visit `/app/etc/local.xml` to find the date required:
 
-<figure><img src="../../../.gitbook/assets/image (44) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (44) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can easily gain a reverse shell by using the PoC.
 

@@ -126,7 +126,7 @@ I tried a few credentials, and found that `michelle:michelle` was the right one 
 
 We can view the change log from the administrator, which states the version of Seed DMS that is currently being used.
 
-<figure><img src="../../../.gitbook/assets/image (41) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (41) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 It appears that this is version 5.1.15, which does not have any vulnerabilities via `searchsploit`. This service supports file uploads and is PHP based, so let's try to upload a webshell within Michells' folder.
 
@@ -194,7 +194,7 @@ This doesn't work with SSH, but we can use this to login to the CentOS interface
 
 In the bottom left corner, we can access the Terminal application, which is basically another webshell as `michelle`.
 
-<figure><img src="../../../.gitbook/assets/image (42) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (42) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 Now, we can grab the user flag and also a reverse shell as the user.
 

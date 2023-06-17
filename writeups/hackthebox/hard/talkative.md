@@ -26,7 +26,7 @@ Lots of HTTP ports it seems. We can add `talkative.htb` to our `/etc/hosts` file
 
 Port 80 hosts a normal corporate website:
 
-<figure><img src="../../../.gitbook/assets/image (57).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (57) (1).png" alt=""><figcaption></figcaption></figure>
 
 This site had some usernames and emails that we can take note of for now.
 
@@ -58,7 +58,7 @@ This is a statistical software that is used for data analytics. The more interes
 
 {% embed url="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/system" %}
 
-<figure><img src="../../../.gitbook/assets/image (62).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (62) (6).png" alt=""><figcaption></figcaption></figure>
 
 We now have a very simple RCE on the machine. We can get a reverse shell using a simple `bash` script.&#x20;
 
@@ -174,7 +174,7 @@ This means that we can probably execute code using SSTI via Twig templates. I ad
 
 Then, we need to head to Maintenance > Clear Cache, and reload the main page afterwards. Our listener port would catch a reverse shell.
 
-<figure><img src="../../../.gitbook/assets/image (60).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (60) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Docker Escape --> User&#x20;
 
@@ -409,7 +409,7 @@ The Rocket Chat dashboard had nothong of interest:
 
 I was taking a look at the Administration panel and seeing what I could do, when I found this:
 
-<figure><img src="../../../.gitbook/assets/image (66).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (66) (1).png" alt=""><figcaption></figcaption></figure>
 
 This is sort of like plugins for Rocket Chat, and it appears I can add new ones via Webhooks:
 
@@ -417,7 +417,7 @@ This is sort of like plugins for Rocket Chat, and it appears I can add new ones 
 
 When we click Incoming, it appears we can run some type of Script here:
 
-<figure><img src="../../../.gitbook/assets/image (53) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (53) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 Reading the documentation for Rocket Chat, it appears that this runs Javascript code!
 

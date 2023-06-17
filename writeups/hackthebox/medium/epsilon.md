@@ -216,7 +216,7 @@ def index():
 
 With this secret, we can forge a cookie easily. I used jwt.io to create a token easily.
 
-<figure><img src="../../../.gitbook/assets/image (60) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (60) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, when trying to visit the webpage, we are granted access.
 

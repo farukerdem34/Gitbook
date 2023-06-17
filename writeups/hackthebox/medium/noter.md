@@ -38,7 +38,7 @@ I created the `test` user and tried a wrong password, and got the `Invalid Login
 
 If we did this a user that does not exist, it would tell us `Invalid Credentials`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (57) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (57) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 With this boolean condition, we can brute force all possible users within the machine. I used Burp Intruder to do so:
 
