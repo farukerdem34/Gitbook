@@ -104,7 +104,7 @@ We can then grab the user flag.
 
 In the earlier `nmap` scan, we found that there were some HTTP ports that I didn't touch till now. Port 10000 has a Webmin instance running, and we can login using the credentials we just found.
 
-<figure><img src="../../../.gitbook/assets/image (32) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (32) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (37) (1).png" alt=""><figcaption></figcaption></figure>
 

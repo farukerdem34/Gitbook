@@ -290,7 +290,7 @@ export default {
 
 Notice that the parameter is passed directly to a JSON object here, meaning we need to have `"` when we send our URL. By sending our own URL, it returns the page contents:
 
-<figure><img src="../../../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (32) (1).png" alt=""><figcaption></figcaption></figure>
 
 Using this SSRF, we can actually scan the ports present on the machine using `wfuzz`:
 

