@@ -8,7 +8,7 @@ Recently, some people have been creating fake researcher profiles on Github and 
 
 &#x20;Here's an example of one:
 
-<figure><img src="../../.gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
 
 A 'famous' researcher only having 1 repository...strange. Here's the link if you wanna take a look at it for yourself, and obviously **do not run their POC scripts:**
 
@@ -216,15 +216,15 @@ Interesting. I opened this up in `ghidra` and took a look at the decompiled code
 
 Random strings that looks looks like some kind of C2 Server stuff becuase I saw the `HTTP /`:
 
-<figure><img src="../../.gitbook/assets/image (70).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (72).png" alt=""><figcaption></figcaption></figure>
 
 It also references `.onion`, and the article did say that both Windows and Linux versions downloads the TOR client. I checked the output of `strings`, and sure enough, I saw this part here:
 
-<figure><img src="../../.gitbook/assets/image (37).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
 
 Definitely looks like a beacon or something. There's also some kind of Go binary being executed / downloaded on the system:
 
-<figure><img src="../../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
 
 ### Switch Statements
 
@@ -240,7 +240,7 @@ I uploaded and ran the binary on a few free sandbox sites to see the processes t
 
 <figure><img src="../../.gitbook/assets/image (76).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (71).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (73).png" alt=""><figcaption></figcaption></figure>
 
 Other websites provided similar information that we already had from other methods, such as this binary using Go to build something.&#x20;
 
@@ -257,27 +257,27 @@ I used a brand new Windows 10 VM spun up using Vagrant for the analysis with all
 
 In Wireshark, the only thing I captured was some loopback interface traffic, so nothing much there.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (73).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
 
 I ran it a few more times, and each time the process seems to terminate almost immediately.
 
-<figure><img src="../../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (68).png" alt=""><figcaption></figcaption></figure>
 
 It was kind of obvious that this malware was reaching out to the Internet, seeing the connection fail, and then just dying. So this time, I turned on the Wifi, and ran it again, and it showed some more interesting stuff.
 
-<figure><img src="../../.gitbook/assets/image (72).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
 
 As specified, this would spin up `tor.exe`, and connect to a remote device somewhere out there. We can also see that this malware runs some kind of command too:
 
-<figure><img src="../../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (71).png" alt=""><figcaption></figcaption></figure>
 
 I checked my listener ports, and port 22 was open on the VM after running it, so I guess it provides some kind of SSH access to the attacker.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
 
 Interesting! At this point, I didn't want the attacker to stay around, so I closed the entire VM and started doing some basic research of the IP address.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (70).png" alt=""><figcaption></figcaption></figure>
 
 Since it is using `tor`, this probably is just one of the nodes being used. If not, then this is an OPSEC failure (which is highly unlikely).&#x20;
 
