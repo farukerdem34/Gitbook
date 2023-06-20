@@ -618,6 +618,6 @@ addressLine2, '1' as town, '1' as postcode, 0 as orderId, 1 as userId;"
 
 Then, we can just `ssh` into `root` from our `kali` machine.
 
-<figure><img src="../../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (43) (6).png" alt=""><figcaption></figcaption></figure>
 
 Rooted! And that's the end of the season too.

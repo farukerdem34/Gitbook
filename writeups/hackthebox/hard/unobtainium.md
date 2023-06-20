@@ -556,7 +556,7 @@ spec:
   hostNetwork: true
 ```
 
-<figure><img src="../../../.gitbook/assets/image (12) (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (9) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then we can connect to it directly using this command:
 

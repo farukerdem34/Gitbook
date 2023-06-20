@@ -4,7 +4,7 @@
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (9) (5) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (5) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 There is a vulnerable version of Tomcat running on this machine
 

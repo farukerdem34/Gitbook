@@ -23,7 +23,7 @@ Anonymous logins does not work for this site. We can take a look at the HTTP sit
 
 It's a Pokemon based website:
 
-<figure><img src="../../../.gitbook/assets/image (43) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (43) (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 The admin portal requires credentials to access:
 

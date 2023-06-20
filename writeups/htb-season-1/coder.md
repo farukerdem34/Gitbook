@@ -211,7 +211,7 @@ We would see a login page, and we already have credentials for it:
 
 Then, we would see a 2FA Mechanism in place:
 
-<figure><img src="../../.gitbook/assets/image (14) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (14) (4) (2).png" alt=""><figcaption></figcaption></figure>
 
 I wasn't sure how to go about finding this, so I just brute forced it because it doesn't seem to have any account lockout. I used Burp Intruder to do this:
 

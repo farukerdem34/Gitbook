@@ -282,7 +282,7 @@ We can read more about grant\_types here:
 
 By controlling the grant type, we can requests for the client\_credentials. This can be done by first going to the Register page and changing the grant type:
 
-<figure><img src="../../../.gitbook/assets/image (1) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (5) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then we can send a reuqest specifying the client ID, client secret and the grant type and the token for `qtc` will be given to us:
 

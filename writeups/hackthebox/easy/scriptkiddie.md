@@ -26,7 +26,7 @@ We just need to replace the payload in the PoC to a reverse shell and generate t
 
 Afterwards, we can upload this as a template file on the machine and change the LHOST to our IP address:
 
-<figure><img src="../../../.gitbook/assets/image (9) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then we would get a shell:
 
