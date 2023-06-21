@@ -69,7 +69,7 @@ On the other hand, a red team operation is **very focused on stealth and evasion
 
 The tools used are different as well. Penetration testers might have more scanners and other tools which focus more on testing individual systems within the scope. A red team would use tools such as Cobalt Strike to again, simulate a real APT.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (79).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
 
 ## Purple Teaming
 
@@ -77,8 +77,14 @@ Purple teaming is a relatively new concept that came about to better prepare org
 
 I personally feel that a Attack/Defend CTF is somewhat similar to a purple team exercise. This involves a blue team that is actively reviewing logs and detecting when an intruder is in the system and trying to capture the flag, while the red team is actively trying to not get caught.
 
-Another example is in military planning. When we plan for a mission in the military, we tend to have two groups as well, an Intelligence team (Red) and an Operations team (Blue). Personally, I've been in the Intelligence side (S2 Cell) to do military planning, and what we do there is come up with the adversary defence plans for military operations using whatever existing knowledge of the adversary, as well as reconnaisance teams in the field (if you know, you know).&#x20;
+Another example is in military planning. When we plan for a mission in the military, we tend to have two groups as well, an Intelligence team (Red) and an Operations team (Blue). Personally, I've been in the Intelligence side to do military planning, and what we do there is come up with the adversary defence plans for a given terrain using whatever existing knowledge of the adversary, as well as reconnaisance teams in the field.
 
 The Purple Team Framework is developed by SCYTHE, and more information can be found here:
 
 {% embed url="https://github.com/scythe-io/purple-team-exercise-framework" %}
+
+Also, AttackIQ has a free course teaching the Foundations of Purple Teaming. I highly recommend it if you want to learn more about it. The instructor, Ben Opel, teaches the concepts well and is super knowledgeable thanks to his years in the military helping hone this skill set.&#x20;
+
+Most importantly, it's absolutely free!
+
+{% embed url="https://www.academy.attackiq.com/courses/foundations-of-purple-teaming" %}

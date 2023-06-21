@@ -14,7 +14,7 @@ Port 8080 was running a Tomcat instance, and this might be the method used for a
 
 Credentials were required for port 8080:
 
-<figure><img src="../../../.gitbook/assets/image (83) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (83) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 ### Private Browser
 

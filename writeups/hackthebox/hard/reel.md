@@ -61,7 +61,7 @@ new format / converted documents will be saved here.
 
 The `AppLocker.docx` file just states that AppLocker is in place:
 
-<figure><img src="../../../.gitbook/assets/image (75).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
 
 The last file cannot be opened for some reason. The most interesting thing about it is the metadata extracted with `exiftool`:
 
@@ -139,7 +139,7 @@ Jun 16 09:46:01 kali sendEmail[7797]: Email was sent successfully!
 
 I tried this a few times, and it seems to only work when we use the `-x 0` flag instead. When changed, we can get a reverse shell as the user:
 
-<figure><img src="../../../.gitbook/assets/image (77).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -193,7 +193,7 @@ powershell -c "$credentials = Import-Clixml -Path cred.xml; $credentials.GetNetw
 
 Using this password, we can `ssh` in as `tom`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
 
 ### Bloodhound --> WriteOwner
 
@@ -269,7 +269,7 @@ So there's already a `csv` file present with the ACLs we need. I transferred fil
 
 I found that our current user has WriteOwner permissions over the user `claire`.
 
-<figure><img src="../../../.gitbook/assets/image (71).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
 This would mean that `tom` can add permissions over `claire`, of which we don't have any yet. To abuse this, we first need to set `tom` as the owner of the ACLs over `claire` using PowerView.&#x20;
 
@@ -299,7 +299,7 @@ Set-DomainUserPassword -identity claire -accountpassword $cred
 
 Afterwards, we can `ssh` in as `claire` using this password.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (69).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 ### WriteDacl --> Admin Creds
 
@@ -336,7 +336,7 @@ Global Group memberships     *Domain Users         *MegaBank_Users
 
 Checking back on the Bloodhound output, we see that `claire` has WriteDacl permissions over the Backup Admins group:
 
-<figure><img src="../../../.gitbook/assets/image (78).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
 
 This means that the user `claire` can modify the ACLs of the group, which includes adding and removing users.&#x20;
 
@@ -408,6 +408,6 @@ $password="Cr4ckMeIfYouC4n!"
 
 We can then login as the administrator user:
 
-<figure><img src="../../../.gitbook/assets/image (123).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 Rooted!&#x20;

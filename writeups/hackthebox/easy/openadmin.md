@@ -76,7 +76,7 @@ Afterwards, we can use `openssl rsa -in key -out privatekey` to write the privat
 
 When checking `sudo` privileges, `joanna` can run `nano` as `root`:
 
-<figure><img src="../../../.gitbook/assets/image (112) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (112).png" alt=""><figcaption></figcaption></figure>
 
 Based on GTFOBins, we can simply run the following commands to gain a shell:
 

@@ -48,7 +48,7 @@ Cool
 
 When I ran LinPEAS on the machine, I found that the public key of `nadav` was the public key of `paul`...?
 
-<figure><img src="../../../.gitbook/assets/image (83).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (83) (1).png" alt=""><figcaption></figcaption></figure>
 
 I tried to `ssh` in as `nadav` from `paul`, and it worked!
 

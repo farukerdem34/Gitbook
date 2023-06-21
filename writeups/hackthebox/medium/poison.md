@@ -49,4 +49,4 @@ vncviewer -passwd secret 127.0.0.1:5901
 
 This would spawn a terminal as the `root` user:
 
-<figure><img src="../../../.gitbook/assets/image (87).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (87) (3).png" alt=""><figcaption></figcaption></figure>

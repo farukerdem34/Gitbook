@@ -358,7 +358,7 @@ Now that we have one set of credentials, we can think about how to gain a shell 
 
 With this, we can gain another shell on the host using the same binary that bypassed AppLocker and AMSI.
 
-<figure><img src="../../../.gitbook/assets/image (87) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (87) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Bob.Woodadm
 
