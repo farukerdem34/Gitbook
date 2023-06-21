@@ -80,6 +80,6 @@ This would give us a meterpreter shell.
 
 For some reason, `whoami` does not work on the machine. We can use the `whoami.exe` binary that is within Kali at `/usr/share/windows-resources/binaries` and run it via SMB.
 
-<figure><img src="../../../.gitbook/assets/image (81) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (81).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!&#x20;
