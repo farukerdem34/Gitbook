@@ -295,6 +295,7 @@
     * [Falafel](writeups/hackthebox/hard/falafel.md)
     * [Flight](writeups/hackthebox/hard/flight.md)
     * [Kotarak](writeups/hackthebox/hard/kotarak.md)
+    * [Mantis](writeups/hackthebox/hard/mantis.md)
     * [Monitors](writeups/hackthebox/hard/monitors.md)
     * [Object](writeups/hackthebox/hard/object-ad.md)
     * [Oouch](writeups/hackthebox/hard/oouch.md)

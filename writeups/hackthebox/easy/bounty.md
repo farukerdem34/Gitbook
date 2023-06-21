@@ -96,7 +96,7 @@ Here's the file I used:
 
 This would download a simple Powershell reverse shell from our device. We can directly upload the `web.config` file without bypassing any file extension checks. Afterwards, visiting the `/UploadedFiles/web.config` directory would make the machine download and run the script, giving us a reverse shell.
 
-<figure><img src="../../../.gitbook/assets/image (85).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (85) (5).png" alt=""><figcaption></figcaption></figure>
 
 We can grab the user flag.
 

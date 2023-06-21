@@ -291,7 +291,7 @@ Using their `bamsi.txt`, we can bypass the AMSI that is (probably) present on th
 
 Then just upload this file with a basic Powershell reverse shell, and it would work!
 
-<figure><img src="../../.gitbook/assets/image (49) (3) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (49) (3) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## User Access
 

@@ -216,7 +216,7 @@ Interesting. I opened this up in `ghidra` and took a look at the decompiled code
 
 Random strings that looks looks like some kind of C2 Server stuff becuase I saw the `HTTP /`:
 
-<figure><img src="../../.gitbook/assets/image (48).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (48) (7).png" alt=""><figcaption></figcaption></figure>
 
 It also references `.onion`, and the article did say that both Windows and Linux versions downloads the TOR client. I checked the output of `strings`, and sure enough, I saw this part here:
 
@@ -230,7 +230,7 @@ Definitely looks like a beacon or something. There's also some kind of Go binary
 
 There were a bunch of `switch` statements in this one function:
 
-<figure><img src="../../.gitbook/assets/image (121).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (121) (2).png" alt=""><figcaption></figcaption></figure>
 
 They all call the same 6 functions, so uh, cool I guess.
 
@@ -238,9 +238,9 @@ They all call the same 6 functions, so uh, cool I guess.
 
 I uploaded and ran the binary on a few free sandbox sites to see the processes that were being run (also because I was lazy to spin up a dedicated VM to monitor processes). Hybrid Analysis flags it as malicious with 16 MITRE ATT\&CK TTPs being detected.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (111).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (111) (4).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (49).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (49) (3).png" alt=""><figcaption></figcaption></figure>
 
 Other websites provided similar information that we already had from other methods, such as this binary using Go to build something.&#x20;
 
@@ -257,27 +257,27 @@ I used a brand new Windows 10 VM spun up using Vagrant for the analysis with all
 
 In Wireshark, the only thing I captured was some loopback interface traffic, so nothing much there.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (47).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (82).png" alt=""><figcaption></figcaption></figure>
 
 I ran it a few more times, and each time the process seems to terminate almost immediately.
 
-<figure><img src="../../.gitbook/assets/image (78).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (65).png" alt=""><figcaption></figcaption></figure>
 
 It was kind of obvious that this malware was reaching out to the Internet, seeing the connection fail, and then just dying. So this time, I turned on the Wifi, and ran it again, and it showed some more interesting stuff.
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
 
 As specified, this would spin up `tor.exe`, and connect to a remote device somewhere out there. We can also see that this malware runs some kind of command too:
 
-<figure><img src="../../.gitbook/assets/image (46).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
 
 I checked my listener ports, and port 22 was open on the VM after running it, so I guess it provides some kind of SSH access to the attacker.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (37).png" alt=""><figcaption></figcaption></figure>
 
 Interesting! At this point, I didn't want the attacker to stay around, so I deleted the entire VM and started doing some basic research of the IP address.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (80).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (67).png" alt=""><figcaption></figcaption></figure>
 
 Since it is using `tor`, this probably is just one of the nodes being used. If not, then this is an OPSEC failure (which is highly unlikely).&#x20;
 

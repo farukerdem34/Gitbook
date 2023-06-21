@@ -125,7 +125,7 @@ SMB         10.129.227.77   445    SERVMON          [+] ServMon\nadine:L1k3B1gBu
 
 This would find that the credentials of `nadine:L1k3B1gBut7s@W0rk` is the right one. With these credentials, we can SSH into the machine as the `nmap` scan found earlier showed port 22 was open.
 
-<figure><img src="../../../.gitbook/assets/image (49) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (49) (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then grab the user flag.
 
