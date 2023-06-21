@@ -28,7 +28,7 @@ Delegation basically allows a user or machine to act on the behalf of another us
 
 The front-end needs to authenticate to the back-end database (using Kerberos) as the authenticated user. This is how delegation works in a nutshell:
 
-<figure><img src="../../.gitbook/assets/image (67).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (67) (5).png" alt=""><figcaption></figcaption></figure>
 
 ### Password / NTLM Authentication?
 
@@ -74,7 +74,7 @@ Exploitation of any of these privileges is not a CVE, but rather an **abuse of a
 
 This is the first type of delegation introduced in Windows 2000. When configured, the KDC would include a copy of the user's TGT **inside the TGS**. when the user accesses the `DB` machine, it extracts the user's TGT from the TGS and caches it in memory. Then, it would use this TGT to request for a TGS, which would allow for the accessing of database resources.
 
-<figure><img src="../../.gitbook/assets/image (53).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (53) (2).png" alt=""><figcaption></figcaption></figure>
 
 The service can act on behalf of the client in the network **simply by using its TGT**. This feature requires the `SeEnableDelegation` privilege to be enabled. We can configure this like so:
 
@@ -204,18 +204,18 @@ Here's what `Rubeus` is basically doing: Obtain TGS using TGT (passed in) for us
 
 In short, this is the machine's way of saying that **it doesn't actually care how the client authenticates.** It can be via cleartext password, NTLM hashes or whatever. This can be configured by specifying a provider:
 
-<figure><img src="../../.gitbook/assets/image (74).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
 
 This would make use of the S4U2Self extension, and we can technically invoke S4U2Proxy using this even if we don't have an additional ticket to use. Again, ATTL4S provides the network traffic:
 
-<figure><img src="../../.gitbook/assets/image (78).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
 
 There are bigger differences in the requests made using this method:
 
 1. **TGS REQ 1 (S4U2Self) -->** The `WEB` machine would request for the user's fowardable ST for itself using S4U2Self. This is because the initial authentication uses NTLM, and there are no STs sent by the client.&#x20;
 2. **TGS REP 1 (S4U2Self) -->** The `DC` verifies that the `WEB` machine has the `TRUSTED_TO_AUTH_FOR_DELEGATION` flag and responds by sending back the user's ST. The ST that is sent back is **forwadable** thanks to S4U2Self.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (56).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -255,11 +255,11 @@ RBCD reverses this concept by letting the `DB` machine (or backend) to control i
 
 Again, to re-emphasise, the configuration is done on the 'backend' machine and does not require DA or EA permissions. We just need to be an administrator on the 'backend' machine.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (73).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
 
 This method of authentication is closely related to the classic Constrained Delegation and uses the S4U extensions. Here's a snippet of the traffic:
 
-<figure><img src="../../.gitbook/assets/image (76).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
 
 It is largely the same as the Constrained Delegation Protocol Transition method of authenticating, with a few differences:
 
@@ -340,6 +340,6 @@ To prevent such attacks, we can do a few things:
 * Protected Users Group --> Users part of this group would cause the KDC to not set the STs given to be FORWADABLE or PROXIFIABLE.
 * Flag account as **sensitive** --> This bit would cause TGTs and STs obtained by this account to not be forwadable or proxifiable even when requested.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (68).png" alt=""><figcaption></figcaption></figure>
 
 Either one of these would totally prevent S4U2Self and S4U2Proxy from working entirely. These methods **cannot prevent all forms of abuse**. If you stash your credentials in plaintext on your desktop and it is compromised, then that's on you. No amount of delegation can prevent that!

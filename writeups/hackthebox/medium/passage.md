@@ -36,11 +36,11 @@ When one of them was decoded, we find a token of some sorts:
 
 We can crack this hash on crackstation:
 
-<figure><img src="../../../.gitbook/assets/image (123).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (123) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then we can `su` to `paul`:
 
-<figure><img src="../../../.gitbook/assets/image (89).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (89) (4).png" alt=""><figcaption></figcaption></figure>
 
 Cool
 

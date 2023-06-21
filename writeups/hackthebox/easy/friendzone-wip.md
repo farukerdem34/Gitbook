@@ -20,7 +20,7 @@ We can enumerate the SMB shares to find that we have write permissions over one 
 
 This folder contains nothing, but the fact that we have write access indicates that we should probably be adding something to it. We can also find some credentials in the other share.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (53) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (53) (2) (3).png" alt=""><figcaption></figcaption></figure>
 
 &#x20;Now, DNS is open, so we can expect to have loads of sub-domains. This machine has so many and it's rather painful to exploit. So I'll cut to the chase, we have to visit `administrator1.friendzone.red` that has a login page for us:
 

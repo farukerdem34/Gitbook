@@ -18,7 +18,7 @@ I visited the `/music` directory first and it brought me to some corporate websi
 
 When I clicked `login`, it brought me to `/ona`, which was a dashboard for OpenNetAdmin:
 
-<figure><img src="../../../.gitbook/assets/image (96).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (96) (4).png" alt=""><figcaption></figcaption></figure>
 
 This version of OpenNetAdmin was vulnerable to RCE:
 
@@ -50,7 +50,7 @@ When looking around the `/var/www/internal` directory, we can some code referenc
 
 When reading further, we can find the password and username hard-coded into the application:
 
-<figure><img src="../../../.gitbook/assets/image (128).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (128) (2).png" alt=""><figcaption></figcaption></figure>
 
 The hash can be cracked to give `Revealed`. We can read `/etc/apache2/sites-available/internal.conf` to find the hidden sub-domain and port it is open on:
 

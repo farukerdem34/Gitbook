@@ -316,7 +316,7 @@
     * [BrainFuck](writeups/hackthebox/insane/brainfuck.md)
     * [Derailed](writeups/hackthebox/insane/derailed.md)
     * [Hathor](writeups/to-rewrite/htb-non-tjnull/hathor-rewrite.md)
-    * [pivotapi (WIP)](writeups/hackthebox/insane/pivotapi-wip.md)
+    * [pivotapi](writeups/hackthebox/insane/pivotapi.md)
     * [Sekhmet](writeups/hackthebox/insane/sekhmet-ad.md)
     * [Sizzle](writeups/hackthebox/insane/sizzle-wip.md)
 * [Proving Grounds Practice](writeups/proving-grounds-practice/README.md)
