@@ -152,4 +152,4 @@ This means we can use `secretsdump.py` to read the hashes of the entire machine.
 
 Then, just pass the hash using `evil-winrm` to get an administrator shell.
 
-<figure><img src="../../../.gitbook/assets/image (82).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (82) (5).png" alt=""><figcaption></figcaption></figure>

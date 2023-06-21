@@ -8,7 +8,7 @@ Recently, some people have been creating fake researcher profiles on Github and 
 
 &#x20;Here's an example of one:
 
-<figure><img src="../../.gitbook/assets/image (67).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
 
 A 'famous' researcher only having 1 repository...strange. Here's the link if you wanna take a look at it for yourself, and obviously **do not run their POC scripts:**
 
@@ -190,7 +190,7 @@ if __name__ == '__main__':
 
 The interesting part is the `.zip` files they install and run on the host. There seems to be 2 types of malware here, one for Windows and one for Linux. According to the news article, it seems that the Linux one can bypass most AVs when uploaded on sites like VirusTotal, while the Windows one is detected by 40 out of 60 scanners.
 
-I took a look at the Linux malware because I was pretty lazy to delve into both since the article above gave us a rough idea of what the malware does. I'm by no means a reverse engineering expert, so don't expect a technical walkthrough of what's running under the hood.&#x20;
+I took a look at the Windows malware because I was pretty lazy to delve into both since the article above gave us a rough idea of what the malware does. I'm by no means a reverse engineering expert, so don't expect a crazy technical walkthrough of what's running under the hood.&#x20;
 
 ## Static Analysis
 
@@ -216,21 +216,21 @@ Interesting. I opened this up in `ghidra` and took a look at the decompiled code
 
 Random strings that looks looks like some kind of C2 Server stuff becuase I saw the `HTTP /`:
 
-<figure><img src="../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
 
 It also references `.onion`, and the article did say that both Windows and Linux versions downloads the TOR client. I checked the output of `strings`, and sure enough, I saw this part here:
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (56).png" alt=""><figcaption></figcaption></figure>
 
 Definitely looks like a beacon or something. There's also some kind of Go binary being executed / downloaded on the system:
 
-<figure><img src="../../.gitbook/assets/image (65).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
 
 ### Switch Statements
 
 There were a bunch of `switch` statements in this one function:
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (48).png" alt=""><figcaption></figcaption></figure>
 
 They all call the same 6 functions, so uh, cool I guess.
 
@@ -238,9 +238,9 @@ They all call the same 6 functions, so uh, cool I guess.
 
 I uploaded and ran the binary on a few free sandbox sites to see the processes that were being run (also because I was lazy to spin up a dedicated VM to monitor processes). Hybrid Analysis flags it as malicious with 16 MITRE ATT\&CK TTPs being detected.&#x20;
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (47).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
 
 Other websites provided similar information that we already had from other methods, such as this binary using Go to build something.&#x20;
 
@@ -257,29 +257,35 @@ I used a brand new Windows 10 VM spun up using Vagrant for the analysis with all
 
 In Wireshark, the only thing I captured was some loopback interface traffic, so nothing much there.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
 
 I ran it a few more times, and each time the process seems to terminate almost immediately.
 
-<figure><img src="../../.gitbook/assets/image (123).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (57).png" alt=""><figcaption></figcaption></figure>
 
 It was kind of obvious that this malware was reaching out to the Internet, seeing the connection fail, and then just dying. So this time, I turned on the Wifi, and ran it again, and it showed some more interesting stuff.
 
-<figure><img src="../../.gitbook/assets/image (54).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
 
 As specified, this would spin up `tor.exe`, and connect to a remote device somewhere out there. We can also see that this malware runs some kind of command too:
 
-<figure><img src="../../.gitbook/assets/image (131).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (62).png" alt=""><figcaption></figcaption></figure>
 
 I checked my listener ports, and port 22 was open on the VM after running it, so I guess it provides some kind of SSH access to the attacker.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (64).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
 
 Interesting! At this point, I didn't want the attacker to stay around, so I closed the entire VM and started doing some basic research of the IP address.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (130).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (59).png" alt=""><figcaption></figcaption></figure>
 
 Since it is using `tor`, this probably is just one of the nodes being used. If not, then this is an OPSEC failure (which is highly unlikely).&#x20;
+
+On a side note, the University of Minnesota has been banned from contributing to the Linux kernel project since they have previously attempted to upload malicious code as part of their 'research'.&#x20;
+
+{% embed url="https://www.theverge.com/2021/4/22/22398156/university-minnesota-linux-kernal-ban-research" %}
+
+Sus.
 
 ## Conclusion
 

@@ -75,7 +75,7 @@ We can then log in using `evil-winrm` since port 5985 is open.
 
 I ran a WinPEAS scan to enumerate for me. While reading the output, we can see that there's Powershell history files:
 
-<figure><img src="../../../.gitbook/assets/image (84).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (84) (5).png" alt=""><figcaption></figcaption></figure>
 
 Here's the file content:
 
