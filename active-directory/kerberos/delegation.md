@@ -204,7 +204,7 @@ Here's what `Rubeus` is basically doing: Obtain TGS using TGT (passed in) for us
 
 In short, this is the machine's way of saying that **it doesn't actually care how the client authenticates.** It can be via cleartext password, NTLM hashes or whatever. This can be configured by specifying a provider:
 
-<figure><img src="../../.gitbook/assets/image (63).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (63) (2).png" alt=""><figcaption></figcaption></figure>
 
 This would make use of the S4U2Self extension, and we can technically invoke S4U2Proxy using this even if we don't have an additional ticket to use. Again, ATTL4S provides the network traffic:
 
@@ -215,7 +215,7 @@ There are bigger differences in the requests made using this method:
 1. **TGS REQ 1 (S4U2Self) -->** The `WEB` machine would request for the user's fowardable ST for itself using S4U2Self. This is because the initial authentication uses NTLM, and there are no STs sent by the client.&#x20;
 2. **TGS REP 1 (S4U2Self) -->** The `DC` verifies that the `WEB` machine has the `TRUSTED_TO_AUTH_FOR_DELEGATION` flag and responds by sending back the user's ST. The ST that is sent back is **forwadable** thanks to S4U2Self.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (70).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (70) (6).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -255,11 +255,11 @@ RBCD reverses this concept by letting the `DB` machine (or backend) to control i
 
 Again, to re-emphasise, the configuration is done on the 'backend' machine and does not require DA or EA permissions. We just need to be an administrator on the 'backend' machine.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (62).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (62) (2).png" alt=""><figcaption></figcaption></figure>
 
 This method of authentication is closely related to the classic Constrained Delegation and uses the S4U extensions. Here's a snippet of the traffic:
 
-<figure><img src="../../.gitbook/assets/image (64).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (64) (3).png" alt=""><figcaption></figcaption></figure>
 
 It is largely the same as the Constrained Delegation Protocol Transition method of authenticating, with a few differences:
 

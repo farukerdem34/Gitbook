@@ -314,6 +314,7 @@
   * [Insane](writeups/hackthebox/insane/README.md)
     * [Absolute](writeups/hackthebox/insane/absolute-ad-wip.md)
     * [Anubis](writeups/hackthebox/insane/anubis.md)
+    * [APT](writeups/hackthebox/insane/apt.md)
     * [BrainFuck](writeups/hackthebox/insane/brainfuck.md)
     * [Derailed](writeups/hackthebox/insane/derailed.md)
     * [Hathor](writeups/to-rewrite/htb-non-tjnull/hathor-rewrite.md)

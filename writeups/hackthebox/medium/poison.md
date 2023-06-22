@@ -14,7 +14,7 @@ We can do a `gobuster` scan on the machine to find all possible files present:
 
 On the website itself, it was a simple application to read files:
 
-<figure><img src="../../../.gitbook/assets/image (13) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (2) (6).png" alt=""><figcaption></figcaption></figure>
 
 This was hosted at `http://<IP>/browse.php/?file=<FILENAME>`, which had an obvious LFI. We can use this to read `listfiles.php`, which was present on the machine.
 

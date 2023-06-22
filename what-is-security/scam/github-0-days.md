@@ -257,7 +257,7 @@ I used a brand new Windows 10 VM spun up using Vagrant for the analysis with all
 
 In Wireshark, the only thing I captured was some loopback interface traffic, so nothing much there.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (82).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (82) (2).png" alt=""><figcaption></figcaption></figure>
 
 I ran it a few more times, and each time the process seems to terminate almost immediately.
 
@@ -269,7 +269,7 @@ It was kind of obvious that this malware was reaching out to the Internet, seein
 
 As specified, this would spin up `tor.exe`, and connect to a remote device somewhere out there. We can also see that this malware runs some kind of command too:
 
-<figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (13) (2).png" alt=""><figcaption></figcaption></figure>
 
 I checked my listener ports, and port 22 was open on the VM after running it, so I guess it provides some kind of SSH access to the attacker.&#x20;
 

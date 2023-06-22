@@ -10,7 +10,7 @@ description: >-
 
 As usual we start with an Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (63) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (63) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Take note of the `goodgames.htb` domain name.&#x20;
 

@@ -54,7 +54,7 @@ Now we have found more users, we can start brute-forcing again. The password we 
 
 We can run WinPEAS within this machine to check for easy vectors. This would pickup that some Firefox credentials have been left behind:
 
-<figure><img src="../../../.gitbook/assets/image (62) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (62) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 There are tools online to dump the hashed passwords for this. But first, I wanted to see if Firefox was running on this machine, then we can use`procdump.exe` to potentially dump the credentials out:
 

@@ -174,7 +174,7 @@ This program was using `BinaryFormatter()`, which an insecure function that coul
 
 I had to download `ysoserial.exe` on my Windows VM to build my payload. We can then use it to create this payload:
 
-<figure><img src="../../../.gitbook/assets/image (82) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (82) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, we just need to prepend a UPLOAD\_ORDER; string, and send this to port 4411. On our listener port, we would catch a SYSTEM shell.
 
