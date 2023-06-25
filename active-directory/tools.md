@@ -138,7 +138,7 @@ Once we have run the ingestor, we would just need to upload the data onto the gr
 
 Here's a use case of the Sharphound.ps1, and the zip file it generates containing all the .json data of the domain.
 
-<figure><img src="../.gitbook/assets/image (15) (1) (1) (1) (1).png" alt=""><figcaption><p>Using SharpHound.ps1</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (15) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Using SharpHound.ps1</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (32) (1) (1) (1).png" alt=""><figcaption><p><em>Viewing Files Generated</em></p></figcaption></figure>
 

@@ -260,7 +260,7 @@ Command: <xsl:value-of select="$cmd"/>
 
 Our listener port would then receive a shell:
 
-<figure><img src="../../../.gitbook/assets/image (7) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can grab the user flag now.&#x20;
 

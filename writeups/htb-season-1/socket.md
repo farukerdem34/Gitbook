@@ -162,7 +162,7 @@ This was done using `group_concat(answers)`, and it seems that the user is eithe
 
 We can then `ssh` in as `tkeller` and grab the user flag.
 
-<figure><img src="../../.gitbook/assets/image (15) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (15) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

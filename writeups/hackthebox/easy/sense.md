@@ -21,7 +21,7 @@ PORT    STATE SERVICE
 
 Visiting the IP address redirects us to port 443 where pfSense is running:
 
-<figure><img src="../../../.gitbook/assets/image (15) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can run a `dirbuster` scan to see what else is on the port because we have no credentials right now. We can include all the common extensions using `-e php,html,txt` to see all possible files on the machine.
 

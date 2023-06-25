@@ -50,7 +50,7 @@ We now have some set of credentials that we can use.
 
 There was nowhere to use this set of credentials, so I carried on with the enumeration. There was this `/portal` directory that brought us to this login page:
 
-<figure><img src="../../../.gitbook/assets/image (47) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (47) (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 Creating a fake account to login reveals there are 2 cookies being used, one being a JWT token and the other being a PHPSESSID token with our username appended in front.
 

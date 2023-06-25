@@ -261,7 +261,7 @@ In Wireshark, the only thing I captured was some loopback interface traffic, so 
 
 I ran it a few more times, and each time the process seems to terminate almost immediately.
 
-<figure><img src="../../.gitbook/assets/image (65).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (65) (4).png" alt=""><figcaption></figcaption></figure>
 
 It was kind of obvious that this malware was reaching out to the Internet, seeing the connection fail, and then just dying. So this time, I turned on the Wifi, and ran it again, and it showed some more interesting stuff.
 

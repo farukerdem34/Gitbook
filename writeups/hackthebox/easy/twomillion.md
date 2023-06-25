@@ -92,7 +92,7 @@ DYXUZ-R2H9E-93750-RSVRC
 
 Using this, we can finally register and login to view the dashboard:
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### API Enumeration --> Injection
 

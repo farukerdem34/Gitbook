@@ -139,7 +139,7 @@ Jun 16 09:46:01 kali sendEmail[7797]: Email was sent successfully!
 
 I tried this a few times, and it seems to only work when we use the `-x 0` flag instead. When changed, we can get a reverse shell as the user:
 
-<figure><img src="../../../.gitbook/assets/image (71).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (71) (4).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -269,7 +269,7 @@ So there's already a `csv` file present with the ACLs we need. I transferred fil
 
 I found that our current user has WriteOwner permissions over the user `claire`.
 
-<figure><img src="../../../.gitbook/assets/image (62).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (62) (7).png" alt=""><figcaption></figcaption></figure>
 
 This would mean that `tom` can add permissions over `claire`, of which we don't have any yet. To abuse this, we first need to set `tom` as the owner of the ACLs over `claire` using PowerView.&#x20;
 
@@ -299,7 +299,7 @@ Set-DomainUserPassword -identity claire -accountpassword $cred
 
 Afterwards, we can `ssh` in as `claire` using this password.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (60).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (60) (6).png" alt=""><figcaption></figcaption></figure>
 
 ### WriteDacl --> Admin Creds
 

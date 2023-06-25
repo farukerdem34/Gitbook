@@ -319,7 +319,7 @@ Great! We have confirmed that we have injection. Now, we can try to extract hash
 
 We can crack these hashes on CrackStation.
 
-<figure><img src="../../.gitbook/assets/image (65) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (65) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 With this password, we can `ssh` in as `john`! Then, we can grab the user flag.
 

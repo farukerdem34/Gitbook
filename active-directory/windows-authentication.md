@@ -61,13 +61,13 @@ As mentioned earlier, LSA allows Windows to act as both the client and authentic
 
 How it works is illustrated in this diagram here (taken from ATTL4S):
 
-<figure><img src="../.gitbook/assets/image (64).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (64) (5).png" alt=""><figcaption></figcaption></figure>
 
 #### SSP
 
 Microsoft provides an Interface for the SSPs (SSPI) to integrate applications with this authentication system.&#x20;
 
-<figure><img src="../.gitbook/assets/image (63).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (63) (6).png" alt=""><figcaption></figcaption></figure>
 
 There are 4 major categories for the functions provided:
 
@@ -104,7 +104,7 @@ There are 2 main types of sessions that are created:
 
 Interactive sessions are what happens when we login normally through our login page. The user credentials are cached within the memory of the LSA process, called the Local Security Authority Subsystem Service (LSASS). In specific, it is cached in `lsass.exe`. Cached credentials allow for Windows to provide for a Single Sign-On (SSO) service to users.&#x20;
 
-<figure><img src="../.gitbook/assets/image (70).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (70) (2).png" alt=""><figcaption></figcaption></figure>
 
 #### Non-Interactive
 
@@ -126,11 +126,11 @@ We can verify a logon session with `Get-LogonSession` from Powerview.
 
 The information that is returned to LSA after creating the logon session is used to create an access token. An access token is a protected object that contains the **local security context** of an authenticated user. The security context is defined as the **privileges and permissions a user has on a specific workstation and across the network.**&#x20;
 
-<figure><img src="../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (15) (1).png" alt=""><figcaption></figcaption></figure>
 
 Every single logon session is identifiable by a 64-bit locally unique identifier (LUID), otherwise known as the logon ID. This access token contains an Authentication ID (AuthID) that identifies the logon session via the LUID.
 
-<figure><img src="../.gitbook/assets/image (61).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (61) (5).png" alt=""><figcaption></figcaption></figure>
 
 The access token caches a number of attributes that determine its security context such as the user SID, group memberships, privileges and logon ID that references the origin logon session. In the above image, we can see that the Integrity is set to Medium. But what if we use the 'Run as Administrator' option and run `cmd.exe`?&#x20;
 
@@ -239,7 +239,7 @@ Basically, injecting credentials into the logon session.&#x20;
 
 A similar thing happens when we use the Overpass The Hash exploit to request for tickets:
 
-<figure><img src="../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (44) (4).png" alt=""><figcaption></figcaption></figure>
 
 #### Non-LSA Way
 

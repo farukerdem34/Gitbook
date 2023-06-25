@@ -180,7 +180,7 @@ dav3gerous567
 
 We can then SSH in as `dave` on the DNS server. This helps to upgrade our shell.
 
-<figure><img src="../../../.gitbook/assets/image (44) (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (44) (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We are allowed to run `sudo` on everything as `dave` within the DNS server, so regaining root permissions is easy.
 

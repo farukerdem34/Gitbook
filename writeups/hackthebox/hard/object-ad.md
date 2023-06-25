@@ -28,7 +28,7 @@ Instead, we can use this machine to enumerate the box instance. I noticed that t
 
 I opeted to view the files in that directory using `dir /s`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (70) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (70) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 We find another `.jenkins` folder. Within that, we would find another `users` folder with some `config.xml` files:
 

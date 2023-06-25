@@ -208,7 +208,7 @@ In short, this is the machine's way of saying that **it doesn't actually care ho
 
 This would make use of the S4U2Self extension, and we can technically invoke S4U2Proxy using this even if we don't have an additional ticket to use. Again, ATTL4S provides the network traffic:
 
-<figure><img src="../../.gitbook/assets/image (47).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (47) (5).png" alt=""><figcaption></figcaption></figure>
 
 There are bigger differences in the requests made using this method:
 

@@ -36,7 +36,7 @@ So the `/uploads` directory is where our files end up. I tried some basic comman
 
 Getting a shell from here is easy.
 
-<figure><img src="../../../.gitbook/assets/image (7) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (2) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
