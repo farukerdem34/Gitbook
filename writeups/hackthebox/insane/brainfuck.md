@@ -16,7 +16,7 @@ Website revealed a Wordpress site:
 
 Because this was a HTTPS website, we can take a look at the certificate first to find an email address.
 
-<figure><img src="../../../.gitbook/assets/image (8) (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (3) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Looking at the alternate DNS names, we can find another hidden subdomain, which we'll visit later.
 

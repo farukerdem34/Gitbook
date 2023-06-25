@@ -29,7 +29,7 @@ The website resembles the actual live HTB platform:
 
 The website also shows how long has HTB come since the start:
 
-<figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (5).png" alt=""><figcaption></figcaption></figure>
 
 Anyways, we can attempt to register a user on this site and maybe find some sort of access control weakness. On the main page, there is a 'Join HTB' button, but it requires an invite code to access:
 
@@ -59,7 +59,7 @@ eval(function(p,a,c,k,e,d){e=function(c){return c.toString(36)};if(!''.replace(/
 
 This looks like it generates some kind of token. Within it, we can see that it uses a `makeInviteCode` function. This file is loaded at the `/invite` directory, which is where we need to submit a code. Within the Javascript Console in Inspector tools, I ran that function.
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 When we send a POST request to this:
 
@@ -92,7 +92,7 @@ DYXUZ-R2H9E-93750-RSVRC
 
 Using this, we can finally register and login to view the dashboard:
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
 ### API Enumeration --> Injection
 
@@ -321,7 +321,7 @@ Here's the contents:
 
 This whole thing is in hex, so I used Cyberchef to decode it:
 
-<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (7).png" alt=""><figcaption></figcaption></figure>
 
 Now it's being XOR'd with 'HackTheBox' as the key. The output can be decoded and piped to an XOR command with the specified key to find a hidden message:
 

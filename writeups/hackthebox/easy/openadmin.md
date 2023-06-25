@@ -66,7 +66,7 @@ Logging in reveals a password protected RSA Private Key:
 
 We can decrypt this via `ssh2john`:
 
-<figure><img src="../../../.gitbook/assets/image (103).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (103) (3).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, we can use `openssl rsa -in key -out privatekey` to write the private RSA key, then `ssh` in as `joanna`:
 

@@ -207,7 +207,7 @@ We can now head to that URL.
 
 We would see a login page, and we already have credentials for it:
 
-<figure><img src="../../.gitbook/assets/image (8) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then, we would see a 2FA Mechanism in place:
 

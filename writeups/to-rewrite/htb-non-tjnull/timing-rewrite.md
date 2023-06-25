@@ -212,7 +212,7 @@ Using `aaron:aaron`, we can login!
 
 When update our profile, we cansee that it returns some parameters:
 
-<figure><img src="../../../.gitbook/assets/image (13) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (5) (3).png" alt=""><figcaption></figcaption></figure>
 
 If we append `role=1` to the end of the POST parameters, it would actually change the response:
 

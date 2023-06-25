@@ -24,7 +24,7 @@ However, this failed because the box was unable to reach my machine. I suppose t
 
 Instead, we can use this machine to enumerate the box instance. I noticed that the machine was building the workspace in this directory:
 
-<figure><img src="../../../.gitbook/assets/image (73) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (73) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 I opeted to view the files in that directory using `dir /s`.&#x20;
 

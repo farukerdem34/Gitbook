@@ -6,7 +6,7 @@ Nmap scan:
 
 Lots of ports as per normal DC scanning.
 
-<figure><img src="../../../.gitbook/assets/image (12) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (5) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### SMB Null Session
 

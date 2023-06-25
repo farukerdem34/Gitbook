@@ -88,7 +88,7 @@ We can head to that and see what it does.
 
 This gives us instructions on how to connet to the OAuth server running on this machine:
 
-<figure><img src="../../../.gitbook/assets/image (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (2) (5).png" alt=""><figcaption></figcaption></figure>
 
 When trying to access it, it attempts to access `authorization.oouch.htb:8000`. So the OAuth server is running on port 8000.
 

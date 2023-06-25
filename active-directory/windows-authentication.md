@@ -118,7 +118,7 @@ For example, a non-interactive session can grant us access to the file system of
 
 After a user successfully authenticates, a new **logon session** is created regardless of what type of authentication is used. The cached credentials in the AP are tied to logon sessions. Logon sessions are not limited to the 2 types listed above:
 
-<figure><img src="../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (13) (5).png" alt=""><figcaption></figcaption></figure>
 
 We can verify a logon session with `Get-LogonSession` from Powerview.
 
@@ -192,7 +192,7 @@ This is where the `/netonly` flag comes in. This flag indicates that the credent
 
 Here's how it works:
 
-<figure><img src="../.gitbook/assets/image (91).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (91) (5).png" alt=""><figcaption></figcaption></figure>
 
 This reason is what leads to tickets and NTLM hashes being cached on the system. How `runas.exe` works is actually using the Win32 API **CreateProcessWithLogon** function, which is in charge of the creation of new processes with the new security context.&#x20;
 
@@ -262,7 +262,7 @@ Windows provides functionality for Kerberos tickets, and we can import TGTs or S
 
 If we have the ticket from another user, we can importing the ticket into an attacker-controlled logon session and act on behalf of another user in the network.&#x20;
 
-<figure><img src="../.gitbook/assets/image (90).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (90) (3).png" alt=""><figcaption></figcaption></figure>
 
 The cool thing about this is the the Kerberos LSA API **does not require administrative privileges to interact with**. How `mimikatz.exe` and `Rubeus.exe` do this is via the **LsaCallAuthenticationPackage** function. This function enables apps to talk to Windows APs, and is done through messages which have a specific structure.&#x20;
 

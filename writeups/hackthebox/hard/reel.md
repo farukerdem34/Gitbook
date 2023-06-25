@@ -336,7 +336,7 @@ Global Group memberships     *Domain Users         *MegaBank_Users
 
 Checking back on the Bloodhound output, we see that `claire` has WriteDacl permissions over the Backup Admins group:
 
-<figure><img src="../../../.gitbook/assets/image (72).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (72) (6).png" alt=""><figcaption></figcaption></figure>
 
 This means that the user `claire` can modify the ACLs of the group, which includes adding and removing users.&#x20;
 
@@ -408,6 +408,6 @@ $password="Cr4ckMeIfYouC4n!"
 
 We can then login as the administrator user:
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (3).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!&#x20;
