@@ -61,7 +61,7 @@ new format / converted documents will be saved here.
 
 The `AppLocker.docx` file just states that AppLocker is in place:
 
-<figure><img src="../../../.gitbook/assets/image (69).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (69) (4).png" alt=""><figcaption></figcaption></figure>
 
 The last file cannot be opened for some reason. The most interesting thing about it is the metadata extracted with `exiftool`:
 

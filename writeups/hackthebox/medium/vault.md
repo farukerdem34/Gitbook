@@ -153,7 +153,7 @@ The first link doesn't work, but the second brings us to this page where .ovpn f
 
 Googling around for possible exploits reveals that it is possible for us to gain a reverse shell using .ovpn files. First we need to find the local IP Address of the machine, which is 192.168.122.1 when inspecting `ip addr` output.
 
-<figure><img src="../../../.gitbook/assets/image (43) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (43) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can input the following file and run Test VPN.&#x20;
 

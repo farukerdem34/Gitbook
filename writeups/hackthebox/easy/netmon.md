@@ -22,7 +22,7 @@ This explains why the user flag was captured in exactly 1 minute from the box go
 
 Port 80 is running PRTG Network Monitor 18.1.37.13946 (which is outdated):
 
-<figure><img src="../../../.gitbook/assets/image (37) (1) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (37) (1) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Since we have access to the entire file directory through FTP, we can search for the credentials for this. We can find some backup folders for PRNG Network Monitor within the machine.&#x20;
 

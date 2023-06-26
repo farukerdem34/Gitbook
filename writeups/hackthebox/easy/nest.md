@@ -52,7 +52,7 @@ With these credentials, I can access the directory of the user through SMB, but 
 
 The `Debug Mode Password.txt` was empty for some reason, and I found that weird. As such, I used `allinfo` on SMB to view whether there were alternate data streams present for the file:
 
-<figure><img src="../../../.gitbook/assets/image (54) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (54) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 This confirms the presence of the alternate data stream, and we can use `cat` to extract the information:
 

@@ -50,7 +50,7 @@ With this, we can SSH in as `djmardov`.
 
 I ran a LinEnum for this machine, and found `/usr/bin/viewuser` to be an unusual SUID binary.
 
-<figure><img src="../../../.gitbook/assets/image (53) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (53) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 When it was run, it tries to find a `/tmp/listusers` file.
 

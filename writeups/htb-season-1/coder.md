@@ -465,7 +465,7 @@ certipy req -username e.black@coder.htb -password <pass> -ca coder-DC01-CA -targ
 
 This would retrieve the administrator PFX for us to use. We can then use this to retrieve the NT Hash for the administrator and login using `evil-winrm`:
 
-<figure><img src="../../.gitbook/assets/image (56) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (56) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/image (61) (1) (2).png" alt=""><figcaption></figcaption></figure>
 

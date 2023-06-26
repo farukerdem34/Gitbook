@@ -106,7 +106,7 @@ In the earlier `nmap` scan, we found that there were some HTTP ports that I didn
 
 <figure><img src="../../../.gitbook/assets/image (32) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (37) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (37) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 This was running Webmin 1.910, which is vulnerable to RCE through Package Updates. There are tons of PoCs online.
 

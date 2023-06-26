@@ -93,7 +93,7 @@ Afterwards, I found the `.htpasswd` file for the webpage I was blocked from earl
 
 With this, I was able to crack the hash to give `iamthebest` as the password and login to the service on port 80. We can view the `Authorization` header here.
 
-<figure><img src="../../../.gitbook/assets/image (49) (1) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (49) (1) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 With this, I enumerated the users on the machine, of which there was just `r.michaels`. I enumerated the processes he was running, and found that he was running a similar process to the `_httpd` user, but on port 3001 instead.
 

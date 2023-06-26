@@ -26,7 +26,7 @@ Lots of HTTP ports it seems. We can add `talkative.htb` to our `/etc/hosts` file
 
 Port 80 hosts a normal corporate website:
 
-<figure><img src="../../../.gitbook/assets/image (57) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (57) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 This site had some usernames and emails that we can take note of for now.
 

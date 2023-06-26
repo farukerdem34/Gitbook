@@ -30,7 +30,7 @@ It seems that this is a Remote Access Trojan script that can be used to achieve 
 
 We can use this to gain a reverse shell easily using `nc.exe`. This reverse shell would give us a SYSTEM shell, which is unique because we are already the administrator.
 
-<figure><img src="../../../.gitbook/assets/image (51) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (51) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### User Flag
 

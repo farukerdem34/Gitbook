@@ -22,7 +22,7 @@ I tested all forms of command injection, but nothing worked. So, I started check
 
 We just need to replace the payload in the PoC to a reverse shell and generate the APK file:
 
-<figure><img src="../../../.gitbook/assets/image (43) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (43) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, we can upload this as a template file on the machine and change the LHOST to our IP address:
 

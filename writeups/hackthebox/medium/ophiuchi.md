@@ -10,7 +10,7 @@ Nmap scan:
 
 Port 8080 was running an application that handles YAML input.
 
-<figure><img src="../../../.gitbook/assets/image (50) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (50) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 This was obviously a deserialisation exploit, where the application handles user input without sanitsation and it can lead to code execution. Googling for this led me to this repository.
 
@@ -130,7 +130,7 @@ This would create a JAR file. Then, we can make the machine download the JAR fil
 
 Since we are `tomcat`, we should look into the configurations for the Tomcat interface. This can be found within `~/conf/tomcat-users.xml`.
 
-<figure><img src="../../../.gitbook/assets/image (52) (1) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (52) (1) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can try an `su` to the `admin` user and find that it works with this password.
 
