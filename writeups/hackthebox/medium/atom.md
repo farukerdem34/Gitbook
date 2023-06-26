@@ -113,7 +113,7 @@ Quick googling led me to an exploit, which allows for us to decrypt the password
 
 I used CyberChef to decrypt the password using the key and IV extracted from the exploit.
 
-<figure><img src="../../../.gitbook/assets/image (48) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (48) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 After finding this password, we can use `redis-cli` to login to the redis instance.
 

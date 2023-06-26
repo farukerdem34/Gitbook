@@ -25,7 +25,7 @@ This is supposed to be an AD machine, so seeing such few ports is kinda new.&#x2
 
 Port 80 has a corporate page of some hosting service company thing:
 
-<figure><img src="../../../.gitbook/assets/image (57).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
 
 Most of the text is just placeholder text. I added `gigantichosting.com` to my `/etc/hosts` file. Running `gobuster` and `wfuzz` for directory and subdomain searches return nothing of interest. I think we'll come back to this later.
 
@@ -272,7 +272,7 @@ SOFTWARE\GiganticHostingManagementSystem\
 
 Then, we can `evil-winrm` in:
 
-<figure><img src="../../../.gitbook/assets/image (60).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -320,7 +320,7 @@ Scan starting...
 CmdTool: Failed with hr = 0x80508023. Check C:\Users\HENRY~2.VIN\AppData\Local\Temp\MpCmdRun.log for more information
 ```
 
-<figure><img src="../../../.gitbook/assets/image (78).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
 
 We now have an NTLMv1 hash! Googling how to crack this leads me to this site:
 
@@ -340,6 +340,6 @@ Administrator:500:aad3b435b51404eeaad3b435b51404ee:c370bddf384a691d811ff3495e8a7
 
 Afterwards, we can use this hash to `evil-winrm` into the machine.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (76).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
 
 A unique machine that was rather difficult for me. I definitely needed to use a writeup for this one, or I would still be stuck at the RPC part. Rooted!&#x20;

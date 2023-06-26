@@ -63,7 +63,7 @@ I ran another `gobuster` on this `/weather` directory and found another hidden e
 
 When interacting with this endpoint, we get some instructions on parameters to send.
 
-<figure><img src="../../../.gitbook/assets/image (46) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (46) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 We can interact with this API and it will return certain bits of information to us about the weather forecasts in cities.
 
