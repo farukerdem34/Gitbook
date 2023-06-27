@@ -281,6 +281,6 @@ We can also move laterally to **other machines using a user's security context**
 
 Using the `sc.exe` native tool, we can use our new security context to create services on the remote device to execute payloads like beacons. The `sc_start.x64.o` file can be used to start a service remotely.&#x20;
 
-<figure><img src="../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (32) (1).png" alt=""><figcaption></figcaption></figure>
 
 This is the basics of how Windows authenticates users!&#x20;

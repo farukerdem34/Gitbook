@@ -34,7 +34,7 @@ Whatever query we do here, depending on the engine, it would generate a URL for 
 
 It seems that the website rejects any engine that is not present on its list. Running `gobuster` does not seem to reveal anything of interest, so let's take a closer look at the website itself. At the very bottom, it seems there's a link to the software being used, which is Searchor 2.4.0:
 
-<figure><img src="../../.gitbook/assets/image (67) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (67) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% embed url="https://github.com/ArjunSharda/Searchor" %}
 

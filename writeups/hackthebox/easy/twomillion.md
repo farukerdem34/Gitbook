@@ -39,7 +39,7 @@ Anyways, we can attempt to register a user on this site and maybe find some sort
 
 I didn't have an invite code, so we'll have to leave this for now. I also don't have any credentials to register a user, so the website's applications have limited use as of now. We can do a directory and subdomain scan for this site. I ran a `feroxbuster` directory scan and a `wfuzz` subdomain scan. The `feroxbuster` scan returned some interesting stuff:
 
-<figure><img src="../../../.gitbook/assets/image (45) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>
 
 There was a `register` directory present.&#x20;
 
@@ -192,7 +192,7 @@ $ curl -X POST -H 'Content-Type: application/json' -H 'Cookie: PHPSESSID=1mf4jaa
 
 When supplied, it would generate the `.ovpn` file normally.
 
-<figure><img src="../../../.gitbook/assets/image (74).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (74) (3).png" alt=""><figcaption></figcaption></figure>
 
 The only difference between the administrator and user VPN generation is that I need to supply a parameter, so let's test that for injection. Using the subshell `$()` feature, I was able to achieve blind RCE:
 
@@ -212,7 +212,7 @@ $ curl -X POST -H 'Content-Type: application/json' -H 'Cookie: PHPSESSID=1mf4jaa
 ```
 {% endcode %}
 
-<figure><img src="../../../.gitbook/assets/image (48) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (48) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -298,7 +298,7 @@ admin@2million:/tmp$ ./fuse ./ovlcap/lower ./gc
 
 In a second shell (over `ssh`), we can run `exp` and get a root shell!
 
-<figure><img src="../../../.gitbook/assets/image (55).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (55) (6).png" alt=""><figcaption></figcaption></figure>
 
 Then we can grab the root flag.
 

@@ -40,7 +40,7 @@ We can gain a shell by following the PoC:
 
 The users present on the machine are `joanna` and `jimmy`, and it seems that `ssh` with this password works on `jimmy`:
 
-<figure><img src="../../../.gitbook/assets/image (106).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (106) (4).png" alt=""><figcaption></figcaption></figure>
 
 ### Joanna SSH Key
 

@@ -51,7 +51,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 The ASPX page was a simple file upload.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (36) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (36) (5) (2).png" alt=""><figcaption></figcaption></figure>
 
 I tried to upload an ASPX reverse shell, but it gives me an Invalid File error.
 

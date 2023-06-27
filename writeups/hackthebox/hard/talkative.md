@@ -44,7 +44,7 @@ Other than that, there's nothing much here.&#x20;
 
 On port 3000, there was a Rocket Chat instance.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (48) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (48) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 We have no credentials, so let's move on for now.
 

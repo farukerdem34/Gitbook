@@ -86,7 +86,7 @@ This tool is mainly useful for when we are trying to pillage the domain for more
 
 There is also a Powershell implementation of this as well witin Powersploit.
 
-<figure><img src="../.gitbook/assets/image (46) (1) (1).png" alt=""><figcaption><p><em>Taken from</em> <a href="https://pentestlab.blog/2018/04/04/dumping-clear-text-credentials/"><em>https://pentestlab.blog/2018/04/04/dumping-clear-text-credentials/</em></a></p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (46) (1) (1) (1).png" alt=""><figcaption><p><em>Taken from</em> <a href="https://pentestlab.blog/2018/04/04/dumping-clear-text-credentials/"><em>https://pentestlab.blog/2018/04/04/dumping-clear-text-credentials/</em></a></p></figcaption></figure>
 
 ## Bloodhound
 
