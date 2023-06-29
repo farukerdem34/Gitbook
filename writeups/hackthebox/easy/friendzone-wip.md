@@ -28,7 +28,7 @@ This folder contains nothing, but the fact that we have write access indicates t
 
 We can login using the credentials we found earlier in the SMB share. The page then tells us to visit `dashboard.php`, which is a Smart Photo Script.
 
-<figure><img src="../../../.gitbook/assets/image (13) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (1) (2) (3).png" alt=""><figcaption></figcaption></figure>
 
 The `pagename` parameter is vulnerable to LFI, and since this is a PHP application, we can place a PHP reverse shell file somewhere and execute it using this page. That's where the share that we can write to comes in.
 

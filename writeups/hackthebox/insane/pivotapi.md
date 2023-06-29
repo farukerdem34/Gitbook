@@ -240,7 +240,7 @@ The steps are rather clear, we need to somehow reverse engineer that `.exe` file
 
 I transferred this over to my Windows VM. Running it seems to do nothing oddly:
 
-<figure><img src="../../../.gitbook/assets/image (47).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (47) (8).png" alt=""><figcaption></figcaption></figure>
 
 I took a look at the logs created using Sysmon, and found some weird commands being executed. Firstly, this thing created a `.bat` file:
 
@@ -248,7 +248,7 @@ I took a look at the logs created using Sysmon, and found some weird commands be
 
 Afterwards, it used it ot do something else:
 
-<figure><img src="../../../.gitbook/assets/image (37).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (37) (5).png" alt=""><figcaption></figcaption></figure>
 
 It also seems that this file is being destroyed by the binary after running. To catch this file, we would have to use a Powershell infinite loop that would keep checking for both directories and the `.bat` file being created, and then read the output of it.&#x20;
 
@@ -518,7 +518,7 @@ Notes:
 
 Then, we can finally access the user here:
 
-<figure><img src="../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -530,7 +530,7 @@ Now that we have a new user to play with, we should take a look at the Bloodhoun
 
 Only the `Dr.Zaiuss` has a file in `C:\Users`, so that's the next step. We also find that this user has control over `superfume`, which in turn is part of the Developers group:
 
-<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
 
 Those are the next obvious steps.
 

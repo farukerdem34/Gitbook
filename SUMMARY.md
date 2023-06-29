@@ -156,6 +156,7 @@
     * [Irked](writeups/hackthebox/easy/irked.md)
     * [Jerry](writeups/hackthebox/easy/jerry.md)
     * [Knife](writeups/hackthebox/easy/knife.md)
+    * [Laboratory](writeups/hackthebox/easy/laboratory.md)
     * [Lame](writeups/to-rewrite/tjnull-htb/lame-rewrite.md)
     * [Legacy](writeups/hackthebox/easy/legacy.md)
     * [Luanne](writeups/hackthebox/easy/luanne.md)

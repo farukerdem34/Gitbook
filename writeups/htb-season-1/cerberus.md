@@ -221,7 +221,7 @@ With this, we can get a reverse shell.
 
 I ran LinPEAS on the machine to enumerate for me. We can find some ports that are open:
 
-<figure><img src="../../.gitbook/assets/image (14) (1) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (14) (1) (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 The MySQL database has nothing of interest. Port 80 was hosting nothing as well.&#x20;
 
