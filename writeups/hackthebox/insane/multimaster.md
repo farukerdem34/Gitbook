@@ -117,25 +117,25 @@ SMB does not allow us to access anything without credentials for this machine.&#
 
 Port 80 shows us a dashboard of some sorts:
 
-<figure><img src="../../../.gitbook/assets/image (66).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
 
 There were some functions, and the one that stood out was the 'Colleague Finder', which took one name parameter.
 
-<figure><img src="../../../.gitbook/assets/image (65).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
 
 If nothing is entered, then all the employees are returned.
 
-<figure><img src="../../../.gitbook/assets/image (64).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
 
 We can take note of these usernames for later. More importantly, we should see how this thing processes queries. When viewed in Burpsuite, the request simply sent a POST request to `/api/getColleagues` and it returns a response.
 
-<figure><img src="../../../.gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
 
 This looks vulnerable to SQL Injection somehow. Every form of injection I tried resulted in a 403 being returned. I noticed one thing however, the `Content-Type` header said that this app accepts UTF-8 characters.&#x20;
 
 UTF-8 characters are a bit special as they are denoted like `\u12` or something. If I try to use `\u12` as the input, I get an error instead of being blocked.
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
 
 This likely indicates that our query has caused a backend error. Using this, we can try some of the `sqlmap` tampers that are available:
 
@@ -351,7 +351,7 @@ I used this site to encode it into a suitable UTF-8 format:
 
 Testing it worked!
 
-<figure><img src="../../../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (48).png" alt=""><figcaption></figcaption></figure>
 
 We can then try to enumerate the Administrator user using this payload:
 
@@ -390,7 +390,7 @@ a' union select 1,1,1,1,(SUSER_SNAME(SID_BINARY('S-1-5-21-3167813660-1240564177-
 ```
 {% endcode %}
 
-<figure><img src="../../../.gitbook/assets/image (54).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
 
 This is the final script I used to automate this method:
 
@@ -506,7 +506,7 @@ SMB         megacorp.local  445    MULTIMASTER      [+] MEGACORP.LOCAL\tushikika
 
 I was then able to `evil-winrm` in as this user:
 
-<figure><img src="../../../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -916,7 +916,7 @@ We can then `evil-winrm` in as this user:
 
 From the Bloodhond we did earlier, we can see that this user has `GenericWrite` privileges over `jorden`:
 
-<figure><img src="../../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (49).png" alt=""><figcaption></figcaption></figure>
 
 To exploit this, we can use PowerView.ps1. However, it seems AMSI is blocking us:
 
@@ -997,7 +997,7 @@ Use the "--show" option to display all of the cracked passwords reliably
 Session completed.
 ```
 
-<figure><img src="../../../.gitbook/assets/image (85).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 ### Server Operators --> Root
 
@@ -1112,6 +1112,6 @@ The first service I noticed were `browser` and `bowser`. I just thought the latt
 *Evil-WinRM* PS C:\Windows\Tasks> sc.exe start browser
 ```
 
-<figure><img src="../../../.gitbook/assets/image (83).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!&#x20;

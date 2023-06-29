@@ -12,7 +12,7 @@ We have to add `swagshop.htb` to our `/etc/hosts` file to access port 80.
 
 This is whatwe see when we view port 80:
 
-<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 This is running an outdated version of Magento shop, and we can easily find exploits for it. The exploit here would change admin password of the site via SQL Injection:
 

@@ -136,7 +136,7 @@ It basically is the service that allows us to 'Login with Facebook' or other soc
 
 For now, we can register a user and keep enumerating this website. This is the page we get to after logging in:
 
-<figure><img src="../../../.gitbook/assets/image (6) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (3) (3).png" alt=""><figcaption></figcaption></figure>
 
 Clicking these two options don't seem to do much. I ran a `gobuster` scan once again.
 

@@ -30,7 +30,7 @@ Afterwards, we can upload this as a template file on the machine and change the 
 
 Then we would get a shell:
 
-<figure><img src="../../../.gitbook/assets/image (1) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (3) (3).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

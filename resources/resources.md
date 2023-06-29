@@ -42,3 +42,8 @@ A collection of really good resources and readings I found while on the web / Li
 
 {% embed url="https://github.com/initstring/cloud_enum" %}
 
+## DFIR Reports
+
+I use this to read more about how threat actors infiltrate an organisation and what sort of tactics do they use. Great resource because they provide really clear timelines and all that good stuff.&#x20;
+
+{% embed url="https://thedfirreport.com/" %}

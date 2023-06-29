@@ -22,7 +22,7 @@ This was hosted at `http://<IP>/browse.php/?file=<FILENAME>`, which had an obvio
 
 There was a `pwdbackup.txt` file, and when read it shows a password that has been encoded 13 times with base64:
 
-<figure><img src="../../../.gitbook/assets/image (45) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (45) (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 When decrypted, it gives `Charix!2#4%6&8(0`. We can then use this to SSH in as the user `charix`.
 

@@ -41,7 +41,7 @@ Initially, I tested other vulnerabilities like SSTI on the username and the mess
 
 When I visited the `/archive` endpoint, we would actually see that it works!
 
-<figure><img src="../../../.gitbook/assets/image (2) (6) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (6) (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 For SSTI, we can follow this table on HackTricks to determine which framework is being used.
 

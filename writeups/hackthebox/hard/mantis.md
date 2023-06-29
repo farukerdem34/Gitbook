@@ -46,7 +46,7 @@ For this particular machine, Port 8080 and 1433 are both public facing. Also, th
 
 Port 8080 shows a blog page:
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (3).png" alt=""><figcaption></figcaption></figure>
 
 There wasn't much functionality within this website, so I moved on to port 1337 instead. There was a sign in, but we don't have any credentials yet.&#x20;
 

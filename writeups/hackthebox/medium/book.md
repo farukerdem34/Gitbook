@@ -14,7 +14,7 @@ A login page is shown when viewing the website hosted.
 
 Running `gobuster` on the website reveals a few directories, most notably a `/admin` panel.
 
-<figure><img src="../../../.gitbook/assets/image (1) (3) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (3) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 When viewing that endpoint, we see another login page.
 

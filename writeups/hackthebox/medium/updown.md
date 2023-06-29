@@ -229,7 +229,7 @@ Because it checks each site manually to see if it is alive, we can actually embe
 
 This is the test file I used:
 
-<figure><img src="../../../.gitbook/assets/image (5) (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (9) (2).png" alt=""><figcaption></figcaption></figure>
 
 There's about 2000 lines within this. When the file is uploaded, it hangs for a long me. Then, we can head to `/uploads` to view the file uploaded.
 

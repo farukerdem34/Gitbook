@@ -408,6 +408,6 @@ $password="Cr4ckMeIfYouC4n!"
 
 We can then login as the administrator user:
 
-<figure><img src="../../../.gitbook/assets/image (8) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!&#x20;

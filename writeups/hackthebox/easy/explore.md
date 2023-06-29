@@ -148,11 +148,11 @@ Port 59777 seems to be returning some stuff.&#x20;
 
 The other ports weren't returning anything interesting. When we visit port 59777, it returns a short response.
 
-<figure><img src="../../../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 A quick Google search reveals that this is running EFS File Explorer, and also some CVEs:
 
-<figure><img src="../../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (50).png" alt=""><figcaption></figcaption></figure>
 
 I used the `poc.py` from this repo to send requests to the port and list the files present:
 
@@ -239,11 +239,11 @@ $ display creds.jpg
 
 The picture contains credentials for the user:
 
-<figure><img src="../../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (64).png" alt=""><figcaption></figcaption></figure>
 
 Here are the creds: `kristi:Kr1sT!5h@Rp3xPl0r3!`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 Great! There was no `/home` within this machine, and I just went to the directory where the pictures were stored:
 

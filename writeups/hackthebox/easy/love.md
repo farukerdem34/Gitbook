@@ -52,7 +52,7 @@ Then run the exploit:
 
 When on the machine, I ran winPEAS to enumerate for me and found that `AlwaysInstallElevated` was set to 1.
 
-<figure><img src="../../../.gitbook/assets/image (4) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (4) (4).png" alt=""><figcaption></figcaption></figure>
 
 What this exploit allows us to do is execute commands as the Administrator user through `msiexec`. As such, we would first need to generate a quick reverse shell using `msfvenom`.
 

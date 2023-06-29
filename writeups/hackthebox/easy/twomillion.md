@@ -39,7 +39,7 @@ Anyways, we can attempt to register a user on this site and maybe find some sort
 
 I didn't have an invite code, so we'll have to leave this for now. I also don't have any credentials to register a user, so the website's applications have limited use as of now. We can do a directory and subdomain scan for this site. I ran a `feroxbuster` directory scan and a `wfuzz` subdomain scan. The `feroxbuster` scan returned some interesting stuff:
 
-<figure><img src="../../../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (45) (5).png" alt=""><figcaption></figcaption></figure>
 
 There was a `register` directory present.&#x20;
 

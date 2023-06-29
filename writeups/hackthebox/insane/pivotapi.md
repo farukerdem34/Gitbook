@@ -325,7 +325,7 @@ It doesn't generate any logs of interest in Sysmon, so we have to delve deeper i
 
 I tried searching for 'Password' and found it here!
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (67).png" alt=""><figcaption></figcaption></figure>
 
 ### MS-SQL Access --> PrintSpoof Fail
 
@@ -335,11 +335,11 @@ The password was contained both `oracle` and `2010`. I was stuck here for a long
 
 Anyways, we can then access the database as the `sa` user.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (3).png" alt=""><figcaption></figcaption></figure>
 
 Next, we can check whether we have `xp_cmdshell` access.
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (4).png" alt=""><figcaption></figcaption></figure>
 
 We do! I looked around the file system to find some interesting stuff. First, I checked the users:
 
@@ -381,7 +381,7 @@ When googling for MSSQL Shells with upload capabilities, I came across this:
 
 This shell works after changing the credentials:
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 Now, we can upload `PrintSpoofer.exe` to the machine.&#x20;
 
@@ -421,11 +421,11 @@ In this case, we would have to proxy our traffic using the MSSQL instance someho
 
 We can download the compiled DLLs and modified `mssqslclient.py` file onto our Kali machine. Then, we can use our UPLOAD shell to upload the `reciclador.dll` file:
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then we can install the `assembly.dll` file (which has been renamed).
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (9).png" alt=""><figcaption></figcaption></figure>
 
 Then we can runthe same command using `-start -reciclador 'C:\Windows\Temp\reciclador.dll`.&#x20;
 
@@ -526,7 +526,7 @@ Then, we can finally access the user here:
 
 Now that we have a new user to play with, we should take a look at the Bloodhound output again. Here, we find that our current user has `GenericAll` privileges over some other users:
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (6).png" alt=""><figcaption></figcaption></figure>
 
 Only the `Dr.Zaiuss` has a file in `C:\Users`, so that's the next step. We also find that this user has control over `superfume`, which in turn is part of the Developers group:
 
@@ -718,7 +718,7 @@ The `array` variable contains the decoded password, and we can convert all of th
 
 We can then grab access to the user `jari.`
 
-<figure><img src="../../../.gitbook/assets/image (67).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (67) (6).png" alt=""><figcaption></figcaption></figure>
 
 ### ForceChangePassword  --> Account Operators
 
