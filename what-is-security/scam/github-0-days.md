@@ -8,7 +8,7 @@ Recently, some people have been creating fake researcher profiles on Github and 
 
 &#x20;Here's an example of one:
 
-<figure><img src="../../.gitbook/assets/image (77).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (77) (1).png" alt=""><figcaption></figcaption></figure>
 
 A 'famous' researcher only having 1 repository...strange. Here's the link if you wanna take a look at it for yourself, and obviously **do not run their POC scripts:**
 
@@ -224,7 +224,7 @@ It also references `.onion`, and the article did say that both Windows and Linux
 
 Definitely looks like a beacon or something. There's also some kind of Go binary being executed / downloaded on the system:
 
-<figure><img src="../../.gitbook/assets/image (75).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (75) (8).png" alt=""><figcaption></figcaption></figure>
 
 ### Switch Statements
 

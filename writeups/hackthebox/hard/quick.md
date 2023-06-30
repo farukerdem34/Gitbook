@@ -502,4 +502,4 @@ DeviceURI https://srvadm%40quick.htb:%26ftQ4K3SGde8%3F@printerv3.quick.htb/print
 
 When URL decoded, we can just use that as the password to `su` to `root`.
 
-<figure><img src="../../../.gitbook/assets/image (38) (1) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (38) (1).png" alt=""><figcaption></figcaption></figure>

@@ -171,7 +171,7 @@ dir
 
 We can transfer this back to our machine via SMB for further analysis. This is a Windows file, so we can open it on our Windows machine.
 
-<figure><img src="../../../.gitbook/assets/image (68) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (68) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 Interesting. CHM is exploitable by us, and we can use `nishang` to do so. All we need to do is use `Out-CHM.ps1` to create a CHM file with a payload.
 

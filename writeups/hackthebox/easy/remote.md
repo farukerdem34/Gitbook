@@ -157,7 +157,7 @@ host = "http://10.129.227.150";
 
 Take note of the `cmd` and `FileName` parameter in the `payload` variable. In my case I just used Powershell to download and execute a reverse shell script.
 
-<figure><img src="../../../.gitbook/assets/image (35) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (35) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

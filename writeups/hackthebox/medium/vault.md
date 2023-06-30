@@ -39,7 +39,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 I also ran a `feroxbuster` scan to leverage on its recursive scans, and found some more directories.
 
-<figure><img src="../../../.gitbook/assets/image (35) (2) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (35) (2) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 These directories returned nothing, so I did another `gobuster` scan with the `-x` flag to indicate file extensions like .html or .php.
 
@@ -114,7 +114,7 @@ dave
 Dav3therav3123
 ```
 
-<figure><img src="../../../.gitbook/assets/image (40) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (40) (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Port Forwarding
 

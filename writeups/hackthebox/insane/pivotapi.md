@@ -228,11 +228,11 @@ INFO: Done in 00M 02S
 
 Afterwards, start `neo4j` and `bloodhound`. The names of the box are in Spanish, so take note of that. However, the `bloodhound` graph showcased nothing of interest for our current user and we have no privileges. When looking at all domain users, we find a `svc_mssql` user present:
 
-<figure><img src="../../../.gitbook/assets/image (46).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (46) (1).png" alt=""><figcaption></figcaption></figure>
 
 The `nmap` scan earlier shows that port 1433 is indeed open. Checking this user's group memberships shows that it is part of the WinRM group, which is in turn part of the Remote Administration Group (I think).
 
-<figure><img src="../../../.gitbook/assets/image (68).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (68) (4).png" alt=""><figcaption></figcaption></figure>
 
 The steps are rather clear, we need to somehow reverse engineer that `.exe` file to gain a shell as the `svc_mssql` user.&#x20;
 
@@ -240,7 +240,7 @@ The steps are rather clear, we need to somehow reverse engineer that `.exe` file
 
 I transferred this over to my Windows VM. Running it seems to do nothing oddly:
 
-<figure><img src="../../../.gitbook/assets/image (47) (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (47) (5).png" alt=""><figcaption></figcaption></figure>
 
 I took a look at the logs created using Sysmon, and found some weird commands being executed. Firstly, this thing created a `.bat` file:
 
@@ -248,7 +248,7 @@ I took a look at the logs created using Sysmon, and found some weird commands be
 
 Afterwards, it used it ot do something else:
 
-<figure><img src="../../../.gitbook/assets/image (37) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (37).png" alt=""><figcaption></figcaption></figure>
 
 It also seems that this file is being destroyed by the binary after running. To catch this file, we would have to use a Powershell infinite loop that would keep checking for both directories and the `.bat` file being created, and then read the output of it.&#x20;
 
@@ -385,7 +385,7 @@ This shell works after changing the credentials:
 
 Now, we can upload `PrintSpoofer.exe` to the machine.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (42) (10).png" alt=""><figcaption></figcaption></figure>
 
 However, this just doesn't work for some reason. I think the author must've patched the usage of PrintSpoofer, because in theory it would lead to an automatic root shell.&#x20;
 
@@ -518,7 +518,7 @@ Notes:
 
 Then, we can finally access the user here:
 
-<figure><img src="../../../.gitbook/assets/image (14) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -530,7 +530,7 @@ Now that we have a new user to play with, we should take a look at the Bloodhoun
 
 Only the `Dr.Zaiuss` has a file in `C:\Users`, so that's the next step. We also find that this user has control over `superfume`, which in turn is part of the Developers group:
 
-<figure><img src="../../../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
 
 Those are the next obvious steps.
 
@@ -553,7 +553,7 @@ $ sshpass -p 'Gu4nCh3C4NaRi0N!23' ssh -L 5985:127.0.0.1:5985 3V4Si0N@LicorDeBell
 
 Then, we can upload PowerView.ps1 and run the same commands with `superfume` this time. Since `superfume` is also not part of the SSH group, we can just use `evil-winrm` again:
 
-<figure><img src="../../../.gitbook/assets/image (56).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (56) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Developer RE --> Creds
 

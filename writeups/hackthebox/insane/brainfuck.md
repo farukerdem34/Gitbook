@@ -75,7 +75,7 @@ We can sign in to the service on port 110.
 
 Then, we can view the messages sent using `list`.
 
-<figure><img src="../../../.gitbook/assets/image (37) (5) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (37) (5).png" alt=""><figcaption></figcaption></figure>
 
 We can read both the emails, and one of them has credentials for a forum page.
 

@@ -106,7 +106,7 @@ We can check the `sudo` privileges of this user and find that there's one script
 
 Here's the script's contents:
 
-<figure><img src="../../../.gitbook/assets/image (56) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (56) (2) (3).png" alt=""><figcaption></figcaption></figure>
 
 This takes user input and executes does not sanitise it at all. When we run the script, we can actually execute commands:
 

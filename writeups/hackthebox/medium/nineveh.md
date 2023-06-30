@@ -91,4 +91,4 @@ We can use this to gain a `root` shell.
 
 <figure><img src="../../../.gitbook/assets/image (19) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-![](<../../../.gitbook/assets/image (36) (1).png>)
+![](<../../../.gitbook/assets/image (36) (1) (5).png>)

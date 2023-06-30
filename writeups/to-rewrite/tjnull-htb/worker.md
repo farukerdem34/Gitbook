@@ -264,6 +264,6 @@ The reason we need to change the Pool is because there is no pool named 'Default
 
 Once we run it, we would get a reverse shell once the command executes.
 
-<figure><img src="../../../.gitbook/assets/image (77) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (77) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

@@ -43,11 +43,11 @@ I didn't have an invite code, so we'll have to leave this for now. I also don't 
 
 There was a `register` directory present.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (46) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (46) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 I couldn't register an account because I still didn't have an invite code at all. I looked at the account in Burpsuite, and found this at the bottom of the page:
 
-<figure><img src="../../../.gitbook/assets/image (52) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (52) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 There's an `inviteapi.min.js` file that looks custom. Here's the contents of that file:
 

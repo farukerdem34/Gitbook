@@ -26,7 +26,7 @@ Port 9090 was a HTTPS site with a login page:
 
 We had no credentials and weak default credentials didn't work. Port 80 hosted a Red Hat default page:
 
-<figure><img src="../../../.gitbook/assets/image (13) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
 
 Directory, subdomain and other web scans all didn't find anything. So this was an obvious rabbit hole.
 

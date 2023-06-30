@@ -54,7 +54,7 @@ There wasn't much functionality within this website, so I moved on to port 1337 
 
 This port just shows the default IIS server page:
 
-<figure><img src="../../../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (44) (10).png" alt=""><figcaption></figcaption></figure>
 
 I ran a directory scan on both of these websites, and found that the service hosted on port 1337 contained one hidden directory:
 
@@ -80,7 +80,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 The directory contained an encrypted file:
 
-<figure><img src="../../../.gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (36) (1).png" alt=""><figcaption></figcaption></figure>
 
 The file contained a lot of lines which I removed:
 
@@ -107,7 +107,7 @@ With this, we can login as the administrator using `admin:@dm!n_P@ssW0rd!` on th
 
 The dashboard can be accessed at `/admin`.
 
-<figure><img src="../../../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (43) (10).png" alt=""><figcaption></figcaption></figure>
 
 However, I could not find any exploitable feature of this at all. There also wasn't any public exploits related to LFI, RCE or anything I could work with. So I went back to the file found earlier.&#x20;
 
@@ -282,11 +282,11 @@ INFO: Done in 00M 01S
 
 After uploading the data to Bloodhound, we find that the user `james` can RDP into the machine:
 
-<figure><img src="../../../.gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (41) (8).png" alt=""><figcaption></figcaption></figure>
 
 That's rather unique, but port 3389 is not open on the machine, meaning we need to do something else. There wasn't any other users on the domain as well:
 
-<figure><img src="../../../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (40) (6).png" alt=""><figcaption></figcaption></figure>
 
 I was stuck here for a while...
 
@@ -333,7 +333,7 @@ Kerberos has something called Privileged Attribute Certificate (PAC) which conta
 
 PAC Signature Validation is the function that checks the PAC via a checksum. In an earlier version, MS11-013 allows for attackers to basically spoof the PAC to request tickets as the administrator.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (35) (2).png" alt=""><figcaption></figcaption></figure>
 
 The current exploit MS014-68 does include a bit more checks, but not enough. The exploit comes about because the DC fails to check for valid checksums for the PAC field, thus allowing us attackers to spoof the PAC to impersonate an administrator requesting for a TGT.
 
