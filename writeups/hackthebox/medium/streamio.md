@@ -125,7 +125,7 @@ Using `mssqlclient.py`, we can access the database with the credentials we found
 
 I took a look at the streamio\_backup database and found credentials for a `nikk37` user.
 
-<figure><img src="../../../.gitbook/assets/image (38) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (38) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 The hash can be cracked via crackstation.
 

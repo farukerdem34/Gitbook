@@ -21,7 +21,7 @@ Port 80 is open.
 
 When the webpage is visited, all we see is this:
 
-<figure><img src="../../../.gitbook/assets/image (184).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (184) (3).png" alt=""><figcaption></figcaption></figure>
 
 I did a `feroxbuster` script on the website.&#x20;
 
@@ -76,7 +76,7 @@ The Content-Type was unique and I've never seen that before. A quick Google sear
 
 This software bugs allows us to have RCE on the website because of how environments variables are handled poorly in some websites. We can test it out by sending requests to the `user.sh` file and seeing if any bash commands get executed.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (161).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (161) (4).png" alt=""><figcaption></figcaption></figure>
 
 So it does work. We can replace the `ping` command with a reverse shell.&#x20;
 

@@ -1,3 +1,7 @@
 # Proving Grounds Practice
 
-Proving Grounds Practice writeups here. Separated into either Windows or Linux machines. These machines are generally less 'CTF-ish' relative to HTB machines and they feel similar to Offsec exam machines. They are also a lot shorter. &#x20;
+Proving Grounds Practice writeups here. Separated into either Windows or Linux machines. These machines are generally less 'CTF-ish' relative to HTB machines and they feel similar to Offsec exam machines. They are also a lot shorter.  &#x20;
+
+{% hint style="info" %}
+This series of writeups will not be maintained once completed. (Pending date of completion of all writeups)
+{% endhint %}

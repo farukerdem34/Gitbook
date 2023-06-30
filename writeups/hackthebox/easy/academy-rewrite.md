@@ -113,7 +113,7 @@ When we visit the new domain, we are greeted with a Laravel debuggin issue:
 
 On this page, we can find a load of information, even the APP\_KEY used for the website:
 
-<figure><img src="../../../.gitbook/assets/image (125).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (125) (1).png" alt=""><figcaption></figcaption></figure>
 
 Googling the term 'Laravel exploit with APP\_KEY' returned this Github Repo:
 
@@ -121,7 +121,7 @@ Googling the term 'Laravel exploit with APP\_KEY' returned this Github Repo:
 
 This CVE works!&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (120).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (120) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can then get an easy reverse shell as `www-data`.&#x20;
 

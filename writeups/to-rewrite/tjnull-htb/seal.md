@@ -50,7 +50,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 There's a `/manager` and `/admin` directory. The former returns 403, while the latter returns an error from Tomcat:
 
-<figure><img src="../../../.gitbook/assets/image (183).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (183) (3).png" alt=""><figcaption></figcaption></figure>
 
 Interesting. Let's take a look at port 8080.
 

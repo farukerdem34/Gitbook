@@ -243,7 +243,7 @@ profiles=> select * from profiles;
 
 Using this password (it isn't base64), we can login as `clave`:
 
-<figure><img src="../../../.gitbook/assets/image (154).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (154) (6).png" alt=""><figcaption></figcaption></figure>
 
 ### RemoteConnection
 
@@ -303,6 +303,6 @@ By removing the breakpoint for `entrypoint` and then jumping to user code to whe
 
 It appears to be the `root` password. We can test it out and it works:
 
-<figure><img src="../../../.gitbook/assets/image (153).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (153) (5).png" alt=""><figcaption></figcaption></figure>
 
 Interesting reverse engineering challenge!&#x20;

@@ -320,7 +320,7 @@ Scan starting...
 CmdTool: Failed with hr = 0x80508023. Check C:\Users\HENRY~2.VIN\AppData\Local\Temp\MpCmdRun.log for more information
 ```
 
-<figure><img src="../../../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (39) (1).png" alt=""><figcaption></figcaption></figure>
 
 We now have an NTLMv1 hash! Googling how to crack this leads me to this site:
 
@@ -340,6 +340,6 @@ Administrator:500:aad3b435b51404eeaad3b435b51404ee:c370bddf384a691d811ff3495e8a7
 
 Afterwards, we can use this hash to `evil-winrm` into the machine.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (38) (4).png" alt=""><figcaption></figcaption></figure>
 
 A unique machine that was rather difficult for me. I definitely needed to use a writeup for this one, or I would still be stuck at the RPC part. Rooted!&#x20;

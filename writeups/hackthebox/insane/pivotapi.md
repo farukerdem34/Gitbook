@@ -244,7 +244,7 @@ I transferred this over to my Windows VM. Running it seems to do nothing oddly:
 
 I took a look at the logs created using Sysmon, and found some weird commands being executed. Firstly, this thing created a `.bat` file:
 
-<figure><img src="../../../.gitbook/assets/image (103).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (103) (4).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, it used it ot do something else:
 
@@ -706,7 +706,7 @@ It appears we have another Reverse Engineering to do. There are some credentials
 
 Since they provided the source code in C#, I opened this binary up in `dnSpy`. In this, we see the completed program with the correct cipher:
 
-<figure><img src="../../../.gitbook/assets/image (84).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (84) (6).png" alt=""><figcaption></figcaption></figure>
 
 We can set a breakpoint at the `Console.WriteLine` function, which is right after the `Decrypt` function. Then, within the local variables, we would see this part here:
 
@@ -714,7 +714,7 @@ We can set a breakpoint at the `Console.WriteLine` function, which is right afte
 
 The `array` variable contains the decoded password, and we can convert all of this to text.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (90).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (90) (3).png" alt=""><figcaption></figcaption></figure>
 
 We can then grab access to the user `jari.`
 
@@ -756,13 +756,13 @@ Miembros del grupo global                  *Usuarios del dominio
 
 Going back to Bloodhound, we see that the new user `jari` has `ForceChangePassword` privilege over two other users, with one being a bit more important than the other:
 
-<figure><img src="../../../.gitbook/assets/image (57).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (57) (1).png" alt=""><figcaption></figcaption></figure>
 
 The `gibdeon` user is part of the Account Operations group (after translation). We can first reset the user's password using the same commands as the other password resets `gibdeon` user is not part of either SSH or WinRM groups, so we probably use remote Powershell scriptblocks to abuse this.&#x20;
 
 The Account Operators group has `GenericAll` privileges over the `LAPS READ` group, and can also create new non-administrator accounts within the domain (in-built AD privilege).
 
-<figure><img src="../../../.gitbook/assets/image (91).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (91) (6).png" alt=""><figcaption></figcaption></figure>
 
 Since we basically have access to all groups in this domain, we can just add our `jari` user to both `LAPS READ` and `LAPS ADM`.&#x20;
 

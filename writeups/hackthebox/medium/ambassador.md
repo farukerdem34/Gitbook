@@ -75,7 +75,7 @@ However, maybe we can use the LFI to read this file on the machine itself.&#x20;
 
 Based on this documentation, it is located in`/etc/grafana/provisioning/datasources`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (102).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (102) (4).png" alt=""><figcaption></figcaption></figure>
 
 Using these creds, we can login to the MySQL database on the machine:
 

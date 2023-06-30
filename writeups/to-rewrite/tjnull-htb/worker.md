@@ -70,7 +70,7 @@ ID           Response   Lines    Word       Chars       Payload
 
 We can head there first, and it does ask for credentials.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (180).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (180) (2).png" alt=""><figcaption></figcaption></figure>
 
 Using the one we found in `deploy.ps1`, we can login.&#x20;
 
@@ -234,7 +234,7 @@ Now, we have access to another repository. When viewing the project settings, I 
 
 This means that we can set pipeline permissions. Using this, we can create a new pipeline that uses YAML to execute code:
 
-<figure><img src="../../../.gitbook/assets/image (151).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (151) (4).png" alt=""><figcaption></figcaption></figure>
 
 Use Azure Repos Git > Parts Unlimited > Starter Pipeline. Here, we can create a YAML script to gain a reverse shell.
 
@@ -260,7 +260,7 @@ steps:
 
 The reason we need to change the Pool is because there is no pool named 'Default', but there is one called Setup. This can be enumerated in Project Settings:
 
-<figure><img src="../../../.gitbook/assets/image (162).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (162) (1).png" alt=""><figcaption></figcaption></figure>
 
 Once we run it, we would get a reverse shell once the command executes.
 

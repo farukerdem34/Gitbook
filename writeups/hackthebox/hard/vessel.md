@@ -273,5 +273,5 @@ kill -SIGSEGV <PID_for_tail>
 
 Afterwards, we should see our script be executed and we can get a root shell using `bash -p`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (125) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (125) (1) (1).png" alt=""><figcaption></figcaption></figure>
 

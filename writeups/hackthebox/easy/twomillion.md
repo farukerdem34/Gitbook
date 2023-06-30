@@ -181,7 +181,7 @@ $ curl -H 'Cookie: PHPSESSID=1mf4jaa8fv6rob72cp60rbe9ri' http://2million.htb/api
 
 Then, we can look at the only other feature I haven't used, which is the OVPN feature. Using the `generate` feature seems to produce an `.ovpn` file.
 
-<figure><img src="../../../.gitbook/assets/image (81).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (81) (6).png" alt=""><figcaption></figcaption></figure>
 
 When trying the administrator version of the generation, we get the same response complaining about the Content-Type header, and then it requests for a username:
 

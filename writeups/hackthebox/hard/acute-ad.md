@@ -188,6 +188,6 @@ After about 5 minutes, we can view the wallace user and see that we are now a Si
 
 With this, we can now access the root.txt file on the other machine.
 
-<figure><img src="../../../.gitbook/assets/image (162) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (162) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 With that, this machine has been pwned!

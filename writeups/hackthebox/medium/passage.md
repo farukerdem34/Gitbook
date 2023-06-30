@@ -52,7 +52,7 @@ When I ran LinPEAS on the machine, I found that the public key of `nadav` was th
 
 I tried to `ssh` in as `nadav` from `paul`, and it worked!
 
-<figure><img src="../../../.gitbook/assets/image (116).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (116) (3).png" alt=""><figcaption></figcaption></figure>
 
 ### USBCreator
 

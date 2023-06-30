@@ -22,7 +22,7 @@ FTP doesn't support anonymous logins, so let's move on to port 80. We have to ad
 
 The website was a blog of some sorts:
 
-<figure><img src="../../../.gitbook/assets/image (146).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (146) (2).png" alt=""><figcaption></figcaption></figure>
 
 Reading a bit of the page source reveals this is a Wordpress site, so let's use `wpscan` with the API token to enumerate plugins and the version.&#x20;
 
@@ -137,7 +137,7 @@ Referrer-Policy: strict-origin-when-cross-origin
 
 There were 2 hashes, and one of them could be cracked.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (97).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (97) (5).png" alt=""><figcaption></figcaption></figure>
 
 Now that we have credentials, we can run the authenticated XXE injection.
 
@@ -158,7 +158,7 @@ Using this `.dtd` file, we can grab the `wp-config.php` file:
 
 Within that file, we can find FTP credentials:
 
-<figure><img src="../../../.gitbook/assets/image (126).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (126) (5).png" alt=""><figcaption></figcaption></figure>
 
 We can login to FTP using `metapress.htb:9NYS_ii@FyL_p5M2NvJ`.
 
@@ -240,8 +240,8 @@ dr-xr-x--- 3 jnelson jnelson 4096 Oct 25  2022 ..
 
 The `.keys` directory contains a PGP key pair, which I'm assuming is used to decrypt the `root.pass` file. I took the private key from the `.keys` file, and cracked it using `gpg2john` > `john`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (98).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (98) (6).png" alt=""><figcaption></figcaption></figure>
 
 With this password, we can decrypt the `root.pass` file:
 
-<figure><img src="../../../.gitbook/assets/image (139).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (139) (2).png" alt=""><figcaption></figcaption></figure>

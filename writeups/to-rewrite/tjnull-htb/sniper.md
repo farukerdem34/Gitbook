@@ -22,7 +22,7 @@ PORT      STATE SERVICE
 
 Port 80 is hosting a corporate website:
 
-<figure><img src="../../../.gitbook/assets/image (178).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (178) (2).png" alt=""><figcaption></figcaption></figure>
 
 I clicked all the services, and found that Our Services works and brings us to `/blog/index.php`.&#x20;
 

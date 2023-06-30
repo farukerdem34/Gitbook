@@ -88,7 +88,7 @@ Now, we need to think about how to use this container to find out more about the
 
 As such, I transferred chisel over to this machine and created a tunnel.
 
-<figure><img src="../../../.gitbook/assets/image (120) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (120) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (104) (2).png" alt=""><figcaption></figcaption></figure>
 

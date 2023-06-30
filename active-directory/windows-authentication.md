@@ -262,7 +262,7 @@ Windows provides functionality for Kerberos tickets, and we can import TGTs or S
 
 If we have the ticket from another user, we can importing the ticket into an attacker-controlled logon session and act on behalf of another user in the network.&#x20;
 
-<figure><img src="../.gitbook/assets/image (90) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (90) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 The cool thing about this is the the Kerberos LSA API **does not require administrative privileges to interact with**. How `mimikatz.exe` and `Rubeus.exe` do this is via the **LsaCallAuthenticationPackage** function. This function enables apps to talk to Windows APs, and is done through messages which have a specific structure.&#x20;
 

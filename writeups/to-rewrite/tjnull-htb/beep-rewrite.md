@@ -119,10 +119,10 @@ Using `jEhdIekWmdjE`, we can login as `root` on Webmin on port 10000.&#x20;
 
 With access to Webmin, we actually already have full control over the machine. As such, we can create a scheduled command that would give us a reverse shell.
 
-<figure><img src="../../../.gitbook/assets/image (152).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (152) (5).png" alt=""><figcaption></figcaption></figure>
 
 We would then catch a reverse shell after waiting a minute.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (157).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (157) (6).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

@@ -168,7 +168,7 @@ p.sendline(b'/bin/sh\x00')
 p.interactive()
 ```
 
-<figure><img src="../../../.gitbook/assets/image (169).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (169) (3).png" alt=""><figcaption></figcaption></figure>
 
 Then, grab the user flag. We can upgrade our shell by putting our public key within the `authorized_keys` file.
 
