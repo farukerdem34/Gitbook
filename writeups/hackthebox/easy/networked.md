@@ -102,7 +102,7 @@ One dangerous part of this script is the usage of `exec` to run stuff. The `$val
 
 We can check the `sudo` privileges of this user and find that there's one script we can run as `root`.
 
-<figure><img src="../../../.gitbook/assets/image (58) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (58) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 Here's the script's contents:
 

@@ -30,7 +30,7 @@ The website is some kind of Dashboard.
 
 If we click on Team, we can see a table with a ton of emails present:
 
-<figure><img src="../../../.gitbook/assets/image (203).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (203) (3).png" alt=""><figcaption></figcaption></figure>
 
 We can download all of this itno a file using `curl`.&#x20;
 

@@ -272,7 +272,7 @@ The first reverse shell using a simple `bash` one-liner did not work for some re
 
 To circumvent this, we can simply have the reverse shell connect back to a listener port on localhost using the SSH shell we got earlier.
 
-<figure><img src="../../../.gitbook/assets/image (13) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (1) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 ### Restic
 

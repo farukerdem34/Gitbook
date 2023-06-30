@@ -29,7 +29,7 @@ Other than that, there was not much here.
 
 Port 3000 was hosting a Grafana instance.
 
-<figure><img src="../../../.gitbook/assets/image (142).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (142) (2).png" alt=""><figcaption></figcaption></figure>
 
 This version of Grafana is vulnerable to public exploits:
 

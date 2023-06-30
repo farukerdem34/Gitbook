@@ -112,7 +112,7 @@ These are sessions that leverage the cached credentials on behalf of a user. Whe
 
 This leverages the use of the SSPI to work.
 
-<figure><img src="../.gitbook/assets/image (89).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (89) (3).png" alt=""><figcaption></figcaption></figure>
 
 For example, a non-interactive session can grant us access to the file system of another device and do `ls \\dc\c$` using cached credentials.&#x20;
 
@@ -184,7 +184,7 @@ There are 2 common ways of which token exploits happen:
 
 `runas.exe` is a binary that allows us to create processes using alternate credentials. When running `runas.exe`, it would ask for credentials, which are verified by the LSA in a similar process to how Interactive Sessions are created.&#x20;
 
-<figure><img src="../.gitbook/assets/image (86).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (86) (6).png" alt=""><figcaption></figcaption></figure>
 
 If we attempt to use credentials from a user that is not known by the system, then it would just fail. This is because starting a process on the local system as an unknown user obviously doesn't work. When we run `runas.exe` and give the correct credentials, then it spawns a **local level process.**&#x20;
 

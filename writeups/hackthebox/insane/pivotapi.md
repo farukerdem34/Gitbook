@@ -518,7 +518,7 @@ Notes:
 
 Then, we can finally access the user here:
 
-<figure><img src="../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -530,7 +530,7 @@ Now that we have a new user to play with, we should take a look at the Bloodhoun
 
 Only the `Dr.Zaiuss` has a file in `C:\Users`, so that's the next step. We also find that this user has control over `superfume`, which in turn is part of the Developers group:
 
-<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
 
 Those are the next obvious steps.
 
@@ -815,6 +815,6 @@ socketz                  sshd                     StooormQ
 superfume                svc_mssql                v1s0r
 ```
 
-<figure><img src="../../../.gitbook/assets/image (58).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (58) (4).png" alt=""><figcaption></figcaption></figure>
 
 The `root.txt` flag is located within `C:\Users\cybervaca\desktop`. Doing CRTO and reading about Windows Auth helped a lot for this machine. Rooted!&#x20;

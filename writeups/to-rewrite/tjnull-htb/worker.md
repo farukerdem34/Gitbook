@@ -226,7 +226,7 @@ We can then grab the user flag easily.&#x20;
 
 There wasn't much in the machine to begin with, so I shifted back to the Azure Devops instance to see if we could login as the user, and we could.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (199).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (199) (3).png" alt=""><figcaption></figcaption></figure>
 
 Now, we have access to another repository. When viewing the project settings, I can see that our user is a Build Administrator.
 

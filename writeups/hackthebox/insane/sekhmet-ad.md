@@ -215,7 +215,7 @@ This pretty much confirms that the actual DC is at 192.168.0.2. We would need to
 
 Afterwards, we can reach the DC just fine.
 
-<figure><img src="../../../.gitbook/assets/image (89) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (89) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now we can start with some proper enumeration of the domain. The first thing I noted was that port 53 for DNS was open within the output. We can use dig top find out&#x20;
 

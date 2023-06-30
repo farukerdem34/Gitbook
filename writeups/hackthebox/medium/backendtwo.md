@@ -38,7 +38,7 @@ With this edit profile stuff, I found out that we can change the attributes rela
 
 When I found out this worked, I basically also changed the `is_superuser` attribute to `true`.
 
-<figure><img src="../../../.gitbook/assets/image (214).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (214) (2).png" alt=""><figcaption></figcaption></figure>
 
 After changing all of these, we just need to retrieve the new JWT token we can use for further exploitation.
 

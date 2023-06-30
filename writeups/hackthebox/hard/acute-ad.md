@@ -16,7 +16,7 @@ description: >-
 
 I ran a nikto scan on the website and found the certificate and domain name. We can add this to the hosts file and try to access it.
 
-<figure><img src="../../../.gitbook/assets/image (239).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (239) (1).png" alt=""><figcaption></figcaption></figure>
 
 The website is as follows:
 

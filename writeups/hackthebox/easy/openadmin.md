@@ -30,7 +30,7 @@ We can gain a shell by following the PoC:
 
 <figure><img src="../../../.gitbook/assets/image (88).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (105).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (105) (3).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

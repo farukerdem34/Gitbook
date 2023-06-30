@@ -38,7 +38,7 @@ Generally, we would want to find methods of which the website is loading other w
 
 Afterwards, malicious JS code can be used to load things that would be inaccessible to regular users but not the website, as shown below.
 
-<figure><img src="../.gitbook/assets/image (274).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (274) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## References
 

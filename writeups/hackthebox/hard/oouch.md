@@ -522,6 +522,6 @@ method return time=1678608399.001859 sender=:1.3 -> destination=:1.436 serial=4 
    string "Carried out :D"
 ```
 
-<figure><img src="../../../.gitbook/assets/image (14) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (1) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 I wonder why this machine isn't in Insane level...
