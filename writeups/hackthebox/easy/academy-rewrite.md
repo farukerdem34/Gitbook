@@ -24,7 +24,7 @@ We have to add `academy.htb` to our `/etc/hosts` file to visit the HTTP site.
 
 This box was created to introduce HTB Academy I think:
 
-<figure><img src="../../../.gitbook/assets/image (122).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (122) (5).png" alt=""><figcaption></figcaption></figure>
 
 There is a Login and Register page. We can try to register a user since we don't have credentials. While intercepting responses, we can see the HTTP request for registering:
 
@@ -125,7 +125,7 @@ This CVE works!&#x20;
 
 We can then get an easy reverse shell as `www-data`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (117).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (117) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

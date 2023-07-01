@@ -70,7 +70,7 @@ Initial enumeration for `sudo` privileges revealed this:
 
 We can read this file to that it has a vulnerbale function being used.
 
-<figure><img src="../../../.gitbook/assets/image (179).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (179) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Eval Exploit
 

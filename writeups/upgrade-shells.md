@@ -49,7 +49,7 @@ Basically, when we connect to a reverse shell, we are NOT in a `bash`  instance 
 
 Here's a shell trying to run `sudo` without stabilisation:
 
-<figure><img src="../.gitbook/assets/image (148).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (148) (4).png" alt=""><figcaption></figcaption></figure>
 
 Suppose the top terminal is where the injection takes place (like in a webshell or something) and the bottom terminal is my listener port that catches a shell. Notice how running `sudo` causes the input to be printed on the top terminal? If we do something like `sudo -l`, then the bottom terminal would freeze as it waits for a password prompt from the top window.
 

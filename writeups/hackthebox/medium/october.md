@@ -34,7 +34,7 @@ We can use one of them to upload a `cmd.php5` file to execute on the server, as 
 
 We can confirm we have RCE via `curl`.
 
-<figure><img src="../../../.gitbook/assets/image (37) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (37) (1) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 Getting a reverse shell is then trivial.
 

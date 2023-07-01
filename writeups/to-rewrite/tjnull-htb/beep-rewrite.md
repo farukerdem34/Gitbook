@@ -115,7 +115,7 @@ We'll keep this for now.
 
 Using `jEhdIekWmdjE`, we can login as `root` on Webmin on port 10000.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (166).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (166) (4).png" alt=""><figcaption></figcaption></figure>
 
 With access to Webmin, we actually already have full control over the machine. As such, we can create a scheduled command that would give us a reverse shell.
 

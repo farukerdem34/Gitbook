@@ -264,7 +264,7 @@ Let's take a look at this database.
 
 We first need to portforward this MySQL Instance from the machine before moving on. We can do so with SSH using charlie's private key easily. We need to do this because the host does not have mysql...? Perhaps the creator included an extra step on purpose.
 
-<figure><img src="../../../.gitbook/assets/image (101) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (101) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (119) (1) (1).png" alt=""><figcaption></figcaption></figure>
 

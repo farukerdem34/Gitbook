@@ -70,7 +70,7 @@ When we intercept and change the name of the file, we would be able to access ou
 
 Then, we can gain a reverse shell via the `mkfifo` command into a Docker Container.
 
-<figure><img src="../../../.gitbook/assets/image (61) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (61) (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Docker Escape
 

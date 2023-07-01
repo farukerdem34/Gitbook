@@ -174,7 +174,7 @@ This means that we can probably execute code using SSTI via Twig templates. I ad
 
 Then, we need to head to Maintenance > Clear Cache, and reload the main page afterwards. Our listener port would catch a reverse shell.
 
-<figure><img src="../../../.gitbook/assets/image (60) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (60) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Docker Escape --> User&#x20;
 

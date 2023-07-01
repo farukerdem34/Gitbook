@@ -116,7 +116,7 @@ The user on this machine had an interesting `.binary` directory within their hom
 
 In the `/home/ayush/.binary` directory, we can find this `rop` SUID binary.
 
-<figure><img src="../../../.gitbook/assets/image (104) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (104) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 I ran an `ltrace` on the binary and tested it with some random input. I found that this uses the `strcpy` function, which is vulnerable to a BOF exploit.
 

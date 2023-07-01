@@ -34,7 +34,7 @@ When decrypted, it gives `Charix!2#4%6&8(0`. We can then use this to SSH in as t
 
 We can check the ports that are open with `netstat -an`.
 
-<figure><img src="../../../.gitbook/assets/image (92).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (92) (4).png" alt=""><figcaption></figcaption></figure>
 
 VNC is open on port 5901, and normally, this requires a password file. Conveniently, we can find a `secret.zip` in the user's directory:
 

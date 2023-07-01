@@ -273,11 +273,11 @@ As specified, this would spin up `tor.exe`, and connect to a remote device somew
 
 I checked my listener ports, and port 22 was open on the VM after running it, so I guess it provides some kind of SSH access to the attacker.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (37) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (37) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Interesting! At this point, I didn't want the attacker to stay around, so I deleted the entire VM and started doing some basic research of the IP address.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (67) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (67) (4) (2).png" alt=""><figcaption></figcaption></figure>
 
 Since it is using `tor`, this probably is just one of the nodes being used. If not, then this is an OPSEC failure (which is highly unlikely).&#x20;
 

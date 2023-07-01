@@ -23,7 +23,7 @@ Port 80 is hosting a GitLab instance:
 
 It appears I cannot createa a new account, so I took a look at the links present on the site. By clicking on Help, I was brought to a new page:
 
-<figure><img src="../../../.gitbook/assets/image (167).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (167) (4).png" alt=""><figcaption></figcaption></figure>
 
 On `bookmarks.html`, there was just a bunch of links to other sites. When the page source is viewed, we can see some obfuscated Javascript at the bottom:
 

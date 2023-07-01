@@ -248,7 +248,7 @@ I took a look at the logs created using Sysmon, and found some weird commands be
 
 Afterwards, it used it ot do something else:
 
-<figure><img src="../../../.gitbook/assets/image (37).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (37) (1).png" alt=""><figcaption></figcaption></figure>
 
 It also seems that this file is being destroyed by the binary after running. To catch this file, we would have to use a Powershell infinite loop that would keep checking for both directories and the `.bat` file being created, and then read the output of it.&#x20;
 
@@ -321,11 +321,11 @@ PS C:\ProgramData> .\restart-service.exe
 
 It doesn't generate any logs of interest in Sysmon, so we have to delve deeper into the processes spawned. In this case, I used API Monitor to do this. When I ran the binary within API monitor, it generated quite a lot of stuff. I disabled the filter to view everything:
 
-<figure><img src="../../../.gitbook/assets/image (69).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (69) (3).png" alt=""><figcaption></figcaption></figure>
 
 I tried searching for 'Password' and found it here!
 
-<figure><img src="../../../.gitbook/assets/image (67).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (67) (4).png" alt=""><figcaption></figcaption></figure>
 
 ### MS-SQL Access --> PrintSpoof Fail
 
@@ -549,7 +549,7 @@ Since `dr.zaiuss` is not part of the SSH group, we have to port forward via `ssh
 $ sshpass -p 'Gu4nCh3C4NaRi0N!23' ssh -L 5985:127.0.0.1:5985 3V4Si0N@LicorDeBellota.htb
 ```
 
-<figure><img src="../../../.gitbook/assets/image (62).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (62) (8).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can upload PowerView.ps1 and run the same commands with `superfume` this time. Since `superfume` is also not part of the SSH group, we can just use `evil-winrm` again:
 

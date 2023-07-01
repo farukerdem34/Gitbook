@@ -99,7 +99,7 @@ SQL Server sa credentials file namez
 
 This is just the password in binary, which can be converted online:
 
-<figure><img src="../../../.gitbook/assets/image (61).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (61) (2).png" alt=""><figcaption></figcaption></figure>
 
 With this, we can login as the administrator using `admin:@dm!n_P@ssW0rd!` on the blog service on port 8080.
 
@@ -310,7 +310,7 @@ Also, while researching for exploitation methods, I found that the Impacket suit
 
 We can then run `impacket-goldenPac` to get a SYSTEM shell.
 
-<figure><img src="../../../.gitbook/assets/image (60).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (60) (1).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!
 

@@ -10,13 +10,13 @@ Nmap scan:
 
 Port 80 reveals some kind of website archive thing:
 
-<figure><img src="../../../.gitbook/assets/image (109).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (109) (4).png" alt=""><figcaption></figcaption></figure>
 
 Checking the page source, we find that this is running CuteNews, which had a few RCE exploits available:
 
 {% embed url="https://www.exploit-db.com/exploits/48800" %}
 
-<figure><img src="../../../.gitbook/assets/image (104).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (104) (1).png" alt=""><figcaption></figcaption></figure>
 
 With this, we can easily gain a reverse shell:
 

@@ -136,6 +136,6 @@ Using a Base64 encoded payload with %20 or $IFS as the space character, we can g
 
 For root, this was rather simple. Within the `~/uhc` folder, there was an `auth.log` file that had the root credentials within it.
 
-<figure><img src="../../../.gitbook/assets/image (190).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (190) (2).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (215).png" alt=""><figcaption></figcaption></figure>

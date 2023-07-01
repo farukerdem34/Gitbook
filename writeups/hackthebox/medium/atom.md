@@ -52,7 +52,7 @@ We can dive further into the .asar file using `asar`.
 
 Within the main.js file, we can find that `electron-updater` was imported within this application.
 
-<figure><img src="../../../.gitbook/assets/image (69) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (69) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Signature Bypass
 

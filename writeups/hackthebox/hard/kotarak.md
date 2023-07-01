@@ -79,7 +79,7 @@ The `tomcat` user also had some interesting files within their directory.
 
 The name of the file was a giveaway that this contained NTLM hashes from a memory dump of a Windows machine. As such, we can transfer this back to our machine and dump the credentials using `secretsdump.py`.
 
-<figure><img src="../../../.gitbook/assets/image (110) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (110) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then we can crack the Administrator's hash to get `f16tomcat!`. Afterwards, we can `su` to the `atanas` user with these credentials.
 

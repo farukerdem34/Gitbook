@@ -25,7 +25,7 @@ Viewing port 5080 reveals a Gitlab instance:
 
 We can try to register a user and attempt to login. The version can be viewed in the Help tab:
 
-<figure><img src="../../../.gitbook/assets/image (175).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (175) (2).png" alt=""><figcaption></figcaption></figure>
 
 This version is vulnerable to RCE based on `searchsploit`.
 

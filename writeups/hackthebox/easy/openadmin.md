@@ -10,7 +10,7 @@ Nmap scan:
 
 We can run a `gobuster` scan on port 80:
 
-<figure><img src="../../../.gitbook/assets/image (110).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (110) (1).png" alt=""><figcaption></figcaption></figure>
 
 I visited the `/music` directory first and it brought me to some corporate website:
 
@@ -28,7 +28,7 @@ This version of OpenNetAdmin was vulnerable to RCE:
 
 We can gain a shell by following the PoC:
 
-<figure><img src="../../../.gitbook/assets/image (88).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (88) (4).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (105) (3).png" alt=""><figcaption></figcaption></figure>
 
@@ -36,7 +36,7 @@ We can gain a shell by following the PoC:
 
 ### Jimmy Credentials
 
-<figure><img src="../../../.gitbook/assets/image (129).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (129) (2).png" alt=""><figcaption></figcaption></figure>
 
 The users present on the machine are `joanna` and `jimmy`, and it seems that `ssh` with this password works on `jimmy`:
 
@@ -54,7 +54,7 @@ When reading further, we can find the password and username hard-coded into the 
 
 The hash can be cracked to give `Revealed`. We can read `/etc/apache2/sites-available/internal.conf` to find the hidden sub-domain and port it is open on:
 
-<figure><img src="../../../.gitbook/assets/image (118).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (118) (3).png" alt=""><figcaption></figcaption></figure>
 
 After port forwarding via `ssh -L 52846:127.0.0.1:52846 jimmy@10.10.10.71`, we can access the login page:
 

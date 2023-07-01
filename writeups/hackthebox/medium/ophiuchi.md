@@ -200,7 +200,7 @@ export function info():int {
 
 The above code seems to do nothing but return 0, so we need to change that 0 to a 1. We can count the bytes and change the byte accordingly using `dd`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (101).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (101) (1).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, we can create a `deploy.sh` file that adds our public key into the `/root/.ssh/authorized_key` folder and run the `sudo` command.
 

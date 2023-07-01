@@ -87,7 +87,7 @@ Here, there was one repository for SmartHotel360, which was located at `spectral
 
 This was an IIS site, so we can try to upload an ASPX shell on this site and see if we can trigger it by visting the website. However, we can only upload through pull requests.
 
-<figure><img src="../../../.gitbook/assets/image (168).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (168) (3).png" alt=""><figcaption></figcaption></figure>
 
 I tried submitting one by issuing a request using a new branch name.
 

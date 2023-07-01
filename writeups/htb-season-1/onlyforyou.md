@@ -339,7 +339,7 @@ User john may run the following commands on only4you:
 
 Obviously, there's a wildcard here and it is vulnerable. Now, this was using port 3000, and we should try to port forward that. Doing so would reveal that port 3000 is running a Gogs server.
 
-<figure><img src="../../.gitbook/assets/image (61) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (61) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Checking the repository, we can see that `john` is a user on the service. We can reuse the password we found earlier to login. Afterwards, we can create repositories on this.
 
