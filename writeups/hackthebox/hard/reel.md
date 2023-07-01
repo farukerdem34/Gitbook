@@ -193,7 +193,7 @@ powershell -c "$credentials = Import-Clixml -Path cred.xml; $credentials.GetNetw
 
 Using this password, we can `ssh` in as `tom`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (108).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (108) (5).png" alt=""><figcaption></figcaption></figure>
 
 ### Bloodhound --> WriteOwner
 

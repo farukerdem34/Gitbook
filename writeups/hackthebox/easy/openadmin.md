@@ -22,7 +22,7 @@ When I clicked `login`, it brought me to `/ona`, which was a dashboard for OpenN
 
 This version of OpenNetAdmin was vulnerable to RCE:
 
-<figure><img src="../../../.gitbook/assets/image (124).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (124) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% embed url="https://www.exploit-db.com/exploits/47691" %}
 
@@ -46,7 +46,7 @@ The users present on the machine are `joanna` and `jimmy`, and it seems that `ss
 
 When looking around the `/var/www/internal` directory, we can some code referencing the private SSH key of `joanna`:
 
-<figure><img src="../../../.gitbook/assets/image (132).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (132) (2).png" alt=""><figcaption></figcaption></figure>
 
 When reading further, we can find the password and username hard-coded into the application:
 
@@ -62,7 +62,7 @@ After port forwarding via `ssh -L 52846:127.0.0.1:52846 jimmy@10.10.10.71`, we c
 
 Logging in reveals a password protected RSA Private Key:
 
-<figure><img src="../../../.gitbook/assets/image (99).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (99) (3).png" alt=""><figcaption></figcaption></figure>
 
 We can decrypt this via `ssh2john`:
 
@@ -70,7 +70,7 @@ We can decrypt this via `ssh2john`:
 
 Afterwards, we can use `openssl rsa -in key -out privatekey` to write the private RSA key, then `ssh` in as `joanna`:
 
-<figure><img src="../../../.gitbook/assets/image (114).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (114) (3).png" alt=""><figcaption></figcaption></figure>
 
 ### Nano GTFOBins
 

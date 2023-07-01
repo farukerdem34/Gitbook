@@ -1,3 +1,0 @@
-# Proving Grounds
-
-When I eventually get to this...

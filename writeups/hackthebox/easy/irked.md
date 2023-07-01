@@ -58,4 +58,4 @@ When it was run, it tries to find a `/tmp/listusers` file.
 
 Since this file was being run as root due to being an SUID binary, we just need to use the `/tmp/listusers` file to execute some form of Bash script that would give us a root shell.
 
-<figure><img src="../../../.gitbook/assets/image (164) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (164) (5) (1).png" alt=""><figcaption></figcaption></figure>

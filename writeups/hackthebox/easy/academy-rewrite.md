@@ -109,7 +109,7 @@ There was another subdomain present on the site.
 
 When we visit the new domain, we are greeted with a Laravel debuggin issue:
 
-<figure><img src="../../../.gitbook/assets/image (127).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (127) (4).png" alt=""><figcaption></figcaption></figure>
 
 On this page, we can find a load of information, even the APP\_KEY used for the website:
 
@@ -250,6 +250,6 @@ echo '{"scripts":{"x":"/bin/sh -i 0<&3 1>&3 2>&3"}}' >$TF/composer.json
 sudo composer --working-dir=$TF run-script x
 ```
 
-<figure><img src="../../../.gitbook/assets/image (143).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (143) (2).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

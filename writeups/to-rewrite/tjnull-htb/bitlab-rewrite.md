@@ -70,7 +70,7 @@ RCE works, so now we can get a reverse shell easily.
 
 I also looked at the Snippets available, and found one:
 
-<figure><img src="../../../.gitbook/assets/image (164).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (164) (5).png" alt=""><figcaption></figcaption></figure>
 
 It had some PostgreSQL Creds:
 
@@ -283,7 +283,7 @@ It appears that this is executing `putty.exe`, which is an SSH client for Window
 
 <figure><img src="../../../.gitbook/assets/image (122) (4).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (174).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (174) (4).png" alt=""><figcaption></figcaption></figure>
 
 Since there was `ShellExecuteW` being used, we can make a breakpoint there by first checking where it is called. I knew that it was imnported at `0x403108`, so we can check for any `call 0x403108` instructions:
 
@@ -291,7 +291,7 @@ Since there was `ShellExecuteW` being used, we can make a breakpoint there by fi
 
 Let's head to x64dbg and set a breakpoint at `XX165a` since the last 4 characters are always the same.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (163).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (163) (4).png" alt=""><figcaption></figcaption></figure>
 
 We can set another breakpoint at the `cmp` instruction before it as well to see what is being compared within registers too.
 
@@ -299,7 +299,7 @@ We can set another breakpoint at the `cmp` instruction before it as well to see 
 
 By removing the breakpoint for `entrypoint` and then jumping to user code to where the `cmp` instruction occurs, we would see this:
 
-<figure><img src="../../../.gitbook/assets/image (185).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (185) (4).png" alt=""><figcaption></figcaption></figure>
 
 It appears to be the `root` password. We can test it out and it works:
 

@@ -30,7 +30,7 @@ Port 80 hosts a normal corporate website:
 
 This site had some usernames and emails that we can take note of for now.
 
-<figure><img src="../../../.gitbook/assets/image (59) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (59) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```
 matt@talkative.htb

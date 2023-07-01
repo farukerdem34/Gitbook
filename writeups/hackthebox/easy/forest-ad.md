@@ -53,7 +53,7 @@ Add-DomainObjectAcl -Credential $cred -TargetIdentity "DC=htb,DC=local" -Princip
 
 Afterwards, we would basically have a new user to dump the administrator hash using `secretsdump.py` thanks to DCSync permissions.
 
-<figure><img src="../../../.gitbook/assets/image (124) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (124) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can Pass The Hash easily to gain access as the Administrator.
 

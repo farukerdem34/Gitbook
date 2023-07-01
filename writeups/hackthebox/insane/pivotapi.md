@@ -710,7 +710,7 @@ Since they provided the source code in C#, I opened this binary up in `dnSpy`. I
 
 We can set a breakpoint at the `Console.WriteLine` function, which is right after the `Decrypt` function. Then, within the local variables, we would see this part here:
 
-<figure><img src="../../../.gitbook/assets/image (80).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (80) (1).png" alt=""><figcaption></figcaption></figure>
 
 The `array` variable contains the decoded password, and we can convert all of this to text.&#x20;
 

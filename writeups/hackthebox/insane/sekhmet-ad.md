@@ -231,7 +231,7 @@ WIth this ticket, we can check out the shares within the domain, since SMB was o
 
 WC-Share was something new.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (99) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (99) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Within this .txt file, we find an interesting output.
 

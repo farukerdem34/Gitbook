@@ -198,7 +198,7 @@ This reason is what leads to tickets and NTLM hashes being cached on the system.
 
 The `/netonly` flag uses the **LOGON\_NETCREDENTIALS\_ONLY** logon option, which creates and uses a new logon session, but using the original token.&#x20;
 
-<figure><img src="../.gitbook/assets/image (96).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (96) (5).png" alt=""><figcaption></figcaption></figure>
 
 In most tools like Metasploit and Cobalt Strike, they have their own version of `runas`. This provides some additional functionality:
 

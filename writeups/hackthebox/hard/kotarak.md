@@ -20,7 +20,7 @@ Credentials were required for port 8080:
 
 This port was hosting a private browser that takes a URL as a parameter.
 
-<figure><img src="../../../.gitbook/assets/image (80) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (80) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 We can use this to get hits on our own HTTP server, but it does not seem to download files or anything. As such, there isn't much point on trying to host something on our machine. Instead, we can do SSRF and let this application **send requests to itself**. This would allow us to enumerate all ports that were open within the machine but not reachable from my Kali machine.
 

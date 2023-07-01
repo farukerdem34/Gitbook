@@ -67,7 +67,7 @@ Within the configuration files, we can find a `mysql.yaml` file.
 
 We can't edit it, and there wasn't any credentials in it:
 
-<figure><img src="../../../.gitbook/assets/image (100).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (100) (1).png" alt=""><figcaption></figcaption></figure>
 
 However, maybe we can use the LFI to read this file on the machine itself.&#x20;
 

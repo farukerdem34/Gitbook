@@ -39,7 +39,7 @@ $ curl http://10.129.85.144/
 <!-- /nibbleblog/ directory. Nothing interesting here! -->
 ```
 
-<figure><img src="../../../.gitbook/assets/image (170).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (170) (2).png" alt=""><figcaption></figcaption></figure>
 
 Based on the Nibbleblog Github Repo (which is no longer continued), I found that we can access `/README` to view the version used.
 

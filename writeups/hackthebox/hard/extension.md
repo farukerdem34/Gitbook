@@ -66,7 +66,7 @@ There's a lot of information that is dumped, so we can use curl to redirect the 
 
 There's like over 890 hashes here, so cracking all of them is impossible without melting my laptop. In this case, we could use crackstation to test out 20 hashes at a time. Then, I would check for the occurrence of the hash within the main account. After a while, I managed to crack one.
 
-<figure><img src="../../../.gitbook/assets/image (100) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (100) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Analysis of the main file revealed that the users are&#x20;
 
@@ -300,7 +300,7 @@ insert into users(name,email,email_verified_at,password,remember_token,created_a
 
 Then we can find our user on the website.
 
-<figure><img src="../../../.gitbook/assets/image (124) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (124) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Once we hit validate, we will get a shell back as the application user.
 

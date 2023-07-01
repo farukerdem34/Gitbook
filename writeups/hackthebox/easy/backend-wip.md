@@ -138,4 +138,4 @@ For root, this was rather simple. Within the `~/uhc` folder, there was an `auth.
 
 <figure><img src="../../../.gitbook/assets/image (190) (2).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (215).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (215) (2).png" alt=""><figcaption></figcaption></figure>

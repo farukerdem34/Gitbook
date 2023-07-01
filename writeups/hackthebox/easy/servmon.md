@@ -193,7 +193,7 @@ ssh nadine@10.129.227.77 -L 8443:127.0.0.1:8443
 
 Then we can access the site and continue.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (159).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (159) (4).png" alt=""><figcaption></figcaption></figure>
 
 Login using the administrator password we found earlier. There are automated PoCs for this:
 
