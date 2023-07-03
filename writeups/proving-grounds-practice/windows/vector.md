@@ -25,11 +25,11 @@ PORT     STATE SERVICE
 
 Port 80 reveals a basic login page:
 
-<figure><img src="../../../.gitbook/assets/image (142).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (139).png" alt=""><figcaption></figcaption></figure>
 
 Port 2290 was also a HTTP port, and it returned something simple:
 
-<figure><img src="../../../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (37).png" alt=""><figcaption></figcaption></figure>
 
 C? When we view the page source, there's also this part here:
 
@@ -46,11 +46,11 @@ C? When we view the page source, there's also this part here:
 
 There's a commented ciphertext, and there's also something which takes a parameter. We can try putting this ciphertext as the parameter requested.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (140).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (143).png" alt=""><figcaption></figcaption></figure>
 
 If we remove some characters, then it loads something else.
 
-<figure><img src="../../../.gitbook/assets/image (144).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (142).png" alt=""><figcaption></figcaption></figure>
 
 That's literally all of the enumeration that is possible to do.
 
@@ -120,7 +120,7 @@ We get a password! SSH is not open on the machine, but RDP is. `xfreerdp` can be
 $ xfreerdp /u:victor /p:WormAloeVat7 /v:192.168.233.119
 ```
 
-<figure><img src="../../../.gitbook/assets/image (77).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (49).png" alt=""><figcaption></figcaption></figure>
 
 We can then grab the user flag.
 
@@ -130,10 +130,10 @@ We can then grab the user flag.
 
 I downloaded and ran `winPEASx64.exe` on the machine, and found this output:
 
-<figure><img src="../../../.gitbook/assets/image (64).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (146).png" alt=""><figcaption></figcaption></figure>
 
 It's pretty trivial to get an administrator shell from this.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

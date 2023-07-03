@@ -18,7 +18,7 @@ We can add the `office.paper` header to our hosts file and enumerate that.
 
 The new domain was some kind of company website.
 
-<figure><img src="../../../.gitbook/assets/image (78) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (78) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 At the very bottom, it says this was **Powered By Wordpress**. When looking at some of the recent posts, we can see this one that highlights there are secret posts.
 

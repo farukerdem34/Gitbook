@@ -121,7 +121,7 @@ Port 80 shows us a dashboard of some sorts:
 
 There were some functions, and the one that stood out was the 'Colleague Finder', which took one name parameter.
 
-<figure><img src="../../../.gitbook/assets/image (72).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (72) (5).png" alt=""><figcaption></figcaption></figure>
 
 If nothing is entered, then all the employees are returned.
 
@@ -373,7 +373,7 @@ a' union select 1,1,1,1,SUSER_SNAME(0x0105000000000005150000001c00d1bcd181f1492b
 ```
 {% endcode %}
 
-<figure><img src="../../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (27) (4).png" alt=""><figcaption></figcaption></figure>
 
 Now, we just need a way to automate this method. I took the two functions used to convert the hex to a valid SID from the user earlier.
 
@@ -390,7 +390,7 @@ a' union select 1,1,1,1,(SUSER_SNAME(SID_BINARY('S-1-5-21-3167813660-1240564177-
 ```
 {% endcode %}
 
-<figure><img src="../../../.gitbook/assets/image (71).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (71) (5).png" alt=""><figcaption></figcaption></figure>
 
 This is the final script I used to automate this method:
 

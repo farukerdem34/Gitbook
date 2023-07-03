@@ -159,7 +159,7 @@ One use case is the listing of shares via remote authentication. If a user `user
 
 There are different types of impersonation levels:
 
-<figure><img src="../.gitbook/assets/image (95).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (95) (1).png" alt=""><figcaption></figcaption></figure>
 
 Creating a security context requires credentials, while hijacking a security context (via stealing tokens) requires privileges.&#x20;
 
@@ -235,7 +235,7 @@ This is done using the `mimikatz.exe sekurlsa::pth` function. This allows us to 
 
 Basically, injecting credentials into the logon session.&#x20;
 
-<figure><img src="../.gitbook/assets/image (93).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (93) (3).png" alt=""><figcaption></figcaption></figure>
 
 A similar thing happens when we use the Overpass The Hash exploit to request for tickets:
 

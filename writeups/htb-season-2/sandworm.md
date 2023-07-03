@@ -114,7 +114,7 @@ uid           [ultimate] test123
 sub   rsa3072 2023-06-20 [E]
 ```
 
-<figure><img src="../../.gitbook/assets/image (123).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (123) (3).png" alt=""><figcaption></figcaption></figure>
 
 A bit more testing revealed that `{{7*'7'}}` works as well:
 

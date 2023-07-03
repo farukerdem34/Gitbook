@@ -204,7 +204,7 @@ Now, we can use this XSS to send us the information from charlie's repos. This c
 
 What this essentially does is this:
 
-<figure><img src="../../../.gitbook/assets/image (95) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (95) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can view the callback:
 

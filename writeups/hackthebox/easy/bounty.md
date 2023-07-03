@@ -20,7 +20,7 @@ This is a pretty old machine AND its running Windows, so there's probably some k
 
 The web application just shows an image of a wizard:
 
-<figure><img src="../../../.gitbook/assets/image (95) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (95) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 A quick check on the requests reveals this is running Microsoft-IIS/7.5.
 

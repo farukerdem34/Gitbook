@@ -59,7 +59,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 When viewing the `login.php` page, we see some Ticketing System is used:
 
-<figure><img src="../../../.gitbook/assets/image (27) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (27) (4) (2).png" alt=""><figcaption></figcaption></figure>
 
 Default credentials don't work here, when examining the HTTP reply we get from trying to login, we see that this is powered by Esigate:
 

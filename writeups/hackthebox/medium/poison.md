@@ -38,7 +38,7 @@ We can check the ports that are open with `netstat -an`.
 
 VNC is open on port 5901, and normally, this requires a password file. Conveniently, we can find a `secret.zip` in the user's directory:
 
-<figure><img src="../../../.gitbook/assets/image (113).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (113) (4).png" alt=""><figcaption></figcaption></figure>
 
 We can transfer this back to our machine via `base64`, and then use `vncviewer` to login to the VNC service after port forwarding it:
 

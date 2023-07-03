@@ -261,11 +261,11 @@ INFO: Done in 00M 33S
 
 We can then upload all of this information to `bloodhound`. Then, we find that `l.livingstone` is part of the Remote Management Group:
 
-<figure><img src="../../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
 
 We can then `evil-winrm` in by passing the hash.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can grab the user flag.
 
@@ -275,7 +275,7 @@ Then, we can grab the user flag.
 
 When viewing the outbound privileges that this user has, we see that they have GenericAll permissions over the DC:
 
-<figure><img src="../../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
 
 This means that the user has full control over the DC and we can basically do whatever we want. We can abuse this to get an administrator shell via RCBD:
 
@@ -298,11 +298,11 @@ Get-DomainComputer resourcedc | Set-DomainObject -Set @{'msds-allowedtoactonbeha
 
 Once we have run these, it should work and we can check `klist` to see that we have the administrator's ticket:
 
-<figure><img src="../../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 However, even with this ticket, it appears we still cannot access the administrator's desktop (and also we still don't have a shell...)
 
-<figure><img src="../../../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
 ### Proper DA Shell
 
@@ -331,6 +331,6 @@ $ export KRB5CCNAME=./Administrator.ccache
 $ sudo impacket-psexec -k -no-pass resourcedc.resourced.local -dc-ip 192.168.219.175
 ```
 
-<figure><img src="../../../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

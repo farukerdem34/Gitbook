@@ -26,7 +26,7 @@ The website offers a service to shrink images.
 
 If we upload an image, we would get back a URL:
 
-<figure><img src="../../.gitbook/assets/image (109).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (110).png" alt=""><figcaption></figcaption></figure>
 
 Interesting! This image is probably being passed somewhere into a command line instance. Anyways, before going that route, I did a directory and subdomain enumeration first using `gobuster` and `wfuzz`.&#x20;
 
@@ -199,7 +199,7 @@ emily|abigchonkyboi123
 
 Then, we can `ssh` as the user `emily`.
 
-<figure><img src="../../.gitbook/assets/image (105).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (106).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -271,6 +271,6 @@ You can now rename and share binwalk_exploit and start your local netcat listene
 
 Afterwards, we can download this file to the `/var/www/pilgrimage.htb/shrunk` folder as anything. If you monitor `pspy64` output, this would cause the `malwarescan.sh` script to be run, and our listener port would have a reverse shell!
 
-<figure><img src="../../.gitbook/assets/image (106).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (111).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

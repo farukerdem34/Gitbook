@@ -52,7 +52,7 @@ There were also other passwords that were found by viewing the DC Recovery PW.
 
 Using the first NTLM hash we found, we can Pass The Hash to gain a shell as the administrator through `pth-winexe`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (2) (1) (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (9) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Hidden Flag
 

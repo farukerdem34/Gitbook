@@ -185,7 +185,7 @@ Loads of enumeration to do. This box was full of rabbit holes to enumerate.
 
 This page was some kind of quiz thing:
 
-<figure><img src="../../../.gitbook/assets/image (117).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (93).png" alt=""><figcaption></figcaption></figure>
 
 I noticed that the `nmap` scan tells me this is a PHP site. I ran a directory scan via `gobuster` and found the `phpinfo.php` file being present:
 
@@ -215,11 +215,11 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 On the `phpinfo.php` page, we can find the `DOCUMENT_ROOT` variable:
 
-<figure><img src="../../../.gitbook/assets/image (52).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (115).png" alt=""><figcaption></figcaption></figure>
 
 There were also no disabled functions, which was great:
 
-<figure><img src="../../../.gitbook/assets/image (62).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (149).png" alt=""><figcaption></figcaption></figure>
 
 We might need some additional information from here later.&#x20;
 
@@ -227,11 +227,11 @@ We might need some additional information from here later.&#x20;
 
 Port 8000 had a BarracudaServer instance:
 
-<figure><img src="../../../.gitbook/assets/image (67).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (151).png" alt=""><figcaption></figcaption></figure>
 
 It appears that we can set the administrator for this machine:
 
-<figure><img src="../../../.gitbook/assets/image (161).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (80).png" alt=""><figcaption></figcaption></figure>
 
 Apart from that, we could not do anything else on this website after running directory scans on it.&#x20;
 
@@ -279,45 +279,45 @@ There wasn't much in this entire directory, as it included loads of random files
 
 This website had a corporate page of some sorts:
 
-<figure><img src="../../../.gitbook/assets/image (54).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (121).png" alt=""><figcaption></figcaption></figure>
 
 There was a login page:
 
-<figure><img src="../../../.gitbook/assets/image (125).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (96).png" alt=""><figcaption></figcaption></figure>
 
 Weak credentials don't work, and we cannot bypass this login using SQL Injection of any sort. The reset password option just leads us to another page:
 
-<figure><img src="../../../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
 
 I attempted to reset the password of the `admin` user, but it seems that it doesn't exist:
 
-<figure><img src="../../../.gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
 
 If were to try with some of the users on the main page, we would trigger a different error:
 
-<figure><img src="../../../.gitbook/assets/image (146).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (136).png" alt=""><figcaption></figcaption></figure>
 
 Here's the part I found incredibly stupid, we actually needed to brute force the users to find the correct 'reminder'. Here's the correct user after trying a load of them:
 
-<figure><img src="../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
 
 Once we reset this, we can login to view the dashboard:
 
-<figure><img src="../../../.gitbook/assets/image (139).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (94).png" alt=""><figcaption></figcaption></figure>
 
 ### SQL Injection --> RCE
 
 Within the "Edit" function, we can see that there's a Request Profile SLUG option at the bottom:
 
-<figure><img src="../../../.gitbook/assets/image (136).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (91).png" alt=""><figcaption></figcaption></figure>
 
 This brings us to another page with a hint that MySQL was being used somehow:
 
-<figure><img src="../../../.gitbook/assets/image (115).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (89).png" alt=""><figcaption></figcaption></figure>
 
 If we enter `'` into the URL field, we get an SQL error:
 
-<figure><img src="../../../.gitbook/assets/image (153).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (135).png" alt=""><figcaption></figcaption></figure>
 
 Interesting. Since we basically have an SQL Interpreter here, we can make it write a webshell in PHP onto the file system. Earlier, we found that the `DOCUMENT_ROOT` of one of the web applications was at `C:\xampp\htdocs`, which we can use.
 
@@ -331,11 +331,11 @@ We can then use this payload to write a webshell:
 
 This would work, and then we can attempt to access this shell on port 45332.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (114).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (92).png" alt=""><figcaption></figcaption></figure>
 
 We can then download `nc64.exe` onto the machine and get a reverse shell:
 
-<figure><img src="../../../.gitbook/assets/image (135).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (97).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -352,7 +352,7 @@ Looking for AutoLogon credentials
 
 We can also find a possible service to exploit:
 
-<figure><img src="../../../.gitbook/assets/image (126).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (88).png" alt=""><figcaption></figcaption></figure>
 
 It appears that can modify `bd.exe`:
 
@@ -390,6 +390,6 @@ C:\bd>shutdown -r
 
 After a while, we should get a reverse shell once the machine starts up again as the SYSTEM user:
 
-<figure><img src="../../../.gitbook/assets/image (120).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (85).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

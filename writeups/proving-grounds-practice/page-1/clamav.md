@@ -71,6 +71,6 @@ Attacking 192.168.175.42...
 
 This exploit would spawn a `root` shell on port 31337 which we can connect to:
 
-<figure><img src="../../../.gitbook/assets/image (97).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (71).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

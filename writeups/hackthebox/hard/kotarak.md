@@ -75,7 +75,7 @@ When viewing the `/home` directory, we can find another user present.
 
 The `tomcat` user also had some interesting files within their directory.
 
-<figure><img src="../../../.gitbook/assets/image (93) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (93) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 The name of the file was a giveaway that this contained NTLM hashes from a memory dump of a Windows machine. As such, we can transfer this back to our machine and dump the credentials using `secretsdump.py`.
 
