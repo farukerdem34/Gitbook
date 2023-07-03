@@ -117,7 +117,7 @@ SMB does not allow us to access anything without credentials for this machine.&#
 
 Port 80 shows us a dashboard of some sorts:
 
-<figure><img src="../../../.gitbook/assets/image (73).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (73) (5).png" alt=""><figcaption></figcaption></figure>
 
 There were some functions, and the one that stood out was the 'Colleague Finder', which took one name parameter.
 
@@ -125,7 +125,7 @@ There were some functions, and the one that stood out was the 'Colleague Finder'
 
 If nothing is entered, then all the employees are returned.
 
-<figure><img src="../../../.gitbook/assets/image (70).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (70) (5).png" alt=""><figcaption></figcaption></figure>
 
 We can take note of these usernames for later. More importantly, we should see how this thing processes queries. When viewed in Burpsuite, the request simply sent a POST request to `/api/getColleagues` and it returns a response.
 
@@ -135,7 +135,7 @@ This looks vulnerable to SQL Injection somehow. Every form of injection I tried 
 
 UTF-8 characters are a bit special as they are denoted like `\u12` or something. If I try to use `\u12` as the input, I get an error instead of being blocked.
 
-<figure><img src="../../../.gitbook/assets/image (115).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (115) (4).png" alt=""><figcaption></figcaption></figure>
 
 This likely indicates that our query has caused a backend error. Using this, we can try some of the `sqlmap` tampers that are available:
 
@@ -351,7 +351,7 @@ I used this site to encode it into a suitable UTF-8 format:
 
 Testing it worked!
 
-<figure><img src="../../../.gitbook/assets/image (128).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (128) (3).png" alt=""><figcaption></figcaption></figure>
 
 We can then try to enumerate the Administrator user using this payload:
 
@@ -363,7 +363,7 @@ a' union select 1,1,1,1,(select sys.fn_varbintohexstr(SUSER_SID('megacorp\Admini
 
 This would result in some hex being returned:
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can use this to send another query that would return usernames and convert the SID for us.&#x20;
 
@@ -997,7 +997,7 @@ Use the "--show" option to display all of the cracked passwords reliably
 Session completed.
 ```
 
-<figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Server Operators --> Root
 
@@ -1112,6 +1112,6 @@ The first service I noticed were `browser` and `bowser`. I just thought the latt
 *Evil-WinRM* PS C:\Windows\Tasks> sc.exe start browser
 ```
 
-<figure><img src="../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (2).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!&#x20;

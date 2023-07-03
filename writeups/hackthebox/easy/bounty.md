@@ -24,7 +24,7 @@ The web application just shows an image of a wizard:
 
 A quick check on the requests reveals this is running Microsoft-IIS/7.5.
 
-<figure><img src="../../../.gitbook/assets/image (79) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (79) (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can run a quick `gobuster` scan with `aspx,html,txt` extensions, and find a few files.
 

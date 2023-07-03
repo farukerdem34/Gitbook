@@ -4,7 +4,7 @@
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (18) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (1) (2) (4).png" alt=""><figcaption></figcaption></figure>
 
 Interesting ports that are open here. Running a detailed scan would provide clearer resolution on what's running on the machine.
 

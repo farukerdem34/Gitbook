@@ -340,6 +340,6 @@ To prevent such attacks, we can do a few things:
 * Protected Users Group --> Users part of this group would cause the KDC to not set the STs given to be FORWADABLE or PROXIFIABLE.
 * Flag account as **sensitive** --> This bit would cause TGTs and STs obtained by this account to not be forwadable or proxifiable even when requested.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (79).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (79) (3).png" alt=""><figcaption></figcaption></figure>
 
 Either one of these would totally prevent S4U2Self and S4U2Proxy from working entirely. These methods **cannot prevent all forms of abuse**. If you stash your credentials in plaintext on your desktop and it is compromised, then that's on you. No amount of delegation can prevent that!

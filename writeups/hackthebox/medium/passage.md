@@ -20,7 +20,7 @@ Checking the page source, we find that this is running CuteNews, which had a few
 
 With this, we can easily gain a reverse shell:
 
-<figure><img src="../../../.gitbook/assets/image (135).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (135) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

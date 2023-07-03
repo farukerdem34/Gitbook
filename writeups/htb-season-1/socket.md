@@ -229,6 +229,6 @@ So this script checks for a `.spec` file extension, and takes an `$action` argum
 
 As such, the exploit is simple.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1) (9).png" alt=""><figcaption></figcaption></figure>
 
 Pretty straightforward machine. The hard part was the SQL injection.&#x20;

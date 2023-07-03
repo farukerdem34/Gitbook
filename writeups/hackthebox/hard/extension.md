@@ -184,7 +184,7 @@ Looking at the repo collaborators, we can see that the user charlie is indeed a 
 
 From here, we can think about how to implement an XSS attack. Looking at inject.js, we can see that it makes a request to a certain url and checks for the issues. When adding to the issues, we can see that a payload `test<test><img SRC="http://10.10.x.x./test.txt">` works, meaning it bypasses the inject.js checks. After a while, the issue is closed, and I assume the user Charlie is the one closing them.
 
-<figure><img src="../../../.gitbook/assets/image (144) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (144) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 So someone is indeed checking the issues, and we can exploit this fact. So now we need to somehow make charlie request for our page, and observation of Burp reqeusts implies we need to steal the CSRF token to access his hidden repositories.
 

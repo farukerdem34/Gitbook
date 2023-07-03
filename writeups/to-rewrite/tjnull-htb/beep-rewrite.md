@@ -35,7 +35,7 @@ Lots of ports open. We can start with the HTTP ports.
 
 Port 443 has an Elastix instance:
 
-<figure><img src="../../../.gitbook/assets/image (160).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (160) (5).png" alt=""><figcaption></figcaption></figure>
 
 Elastix has a ton of exploits:
 

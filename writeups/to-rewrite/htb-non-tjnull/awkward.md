@@ -26,7 +26,7 @@ This was a page dedicated to hats:
 
 On the page, there is mention of another site for the Store:
 
-<figure><img src="../../../.gitbook/assets/image (26) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (26) (1) (6).png" alt=""><figcaption></figcaption></figure>
 
 There are also some users on the page, and we can note their names:
 

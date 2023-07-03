@@ -18,7 +18,7 @@ PORT   STATE SERVICE
 
 Port 80 hosts the default Apache2 page:
 
-<figure><img src="../../../.gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (96).png" alt=""><figcaption></figcaption></figure>
 
 I ran a `gobuster` scan and found a few directories:
 
@@ -44,7 +44,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 The `/svn` directory requires credentials:
 
-<figure><img src="../../../.gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (101).png" alt=""><figcaption></figcaption></figure>
 
 Using `admin:admin` doesn't work for this. When we view the traffic in Burpsuite, we can see that the `Authorization` header is added and it uses the Basic Base64 method of authenticating users.&#x20;
 
@@ -67,7 +67,7 @@ ID           Response   Lines    Word       Chars       Payload
 
 This directory just contains some interesting files:
 
-<figure><img src="../../../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (86).png" alt=""><figcaption></figcaption></figure>
 
 ### Source Code Review --> RCE Point
 
@@ -103,7 +103,7 @@ This bit of code does not validate the name of the file that is being deleted. I
 
 However, when trying to exploit this thing, the `internal` website does not seem to be working with all the links being broken.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (84).png" alt=""><figcaption></figcaption></figure>
 
 This made me think more about WHERE exactly this site is being hosted.
 
@@ -154,33 +154,33 @@ There's a hidden domain here! We can add that to our `/etc/hosts` file and enume
 
 The website led us to this login page:
 
-<figure><img src="../../../.gitbook/assets/image (54).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (92).png" alt=""><figcaption></figcaption></figure>
 
 Remember that we have the source code of this website, so we can find all the endpoints at the `views.py` file we saw earlier. The `/register` directory lets us register a new user.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (82).png" alt=""><figcaption></figcaption></figure>
 
 We can then login to the site! For some reason it's not loading the visual elements right on my machine...
 
-<figure><img src="../../../.gitbook/assets/image (56).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (89).png" alt=""><figcaption></figcaption></figure>
 
 There are a few functions in this site. We know that the 'Submission' one is vulnerable, but we need some kind of administrator account first. So we can view the 'MyAccount' function:
 
-<figure><img src="../../../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (76).png" alt=""><figcaption></figcaption></figure>
 
 When the traffic is intercepted, it includes a `username` parameter:
 
-<figure><img src="../../../.gitbook/assets/image (47).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (83).png" alt=""><figcaption></figcaption></figure>
 
 Maybe we can change the username to something else, so I changed it to `admin` and found that I could login as the `admin` user!
 
-<figure><img src="../../../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (94).png" alt=""><figcaption></figcaption></figure>
 
 ### LFI Firewall Rules --> Shell
 
 The administrator had a few things different, such as the 'Submissions' function being replaced with a submission reviewer:
 
-<figure><img src="../../../.gitbook/assets/image (52).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (100).png" alt=""><figcaption></figcaption></figure>
 
 When we choose a report and view it, it sends this HTTP POST request:
 
@@ -208,13 +208,13 @@ csrfmiddlewaretoken=hZhbo5cgeCuFoeIhJqK2b9S7Xn2rD2CHrWVJrz3hMYJZ0gPT46o7nzUd5M7X
 
 This looks vulnerable to LFI, and testing it reveals that it works!
 
-<figure><img src="../../../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (160).png" alt=""><figcaption></figcaption></figure>
 
 Earlier, the repository comments mentioned something about a UFW firewall. A quick google search on its files reveal that the rules are stored at `/etc/ufw/user.rules`, which can be read using the LFI:
 
 &#x20;
 
-<figure><img src="../../../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (162).png" alt=""><figcaption></figcaption></figure>
 
 Here are the rules:
 
@@ -262,7 +262,7 @@ csrfmiddlewaretoken=lUZv7MQQ8VaNbnkvd8DgAbLB0WIT1V3CvRD3agHRGhp7Npr7yOhlMBNH8lNp
 
 This wold give us a shell as `www-data`:
 
-<figure><img src="../../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (88).png" alt=""><figcaption></figcaption></figure>
 
 The user flag is within the `/var/www` directory.&#x20;
 
@@ -317,12 +317,12 @@ ssh_login
 
 There are some hashes present, and all 3 are crackable:
 
-<figure><img src="../../../.gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (85).png" alt=""><figcaption></figcaption></figure>
 
 The last password was for the user `root`, and we can try an `su`, which ends up working:
 
 &#x20;
 
-<figure><img src="../../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (151).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

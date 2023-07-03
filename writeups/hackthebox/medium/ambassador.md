@@ -21,7 +21,7 @@ PORT     STATE SERVICE
 
 The only interesting thing here is the mentioning of the user `developer`:
 
-<figure><img src="../../../.gitbook/assets/image (136).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (136) (2).png" alt=""><figcaption></figcaption></figure>
 
 Other than that, there was not much here.
 

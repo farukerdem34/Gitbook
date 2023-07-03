@@ -120,7 +120,7 @@ Then, we would need to set up a FTP server on our machine with these files using
 
 Then, we can attempt to test run the exploit and see that it returns a `socket.error`.
 
-<figure><img src="../../../.gitbook/assets/image (103) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (103) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Permission denied was an interesting error to get, as the script doesn't do anything out of the ordinary. Perhaps I was being blocked as I needed to access port 21, which typically requires superuser permissions.
 

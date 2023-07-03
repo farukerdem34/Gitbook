@@ -103,6 +103,7 @@
 * [HTB Season 2](writeups/htb-season-2/README.md)
   * [Sandworm](writeups/htb-season-2/sandworm.md)
   * [Pilgrimage](writeups/htb-season-2/pilgrimage.md)
+  * [Intentions](writeups/htb-season-2/intentions.md)
 * [HTB Season 1](writeups/htb-season-1/README.md)
   * [Inject](writeups/htb-season-1/inject.md)
   * [Agile](writeups/htb-season-1/agile.md)

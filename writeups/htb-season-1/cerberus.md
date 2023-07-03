@@ -316,7 +316,7 @@ drwxr-xr-x 10 root root    4096 Jan 22 18:12 ..
 
 When `strings` is used to view the `cache_cerberus.local.ldb` file, we can find a hashed password for `matthew`.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (2) (4).png" alt=""><figcaption></figcaption></figure>
 
 This hash can be cracked instantly:
 

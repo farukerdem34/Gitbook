@@ -147,7 +147,7 @@ Once generated, replace the `pattern` parameter in `exploit.py`. Then, run the s
 
 Then, we can use `pattern_offset.rb`, which is located in the same folder to find the exact offset that we need.
 
-<figure><img src="../.gitbook/assets/image (94) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (94) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Finding Bad Characters
 

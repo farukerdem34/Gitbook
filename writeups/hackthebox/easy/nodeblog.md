@@ -82,7 +82,7 @@ Then we can save this into a file and upload it. The output would be printed in 
 
 Earlier while testing my NoSQL injections, I did run across an error like this:
 
-<figure><img src="../../../.gitbook/assets/image (16) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 So the source code files are in `/opt/blog`. A bit more testing revealed the main file to be `server.js`.
 

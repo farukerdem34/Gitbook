@@ -305,7 +305,7 @@ We can fill it in to have our credentials and required details. It appears that 
 
 <figure><img src="../../.gitbook/assets/image (9) (6) (3).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (16) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (16) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Anyways, after filling in the fields and clicking submit, we get this weird thing on a listener port:
 

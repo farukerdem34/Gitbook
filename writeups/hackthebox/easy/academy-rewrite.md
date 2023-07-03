@@ -101,7 +101,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 Because of the changed `roleid` parameter earlier, we can access the `admin.php` page:
 
-<figure><img src="../../../.gitbook/assets/image (144).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (144) (1).png" alt=""><figcaption></figcaption></figure>
 
 There was another subdomain present on the site.
 

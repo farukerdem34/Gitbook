@@ -27,7 +27,7 @@ There was a link towards a new portal hosted on `portal.quick.htb`. However, it 
 
 There are also some testimonials from users:
 
-<figure><img src="../../../.gitbook/assets/image (18) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 We also can note that this is a PHP website as the page above is at `clients.php`. A quick directory search revealed the following:
 
@@ -391,7 +391,7 @@ This does the same thing as `index.php`, and it compares each hash to the correc
 
 We can add printers and customise them to connect to other IP addresses:
 
-<figure><img src="../../../.gitbook/assets/image (14) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (2) (4).png" alt=""><figcaption></figcaption></figure>
 
 We can also make them run jobs. We obviously need to add a printer pointing to our IP address, but what do we do with it? Let's analyse the `job.php` file to find out more:
 

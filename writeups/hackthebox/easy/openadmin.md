@@ -80,7 +80,7 @@ When checking `sudo` privileges, `joanna` can run `nano` as `root`:
 
 Based on GTFOBins, we can simply run the following commands to gain a shell:
 
-<figure><img src="../../../.gitbook/assets/image (94).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (94) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (134).png" alt=""><figcaption></figcaption></figure>
 

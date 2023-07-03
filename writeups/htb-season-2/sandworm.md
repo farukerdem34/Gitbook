@@ -23,7 +23,7 @@ We have to add `ssa.htb` to our `/etc/hosts` file to visit the HTTPS site.&#x20;
 
 The website promotes an agency for spies:
 
-<figure><img src="../../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (26) (1).png" alt=""><figcaption></figcaption></figure>
 
 The contact page allows us to send messages that are encrypted with a key:
 
@@ -31,17 +31,17 @@ The contact page allows us to send messages that are encrypted with a key:
 
 If we check out their guide. we would find that the website allows us to view encrypt and decrypt messages using our own key:
 
-<figure><img src="../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (18) (1).png" alt=""><figcaption></figcaption></figure>
 
 At the bottom of the page, we can also see some indication of a user:
 
-<figure><img src="../../.gitbook/assets/image (121).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (121) (3).png" alt=""><figcaption></figcaption></figure>
 
 So we can import our own keys into the system, and encrypt our own messages. I don't think these messages are being used in any way or sent anywhere, so the decrypting and encrypting messages part is not that interesting.
 
 The most interesting is the function verifying keys using a public key and signed text:
 
-<figure><img src="../../.gitbook/assets/image (118).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (118) (4).png" alt=""><figcaption></figcaption></figure>
 
 Since there is a user associated with the GPG key, we can try to generate one with a different UID:
 
@@ -74,7 +74,7 @@ Afterwards, we can take both texts and use the website to verify our signature:
 
 When we click "Verify", it would show that it worked:
 
-<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (10) (2).png" alt=""><figcaption></figcaption></figure>
 
 This website also seems to print out the username `test123` that I have supplied. This parameter might be unsanitised, and vulnerable to OS command injection or something. We can use the `--edit-key` flag to edit the UID we have specified in the key:
 
@@ -126,7 +126,7 @@ I tested both Twig and Jinja2 payloads, and got RCE using this payload:
 {{ self.__init__.__globals__.__builtins__.__import__('os').popen('id').read() }}
 ```
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 I tried to execute this, but it didn't work:
 
@@ -194,7 +194,7 @@ cat admin.json
 
 With this, we can `ssh` into the next user and grab the user flag:
 
-<figure><img src="../../.gitbook/assets/image (69).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (69) (5).png" alt=""><figcaption></figcaption></figure>
 
 ### Tipnet + Cargo
 
@@ -289,6 +289,6 @@ You can now run 'firejail --join=10543' in another terminal to obtain a shell wh
 
 Then in another shell:
 
-<figure><img src="../../.gitbook/assets/image (103).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (103) (1).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!&#x20;
