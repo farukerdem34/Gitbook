@@ -20,7 +20,7 @@ Only one port is open.
 
 The port was a Squid Proxy instance. When visited in a browser, this is all we see:
 
-<figure><img src="../../../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (45) (1).png" alt=""><figcaption></figcaption></figure>
 
 Since this is a proxy service, it might be the gateway that we need to access the services running on the machine itself. To scan the machine, we can include this line in our `/etc/proxychains4.conf` file:
 
@@ -30,7 +30,7 @@ socks5 192.168.233.189 3128
 
 Afterwards, we can use `proxychains` to scan the machine again to find more ports that are open,  but this takes far too long. Instead, we can use FoxyProxy to attempt to view some interesting ports. I tried with a few ports like 80, 443 and 8080 for websites, and found a service on port 8080.
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
 ### Default Creds --> SQL RCE
 

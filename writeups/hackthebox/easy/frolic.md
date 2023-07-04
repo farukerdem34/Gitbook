@@ -92,7 +92,7 @@ This is the Brainfuck cipher, which can be decoded to find `idkwhatispass`.
 
 Now, we had another credential to try. I attempted logins using `admin:idkwhatispass` and logged in to the playSMS service yet again.
 
-<figure><img src="../../../.gitbook/assets/image (98) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (98) (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 playSMS had a few RCE exploits, so I grabbed one from Github and tried it.
 

@@ -220,7 +220,7 @@ Random strings that looks looks like some kind of C2 Server stuff becuase I saw 
 
 It also references `.onion`, and the article did say that both Windows and Linux versions downloads the TOR client. I checked the output of `strings`, and sure enough, I saw this part here:
 
-<figure><img src="../../.gitbook/assets/image (123) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (123) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 Definitely looks like a beacon or something. There's also some kind of Go binary being executed / downloaded on the system:
 

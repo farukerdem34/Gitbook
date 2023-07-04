@@ -56,7 +56,7 @@ There were a couple of directories to look at. The first was this `test.php` fil
 
 Here, we can find the PHP version that is running on the server.
 
-<figure><img src="../../../.gitbook/assets/image (44) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (44) (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 PHP version 5.2.10 is insecure by today's standards, however without access to the `cgi-bin`, we cannot exploit this.&#x20;
 

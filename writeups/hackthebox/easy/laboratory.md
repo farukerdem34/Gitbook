@@ -52,7 +52,7 @@ When trying to create a user, it appears we have to have a specific email domain
 
 Using `laboratory.htb` works as the email domain, then we can view the dashbaord:
 
-<figure><img src="../../../.gitbook/assets/image (113).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (113) (5).png" alt=""><figcaption></figcaption></figure>
 
 Interestingly, this was running GitLab 12.8.1, which is an outdated version of the software.
 
@@ -185,7 +185,7 @@ Enqueued ActionMailer::DeliveryJob (Job ID: b987cd5d-e2e4-4558-a5ed-31339c1046f4
 
 Afterwards, we can sign in as `dexter` and view his projects:
 
-<figure><img src="../../../.gitbook/assets/image (123).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (123) (2).png" alt=""><figcaption></figcaption></figure>
 
 'Some personal stuff' in the SecureDocker project. Turns out that refers to his private SSH key that was left on the project!
 

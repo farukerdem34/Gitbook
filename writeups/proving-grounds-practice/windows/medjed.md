@@ -219,7 +219,7 @@ On the `phpinfo.php` page, we can find the `DOCUMENT_ROOT` variable:
 
 There were also no disabled functions, which was great:
 
-<figure><img src="../../../.gitbook/assets/image (149).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (149) (6).png" alt=""><figcaption></figcaption></figure>
 
 We might need some additional information from here later.&#x20;
 
@@ -287,11 +287,11 @@ There was a login page:
 
 Weak credentials don't work, and we cannot bypass this login using SQL Injection of any sort. The reset password option just leads us to another page:
 
-<figure><img src="../../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (14).png" alt=""><figcaption></figcaption></figure>
 
 I attempted to reset the password of the `admin` user, but it seems that it doesn't exist:
 
-<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (2).png" alt=""><figcaption></figcaption></figure>
 
 If were to try with some of the users on the main page, we would trigger a different error:
 

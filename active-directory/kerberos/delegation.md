@@ -78,7 +78,7 @@ This is the first type of delegation introduced in Windows 2000. When configured
 
 The service can act on behalf of the client in the network **simply by using its TGT**. This feature requires the `SeEnableDelegation` privilege to be enabled. We can configure this like so:
 
-<figure><img src="../../.gitbook/assets/image (14) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (14) (4) (3).png" alt=""><figcaption></figcaption></figure>
 
 With this setting enabled, all we need are credentials for the user. Now suppose that we are on `WEB` machine and want to access the files on the `DB` machine, and we can do so using a web login form. This is how the requests are formed:
 

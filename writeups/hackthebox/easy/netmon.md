@@ -8,7 +8,7 @@ description: Instant Root!
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (47) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (47) (2) (3).png" alt=""><figcaption></figcaption></figure>
 
 ## FTP Anonymous Login
 

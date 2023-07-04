@@ -33,7 +33,7 @@ This seems to be a 'secure' way to run NodeJS code within the browser. This prog
 
 I viewed the traffic in Burpsuite, and when we press the 'submit' button for the default code generated, it produces this:
 
-<figure><img src="../../../.gitbook/assets/image (122).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (122) (6).png" alt=""><figcaption></figcaption></figure>
 
 The `sig` part is obviously the signature being used, and the `code` part is our Javascript code in `base64`. This looks to be a cryptography based challenge, and let's gather the facts we know:
 

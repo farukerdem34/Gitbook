@@ -45,7 +45,7 @@ Nothing much there.
 
 Port 8081 was hosting an `rConfig` instance:
 
-<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (11).png" alt=""><figcaption></figcaption></figure>
 
 This version was vulnerable to a few exploits:
 

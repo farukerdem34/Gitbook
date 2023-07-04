@@ -8,7 +8,7 @@ description: Straightforward and really simple machine.
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (129) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (129) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 When checking the FTP server, we can determine that anonymous credentials work.
 

@@ -83,7 +83,7 @@ url=http%3A%2F%2F127.0.0.1%3A8080
 
 This looks vulnerable to a SSRF, and we can confirm it is.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (13).png" alt=""><figcaption></figcaption></figure>
 
 Also, it tells us that the backend server is running PHPFusion. There are a few exploits available for PHPFusion:
 

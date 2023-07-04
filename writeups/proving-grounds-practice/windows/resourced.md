@@ -275,7 +275,7 @@ Then, we can grab the user flag.
 
 When viewing the outbound privileges that this user has, we see that they have GenericAll permissions over the DC:
 
-<figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (10).png" alt=""><figcaption></figcaption></figure>
 
 This means that the user has full control over the DC and we can basically do whatever we want. We can abuse this to get an administrator shell via RCBD:
 
@@ -302,7 +302,7 @@ Once we have run these, it should work and we can check `klist` to see that we h
 
 However, even with this ticket, it appears we still cannot access the administrator's desktop (and also we still don't have a shell...)
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (14).png" alt=""><figcaption></figcaption></figure>
 
 ### Proper DA Shell
 

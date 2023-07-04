@@ -20,7 +20,7 @@ We have to add `icinga.cerberus.local` to our `/etc/hosts` file in order to acce
 
 Visiting port 8080 reveals this login page:
 
-<figure><img src="../../.gitbook/assets/image (11) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (11) (2) (7).png" alt=""><figcaption></figcaption></figure>
 
 A bit of research reveals that Icinga is a network monitoring tool. Default credentials don't work, so we can head straight into a directory scan.
 

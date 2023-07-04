@@ -4,7 +4,7 @@
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (153) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (153) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Doing a detailed scan reveals that port 80 is running Drupal 7.
 
