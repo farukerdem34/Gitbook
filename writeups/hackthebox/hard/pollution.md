@@ -167,7 +167,7 @@ This time, we need to find credentials elsewhere. That `redis` instance is likel
 
 I tried checking for `config.php` files but was unable to find any. I knew that we had to go 'up' one directory because the current directory contained nothing, Some googling about Redis led me to the `bootstrp.php` file, which worked. It was located at `../bootstrp.php`.
 
-<figure><img src="../../../.gitbook/assets/image (12) (1) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (1) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Redis
 

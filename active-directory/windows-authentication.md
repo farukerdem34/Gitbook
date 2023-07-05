@@ -118,7 +118,7 @@ For example, a non-interactive session can grant us access to the file system of
 
 After a user successfully authenticates, a new **logon session** is created regardless of what type of authentication is used. The cached credentials in the AP are tied to logon sessions. Logon sessions are not limited to the 2 types listed above:
 
-<figure><img src="../.gitbook/assets/image (13) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (13) (5) (4).png" alt=""><figcaption></figcaption></figure>
 
 We can verify a logon session with `Get-LogonSession` from Powerview.
 

@@ -195,7 +195,7 @@ $ curl http://forge.htb/uploads/EvkwW5i3ganDEIzW2doi
 
 We can grab the `id_rsa` flag through this and SSH in as `user`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (11) (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (10) (1).png" alt=""><figcaption></figcaption></figure>
 
 Grab the user flag.&#x20;
 

@@ -272,7 +272,7 @@ Right, so we need to somehow make use of this to import the os library. I could 
 
 Ther ehas to be a way to load the module I want. Eventually, after a few hours of tinkering with this (and by hours I mean like literally 2 days), I got it to work!
 
-<figure><img src="../../../.gitbook/assets/image (21) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (21) (1) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can then get RCE as jack\_adm.
 

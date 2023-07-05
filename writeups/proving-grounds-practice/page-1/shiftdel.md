@@ -256,4 +256,4 @@ chmod +x rm
 
 Then, set up a listener port and wait for a few minutes. Eventually, we'll get a `root` shell:
 
-<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (4).png" alt=""><figcaption></figcaption></figure>

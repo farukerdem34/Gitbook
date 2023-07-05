@@ -54,7 +54,7 @@ Port 80 just shows us a login for HackTheBox:
 
 When the traffic is viewed in Burpsuite, we can see a lot of different JS files being loaded as well:
 
-<figure><img src="../../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (27) (6).png" alt=""><figcaption></figcaption></figure>
 
 The POST request to `/api/token` was my first login attempt:
 

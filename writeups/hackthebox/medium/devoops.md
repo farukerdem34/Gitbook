@@ -26,7 +26,7 @@ XML Injection is pretty helpful, and i noticed that when we upload a file using 
 
 However, trying to send any XML files that I created results in a Internal Server Error message being returned. Turns out, there are specific elements that we need to use for this endpoint:
 
-<figure><img src="../../../.gitbook/assets/image (27) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (27) (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 With these, we can wrap them in another tag and start getting successful uploads through.
 

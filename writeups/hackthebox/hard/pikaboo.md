@@ -167,7 +167,7 @@ Great, we now have RCE. We just need to include a `bash` reverse shell one-liner
 
 After viewing the page again, we would get a shell as `www-data`.
 
-<figure><img src="../../../.gitbook/assets/image (5) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can grab the user flag.
 

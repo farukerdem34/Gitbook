@@ -43,7 +43,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 There's an administration directory present, and when viewed it just shows a login page:
 
-<figure><img src="../../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (24) (3).png" alt=""><figcaption></figcaption></figure>
 
 I tried default and weak credentials, but they don't work. When the traffic is viewed in Burp, we can see that there are some tokens being passed around:
 
@@ -51,7 +51,7 @@ I tried default and weak credentials, but they don't work. When the traffic is v
 
 The `auth_status` cookie is just a `base64` encoded string of `{'success':'false'}`. Afterwards, the `auth_status` cookie is appended to every subsequent login attempt. We can easily replace this with `true` and be granted access to the admin dashboard:
 
-<figure><img src="../../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (25) (9).png" alt=""><figcaption></figcaption></figure>
 
 ### SSRF --> RCE
 

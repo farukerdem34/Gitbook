@@ -78,7 +78,7 @@ We can login with `admin:secret` and view the dashboard:
 
 This is running RaspAP, which is a wireless router software. We can find the version by heading to 'About RaspAP':
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (10).png" alt=""><figcaption></figcaption></figure>
 
 There are RCE exploits for this:
 
@@ -97,7 +97,7 @@ However, we don't actually need any exploits because within the 'System' tab, th
 
 A reverse shell is trivial:
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (15).png" alt=""><figcaption></figcaption></figure>
 
 Grab the user flag from the home directory of `walter`.
 
@@ -150,4 +150,4 @@ os.system("chmod u+s /bin/bash")
 
 Then, we can attempt to run the `wifi_reset.py` script and easily get a `root` shell:
 
-<figure><img src="../../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (1).png" alt=""><figcaption></figcaption></figure>

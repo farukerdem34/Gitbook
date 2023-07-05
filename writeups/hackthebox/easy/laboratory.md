@@ -193,7 +193,7 @@ Afterwards, we can sign in as `dexter` and view his projects:
 
 Using this, we can `ssh` in as the user and grab the user flag:
 
-<figure><img src="../../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (22) (10).png" alt=""><figcaption></figcaption></figure>
 
 ### Ghidra --> SUID Exploit
 

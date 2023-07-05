@@ -285,7 +285,7 @@ http://mm.snoopy.htb/reset_password_complete?token=b4akcwn9adntaawingkbho8ctcyzf
 
 Afterwards, we can reset the password and see that it works here:
 
-<figure><img src="../../.gitbook/assets/image (17) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (17) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then we can login.
 

