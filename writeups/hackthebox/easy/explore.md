@@ -152,7 +152,7 @@ The other ports weren't returning anything interesting. When we visit port 59777
 
 A quick Google search reveals that this is running EFS File Explorer, and also some CVEs:
 
-<figure><img src="../../../.gitbook/assets/image (120).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (120) (4).png" alt=""><figcaption></figcaption></figure>
 
 I used the `poc.py` from this repo to send requests to the port and list the files present:
 
