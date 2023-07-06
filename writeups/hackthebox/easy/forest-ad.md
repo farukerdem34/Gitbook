@@ -32,7 +32,7 @@ Afterwards, we can `evil-winrm` in as this user.
 
 I ran SharpHound on the machine to do collection and enumeration of the domain for me. After loading up Bloodhound and uploading the data, this is what we find:
 
-<figure><img src="../../../.gitbook/assets/image (12) (1) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (1) (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 The user we have control over seems to have GenericAll permissions over the Exchange Windows Permissions group, which has WriteDacl permissions over the DC.&#x20;
 

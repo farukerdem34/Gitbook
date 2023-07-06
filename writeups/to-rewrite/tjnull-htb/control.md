@@ -54,7 +54,7 @@ Afterwards, gaining a reverse shell is trivial:
 
 Within the machine, we can find the other users that were present:
 
-<figure><img src="../../../.gitbook/assets/image (27) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (27) (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 So we are looking for credentials for Hector. Understanding that there was a MariaDB instance running on the machine, I checked the files that were related to that first.&#x20;
 

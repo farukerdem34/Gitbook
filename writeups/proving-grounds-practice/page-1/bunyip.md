@@ -308,7 +308,7 @@ $ python3 hash.py
 {"result":{}}
 ```
 
-<figure><img src="../../../.gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (41) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

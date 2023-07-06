@@ -38,7 +38,7 @@ Then we would get a shell:
 
 There was another user named `pwn` on the machine, so that's probably the next path. Within the home directory of `pwn`, we can see two other files:
 
-<figure><img src="../../../.gitbook/assets/image (40) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (40) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 The `bash` script was running some kind of logger that reads input from `/home/kid/logs/hackers` and executes commands based on it. Take note that we have control over this file.
 

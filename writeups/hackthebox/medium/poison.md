@@ -18,7 +18,7 @@ On the website itself, it was a simple application to read files:
 
 This was hosted at `http://<IP>/browse.php/?file=<FILENAME>`, which had an obvious LFI. We can use this to read `listfiles.php`, which was present on the machine.
 
-<figure><img src="../../../.gitbook/assets/image (16) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (2) (4).png" alt=""><figcaption></figcaption></figure>
 
 There was a `pwdbackup.txt` file, and when read it shows a password that has been encoded 13 times with base64:
 

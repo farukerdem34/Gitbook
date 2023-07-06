@@ -65,4 +65,4 @@ msiexec /quiet /qn /i C:\directory\to\rev.msi
 
 Afterwards, we would get a shell as the administrator:
 
-<figure><img src="../../../.gitbook/assets/image (17) (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (7) (2).png" alt=""><figcaption></figcaption></figure>

@@ -31,7 +31,7 @@ The contact page allows us to send messages that are encrypted with a key:
 
 If we check out their guide. we would find that the website allows us to view encrypt and decrypt messages using our own key:
 
-<figure><img src="../../.gitbook/assets/image (18) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (18) (1) (5).png" alt=""><figcaption></figcaption></figure>
 
 At the bottom of the page, we can also see some indication of a user:
 

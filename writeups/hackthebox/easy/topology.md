@@ -88,7 +88,7 @@ If we use `\\lstinputlisting{/var/www/dev/.htpasswd}` instead, we see that it pr
 
 So by using `$\lstinputlisting{/var/www/dev/.htpasswd}$`, it would be processed as an expression (similar to `$()` in bash) and loads the hash:
 
-<figure><img src="../../../.gitbook/assets/image (2) (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (12) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can crack the hash easily with `john`:
 

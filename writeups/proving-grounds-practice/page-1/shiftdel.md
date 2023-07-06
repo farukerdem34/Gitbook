@@ -77,7 +77,7 @@ http://192.168.197.174/?static=1&order=asc
 
 The web page then reveals some credentials:
 
-<figure><img src="../../../.gitbook/assets/image (47).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (47) (1).png" alt=""><figcaption></figcaption></figure>
 
 We seem to be an intern at Shiftdel, and it coincides with `wpscan` returning `intern` as a valid user:
 

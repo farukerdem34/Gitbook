@@ -20,7 +20,7 @@ This kind of attack mainly leads to RCE or DoS conditions on a website, which ar
 
 The HTB machine, Time, has a deserialization in Java making use of CVE-2021-12384. The machine has a website that basically takes in JSON input and beautifies it.
 
-<figure><img src="../.gitbook/assets/image (11) (4) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (11) (4) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can enter some random JSON objects and it would output it as you would expect. If we enter some weird input, an error like this would appear:
 

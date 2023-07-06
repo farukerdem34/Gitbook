@@ -57,7 +57,7 @@ The `auth_status` cookie is just a `base64` encoded string of `{'success':'false
 
 Within the website, there isn't much functionality, but there is a 'Check Server Status' function:
 
-<figure><img src="../../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (8).png" alt=""><figcaption></figcaption></figure>
 
 Here's the HTTP request sent:
 

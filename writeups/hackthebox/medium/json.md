@@ -50,7 +50,7 @@ ftp: Login failed
 
 Port 80 just shows us a login for HackTheBox:
 
-<figure><img src="../../../.gitbook/assets/image (99).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (99) (5).png" alt=""><figcaption></figcaption></figure>
 
 When the traffic is viewed in Burpsuite, we can see a lot of different JS files being loaded as well:
 
@@ -64,7 +64,7 @@ I noticed that in the requests proxied, there wasn't any request to `/`. When I 
 
 One of them was particularly interesting:
 
-<figure><img src="../../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (33) (9).png" alt=""><figcaption></figcaption></figure>
 
 The `app.min.js` file was obfuscated JS code. We can deobfuscate it here:
 

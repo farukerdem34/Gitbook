@@ -18,7 +18,7 @@ There are a few terms that are used, and I will attempt to explain what they are
 
 ### Routers
 
-<figure><img src="../.gitbook/assets/image (19) (2) (1).png" alt=""><figcaption><p>Routers</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (19) (2) (1) (1).png" alt=""><figcaption><p>Routers</p></figcaption></figure>
 
 I think most of us have seen this and are aware of what it is. Routers route traffic between networks.&#x20;
 
@@ -28,7 +28,7 @@ Within each device, there exists something called a Network Interface Card (NIC)
 
 ### Switches
 
-<figure><img src="../.gitbook/assets/image (22) (2) (1).png" alt=""><figcaption><p>Switches</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (22) (2) (1) (1).png" alt=""><figcaption><p>Switches</p></figcaption></figure>
 
 These are devices that basically connect different machines together via a cable, most commonly Ethernet. They have loads of ports for this purpose, and are generally the "middleman" in data transmissions. Here's an example of a network topology for switches:
 

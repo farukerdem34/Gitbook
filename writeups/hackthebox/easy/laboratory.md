@@ -44,7 +44,7 @@ ID           Response   Lines    Word       Chars       Payload
 
 When we visit this subdomain, it reveals a GitLab instance.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (19) (2).png" alt=""><figcaption></figcaption></figure>
 
 When trying to create a user, it appears we have to have a specific email domain being used.
 
@@ -216,7 +216,7 @@ dexter@laboratory:/$
 
 I downloaded a copy of this binary to my Kali machine because it looks custom and I could not find any other software online matching this. Then, I opened up a copy in Ghidra. The program is really simple:
 
-<figure><img src="../../../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (40) (1).png" alt=""><figcaption></figcaption></figure>
 
 The funny thing is that the binary is using the full path for the target file, but `chmod` itself doesn't have the full path specified. All we have to do is create an program that is called `chmod` which executes a command as `root`:
 

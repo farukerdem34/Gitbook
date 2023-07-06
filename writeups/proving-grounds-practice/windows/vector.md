@@ -120,7 +120,7 @@ We get a password! SSH is not open on the machine, but RDP is. `xfreerdp` can be
 $ xfreerdp /u:victor /p:WormAloeVat7 /v:192.168.233.119
 ```
 
-<figure><img src="../../../.gitbook/assets/image (49).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (49) (6).png" alt=""><figcaption></figcaption></figure>
 
 We can then grab the user flag.
 

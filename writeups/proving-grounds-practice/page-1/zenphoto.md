@@ -53,7 +53,7 @@ Visiting `/test` reveals a ZenPhoto instance:
 
 Viewing the page source reveals the version of ZenPhoto that is running:
 
-<figure><img src="../../../.gitbook/assets/image (62).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (62) (2).png" alt=""><figcaption></figcaption></figure>
 
 There are RCE exploits available for this instance:
 

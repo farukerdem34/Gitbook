@@ -20,7 +20,7 @@ I gobusted the website, and found a `/dev` directory.
 
 When viewed, we can find this directory listing.
 
-<figure><img src="../../../.gitbook/assets/image (20) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20) (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 Clicking `phpbash.php` gives us a webshell.
 

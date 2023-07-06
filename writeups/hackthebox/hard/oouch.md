@@ -47,7 +47,7 @@ I registered a user and logged in to see the dashboard.
 
 There are 3 main functions, a Password Change, Documents and the Contact one. The Password Change is not interesting, Documents are only available for the administrator user. That just leaves  the Contact function.
 
-<figure><img src="../../../.gitbook/assets/image (10) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 This looks like an XSS platform to somehow steal the administrator cookie. When trying to submit a basic XSS payload, this is what I got:
 

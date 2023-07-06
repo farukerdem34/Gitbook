@@ -255,7 +255,7 @@ RBCD reverses this concept by letting the `DB` machine (or backend) to control i
 
 Again, to re-emphasise, the configuration is done on the 'backend' machine and does not require DA or EA permissions. We just need to be an administrator on the 'backend' machine.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (62) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (62) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 This method of authentication is closely related to the classic Constrained Delegation and uses the S4U extensions. Here's a snippet of the traffic:
 

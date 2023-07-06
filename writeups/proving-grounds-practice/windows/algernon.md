@@ -38,11 +38,11 @@ Port 80 just shows an IIS server default page, with no further directories. FTP 
 
 Port 9998 shows a login page for SmarterMail:
 
-<figure><img src="../../../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (21) (3).png" alt=""><figcaption></figcaption></figure>
 
 If we view the page source, we can sort of find the version that is running:
 
-<figure><img src="../../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (24) (10).png" alt=""><figcaption></figcaption></figure>
 
 This software has quite a few exploits:
 

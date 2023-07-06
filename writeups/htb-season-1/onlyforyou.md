@@ -355,7 +355,7 @@ The exploit details how we have to create a malicious repository on this Gogs in
 
 I just modifed the `setup.py` file to run `os.system("chmod u+s /bin/bash")`. Afterwards, we need to build the package using `python3 -m build`. Afterwards, we need to upload the file. I created a new repository on the Gogs instance and uploaded it there.
 
-<figure><img src="../../.gitbook/assets/image (63) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (63) (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can just run the command to download it.
 

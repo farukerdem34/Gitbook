@@ -64,7 +64,7 @@ Cool, now we have the HQK password.
 
 Now that we have credentials, we can connect to the HQK port via `telnet` and enter DEBUG mode.
 
-<figure><img src="../../../.gitbook/assets/image (18) (1) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (1) (5) (2).png" alt=""><figcaption></figcaption></figure>
 
 With this, I was able to extract the administrator hash.
 

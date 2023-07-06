@@ -27,7 +27,7 @@ It's a Pokemon based website:
 
 The admin portal requires credentials to access:
 
-<figure><img src="../../../.gitbook/assets/image (22) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (22) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can take a look at the Pokatdex and see that there are entries for each specific creature. Props to the creator for designing these:
 

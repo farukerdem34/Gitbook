@@ -172,7 +172,7 @@ if __name__ == '__main__':
 	main()
 ```
 
-<figure><img src="../../.gitbook/assets/image (21) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (21) (3) (6).png" alt=""><figcaption></figcaption></figure>
 
 This made enumeration a lot easier. Now, we can proceed with enumeration of the file system and other sensitive files. We can start with `/etc/nginx/sites-available/default`.&#x20;
 
@@ -426,7 +426,7 @@ index 0000000..8e881d1
 
 Afterwards, just run the `sudo` command on the `/tmp/diff` file. This would put our public key within the `sbrown` directory since we are running the command as `sbrown`. Then, we can `ssh` in.
 
-<figure><img src="../../.gitbook/assets/image (19) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (19) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Grab the user flag.
 

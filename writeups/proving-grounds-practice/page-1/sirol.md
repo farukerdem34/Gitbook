@@ -23,7 +23,7 @@ PORT      STATE  SERVICE
 
 Port 5601 had a Kibana instance running:
 
-<figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (2).png" alt=""><figcaption></figcaption></figure>
 
 Using the Dev Tools Console, we can check the version that is running:
 
@@ -35,7 +35,7 @@ This version is vulnerable to an RCE exploit:
 
 Using the above PoC, we can get a shell on the Docker Container:
 
-<figure><img src="../../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20) (6).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -67,7 +67,7 @@ root@0873e8062560:/tmp# mount /dev/sda1 /mnt/tmp
 
 The above commands would give us `root` access over the host machine's file system:
 
-<figure><img src="../../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (7).png" alt=""><figcaption></figcaption></figure>
 
 Using this, we can `echo` our own SSH public key into the `authorized_keys` folder for the `root` user, and then just `ssh` in:
 

@@ -335,7 +335,7 @@ The password was contained both `oracle` and `2010`. I was stuck here for a long
 
 Anyways, we can then access the database as the `sa` user.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (6) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (3) (4).png" alt=""><figcaption></figcaption></figure>
 
 Next, we can check whether we have `xp_cmdshell` access.
 

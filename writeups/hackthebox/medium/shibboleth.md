@@ -168,7 +168,7 @@ We cannot read the user flag from the `ipmi-svc` user yet, so we can first enume
 
 There was nothing in the machine as the `zabbix` user. However, attempting to do password reuse with the password found earlier works.
 
-<figure><img src="../../../.gitbook/assets/image (46).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (46) (6).png" alt=""><figcaption></figcaption></figure>
 
 ### Pspy --> MySQL Exploit
 

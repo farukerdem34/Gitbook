@@ -79,7 +79,7 @@ We can download this file and view it.&#x20;
 
 This is the file contents:
 
-<figure><img src="../../../.gitbook/assets/image (52) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (52) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 The next page contains a guest login for the SQL server. We also find a user called `brandon.brown`, who is likely some kind of database administrator.&#x20;
 

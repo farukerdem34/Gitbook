@@ -52,11 +52,11 @@ I enumerated the PostGreSQL instance, and found that the default credentials of 
 
 I tested the RCE PoC on Hacktricks, and it worked:
 
-<figure><img src="../../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (22) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can then use a Metasploit module to get a reverse shell as this user.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (14).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

@@ -112,7 +112,7 @@ End of MIB
 
 So we have 2 users, `michelle` and `root`. We als ofound a new directory at Seed DMS or something. When we view the certificate of the HTTPS site on port 9090, we can see a new subdomain to enumerate.
 
-<figure><img src="../../../.gitbook/assets/image (11) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (4) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Seed DMS
 

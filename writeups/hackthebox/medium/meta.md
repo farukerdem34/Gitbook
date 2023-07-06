@@ -57,7 +57,7 @@ The application allows us to upload images to the machine.
 
 Wneh an image is uploaded, the metadata of the image is printed on screen below:
 
-<figure><img src="../../../.gitbook/assets/image (13) (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 This was the output of `exiftool`, which has some RCE attacks possible through metadata.&#x20;
 
