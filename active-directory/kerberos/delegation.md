@@ -97,7 +97,7 @@ With this setting enabled, all we need are credentials for the user. Now suppose
 
 That's a lot to take in. Here's a packet capture from ATTL4S regarding this subject (take note he uses different machines here, but the concept is roughly the same):
 
-<figure><img src="../../.gitbook/assets/image (9) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (9) (5) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Abuse
 

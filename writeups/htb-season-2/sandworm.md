@@ -74,7 +74,7 @@ Afterwards, we can take both texts and use the website to verify our signature:
 
 When we click "Verify", it would show that it worked:
 
-<figure><img src="../../.gitbook/assets/image (10) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (10) (2) (7).png" alt=""><figcaption></figcaption></figure>
 
 This website also seems to print out the username `test123` that I have supplied. This parameter might be unsanitised, and vulnerable to OS command injection or something. We can use the `--edit-key` flag to edit the UID we have specified in the key:
 

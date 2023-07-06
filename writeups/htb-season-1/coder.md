@@ -271,7 +271,7 @@ The answer is simple. Include some small Powershell code that would execute some
 
 Uploading it and running gives me this:
 
-<figure><img src="../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 Success! I tried to download and run Invoke-PowerShellTcp but it didn't work. Probably is some kind of firewall or security features present on the site. As such, we need to include another Powershell script to bypass it.
 

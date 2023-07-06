@@ -71,6 +71,6 @@ The above commands would give us `root` access over the host machine's file syst
 
 Using this, we can `echo` our own SSH public key into the `authorized_keys` folder for the `root` user, and then just `ssh` in:
 
-<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (5).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

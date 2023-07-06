@@ -356,6 +356,7 @@
     * [Snookums](writeups/proving-grounds-practice/page-1/snookums.md)
     * [Surf](writeups/proving-grounds-practice/page-1/surf.md)
     * [Twiggy](writeups/proving-grounds-practice/page-1/twiggy.md)
+    * [VoIP](writeups/proving-grounds-practice/page-1/voip.md)
     * [Walla](writeups/proving-grounds-practice/page-1/walla.md)
     * [ZenPhoto](writeups/proving-grounds-practice/page-1/zenphoto.md)
 

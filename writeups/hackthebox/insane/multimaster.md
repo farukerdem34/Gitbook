@@ -363,7 +363,7 @@ a' union select 1,1,1,1,(select sys.fn_varbintohexstr(SUSER_SID('megacorp\Admini
 
 This would result in some hex being returned:
 
-<figure><img src="../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 We can use this to send another query that would return usernames and convert the SID for us.&#x20;
 

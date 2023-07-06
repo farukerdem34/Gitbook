@@ -202,7 +202,7 @@ function getDbInstance() {
 
 We can then `su` to `james`:
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (11).png" alt=""><figcaption></figcaption></figure>
 
 ### Sudo Privileges
 

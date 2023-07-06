@@ -22,7 +22,7 @@ We have to add `laboratory.htb` to our `/etc/hosts` file to access the web ports
 
 The website is some kind of company page for coding services:
 
-<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (5).png" alt=""><figcaption></figcaption></figure>
 
 The background animated thing is pretty cool honestly. Anyways, this looked pretty static, so I did a subdomain and directory scan on the site, and found one `git` subdomain.
 

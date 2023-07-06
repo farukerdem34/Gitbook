@@ -421,7 +421,7 @@ In this case, we would have to proxy our traffic using the MSSQL instance someho
 
 We can download the compiled DLLs and modified `mssqslclient.py` file onto our Kali machine. Then, we can use our UPLOAD shell to upload the `reciclador.dll` file:
 
-<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 Then we can install the `assembly.dll` file (which has been renamed).
 

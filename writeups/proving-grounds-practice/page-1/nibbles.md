@@ -48,7 +48,7 @@ PORT     STATE SERVICE    VERSION
 
 I enumerated the PostGreSQL instance, and found that the default credentials of `postgres:postgres` worked.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (2).png" alt=""><figcaption></figcaption></figure>
 
 I tested the RCE PoC on Hacktricks, and it worked:
 
@@ -84,4 +84,4 @@ $ find / -perm -u=s -type f 2>/dev/null
 
 Use the command from GTFOBins to get a shell as `root`:
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (2).png" alt=""><figcaption></figcaption></figure>

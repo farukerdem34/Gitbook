@@ -451,11 +451,11 @@ User sbrown may run the following commands on snoopy:
 
 Based on the documentation, since we can run this as `root`, we should be able to read files like `/etc/shadow`. This can be done using the `-f` flag and it works as shown:
 
-<figure><img src="../../.gitbook/assets/image (11) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (11) (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can simply read the private SSH key of `root` located at `/root/.ssh/id_rsa`.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (5) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (2) (5).png" alt=""><figcaption></figcaption></figure>
 
 After some tidying up, we can `ssh` in as `root`.
 

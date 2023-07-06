@@ -80,7 +80,7 @@ Uploading a `.txt` file resulted in a `This is not a valid torrent file` error. 
 
 Seems that this was not the right page to be exploiting. So I looked elsewhere and found that the creator uploaded another file when I clicked on Browse.
 
-<figure><img src="../../../.gitbook/assets/image (4) (1) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1) (4) (2).png" alt=""><figcaption></figcaption></figure>
 
 Interestingly, the owner was able to upload a torrent file with **screenshots**.
 

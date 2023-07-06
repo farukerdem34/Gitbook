@@ -297,4 +297,4 @@ Afterwards, we just need to convert this to a string, XOR it with `0x96`, then r
 
 This would give us the string `@=qfe5%2^k-aq@%k@%6k6b@$u#f*b?3`, which is the `root` password:
 
-<figure><img src="../../../.gitbook/assets/image (23) (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (23) (9) (1).png" alt=""><figcaption></figcaption></figure>

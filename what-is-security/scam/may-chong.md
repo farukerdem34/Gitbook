@@ -36,7 +36,7 @@ Notice a key few differences. There is a property part missing. Also, on Edurec,
 
 We can test the login as follows:
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 After logging in, it looks like this was just a phishing campaign from NUS.&#x20;
 
