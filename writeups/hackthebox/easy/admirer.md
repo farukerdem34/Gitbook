@@ -60,7 +60,7 @@ Afterwards, I was stumped here because I did not find any place to work on this.
 
 So far, none of the credentials work with FTP or SSH. The next logical step is to take a look at this directory to find an Adminer instance at `/utility-scripts/adminer.php`.
 
-<figure><img src="../../../.gitbook/assets/image (248).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (248) (2).png" alt=""><figcaption></figcaption></figure>
 
 Adminer is a tool for managing MySQL databases within the machine. There is one specific LFI that can be exploited here:
 

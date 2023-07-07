@@ -1,3 +1,3 @@
 # Windows
 
-Windows machine for Proving Grounds Practice.
+Windows machines for Proving Grounds Practice.
