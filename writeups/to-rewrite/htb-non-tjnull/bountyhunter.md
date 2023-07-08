@@ -42,7 +42,7 @@ The `db.php` file was the most interesting. I also took a look at the `/resource
 
 Then, the `bountylog.js` file revealed an interesting endpoint.
 
-<figure><img src="../../../.gitbook/assets/image (205).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (205) (2).png" alt=""><figcaption></figcaption></figure>
 
 It seems that POST requests are being sent to the `tracker.php` endpoint and processed. So this means our XXE payloads have to be sent there.
 

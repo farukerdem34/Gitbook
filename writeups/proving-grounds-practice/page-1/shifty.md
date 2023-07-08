@@ -44,7 +44,7 @@ Interesting.&#x20;
 
 Port 80 looked rather static:
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (2).png" alt=""><figcaption></figcaption></figure>
 
 There was no public exploit for this software either, so let's move on. Port 5000 looked way more promising:
 
@@ -52,7 +52,7 @@ There was no public exploit for this software either, so let's move on. Port 500
 
 We can login, and there's no additional functionality with this website. Viewing the requests, we can see that the login just assigned us a token:
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (16).png" alt=""><figcaption></figcaption></figure>
 
 Moving to Memcache, we can dump it using `memcdump`. We instantly get loads of tokens:
 

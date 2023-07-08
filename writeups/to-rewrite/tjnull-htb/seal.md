@@ -66,7 +66,7 @@ We can create a new account and sign in to see if there are any existing reposit
 
 From this, we can find the changes made to the repository. From one of them, we can view the password for the administrator panel by viewing changes made to `tomcat-users.xml`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (185) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (185) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 However, we still cannot access the portal.&#x20;
 

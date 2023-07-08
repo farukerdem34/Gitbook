@@ -75,11 +75,12 @@ When we check the listening ports on our Windows machine, we would see that `mal
 
 <figure><img src="../../../.gitbook/assets/image (731).png" alt=""><figcaption></figcaption></figure>
 
-This machine thus becomes a classic buffer overflow exploit as per OSCP. I won't be going through how to do it here, so here's the final script I used:
+This machine thus becomes a classic buffer overflow exploit as per OSCP. For this particular binary, there weren't any bad characters (other than the NULL byte) and it was just a matter of fuzzing the offset required.&#x20;
+
+I won't be going through how to do it since the OSCP BOF style is prett well-documented already, so here's the final script I used:
 
 ```python
 #!/usr/bin/python2
-
 import socket
 
 ip = "192.168.240.129"

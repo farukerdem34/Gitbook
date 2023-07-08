@@ -227,7 +227,7 @@ We might need some additional information from here later.&#x20;
 
 Port 8000 had a BarracudaServer instance:
 
-<figure><img src="../../../.gitbook/assets/image (151).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (151) (5).png" alt=""><figcaption></figcaption></figure>
 
 It appears that we can set the administrator for this machine:
 
@@ -279,7 +279,7 @@ There wasn't much in this entire directory, as it included loads of random files
 
 This website had a corporate page of some sorts:
 
-<figure><img src="../../../.gitbook/assets/image (121).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (121) (4).png" alt=""><figcaption></figcaption></figure>
 
 There was a login page:
 
@@ -303,7 +303,7 @@ Here's the part I found incredibly stupid, we actually needed to brute force the
 
 Once we reset this, we can login to view the dashboard:
 
-<figure><img src="../../../.gitbook/assets/image (94).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (94) (4).png" alt=""><figcaption></figcaption></figure>
 
 ### SQL Injection --> RCE
 
@@ -335,7 +335,7 @@ This would work, and then we can attempt to access this shell on port 45332.&#x2
 
 We can then download `nc64.exe` onto the machine and get a reverse shell:
 
-<figure><img src="../../../.gitbook/assets/image (97).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (97) (6).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

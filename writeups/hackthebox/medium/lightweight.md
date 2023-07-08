@@ -88,7 +88,7 @@ First, we need to generate a new hash.
 
 Then, we can get a copy the `/etc/shadow` file into the `ldapuser1` user directory.
 
-<figure><img src="../../../.gitbook/assets/image (527).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (527) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then we can replace the root hash with our own.
 

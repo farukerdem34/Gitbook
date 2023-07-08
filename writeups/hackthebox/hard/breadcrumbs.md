@@ -62,7 +62,7 @@ Viewing the page itself reveals several functions we can use.
 
 I was unable to access the File Management function at `/portal/php/files.php`, hence I took a look at the source code for it using the File Read we found earlier.
 
-<figure><img src="../../../.gitbook/assets/image (347).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (347) (2).png" alt=""><figcaption></figcaption></figure>
 
 Seems that `paul` is the administrator of this website.
 

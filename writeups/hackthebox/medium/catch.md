@@ -68,7 +68,7 @@ On port 8000, there was an incident reporter, kind of like a SIEM or something:
 
 Attempting to visit the dashboard revealed that this is running Cachet:
 
-<figure><img src="../../../.gitbook/assets/image (498).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (498) (2).png" alt=""><figcaption></figcaption></figure>
 
 Cachet DID have some vulnerabilities present (finally!). Most notably, there is an information leak and a RCE exploit possible:
 

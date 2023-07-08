@@ -282,7 +282,7 @@ Query OK, 1 row affected (0.176 sec)
 
 Afterwards, just run `WerTrigger.exe` and our reverse shell command:
 
-<figure><img src="../../../.gitbook/assets/image (180).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (180) (3).png" alt=""><figcaption></figcaption></figure>
 
 This would execute the command as the SYSTEM user:
 

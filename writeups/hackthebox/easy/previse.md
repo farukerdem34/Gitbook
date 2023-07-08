@@ -19,7 +19,7 @@ PORT   STATE SERVICE
 
 Port 80 had a login page to some kind of file manager:
 
-<figure><img src="../../../.gitbook/assets/image (545).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (545) (1).png" alt=""><figcaption></figcaption></figure>
 
 This wasn't vulnerable to SQL Injection or anything. I tried visiting `index.php`, but was redirected back to the `login.php`. When the traffic is inspectedi nBurp, I noticed that `index.php` was still loaded.
 

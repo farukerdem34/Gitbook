@@ -18,7 +18,7 @@ PORT   STATE SERVICE
 
 The web page only shows this:
 
-<figure><img src="../../../.gitbook/assets/image (539).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (539) (1).png" alt=""><figcaption></figcaption></figure>
 
 I checked for `robots.txt`, which is quite common for old machines.&#x20;
 

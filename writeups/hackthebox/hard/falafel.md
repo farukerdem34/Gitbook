@@ -50,7 +50,7 @@ Now we can login as `chris`.
 
 Viewing the profile of chris reveals a hint to use PHP Type Juggling.
 
-<figure><img src="../../../.gitbook/assets/image (512).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (512) (1).png" alt=""><figcaption></figcaption></figure>
 
 PHP Type juggling was a type of vulnerability that can be used to **force the returning of true** through using specific hashes.
 
@@ -170,7 +170,7 @@ Initially, the picture looked like some kind of rubbish.
 
 Then I realised it was probably because I messed up the dimensions of the image, so I changed to to these values using `gimp` as per the script to reveal some credentials:
 
-<figure><img src="../../../.gitbook/assets/image (509).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (509) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (497).png" alt=""><figcaption></figcaption></figure>
 

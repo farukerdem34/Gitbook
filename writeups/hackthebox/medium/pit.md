@@ -122,7 +122,7 @@ After adding the new domain to our hosts file, we can head to `http://dms-pit.ht
 
 I tried a few credentials, and found that `michelle:michelle` was the right one to login.
 
-<figure><img src="../../../.gitbook/assets/image (4) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (2) (4).png" alt=""><figcaption></figcaption></figure>
 
 We can view the change log from the administrator, which states the version of Seed DMS that is currently being used.
 

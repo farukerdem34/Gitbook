@@ -118,7 +118,7 @@ Then we can load this in to our browsers.&#x20;
 
 Now, we can access the /staff page we were rejected from earlier. This would reveal a Powershell Web Access page.
 
-<figure><img src="../../../.gitbook/assets/image (362).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (362) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can login as `sierra.frye` usingthe credentials we found earlier. For Computer Name, I guessed search and research based on the certificates I found, and **research** worked.
 

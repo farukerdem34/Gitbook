@@ -433,7 +433,7 @@ I found the documentation for this application here:
 
 Here's the initial response intercepted in Burp:
 
-<figure><img src="../../.gitbook/assets/image (471).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (471) (2).png" alt=""><figcaption></figcaption></figure>
 
 I played around with the `outputType` variable and tried LFI again, and it worked:
 

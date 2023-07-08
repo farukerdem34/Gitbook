@@ -91,7 +91,7 @@ We can follow the instructions from Hacktrikcs to get RCE on this website by cre
 
 Then we can get a reverse shell using a `bash` one-liner.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (576).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (576) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

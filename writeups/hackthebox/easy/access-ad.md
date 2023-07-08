@@ -23,7 +23,7 @@ More notably, there's this Telnet service that is running, which is a bit odd an
 
 Afterwards, we can proceed to see two types of files that I downloaded back to Kali.
 
-<figure><img src="../../../.gitbook/assets/image (325).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (325) (1).png" alt=""><figcaption></figcaption></figure>
 
 The .zip file is password protected, so we can move onto the mdb file first.
 
@@ -41,7 +41,7 @@ When we open this file up in Kali, we can get some interesting results. There ar
 
 We can dump out the contents of that table using `mdb-export`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (314).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (314) (1).png" alt=""><figcaption></figcaption></figure>
 
 With these credentials, we can unzip the file to find a .pst file. .pst files can be read using `readpst`. This would generate another .mbox file, which we can read easily.
 
@@ -61,7 +61,7 @@ We can now grab the user flag from this user.
 
 Within the machine, there was a ZKTeco directory in C:\\.
 
-<figure><img src="../../../.gitbook/assets/image (333).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (333) (1).png" alt=""><figcaption></figcaption></figure>
 
 A quick searchsploit reveals that there is a public exploits available for this version.
 

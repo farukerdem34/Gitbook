@@ -70,11 +70,11 @@ PORT      STATE SERVICE    VERSION
 
 I took a look at port 8081 first, and found that it had a HTTP login:
 
-<figure><img src="../../../.gitbook/assets/image (162).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (162) (4).png" alt=""><figcaption></figcaption></figure>
 
 We can login with `admin:secret` and view the dashboard:
 
-<figure><img src="../../../.gitbook/assets/image (98).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (98) (7).png" alt=""><figcaption></figcaption></figure>
 
 This is running RaspAP, which is a wireless router software. We can find the version by heading to 'About RaspAP':
 

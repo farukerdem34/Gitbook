@@ -150,7 +150,7 @@ Now, we can take a look at how this application generates its random passwords, 
 
 Then, we can take a look at the actual password generation.
 
-<figure><img src="../../../.gitbook/assets/image (237).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (237) (1).png" alt=""><figcaption></figcaption></figure>
 
 With this, we can craft a script to generate passwords for us.
 

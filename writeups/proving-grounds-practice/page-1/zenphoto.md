@@ -68,7 +68,7 @@ ZenPhoto 1.4.1.4 - 'ajax_create_folder.php' Remote Code Ex | php/webapps/18083.p
 
 This exploits works in getting me a webshell:
 
-<figure><img src="../../../.gitbook/assets/image (57).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (57) (7).png" alt=""><figcaption></figcaption></figure>
 
 We can get a reverse shell using this one-liner:
 

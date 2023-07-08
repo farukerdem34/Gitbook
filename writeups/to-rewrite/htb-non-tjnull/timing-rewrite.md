@@ -433,4 +433,4 @@ Downloaded 391 byte in 0 seconds. (3.81 KB/s)
 
 This should have overwritten the `authorized_keys` file and we can just `ssh` in as `root`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (626).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (626) (2).png" alt=""><figcaption></figcaption></figure>

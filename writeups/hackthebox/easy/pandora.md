@@ -32,7 +32,7 @@ Nmap done: 1 IP address (1 host up) scanned in 95.71 seconds
 
 So port 161 for SNMP was open. We can then use `snmpwalk` to enumerate this further.
 
-<figure><img src="../../../.gitbook/assets/image (378).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (378) (1).png" alt=""><figcaption></figcaption></figure>
 
 Redirecting this output to a file, I was able to find some credentials within the contents:
 
@@ -50,7 +50,7 @@ As Daniel, we didn't have much permissions over the machine. However, we were ab
 
 Checking the apache2 config files reveals that the user `matt` was running the other web server:
 
-<figure><img src="../../../.gitbook/assets/image (370).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (370) (1).png" alt=""><figcaption></figcaption></figure>
 
 So, I started an SSH tunnel using the credentials for `daniel`, and we can forward port 80 to our machine.
 

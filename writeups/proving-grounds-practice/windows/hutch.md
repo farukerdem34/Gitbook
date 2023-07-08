@@ -43,7 +43,7 @@ An AD machine.&#x20;
 
 Port 80 hosted a default IIS server:
 
-<figure><img src="../../../.gitbook/assets/image (177).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (177) (4).png" alt=""><figcaption></figcaption></figure>
 
 Directory scans reveal nothing much. A detailed `nmap` scan on the port reveals that this does have a webdav instance:
 
@@ -227,7 +227,7 @@ $ ldapsearch -x -H ldap://192.168.197.122 -D 'hutch\fmcsorley' -w 'CrabSharkJell
 ```
 {% endcode %}
 
-<figure><img src="../../../.gitbook/assets/image (178).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (178) (3).png" alt=""><figcaption></figcaption></figure>
 
 We can then `evil-winrm` in using it:
 

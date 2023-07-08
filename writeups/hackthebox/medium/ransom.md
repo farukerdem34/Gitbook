@@ -96,7 +96,7 @@ We can then retrieve the keys for the ZIP file:
 
 Afterwards, the ZIP file and its contents can be copied to another ZIP file with a known password that we can decrypt.
 
-<figure><img src="../../../.gitbook/assets/image (395).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (395) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (374).png" alt=""><figcaption></figcaption></figure>
 

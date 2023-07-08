@@ -154,11 +154,11 @@ There's a hidden domain here! We can add that to our `/etc/hosts` file and enume
 
 The website led us to this login page:
 
-<figure><img src="../../../.gitbook/assets/image (68).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (68) (7).png" alt=""><figcaption></figcaption></figure>
 
 Remember that we have the source code of this website, so we can find all the endpoints at the `views.py` file we saw earlier. The `/register` directory lets us register a new user.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (54).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (54) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can then login to the site! For some reason it's not loading the visual elements right on my machine...
 
@@ -174,7 +174,7 @@ When the traffic is intercepted, it includes a `username` parameter:
 
 Maybe we can change the username to something else, so I changed it to `admin` and found that I could login as the `admin` user!
 
-<figure><img src="../../../.gitbook/assets/image (48).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (48) (8).png" alt=""><figcaption></figcaption></figure>
 
 ### LFI Firewall Rules --> Shell
 

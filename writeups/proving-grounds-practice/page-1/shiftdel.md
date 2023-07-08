@@ -30,7 +30,7 @@ Port 8888 on the other hand shows a phpMyAdmin instance:
 
 When we view the page source of port 8888, there is indication of the version running:
 
-<figure><img src="../../../.gitbook/assets/image (153).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (153) (6).png" alt=""><figcaption></figcaption></figure>
 
 This version is vulnerable to an RCE exploit that requires credentials, which we'll keep in mind for now:
 

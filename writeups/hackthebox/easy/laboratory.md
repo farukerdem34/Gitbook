@@ -228,6 +228,6 @@ dexter@laboratory:/tmp$ export PATH=/tmp:$PATH
 
 Then, we can just run `docker-security` to get a `root` shell:
 
-<figure><img src="../../../.gitbook/assets/image (86).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (86) (7).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!
