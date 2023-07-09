@@ -57,7 +57,7 @@ The H2 Database does have a few code execution exploits that might work.&#x20;
 
 Port 8082 shows us the login to the H2 database.
 
-<figure><img src="../../../.gitbook/assets/image (27) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (27) (5) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can just click 'Connect', and login successfully.
 

@@ -209,6 +209,6 @@ Then, we can read all of the files. Within the decrypted files, there was a SSH 
 
 Using this, we can `ssh` in as `root`:
 
-<figure><img src="../../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (5).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

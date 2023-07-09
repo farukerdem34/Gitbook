@@ -170,7 +170,7 @@ There are a few functions in this site. We know that the 'Submission' one is vul
 
 When the traffic is intercepted, it includes a `username` parameter:
 
-<figure><img src="../../../.gitbook/assets/image (53).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (53) (1).png" alt=""><figcaption></figcaption></figure>
 
 Maybe we can change the username to something else, so I changed it to `admin` and found that I could login as the `admin` user!
 

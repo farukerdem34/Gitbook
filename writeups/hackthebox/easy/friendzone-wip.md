@@ -72,7 +72,7 @@ When we read this script, we can see that it contains some random code that we c
 
 We can see that `import os` is used, and any external modules could be exploitable. Conveniently, the machine let's us have write permission to `os.py`.
 
-<figure><img src="../../../.gitbook/assets/image (33) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (33) (1) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then, we just need to append a Python reverse shell to this:
 

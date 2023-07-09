@@ -69,6 +69,6 @@ The product build listed above is 6919, which is older than the RCE exploit for 
 
 Running that gives us a reverse shell as the SYSTEM user:
 
-<figure><img src="../../../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (26) (11).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

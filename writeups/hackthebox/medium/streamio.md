@@ -93,7 +93,7 @@ We can send this request here:
 
 And we finally have RCE on the machine. Then, we can gain a reverse shell via `nc.exe`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (2) (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -139,7 +139,7 @@ Then, we can `evil-winrm` in as this user:
 
 When I ran WinPEAS on this machine, it picked up on a Firefox credential file. We can use `firepwd.py` to decrypt the passwords.
 
-<figure><img src="../../../.gitbook/assets/image (49) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (49) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% embed url="https://github.com/lclevy/firepwd/blob/master/firepwd.py" %}
 

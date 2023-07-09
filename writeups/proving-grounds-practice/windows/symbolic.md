@@ -25,7 +25,7 @@ Port 80 was rather simple:
 
 I created a HTML file with one word within it, then hosted it on my HTTP server and submitted the URL with my IP. This returned a PDF:
 
-<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (4).png" alt=""><figcaption></figcaption></figure>
 
 I downloaded the PDF and used `exiftool` on it to enumerate any version:
 
@@ -73,7 +73,7 @@ This confirms that LFI works. We can edit the PoC to show all the content:
 <iframe src="C:/Windows/system32/drivers/etc/hosts" height=1000 width=1000 />
 ```
 
-<figure><img src="../../../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (19) (2).png" alt=""><figcaption></figcaption></figure>
 
 Now, we just need to find the correct file to read. The website gives us a username `p4yl0ad`, and SSH is open, so let's try to read the user's private key.
 
@@ -192,4 +192,4 @@ I waited for a while and then deleted the symlink. When we check the `C:\backup\
 
 Then, use this key to `ssh` in as the administrator:
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (7).png" alt=""><figcaption></figcaption></figure>

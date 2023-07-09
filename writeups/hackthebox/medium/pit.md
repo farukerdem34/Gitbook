@@ -227,4 +227,4 @@ It seems to be running any script using a wildcard. Plus, the user can write to 
 snmpwalk -v1 -c public 10.129.228.106 NET-SNMP-EXTEND-MIB::nsExtendObjects
 ```
 
-<figure><img src="../../../.gitbook/assets/image (33) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (33) (1) (2).png" alt=""><figcaption></figcaption></figure>

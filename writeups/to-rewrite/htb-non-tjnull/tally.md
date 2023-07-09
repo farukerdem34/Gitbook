@@ -22,7 +22,7 @@ The Documents had one folder which contained FTP credentials:
 
 <figure><img src="../../../.gitbook/assets/image (43) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (4) (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 The Site Pages had another folder which contained the FTP username:
 
@@ -70,7 +70,7 @@ With this, we can access the MSSQL instance with `sqsh`. Afterwards, getting RCE
 
 <figure><img src="../../../.gitbook/assets/image (55) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (7) (3) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (3) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can gain a reverse shell as this user with whatever method.
 

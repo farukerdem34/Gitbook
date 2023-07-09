@@ -25,7 +25,7 @@ This is supposed to be an AD machine, so seeing such few ports is kinda new.&#x2
 
 Port 80 has a corporate page of some hosting service company thing:
 
-<figure><img src="../../../.gitbook/assets/image (53) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (53) (1) (5).png" alt=""><figcaption></figcaption></figure>
 
 Most of the text is just placeholder text. I added `gigantichosting.com` to my `/etc/hosts` file. Running `gobuster` and `wfuzz` for directory and subdomain searches return nothing of interest. I think we'll come back to this later.
 
@@ -272,7 +272,7 @@ SOFTWARE\GiganticHostingManagementSystem\
 
 Then, we can `evil-winrm` in:
 
-<figure><img src="../../../.gitbook/assets/image (52) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (52) (1) (5).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

@@ -51,7 +51,7 @@ There are 3 main functions, a Password Change, Documents and the Contact one. Th
 
 This looks like an XSS platform to somehow steal the administrator cookie. When trying to submit a basic XSS payload, this is what I got:
 
-<figure><img src="../../../.gitbook/assets/image (23) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (23) (4) (2).png" alt=""><figcaption></figcaption></figure>
 
 Further testing of this endpoint revealed that the administrator clicks links that are sent in that Contact Form. Could be useful later. I ran a `gobuster` scan on the machine to see what other endpoints are hidden. I found a weird `/oauth` endpoint that could be of use: (this took a lot of wordlists to do)
 
@@ -102,7 +102,7 @@ When we click authorize, we just are logged in as the same user it seems.&#x20;
 
 On Port 8000, all we see is this:
 
-<figure><img src="../../../.gitbook/assets/image (25) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (25) (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 When are visiting this port from port 5000 via OAuth, this is the request that gets sent:
 

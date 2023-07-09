@@ -20,7 +20,7 @@ PORT     STATE SERVICE
 
 Port 80 had a login page:
 
-<figure><img src="../../../.gitbook/assets/image (11) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (4) (3).png" alt=""><figcaption></figcaption></figure>
 
 We didn't have any credentials, and weak credentials don't work, so we can move on first.
 

@@ -29,7 +29,7 @@ Port 80 reveals a basic login page:
 
 Port 2290 was also a HTTP port, and it returned something simple:
 
-<figure><img src="../../../.gitbook/assets/image (37).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (37) (8).png" alt=""><figcaption></figcaption></figure>
 
 C? When we view the page source, there's also this part here:
 

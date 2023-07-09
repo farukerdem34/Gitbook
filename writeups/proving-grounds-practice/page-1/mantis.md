@@ -156,11 +156,11 @@ We can first login as the administrator:
 
 Then, head to `/bugtracker/adm_config_report.php` and create the following Configuration Options:
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then, just visit `/bugtracker/workflow_graph_img.php`, and we will receive a reverse shell:
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (3).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -187,6 +187,6 @@ The file was recently edited, so I ran `pspy64` on the machine to see what `back
 
 There was a password present. Using that, we can `su` to `mantis`, who can run `sudo` on everything without a password.
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (7).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

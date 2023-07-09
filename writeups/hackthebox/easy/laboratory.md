@@ -44,7 +44,7 @@ ID           Response   Lines    Word       Chars       Payload
 
 When we visit this subdomain, it reveals a GitLab instance.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (19) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (19) (2) (4).png" alt=""><figcaption></figcaption></figure>
 
 When trying to create a user, it appears we have to have a specific email domain being used.
 

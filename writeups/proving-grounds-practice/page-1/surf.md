@@ -43,7 +43,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 There's an administration directory present, and when viewed it just shows a login page:
 
-<figure><img src="../../../.gitbook/assets/image (24) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (24) (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 I tried default and weak credentials, but they don't work. When the traffic is viewed in Burp, we can see that there are some tokens being passed around:
 

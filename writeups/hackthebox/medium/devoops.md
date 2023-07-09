@@ -60,7 +60,7 @@ After heading to that directory, we would find an SSH key after using `git log -
 
 <figure><img src="../../../.gitbook/assets/image (256) (2).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (17) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (5) (2).png" alt=""><figcaption></figcaption></figure>
 
 Surprisingly, this was the root SSH key.
 

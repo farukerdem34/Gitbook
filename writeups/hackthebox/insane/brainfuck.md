@@ -12,7 +12,7 @@ We can add `brainfuck.htb` to our `/etc/hosts` file and visit the HTTP wesbites.
 
 Website revealed a Wordpress site:
 
-<figure><img src="../../../.gitbook/assets/image (40) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (40) (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 Because this was a HTTPS website, we can take a look at the certificate first to find an email address.
 

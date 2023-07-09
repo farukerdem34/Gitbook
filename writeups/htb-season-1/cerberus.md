@@ -229,7 +229,7 @@ The MySQL database has nothing of interest. Port 80 was hosting nothing as well.
 
 For SUID binaries, there were two that I didn't usually see:
 
-<figure><img src="../../.gitbook/assets/image (7) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7) (3) (3).png" alt=""><figcaption></figcaption></figure>
 
 We can check its version:
 

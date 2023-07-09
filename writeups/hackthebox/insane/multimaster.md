@@ -997,7 +997,7 @@ Use the "--show" option to display all of the cracked passwords reliably
 Session completed.
 ```
 
-<figure><img src="../../../.gitbook/assets/image (16) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (1) (7).png" alt=""><figcaption></figcaption></figure>
 
 ### Server Operators --> Root
 

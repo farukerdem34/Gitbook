@@ -25,7 +25,7 @@ We have to add `2million.htb` to our `/etc/hosts` file to view the web applicati
 
 The website resembles the actual live HTB platform:
 
-<figure><img src="../../../.gitbook/assets/image (49) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (49) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 The website also shows how long has HTB come since the start:
 

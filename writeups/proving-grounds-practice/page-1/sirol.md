@@ -27,7 +27,7 @@ Port 5601 had a Kibana instance running:
 
 Using the Dev Tools Console, we can check the version that is running:
 
-<figure><img src="../../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (25) (3).png" alt=""><figcaption></figcaption></figure>
 
 This version is vulnerable to an RCE exploit:
 
