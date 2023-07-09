@@ -364,6 +364,7 @@
     * [Nibbles](writeups/proving-grounds-practice/page-1/nibbles.md)
     * [Pelican](writeups/proving-grounds-practice/page-1/pelican.md)
     * [Phobos](writeups/proving-grounds-practice/page-1/phobos.md)
+    * [PlanetExpress](writeups/proving-grounds-practice/page-1/planetexpress.md)
     * [QuackerJack](writeups/proving-grounds-practice/page-1/quackerjack.md)
     * [Sirol](writeups/proving-grounds-practice/page-1/sirol.md)
     * [Shiftdel](writeups/proving-grounds-practice/page-1/shiftdel.md)

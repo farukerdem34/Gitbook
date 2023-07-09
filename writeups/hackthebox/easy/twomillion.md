@@ -59,7 +59,7 @@ eval(function(p,a,c,k,e,d){e=function(c){return c.toString(36)};if(!''.replace(/
 
 This looks like it generates some kind of token. Within it, we can see that it uses a `makeInviteCode` function. This file is loaded at the `/invite` directory, which is where we need to submit a code. Within the Javascript Console in Inspector tools, I ran that function.
 
-<figure><img src="../../../.gitbook/assets/image (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (2) (3).png" alt=""><figcaption></figcaption></figure>
 
 When we send a POST request to this:
 

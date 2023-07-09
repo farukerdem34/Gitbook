@@ -42,7 +42,7 @@ Upgrade-Insecure-Requests: 1
 
 So there are some forms of `base64` encoded cookies involved in this website. Anyways, I registered a new user and logged in to view the gallery:
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (2).png" alt=""><figcaption></figcaption></figure>
 
 When we login, there is an extra cookie called `token` that is being assigned. It's a JWT token with this value:
 
@@ -241,7 +241,7 @@ Sending the correct parameters resulted in a successful login as `greg`, which g
 
 We can grab the `token` value we were returned on the successful login. Now, we need to find the directory about 'image editing'. We can repeat the above request in a browser, and then check the `/admin` directory, which now works properly:
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 The link brings us to the PHP page for Imagick:
 
@@ -360,7 +360,7 @@ Then, we just need to start both the payloads within Burpsuite Intruder with NUL
 
 When we run it both the Intruder instances, we would get a few requests to our Python HTTP server, and a reverse shell as `www-data`!&#x20;
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
 
@@ -674,7 +674,7 @@ for h in hashes:
             break
 ```
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (6).png" alt=""><figcaption></figcaption></figure>
 
 Then, just use this to `ssh` in as `root`:
 

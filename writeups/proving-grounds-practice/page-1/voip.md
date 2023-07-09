@@ -160,7 +160,7 @@ With this, we can login to port 80 as `adm_sip`.&#x20;
 
 We can view the CDR (Call Data Records) and find that one of them is raw, which allows us to download it:
 
-<figure><img src="../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1) (5).png" alt=""><figcaption></figcaption></figure>
 
 This is a raw audio file, and we need to convert it using `sox`. We can find the exact configurations required in the Stream Rates tab on the left:
 

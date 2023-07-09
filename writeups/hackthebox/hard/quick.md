@@ -23,7 +23,7 @@ Port 9001 had a typical corporate website:
 
 There was a link towards a new portal hosted on `portal.quick.htb`. However, it pointed to port 443 and I could not access that for now. Looking at the rest of the page, we can see other information like the clients they had:
 
-<figure><img src="../../../.gitbook/assets/image (3) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 There are also some testimonials from users:
 

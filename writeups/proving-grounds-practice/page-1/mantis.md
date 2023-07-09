@@ -152,7 +152,7 @@ First of all, that doesn't seem to work for this machine, and secondly, we alrea
 
 We can first login as the administrator:
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (5).png" alt=""><figcaption></figcaption></figure>
 
 Then, head to `/bugtracker/adm_config_report.php` and create the following Configuration Options:
 
