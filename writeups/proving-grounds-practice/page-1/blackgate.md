@@ -81,7 +81,7 @@ ClimbingParrotKickingDonkey321
 
 There is a password within it. When we run the binary and supply the password, we get this 'terminal' thing:
 
-<figure><img src="../../../.gitbook/assets/image (14) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (2) (5).png" alt=""><figcaption></figcaption></figure>
 
 This output looks a bit like `less`, so I tried to escape this limited shell with `!sh` and it worked.
 

@@ -21,7 +21,7 @@ SSH was open on this machine, which was unusual for Windows.&#x20;
 
 Port 80 was rather simple:
 
-<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (2).png" alt=""><figcaption></figcaption></figure>
 
 I created a HTML file with one word within it, then hosted it on my HTTP server and submitted the URL with my IP. This returned a PDF:
 
@@ -65,7 +65,7 @@ The exploit here is the content of the HTML file being used. Here's my PoC:
 
 When we host this HTML file on a HTTP server and use the website's converting feature, this is what we are returned:
 
-<figure><img src="../../../.gitbook/assets/image (13) (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 This confirms that LFI works. We can edit the PoC to show all the content:
 
@@ -188,7 +188,7 @@ Press ENTER to exit and delete the symlink
 
 I waited for a while and then deleted the symlink. When we check the `C:\backup\logs` directory's newest file that is significantly larger than the rest, we find an SSH key:
 
-<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (7).png" alt=""><figcaption></figcaption></figure>
 
 Then, use this key to `ssh` in as the administrator:
 

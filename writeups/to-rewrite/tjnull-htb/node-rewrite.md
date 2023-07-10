@@ -137,7 +137,7 @@ When we login, all we see is this:
 
 We can download the backup files and view it to find that it's a base64 encoded file. When decoded, it gives a Zip file.
 
-<figure><img src="../../../.gitbook/assets/image (13) (7) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (7) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 It's password protected, so we can use `zip2john` and `john` to crack it:
 

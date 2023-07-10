@@ -26,7 +26,7 @@ Then we can grab a publicly available RCE exploit from ExploitDB:
 
 This would require 3 fields, and we have 3 of them:
 
-<figure><img src="../../../.gitbook/assets/image (5) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (4) (4).png" alt=""><figcaption></figcaption></figure>
 
 We can visit `/app/etc/local.xml` to find the date required:
 
