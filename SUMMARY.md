@@ -371,6 +371,7 @@
     * [Shifty](writeups/proving-grounds-practice/page-1/shifty.md)
     * [Snookums](writeups/proving-grounds-practice/page-1/snookums.md)
     * [Sona](writeups/proving-grounds-practice/page-1/sona.md)
+    * [Sorcerer](writeups/proving-grounds-practice/page-1/sorcerer.md)
     * [Surf](writeups/proving-grounds-practice/page-1/surf.md)
     * [Tico](writeups/proving-grounds-practice/page-1/tico.md)
     * [Twiggy](writeups/proving-grounds-practice/page-1/twiggy.md)

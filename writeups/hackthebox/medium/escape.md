@@ -148,7 +148,7 @@ Within that file, we can find some credentials:
 
 With these credentials, we can login as `ryan.cooper`.
 
-<figure><img src="../../../.gitbook/assets/image (4) (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (9) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can grab the user flag now.
 
