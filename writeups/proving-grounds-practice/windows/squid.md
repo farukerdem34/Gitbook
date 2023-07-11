@@ -44,7 +44,7 @@ Since this is already the administrative interface, we can get a shell by creati
 
 Afterwards, we can select this database and head to the QUERY tab:
 
-<figure><img src="../../../.gitbook/assets/image (104).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (104) (4).png" alt=""><figcaption></figcaption></figure>
 
 We can test it with any query and see that it is indeed processing SQL queries:
 

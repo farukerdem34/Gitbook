@@ -271,6 +271,6 @@ You can now rename and share binwalk_exploit and start your local netcat listene
 
 Afterwards, we can download this file to the `/var/www/pilgrimage.htb/shrunk` folder as anything. If you monitor `pspy64` output, this would cause the `malwarescan.sh` script to be run, and our listener port would have a reverse shell!
 
-<figure><img src="../../.gitbook/assets/image (111).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (111) (5).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

@@ -81,8 +81,8 @@ User puma may run the following commands on sau:
     (ALL : ALL) NOPASSWD: /usr/bin/systemctl status trail.service
 ```
 
-This is easily exploitable o get a `root` shell:
+This is easily exploitable to get a `root` shell:
 
-<figure><img src="../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (14) (2).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

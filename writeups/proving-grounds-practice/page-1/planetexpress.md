@@ -97,7 +97,7 @@ locale: ~
 
 There's also a custom plugin developed for this website, and we can visit that at `plugins/PicoTest.php` based on the Github repo. This would show us the PHPInfo of the site:
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (5).png" alt=""><figcaption></figcaption></figure>
 
 Here, we can find that `/var/www/html/planetexpress` is the document root. Also, we can find a lot of disabled functions:
 

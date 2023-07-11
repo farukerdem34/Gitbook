@@ -22,7 +22,7 @@ Just 2 ports on the website.&#x20;
 
 Port 80 shows a Wordpress site:
 
-<figure><img src="../../../.gitbook/assets/image (113).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (113) (4).png" alt=""><figcaption></figcaption></figure>
 
 Port 8888 on the other hand shows a phpMyAdmin instance:
 
@@ -95,7 +95,7 @@ We seem to be an intern at Shiftdel, and it coincides with `wpscan` returning `i
 
 With these credentials, we can login to the dashboard and begin checking out the other vulnerabilities:
 
-<figure><img src="../../../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (44) (5).png" alt=""><figcaption></figcaption></figure>
 
 ### Arbitrary File Deletion --> RCE
 
@@ -137,7 +137,7 @@ When run on the localhost, it causes the Wordpress instance to start crashing si
 
 To exploit this, we can use the instructions given in the JS file. This involves using the Developer Console and pasting some code within it. Afterwards, we can just execute the function as required:
 
-<figure><img src="../../../.gitbook/assets/image (112).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (112) (5).png" alt=""><figcaption></figcaption></figure>
 
 Once deleted, this kind of breaks the entire website. It just returns source code:
 

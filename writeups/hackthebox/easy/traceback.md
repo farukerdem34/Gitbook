@@ -10,7 +10,7 @@ Nmap scan:
 
 Going to the website revealed that this website has some sort of backdoor left on it.
 
-<figure><img src="../../../.gitbook/assets/image (81) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (81) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Reading the page source gave another hint:
 

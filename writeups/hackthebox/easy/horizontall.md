@@ -33,7 +33,7 @@ Viewing the page source, we can see a small interesting bit here:
 
 I don't usually come across this, and it appears to be intentionally left there by the creator because the message is customised. We can try to view the JS code that's within this, and perhaps we would find something new. I searched for the box name, and found a new subdomain within the `app.js` file:
 
-<figure><img src="../../../.gitbook/assets/image (51) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (51) (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 Interesting! We can add that to our `hosts` file and view it.&#x20;
 

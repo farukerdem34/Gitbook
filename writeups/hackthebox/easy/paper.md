@@ -22,7 +22,7 @@ The new domain was some kind of company website.
 
 At the very bottom, it says this was **Powered By Wordpress**. When looking at some of the recent posts, we can see this one that highlights there are secret posts.
 
-<figure><img src="../../../.gitbook/assets/image (99) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (99) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Because there were hints to view a private post of some sort, we can try appending `?static=1` to the URL and see what we get.
 

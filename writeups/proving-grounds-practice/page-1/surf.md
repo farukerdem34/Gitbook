@@ -242,4 +242,4 @@ We can use `vi` to edit the file to include `system("chmod u+s /bin/bash");`, an
 
 Then we can easily become the `root` user:
 
-<figure><img src="../../../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (35) (8).png" alt=""><figcaption></figcaption></figure>

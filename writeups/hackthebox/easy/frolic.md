@@ -175,7 +175,7 @@ Afterwards, we need to fuzz the binary to find the number of junk characters req
 
 <figure><img src="../../../.gitbook/assets/image (119) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (91) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (91) (2) (3).png" alt=""><figcaption></figcaption></figure>
 
 We can then create a quick script using Python.
 

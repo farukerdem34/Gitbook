@@ -77,7 +77,7 @@ admin:1:dc40b85276a1f4d7cb35f154236aa1b2
 
 The above hash is crackable on CrackStation.
 
-<figure><img src="../../../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (43) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can then run the RCE exploit `48241.py`:
 
@@ -124,6 +124,6 @@ We can run `find` as the `root` user. Following GTFOBins, we just need to run th
 ./find . -exec /bin/sh -p \; -quit
 ```
 
-<figure><img src="../../../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (39) (11).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

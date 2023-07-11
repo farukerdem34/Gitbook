@@ -205,7 +205,7 @@ for FILE in *; do openssl enc -d -des-cbc -K 3837363239616538 -iv "0000000000000
 
 Then, we can read all of the files. Within the decrypted files, there was a SSH private key:
 
-<figure><img src="../../../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (21) (8).png" alt=""><figcaption></figcaption></figure>
 
 Using this, we can `ssh` in as `root`:
 

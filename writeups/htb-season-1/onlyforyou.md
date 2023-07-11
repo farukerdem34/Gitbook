@@ -278,7 +278,7 @@ I tried some weak credentials, and found that `admin:admin` worked. This was som
 
 Within the Employees tab, we can search for the names of employees.
 
-<figure><img src="../../.gitbook/assets/image (55) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (55) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 There's the port for `neo4j` open on the machine, so I assumed that some kind of query injection was next. Also, we can see the Tasks on the main dashboard page to verify this.
 

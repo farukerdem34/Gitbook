@@ -58,7 +58,7 @@ We can first verify the usernames:
 
 This also confirms that it works and it finds 2 users, `mango` and `admin`. Then, we can find the passwords:
 
-<figure><img src="../../../.gitbook/assets/image (29) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (29) (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can use one of the passwords to SSH in:
 

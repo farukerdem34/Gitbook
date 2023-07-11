@@ -61,7 +61,7 @@ This reveals to us a folder with the Tomcat credentials.
 
 With this, we can acess port 8080 and login. Then, using `msfvenom`, we can generate a quick reverse shell to upload to gain a reverse shell easily.
 
-<figure><img src="../../../.gitbook/assets/image (85) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (85) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 We would be the `tomcat` user on the machine.
 
@@ -83,7 +83,7 @@ The name of the file was a giveaway that this contained NTLM hashes from a memor
 
 Then we can crack the Administrator's hash to get `f16tomcat!`. Afterwards, we can `su` to the `atanas` user with these credentials.
 
-<figure><img src="../../../.gitbook/assets/image (97) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (97) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### wget RCE
 

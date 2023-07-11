@@ -44,7 +44,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 The `/svn` directory requires credentials:
 
-<figure><img src="../../../.gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (51) (6).png" alt=""><figcaption></figcaption></figure>
 
 Using `admin:admin` doesn't work for this. When we view the traffic in Burpsuite, we can see that the `Authorization` header is added and it uses the Basic Base64 method of authenticating users.&#x20;
 
@@ -162,7 +162,7 @@ Remember that we have the source code of this website, so we can find all the en
 
 We can then login to the site! For some reason it's not loading the visual elements right on my machine...
 
-<figure><img src="../../../.gitbook/assets/image (59).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (59) (3).png" alt=""><figcaption></figcaption></figure>
 
 There are a few functions in this site. We know that the 'Submission' one is vulnerable, but we need some kind of administrator account first. So we can view the 'MyAccount' function:
 
@@ -208,7 +208,7 @@ csrfmiddlewaretoken=hZhbo5cgeCuFoeIhJqK2b9S7Xn2rD2CHrWVJrz3hMYJZ0gPT46o7nzUd5M7X
 
 This looks vulnerable to LFI, and testing it reveals that it works!
 
-<figure><img src="../../../.gitbook/assets/image (81).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (81) (3).png" alt=""><figcaption></figcaption></figure>
 
 Earlier, the repository comments mentioned something about a UFW firewall. A quick google search on its files reveal that the rules are stored at `/etc/ufw/user.rules`, which can be read using the LFI:
 
@@ -262,7 +262,7 @@ csrfmiddlewaretoken=lUZv7MQQ8VaNbnkvd8DgAbLB0WIT1V3CvRD3agHRGhp7Npr7yOhlMBNH8lNp
 
 This wold give us a shell as `www-data`:
 
-<figure><img src="../../../.gitbook/assets/image (70).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (70) (2).png" alt=""><figcaption></figcaption></figure>
 
 The user flag is within the `/var/www` directory.&#x20;
 
@@ -317,7 +317,7 @@ ssh_login
 
 There are some hashes present, and all 3 are crackable:
 
-<figure><img src="../../../.gitbook/assets/image (65).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (65) (1).png" alt=""><figcaption></figcaption></figure>
 
 The last password was for the user `root`, and we can try an `su`, which ends up working:
 

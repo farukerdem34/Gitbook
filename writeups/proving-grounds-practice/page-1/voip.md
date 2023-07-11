@@ -26,7 +26,7 @@ We didn't have any credentials, and weak credentials don't work, so we can move 
 
 Port 8000 had another login page:
 
-<figure><img src="../../../.gitbook/assets/image (99).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (99) (2).png" alt=""><figcaption></figcaption></figure>
 
 `admin:admin` worked for this one, and we were brought to a IP Phone instance, which matches the name of the box being Voice over IP:
 

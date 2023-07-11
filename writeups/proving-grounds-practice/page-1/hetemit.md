@@ -27,7 +27,7 @@ Lots of ports. FTP allows for anonymous access, but just hangs.&#x20;
 
 Port 80 had the default Apache HTTP Server:
 
-<figure><img src="../../../.gitbook/assets/image (68).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (68) (1).png" alt=""><figcaption></figcaption></figure>
 
 Ran a directory scan on this and didn't find much.
 
@@ -44,7 +44,7 @@ $ curl http://192.168.201.117:50000/generate
 
 I tried sending POST requests to this:
 
-<figure><img src="../../../.gitbook/assets/image (86).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (86) (3).png" alt=""><figcaption></figcaption></figure>
 
 Not too sure what to do with that token. However, we notice that this is running a Python server. The `/verify` endpoint also accepts POST requests, but it always seems to fail:
 

@@ -28,7 +28,7 @@ We can confirm this by viewing the `/etc/passwd` file.
 
 After further enumeration, there's nothing else that I could find. So we probably need to read more files within this machine. I could not read any user files, so I tried to check some configuration files for the server at `/etc/apache2/sites-enabled/000-default.conf`.
 
-<figure><img src="../../../.gitbook/assets/image (14) (2) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (2) (2) (3).png" alt=""><figcaption></figcaption></figure>
 
 We can find a new domain at `cacti-admin.monitors.htb`. Afterwards, I also read the Wordpress configuration files at `/var/www/wordpress/wp-config.php` to find a password.
 

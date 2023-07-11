@@ -32,7 +32,7 @@ We found find this set of credentials for the database here.
 
 We can then use `mssqlclient.py` to authenticate as this `reporting` user for the database that is publicly facing forward.
 
-<figure><img src="../../../.gitbook/assets/image (4) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (5) (5).png" alt=""><figcaption></figcaption></figure>
 
 ### xp\_cmdshell
 

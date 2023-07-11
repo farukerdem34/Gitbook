@@ -63,7 +63,7 @@ Subrion CMS 4.2.1 - Cross-Site Scripting                   | php/webapps/45150.t
 
 We can use the Arbitrary File Upload to get a webshell on the machine:
 
-<figure><img src="../../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (29) (6).png" alt=""><figcaption></figcaption></figure>
 
 From here, we can easily convert this to a reverse shell on our machine using a `python3` reverse shell.&#x20;
 

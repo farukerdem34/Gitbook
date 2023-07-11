@@ -77,4 +77,4 @@ msf6 exploit(multi/http/manageengine_auth_upload) > exploit
 
 This would give us a Meterpreter shell as the SYSTEM user:
 
-<figure><img src="../../../.gitbook/assets/image (48).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (48) (2).png" alt=""><figcaption></figcaption></figure>

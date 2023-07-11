@@ -44,7 +44,7 @@ Earlier, we saw some form of clipnote function. Testing it shows us that each ti
 
 &#x20;Using the **/clipnotes/raw/:id** format, I was able to view the first clipnote, submitted by a user called Alice. Visiting anything other than 1 was not possible.
 
-<figure><img src="../../../.gitbook/assets/image (100) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (100) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 I was interested in what other number is present, so I used wfuzz to enumerate out all other numbers. None are present it seems
 

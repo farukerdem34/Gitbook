@@ -104,7 +104,7 @@ $ cat passwords.txt
 
 Port 80 shows the default XAMPP page:
 
-<figure><img src="../../../.gitbook/assets/image (94).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (94) (5).png" alt=""><figcaption></figcaption></figure>
 
 There was a PHPInfo page that we could view for more clues.&#x20;
 
@@ -122,7 +122,7 @@ With this, we can easily login to the admin panel and replace one of the PHP fil
 
 Then, we can get a reverse shell by downloading `nc.exe` onto the machine and executing it:
 
-<figure><img src="../../../.gitbook/assets/image (57).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (57) (8).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

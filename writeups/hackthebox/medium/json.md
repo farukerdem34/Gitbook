@@ -58,7 +58,7 @@ When the traffic is viewed in Burpsuite, we can see a lot of different JS files 
 
 The POST request to `/api/token` was my first login attempt:
 
-<figure><img src="../../../.gitbook/assets/image (100).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (100) (2).png" alt=""><figcaption></figcaption></figure>
 
 I noticed that in the requests proxied, there wasn't any request to `/`. When I visit it, the dashboard loads for a brief second before redirecting me to the login page. Weird. Anyways we can take a look at some of these JS files since we don't have any credentials yet.&#x20;
 
@@ -138,7 +138,7 @@ The response was the same as the decoded cookie value! This means that either th
 
 If we remove more characters, we get this error:
 
-<figure><img src="../../../.gitbook/assets/image (105).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (105) (4).png" alt=""><figcaption></figcaption></figure>
 
 There definitely is an insecure deserialisation exploit here, because the values of the `Bearer` header are likely unsanitised since it still attempts to process it. As such, we can use `ysoserial.exe` to generate a payload to give us a reverse shell.&#x20;
 

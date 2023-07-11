@@ -159,7 +159,7 @@ Then, upon refreshing, we can view the dashboard:
 
 On this platform, there was only a Leave Requests form present:
 
-<figure><img src="../../../.gitbook/assets/image (21) (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (21) (8) (2).png" alt=""><figcaption></figcaption></figure>
 
 I filled in some random information into the fields, and found that there was an API on this:
 

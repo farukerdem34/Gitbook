@@ -309,7 +309,7 @@ Once we reset this, we can login to view the dashboard:
 
 Within the "Edit" function, we can see that there's a Request Profile SLUG option at the bottom:
 
-<figure><img src="../../../.gitbook/assets/image (91).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (91) (2).png" alt=""><figcaption></figcaption></figure>
 
 This brings us to another page with a hint that MySQL was being used somehow:
 
@@ -331,7 +331,7 @@ We can then use this payload to write a webshell:
 
 This would work, and then we can attempt to access this shell on port 45332.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (92).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (92) (5).png" alt=""><figcaption></figcaption></figure>
 
 We can then download `nc64.exe` onto the machine and get a reverse shell:
 
@@ -390,6 +390,6 @@ C:\bd>shutdown -r
 
 After a while, we should get a reverse shell once the machine starts up again as the SYSTEM user:
 
-<figure><img src="../../../.gitbook/assets/image (85).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (85) (3).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

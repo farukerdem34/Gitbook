@@ -14,7 +14,7 @@ Port 8080 requires credentials to access:
 
 I did a detailed scan on port 8080, and found that it was running Windows Device Portal:
 
-<figure><img src="../../../.gitbook/assets/image (65) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (65) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 Windows Device Portal is related to IoT devices and it allows users to configure devices using it.
 

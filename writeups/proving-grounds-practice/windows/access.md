@@ -95,7 +95,7 @@ Earlier, our detailed `nmap` scan picked up on the HTTP Server Header having 'PH
 
 Attempting to upload files ending in `.php` result in this:
 
-<figure><img src="../../../.gitbook/assets/image (98).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (98) (5).png" alt=""><figcaption></figcaption></figure>
 
 This is bypassable using a null byte:
 
@@ -198,7 +198,7 @@ access\svc_mssql
 
 Then, download another copy of `nc64.exe` and execute it to get another reverse shell:
 
-<figure><img src="../../../.gitbook/assets/image (83).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (83) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### SeManageVolumePrivilege --> WerTrigger
 

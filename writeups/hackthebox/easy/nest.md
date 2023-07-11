@@ -20,7 +20,7 @@ The `Users` one had the most information and was the only one accessible, so I c
 
 Within the files downloaded, we can find a `Welcome Email.txt` file.
 
-<figure><img src="../../../.gitbook/assets/image (59) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (59) (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can then check the permission of shares again with these credentials using `smbmap`.
 

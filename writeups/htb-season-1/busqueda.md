@@ -54,7 +54,7 @@ This is vulnerbale because it uses `eval` to run the queries. Checking the v ers
 
 I sent `import('os').system('ping -c 1 10.10.16.41')` as the query, and got a response on `tcpdump`:
 
-<figure><img src="../../.gitbook/assets/image (65) (1) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (65) (1) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now, we just need to gain a reverse shell. It seems that `eval` as it cannot process the reverse shells I put in. I found this writeup for a bug bounty that bypasses this by using `compile()`.&#x20;
 

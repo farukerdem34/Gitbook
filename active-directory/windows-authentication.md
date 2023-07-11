@@ -61,7 +61,7 @@ As mentioned earlier, LSA allows Windows to act as both the client and authentic
 
 How it works is illustrated in this diagram here (taken from ATTL4S):
 
-<figure><img src="../.gitbook/assets/image (64) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (64) (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### SSP
 
@@ -104,7 +104,7 @@ There are 2 main types of sessions that are created:
 
 Interactive sessions are what happens when we login normally through our login page. The user credentials are cached within the memory of the LSA process, called the Local Security Authority Subsystem Service (LSASS). In specific, it is cached in `lsass.exe`. Cached credentials allow for Windows to provide for a Single Sign-On (SSO) service to users.&#x20;
 
-<figure><img src="../.gitbook/assets/image (70) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (70) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 #### Non-Interactive
 
