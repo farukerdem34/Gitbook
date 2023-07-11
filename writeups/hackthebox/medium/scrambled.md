@@ -56,7 +56,7 @@ Ton of shares here, but we can only access the `Public` share. We can find one i
 
 Within this PDF, we can find some useful hints on where to head to next:
 
-<figure><img src="../../../.gitbook/assets/image (390).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (390) (1).png" alt=""><figcaption></figcaption></figure>
 
 So an attacker was able to retrieve stuff from an SQL database used by HR. Furthermore, the Kerberos authentication bit made me realise that we should be attempting to resolve User SPNs to Kerberoast whatever SQL users there were.
 

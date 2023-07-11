@@ -19,7 +19,7 @@ PORT   STATE SERVICE
 
 Port 80 hosted a website that had a countdown to a domain being launched.
 
-<figure><img src="../../../.gitbook/assets/image (459).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (459) (3).png" alt=""><figcaption></figcaption></figure>
 
 There was nothing interesting about this website. The search there is static. We can do a `gobuster` directory and `wfuzz` subdomain scan. `gobuster` only picked up on static site files, but `wfuzz` picked up on a `portal` endpoint:
 

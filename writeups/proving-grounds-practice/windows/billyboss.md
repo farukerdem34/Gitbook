@@ -38,7 +38,7 @@ To avoid making this long:
 
 Port 8081 had a Nexus Repository Manager that was running:
 
-<figure><img src="../../../.gitbook/assets/image (79).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (79) (6).png" alt=""><figcaption></figcaption></figure>
 
 To exploit this, we first need to guess the credentials to login. `nexus:nexus` works for this one. Then, we need to grab the correct exploit:
 

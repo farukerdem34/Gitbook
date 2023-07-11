@@ -167,6 +167,6 @@ Afterwards, we just need to transfer this reverse shell over and name it as `tas
 
 Then, we would get a meterpreter shell on the listener:
 
-<figure><img src="../../../.gitbook/assets/image (642).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (642) (1).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

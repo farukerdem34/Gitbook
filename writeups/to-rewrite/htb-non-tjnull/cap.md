@@ -8,7 +8,7 @@ description: Good beginners machine.
 
 We begin with an Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (207).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (207) (2).png" alt=""><figcaption></figcaption></figure>
 
 Did a detailed Nmap scan to find outmore about the services:
 

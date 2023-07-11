@@ -370,6 +370,7 @@
     * [Phobos](writeups/proving-grounds-practice/page-1/phobos.md)
     * [PlanetExpress](writeups/proving-grounds-practice/page-1/planetexpress.md)
     * [QuackerJack](writeups/proving-grounds-practice/page-1/quackerjack.md)
+    * [Reconstruction (WIP)](writeups/proving-grounds-practice/page-1/reconstruction-wip.md)
     * [Sirol](writeups/proving-grounds-practice/page-1/sirol.md)
     * [Shiftdel](writeups/proving-grounds-practice/page-1/shiftdel.md)
     * [Shifty](writeups/proving-grounds-practice/page-1/shifty.md)

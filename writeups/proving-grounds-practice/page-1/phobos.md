@@ -214,7 +214,7 @@ Earlier, the repository comments mentioned something about a UFW firewall. A qui
 
 &#x20;
 
-<figure><img src="../../../.gitbook/assets/image (78).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (78) (6).png" alt=""><figcaption></figcaption></figure>
 
 Here are the rules:
 

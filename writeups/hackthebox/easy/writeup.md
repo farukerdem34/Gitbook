@@ -133,4 +133,4 @@ jkr@writeup:/usr/local/bin$ chmod +x run-parts
 
 Afterwards, we just need to `ssh` back into the machine to execute it and get a `root` shell.
 
-<figure><img src="../../../.gitbook/assets/image (588).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (588) (1).png" alt=""><figcaption></figcaption></figure>

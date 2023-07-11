@@ -40,7 +40,7 @@ No repositories present, but tehre was one user:
 
 Nothing much there. However, Gitea does have an API present at the bottom, and clicking it loads an empty page:
 
-<figure><img src="../../../.gitbook/assets/image (233).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (233) (2).png" alt=""><figcaption></figcaption></figure>
 
 Check the page source, it seems that there's a subdomain that needs to be added:
 
