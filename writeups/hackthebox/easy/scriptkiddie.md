@@ -60,7 +60,7 @@ After echoing it in, we would gain anoter reverse shell:
 
 When checking `sudo` privileges, we see that we can run `msfconsole` as root.
 
-<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1) (10).png" alt=""><figcaption></figcaption></figure>
 
 The thing about `msfconsole` is that we can run shell commands in it. In short, we have root privileges just by doing `sudo msfconsole`:
 

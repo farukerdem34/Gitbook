@@ -34,7 +34,7 @@ Port 8000 had another login page:
 
 Within the logs tab, we can see that there were some calls being logged:
 
-<figure><img src="../../../.gitbook/assets/image (7) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (1) (1) (6).png" alt=""><figcaption></figcaption></figure>
 
 Within the Configuration tab, there was some XML looking output. Here's it below:
 

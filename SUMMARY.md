@@ -372,6 +372,7 @@
     * [Mantis](writeups/proving-grounds-practice/page-1/mantis.md)
     * [Megavolt](writeups/proving-grounds-practice/page-1/megavolt.md)
     * [Nibbles](writeups/proving-grounds-practice/page-1/nibbles.md)
+    * [Nukem](writeups/proving-grounds-practice/page-1/nukem.md)
     * [Pelican](writeups/proving-grounds-practice/page-1/pelican.md)
     * [Phobos](writeups/proving-grounds-practice/page-1/phobos.md)
     * [Postfish](writeups/proving-grounds-practice/page-1/postfish.md)

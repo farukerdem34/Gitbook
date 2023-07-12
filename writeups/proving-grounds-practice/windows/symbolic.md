@@ -21,7 +21,7 @@ SSH was open on this machine, which was unusual for Windows.&#x20;
 
 Port 80 was rather simple:
 
-<figure><img src="../../../.gitbook/assets/image (9) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (2) (7).png" alt=""><figcaption></figcaption></figure>
 
 I created a HTML file with one word within it, then hosted it on my HTTP server and submitted the URL with my IP. This returned a PDF:
 

@@ -55,7 +55,7 @@ Within the settings of the Admin Panel, we can find the version of OSTicket runn
 
 This version is vulnerable to an RCE exploit. To exploit it, we first need to enable the plugin that stores attachments within the file system of the machine:
 
-<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (2).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, in the settings, make sure to change the Attachment settings:
 

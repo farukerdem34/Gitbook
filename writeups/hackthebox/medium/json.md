@@ -105,7 +105,7 @@ angular.module("json", ["ngCookies"]).controller("loginController", ["$http", "$
 
 This bit of code reveals a bit more about how the POST requests to `/api/token` are processed. We can try to send a POST request with `admin:admin` as the fields. This returns a request with the `OAuth2` cookie set to a JWT looking token:
 
-<figure><img src="../../../.gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (36) (9).png" alt=""><figcaption></figcaption></figure>
 
 When decoded, we get this:
 

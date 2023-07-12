@@ -46,7 +46,7 @@ So there are some forms of `base64` encoded cookies involved in this website. An
 
 When we login, there is an extra cookie called `token` that is being assigned. It's a JWT token with this value:
 
-<figure><img src="../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Again, not sure what to do with this yet. We can click on the 'Gallery' option to see the traffic generated:
 
@@ -445,7 +445,7 @@ wget <IP>:4444/rep.tar
 
 Afterwards, we can view the `git log -p -2` output to find some credentials.
 
-<figure><img src="../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can then `su` to `greg`.
 

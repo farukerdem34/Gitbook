@@ -77,7 +77,7 @@ Interesting. Since this is using `asp`, and the output is printed on another scr
 
 And this was returned:
 
-<figure><img src="../../../.gitbook/assets/image (3) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (4) (5).png" alt=""><figcaption></figcaption></figure>
 
 This confirms that SSTI is possible on this machine, and that we can use this to gain a reverse shell (if there's no AMSI / AppLocker).&#x20;
 
