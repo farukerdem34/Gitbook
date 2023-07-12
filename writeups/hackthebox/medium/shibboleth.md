@@ -20,7 +20,7 @@ We have to add `shibboleth.htb` to our `/etc/hosts` file before we can view the 
 
 The web application is a typical corporate page:
 
-<figure><img src="../../../.gitbook/assets/image (109).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (109) (5).png" alt=""><figcaption></figcaption></figure>
 
 Most of the site was static and didn't do anything. However, there was one interesting part at the bottom:
 
@@ -251,6 +251,6 @@ ERROR 2013 (HY000): Lost connection to MySQL server during query
 
 This would spawn a `root` shell on our listener port!
 
-<figure><img src="../../../.gitbook/assets/image (87).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (87) (1).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

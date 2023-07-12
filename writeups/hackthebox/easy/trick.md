@@ -4,7 +4,7 @@
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (88) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (88) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 We can add the `trick.htb` domain as per usual HTB practice.
 
@@ -12,7 +12,7 @@ We can add the `trick.htb` domain as per usual HTB practice.
 
 All the ports yield nothing of interest and port 80 was just a corporate website with nothing to interact with. However, when attempting a zone transfer, we would get another domain here:
 
-<figure><img src="../../../.gitbook/assets/image (92) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (92) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 The `preprod-payroll` subdomain was new, and I headed there.
 
@@ -24,7 +24,7 @@ The page revealed some kind of application used to manage employee salary tracki
 
 Initially, I assumed that there would be some kind of public exploit for this Employee Record system, and found quite a few.
 
-<figure><img src="../../../.gitbook/assets/image (107) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (107) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 However, none of the exploits worked here and I was stuck.
 

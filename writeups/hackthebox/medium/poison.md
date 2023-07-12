@@ -26,7 +26,7 @@ There was a `pwdbackup.txt` file, and when read it shows a password that has bee
 
 When decrypted, it gives `Charix!2#4%6&8(0`. We can then use this to SSH in as the user `charix`.
 
-<figure><img src="../../../.gitbook/assets/image (18) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (1) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

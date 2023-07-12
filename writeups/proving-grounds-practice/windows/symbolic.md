@@ -73,7 +73,7 @@ This confirms that LFI works. We can edit the PoC to show all the content:
 <iframe src="C:/Windows/system32/drivers/etc/hosts" height=1000 width=1000 />
 ```
 
-<figure><img src="../../../.gitbook/assets/image (19) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (19) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 Now, we just need to find the correct file to read. The website gives us a username `p4yl0ad`, and SSH is open, so let's try to read the user's private key.
 
@@ -85,7 +85,7 @@ Now, we just need to find the correct file to read. The website gives us a usern
 
 Using this, we can `ssh` in as the user:
 
-<figure><img src="../../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

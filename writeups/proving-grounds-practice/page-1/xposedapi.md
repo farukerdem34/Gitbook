@@ -21,7 +21,7 @@ This box likely has some API exploitation, so we can start proxying traffic thro
 
 Port 13337 shows some basic documentation for an API:
 
-<figure><img src="../../../.gitbook/assets/image (97).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (97) (3).png" alt=""><figcaption></figcaption></figure>
 
 The most interesting was the `/update` endpoint, which accepted a user-controlled URL and says it updates the application via a 'Linux Executable'. This might be vulnerable to RCE if we can chain commands to the end of the URL.&#x20;
 

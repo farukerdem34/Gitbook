@@ -38,7 +38,7 @@ We can find a new domain at `cacti-admin.monitors.htb`. Afterwards, I also read 
 
 Upon visting this separate domain, we are greeted by another login page:
 
-<figure><img src="../../../.gitbook/assets/image (60) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (60) (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 This version of Cacti is old and vulnerable to loads of exploits. We can login with the credentials for Wordpress. Afterwards, we can use an exploit that uses SQL injection to gain a reverse shell.
 

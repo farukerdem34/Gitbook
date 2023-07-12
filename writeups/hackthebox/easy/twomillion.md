@@ -325,7 +325,7 @@ This whole thing is in hex, so I used Cyberchef to decode it:
 
 Now it's being XOR'd with 'HackTheBox' as the key. The output can be decoded and piped to an XOR command with the specified key to find a hidden message:
 
-<figure><img src="../../../.gitbook/assets/image (50) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (50) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 Here's the message:
 

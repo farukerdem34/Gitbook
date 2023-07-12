@@ -33,7 +33,7 @@ Website presents some kind of QR Code maker / reader application:
 
 We can actually download the application below and view the source code:
 
-<figure><img src="../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 
 

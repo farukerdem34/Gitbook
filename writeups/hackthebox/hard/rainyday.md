@@ -90,7 +90,7 @@ As such, I transferred chisel over to this machine and created a tunnel.
 
 <figure><img src="../../../.gitbook/assets/image (120) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (104) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (104) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now that we have this, we can begin to enumerate the network inside. We can do a quick ping sweep to see what's alive in there.
 
@@ -128,7 +128,7 @@ Now we can fuzz the /api endpoint more to hopefully find something new. After a 
 
 Visiting this page gave me this JSON object:
 
-<figure><img src="../../../.gitbook/assets/image (94) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (94) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 The last part is the most interesting because it contains some form of regex pattern and its a custom type. This page looks to be appears to be telling us parameters for a POST request perhaps.
 

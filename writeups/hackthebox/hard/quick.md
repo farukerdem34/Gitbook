@@ -194,7 +194,7 @@ After logging in, we see a Ticket Management System:
 
 We can raise tickets and it takes a message from us.
 
-<figure><img src="../../../.gitbook/assets/image (20) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20) (1) (8).png" alt=""><figcaption></figcaption></figure>
 
 This is where ESI injection can come in handy. Following the PoC earlier, we can use this:
 

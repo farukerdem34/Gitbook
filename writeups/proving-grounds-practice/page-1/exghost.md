@@ -87,7 +87,7 @@ backup: pcap capture file, microsecond ts (little-endian) - version 2.4 (Etherne
 
 We can open this up in `wireshark` and view the TCP streams. Within TCP Stream 1, we can find this HTTP request:
 
-<figure><img src="../../../.gitbook/assets/image (104).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (104) (2).png" alt=""><figcaption></figcaption></figure>
 
 Seems that we are able to upload files through POST requests at `exiftest.php`:
 
@@ -98,7 +98,7 @@ There is no file to upload.
 
 From the PCAP file, we can actually export the `exiftest.php` file:
 
-<figure><img src="../../../.gitbook/assets/image (99).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (99) (1).png" alt=""><figcaption></figcaption></figure>
 
 Interestingly the second `exiftest.php` was the response, and here's the contents:
 
@@ -154,7 +154,7 @@ print(requests.post(url, files=files).text)
 
 After uploading it, we would get a shell as `www-data`:
 
-<figure><img src="../../../.gitbook/assets/image (94).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (94) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

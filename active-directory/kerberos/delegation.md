@@ -154,7 +154,7 @@ The **Kerberos only** option uses S4U2Proxy, while the other option both new ext
 
 In the interest of keeping this page shorter, I won't be covering the full request here since it's largely the same as Unconstrained Delegation except for a few changes. Again, ATTL4S provides a clear packet capture on how it works:
 
-<figure><img src="../../.gitbook/assets/image (34) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (34) (1) (5).png" alt=""><figcaption></figcaption></figure>
 
 The differences are in the TGS REQ and TGS REP to the `cifs` service with the S4U2Proxy extension. It's the same up the point AFTER the AP REQ (HTTP) part:
 

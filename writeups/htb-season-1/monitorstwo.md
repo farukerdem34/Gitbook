@@ -29,7 +29,7 @@ The version run is actually vulnerable to one unauthenticated RCE exploit, and t
 
 This has to do with the polling of Cacti, and we just need to modify the exploit to point to our own IP address to get a shell.
 
-<figure><img src="../../.gitbook/assets/image (42) (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (42) (9) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

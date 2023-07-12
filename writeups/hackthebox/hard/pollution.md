@@ -67,7 +67,7 @@ I knew that there was some hidden servers or something within the website, as th
 
 Regular fuzzing did not do much for me, but when I fuzzed the HTTP Host header using `wfuzz`, I was able to find some results.
 
-<figure><img src="../../../.gitbook/assets/image (92) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (92) (1) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can add both of these to the `/etc/hosts` file. The `developers` subdomain requires a password to enter.
 

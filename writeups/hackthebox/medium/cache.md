@@ -19,7 +19,7 @@ PORT   STATE SERVICE
 
 Port 80 reveals a blog like website:
 
-<figure><img src="../../../.gitbook/assets/image (24) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (24) (2) (4).png" alt=""><figcaption></figcaption></figure>
 
 There's not much here, but we can add `cache.htb` to our `/etc/hosts` file since there's a banner for it on screen. I ran a `gobuster` and `wfuzz` scan on the machine. Funnily, I accidentally had a typo in my `wfuzz` command, and found a completely new domain present:
 

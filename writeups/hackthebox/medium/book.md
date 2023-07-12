@@ -83,7 +83,7 @@ When I set this as the Book Title and Author when uploading the book, and when w
 
 I ran a `pspy64` on the machine to view the processes that were running on the machine. I found that the root user was running `logrotate` consistenly.
 
-<figure><img src="../../../.gitbook/assets/image (31) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (31) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 Also, within the `/home/reader/backups` directory, there were a few `access.log` files that were   being written to every few seconds.&#x20;
 

@@ -96,7 +96,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 The release notes shows that the creators added some 'checks' for the upload feature, which obviously failed if LFI can be used:
 
-<figure><img src="../../.gitbook/assets/image (9) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (9) (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 We need to find out what kind of framework this is running. Because this uses images, I found out we can read directories like this:
 

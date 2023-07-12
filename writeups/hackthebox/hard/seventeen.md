@@ -296,7 +296,7 @@ We find that it stores the uploads at `/files/<studentID>/uploads`. We can then 
 
 Great! However, when I tried the exploit the first time, it wouldn't work for some reason. Turns out, we did not find the right directory where the files are stored. Running a ferox`buster` scan for the upload directory would reveal another one.
 
-<figure><img src="../../../.gitbook/assets/image (98) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (98) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 The `/papers` directory seems to be where they are stored. After that, we can perform the RCE. Following the PoC, we need to send this POST request via Burp.
 

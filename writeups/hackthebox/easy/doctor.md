@@ -89,6 +89,6 @@ Normally, Splunk runs on port 8089, and we did find that port open on the machin
 
 We can easily run the exploit to give us a reverse shell as root.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (37) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (37) (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (42) (6).png" alt=""><figcaption></figcaption></figure>

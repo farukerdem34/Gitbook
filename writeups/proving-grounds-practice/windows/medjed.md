@@ -231,7 +231,7 @@ Port 8000 had a BarracudaServer instance:
 
 It appears that we can set the administrator for this machine:
 
-<figure><img src="../../../.gitbook/assets/image (80).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (80) (5).png" alt=""><figcaption></figcaption></figure>
 
 Apart from that, we could not do anything else on this website after running directory scans on it.&#x20;
 
@@ -352,7 +352,7 @@ Looking for AutoLogon credentials
 
 We can also find a possible service to exploit:
 
-<figure><img src="../../../.gitbook/assets/image (88).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (88) (1).png" alt=""><figcaption></figcaption></figure>
 
 It appears that can modify `bd.exe`:
 

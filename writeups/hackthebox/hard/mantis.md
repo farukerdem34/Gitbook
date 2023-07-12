@@ -286,7 +286,7 @@ After uploading the data to Bloodhound, we find that the user `james` can RDP in
 
 That's rather unique, but port 3389 is not open on the machine, meaning we need to do something else. There wasn't any other users on the domain as well:
 
-<figure><img src="../../../.gitbook/assets/image (40) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (40) (6) (2).png" alt=""><figcaption></figcaption></figure>
 
 I was stuck here for a while...
 

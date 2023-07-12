@@ -103,7 +103,7 @@ This bit of code does not validate the name of the file that is being deleted. I
 
 However, when trying to exploit this thing, the `internal` website does not seem to be working with all the links being broken.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (50).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (50) (1).png" alt=""><figcaption></figcaption></figure>
 
 This made me think more about WHERE exactly this site is being hosted.
 
@@ -166,11 +166,11 @@ We can then login to the site! For some reason it's not loading the visual eleme
 
 There are a few functions in this site. We know that the 'Submission' one is vulnerable, but we need some kind of administrator account first. So we can view the 'MyAccount' function:
 
-<figure><img src="../../../.gitbook/assets/image (60).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (60) (3).png" alt=""><figcaption></figcaption></figure>
 
 When the traffic is intercepted, it includes a `username` parameter:
 
-<figure><img src="../../../.gitbook/assets/image (53) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (53) (1) (6).png" alt=""><figcaption></figcaption></figure>
 
 Maybe we can change the username to something else, so I changed it to `admin` and found that I could login as the `admin` user!
 
@@ -180,7 +180,7 @@ Maybe we can change the username to something else, so I changed it to `admin` a
 
 The administrator had a few things different, such as the 'Submissions' function being replaced with a submission reviewer:
 
-<figure><img src="../../../.gitbook/assets/image (66).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (66) (5).png" alt=""><figcaption></figcaption></figure>
 
 When we choose a report and view it, it sends this HTTP POST request:
 
@@ -323,6 +323,6 @@ The last password was for the user `root`, and we can try an `su`, which ends up
 
 &#x20;
 
-<figure><img src="../../../.gitbook/assets/image (74).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (74) (4).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

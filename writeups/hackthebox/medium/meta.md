@@ -25,7 +25,7 @@ The webpage was a start-up website:
 
 They had a team with some names I might need to use, along with a hint that this was a PHP based website.
 
-<figure><img src="../../../.gitbook/assets/image (5) (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (12) (1).png" alt=""><figcaption></figcaption></figure>
 
 There wasn't much on the website, so we can try `gobuster` scanning for directories and `wfuzz` scanning for sub-domains. A `gobuster` scan reveals nothing, but the `wfuzz` scan did reveal one sub-domain.
 

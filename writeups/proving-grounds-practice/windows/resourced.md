@@ -261,11 +261,11 @@ INFO: Done in 00M 33S
 
 We can then upload all of this information to `bloodhound`. Then, we find that `l.livingstone` is part of the Remote Management Group:
 
-<figure><img src="../../../.gitbook/assets/image (18) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can then `evil-winrm` in by passing the hash.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (31) (4).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can grab the user flag.
 

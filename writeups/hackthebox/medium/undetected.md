@@ -104,11 +104,11 @@ We can transfer this back to my machine for some reverse engineering via `ghidra
 
 There are a lot of functions within this function:
 
-<figure><img src="../../../.gitbook/assets/image (15) (3) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (3) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Out of all the functions, `exec_shell` is the most unique because it actually executes something.
 
-<figure><img src="../../../.gitbook/assets/image (33) (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (33) (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can see the `-c` flag, and it is passed to `execve`, which means that some commands are being executed here. However, `ghidra` is unable to to see what is being executed. When we open it up in `ida64`, we can see a huge chunk of hex.
 

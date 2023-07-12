@@ -40,6 +40,6 @@ With the password and this username, we can SSH into the machine.
 
 Checking sudo privileges, we see this.
 
-<figure><img src="../../../.gitbook/assets/image (23) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (23) (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 Because we have the password from earlier, we can run `sudo su` to become root.

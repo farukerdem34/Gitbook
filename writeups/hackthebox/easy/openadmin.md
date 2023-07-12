@@ -10,7 +10,7 @@ Nmap scan:
 
 We can run a `gobuster` scan on port 80:
 
-<figure><img src="../../../.gitbook/assets/image (110) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (110) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 I visited the `/music` directory first and it brought me to some corporate website:
 

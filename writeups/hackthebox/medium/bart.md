@@ -32,7 +32,7 @@ We can visit this to see that it's running PHP Server Monitor v3.2.1.
 
 `harvey:potter` works as credentials to let us log in. There, we would view an internal chat instance.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (52) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (52) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 I looked around and found the settings for this internal chat service, and found another subdomain.
 

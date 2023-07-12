@@ -76,7 +76,7 @@ for i in {1..254}; do ping -c 1 172.19.0.$i | grep 'from; done
 
 Since there was no `augustus` user within the `/etc/passwd` file on the container, this must be from the host. I just tried to SSH into 172.19.0.1, and it worked.
 
-<figure><img src="../../../.gitbook/assets/image (52) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (52) (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

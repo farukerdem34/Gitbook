@@ -102,4 +102,4 @@ However, `PrintSpoofer.exe` wasn't working normally, so we probably need to use 
 
 For some reason, this user was unable to run `whoami`, so I just captured the flag instead:
 
-![](<../../../.gitbook/assets/image (73).png>)
+![](<../../../.gitbook/assets/image (73) (6).png>)

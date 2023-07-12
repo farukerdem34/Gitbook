@@ -74,7 +74,7 @@ From here, we can move a webshell into this directory and confirm we have RCE on
 
 With this, we can easily get a reverse shell as this alex user.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (97) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (97) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (2) (3) (1).png" alt=""><figcaption></figcaption></figure>
 

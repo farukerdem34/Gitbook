@@ -54,7 +54,7 @@ Within the admin dashboard, we can see a few functionalities that cause a unique
 
 I found this rather interesting, and wanted to fuzz this more. I was able to find another `debug` endpoint using `wfuzz`.
 
-<figure><img src="../../../.gitbook/assets/image (41) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (41) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 I also used `gobuster` to see what other files were present on this directory.
 
@@ -103,7 +103,7 @@ We don't have much control over the machine with this user, so we need to find a
 
 When checking `netstat`, we can find a service listening on port 1433 that was not detectable earlier from our Kali machine.
 
-<figure><img src="../../../.gitbook/assets/image (75) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (75) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Also, we can head to the `inetpub` folder to find credentials, of which we do within the `index.php` file:
 

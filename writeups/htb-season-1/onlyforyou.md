@@ -21,7 +21,7 @@ Web Exploit for RCE it seems. We have to add `only4you.htb` to our `/etc/hosts` 
 
 Port 80 is hosting a corporate website.
 
-<figure><img src="../../.gitbook/assets/image (56) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (56) (5) (2).png" alt=""><figcaption></figcaption></figure>
 
 At the very bottom, it seems that we can download a trial of their application. This redirects us to the `beta.only4you.htb` domain.
 

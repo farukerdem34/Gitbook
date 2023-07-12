@@ -47,7 +47,7 @@ There's an administration directory present, and when viewed it just shows a log
 
 I tried default and weak credentials, but they don't work. When the traffic is viewed in Burp, we can see that there are some tokens being passed around:
 
-<figure><img src="../../../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (34) (1).png" alt=""><figcaption></figcaption></figure>
 
 The `auth_status` cookie is just a `base64` encoded string of `{'success':'false'}`. Afterwards, the `auth_status` cookie is appended to every subsequent login attempt. We can easily replace this with `true` and be granted access to the admin dashboard:
 
@@ -134,7 +134,7 @@ url=http://127.0.0.1:8080/infusions/downloads/downloads.php?cat_id=$\{system(bas
 
 Then we can get a reverse shell and grab the user flag:
 
-<figure><img src="../../../.gitbook/assets/image (103).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (103) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -238,7 +238,7 @@ The exploit would be to write a small snippet making `/bin/bash` an SUID binary 
 
 We can use `vi` to edit the file to include `system("chmod u+s /bin/bash");`, and then use `:wq!` to force the save. Afterwards, when we can run the file using `sudo` as `james`:
 
-<figure><img src="../../../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (32) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then we can easily become the `root` user:
 

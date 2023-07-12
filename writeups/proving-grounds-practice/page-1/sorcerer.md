@@ -70,7 +70,7 @@ There was nothing, so let's move on.
 
 Port 7742 just shows us a login page:
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (13).png" alt=""><figcaption></figcaption></figure>
 
 I ran a `gobuster` directory scan while I tested some weak default passwords. I found a few directories present:
 

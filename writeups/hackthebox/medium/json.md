@@ -54,7 +54,7 @@ Port 80 just shows us a login for HackTheBox:
 
 When the traffic is viewed in Burpsuite, we can see a lot of different JS files being loaded as well:
 
-<figure><img src="../../../.gitbook/assets/image (27) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (27) (6) (2).png" alt=""><figcaption></figcaption></figure>
 
 The POST request to `/api/token` was my first login attempt:
 
@@ -207,7 +207,7 @@ SeIncreaseWorkingSetPrivilege Increase a process working set            Disabled
 
 We can either abuse `JuicyPotato.exe` or just use `PrintSpoofer.exe`. Both work. Before doing those, make sure to download `nc.exe` to get a `cmd.exe` shell instead of a Powershell one.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (30) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can find the `root.txt` flag in the `superadmin` user's desktop.&#x20;
 

@@ -23,7 +23,7 @@ We have to add `ssa.htb` to our `/etc/hosts` file to visit the HTTPS site.&#x20;
 
 The website promotes an agency for spies:
 
-<figure><img src="../../.gitbook/assets/image (26) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (26) (1) (7).png" alt=""><figcaption></figcaption></figure>
 
 The contact page allows us to send messages that are encrypted with a key:
 
@@ -289,6 +289,6 @@ You can now run 'firejail --join=10543' in another terminal to obtain a shell wh
 
 Then in another shell:
 
-<figure><img src="../../.gitbook/assets/image (103) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (103) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!&#x20;

@@ -46,7 +46,7 @@ Rocket.Chat 3.12.1 - NoSQL Injection to RCE (Unauthenticat | linux/webapps/50108
 
 I registered a new account and found the administrator profile of this instance:
 
-<figure><img src="../../../.gitbook/assets/image (98).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (98) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can use `50108.py` to exploit this. Since we created our own low priv user, we can comment the part of the script that resets the low priv user's password:
 

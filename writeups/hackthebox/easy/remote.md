@@ -123,7 +123,7 @@ The login page for the website is located at the `/Umbraco` directory. We can lo
 
 After logging in, we can enumerate the version that it is running.
 
-<figure><img src="../../../.gitbook/assets/image (30) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (30) (2) (4).png" alt=""><figcaption></figcaption></figure>
 
 This version of Umbraco is vulnerable to an Authenticated RCE exploit:
 

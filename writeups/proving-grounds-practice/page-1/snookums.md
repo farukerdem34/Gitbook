@@ -28,7 +28,7 @@ Lots of ports open.
 
 Port 80 was running a Simple PHP Photo Gallery instance:
 
-<figure><img src="../../../.gitbook/assets/image (114).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (114) (5).png" alt=""><figcaption></figcaption></figure>
 
 This thing might be vulnerable to an RFI based on `searchsploit`:
 
@@ -124,7 +124,7 @@ HockSydneyCertify123
 
 Then, just use `su`:
 
-<figure><img src="../../../.gitbook/assets/image (122).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (122) (7).png" alt=""><figcaption></figcaption></figure>
 
 Grab the user flag.
 

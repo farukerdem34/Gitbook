@@ -48,7 +48,7 @@ When we visit this subdomain, it reveals a GitLab instance.&#x20;
 
 When trying to create a user, it appears we have to have a specific email domain being used.
 
-<figure><img src="../../../.gitbook/assets/image (75).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (75) (3).png" alt=""><figcaption></figcaption></figure>
 
 Using `laboratory.htb` works as the email domain, then we can view the dashbaord:
 

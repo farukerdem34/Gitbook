@@ -93,7 +93,7 @@ Interestingly, the `atanas` user can access the root directory and find a hint a
 
 Reading the `app.log` file reveals some interesting stuff.
 
-<figure><img src="../../../.gitbook/assets/image (108) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (108) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 First thing to note was that there was another IP address at 10.0.3.133. Next, this was using `wget` 1.16, which was a vulnerable version of the binary. Lastly, take a look at the timestamps. Notice how they occur exactly after every 2 minutes? Perhaps this was a cronjob running in the background that we needed to exploit.&#x20;
 
@@ -116,7 +116,7 @@ Then, we can replace the command used in the script to a cronjob reverse shell b
 
 Then, we would need to set up a FTP server on our machine with these files using `python3`.
 
-<figure><img src="../../../.gitbook/assets/image (99) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (99) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can attempt to test run the exploit and see that it returns a `socket.error`.
 
