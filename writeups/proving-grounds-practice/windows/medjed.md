@@ -299,7 +299,7 @@ If were to try with some of the users on the main page, we would trigger a diffe
 
 Here's the part I found incredibly stupid, we actually needed to brute force the users to find the correct 'reminder'. Here's the correct user after trying a load of them:
 
-<figure><img src="../../../.gitbook/assets/image (26) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (26) (2) (4).png" alt=""><figcaption></figcaption></figure>
 
 Once we reset this, we can login to view the dashboard:
 

@@ -76,7 +76,7 @@ Within this, we also can find another binary being used:
 
 Similar to the previous time, we can load the binary in dnSpy and set a breakpoint to view the password. We would need to use all 3 files, and create an `ldap.conf` file that is passed in as a parameter to the main function. Then, we can view the contents of variables to see the password.
 
-<figure><img src="../../../.gitbook/assets/image (27) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (27) (1) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, we would have full access to the C Drive:
 

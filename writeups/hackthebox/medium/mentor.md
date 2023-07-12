@@ -335,7 +335,7 @@ chisel server -p 5555 --reverse
 
 Afterwards, we can access the database:
 
-<figure><img src="../../../.gitbook/assets/image (8) (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (7) (3).png" alt=""><figcaption></figcaption></figure>
 
 We can view the databases present:
 

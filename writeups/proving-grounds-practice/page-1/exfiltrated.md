@@ -44,7 +44,7 @@ So there's a `/panel` directory present, and we can enumerate that first:
 
 The `/panel` directory shows us a basic login page:
 
-<figure><img src="../../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (28) (4).png" alt=""><figcaption></figcaption></figure>
 
 We can login with `admin:admin`. This software was Subrion CMS v4.2.1, which had a few public exploits:
 

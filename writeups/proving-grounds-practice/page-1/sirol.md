@@ -23,7 +23,7 @@ PORT      STATE  SERVICE
 
 Port 5601 had a Kibana instance running:
 
-<figure><img src="../../../.gitbook/assets/image (16) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (2) (5).png" alt=""><figcaption></figcaption></figure>
 
 Using the Dev Tools Console, we can check the version that is running:
 

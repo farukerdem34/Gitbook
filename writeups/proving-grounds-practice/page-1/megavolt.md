@@ -45,7 +45,7 @@ As soon as we upload the file and submit a new ticket, we get this on a listener
 
 Using this cookie, we can then login to OSTicket at `/scp` by changing our cookie within Burp:
 
-<figure><img src="../../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (25) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### OSTicket RCE
 
@@ -94,7 +94,7 @@ The exploit took me quite a few times before it worked. If it doesn't work, uplo
 
 The script would brute force every possible directory that the PHP shell is in before executing it:
 
-<figure><img src="../../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (27) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

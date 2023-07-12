@@ -27,7 +27,7 @@ The most interesting was the `/update` endpoint, which accepted a user-controlle
 
 But we didn't have a username yet. There's also a `/logs` endpoint:
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (4).png" alt=""><figcaption></figcaption></figure>
 
 Attempting to visit it results in a WAF blocking us:
 

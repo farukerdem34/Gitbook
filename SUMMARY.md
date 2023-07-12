@@ -365,7 +365,7 @@
     * [Exghost](writeups/proving-grounds-practice/page-1/exghost.md)
     * [Hetemit](writeups/proving-grounds-practice/page-1/hetemit.md)
     * [Hunit](writeups/proving-grounds-practice/page-1/hunit.md)
-    * [Illusion (WIP)](writeups/proving-grounds-practice/page-1/illusion-wip.md)
+    * [Illusion](writeups/proving-grounds-practice/page-1/illusion.md)
     * [Injecto](writeups/proving-grounds-practice/page-1/injecto.md)
     * [G00g](writeups/proving-grounds-practice/page-1/g00g.md)
     * [Malbec](writeups/proving-grounds-practice/page-1/malbec.md)

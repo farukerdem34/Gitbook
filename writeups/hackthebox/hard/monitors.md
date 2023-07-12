@@ -12,7 +12,7 @@ We can add `monitors.htb` to our `/etc/hosts` file.
 
 Port 80 hosts a Wordpress site.
 
-<figure><img src="../../../.gitbook/assets/image (25) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (25) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 We can run `wpscan` to enumerate the plugins and version, and this finds that **wp-with-spritz** is being used.
 

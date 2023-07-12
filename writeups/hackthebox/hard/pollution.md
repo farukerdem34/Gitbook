@@ -414,6 +414,6 @@ curl http://127.0.0.1:3000/admin/messages/send -H "X-Access-Token: eyJhbGciOiJIU
 
 This would call a child\_process to execute `chmod +s /usr/bin/bash`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (4) (4) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (4) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 We are now root, and we can capture the root flag.

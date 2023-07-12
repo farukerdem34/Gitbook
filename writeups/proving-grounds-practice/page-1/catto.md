@@ -188,4 +188,4 @@ SortMentionLeast269
 
 We can then `su` to `root`:
 
-<figure><img src="../../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (24) (3).png" alt=""><figcaption></figcaption></figure>

@@ -339,7 +339,7 @@ Anyways, we can then access the database as the `sa` user.&#x20;
 
 Next, we can check whether we have `xp_cmdshell` access.
 
-<figure><img src="../../../.gitbook/assets/image (4) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (4) (2).png" alt=""><figcaption></figcaption></figure>
 
 We do! I looked around the file system to find some interesting stuff. First, I checked the users:
 

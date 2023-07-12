@@ -24,7 +24,7 @@ When viewed, we can find this directory listing.
 
 Clicking `phpbash.php` gives us a webshell.
 
-<figure><img src="../../../.gitbook/assets/image (28) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (28) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can check our sudo privleges to find that we can run everything as the `scriptmanager` user.
 

@@ -185,6 +185,6 @@ NhAAAAAwEAAQAAAYEAzAu+X5sUIUBGFen/rkbr6M09cLPZvlsrphqkjcZQ48zivybhHMIJ
 
 We can then use this key to `ssh` in as `root`:
 
-<figure><img src="../../../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (26) (2).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!&#x20;
