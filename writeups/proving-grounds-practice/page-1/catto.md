@@ -92,7 +92,7 @@ On the documentation page, there was mention of GraphQL being used, and sure eno
 
 The left had some queries already valid, so I checked those out. Using the `allSitePage` reveals all directories, including a hidden one:
 
-<figure><img src="../../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (11).png" alt=""><figcaption></figcaption></figure>
 
 Visiting it reveals a password:
 

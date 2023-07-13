@@ -35,7 +35,7 @@ Tihs acts similar to a webhook, and is able to retrieve requests sent to that un
 
 We are able to set the Responses from the website. as well as where the traffic is being forwarded to, just like we can with Webhooks. Setting the Forward URL to our own HTTP server results in requests being sent there from the machine.
 
-<figure><img src="../../.gitbook/assets/image (9) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (9) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Since port 80 was being filtered, we can set it to `http://localhost` and try setting all the options to True. Afterwards, sending GET requests to our bucket would result in HTML being returned:
 

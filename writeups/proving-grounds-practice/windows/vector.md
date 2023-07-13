@@ -46,7 +46,7 @@ C? When we view the page source, there's also this part here:
 
 There's a commented ciphertext, and there's also something which takes a parameter. We can try putting this ciphertext as the parameter requested.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (143).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (143) (3).png" alt=""><figcaption></figcaption></figure>
 
 If we remove some characters, then it loads something else.
 

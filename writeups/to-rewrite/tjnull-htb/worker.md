@@ -83,7 +83,7 @@ This is hosting an Azure Devops instance.
 Here, there was one repository for SmartHotel360, which was located at `spectral.worker.htb`. \
 
 
-<figure><img src="../../../.gitbook/assets/image (186).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (186) (2).png" alt=""><figcaption></figcaption></figure>
 
 This was an IIS site, so we can try to upload an ASPX shell on this site and see if we can trigger it by visting the website. However, we can only upload through pull requests.
 

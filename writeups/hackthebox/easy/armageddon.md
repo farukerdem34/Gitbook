@@ -8,7 +8,7 @@ Nmap scan:
 
 Doing a detailed scan reveals that port 80 is running Drupal 7.
 
-<figure><img src="../../../.gitbook/assets/image (101) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (101) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Drupalgeddon
 

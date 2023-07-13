@@ -33,7 +33,7 @@ Ran a directory scan on this and didn't find much.
 
 Port 50000 had a simple API running:
 
-<figure><img src="../../../.gitbook/assets/image (576).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (576) (2).png" alt=""><figcaption></figcaption></figure>
 
 If we use the `/generate` option, it just returns us this:
 

@@ -118,7 +118,7 @@ sub   rsa3072 2023-06-20 [E]
 
 A bit more testing revealed that `{{7*'7'}}` works as well:
 
-<figure><img src="../../.gitbook/assets/image (124).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (124) (3).png" alt=""><figcaption></figcaption></figure>
 
 I tested both Twig and Jinja2 payloads, and got RCE using this payload:
 

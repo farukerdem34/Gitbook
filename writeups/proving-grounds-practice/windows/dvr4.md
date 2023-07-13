@@ -72,7 +72,7 @@ timer=timer.drv
 
 It works, so now we just need to find out what to read. I know that SSH is open, so we should be looking for a SSH private key of some user. On the website, we can view the users to see 2:
 
-<figure><img src="../../../.gitbook/assets/image (121).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (121) (5).png" alt=""><figcaption></figcaption></figure>
 
 `viewer` is one them, and we can try to read their private key:
 

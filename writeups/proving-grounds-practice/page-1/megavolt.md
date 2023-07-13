@@ -51,7 +51,7 @@ Using this cookie, we can then login to OSTicket at `/scp` by changing our cooki
 
 Within the settings of the Admin Panel, we can find the version of OSTicket running:
 
-<figure><img src="../../../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (19) (9).png" alt=""><figcaption></figcaption></figure>
 
 This version is vulnerable to an RCE exploit. To exploit it, we first need to enable the plugin that stores attachments within the file system of the machine:
 
@@ -90,7 +90,7 @@ Then, we can finally use this repository's script to trigger the shell:
 
 The exploit took me quite a few times before it worked. If it doesn't work, upload your shell with a different name. In my case, `shell.php` worked.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (2).png" alt=""><figcaption></figcaption></figure>
 
 The script would brute force every possible directory that the PHP shell is in before executing it:
 

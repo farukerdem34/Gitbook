@@ -68,7 +68,7 @@ Within the share, I found a .xlsx file.
 
 Reading this file, I found out some usernames and names of users on the domain.
 
-<figure><img src="../../../.gitbook/assets/image (373).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (373) (1).png" alt=""><figcaption></figcaption></figure>
 
 There was something odd however. Where was column C? The spreadsheet shows A,B and D. Perhaps column C was hidden on purpose because it contained other information. I was unable to expand it or view it, thus confirming it was locked.
 

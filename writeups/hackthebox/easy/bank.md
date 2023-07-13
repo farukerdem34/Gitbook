@@ -79,7 +79,7 @@ The Support section allows us to send messages and upload files:
 
 Also, reading the page source reveals another hint.
 
-<figure><img src="../../../.gitbook/assets/image (595).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (595) (1).png" alt=""><figcaption></figcaption></figure>
 
 Using this, we can upload a PHP webshell as `cmd.htb`. Then, we can use `curl` to confirm we have RCE.
 

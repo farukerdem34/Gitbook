@@ -14,7 +14,7 @@ SMTP is open, which is rather suspicious. I connected via `nc` and tested some d
 
 Now that we are logged in, we can read some emails:
 
-<figure><img src="../../../.gitbook/assets/image (20) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 With this, we can SSH in as `mindy`.
 
@@ -34,7 +34,7 @@ I researched a bit on how to escape this shell, and found that appending `-t "ba
 
 We can run `pspy32` on this machine to view processes:
 
-<figure><img src="../../../.gitbook/assets/image (36) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (36) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 I found that we have write access over this file, so we can just append a reverse shell to it:
 

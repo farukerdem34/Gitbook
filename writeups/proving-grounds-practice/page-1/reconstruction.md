@@ -226,4 +226,4 @@ exit
 
 This password can be used to `su` to `root`:
 
-<figure><img src="../../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (23) (10).png" alt=""><figcaption></figcaption></figure>

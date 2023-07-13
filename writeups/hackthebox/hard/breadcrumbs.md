@@ -78,7 +78,7 @@ The first thing we notice is the dependencies required, which are the `db.php` f
 
 We can take a look at the `cookie.php` file.
 
-<figure><img src="../../../.gitbook/assets/image (352).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (352) (2).png" alt=""><figcaption></figcaption></figure>
 
 In the last line, we can see that there's a notice to change the second part of the MD5 key every week, meaning that there's something that isn't changed. Also, we notice the `$key` and `$username[$seed]` values here. Then, `$username.md5($key)` is returned as the session cookie.
 

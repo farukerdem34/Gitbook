@@ -179,7 +179,7 @@ Then, we can send the encoded payload as the value of the `Bearer` header.&#x20;
 
 This would still return 500, but we would get a GET request for `shell.ps1` on a HTTP server and a reverse shell on our listener port!
 
-<figure><img src="../../../.gitbook/assets/image (116).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (116) (4).png" alt=""><figcaption></figcaption></figure>
 
 We can then grab the user flag.
 

@@ -21,7 +21,7 @@ PORT     STATE SERVICE
 
 Port 80 had a website that looked rather static with nothing interesting about it:
 
-<figure><img src="../../../.gitbook/assets/image (150).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (150) (5).png" alt=""><figcaption></figcaption></figure>
 
 All of the links led to Lorem Ipsum related stuff, which is definitely not the exploit path we are looking for.&#x20;
 

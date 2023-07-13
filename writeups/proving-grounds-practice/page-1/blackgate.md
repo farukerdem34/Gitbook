@@ -34,7 +34,7 @@ This version of Redis is vulnerable to the Redis Rogue Server exploit:
 
 {% embed url="https://github.com/n0b0dyCN/redis-rogue-server" %}
 
-<figure><img src="../../../.gitbook/assets/image (129).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (129) (3).png" alt=""><figcaption></figcaption></figure>
 
 Getting a reverse shell via a bash one-liner is trivial:
 

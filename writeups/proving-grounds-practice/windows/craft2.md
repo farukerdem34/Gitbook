@@ -126,7 +126,7 @@ craft2\apache
 
 We can then easily get a reverse shell by downloading `nc.exe` onto the machine and executing it.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (182).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (182) (4).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

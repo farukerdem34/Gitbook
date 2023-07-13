@@ -50,11 +50,11 @@ Within the new user's directory, we can find a backup file.
 
 It was password encrypted, but that's no issue for `john`.
 
-<figure><img src="../../../.gitbook/assets/image (504).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (504) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can extract the files using `7z e`. Within the `status.php` file, we find another set of credentials.
 
-<figure><img src="../../../.gitbook/assets/image (516).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (516) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can now access `ldapuser1`.
 

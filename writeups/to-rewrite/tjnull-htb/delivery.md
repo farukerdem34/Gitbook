@@ -72,7 +72,7 @@ We can then access the `mattermost` database via the `mysql` command.
 
 Then, we can read the Users table data to find the hash for the root user.
 
-<figure><img src="../../../.gitbook/assets/image (130) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (130) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 The hash can be cracked via `hashcat -m 3200` to give `Password!21` as the password. We can then `su` to root.
 

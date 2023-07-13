@@ -165,4 +165,4 @@ $ find / -perm -u=s -type f 2>/dev/null
 
 `start-stop-daemon` is an SUID binary, and it can spawn a `root` shell for us.&#x20;
 
-![](<../../../.gitbook/assets/image (36).png>)
+![](<../../../.gitbook/assets/image (36) (2).png>)

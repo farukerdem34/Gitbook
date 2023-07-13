@@ -171,7 +171,7 @@ PUT Shell: http://192.168.197.122/DavTestDir_YuAxJmlk/YuAxJmlk_aspx_cmd.aspx
 
 `davtest` would place a few backdoors for us, and we can use that to execute commands on the machine:
 
-<figure><img src="../../../.gitbook/assets/image (170).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (170) (3).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can easily get a reverse shell as this user.&#x20;
 

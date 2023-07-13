@@ -227,7 +227,7 @@ We might need some additional information from here later.&#x20;
 
 Port 8000 had a BarracudaServer instance:
 
-<figure><img src="../../../.gitbook/assets/image (151) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (151) (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 It appears that we can set the administrator for this machine:
 

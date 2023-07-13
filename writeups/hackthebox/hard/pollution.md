@@ -355,7 +355,7 @@ We can do this with the MySQL instance we accessed earlier.
 
 Now we can login as this user using our credentials.
 
-<figure><img src="../../../.gitbook/assets/image (9) (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 This would give us a token, which is needed for the `X-Access-Token` header. Reading the documentation for the API through accessing `http://127.0.0.1:3000/documentation`, we can see that we need to send a POST request to `/admin/mesages/send` to interact with the vulnerable function.
 

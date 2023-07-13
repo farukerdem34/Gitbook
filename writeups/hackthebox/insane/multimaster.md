@@ -618,13 +618,13 @@ Start Bloodhound and upload the information as usual. Then, we can check each us
 
 First, we find that `cyork` is part of the Developers group:
 
-<figure><img src="../../../.gitbook/assets/image (183).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (183) (4).png" alt=""><figcaption></figcaption></figure>
 
 There are no outbound object controls for this, indicating that this group might have access to somestuff on the machine.&#x20;
 
 We can also find that the `sbauer` user has some privileges over `jorden`.
 
-<figure><img src="../../../.gitbook/assets/image (190).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (190) (3).png" alt=""><figcaption></figcaption></figure>
 
 The rest of the users don't have anything interesting about them. I also used `PrivescCheck.ps1` to enumerate for me since WinPEAS was not working for some reason. Here was the interesting output:
 
@@ -910,7 +910,7 @@ SMB         megacorp.local  445    MULTIMASTER      [+] MEGACORP.LOCAL\sbauer:D3
 
 We can then `evil-winrm` in as this user:
 
-<figure><img src="../../../.gitbook/assets/image (130).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (130) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### GenericWrite --> Jorden Shell
 

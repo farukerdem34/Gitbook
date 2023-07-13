@@ -130,7 +130,7 @@ Then, we can get a reverse shell by downloading `nc.exe` onto the machine and ex
 
 I ran `winPEAS.exe` to enumerate the machine for me. It picked up on AlwaysInstallElevated being misconfigured:
 
-<figure><img src="../../../.gitbook/assets/image (545).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (545) (2).png" alt=""><figcaption></figcaption></figure>
 
 Using this, we can generate an MSI payload using `msfvenom` and run it on the system, which would give us a reverse shell as the SYSTEM user.&#x20;
 

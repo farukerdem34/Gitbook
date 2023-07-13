@@ -18,7 +18,7 @@ PORT   STATE SERVICE
 
 Port 80 hosts the default Apache2 page:
 
-<figure><img src="../../../.gitbook/assets/image (67).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (67) (7).png" alt=""><figcaption></figcaption></figure>
 
 I ran a `gobuster` scan and found a few directories:
 

@@ -172,7 +172,7 @@ uid=33(www-data) gid=33(www-data) groups=33(www-data)
 
 We now have RCE and can get an easy reverse shell by putting a PHP Reverse Shell within the website files:
 
-<figure><img src="../../../.gitbook/assets/image (187).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (187) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

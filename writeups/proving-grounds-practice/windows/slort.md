@@ -67,7 +67,7 @@ The `/site` directory contained a basic corporate page, but the most interesting
 
 This looks like it's vulnerable to a file inclusion exploit. I tested this and it is RFI for this case:
 
-<figure><img src="../../../.gitbook/assets/image (144).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (144) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can grab a PHP Reverse shell for Windows from this page:
 

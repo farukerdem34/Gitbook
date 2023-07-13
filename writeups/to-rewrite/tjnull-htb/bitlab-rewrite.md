@@ -277,7 +277,7 @@ GetUserNameW
 
 This seems to be parsing some kind of input, and denying access if it is wrong. This could be a password of some sorts. I spent some time looking at the functions from `ghidra`, and found this part here:
 
-<figure><img src="../../../.gitbook/assets/image (150) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (150) (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 It appears that this is executing `putty.exe`, which is an SSH client for Windows. That would explain the Access Denied string. This binary was trying to `ssh` somewhere, and there was probably a password being sent. I also found that despite ASLR being enabled, the last 4 characters of addresses are always the same.&#x20;
 

@@ -144,7 +144,7 @@ MariaDB [bugtracker]> select * from mantis_user_table;
 
 This hash can be cracked on CrackStation:
 
-<figure><img src="../../../.gitbook/assets/image (151).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (151) (5).png" alt=""><figcaption></figcaption></figure>
 
 Now, there are RCE exploits for this, but the one from `searchsploit` also abuses another exploit to do with password resetting for the administrator user.
 
