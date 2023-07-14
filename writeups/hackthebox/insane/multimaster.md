@@ -916,7 +916,7 @@ We can then `evil-winrm` in as this user:
 
 From the Bloodhond we did earlier, we can see that this user has `GenericWrite` privileges over `jorden`:
 
-<figure><img src="../../../.gitbook/assets/image (214).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (214) (3).png" alt=""><figcaption></figcaption></figure>
 
 To exploit this, we can use PowerView.ps1. However, it seems AMSI is blocking us:
 

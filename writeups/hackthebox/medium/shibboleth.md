@@ -24,7 +24,7 @@ The web application is a typical corporate page:
 
 Most of the site was static and didn't do anything. However, there was one interesting part at the bottom:
 
-<figure><img src="../../../.gitbook/assets/image (76).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (76) (2).png" alt=""><figcaption></figcaption></figure>
 
 I ran a subdomain scan with `wfuzz` and found a few subdomains present:
 

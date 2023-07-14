@@ -108,13 +108,13 @@ Port 80 shows the default XAMPP page:
 
 There was a PHPInfo page that we could view for more clues.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (162).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (162) (3).png" alt=""><figcaption></figcaption></figure>
 
 The only interesting thing to note is that the user is named `shenzi` on the machine. We need to be finding this wordpress instance. However, all directory scans failed to find any instance of `wp-content` or `wp-admin`.&#x20;
 
 I was stuck here for a while, until I visited `/shenzi` to test, and it worked!
 
-<figure><img src="../../../.gitbook/assets/image (153).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (153) (1).png" alt=""><figcaption></figcaption></figure>
 
 With this, we can easily login to the admin panel and replace one of the PHP files with a web shell.&#x20;
 

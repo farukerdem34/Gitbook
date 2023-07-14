@@ -46,7 +46,7 @@ While looking at his directory, we can find that Ross's UID is 1001.
 
 When mounting and looking through the files of the other files, we can see the files that are within the website.
 
-<figure><img src="../../../.gitbook/assets/image (96) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (96) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Interesting files there. BUt we can't edit or do anything with these files. The website itself is also just a simple template, and not much can be done on it. What's interesting was, there was a user with a uid of 2017 being assigned to the html file.
 

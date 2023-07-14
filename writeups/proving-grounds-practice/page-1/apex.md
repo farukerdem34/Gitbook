@@ -160,7 +160,7 @@ $dbase  = 'openemr';
 
 Now we have some SQL creds, we can login to the database present.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (57).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (57) (6).png" alt=""><figcaption></figcaption></figure>
 
 We can then find the credentials for OpenEMR:
 

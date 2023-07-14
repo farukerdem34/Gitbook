@@ -4,7 +4,7 @@
 
 Nmap scan:
 
-<figure><img src="../../../.gitbook/assets/image (159) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (159) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Doing a detailed Nmap scan reveals a bit more about the services running on the machine.
 

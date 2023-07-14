@@ -21,7 +21,7 @@ We can start proxying traffic through Burp.&#x20;
 
 Port 80 hosted an OSTicket instance, which has a lot of vulnerabilities and exploits:
 
-<figure><img src="../../../.gitbook/assets/image (98).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (98) (8).png" alt=""><figcaption></figcaption></figure>
 
 I  registered a new user and opened a ticket. When I viewed the status, it seems that an 'Alfred Smith' closes the tickets:
 
@@ -45,7 +45,7 @@ As soon as we upload the file and submit a new ticket, we get this on a listener
 
 Using this cookie, we can then login to OSTicket at `/scp` by changing our cookie within Burp:
 
-<figure><img src="../../../.gitbook/assets/image (25) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (25) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### OSTicket RCE
 

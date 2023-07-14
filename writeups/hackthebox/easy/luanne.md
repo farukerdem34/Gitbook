@@ -29,7 +29,7 @@ I wanted to see what Port 9001 had for us, but I didn't get very far because it 
 
 Default credentials of `admin:admin` worked! Then, we were able to view the Supervisor program running on it.
 
-<figure><img src="../../../.gitbook/assets/image (21) (1) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (21) (1) (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 When clicking on the processes, I was able to find quite a few that were rather interesting:
 

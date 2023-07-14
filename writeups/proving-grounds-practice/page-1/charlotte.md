@@ -179,7 +179,7 @@ The `$host` parameter is user-controlled, and can be altered. Fittingly, attempt
 
 This can be bypassed by setting the `Host` header to `localhost` since the Nginx configuration uses our `$host` values:
 
-<figure><img src="../../../.gitbook/assets/image (92).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (92) (6).png" alt=""><figcaption></figcaption></figure>
 
 With this, we can login and view the port 8000 service.&#x20;
 

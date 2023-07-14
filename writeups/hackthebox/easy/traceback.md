@@ -30,7 +30,7 @@ We can login with `admin:admin` and then find a functioning PHP web shell.
 
 Using the Execute part, we can gain a reverse shell on the machine as the `webadmin` user.
 
-<figure><img src="../../../.gitbook/assets/image (97) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (97) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

@@ -67,7 +67,7 @@ ID           Response   Lines    Word       Chars       Payload
 
 This directory just contains some interesting files:
 
-<figure><img src="../../../.gitbook/assets/image (61).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (61) (6).png" alt=""><figcaption></figcaption></figure>
 
 ### Source Code Review --> RCE Point
 

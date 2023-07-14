@@ -129,7 +129,7 @@ SetHandler application/x-httpd-php
 
 Then, we can upload our PHP webshell as `cmd.gif`, which would work properly now:
 
-<figure><img src="../../../.gitbook/assets/image (174).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (174) (6).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can get a reverse shell using `nc64.exe`.
 

@@ -68,7 +68,7 @@ Now that we have credentials, we can connect to the HQK port via `telnet` and en
 
 With this, I was able to extract the administrator hash.
 
-<figure><img src="../../../.gitbook/assets/image (153) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (153) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Within this, we also can find another binary being used:
 

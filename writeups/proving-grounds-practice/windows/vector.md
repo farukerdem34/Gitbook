@@ -130,10 +130,10 @@ We can then grab the user flag.
 
 I downloaded and ran `winPEASx64.exe` on the machine, and found this output:
 
-<figure><img src="../../../.gitbook/assets/image (146).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (146) (3).png" alt=""><figcaption></figcaption></figure>
 
 It's pretty trivial to get an administrator shell from this.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (38) (8).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

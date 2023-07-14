@@ -26,7 +26,7 @@ Based on the name of the box, I would guess that we have to do something with em
 
 The website is some kind of Dashboard.
 
-<figure><img src="../../../.gitbook/assets/image (173).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (173) (3).png" alt=""><figcaption></figcaption></figure>
 
 If we click on Team, we can see a table with a ton of emails present:
 

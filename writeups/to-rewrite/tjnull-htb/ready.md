@@ -21,7 +21,7 @@ Port 5080 is a HTTP port.
 
 Viewing port 5080 reveals a Gitlab instance:
 
-<figure><img src="../../../.gitbook/assets/image (165).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (165) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can try to register a user and attempt to login. The version can be viewed in the Help tab:
 

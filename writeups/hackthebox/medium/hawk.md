@@ -89,7 +89,7 @@ This is clearly the next step. As such, we need to use the SSH credentials we ha
 
 Afterwards, we can access the service by going to `http://127.0.0.1:8082`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (55) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (55) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 This version of H2 is vulnerable to RCE however, and as such the port forwarding is a bit redundant as we can run the exploit directly as `daniel`.
 

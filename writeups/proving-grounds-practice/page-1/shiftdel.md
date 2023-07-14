@@ -26,7 +26,7 @@ Port 80 shows a Wordpress site:
 
 Port 8888 on the other hand shows a phpMyAdmin instance:
 
-<figure><img src="../../../.gitbook/assets/image (166).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (166) (3).png" alt=""><figcaption></figcaption></figure>
 
 When we view the page source of port 8888, there is indication of the version running:
 

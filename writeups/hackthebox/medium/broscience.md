@@ -357,7 +357,7 @@ TzoxNToiQXZhdGFySW50ZXJmYWNlIjoyOntzOjM6InRtcCI7czoyNToiaHR0cDovLzEwLjEwLjE0LjQv
 
 Then, we can simply send a request with this the output as the cookie. We would get a few hits on our HTTP server.
 
-<figure><img src="../../../.gitbook/assets/image (25) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (25) (1) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 Then we can simply curl it to gain a reverse shell.
 

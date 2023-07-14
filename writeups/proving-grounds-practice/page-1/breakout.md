@@ -79,7 +79,7 @@ Successfully Authenticated
 [3] Creating Snippet and Uploading
 ```
 
-<figure><img src="../../../.gitbook/assets/image (97).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (97) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

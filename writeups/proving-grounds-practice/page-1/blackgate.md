@@ -85,6 +85,6 @@ There is a password within it. When we run the binary and supply the password, w
 
 This output looks a bit like `less`, so I tried to escape this limited shell with `!sh` and it worked.
 
-<figure><img src="../../../.gitbook/assets/image (168).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (168) (4).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

@@ -21,7 +21,7 @@ FTP and HTTP.
 
 Port 80 just shows a 403 page:
 
-<figure><img src="../../../.gitbook/assets/image (54).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (54) (9).png" alt=""><figcaption></figcaption></figure>
 
 Running directory scans only shows one directory:
 

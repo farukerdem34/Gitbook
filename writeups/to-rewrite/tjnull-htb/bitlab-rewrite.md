@@ -295,7 +295,7 @@ Let's head to x64dbg and set a breakpoint at `XX165a` since the last 4 character
 
 We can set another breakpoint at the `cmp` instruction before it as well to see what is being compared within registers too.
 
-<figure><img src="../../../.gitbook/assets/image (147).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (147) (5).png" alt=""><figcaption></figcaption></figure>
 
 By removing the breakpoint for `entrypoint` and then jumping to user code to where the `cmp` instruction occurs, we would see this:
 

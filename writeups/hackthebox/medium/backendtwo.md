@@ -8,7 +8,7 @@ description: Builds on the Backend machine with updated security features.
 
 Since this builds on the other Backend machine from UHC, there isn't a lot of enumeration to do.
 
-<figure><img src="../../../.gitbook/assets/image (200).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (200) (2).png" alt=""><figcaption></figcaption></figure>
 
 Port 80 brings us to an API again, with the admin user still being viewable.
 
@@ -94,7 +94,7 @@ When I tried to check sudo privileges, I was left with this.
 
 This was basically wordle, and there are better ways to solve this via checking what directories it uses. I used `strings` to see what libraries it called.
 
-<figure><img src="../../../.gitbook/assets/image (165) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (165) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can then use `find / -name pam_wordle.so 2> /dev/null` to find this library and run strings on it. It would be located in the `/usr/lib/x86_64-linus-gnu/security` directory and is readable by all. We can then use `strings` on it.
 

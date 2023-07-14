@@ -88,7 +88,7 @@ Interestingly, the owner was able to upload a torrent file with **screenshots**.
 
 I then tried to download a torrent file from the Kali Linux official website (because nowhere else offered non-shady torrent files to download). This worked in the uploading. Afterwards, I can see that we are able to 'Edit this torrent'&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (162) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (162) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Clicking created a pop-up where I was allowed to upload a screenshot.&#x20;
 

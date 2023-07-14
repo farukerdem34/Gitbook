@@ -70,7 +70,7 @@ iQGzBAEBCgAdFiEEMepfyD8ks+mbh4he1vYv2J1mwLcFAmSRCtsACgkQ1vYv2J1m
 
 Afterwards, we can take both texts and use the website to verify our signature:
 
-<figure><img src="../../.gitbook/assets/image (203).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (203) (4).png" alt=""><figcaption></figcaption></figure>
 
 When we click "Verify", it would show that it worked:
 

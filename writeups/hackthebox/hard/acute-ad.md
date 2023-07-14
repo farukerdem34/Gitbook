@@ -152,7 +152,7 @@ I used mimikatz to dump out the hashes easily. This was done through loading the
 
 Then, we can find the Administrator credentials.
 
-<figure><img src="../../../.gitbook/assets/image (195) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (195) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 The hash can be cracked on crackstation.net.
 

@@ -199,7 +199,7 @@ emily|abigchonkyboi123
 
 Then, we can `ssh` as the user `emily`.
 
-<figure><img src="../../.gitbook/assets/image (106).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (106) (6).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

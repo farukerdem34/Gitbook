@@ -63,7 +63,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 The `/site` directory contained a basic corporate page, but the most interesting part was the URL:
 
-<figure><img src="../../../.gitbook/assets/image (82).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (82) (6).png" alt=""><figcaption></figcaption></figure>
 
 This looks like it's vulnerable to a file inclusion exploit. I tested this and it is RFI for this case:
 

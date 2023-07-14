@@ -283,7 +283,7 @@ This website had a corporate page of some sorts:
 
 There was a login page:
 
-<figure><img src="../../../.gitbook/assets/image (96).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (96) (2).png" alt=""><figcaption></figcaption></figure>
 
 Weak credentials don't work, and we cannot bypass this login using SQL Injection of any sort. The reset password option just leads us to another page:
 
@@ -313,7 +313,7 @@ Within the "Edit" function, we can see that there's a Request Profile SLUG optio
 
 This brings us to another page with a hint that MySQL was being used somehow:
 
-<figure><img src="../../../.gitbook/assets/image (89).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (89) (5).png" alt=""><figcaption></figcaption></figure>
 
 If we enter `'` into the URL field, we get an SQL error:
 

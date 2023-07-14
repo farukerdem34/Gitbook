@@ -93,7 +93,7 @@ RaspAP 2.6.6 - Remote Code Execution (RCE) (Authenticated) | php/webapps/50224.p
 
 However, we don't actually need any exploits because within the 'System' tab, there's a Console present:
 
-<figure><img src="../../../.gitbook/assets/image (161).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (161) (5).png" alt=""><figcaption></figcaption></figure>
 
 A reverse shell is trivial:
 

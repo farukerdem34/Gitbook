@@ -99,7 +99,7 @@ The funny thing is, I can approve of the PR myself.&#x20;
 
 Make sure we set the Work Items before approving.
 
-<figure><img src="../../../.gitbook/assets/image (195).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (195) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then complete the merge:
 
@@ -230,7 +230,7 @@ There wasn't much in the machine to begin with, so I shifted back to the Azure D
 
 Now, we have access to another repository. When viewing the project settings, I can see that our user is a Build Administrator.
 
-<figure><img src="../../../.gitbook/assets/image (166) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (166) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 This means that we can set pipeline permissions. Using this, we can create a new pipeline that uses YAML to execute code:
 

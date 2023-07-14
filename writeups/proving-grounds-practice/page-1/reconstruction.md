@@ -55,7 +55,7 @@ TODO: remove leftover passwords from testing
 
 Most of the PCAP files contained traffic generated from brute forcing the site, so it was pretty tedious looking through all of them. The `30.04.2020` PCAP file contained a lot of brute force attempts, while `1.05.2020` contained very few:
 
-<figure><img src="../../../.gitbook/assets/image (47).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (47) (9).png" alt=""><figcaption></figcaption></figure>
 
 And within that PCAP file, we can find a request that has a password that seems to work:
 
@@ -69,11 +69,11 @@ Port 8000 hosted the same Flask application:
 
 With the password we found earlier, we can login:
 
-<figure><img src="../../../.gitbook/assets/image (63).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (63) (8).png" alt=""><figcaption></figcaption></figure>
 
 Attempting to view the 'Hello World' blog entry results in an error from Flask:
 
-<figure><img src="../../../.gitbook/assets/image (58).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (58) (8).png" alt=""><figcaption></figcaption></figure>
 
 There's a feature within this kind of web application that allows us to access the console to run Python code, but this one is protected by the PIN:
 
@@ -151,7 +151,7 @@ $ echo -n '/etc/machine-id' | base64
 L2V0Yy9tYWNoaW5lLWlk
 ```
 
-<figure><img src="../../../.gitbook/assets/image (62).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (62) (10).png" alt=""><figcaption></figcaption></figure>
 
 The machine ID needed some service name appended to the back of it, which we can get from reading `/proc/self/cgroup`.&#x20;
 
