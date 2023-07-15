@@ -381,7 +381,7 @@ When googling for MSSQL Shells with upload capabilities, I came across this:
 
 This shell works after changing the credentials:
 
-<figure><img src="../../../.gitbook/assets/image (1) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (3) (4).png" alt=""><figcaption></figcaption></figure>
 
 Now, we can upload `PrintSpoofer.exe` to the machine.&#x20;
 

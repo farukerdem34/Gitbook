@@ -234,7 +234,7 @@ http://softwareportal.windcorp.htb/install.asp?client=172.20.159.137&software=VN
 ```
 {% endcode %}
 
-<figure><img src="../../../.gitbook/assets/image (20) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20) (4) (3).png" alt=""><figcaption></figcaption></figure>
 
 Since VNC is like an RDP software, there might potentially be credentials beign sent in the packets, so I started `wireshark` and also changed the `client` parameter to be my IP address. When the packets are viewed, we can see a lot of failed TCP requests:
 

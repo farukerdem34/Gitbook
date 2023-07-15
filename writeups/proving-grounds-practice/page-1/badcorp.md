@@ -105,7 +105,7 @@ Use the "--show" option to display all of the cracked passwords reliably
 Session completed. 
 ```
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -171,15 +171,15 @@ puts("Wrong Password !!!"Wrong Password !!!
 
 The bad characters don't include '$' and '()', opening up the possibility of command injection. Moving to `ghidra`, this binary prompts for a password before running the `check()` function to see if the password is correct, and then `copy()` if it is right:
 
-<figure><img src="../../../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (19) (10).png" alt=""><figcaption></figcaption></figure>
 
 The `copy()` function takes an encrypted password and XOR's it with `0xc`:
 
-<figure><img src="../../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (3).png" alt=""><figcaption></figcaption></figure>
 
 We can first grab the `pw` global variable from the binary:
 
-<figure><img src="../../../.gitbook/assets/image (116).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (116) (1).png" alt=""><figcaption></figcaption></figure>
 
 And then we can create a script in Python to decrypt this.&#x20;
 
@@ -209,7 +209,7 @@ ALL FILE COPYED IN /var/logs/hoswald/
 
 We can move on to the `copy()` function now:
 
-<figure><img src="../../../.gitbook/assets/image (101).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (101) (4).png" alt=""><figcaption></figcaption></figure>
 
 All the binaries use their full path values, so no path hijacks here. However, this seems to use directories within `/var/logs` and `/home/FTP`. I was already thinking of command injection using subshells, and it seems that this is the exploit needed.&#x20;
 
@@ -226,7 +226,7 @@ local: $(id) remote: $(id)
 
 This works!
 
-<figure><img src="../../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (23) (11).png" alt=""><figcaption></figcaption></figure>
 
 I then placed a file named `$(bash)` within the FTP directory, and it gave me a shell:
 
@@ -234,4 +234,4 @@ I then placed a file named `$(bash)` within the FTP directory, and it gave me a 
 
 This shell was pretty limited and couldn't give me any output. However, we can simply run `chmod u+s /bin/bash`. In another shell, we can then get a proper `root` shell easily:
 
-![](<../../../.gitbook/assets/image (20).png>)
+![](<../../../.gitbook/assets/image (20) (4).png>)

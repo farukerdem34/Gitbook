@@ -27,7 +27,7 @@ This was a corporate page that provides DevSecOps services:
 
 Looking around, there's another subdomain present in the form of a mail server.
 
-<figure><img src="../../.gitbook/assets/image (20) (4) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (20) (4) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 It syas that the DNS records are being migrated to another domain and that their email server is offline. We can run both a `gobuster` directory and `wfuzz` subdomain scan first. The subdomain scan reveals a `mm` subdomain present.
 
@@ -86,7 +86,7 @@ We don't have any credentials, but there is a Password Reset in use here that re
 
 Lastly, there are some emails present:
 
-<figure><img src="../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (10) (1) (10).png" alt=""><figcaption></figcaption></figure>
 
 ### Download LFI --> DNS Vuln
 
@@ -305,7 +305,7 @@ We can fill it in to have our credentials and required details. It appears that 
 
 <figure><img src="../../.gitbook/assets/image (9) (6) (3).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (16) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (16) (1) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 Anyways, after filling in the fields and clicking submit, we get this weird thing on a listener port:
 
@@ -459,6 +459,6 @@ Then, we can simply read the private SSH key of `root` located at `/root/.ssh/id
 
 After some tidying up, we can `ssh` in as `root`.
 
-<figure><img src="../../.gitbook/assets/image (7) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7) (4) (6).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

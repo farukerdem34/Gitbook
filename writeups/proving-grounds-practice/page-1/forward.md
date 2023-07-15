@@ -215,7 +215,7 @@ $ swaks --to fox@localhost --from test@localhost --header "Subject:Password Rese
 
 This would give us a reverse shell:
 
-<figure><img src="../../../.gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (38) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

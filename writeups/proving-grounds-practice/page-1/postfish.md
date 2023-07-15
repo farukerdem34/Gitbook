@@ -30,7 +30,7 @@ The website looked rather static:
 
 There was a 'Team' page, and when viewed we get some names and roles:
 
-<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
 
 Interesting.
 
@@ -156,7 +156,7 @@ QUIT
 
 After the mail sends, we get a callback on our listener port with creds:
 
-<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can use this password to `ssh` in as `brian.moore`:
 

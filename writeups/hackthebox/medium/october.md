@@ -63,7 +63,7 @@ RELRO     : Partial
 
 In this case, we can go for a Ret2Libc attack. First, we find the buffer size:
 
-<figure><img src="../../../.gitbook/assets/image (38) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (38) (1) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 Fixed at 112 it appears (same as length of `local_74`). Now, we can use `ldd` to find the address where `libc` is loaded on the machine:
 

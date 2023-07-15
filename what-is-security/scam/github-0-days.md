@@ -269,7 +269,7 @@ It was kind of obvious that this malware was reaching out to the Internet, seein
 
 As specified, this would spin up `tor.exe`, and connect to a remote device somewhere out there. We can also see that this malware runs some kind of command too:
 
-<figure><img src="../../.gitbook/assets/image (13) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (13) (2) (6).png" alt=""><figcaption></figcaption></figure>
 
 I checked my listener ports, and port 22 was open on the VM after running it, so I guess it provides some kind of SSH access to the attacker.&#x20;
 

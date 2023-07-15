@@ -29,7 +29,7 @@ At the very bottom, it seems that we can download a trial of their application. 
 
 The subdomain shows us this site where we can view source code.
 
-<figure><img src="../../.gitbook/assets/image (69) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (69) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 I'm assuming that this is the source code for the Resizer and Converter application that is present in the corner. When we download the source code, there is an `app.py` and `tool.py` file that we have to analyse.
 

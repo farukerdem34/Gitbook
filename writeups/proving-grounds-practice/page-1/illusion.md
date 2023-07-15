@@ -22,11 +22,11 @@ We can start proxying traffic through Burp.&#x20;
 
 Port 80 presents a corporate web page with a Login:
 
-<figure><img src="../../../.gitbook/assets/image (25) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (25) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 The login page is basic and operates in PHP:
 
-<figure><img src="../../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (27) (2).png" alt=""><figcaption></figcaption></figure>
 
 Default credentials don't work here. Brute forcing also doesn't work. Since this runs on PHP, we can try some Magic Hashes by submitting this request:
 
@@ -40,7 +40,7 @@ This works because the `Location` header points to `dashboard.php` now.&#x20;
 
 The dashboard is simple.
 
-<figure><img src="../../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (28) (5).png" alt=""><figcaption></figcaption></figure>
 
 If we submit any queries, we can see our order name pop up on the top:
 

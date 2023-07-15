@@ -134,6 +134,6 @@ Then, write this to the `/etc/passwd` file using this one-liner:
 
 This would add our new entry into the `/etc/passwd` file and we can `su` to become `root`:
 
-<figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (1).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

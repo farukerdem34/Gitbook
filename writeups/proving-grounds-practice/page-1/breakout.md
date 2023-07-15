@@ -110,7 +110,7 @@ NhAAAAAwEAAQAAAYEA4eDGWPfq/wKo4whXeFRr8Dq+wgoCClqpJmxRajPmCaSrULo/uPad
 
 We know that there are 2 users on the machine, and I tested with both. Using this key, we can `ssh` in as `coaron`:
 
-<figure><img src="../../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Pspy --> Symlink Exploit
 

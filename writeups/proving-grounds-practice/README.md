@@ -5,5 +5,5 @@ Proving Grounds Practice writeups here. Separated into either Windows or Linux m
 {% hint style="info" %}
 This series of writeups will not be maintained once completed. I'm just transferring my existing old writeups to Gitbook and do not plan on using Proving Grounds after finishing all writeups.&#x20;
 
-(Pending date of completion of all writeups)
+A couple of machines I have writeups for are no longer active on Proving Grounds.&#x20;
 {% endhint %}

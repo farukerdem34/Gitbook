@@ -185,7 +185,7 @@ Loads of enumeration to do. This box was full of rabbit holes to enumerate.
 
 This page was some kind of quiz thing:
 
-<figure><img src="../../../.gitbook/assets/image (93).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (93) (5).png" alt=""><figcaption></figcaption></figure>
 
 I noticed that the `nmap` scan tells me this is a PHP site. I ran a directory scan via `gobuster` and found the `phpinfo.php` file being present:
 
@@ -291,7 +291,7 @@ Weak credentials don't work, and we cannot bypass this login using SQL Injection
 
 I attempted to reset the password of the `admin` user, but it seems that it doesn't exist:
 
-<figure><img src="../../../.gitbook/assets/image (11) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (2) (8).png" alt=""><figcaption></figcaption></figure>
 
 If were to try with some of the users on the main page, we would trigger a different error:
 

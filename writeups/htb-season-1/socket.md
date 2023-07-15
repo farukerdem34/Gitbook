@@ -29,7 +29,7 @@ We have to add `qreader.htb` to our `/etc/hosts` file. I ran a detailed scan on 
 
 Website presents some kind of QR Code maker / reader application:
 
-<figure><img src="../../.gitbook/assets/image (2) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can actually download the application below and view the source code:
 

@@ -24,7 +24,7 @@ PORT   STATE SERVICE
 
 Here's the web page:
 
-<figure><img src="../../../.gitbook/assets/image (4) (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 There's some API documentations available for us to read.
 

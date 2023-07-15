@@ -64,7 +64,7 @@ We can try XPath injection since it seems to load `xpath()`. I tested all forms 
 http://192.168.157.202/portal.php?work=car%27)]%20|%20//password%00&action=search
 ```
 
-<figure><img src="../../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (25) (1).png" alt=""><figcaption></figcaption></figure>
 
 I also found some users when testing payloads:
 
@@ -137,4 +137,4 @@ It uses seems that our string is directly passed into a `cat` command. There's a
 
 This is easily exploitable for a `root` shell:
 
-<figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (1).png" alt=""><figcaption></figcaption></figure>

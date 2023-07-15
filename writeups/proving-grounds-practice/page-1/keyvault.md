@@ -58,11 +58,11 @@ Port 80 hosted a website for a Password Manager:
 
 The site was rather static and had nothing interesting. Port 8080 had a login page:
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (4).png" alt=""><figcaption></figcaption></figure>
 
 Default credentials work, but we are redirected to this cryptic site:
 
-<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (4).png" alt=""><figcaption></figcaption></figure>
 
 Let's take a look at the `.git` repository files. The logs of the website reveal that there's a `hmac.php` which mentions a bit more about the crypto used:
 
@@ -104,11 +104,11 @@ The above resources details a similar exploit, where they submit `token[]=` to t
 
 &#x20;We can use their parameters to bypass this check:
 
-<figure><img src="../../../.gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (36) (1).png" alt=""><figcaption></figcaption></figure>
 
 Visiting `index.php`with the same parameters will show us a page with a password:
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (7).png" alt=""><figcaption></figcaption></figure>
 
 We can then `ssh` in as `ray`:
 

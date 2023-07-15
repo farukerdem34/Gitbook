@@ -31,7 +31,7 @@ We can create one by clicking on create:
 
 Tihs acts similar to a webhook, and is able to retrieve requests sent to that unique URL.
 
-<figure><img src="../../.gitbook/assets/image (12) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (12) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We are able to set the Responses from the website. as well as where the traffic is being forwarded to, just like we can with Webhooks. Setting the Forward URL to our own HTTP server results in requests being sent there from the machine.
 

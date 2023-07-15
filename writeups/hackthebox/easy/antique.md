@@ -12,7 +12,7 @@ An Nmap scan reveals that there is only one port open:
 
 When trying to use this Telnet port, we needed some credentials.
 
-<figure><img src="../../../.gitbook/assets/image (6) (5) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (5) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 There's no way that we have to guess credentials, so I started scanning for UDP ports instead.  What I found were some SNMP ports, presumably for the printer.&#x20;
 

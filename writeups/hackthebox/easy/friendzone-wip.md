@@ -54,7 +54,7 @@ This points towards to some script being used in the backend, and thus we can re
 
 As `www-data`, we have limited access over everything. The first place to look is within the `/var/www` file which can contain some credentials.
 
-<figure><img src="../../../.gitbook/assets/image (21) (2) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (21) (2) (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can use this to `su friend`.
 

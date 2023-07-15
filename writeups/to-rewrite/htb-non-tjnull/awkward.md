@@ -400,7 +400,7 @@ if __name__ == "__main__":
 
 This works:
 
-<figure><img src="../../../.gitbook/assets/image (27) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (27) (2) (4).png" alt=""><figcaption></figcaption></figure>
 
 Now that we have easy LFI, we can enumerate some possible files:
 

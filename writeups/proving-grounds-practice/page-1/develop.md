@@ -162,19 +162,19 @@ The `.git` repository seems to be for the service running on port 8080:
 
 We can login with `lu191:240610708`, abusing the type juggling here and view the dashboard:
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (5).png" alt=""><figcaption></figcaption></figure>
 
 The Resources tab of the dashboard shows potential for RCE:
 
-<figure><img src="../../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (4).png" alt=""><figcaption></figcaption></figure>
 
 So we know that this is probably still vulnerable to RCE, and it tells us when we are blocked.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (4).png" alt=""><figcaption></figcaption></figure>
 
 I tested different commands, and found that `curl` isn't blocked:
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (116).png" alt=""><figcaption></figcaption></figure>
 
 Commands like `bash` and `sh` are blocked, and so are 'space' characters, so it will be difficult to get a reverse shell through `curl`. However, we can use this to read the files on the system by sending POST requests to our listening port 80.&#x20;
 
@@ -186,7 +186,7 @@ To overcome the space character block, we can use `${IFS}`. Using this, we can s
 ```
 {% endcode %}
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (9).png" alt=""><figcaption></figcaption></figure>
 
 Using this method, I found that the user was `franz`. We can then attempt to read their private SSH key:
 
@@ -194,7 +194,7 @@ Using this method, I found that the user was `franz`. We can then attempt to rea
 
 We can then `ssh` in:
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (8).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

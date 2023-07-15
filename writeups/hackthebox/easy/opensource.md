@@ -64,7 +64,7 @@ Then, we can attempt to upload this file onto the server. We would need to inter
 
 When we intercept and change the name of the file, we would be able to access our new endpoint. We can confirm RCE through a simple ping command:
 
-<figure><img src="../../../.gitbook/assets/image (36) (1) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (36) (1) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (10) (1) (1) (3).png" alt=""><figcaption></figcaption></figure>
 

@@ -84,7 +84,7 @@ We can use this to execute `nc.exe` to give us another reverse shell as Hector.
 
 This part was a tad tricky. I ran a WinPEAS and it picked up on the Powershell history for Hector.
 
-<figure><img src="../../../.gitbook/assets/image (17) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (4) (2).png" alt=""><figcaption></figcaption></figure>
 
 When running these commands, I get a load of text that I don't really understand:
 
@@ -124,7 +124,7 @@ DT — SERVICE_PAUSE_CONTINUE
 
 In this case, we need the `RP` permission to restart a service. To check whether a service is run by `LocalSystem`, we would have to refer to the `SERVICE_START_NAME` variable when using `sc.exe` to query the service. Lastly, we can refer to this table for the values of the `START_TYPE` variable to find a service that is started manually (3 is the value we are looking for):
 
-<figure><img src="../../../.gitbook/assets/image (6) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 When looking through the services that Hector had FullControl permissions over (via WinPEAS output), we find this one:
 

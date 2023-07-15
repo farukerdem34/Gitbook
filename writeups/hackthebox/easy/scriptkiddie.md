@@ -64,6 +64,6 @@ When checking `sudo` privileges, we see that we can run `msfconsole` as root.
 
 The thing about `msfconsole` is that we can run shell commands in it. In short, we have root privileges just by doing `sudo msfconsole`:
 
-<figure><img src="../../../.gitbook/assets/image (24) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (24) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

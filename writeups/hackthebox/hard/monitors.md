@@ -44,7 +44,7 @@ This version of Cacti is old and vulnerable to loads of exploits. We can login w
 
 <figure><img src="../../../.gitbook/assets/image (125) (2).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (12) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (1) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 We now have remote access as the user `marcus` and can capture the user flag.
 

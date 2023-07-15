@@ -80,7 +80,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 The directory contained an encrypted file:
 
-<figure><img src="../../../.gitbook/assets/image (36) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (36) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 The file contained a lot of lines which I removed:
 

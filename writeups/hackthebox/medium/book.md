@@ -89,7 +89,7 @@ Also, within the `/home/reader/backups` directory, there were a few `access.log`
 
 When checking version of `logrotate` used, we see that it is outdated.
 
-<figure><img src="../../../.gitbook/assets/image (28) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (28) (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 This was vulnerable to `logrotten`, an RCE exploit that we can use to give us a reverse shell.
 

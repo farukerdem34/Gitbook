@@ -315,7 +315,7 @@ chisel server -p 5555 --reverse
 
 Then we need to add `printerv2.quick.htb` to our hosts file under `localhost`. Then, we can visit it and see a login page.
 
-<figure><img src="../../../.gitbook/assets/image (21) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (21) (2) (3).png" alt=""><figcaption></figcaption></figure>
 
 ### SQL Credentials
 
@@ -502,4 +502,4 @@ DeviceURI https://srvadm%40quick.htb:%26ftQ4K3SGde8%3F@printerv3.quick.htb/print
 
 When URL decoded, we can just use that as the password to `su` to `root`.
 
-<figure><img src="../../../.gitbook/assets/image (38) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (38) (1) (1).png" alt=""><figcaption></figcaption></figure>

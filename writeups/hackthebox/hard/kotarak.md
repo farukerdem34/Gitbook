@@ -39,7 +39,7 @@ Eventually, we would start getting hits on the ports that are open.
 
 Using this bash loop, we can find that there's a Simple File Viewer application open on port 888, that was unaccessible to us earlier.
 
-<figure><img src="../../../.gitbook/assets/image (116) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (116) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 When viewing this page, we can see a few folders, but the most interesting would be the `backup` folder.
 

@@ -122,7 +122,7 @@ dir
 
 Then we just need to transfer this file over to our machine via `copy`. Afterwards, start `neo4j` and `bloodhound`, then upload the data. We can find the privilege escalation vector here:
 
-<figure><img src="../../../.gitbook/assets/image (8) (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (9) (1).png" alt=""><figcaption></figcaption></figure>
 
 The `AddKeyCredentialLink` is exploitable using Shadow Credentials.&#x20;
 

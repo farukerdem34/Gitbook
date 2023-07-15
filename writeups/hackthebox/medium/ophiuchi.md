@@ -134,7 +134,7 @@ Since we are `tomcat`, we should look into the configurations for the Tomcat int
 
 We can try an `su` to the `admin` user and find that it works with this password.
 
-<figure><img src="../../../.gitbook/assets/image (67) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (67) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 ### Sudo Privileges
 

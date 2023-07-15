@@ -42,4 +42,4 @@ I found that we have write access over this file, so we can just append a revers
 
 After waiting for a bit, we would catch a reverse shell:
 
-<figure><img src="../../../.gitbook/assets/image (18) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (3) (2).png" alt=""><figcaption></figcaption></figure>

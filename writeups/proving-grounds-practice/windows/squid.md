@@ -40,7 +40,7 @@ There's a PHPMyAdmin instance present on the page, and we can login using `root`
 
 Since this is already the administrative interface, we can get a shell by creating a database and then executing some SQL commands in it via the web SQL interpreter.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (101) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (101) (4) (2).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, we can select this database and head to the QUERY tab:
 

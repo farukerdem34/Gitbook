@@ -126,7 +126,7 @@ We can verify a logon session with `Get-LogonSession` from Powerview.
 
 The information that is returned to LSA after creating the logon session is used to create an access token. An access token is a protected object that contains the **local security context** of an authenticated user. The security context is defined as the **privileges and permissions a user has on a specific workstation and across the network.**&#x20;
 
-<figure><img src="../.gitbook/assets/image (15) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (15) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 Every single logon session is identifiable by a 64-bit locally unique identifier (LUID), otherwise known as the logon ID. This access token contains an Authentication ID (AuthID) that identifies the logon session via the LUID.
 

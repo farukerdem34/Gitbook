@@ -20,7 +20,7 @@ PORT     STATE SERVICE
 
 Port 3000 hosted an instance of Rocket Chat:
 
-<figure><img src="../../../.gitbook/assets/image (69).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (69) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can enumerate the version by visiting the `/api/info` page:
 

