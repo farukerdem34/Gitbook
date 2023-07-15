@@ -61,7 +61,7 @@ eleanor@peppo:~$ export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/
 
 However, we can use `ed` to spawn a better shell and change this.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (12).png" alt=""><figcaption></figcaption></figure>
 
 ### Docker Group --> Root
 
@@ -76,4 +76,4 @@ postgres            latest              adf2b126dda8        3 years ago         
 
 I'll use `redmine` for the exploit to spawn a `root` shell:
 
-<figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (1).png" alt=""><figcaption></figcaption></figure>

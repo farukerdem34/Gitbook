@@ -293,4 +293,4 @@ To 192.168.183.125:/git-server
 
 Then, we can just wait for the `cronjob` to execute our reverse shell as `root`:
 
-<figure><img src="../../../.gitbook/assets/image (22) (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (22) (12) (1).png" alt=""><figcaption></figcaption></figure>

@@ -18,7 +18,7 @@ This is running an outdated version of Magento shop, and we can easily find expl
 
 {% embed url="https://github.com/joren485/Magento-Shoplift-SQLI/blob/master/poc.py" %}
 
-<figure><img src="../../../.gitbook/assets/image (3) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (2) (5).png" alt=""><figcaption></figcaption></figure>
 
 Then we can grab a publicly available RCE exploit from ExploitDB:
 

@@ -44,7 +44,7 @@ Interesting.&#x20;
 
 Port 80 looked rather static:
 
-<figure><img src="../../../.gitbook/assets/image (4) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (2) (5).png" alt=""><figcaption></figcaption></figure>
 
 There was no public exploit for this software either, so let's move on. Port 5000 looked way more promising:
 

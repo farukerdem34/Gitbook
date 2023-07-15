@@ -121,7 +121,7 @@ The administrator panel lets us edit the pages and what is shown:
 
 This is an IIS server, so uploading an `.aspx` reverse shell might work. Head to File Manager > Upload Files:
 
-<figure><img src="../../../.gitbook/assets/image (6) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (4) (2).png" alt=""><figcaption></figcaption></figure>
 
 When trying to upload, it doesn't work.
 
@@ -163,7 +163,7 @@ powershell.exe -c Get-AppLockerPolicy -Effective -Xml
 
 This would generate a massive string of stuff that we can and cannot execute.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (14) (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (7) (2).png" alt=""><figcaption></figcaption></figure>
 
 Here is what is allowed for files and binaries:
 

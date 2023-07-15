@@ -530,7 +530,7 @@ Now that we have a new user to play with, we should take a look at the Bloodhoun
 
 Only the `Dr.Zaiuss` has a file in `C:\Users`, so that's the next step. We also find that this user has control over `superfume`, which in turn is part of the Developers group:
 
-<figure><img src="../../../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (1) (6).png" alt=""><figcaption></figcaption></figure>
 
 Those are the next obvious steps.
 

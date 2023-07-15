@@ -144,17 +144,17 @@ PORT      STATE SERVICE       VERSION
 
 Port 80 hosted a portfolio page for Jane Foster:
 
-<figure><img src="../../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (11).png" alt=""><figcaption></figcaption></figure>
 
 At the bottom of the page, there was some contact details:
 
-<figure><img src="../../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (2).png" alt=""><figcaption></figcaption></figure>
 
 The box was named Thor, so it makes sense that there would be something 'Thor' related. From the earlier `nmap` scan, we know that port 80 is running using Litespeed. Port 7080 is the LiteSpeed admin console, likely operated by this Jane Foster.&#x20;
 
 Port 7080 reveals a login page:
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 There are some exploits available for this:
 
@@ -211,7 +211,7 @@ $ python3 49556.py 192.168.201.208:7080 admin Foster2020 shadow
 [+] Triggering command execution..
 ```
 
-<figure><img src="../../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (24) (11).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -291,7 +291,7 @@ $ python3 49556.py 192.168.201.208:7080 admin Foster2020 bin
 [+] Triggering command execution...
 ```
 
-<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (13).png" alt=""><figcaption></figcaption></figure>
 
 Then we can reset the password and restart Webmin as `thor`:
 
@@ -305,7 +305,7 @@ thor@Lite:~$ sudo /usr/bin/systemctl restart webmin
 
 Using this, we can login to Webmin and view the dashboard:
 
-<figure><img src="../../../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (19) (7).png" alt=""><figcaption></figcaption></figure>
 
 Within Webmin, there's a `>_` option, which spawns a command line instance within the browser:
 
@@ -313,4 +313,4 @@ Within Webmin, there's a `>_` option, which spawns a command line instance withi
 
 We can just do `chmod u+s /bin/bash`, and get a proper `root` shell using `ssh`.
 
-<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>

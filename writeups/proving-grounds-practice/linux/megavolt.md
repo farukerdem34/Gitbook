@@ -90,7 +90,7 @@ Then, we can finally use this repository's script to trigger the shell:
 
 The exploit took me quite a few times before it worked. If it doesn't work, upload your shell with a different name. In my case, `shell.php` worked.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (17) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (2) (4).png" alt=""><figcaption></figcaption></figure>
 
 The script would brute force every possible directory that the PHP shell is in before executing it:
 
@@ -134,6 +134,6 @@ Then, write this to the `/etc/passwd` file using this one-liner:
 
 This would add our new entry into the `/etc/passwd` file and we can `su` to become `root`:
 
-<figure><img src="../../../.gitbook/assets/image (12) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (1) (9).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

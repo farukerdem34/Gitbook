@@ -146,7 +146,7 @@ Using this worked and we managed to get a hashed password:
 $ python3 sipdigestleak.py -i 192.168.152.156
 ```
 
-<figure><img src="../../../.gitbook/assets/image (8) (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (12) (1).png" alt=""><figcaption></figcaption></figure>
 
 This hash cracks easily:
 

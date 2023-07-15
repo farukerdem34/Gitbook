@@ -291,7 +291,7 @@ With the credentials we found within the DLL file, we can `su` to become the `de
 
 As the `developer` user, we can run `/usr/bin/dotnet` as the `root` user.
 
-<figure><img src="../../../.gitbook/assets/image (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (2) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Since we can run this, we can simply run `dotnet fsi`, which would open up an interactive interpreter we can use to make `/bin/bash` a SUID binary.
 

@@ -387,7 +387,7 @@ This does the same thing as `index.php`, and it compares each hash to the correc
 
 ### Printing LFI
 
-<figure><img src="../../../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (1) (9).png" alt=""><figcaption></figcaption></figure>
 
 We can add printers and customise them to connect to other IP addresses:
 

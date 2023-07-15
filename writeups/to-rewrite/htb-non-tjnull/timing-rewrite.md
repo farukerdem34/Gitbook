@@ -206,7 +206,7 @@ cpu     0%
 
 Using `aaron:aaron`, we can login!
 
-<figure><img src="../../../.gitbook/assets/image (6) (4) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (4) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Broken Access Control
 

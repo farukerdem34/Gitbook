@@ -84,7 +84,7 @@ Now, we can change the `_user_id` parameter and hopefully login as other users w
 
 That last one for `corum` is a valid password for SSH.
 
-<figure><img src="../../.gitbook/assets/image (5) (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (8) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then we can easily grab the user flag.
 

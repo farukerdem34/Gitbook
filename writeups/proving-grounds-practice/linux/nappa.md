@@ -69,15 +69,15 @@ There was some config files and what not, but there's nothing in it at all. Movi
 
 Port 80 was a ForumOnRails instance:
 
-<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (2).png" alt=""><figcaption></figcaption></figure>
 
 I registered a user and looked through the posts made by the admin, and found his email.
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (12).png" alt=""><figcaption></figcaption></figure>
 
 I decided to look into the page source for the Login, Register and Forgot Password pages. Within the Register page, there's a password within the page source:
 
-<figure><img src="../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (7).png" alt=""><figcaption></figcaption></figure>
 
 We can then login as the admin email and password of `it0jNc6L/r090Q==`.&#x20;
 
@@ -85,7 +85,7 @@ We can then login as the admin email and password of `it0jNc6L/r090Q==`.&#x20;
 
 The administrator had access to the `/serverinfo` page:
 
-<figure><img src="../../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (1).png" alt=""><figcaption></figcaption></figure>
 
 Again, there were some interesting comments in the page source:
 
@@ -99,7 +99,7 @@ Then, we can send stuff to this to get a request within Burp, which can give us 
 
 <figure><img src="../../../.gitbook/assets/image (69).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (23) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -157,4 +157,4 @@ b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABlwAAAAdzc2gtcn
 
 We can then use this to `ssh` in as `root`:
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>

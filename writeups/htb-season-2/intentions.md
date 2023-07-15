@@ -360,7 +360,7 @@ Then, we just need to start both the payloads within Burpsuite Intruder with NUL
 
 When we run it both the Intruder instances, we would get a few requests to our Python HTTP server, and a reverse shell as `www-data`!&#x20;
 
-<figure><img src="../../.gitbook/assets/image (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/image (27) (6).png" alt=""><figcaption></figcaption></figure>
 

@@ -78,7 +78,7 @@ I headed to PayloadAllTheThings to try some XXE injection payloads, and it worke
 
 Then we can save this into a file and upload it. The output would be printed in the `markdown` area:
 
-<figure><img src="../../../.gitbook/assets/image (19) (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (19) (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 Earlier while testing my NoSQL injections, I did run across an error like this:
 

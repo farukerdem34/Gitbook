@@ -89,7 +89,7 @@ Encrypter.exe: PE32 executable (console) Intel 80386 Mono/.Net assembly, for MS 
 
 So we can port this to a Windows VM for analysis via DnSpy. Here, we can see that the file uses AES for something:
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 We can take a look at the `main` function:
 

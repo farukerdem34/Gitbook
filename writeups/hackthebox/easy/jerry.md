@@ -18,4 +18,4 @@ For this, we can attempt to access it to see the default credentials.
 
 Was a bit lazy, hence used `msf` to solve this box and gain a root shell instantly.
 
-<figure><img src="../../../.gitbook/assets/image (21) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (21) (4) (1).png" alt=""><figcaption></figcaption></figure>

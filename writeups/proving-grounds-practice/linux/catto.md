@@ -88,11 +88,11 @@ There wasn't much within the folders. On the 'Using Typescript' page, there was 
 
 On the documentation page, there was mention of GraphQL being used, and sure enough `/__graphql` was a valid directory on the website as per the documentation:
 
-<figure><img src="../../../.gitbook/assets/image (11) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (2) (9).png" alt=""><figcaption></figcaption></figure>
 
 The left had some queries already valid, so I checked those out. Using the `allSitePage` reveals all directories, including a hidden one:
 
-<figure><img src="../../../.gitbook/assets/image (18) (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (11) (1).png" alt=""><figcaption></figcaption></figure>
 
 Visiting it reveals a password:
 
