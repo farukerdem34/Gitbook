@@ -238,7 +238,7 @@ The exploit would be to write a small snippet making `/bin/bash` an SUID binary 
 
 We can use `vi` to edit the file to include `system("chmod u+s /bin/bash");`, and then use `:wq!` to force the save. Afterwards, when we can run the file using `sudo` as `james`:
 
-<figure><img src="../../../.gitbook/assets/image (32) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (32) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then we can easily become the `root` user:
 

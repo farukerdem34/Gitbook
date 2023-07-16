@@ -137,7 +137,7 @@ $ hashcat -a 0 -m 7300 hash /usr/share/wordlists/rockyou.txt
 
 With these credentials, we can login to the Zabbix instance:
 
-<figure><img src="../../../.gitbook/assets/image (77).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (77) (6).png" alt=""><figcaption></figcaption></figure>
 
 ### Zabbix RCE
 

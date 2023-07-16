@@ -70,4 +70,4 @@ gdbus call --system --dest com.ubuntu.USBCreator --object-path /com/ubuntu/USBCr
 
 Following this PoC would extract the private SSH key of `root` and allow me to SSH in as `root`:
 
-<figure><img src="../../../.gitbook/assets/image (115) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (115) (3) (1).png" alt=""><figcaption></figcaption></figure>

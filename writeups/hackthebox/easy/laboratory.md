@@ -56,7 +56,7 @@ Using `laboratory.htb` works as the email domain, then we can view the dashbaord
 
 Interestingly, this was running GitLab 12.8.1, which is an outdated version of the software.
 
-<figure><img src="../../../.gitbook/assets/image (72).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (72) (7).png" alt=""><figcaption></figcaption></figure>
 
 This version is vulnerable to an LFI.
 

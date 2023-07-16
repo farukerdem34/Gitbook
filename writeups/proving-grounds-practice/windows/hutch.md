@@ -175,7 +175,7 @@ PUT Shell: http://192.168.197.122/DavTestDir_YuAxJmlk/YuAxJmlk_aspx_cmd.aspx
 
 Then, we can easily get a reverse shell as this user.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (120).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (120) (5).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

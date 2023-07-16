@@ -34,7 +34,7 @@ When I uploada file, it would produce a link to a report.
 
 The file would be a .txt file of output from `exiftool` being used on the file.
 
-<figure><img src="../../../.gitbook/assets/image (18) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Very obviously, there is a JPG RCE vulnerability here. One possible parameter to inject commands in is the File Name. With the version, I found this vulnerability that allowed for RCE through the pipe character.
 

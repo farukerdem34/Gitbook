@@ -24,15 +24,15 @@ Port 80 shows a simple quiz application:
 
 If we click any of the buttons, we are shown a very obvious LFI.
 
-<figure><img src="../../../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (43) (2).png" alt=""><figcaption></figcaption></figure>
 
 Attempting to do anything with it results in being blocked by a WAF.
 
-<figure><img src="../../../.gitbook/assets/image (111).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (111) (6).png" alt=""><figcaption></figcaption></figure>
 
 We can confirm that the website runs on PHP by visiting `index.php` and being shown the same page. Then, I experimented with some PHP Filter LFI exploits for the `blackdeath` page.
 
-<figure><img src="../../../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (45) (3).png" alt=""><figcaption></figcaption></figure>
 
 The WAF is easily bypassed as long as we include it within the `page` parameter. We can read the code of `index.php` by visiting:
 
@@ -121,7 +121,7 @@ Then, we can verify that we have RCE:
 
 Getting reverse shell using the usual `bash` one-liner is easy:
 
-<figure><img src="../../../.gitbook/assets/image (119).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (119) (4).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -149,6 +149,6 @@ hacker:$1$wsCz0GNf$0S8e55RreE.iCJIyEr3jP.:0:0::/root:/bin/sh
 
 Then, host the new `passwd` file on a HTTP server and `curl` it, directing the output to `/etc/passwd`. Afterwards, `su` to the new user to get `root`:
 
-<figure><img src="../../../.gitbook/assets/image (85).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (85) (1).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

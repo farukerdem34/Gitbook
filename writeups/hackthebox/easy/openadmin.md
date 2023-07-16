@@ -28,7 +28,7 @@ This version of OpenNetAdmin was vulnerable to RCE:
 
 We can gain a shell by following the PoC:
 
-<figure><img src="../../../.gitbook/assets/image (88) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (88) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (105) (3).png" alt=""><figcaption></figcaption></figure>
 

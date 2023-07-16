@@ -78,7 +78,7 @@ clumsyadmin:x:1000:1000::/home/clumsyadmin:/bin/sh
 
 There's a `clumsyadmin` user present, and this might be the user we need. Then, we can use the `/update` endpoint to send requests to our HTTP server:
 
-<figure><img src="../../../.gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (51) (2).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
 
@@ -122,4 +122,4 @@ echo -e '#!/bin/sh -p\n/bin/sh -p 1>&0' >$TF
 wget --use-askpass=$TF 0
 ```
 
-<figure><img src="../../../.gitbook/assets/image (86).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (86) (8).png" alt=""><figcaption></figcaption></figure>

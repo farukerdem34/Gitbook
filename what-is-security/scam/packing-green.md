@@ -4,17 +4,17 @@
 
 Recently, I've been receiving messages like this:
 
-<figure><img src="../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (16) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Invoice?
 
 The link is not malicious and is a real service that brings me here:
 
-<figure><img src="../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (23) (12).png" alt=""><figcaption></figcaption></figure>
 
 Firstly, I didn't order no flowers or orchids. There are a few things that we can extract from this 'Tax Invoice'. We can find this scammer's email here:
 
-<figure><img src="../../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (21) (1).png" alt=""><figcaption></figcaption></figure>
 
 This domain doesn't have a website of any sort. I used the Whois service to identify this domain:
 
@@ -22,7 +22,7 @@ This domain doesn't have a website of any sort. I used the Whois service to iden
 
 Within the invoice, we can also find some other interesting information:
 
-<figure><img src="../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (18) (2).png" alt=""><figcaption></figcaption></figure>
 
 I ran a check on these UEN numbers, and they are legit and from the Fu Luxe company. I just found it odd that they would bill me through XERO instead of doing an email to the company's finance team, or calling me directly.&#x20;
 
@@ -58,7 +58,7 @@ Take note of the date, because although the charges are '3 months overdue', this
 
 We can also take a look at the 'items' that I 'ordered':
 
-<figure><img src="../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (20) (1).png" alt=""><figcaption></figcaption></figure>
 
 I found it quite hilarious that their mathematics was correct, meaning somebody punched the nubmers.&#x20;
 

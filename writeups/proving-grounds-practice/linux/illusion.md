@@ -30,7 +30,7 @@ The login page is basic and operates in PHP:
 
 Default credentials don't work here. Brute forcing also doesn't work. Since this runs on PHP, we can try some Magic Hashes by submitting this request:
 
-<figure><img src="../../../.gitbook/assets/image (16) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (2) (6).png" alt=""><figcaption></figcaption></figure>
 
 {% embed url="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Type%20Juggling/README.md" %}
 
@@ -44,7 +44,7 @@ The dashboard is simple.
 
 If we submit any queries, we can see our order name pop up on the top:
 
-<figure><img src="../../../.gitbook/assets/image (21) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (21) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Since this website runs on PHP and the input value is printed out on screen, I wanted to test for SSTI by using `{{7*7}}` as the name of the order, and it works:
 

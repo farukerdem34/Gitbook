@@ -47,7 +47,7 @@ For some reason, it was redirecting me to port 81 on the localhost. This means t
 
 Based on the PoC, this is a misconfiguration regarding the proxy used for the `/admin` directory. We can test it out and find that we have bypassed authentication using this method and get a 403 instead.
 
-<figure><img src="../../../.gitbook/assets/image (31) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (31) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 I tried a `gobuster` scan on this new URL to see if we can find new files to access, and it seems `server-status` has been left publicly available.
 

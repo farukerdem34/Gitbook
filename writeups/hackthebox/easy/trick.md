@@ -34,7 +34,7 @@ The whole payroll bit was a rabbit hole, and I could not make anything work. As 
 
 I then tried to fuzz with the `preprod-` bit prefixed, and found a new domain:
 
-<figure><img src="../../../.gitbook/assets/image (91) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (91) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 ### LFI for SSH Keys
 

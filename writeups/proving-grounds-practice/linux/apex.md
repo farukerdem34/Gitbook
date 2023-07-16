@@ -78,7 +78,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 When we visit `/filemanager`, we can see that it is running Responsive FileManager:
 
-<figure><img src="../../../.gitbook/assets/image (48).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (48) (1).png" alt=""><figcaption></figcaption></figure>
 
 There are a few exploits related to this:
 

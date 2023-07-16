@@ -34,7 +34,7 @@ All the parameters passed in via POST request were fine, but when proxying traff
 
 For instance, I was able to enumerate the datbase that was used.
 
-<figure><img src="../../../.gitbook/assets/image (31) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (31) (1) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (17) (5) (1).png" alt=""><figcaption></figcaption></figure>
 

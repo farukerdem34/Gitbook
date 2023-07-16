@@ -26,7 +26,7 @@ This box involves testing mail services. We have to add `postfish.off` to our `/
 
 The website looked rather static:
 
-<figure><img src="../../../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (34) (3).png" alt=""><figcaption></figcaption></figure>
 
 There was a 'Team' page, and when viewed we get some names and roles:
 

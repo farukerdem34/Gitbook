@@ -133,7 +133,7 @@ I attempted this exploit using the `file:///` wrapper to read the `/etc/passwd` 
 
 <figure><img src="../../../.gitbook/assets/image (5) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (39) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (39) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 We find that the user is called `angoose`. I attempted to read more files such as the private SSH key of the user, but it seems that I either could not read it or it did not exist.
 

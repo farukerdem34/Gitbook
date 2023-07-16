@@ -54,7 +54,7 @@ Again, not sure what to do with this yet. We can click on the 'Gallery' option t
 
 From the looks of it, it seems that the backend uses some kind of SQL database based on the data returned. When we view our 'Profile', we can see that there is an option to update it with our favourite genres:
 
-<figure><img src="../../.gitbook/assets/image (19) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (19) (2) (5).png" alt=""><figcaption></figcaption></figure>
 
 This sends this POST request to the backend:
 

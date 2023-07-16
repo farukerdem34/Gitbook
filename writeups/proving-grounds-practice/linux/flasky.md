@@ -40,21 +40,21 @@ Based on the box name, we are likely dealing with a Flask application here.&#x20
 
 Port 5555 just shows us a login page:
 
-<figure><img src="../../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (24) (12).png" alt=""><figcaption></figcaption></figure>
 
 We don't have any credentials, so let's move on for now.
 
 Port 20202 shows us another login page:
 
-<figure><img src="../../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can use the guest access to view the dashboard, and hints towards abusing JWT:
 
-<figure><img src="../../../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (19) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can take a look at the cookie value assigned to us:
 
-<figure><img src="../../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (22) (3).png" alt=""><figcaption></figcaption></figure>
 
 We can easily change this to exploit it. I also ran a `gobuster` scan and found an admin directory:
 
@@ -80,7 +80,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 Visiting it just shows us this:
 
-<figure><img src="../../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (1).png" alt=""><figcaption></figcaption></figure>
 
 Running scans against both of these directories show nothing. I checked the requests in Burp, and there are some allowed methods:
 
@@ -232,7 +232,7 @@ eyJsb2dnZWRfaW4iOnRydWV9.ZLI_rA.WmTcl0Wa5jOy8ajsJvWhn6npDKA
 
 This allows us to access the calculator application:
 
-<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (11).png" alt=""><figcaption></figcaption></figure>
 
 The source code uses `eval` to calculate the results, which is vulnerable to RCE. We can just inject Python code like this:
 
@@ -258,6 +258,6 @@ value1=os.system("chmod+u%2bs+/bin/bash")&value2=1
 
 Then, we can become `root`:
 
-<figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (15).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

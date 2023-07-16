@@ -36,7 +36,7 @@ Does not allow anonymous logins.
 
 Port 4443 and 8080 host the same service:
 
-<figure><img src="../../../.gitbook/assets/image (95).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (95) (1).png" alt=""><figcaption></figcaption></figure>
 
 I ran a `gobuster` scan on the site and found a few directories:
 

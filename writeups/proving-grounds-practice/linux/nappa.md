@@ -85,7 +85,7 @@ We can then login as the admin email and password of `it0jNc6L/r090Q==`.&#x20;
 
 The administrator had access to the `/serverinfo` page:
 
-<figure><img src="../../../.gitbook/assets/image (15) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Again, there were some interesting comments in the page source:
 

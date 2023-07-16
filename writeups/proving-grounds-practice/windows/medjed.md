@@ -215,7 +215,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 On the `phpinfo.php` page, we can find the `DOCUMENT_ROOT` variable:
 
-<figure><img src="../../../.gitbook/assets/image (115).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (115) (3).png" alt=""><figcaption></figcaption></figure>
 
 There were also no disabled functions, which was great:
 

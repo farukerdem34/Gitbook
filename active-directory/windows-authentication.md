@@ -159,7 +159,7 @@ One use case is the listing of shares via remote authentication. If a user `user
 
 There are different types of impersonation levels:
 
-<figure><img src="../.gitbook/assets/image (95) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (95) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 Creating a security context requires credentials, while hijacking a security context (via stealing tokens) requires privileges.&#x20;
 

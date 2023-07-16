@@ -38,4 +38,4 @@ The last one was `screen-4.5.0`, which was an outdated version vulnerable to a l
 
 {% embed url="https://www.exploit-db.com/exploits/41154" %}
 
-<figure><img src="../../../.gitbook/assets/image (45) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (45) (3) (1).png" alt=""><figcaption></figcaption></figure>

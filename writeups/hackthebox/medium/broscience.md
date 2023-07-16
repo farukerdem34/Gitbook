@@ -389,7 +389,7 @@ We can use `\d` to read the tables present on the machine.
 
 Then, we can read the stuff in the `users` file.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (32) (2) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (32) (2) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 We would find lots of hashes. Since the user on the machine is `bill`, let's attempt to crack his hash. The `db_connect.php` file did have a salt for the hashes as "NaCl". Using this, we can generate a wordlist based on rockyou.txt with this salt prepended to all the words.
 

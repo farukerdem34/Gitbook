@@ -32,7 +32,7 @@ Afterwards, we just need to change the extension to `.php.jpeg` and send the fil
 
 So the `/uploads` directory is where our files end up. I tried some basic commands, and it worked!
 
-<figure><img src="../../../.gitbook/assets/image (48) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (48) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Getting a shell from here is easy.
 

@@ -20,7 +20,7 @@ PORT      STATE    SERVICE
 
 Port 80 reveals a Gitlab instance:
 
-<figure><img src="../../../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (32) (2).png" alt=""><figcaption></figcaption></figure>
 
 I tried registering a user, but it wasn't allowed since the Gitlab administrator needed to approve first. I ran a `feroxbuster` scan to enumerate directories.&#x20;
 

@@ -261,7 +261,7 @@ Content-Length: 165
 
 It didn't work at first, and upon sending a GET request to `/reset`, it worked!
 
-<figure><img src="../../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (33) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -326,6 +326,6 @@ Then, we can just wait for the shell to execute.&#x20;
 
 The user is part of the `sudo` group, and it is trivial to become the `root` user:
 
-<figure><img src="../../../.gitbook/assets/image (99).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (99) (5).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

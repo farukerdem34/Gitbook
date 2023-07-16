@@ -36,7 +36,7 @@ The `install.php` file also contained some other hidden information about the CM
 
 So `fergus` is the administrator of the website, and Bludit is installed on it. Fergus needs to upload some type of image onto the website. We can check the page source for the version of Bludit that is running.
 
-<figure><img src="../../../.gitbook/assets/image (22) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (22) (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 Bludit CMS 3.9.2 is vulnerable to an authenticated RCE exploit. We can use the exploit from this repository on the box
 
@@ -60,7 +60,7 @@ Then, we can use the exploit we found earlier to gain a reverse shell.
 
 <figure><img src="../../../.gitbook/assets/image (12) (2) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (17) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
