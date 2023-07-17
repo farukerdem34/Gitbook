@@ -105,6 +105,7 @@
   * [Sandworm](writeups/htb-season-2/sandworm.md)
   * [Pilgrimage](writeups/htb-season-2/pilgrimage.md)
   * [Intentions](writeups/htb-season-2/intentions.md)
+  * [Authority](writeups/htb-season-2/authority.md)
   * [Sau](writeups/htb-season-2/sau.md)
 * [HTB Season 1](writeups/htb-season-1/README.md)
   * [Inject](writeups/htb-season-1/inject.md)
