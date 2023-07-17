@@ -57,7 +57,7 @@ We would then get a reverse shell:
 
 `linpeas.sh` picked up that we can write to the Systemd PATH:
 
-<figure><img src="../../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (3).png" alt=""><figcaption></figcaption></figure>
 
 This means we just need to find some process from `root` that doesn't use the full PATH. I used `pspy64` to find such a process.
 

@@ -84,7 +84,7 @@ Visiting it just shows us this:
 
 Running scans against both of these directories show nothing. I checked the requests in Burp, and there are some allowed methods:
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can send POST and OPTIONS requests to this, but we first need to modify our cookie. The JWT cookie has 3 parts, the encryption type, the actual data and the signature. Since we know there's a problem with the JWT, we can abuse this by replacing the encryption type and the payload:
 
@@ -133,7 +133,7 @@ When we load the request in a Browser, we would see the admin dashboard:
 
 At the bottom, we can see users making posts about the configuration files:
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 This step took forever, but I eventually found the config file at `cisco_config`.&#x20;
 
@@ -147,7 +147,7 @@ We can then try each password with `ssh`, finding that `john:NezukoCh@n` works.
 
 &#x20;
 
-<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

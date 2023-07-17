@@ -48,7 +48,7 @@ Port 80 looked rather static:
 
 There was no public exploit for this software either, so let's move on. Port 5000 looked way more promising:
 
-<figure><img src="../../../.gitbook/assets/image (15) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (3) (3).png" alt=""><figcaption></figcaption></figure>
 
 We can login, and there's no additional functionality with this website. Viewing the requests, we can see that the login just assigned us a token:
 

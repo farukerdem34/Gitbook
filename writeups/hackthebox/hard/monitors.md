@@ -74,7 +74,7 @@ I used `ssh -L 8443:localhost:8443 marcus@monitors.htb` to port forward after dr
 
 Visting any of these would redirect us to `/content/control/main`, where there is a login page present.
 
-<figure><img src="../../../.gitbook/assets/image (10) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (1) (2) (3).png" alt=""><figcaption></figcaption></figure>
 
 The bottom of the page shows that this is running Apache OFBiz Release 17.12.01, which is vulnerable to loads of exploits, including an RCE one.
 

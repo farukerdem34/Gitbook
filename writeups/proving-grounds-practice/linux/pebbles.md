@@ -24,7 +24,7 @@ FTP doesn't allow for anonymous connections.
 
 Port 80 shows a login page:
 
-<figure><img src="../../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (5).png" alt=""><figcaption></figcaption></figure>
 
 Default creds don't work, so I ran a `gobuster` scan while moving on. Port 3305 shows a default Apache page:
 

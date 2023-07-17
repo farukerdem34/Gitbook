@@ -207,4 +207,4 @@ The payload is taken from Hacktricks.
 
 User can run `bash` as `root`:
 
-<figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (6).png" alt=""><figcaption></figcaption></figure>

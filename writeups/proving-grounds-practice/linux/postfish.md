@@ -30,7 +30,7 @@ The website looked rather static:
 
 There was a 'Team' page, and when viewed we get some names and roles:
 
-<figure><img src="../../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Interesting.
 

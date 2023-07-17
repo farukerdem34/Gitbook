@@ -26,7 +26,7 @@ When in the user's directory, we find a restricted shell where we cannot execute
 
 I researched a bit on how to escape this shell, and found that appending `-t "bash --noprofile"` works:
 
-<figure><img src="../../../.gitbook/assets/image (8) (1) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1) (3) (3).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

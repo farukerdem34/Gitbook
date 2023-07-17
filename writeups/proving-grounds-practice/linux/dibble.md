@@ -24,7 +24,7 @@ FTP accepts anonymous logins but there's nothing within it.&#x20;
 
 Port 80 shows a blog about some web exploits:
 
-<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (3).png" alt=""><figcaption></figcaption></figure>
 
 Port 3000 shows a more dynamic incident reporting site:
 
@@ -65,7 +65,7 @@ The `X-Powered-By` header specified that this was using Express, which is Javasc
 
 When we submit thiss, we get a reverse shell:
 
-<figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (3).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
