@@ -78,7 +78,7 @@ This page looked more dynamic, so I ran a directory scan with `feroxbuster`, whi
 
 There were a few interesting folders:
 
-<figure><img src="../../../.gitbook/assets/image (7) (1) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (1) (10).png" alt=""><figcaption></figcaption></figure>
 
 There wasn't much within the folders. On the 'Using Typescript' page, there was a link to documentation:
 

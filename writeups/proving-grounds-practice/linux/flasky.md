@@ -84,7 +84,7 @@ Visiting it just shows us this:
 
 Running scans against both of these directories show nothing. I checked the requests in Burp, and there are some allowed methods:
 
-<figure><img src="../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (14).png" alt=""><figcaption></figcaption></figure>
 
 We can send POST and OPTIONS requests to this, but we first need to modify our cookie. The JWT cookie has 3 parts, the encryption type, the actual data and the signature. Since we know there's a problem with the JWT, we can abuse this by replacing the encryption type and the payload:
 
@@ -127,17 +127,17 @@ username=wwwwww&password=w
 
 When we load the request in a Browser, we would see the admin dashboard:
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (7).png" alt=""><figcaption></figcaption></figure>
 
 ### Config --> SSH Creds
 
 At the bottom, we can see users making posts about the configuration files:
 
-<figure><img src="../../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (18).png" alt=""><figcaption></figcaption></figure>
 
 This step took forever, but I eventually found the config file at `cisco_config`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (3).png" alt=""><figcaption></figcaption></figure>
 
 These are Cisco Type 7 passwords, which can be decrypted here:
 

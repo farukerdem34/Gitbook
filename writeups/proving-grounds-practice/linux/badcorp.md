@@ -234,4 +234,4 @@ I then placed a file named `$(bash)` within the FTP directory, and it gave me a 
 
 This shell was pretty limited and couldn't give me any output. However, we can simply run `chmod u+s /bin/bash`. In another shell, we can then get a proper `root` shell easily:
 
-![](<../../../.gitbook/assets/image (20) (4).png>)
+<figure><img src="../../../.gitbook/assets/image (20) (4).png" alt=""><figcaption></figcaption></figure>

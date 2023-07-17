@@ -95,7 +95,7 @@ Not sure what this directory is used for. The Redis RCE exploit requires that we
 
 I transferred this file over to the `pub` directory and tried to find the correct directory to load my module. After a bit of guessing, I found that we uploaded `module.so` to `/var/ftp`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 We can then easily get a reverse shell.&#x20;
 
@@ -107,7 +107,7 @@ We can then easily get a reverse shell.&#x20;
 
 I ran a `linpeas.sh` scan, and found this `cronjob` running:
 
-<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 Turns out that there are some directories that we can write to within the `LD_LIBRARY_PATH`, and the cronjob running `log-sweeper` doesn't have a `utils.so` specified:
 
@@ -132,6 +132,6 @@ Final size of elf-so file: 476 bytes
 
 Then transfer it to the `/usr/local/lib/dev` directory and wait. Be sure to run `chmod 777 utils.so` on it just in case. The cronjob runs every minute, so the connection takes about 30 seconds to appear:
 
-<figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

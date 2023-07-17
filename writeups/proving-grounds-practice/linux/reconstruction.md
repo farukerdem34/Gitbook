@@ -155,7 +155,7 @@ L2V0Yy9tYWNoaW5lLWlk
 
 The machine ID needed some service name appended to the back of it, which we can get from reading `/proc/self/cgroup`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (5) (1) (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 We also need the user that started the application, which can be found in `/proc/self/environ`:
 
@@ -181,7 +181,7 @@ private_bits = [
 
 From here, we can easily get a reverse shell on our machine.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (6) (1) (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 We cannot read the user flag yet.
 

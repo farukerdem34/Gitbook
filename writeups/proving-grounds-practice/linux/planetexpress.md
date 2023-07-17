@@ -209,6 +209,6 @@ root:neverwant2saygoodbye:0:0:root:/root:/bin/bash
 
 We can then `ssh` in as `root`:
 
-<figure><img src="../../../.gitbook/assets/image (5) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (4) (3).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

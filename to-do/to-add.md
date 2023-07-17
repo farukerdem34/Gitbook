@@ -7,8 +7,8 @@ description: Things I want to add or might add.
 ## To-Dos
 
 * [x] Writeups
-  * [ ] Proving Grounds (100 machines)
-  * [x] HackTheBox (200 machines)
+  * [ ] Proving Grounds (96 machines)
+  * [x] HackTheBox (220+ machines)
 * [ ] Attack Simulation (Current Purple Teaming Internship Project)
   * [ ] Red Teaming vs Pentesting
   * [ ] Purple Teaming --> What is it?

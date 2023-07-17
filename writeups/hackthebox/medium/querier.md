@@ -28,7 +28,7 @@ We can see how there are VBA Macros within this file. Again, we can use `olevba`
 
 We found find this set of credentials for the database here.
 
-<figure><img src="../../../.gitbook/assets/image (11) (1) (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 We can then use `mssqlclient.py` to authenticate as this `reporting` user for the database that is publicly facing forward.
 

@@ -20,7 +20,7 @@ The website is an average soccer related page.
 
 Doing a directory enumeration with feroxbuster reveals a few extra directories:
 
-<figure><img src="../../../.gitbook/assets/image (2) (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can head to the `/tiny` endpoint to find another application running.
 

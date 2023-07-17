@@ -63,7 +63,7 @@ On a side note, I noticed that there were different usernames for the bot each t
 
 Examining the page source reveals that there was some number associated with the updates:
 
-<figure><img src="../../.gitbook/assets/image (11) (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (11) (8) (2).png" alt=""><figcaption></figcaption></figure>
 
 This number incremented itself each time, and it was likely that this is the same number used for the cart ID, giving us an opportunity to inject XSS payloads into the cart of the bot. Apart from the checkout, viewing the user profile reveals that we can upload an avatar to the site:
 

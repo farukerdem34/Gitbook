@@ -59,7 +59,7 @@ When viewing the plugins, we can find another plugin that enables SMTP on the Wo
 
 When viewing the SMTP configuration settings, we can find the username and password for port 110.
 
-<figure><img src="../../../.gitbook/assets/image (12) (3) (1) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 The password can be taken by viewing the page source to reveal the hidden value.
 
@@ -71,7 +71,7 @@ We can then proceed to enumerate the SMTP instance.
 
 We can sign in to the service on port 110.
 
-<figure><img src="../../../.gitbook/assets/image (5) (4) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (4) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can view the messages sent using `list`.
 
@@ -107,7 +107,7 @@ Then, we can head to that website to find the `id_rsa` file for `orestis`.
 
 The file is password encrypted, so we have to use `ssh2john.py` to convert this to a hash for `john` to crack.
 
-<figure><img src="../../../.gitbook/assets/image (11) (1) (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (1) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then we can use `openssl rsa` to write the key out.
 

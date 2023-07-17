@@ -162,7 +162,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 We can see a new endpont at `/applications`. Trying to access this requires credentials:
 
-<figure><img src="../../../.gitbook/assets/image (9) (2) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 I did not have any credentials for now. After creating this account and re-testing, using the `/oauth/connect` function earlier now shows a different user profile.
 
