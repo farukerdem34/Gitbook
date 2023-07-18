@@ -337,6 +337,7 @@
     * [Algernon](writeups/proving-grounds-practice/windows/algernon.md)
     * [AuthBy](writeups/proving-grounds-practice/windows/authby.md)
     * [BillyBoss](writeups/proving-grounds-practice/windows/billyboss.md)
+    * [Butch](writeups/proving-grounds-practice/windows/butch.md)
     * [Craft](writeups/proving-grounds-practice/windows/craft.md)
     * [Craft2](writeups/proving-grounds-practice/windows/craft2.md)
     * [DVR4](writeups/proving-grounds-practice/windows/dvr4.md)
