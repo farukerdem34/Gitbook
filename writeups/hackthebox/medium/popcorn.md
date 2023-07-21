@@ -157,7 +157,7 @@ This was interesting because **there are exploits related to this**. I found one
 
 When the script was downloaded and run, I was able to spawn in a root shell.
 
-<figure><img src="../../../.gitbook/assets/image (36) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (36) (1) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 ## Beyond Root
 

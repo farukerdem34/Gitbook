@@ -65,7 +65,7 @@ We have 2 new users, `coaran` and `michelle`. Then, we can login with `michelle:
 
 Using this user, we can enumerate the version of Gitlab running:
 
-<figure><img src="../../../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (30) (10).png" alt=""><figcaption></figcaption></figure>
 
 This is vulnerable to the Gitlab Exiftool RCE exploit.&#x20;
 

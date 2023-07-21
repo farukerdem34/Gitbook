@@ -63,7 +63,7 @@ password: company defaults
 
 So the username is Rohit and the password is the default password. In this case, the default password for this software is `pfsense`. We can then login and see the version running:
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (7).png" alt=""><figcaption></figcaption></figure>
 
 This is an outdated version of pfSense running, and it is vulnerable to an RCE exploit.
 

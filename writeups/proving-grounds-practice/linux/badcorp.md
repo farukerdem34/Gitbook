@@ -105,7 +105,7 @@ Use the "--show" option to display all of the cracked passwords reliably
 Session completed. 
 ```
 
-<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (8).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

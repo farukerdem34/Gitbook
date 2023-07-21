@@ -80,7 +80,7 @@ There's a `clumsyadmin` user present, and this might be the user we need. Then, 
 
 <figure><img src="../../../.gitbook/assets/image (51) (2).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (29) (3).png" alt=""><figcaption></figcaption></figure>
 
 Since our parameters was being passed to a 'Linux Executable', I assumed that the URL parameter was not being properly sanitised (and is probably using `wget` or something).&#x20;
 

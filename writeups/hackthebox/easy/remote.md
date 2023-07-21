@@ -115,7 +115,7 @@ So now we have some credentials at least.
 
 There were hints that Umbraco was used to host the sites, so let's view port 80. It seems to be a blog page:
 
-<figure><img src="../../../.gitbook/assets/image (28) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (28) (2) (5).png" alt=""><figcaption></figcaption></figure>
 
 The login page for the website is located at the `/Umbraco` directory. We can login with the credentials and email we found earlier.
 

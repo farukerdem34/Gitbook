@@ -40,7 +40,7 @@ name=admin+++++a&email=admin%40book.htb++++++a&password=hello123
 
 After sending this, we can login as the administrator.
 
-<figure><img src="../../../.gitbook/assets/image (20) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20) (1) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Book Submission PDF
 

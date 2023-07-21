@@ -280,7 +280,7 @@ This password works for `fox`.&#x20;
 
 We can use the `-X` option after finding the user's password:
 
-<figure><img src="../../../.gitbook/assets/image (71).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (71) (7).png" alt=""><figcaption></figcaption></figure>
 
 I tested by running `dosbox`, which spawns the GUI for me:
 

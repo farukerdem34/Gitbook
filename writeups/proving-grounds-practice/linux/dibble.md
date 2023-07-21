@@ -24,19 +24,19 @@ FTP accepts anonymous logins but there's nothing within it.&#x20;
 
 Port 80 shows a blog about some web exploits:
 
-<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
 
 Port 3000 shows a more dynamic incident reporting site:
 
-<figure><img src="../../../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (31) (2).png" alt=""><figcaption></figcaption></figure>
 
 I registed a new account and looked at the events:
 
-<figure><img src="../../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (23) (3).png" alt=""><figcaption></figcaption></figure>
 
 Doesn't look super relevant. I checked Burpsuite, and noticed this cookie:
 
-<figure><img src="../../../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (21) (1).png" alt=""><figcaption></figcaption></figure>
 
 When decoded, it gives `default`. I changed it to a `base64` encoded `admin` string, giving `YWRtaW4=`, which allows us to create logs.
 
@@ -86,4 +86,4 @@ hacker:$1$ZNhJDyK2$vksoiVz4W8rhrWm8BKxWK/:0:0::/root:/bin/bash
 
 Then, use `cp` to overwrite the existing `/etc/passwd` file and `su` to `hacker` with 'hello123':
 
-<figure><img src="../../../.gitbook/assets/image (48).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (48) (9).png" alt=""><figcaption></figcaption></figure>

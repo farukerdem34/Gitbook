@@ -45,7 +45,7 @@ As soon as we upload the file and submit a new ticket, we get this on a listener
 
 Using this cookie, we can then login to OSTicket at `/scp` by changing our cookie within Burp:
 
-<figure><img src="../../../.gitbook/assets/image (25) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (25) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### OSTicket RCE
 

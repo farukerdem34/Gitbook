@@ -59,7 +59,7 @@ Viewing `robots.txt` revealed this file:
 
 I ran another `gobuster` on this `/weather` directory and found another hidden endpoint.
 
-<figure><img src="../../../.gitbook/assets/image (10) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (1) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 When interacting with this endpoint, we get some instructions on parameters to send.
 

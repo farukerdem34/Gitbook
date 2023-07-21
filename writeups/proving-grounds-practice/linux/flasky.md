@@ -46,15 +46,15 @@ We don't have any credentials, so let's move on for now.
 
 Port 20202 shows us another login page:
 
-<figure><img src="../../../.gitbook/assets/image (15) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (1) (9).png" alt=""><figcaption></figcaption></figure>
 
 We can use the guest access to view the dashboard, and hints towards abusing JWT:
 
-<figure><img src="../../../.gitbook/assets/image (19) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (19) (2) (6).png" alt=""><figcaption></figcaption></figure>
 
 We can take a look at the cookie value assigned to us:
 
-<figure><img src="../../../.gitbook/assets/image (22) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (22) (3) (3).png" alt=""><figcaption></figcaption></figure>
 
 We can easily change this to exploit it. I also ran a `gobuster` scan and found an admin directory:
 
@@ -80,7 +80,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 Visiting it just shows us this:
 
-<figure><img src="../../../.gitbook/assets/image (17) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (1) (8).png" alt=""><figcaption></figcaption></figure>
 
 Running scans against both of these directories show nothing. I checked the requests in Burp, and there are some allowed methods:
 

@@ -154,7 +154,7 @@ The box was named Thor, so it makes sense that there would be something 'Thor' r
 
 Port 7080 reveals a login page:
 
-<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 There are some exploits available for this:
 
@@ -309,8 +309,8 @@ Using this, we can login to Webmin and view the dashboard:
 
 Within Webmin, there's a `>_` option, which spawns a command line instance within the browser:
 
-<figure><img src="../../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (28) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can just do `chmod u+s /bin/bash`, and get a proper `root` shell using `ssh`.
 
-<figure><img src="../../../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (1) (10).png" alt=""><figcaption></figcaption></figure>

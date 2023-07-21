@@ -298,7 +298,7 @@ Get-DomainComputer resourcedc | Set-DomainObject -Set @{'msds-allowedtoactonbeha
 
 Once we have run these, it should work and we can check `klist` to see that we have the administrator's ticket:
 
-<figure><img src="../../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (5).png" alt=""><figcaption></figcaption></figure>
 
 However, even with this ticket, it appears we still cannot access the administrator's desktop (and also we still don't have a shell...)
 

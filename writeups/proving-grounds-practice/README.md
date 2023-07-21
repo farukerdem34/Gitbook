@@ -4,4 +4,6 @@ Proving Grounds Practice writeups here, separated into their respective OS. Thes
 
 {% hint style="info" %}
 This series of writeups will not be maintained once completed. I'm just transferring my existing old writeups to Gitbook and do not plan on using Proving Grounds after finishing all writeups.&#x20;
+
+All 96 writeups have been transferred as of 21/7/2023.&#x20;
 {% endhint %}

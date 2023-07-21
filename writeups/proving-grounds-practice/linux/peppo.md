@@ -37,7 +37,7 @@ ident-user-enum v1.0 ( http://pentestmonkey.net/tools/ident-user-enum )
 
 `eleanor` was one of the users. I just tried some weak credentials, and it turns out `eleanor` was the SSH password.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (36) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

@@ -80,7 +80,7 @@ Port 80 just shows this page:
 
 When we read the page source, we find this:
 
-<figure><img src="../../../.gitbook/assets/image (76).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (76) (7).png" alt=""><figcaption></figcaption></figure>
 
 There's a GraphQL instance on port 8433 that we can investigate. It also seems to be a login of some sort. We can first query all the different types being used:
 

@@ -44,11 +44,11 @@ The dashboard is simple.
 
 If we submit any queries, we can see our order name pop up on the top:
 
-<figure><img src="../../../.gitbook/assets/image (21) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (21) (1) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 Since this website runs on PHP and the input value is printed out on screen, I wanted to test for SSTI by using `{{7*7}}` as the name of the order, and it works:
 
-<figure><img src="../../../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (26) (1).png" alt=""><figcaption></figcaption></figure>
 
 On Hacktricks, there's a whole section for Twig (PHP), and I tried their payload to run `id`:
 

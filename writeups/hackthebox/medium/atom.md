@@ -87,7 +87,7 @@ releaseDate: '2022-03-14T11:17:02.627Z'
 
 Upon creation, we would need to put this YAML file within the client directory of the share we accessed earlier.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (29) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (29) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 After a while, our HTTP server would get a hit and our listener port would catch a reverse shell.
 

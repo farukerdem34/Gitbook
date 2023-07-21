@@ -286,7 +286,7 @@ By controlling the grant type, we can requests for the client\_credentials. This
 
 Then we can send a reuqest specifying the client ID, client secret and the grant type and the token for `qtc` will be given to us:
 
-<figure><img src="../../../.gitbook/assets/image (27) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (27) (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 This `access_token` parameter is the API token we need!
 

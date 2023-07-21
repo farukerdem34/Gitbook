@@ -104,7 +104,7 @@ The above resources details a similar exploit, where they submit `token[]=` to t
 
 &#x20;We can use their parameters to bypass this check:
 
-<figure><img src="../../../.gitbook/assets/image (36) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (36) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Visiting `index.php`with the same parameters will show us a page with a password:
 

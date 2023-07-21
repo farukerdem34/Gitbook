@@ -80,7 +80,7 @@ WIth access to the new FTP account, we can find two website source code backups 
 
 Additionally, because we are the `blue` user, we can view the VIP dashboard which allows us to **import and export notes**.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (25) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (25) (1) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (20) (5) (1).png" alt=""><figcaption></figcaption></figure>
 

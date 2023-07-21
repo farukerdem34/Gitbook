@@ -69,7 +69,7 @@ There was some config files and what not, but there's nothing in it at all. Movi
 
 Port 80 was a ForumOnRails instance:
 
-<figure><img src="../../../.gitbook/assets/image (11) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (2) (5).png" alt=""><figcaption></figcaption></figure>
 
 I registered a user and looked through the posts made by the admin, and found his email.
 
@@ -157,4 +157,4 @@ b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABlwAAAAdzc2gtcn
 
 We can then use this to `ssh` in as `root`:
 
-<figure><img src="../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (1).png" alt=""><figcaption></figcaption></figure>

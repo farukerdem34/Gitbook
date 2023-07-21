@@ -119,7 +119,7 @@ mysqli_close($conn);
 
 We can see that there's an SQL Injection within the `get_page` function. The `redirect_url` is taken as the `$route_string` variable. If we attempt basic injection, it redirects us to `phpinfo.php`:
 
-<figure><img src="../../../.gitbook/assets/image (63).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (63) (9).png" alt=""><figcaption></figcaption></figure>
 
 Within this, we can see that there are no disabled functions, and that the document root is at `/var/www/html`:
 

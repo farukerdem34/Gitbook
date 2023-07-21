@@ -53,11 +53,11 @@ All of options were under construction, except for the one on the right most.&#x
 
 From my enumeration, this seems to be the most vulnerable point. I attempted to upload some PHP webshells, but it seems only images are allowed.
 
-<figure><img src="../../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (25) (1).png" alt=""><figcaption></figcaption></figure>
 
 There was one weird part, which was the `url=inspect.shtml` portion, since I had never seen that before. Searching for `shtml` gives us results for Server Side Includes (SSI).
 
-<figure><img src="../../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (27) (3).png" alt=""><figcaption></figcaption></figure>
 
 Hacktricks has done a page on SSI Injection that we could try.
 
@@ -243,7 +243,7 @@ echo "cp /bin/bash /tmp/bash; chmod +s /tmp/bash; chmod +x /tmp/bash;" | socat -
 
 When we enter that command, the script starts waiting for data to be sent in, which it passes to `os.system(datagram)`. This would result in RCE as `root`:
 
-<figure><img src="../../../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (1) (7).png" alt=""><figcaption></figcaption></figure>
 
 We can then easily get a `root` shell:
 

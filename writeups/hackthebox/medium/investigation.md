@@ -69,7 +69,7 @@ drwxrwx---  3 smorton smorton 4096 Jan  9 10:47 smorton
 
 We need to do some looking around. I ran LinPEAS and found an interesting cronjob that was running.
 
-<figure><img src="../../../.gitbook/assets/image (3) (1) (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 Some backups of the `/home` directory were being created, and also there was an unquoted service path for the `date` binary.
 

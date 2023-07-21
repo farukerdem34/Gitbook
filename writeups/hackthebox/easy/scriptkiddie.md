@@ -10,7 +10,7 @@ Nmap scan:
 
 Port 5000 presented a website where we could use tools like `nmap` and `msfvenom`:
 
-<figure><img src="../../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can try it out and it works:
 

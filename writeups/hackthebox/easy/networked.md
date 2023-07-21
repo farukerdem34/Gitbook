@@ -10,7 +10,7 @@ Nmap scan:
 
 First, we can use `gobuster` on the website:
 
-<figure><img src="../../../.gitbook/assets/image (24) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (24) (2) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 The `/backup` directory would show us a directory with a backup file:
 

@@ -257,7 +257,7 @@ I used a brand new Windows 10 VM spun up using Vagrant for the analysis with all
 
 In Wireshark, the only thing I captured was some loopback interface traffic, so nothing much there.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (82) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (82) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 I ran it a few more times, and each time the process seems to terminate almost immediately.
 

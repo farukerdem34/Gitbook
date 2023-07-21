@@ -46,11 +46,11 @@ So there are some forms of `base64` encoded cookies involved in this website. An
 
 When we login, there is an extra cookie called `token` that is being assigned. It's a JWT token with this value:
 
-<figure><img src="../../.gitbook/assets/image (7) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7) (1) (1) (7).png" alt=""><figcaption></figcaption></figure>
 
 Again, not sure what to do with this yet. We can click on the 'Gallery' option to see the traffic generated:
 
-<figure><img src="../../.gitbook/assets/image (24) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (24) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 From the looks of it, it seems that the backend uses some kind of SQL database based on the data returned. When we view our 'Profile', we can see that there is an option to update it with our favourite genres:
 
@@ -133,7 +133,7 @@ The only point of weakness seems to be that 'Genre' updating feature, so I went 
 
 To resolve this, I used the `--tamper=space2plus` flag. While the `sqlmap` ran, I checked the other parts of the website. If we attempt to view the `/feed`, there is a weird error response captured:
 
-<figure><img src="../../.gitbook/assets/image (26) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (26) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 This normally didn't happen because requests to this would return images with their IDs. This highlights that the injection results might only be viewable when we send a request here instead, thus making the website potentially vulnerable to 2nd order SQL Injection:
 
@@ -241,7 +241,7 @@ Sending the correct parameters resulted in a successful login as `greg`, which g
 
 We can grab the `token` value we were returned on the successful login. Now, we need to find the directory about 'image editing'. We can repeat the above request in a browser, and then check the `/admin` directory, which now works properly:
 
-<figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 The link brings us to the PHP page for Imagick:
 

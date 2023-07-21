@@ -10,7 +10,7 @@ Nmap scan:
 
 We would have to add `megahosting.htb` to our `/etc/hosts` file to view port 80. Afterwards, we would just see something like this on the page:
 
-<figure><img src="../../../.gitbook/assets/image (35) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (35) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 When we press the Compare button, we would be brought to `/news.php?file=statement`. I tested for LFI, and it worked!
 

