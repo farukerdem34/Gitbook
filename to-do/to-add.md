@@ -6,10 +6,7 @@ description: Things I want to add or might add.
 
 ## To-Dos
 
-* [x] Writeups
-  * [ ] Proving Grounds (96 machines)
-  * [x] HackTheBox (220+ machines)
-* [ ] Attack Simulation (Current Purple Teaming Internship Project)
+* [ ] Attack Simulation
   * [ ] Red Teaming vs Pentesting
   * [ ] Purple Teaming --> What is it?
   * [ ] Setting up a virtual environment
@@ -22,7 +19,7 @@ description: Things I want to add or might add.
   * [ ] Shannon entropy
   * [ ] Staged vs Stageless
   * [ ] Meterpreter Payloads
-  * [ ] Payload Obfuscation
+  * [ ] Payload Obfuscation (basic examples that are detected today)
     * [ ] XOR shellcode
     * [ ] Write shellcode to `.text` instead of leaving it in `.data`.&#x20;
     * [ ] Changing the metadata of the file.&#x20;
