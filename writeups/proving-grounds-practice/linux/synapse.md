@@ -138,7 +138,7 @@ password: m1ndsfl33w1llc4tchy0u?
 
 Using this password, we can `su` to `mindsflee`.
 
-<figure><img src="../../../.gitbook/assets/image (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Sudo Privileges --> Socket Injection
 

@@ -162,4 +162,4 @@ $ hydra -l fox -P /usr/share/wordlists/rockyou.txt 192.168.243.126 ssh
 
 We would then get a reverse shell back as `root`:
 
-<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption></figcaption></figure>

@@ -45,7 +45,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
 
 There was a hidden `/db` directory. When we visit it, we see a phpLiteAdmin instance:
 
-<figure><img src="../../../.gitbook/assets/image (2) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 This was another dead end however since we don't have credentials.
 

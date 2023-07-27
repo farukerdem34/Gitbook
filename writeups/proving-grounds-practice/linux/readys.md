@@ -86,7 +86,7 @@ Searching for the `AUTH` string allowed me to find the password:
 
 We can then enumerate the database:
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (3).png" alt=""><figcaption></figcaption></figure>
 
 ### Redis RCE
 

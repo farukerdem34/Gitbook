@@ -85,6 +85,8 @@
 * [ROP Chaining](buffer-overflows/rop-chaining.md)
 * [Canary Bypass](buffer-overflows/canary-bypass.md)
 * [ASLR Bypass](buffer-overflows/aslr-bypass.md)
+* [Pwn Writeups](buffer-overflows/pwn-writeups/README.md)
+  * [What does the F Say (HTB)](buffer-overflows/pwn-writeups/what-does-the-f-say-htb.md)
 
 ## 🖥 Active Directory
 

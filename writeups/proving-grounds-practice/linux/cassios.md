@@ -307,6 +307,6 @@ recycler.ser
 
 This would bring up the `/etc/passwd` file, where we can add the new `hacker` user and use `:wq` to save the changes made. Then, `su` to hacker with `hello123` as the password:
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

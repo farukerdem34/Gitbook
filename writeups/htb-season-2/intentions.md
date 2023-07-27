@@ -241,7 +241,7 @@ Sending the correct parameters resulted in a successful login as `greg`, which g
 
 We can grab the `token` value we were returned on the successful login. Now, we need to find the directory about 'image editing'. We can repeat the above request in a browser, and then check the `/admin` directory, which now works properly:
 
-<figure><img src="../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1) (1) (6).png" alt=""><figcaption></figcaption></figure>
 
 The link brings us to the PHP page for Imagick:
 
@@ -360,7 +360,7 @@ Then, we just need to start both the payloads within Burpsuite Intruder with NUL
 
 When we run it both the Intruder instances, we would get a few requests to our Python HTTP server, and a reverse shell as `www-data`!&#x20;
 
-<figure><img src="../../.gitbook/assets/image (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (2) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/image (27) (6).png" alt=""><figcaption></figcaption></figure>
 
