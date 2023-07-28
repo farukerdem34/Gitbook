@@ -247,7 +247,7 @@ Couldn't crack the hash though.
 
 For some persistance, I dropped a `cmd.php` shell into the `forum` website, so that I can establish RCE at any given time.
 
-<figure><img src="../../../.gitbook/assets/image (3) (3) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (3) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### PHP-FPM
 

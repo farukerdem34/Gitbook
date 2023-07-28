@@ -245,6 +245,6 @@ namespace MyNamespaceMaster
 
 When we upload the file and refresh the page, we get a shell as the SYSTEM user.
 
-<figure><img src="../../../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (32) (1).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

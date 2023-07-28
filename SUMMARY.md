@@ -109,6 +109,7 @@
   * [Intentions](writeups/htb-season-2/intentions.md)
   * [Authority](writeups/htb-season-2/authority.md)
   * [Sau](writeups/htb-season-2/sau.md)
+  * [RegistryTwo](writeups/htb-season-2/registrytwo.md)
 * [HTB Season 1](writeups/htb-season-1/README.md)
   * [Inject](writeups/htb-season-1/inject.md)
   * [Agile](writeups/htb-season-1/agile.md)

@@ -96,7 +96,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 The `/zipfiles` directory looks the most interesting. Within it, there were zip files named after the users on the machine:
 
-<figure><img src="../../../.gitbook/assets/image (2) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (2) (7).png" alt=""><figcaption></figcaption></figure>
 
 `max.zip` was the largest and hence the only one I downloaded. When unzipped, it contained all the files like his SSH key:
 
