@@ -11,7 +11,7 @@ There's loads of free stuff on the Internet in general, and security is definite
 ## Bio
 
 * I am currently a freshman majoring in Information Security at National University of Singapore (NUS), and will graduate in 2026.
-* Current Certifications: **CRTO, OSCP, eJPT, CCNA, Security+.**&#x20;
+* Current Certifications: **CRTO, CRTE, OSCP, eJPT, CCNA, Security+.**&#x20;
 * I can speak English and Chinese (although the latter isn't the best).
 * I really enjoy reading about how stuff is exploited and exploiting things myself (legally).&#x20;
 * Apart from security, I enjoy water sports. Currently, I'm a canoe sprint athlete representing NUS and am a canoe coach for my alma mater.&#x20;
