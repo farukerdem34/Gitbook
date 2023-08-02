@@ -110,6 +110,7 @@
   * [Authority](writeups/htb-season-2/authority.md)
   * [Sau](writeups/htb-season-2/sau.md)
   * [RegistryTwo](writeups/htb-season-2/registrytwo.md)
+  * [Gofer](writeups/htb-season-2/gofer.md)
 * [HTB Season 1](writeups/htb-season-1/README.md)
   * [Inject](writeups/htb-season-1/inject.md)
   * [Agile](writeups/htb-season-1/agile.md)
