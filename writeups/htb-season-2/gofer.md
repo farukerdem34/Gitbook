@@ -393,7 +393,7 @@ To exploit this, we need to:
 
 * Create a user --> Creates the allocated block of 40 bytes.
 * Delete the user --> Creates a dangling pointer to our first user created.&#x20;
-* Write a note --> We can create anything, and we can write 24 characters for the username, and the have `admin` after the 24th byte to force the change and become an administrator within this app. To abuse this, write this note `111111111111111111111111admin`.&#x20;
+* Write a note --> Using the notes function, we can write 24 characters for the username, and the have `admin` after the 24th byte to escalate privileges, which looks something like this: `111111111111111111111111admin`.&#x20;
 * Use option 8 to execute our malicious `tar` binary.
 
 ### Exploit --> Root
