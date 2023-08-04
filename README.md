@@ -64,7 +64,11 @@ Some of the stuff I've picked up from interning with red / pentesting teams, as 
 
 {% embed url="https://rouvin.gitbook.io/ibreakstuff/adversary-emulation/emulation" %}
 
-This book will be updated as frequently as I can while juggling school work, and it is not meant to be a high-maintenance project.&#x20;
+{% hint style="info" %}
+The Evasion and Emulation parts are a Work in Progress. Will fill it in when I have the time.&#x20;
+{% endhint %}
+
+**This book will be updated as frequently as I can while juggling school work, and it is not meant to be a high-maintenance project.**&#x20;
 
 ## Disclaimer
 
