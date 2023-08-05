@@ -1,6 +1,6 @@
 ---
 description: >-
-  Just my notes, all of these are public information / Googable / GPT-able
+  Just my notes, all of these are public information / Googable / ChatGPT-able
   anyway.
 ---
 
