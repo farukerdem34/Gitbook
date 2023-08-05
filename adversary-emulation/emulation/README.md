@@ -71,13 +71,25 @@ The tools used are different as well. Penetration testers might have more scanne
 
 <figure><img src="../../.gitbook/assets/image (73) (2).png" alt=""><figcaption></figcaption></figure>
 
+I should note that the point of adversary emulation is to, well, **emulate the adversary correctly**. Sometimes, a red team might incorporate super advanced tactics that involve a lot of complicated pieces of code working together to get a beacon. However, APTs might just do it the easy way and still not get caught, defeating the 'adversary emulation' for better defence intention.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (797).png" alt=""><figcaption></figcaption></figure>
+
 ## Purple Teaming
 
 Purple teaming is a relatively new concept that came about to better prepare organisations against attacks. It is the optimisation of a relationship between adversary and defender capabilities. A purple team exercise would involve both the red and blue teams, where the red team would execute operations emulating a chosen adversary, and the blue team would actively try to detect and block such operations from working.
 
 I personally feel that a Attack/Defend CTF is somewhat similar to a purple team exercise. This involves a blue team that is actively reviewing logs and detecting when an intruder is in the system and trying to capture the flag, while the red team is actively trying to not get caught.
 
-Another example is in military planning. When we plan for a mission in the military, we tend to have two groups as well, an Intelligence team (Red) and an Operations team (Blue). Personally, I've been in the Intelligence side to do military planning, and what we do there is come up with the adversary defence plans for a given terrain using whatever existing knowledge of the adversary, as well as reconnaisance teams in the field.
+Another example is in military planning. When we plan for a mission in the military, we tend to have two groups as well, an Intelligence team (Red) and an Operations team (Blue).&#x20;
+
+{% hint style="info" %}
+All of these are public information that I found on the Internet.&#x20;
+{% endhint %}
+
+{% embed url="https://irp.fas.org/doddir/army/fm34-8/ch3.htm" %}
+
+{% embed url="https://irp.fas.org/doddir/army/miobc/msnanllp.htm" %}
 
 The Purple Team Framework is developed by SCYTHE, and more information can be found here:
 
