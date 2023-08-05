@@ -54,7 +54,7 @@ There was nowhere to use this set of credentials, so I carried on with the enume
 
 Creating a fake account to login reveals there are 2 cookies being used, one being a JWT token and the other being a PHPSESSID token with our username appended in front.
 
-<figure><img src="../../../.gitbook/assets/image (3) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Viewing the page itself reveals several functions we can use.
 
@@ -128,7 +128,7 @@ Within it, we can see one file that stands out.
 
 Within it, we can find some credentials for this user.
 
-<figure><img src="../../../.gitbook/assets/image (5) (1) (1) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1) (1) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then, we can SSH in as this user.
 

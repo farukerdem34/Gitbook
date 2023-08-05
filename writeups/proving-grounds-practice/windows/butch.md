@@ -130,7 +130,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 /dev                  (Status: 301) [Size: 153] [--> http://192.168.208.63:450/dev/]
 ```
 
-<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 The contents of the `site.master.txt` file was in C#:
 

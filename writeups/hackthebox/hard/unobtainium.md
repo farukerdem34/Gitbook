@@ -64,7 +64,7 @@ When any of the links are clicked, we can download a zip file for an application
 
 We can see from the `nmap` scan above that there is some kind of Kubernetes application being run on port 8443. When trying to view it, all we get is a 401 Unauthorized error from the API.
 
-<figure><img src="../../../.gitbook/assets/image (11) (1) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (1) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Deb File Analysis
 

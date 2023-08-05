@@ -47,7 +47,7 @@ We can add `muddy.ugc` to our `/etc/hosts` file.&#x20;
 
 Port 80 hosted a static looking site:
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 I did a directory scan for this and found some wordpress content, and a `/webdav` directory:
 
@@ -76,7 +76,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 Visiting `/webdav` required credentials:
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 Weak credentials don't work, so let's come back to this later. Port 8888 hosted Ladon Service Catalog:
 

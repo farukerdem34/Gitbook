@@ -156,7 +156,7 @@ QUIT
 
 After the mail sends, we get a callback on our listener port with creds:
 
-<figure><img src="../../../.gitbook/assets/image (13) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (2) (7).png" alt=""><figcaption></figcaption></figure>
 
 We can use this password to `ssh` in as `brian.moore`:
 

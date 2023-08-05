@@ -75,7 +75,7 @@ total size is 391  speedup is 0.65
 
 Then, we can `ssh` in:
 
-<figure><img src="../../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (1) (8).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -162,4 +162,4 @@ $ hydra -l fox -P /usr/share/wordlists/rockyou.txt 192.168.243.126 ssh
 
 We would then get a reverse shell back as `root`:
 
-<figure><img src="../../../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1) (1) (4).png" alt=""><figcaption></figcaption></figure>

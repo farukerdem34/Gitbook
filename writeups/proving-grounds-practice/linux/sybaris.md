@@ -99,7 +99,7 @@ I transferred this file over to the `pub` directory and tried to find the correc
 
 We can then easily get a reverse shell.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -107,7 +107,7 @@ We can then easily get a reverse shell.&#x20;
 
 I ran a `linpeas.sh` scan, and found this `cronjob` running:
 
-<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (12).png" alt=""><figcaption></figcaption></figure>
 
 Turns out that there are some directories that we can write to within the `LD_LIBRARY_PATH`, and the cronjob running `log-sweeper` doesn't have a `utils.so` specified:
 

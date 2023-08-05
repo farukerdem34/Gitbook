@@ -44,7 +44,7 @@ In the user's directory, I enumerated all the directories that I could using `di
 
 Within the `AppData\Roaming` folder, we can find some files related to mRemoteNG.
 
-<figure><img src="../../../.gitbook/assets/image (3) (1) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (1) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Checking the confCons.xml file, we can find an encrypted password for the Administrator.
 

@@ -70,7 +70,7 @@ We find that there's another user called `dan_smith`, and we cannot access the u
 
 I ran `pspy` to see what processes were running on the server. Found a few interesting ones, the first being that the root user was running `redis-server`.
 
-<figure><img src="../../../.gitbook/assets/image (14) (1) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (1) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 The second was that `dan_smith` was running `ipython` consistently.
 

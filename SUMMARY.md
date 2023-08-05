@@ -232,6 +232,7 @@
     * [Cascade](writeups/hackthebox/medium/cascade.md)
     * [Catch](writeups/hackthebox/medium/catch.md)
     * [Celestial](writeups/hackthebox/medium/celestial.md)
+    * [Chaos](writeups/hackthebox/medium/chaos.md)
     * [Chatterbox](writeups/hackthebox/medium/chatterbox.md)
     * [Cronos](writeups/hackthebox/medium/cronos.md)
     * [Devoops](writeups/hackthebox/medium/devoops.md)
