@@ -75,7 +75,7 @@ Visiting the IP address alone blocks us:
 
 Visiting `chaos.htb` shows us a typical security company page:
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 The website looked rather static, so I did a `gobuster` directory and `wfuzz` subdomain scan. The `gobuster` scan returned nothing of interest, while the `wfuzz` scan did return a `webmail` subdomain.
 
@@ -137,7 +137,7 @@ Using `human` as the password worked, and we could see the post:
 
 Now, we can add the `webmail` subdomain to the `/etc/hosts` file and enumerate that next. When visited, it just shows a typical Roundcube login page:
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Using the credentials we found earlier, we can login to view the dashboard:
 

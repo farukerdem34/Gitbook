@@ -54,7 +54,7 @@ Since we can submit queries, we can also write files into the file system of the
 
 There, we can find the `DOCUMENT_ROOT`:
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (5).png" alt=""><figcaption></figcaption></figure>
 
 We can then use this query to write a webshell onto the machine:
 

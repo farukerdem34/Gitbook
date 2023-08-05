@@ -232,7 +232,7 @@ def shell(canary):
 
 This does not trigger the stack smashing error we found earlier, indicating the canary found works:
 
-<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now, let's send a really long string there and also attach GDB to this process.&#x20;
 
