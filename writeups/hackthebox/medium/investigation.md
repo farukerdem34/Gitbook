@@ -30,7 +30,7 @@ Clicking the big Go button reveals that we can upload a jpg file to the website 
 
 When I uploada file, it would produce a link to a report.
 
-<figure><img src="../../../.gitbook/assets/image (13) (1) (1) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (1) (1) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 The file would be a .txt file of output from `exiftool` being used on the file.
 

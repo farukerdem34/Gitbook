@@ -73,7 +73,7 @@ The tools used are different as well. Penetration testers might have more scanne
 
 I should note that the point of adversary emulation is to, well, **emulate the adversary correctly**. Sometimes, a red team might incorporate super advanced tactics that involve a lot of complicated pieces of code working together to get a beacon. However, APTs might just do it the easy way and still not get caught, defeating the 'adversary emulation' for better defence intention.&#x20;
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
 
 That's why proper threat intelligence is important!&#x20;
 

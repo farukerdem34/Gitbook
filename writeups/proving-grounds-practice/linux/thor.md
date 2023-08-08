@@ -148,13 +148,13 @@ Port 80 hosted a portfolio page for Jane Foster:
 
 At the bottom of the page, there was some contact details:
 
-<figure><img src="../../../.gitbook/assets/image (17) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 The box was named Thor, so it makes sense that there would be something 'Thor' related. From the earlier `nmap` scan, we know that port 80 is running using Litespeed. Port 7080 is the LiteSpeed admin console, likely operated by this Jane Foster.&#x20;
 
 Port 7080 reveals a login page:
 
-<figure><img src="../../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (6).png" alt=""><figcaption></figcaption></figure>
 
 There are some exploits available for this:
 

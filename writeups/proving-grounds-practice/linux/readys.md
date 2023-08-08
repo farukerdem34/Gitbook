@@ -70,7 +70,7 @@ $ wpscan --api-token mytoken --enumerate p,t,u --url http://192.168.208.166
 
 I confirmed that this works:
 
-<figure><img src="../../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 So we have an LFI, and the only other exploitable thing is the Redis instance. I tried to find credentials for it using this LFI, and found it within `/etc/redis/redis.conf`:
 
@@ -98,7 +98,7 @@ The Redis instance is vulnerable to RCE through the module loading exploit with 
 
 We can easily get a reverse shell using this RCE exploit:
 
-<figure><img src="../../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (1) (6).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

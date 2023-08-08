@@ -24,7 +24,7 @@ FTP accepts anonymous logins but there's nothing within it.&#x20;
 
 Port 80 shows a blog about some web exploits:
 
-<figure><img src="../../../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Port 3000 shows a more dynamic incident reporting site:
 

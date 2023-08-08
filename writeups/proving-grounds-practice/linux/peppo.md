@@ -76,4 +76,4 @@ postgres            latest              adf2b126dda8        3 years ago         
 
 I'll use `redmine` for the exploit to spawn a `root` shell:
 
-<figure><img src="../../../.gitbook/assets/image (12) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (1) (8).png" alt=""><figcaption></figcaption></figure>

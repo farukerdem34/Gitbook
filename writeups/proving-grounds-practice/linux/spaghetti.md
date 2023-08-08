@@ -74,7 +74,7 @@ I had no credentials, so let's move on first.
 
 I used `nc` to first enumerate the IRC server. Initially when connecting, it tells me that it cannot resolve my hostname, which we can fix by using `NICK`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (14) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 It will then send this when we register a user:
 
@@ -119,11 +119,11 @@ LIST
 
 &#x20;I decided to use a GUI tool called `pidgin` to connect to the IRC server instead. We just have to add `irc.spaghetti.lan` to our `/etc/hosts` file. I used the same username as per what I nicked myself earlier.
 
-<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Then, I went to Conversations > Join a Chat and used `#mailAssistant` as the channel name to join. This dropped me within another chat group with a bot.
 
-<figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (1).png" alt=""><figcaption></figcaption></figure>
 
 We can open a separate DM with this bot:
 
@@ -167,7 +167,7 @@ The parameters are not sanitised at all. As such, we can attempt to chain comman
 
 I ran `linpeas.sh` to enumerate, and it picked up on a cronjob running:
 
-<figure><img src="../../../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Here's the script contents:
 

@@ -23,7 +23,7 @@ Port 8080 a corporate webpage for some product:
 
 There's an Upload function in the top right of the page. When we upload a file, we can view it on the server:
 
-<figure><img src="../../.gitbook/assets/image (3) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 There's an LFI vulnerability here.
 

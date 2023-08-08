@@ -16,7 +16,7 @@ Port 3000 was found to be a HTTP port leading us to this Clipnotes page.
 
 ### Directory Enum
 
-<figure><img src="../../../.gitbook/assets/image (18) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (1) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Wasn't much to play around with, as we had no credentials yet. Decided to run a directory scan to find if there are any endpoints. Eventually, I found this /rails endpoint, using dirsearch.
 

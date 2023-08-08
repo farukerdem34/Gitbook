@@ -137,4 +137,4 @@ It uses seems that our string is directly passed into a `cat` command. There's a
 
 This is easily exploitable for a `root` shell:
 
-<figure><img src="../../../.gitbook/assets/image (16) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16) (1) (1).png" alt=""><figcaption></figcaption></figure>

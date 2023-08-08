@@ -34,7 +34,7 @@ Interesting. So anyways, password reset machine are quite unique, because genera
 
 We probably need to somehow make this service send the email to our machine. So I changed the Host header to my machine's and started a listener port, and it worked.
 
-<figure><img src="../../../.gitbook/assets/image (17) (2) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (2) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (3) (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 

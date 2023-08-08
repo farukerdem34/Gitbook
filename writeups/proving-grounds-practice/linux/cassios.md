@@ -77,7 +77,7 @@ Java Mantainer
 
 Port 80 hosted a corporate website:
 
-<figure><img src="../../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (2).png" alt=""><figcaption></figcaption></figure>
 
 I was rather static, so I did a `gobuster` scan on it using a few wordlists. Using `common.txt` reveals a hidden directory:
 
@@ -110,7 +110,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 The `/download` endpoint just gives us the source code for this website, and it was static. The `backup_migrate` file was more interesting:
 
-<figure><img src="../../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can download and extract the files within this using `tar -xvf`:
 
@@ -251,7 +251,7 @@ smb/pom-bak.xml:                    <artifactId>commons-collections4</artifactId
 
 `commons-collections4` was being used! Next, I checked to see if we could overwrite `recycler.ser` within the SMB directory.
 
-<figure><img src="../../../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Based on the timestamp, this worked. So now, we need to create our serialised payload using `ysoserial`.&#x20;
 
@@ -307,6 +307,6 @@ recycler.ser
 
 This would bring up the `/etc/passwd` file, where we can add the new `hacker` user and use `:wq` to save the changes made. Then, `su` to hacker with `hello123` as the password:
 
-<figure><img src="../../../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Rooted!

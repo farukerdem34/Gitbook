@@ -52,7 +52,7 @@ It also finds another subdomain at `prod99`.&#x20;
 
 The `prod99` domain shows us this marriage website:
 
-<figure><img src="../../../.gitbook/assets/image (7) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 I created an account on the website and found that it runs on PHP. I checked around for exploits for 'matrim':
 

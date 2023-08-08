@@ -36,7 +36,7 @@ The Bcrypt password could also be cracked using `john`.&#x20;
 
 With some passwords and potential usernames from the forum, we could begin brute-forcing SMB authentications with different combinations. `hazard` was the user on the forum that also requested for a Windows account for him, so I tried guessing his password first with `crackmapexec`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (14) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (1) (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Worked, but with checking the shares available with `smbmap`, there was nothing of interest:
 

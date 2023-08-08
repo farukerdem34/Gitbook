@@ -85,7 +85,7 @@ Now, we just need to find the correct file to read. The website gives us a usern
 
 Using this, we can `ssh` in as the user:
 
-<figure><img src="../../../.gitbook/assets/image (18) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

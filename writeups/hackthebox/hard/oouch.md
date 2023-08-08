@@ -230,7 +230,7 @@ http://consumer.oouch.htb:5000/oauth/connect/token?code=IhKT0Gc97DNDoVQp2Urhfun5
 
 &#x20;Send this in the Contact Form and wait for a little bit. Then, we can attempt to use OAuth by accessing `/oauth/login` on the consumer server. If done correctly, this is what we would see in the Documents section:
 
-<figure><img src="../../../.gitbook/assets/image (15) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 Great! Now we have credentials to access some other stuff. There's an SSH key somewhere on this  website as well.
 

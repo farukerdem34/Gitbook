@@ -275,7 +275,7 @@ The exploit path to getting RCE from Wordpress is the same. (Appearance > Theme 
 
 From here, we can easily get a reverse shell.
 
-<figure><img src="../../../.gitbook/assets/image (10) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (1) (1) (5).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

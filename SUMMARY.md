@@ -332,6 +332,7 @@
     * [APT](writeups/hackthebox/insane/apt.md)
     * [BrainFuck](writeups/hackthebox/insane/brainfuck.md)
     * [Derailed](writeups/hackthebox/insane/derailed.md)
+    * [Fighter](writeups/hackthebox/insane/fighter.md)
     * [Hathor](writeups/hackthebox/insane/hathor.md)
     * [Multimaster](writeups/hackthebox/insane/multimaster.md)
     * [pivotapi](writeups/hackthebox/insane/pivotapi.md)

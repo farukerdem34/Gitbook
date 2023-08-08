@@ -4,7 +4,7 @@
 
 Nmap scan results:
 
-<figure><img src="../../../.gitbook/assets/image (8) (1) (4) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1) (4) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Take note of port 3000, it will be important later!&#x20;
 
