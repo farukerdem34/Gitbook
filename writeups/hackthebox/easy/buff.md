@@ -14,7 +14,7 @@ On port 8080, it was a gym-related page:
 
 We can use `gobuster` on the website to find more directories:
 
-<figure><img src="../../../.gitbook/assets/image (8) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1) (1) (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 Checking the `contact.php` file, we see the software used to make this.
 

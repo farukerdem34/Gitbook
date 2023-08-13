@@ -20,7 +20,7 @@ With this, we can start proxying traffic through Burp.&#x20;
 
 Port 80 shows a Street Fighter themed page:
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 There's mention of a 'link' that we are supposed to know. Based on HTB trends, I added `streetfighterclub.htb` to the `/etc/hosts` file. Afterwards, I ran a `gobuster` directory and `wfuzz` subdomain scan on the site.&#x20;
 
@@ -42,7 +42,7 @@ ID           Response   Lines    Word       Chars       Payload
 
 Interestingly, it just shows us a 403:
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 I noted that this is running Microsoft IIS based on the error. I still ran a `gobuster` scan on this new subdomain, and found one directory:
 
@@ -99,7 +99,7 @@ We found a login page!
 
 The login page looked quite vulnerable to some stuff:
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 Here's the POST request being sent back:
 
@@ -125,11 +125,11 @@ There was a `logintype` variable, where 1 indicated Administrator and 2 was for 
 
 &#x20;
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 I tested this with some basic SQL Injection, and found that `;+--+-` works! We are redirected to the `Welcome.asp` page instead.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 So this login page was vulnerable to SQL Injection. I tested it a bit and found that there were 6 columns using UNION Injection:
 
@@ -171,7 +171,7 @@ However, I got no ping back. In this case, there might be something blocking us 
 
 Just use `XP_cmdshell` instead of `xp_cmdshell`, and the ping would work:
 
-<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now, we just need to gain a reverse shell. Since there's something obviously blocking us on the machine, normal methods using `nc.exe` might not work. Oddly, running `powershell.exe` results in a 500, indicating that we might have to use the full PATH for it.
 
@@ -193,7 +193,7 @@ The final query looks like this:
 
 Take note to rename the shell to `REV.PS1` since the web request sent is in caps for some reason. Afterwards, we would get a shell:
 
-<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 

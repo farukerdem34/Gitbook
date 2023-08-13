@@ -157,7 +157,7 @@ Now, we can replace the `ping` command I used above with a reverse shell:
 
 This uses base64 to encode the shell one-liner and connect to port 8888.
 
-<figure><img src="../../../.gitbook/assets/image (4) (1) (1) (2) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1) (1) (2) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 When trying to read the user flag, I found out that we did not have access to our own home directory. This was because of the permissions set:
 

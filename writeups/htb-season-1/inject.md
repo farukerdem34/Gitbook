@@ -355,7 +355,7 @@ frank@inject:~/.m2$ cat settings.xml
 
 With this, we can `su` to `phil`.
 
-<figure><img src="../../.gitbook/assets/image (8) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Playbook PE
 

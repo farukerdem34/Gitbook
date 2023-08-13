@@ -39,7 +39,7 @@ We can actually download the application below and view the source code:
 
 Additionally, we can submit a report when something goes wrong:
 
-<figure><img src="../../.gitbook/assets/image (6) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Interesting. When we download the file, we will get a binary and a test image:
 

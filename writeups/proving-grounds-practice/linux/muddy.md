@@ -76,7 +76,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 Visiting `/webdav` required credentials:
 
-<figure><img src="../../../.gitbook/assets/image (7) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Weak credentials don't work, so let's come back to this later. Port 8888 hosted Ladon Service Catalog:
 

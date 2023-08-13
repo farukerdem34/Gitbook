@@ -36,7 +36,7 @@ So this is definitely vulnerable to SQL Injection. I was unable to bypass this l
 
 <figure><img src="../../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 All of the payloads `sqlmap` used had the `WAITFOR DELAY` commands, which means we have to exploit time-based Blind SQLI. While I could dump out the entire database (which could take hours), I wanted to exploit it manually (as per OSCP rules, no `sqlmap`!).
 
@@ -130,7 +130,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 /dev                  (Status: 301) [Size: 153] [--> http://192.168.208.63:450/dev/]
 ```
 
-<figure><img src="../../../.gitbook/assets/image (3) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 The contents of the `site.master.txt` file was in C#:
 

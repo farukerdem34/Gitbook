@@ -95,7 +95,7 @@ Not sure what this directory is used for. The Redis RCE exploit requires that we
 
 I transferred this file over to the `pub` directory and tried to find the correct directory to load my module. After a bit of guessing, I found that we uploaded `module.so` to `/var/ftp`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (4) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1) (1) (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 We can then easily get a reverse shell.&#x20;
 

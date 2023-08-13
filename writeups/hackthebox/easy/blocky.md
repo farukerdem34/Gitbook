@@ -22,7 +22,7 @@ Heading to the plugins directory, we find two .jar files.
 
 We can take a look at these jar files using `jd-gui`, and find some SQL credentials within the machine.
 
-<figure><img src="../../../.gitbook/assets/image (5) (1) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1) (1) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 So now we have a password but no user to use it with.
 
