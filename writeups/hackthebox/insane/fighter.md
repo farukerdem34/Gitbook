@@ -20,7 +20,7 @@ With this, we can start proxying traffic through Burp.&#x20;
 
 Port 80 shows a Street Fighter themed page:
 
-<figure><img src="../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 There's mention of a 'link' that we are supposed to know. Based on HTB trends, I added `streetfighterclub.htb` to the `/etc/hosts` file. Afterwards, I ran a `gobuster` directory and `wfuzz` subdomain scan on the site.&#x20;
 
@@ -42,7 +42,7 @@ ID           Response   Lines    Word       Chars       Payload
 
 Interestingly, it just shows us a 403:
 
-<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 I noted that this is running Microsoft IIS based on the error. I still ran a `gobuster` scan on this new subdomain, and found one directory:
 

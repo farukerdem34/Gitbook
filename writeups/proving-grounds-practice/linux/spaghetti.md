@@ -119,7 +119,7 @@ LIST
 
 &#x20;I decided to use a GUI tool called `pidgin` to connect to the IRC server instead. We just have to add `irc.spaghetti.lan` to our `/etc/hosts` file. I used the same username as per what I nicked myself earlier.
 
-<figure><img src="../../../.gitbook/assets/image (5) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Then, I went to Conversations > Join a Chat and used `#mailAssistant` as the channel name to join. This dropped me within another chat group with a bot.
 

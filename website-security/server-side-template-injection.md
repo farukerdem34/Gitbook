@@ -26,7 +26,7 @@ The machine has a secret page that allows for posts by the user to be made with 
 
 We can straightaway begin testing for SSTI via this. After using `{{7*7}}`, we would see the following:
 
-<figure><img src="../.gitbook/assets/image (2) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 The 49 present indicates that it worked, and that the other payload was not processed. Further testing with `{{7*'7'}}`would dispaly this:
 

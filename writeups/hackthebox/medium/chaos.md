@@ -71,11 +71,11 @@ I added `chaos.htb` to my `/etc/hosts` file since there's a DNS name returned fr
 
 Visiting the IP address alone blocks us:
 
-<figure><img src="../../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Visiting `chaos.htb` shows us a typical security company page:
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 The website looked rather static, so I did a `gobuster` directory and `wfuzz` subdomain scan. The `gobuster` scan returned nothing of interest, while the `wfuzz` scan did return a `webmail` subdomain.
 
@@ -118,7 +118,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 The Wordpress site was rather simple as well, and just contained one locked article:
 
-<figure><img src="../../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 I didn't have a password yet, so I ran a `wpscan` on the URL and found one user named `human`:
 
@@ -133,15 +133,15 @@ $ wpscan --api-token my_token --enumerate p,t,u --url http://10.129.253.192/wp/w
 
 Using `human` as the password worked, and we could see the post:
 
-<figure><img src="../../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now, we can add the `webmail` subdomain to the `/etc/hosts` file and enumerate that next. When visited, it just shows a typical Roundcube login page:
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Using the credentials we found earlier, we can login to view the dashboard:
 
-<figure><img src="../../../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Webmail Files --> Hidden URL
 

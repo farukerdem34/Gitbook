@@ -231,6 +231,7 @@
     * [Book](writeups/hackthebox/medium/book.md)
     * [BroScience](writeups/hackthebox/medium/broscience.md)
     * [Cache](writeups/hackthebox/medium/cache.md)
+    * [Canape](writeups/hackthebox/medium/canape.md)
     * [Cascade](writeups/hackthebox/medium/cascade.md)
     * [Catch](writeups/hackthebox/medium/catch.md)
     * [Celestial](writeups/hackthebox/medium/celestial.md)

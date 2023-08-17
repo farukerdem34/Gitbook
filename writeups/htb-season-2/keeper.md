@@ -34,15 +34,15 @@ The website was running Best Practical Request Tracker (RT) 4.4.4, which is quit
 
 There is 1 ticket present, and it's an issue regarding Keepass (with the box name being an obvious hint).&#x20;
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
 The attachment has been removed. There's also mention of another user named `lnorgaard`. When we use the Admin panel to view all Users, there's a password located within the user's comments:
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Using these creds, we can `ssh` in as the user:
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -112,7 +112,7 @@ Combined: ●{,, l, `, -, ', ], A, I, :, =, _, c, M}<REDACTEDSTRING>
 
 This would produce a string at the end with some non-printable characters. Googling part of the string reveals a certain Danish dessert (based on the username of the user):
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Using the name of the dessert, we can access the passwords within the `.kdbx` file:
 
@@ -187,6 +187,6 @@ MIIEowIBAAKCAQEAp1arHv4TLMBgUULD7AvxMMsSb3PFqbpfw/K4gmVd9GW3xBdP
 
 After running `chmod 600` on it, we can use this private key to `ssh` in as `root`:
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 `dotnet run` saves loads of time transferring files to a Windows machine. Rooted!&#x20;
