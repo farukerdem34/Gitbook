@@ -258,6 +258,7 @@
     * [Jeeves](writeups/hackthebox/medium/jeeves.md)
     * [Json](writeups/hackthebox/medium/json.md)
     * [Jupiter](writeups/hackthebox/medium/jupiter.md)
+    * [Lazy](writeups/hackthebox/medium/lazy.md)
     * [Lightweight](writeups/hackthebox/medium/lightweight.md)
     * [LogForge](writeups/hackthebox/medium/logforge.md)
     * [Magic](writeups/hackthebox/medium/magic.md)
